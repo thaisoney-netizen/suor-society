@@ -38,7 +38,7 @@ export default function Home() {
           <div className="hero-strip">
             <span className="lt">Issue 001 / San Diego / 2026</span>
             <span className="rule" aria-hidden="true"></span>
-            <span className="rt">A hybrid running culture page</span>
+            <span className="rt">A performance culture page</span>
           </div>
 
           <div className="hero-img-wrap">
