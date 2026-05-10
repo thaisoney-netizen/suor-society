@@ -49,7 +49,7 @@ export default function Home() {
               fill
               priority
               sizes="100vw"
-              style={{ objectFit: "cover", objectPosition: "center 40%" }}
+              style={{ objectFit: "cover", objectPosition: "center 15%" }}
             />
             <p className="hero-img-tagline">
               Run.<br />Lift.<br />Sweat.
