@@ -83,7 +83,7 @@ export default function Home() {
         <div className="page">
           <div className="about-eye">What this is</div>
           <h2 className="about-line">
-            Gear drops, crew runs, race days, coffee stops, and everything in between.
+            Gear drops, crew runs, workouts, race days, coffee stops, and everything in between.
           </h2>
           <p className="about-who">
             For the runner who lifts. The lifter who runs. And everyone figuring it out.
