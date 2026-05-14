@@ -145,6 +145,7 @@ a { color: inherit; text-decoration: none; }
   margin-top: 16px;
 }
 @media (max-width: 768px) {
+  .hero { height: 88vh; }
   .hero-text { bottom: 140px; right: 22px; }
   .hero-tagline { font-size: 42px; }
 }
