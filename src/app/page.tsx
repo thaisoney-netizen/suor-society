@@ -45,11 +45,11 @@ export default function Home() {
             <Image
               className="hero-img"
               src="/hero.jpg"
-              alt="Urban runner in motion"
+              alt="Trail runner in motion"
               fill
               priority
               sizes="100vw"
-              style={{ objectFit: "cover", objectPosition: "center 15%" }}
+              style={{ objectFit: "cover", objectPosition: "center center" }}
             />
             <p className="hero-img-tagline">
               Run.<br />Lift.<br />Sweat.
