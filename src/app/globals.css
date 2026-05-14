@@ -171,10 +171,17 @@ a { color: inherit; text-decoration: none; }
 .signup-section {
   border-bottom: 1px solid var(--line);
 }
+@media (min-width: 769px) {
+  .signup-section > .page {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
 .signup {
   margin-top: 0;
   max-width: 420px;
   margin-left: auto;
+  margin-right: 0;
   border-top: 2px solid var(--asphalt);
   border-bottom: 1px solid var(--line);
   display: grid;
