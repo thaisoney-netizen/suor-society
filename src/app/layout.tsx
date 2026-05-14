@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Barlow_Condensed, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import ScrollTracker from "@/components/ScrollTracker";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -46,7 +47,10 @@ export default function RootLayout({
         "--font-jetbrains": jetbrainsMono.style.fontFamily,
       } as React.CSSProperties}
     >
-      <body>{children}</body>
+      <body style={{ paddingBottom: "60px" }}>
+        {children}
+        <ScrollTracker />
+      </body>
     </html>
   );
 }
