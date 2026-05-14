@@ -48,7 +48,7 @@ export default function Home() {
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-text">
           <p className="hero-tagline">Run.<br />Lift.<br />Sweat.</p>
-          <p className="hero-sub">Hybrid running culture. San Diego.</p>
+          <p className="hero-sub">a performance culture page</p>
         </div>
       </header>
 
