@@ -178,7 +178,7 @@ a { color: inherit; text-decoration: none; }
   border-right: 1px solid var(--line);
 }
 @media (max-width: 720px) {
-  .signup-label { border-right: none; border-bottom: 1px solid var(--line); padding: 18px 0; }
+  .signup-label { border-right: none; border-bottom: 1px solid var(--line); padding: 12px 0; }
 }
 .signup-input {
   background: transparent;
@@ -208,8 +208,8 @@ a { color: inherit; text-decoration: none; }
 .signup-btn:active { transform: translateY(1px); }
 .signup-btn .arrow { font-family: var(--font-jetbrains), monospace; font-weight: 400; }
 @media (max-width: 720px) {
-  .signup-input { padding: 16px 0; }
-  .signup-btn { padding: 18px 0; justify-content: center; }
+  .signup-input { padding: 12px 0; }
+  .signup-btn { padding: 14px 0; justify-content: center; font-size: 15px; }
 }
 
 /* ============================================================
