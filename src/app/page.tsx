@@ -56,9 +56,7 @@ export default function Home() {
               autoComplete="email"
             />
             <button type="submit" className="signup-btn">
-              {submitted ? "ON THE LIST." : (
-                <>Join the list <span className="arrow" aria-hidden="true">→</span></>
-              )}
+              {submitted ? "ON THE LIST." : "I'm in."}
             </button>
           </form>
         </div>
