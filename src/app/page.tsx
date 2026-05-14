@@ -44,7 +44,7 @@ export default function Home() {
           <div className="hero-img-wrap">
             <Image
               className="hero-img"
-              src="/hero.webp"
+              src="/hero.jpg"
               alt="Urban runner in motion"
               fill
               priority
