@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 
 export default function Home() {
@@ -42,14 +41,13 @@ export default function Home() {
           </div>
 
           <div className="hero-img-wrap">
-            <Image
+            <video
               className="hero-img"
-              src="/hero.jpg"
-              alt="Trail runner in motion"
-              fill
-              priority
-              sizes="100vw"
-              style={{ objectFit: "cover", objectPosition: "center center" }}
+              src="/hero.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
             />
             <p className="hero-img-tagline">
               Run.<br />Lift.<br />Sweat.
