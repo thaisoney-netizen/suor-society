@@ -12,6 +12,8 @@ export default function Home() {
 
   return (
     <>
+      {/* ABOVE FOLD — hero + signup as one unit */}
+      <div className="above-fold">
       {/* HERO — full viewport with nav overlay */}
       <header className="hero">
         <nav className="nav">
@@ -40,7 +42,7 @@ export default function Home() {
       </header>
 
       {/* SIGNUP */}
-      <div className="signup-section">
+      <div className="signup-section" style={{flexShrink: 0}}>
         <div className="page">
           <form className="signup" onSubmit={handleSignup}>
             <label className="signup-label" htmlFor="email-hero">
@@ -61,6 +63,7 @@ export default function Home() {
           </form>
         </div>
       </div>
+      </div>{/* /above-fold */}
 
       {/* ABOUT */}
       <section className="about">

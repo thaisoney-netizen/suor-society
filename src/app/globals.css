@@ -97,6 +97,20 @@ a { color: inherit; text-decoration: none; }
 .nav .ig:hover { opacity: .55; }
 
 /* ============================================================
+   ABOVE FOLD
+   ============================================================ */
+.above-fold {
+  /* desktop: transparent block wrapper, children use their own sizing */
+}
+@media (max-width: 768px) {
+  .above-fold {
+    display: flex;
+    flex-direction: column;
+    height: calc(100svh - 54px); /* 54px = scroll tracker on mobile */
+  }
+}
+
+/* ============================================================
    HERO
    ============================================================ */
 .hero {
@@ -145,7 +159,7 @@ a { color: inherit; text-decoration: none; }
   margin-top: 16px;
 }
 @media (max-width: 768px) {
-  .hero { height: calc(100vh - 220px); min-height: 300px; }
+  .hero { flex: 1; min-height: 300px; height: auto; }
   .hero-text { bottom: 100px; right: 22px; }
   .hero-tagline { font-size: 42px; }
 }
