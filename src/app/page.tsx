@@ -12,48 +12,36 @@ export default function Home() {
 
   return (
     <>
-      {/* NAV */}
-      <nav className="nav">
-        <div className="page nav-row">
-          <a href="#" className="wm" aria-label="Suor Society — home">
-            <span className="wm-suor">SUOR</span>
-            <span className="wm-society">SOCIETY</span>
-          </a>
-          <a
-            href="https://instagram.com/suorsociety"
-            className="ig"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>Instagram</span>
-            <span className="arrow" aria-hidden="true">↗</span>
-          </a>
-        </div>
-      </nav>
-
-      {/* HERO */}
+      {/* HERO — full viewport with nav overlay */}
       <header className="hero">
+        <nav className="nav">
+          <div className="page nav-row">
+            <a href="#" className="wm" aria-label="Suor Society — home">
+              <span className="wm-suor">SUOR</span>
+              <span className="wm-society">SOCIETY</span>
+            </a>
+            <a
+              href="https://instagram.com/suorsociety"
+              className="ig"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Instagram</span>
+              <span className="arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </nav>
+        <video className="hero-video" src="/hero.mp4" autoPlay muted loop playsInline />
+        <div className="hero-overlay" aria-hidden="true" />
+        <div className="hero-text">
+          <p className="hero-tagline">Run.<br />Lift.<br />Sweat.</p>
+          <p className="hero-sub">Hybrid running culture. San Diego.</p>
+        </div>
+      </header>
+
+      {/* SIGNUP */}
+      <div className="signup-section">
         <div className="page">
-          <div className="hero-strip">
-            <span className="lt">Issue 001 / San Diego / 2026</span>
-            <span className="rule" aria-hidden="true"></span>
-            <span className="rt">A performance culture page</span>
-          </div>
-
-          <div className="hero-img-wrap">
-            <video
-              className="hero-img"
-              src="/hero.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-            />
-            <p className="hero-img-tagline">
-              Run.<br />Lift.<br />Sweat.
-            </p>
-          </div>
-
           <form className="signup" onSubmit={handleSignup}>
             <label className="signup-label" htmlFor="email-hero">
               Get the dispatch
@@ -74,7 +62,7 @@ export default function Home() {
             </button>
           </form>
         </div>
-      </header>
+      </div>
 
       {/* ABOUT */}
       <section className="about">
