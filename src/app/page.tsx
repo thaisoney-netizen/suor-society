@@ -46,7 +46,7 @@ export default function Home() {
         <div className="page">
           <form className="signup" onSubmit={handleSignup}>
             <label className="signup-label" htmlFor="email-hero">
-              Get the dispatch
+              Get the weekly dispatch
             </label>
             <input
               id="email-hero"
