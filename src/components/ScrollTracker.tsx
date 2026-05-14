@@ -40,7 +40,7 @@ export default function ScrollTracker() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const PX_PER_KM = 5000;
+  const PX_PER_KM = 50000;
   const dist = useKm
     ? distance / PX_PER_KM
     : (distance / PX_PER_KM) * 0.621371;
