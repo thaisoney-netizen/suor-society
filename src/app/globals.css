@@ -180,40 +180,36 @@ a { color: inherit; text-decoration: none; }
   justify-content: flex-end;
 }
 .signup {
-  margin-top: 0;
-  max-width: 420px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  max-width: none;
   margin-left: auto;
   margin-right: 0;
   border-top: 2px solid var(--asphalt);
   border-bottom: 1px solid var(--line);
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 0;
-  align-items: stretch;
 }
-@media (max-width: 720px) { .signup { grid-template-columns: 1fr; } }
+@media (max-width: 720px) {
+  .signup { flex-wrap: wrap; gap: 10px; }
+}
 .signup-label {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 700;
-  font-size: 11px; letter-spacing: .28em; text-transform: uppercase;
+  font-size: 13px; letter-spacing: .28em; text-transform: uppercase;
   color: var(--asphalt);
-  padding: 22px 22px 22px 0;
-  align-self: center;
   white-space: nowrap;
-  border-right: 1px solid var(--line);
-}
-@media (max-width: 720px) {
-  .signup-label { border-right: none; border-bottom: 1px solid var(--line); padding: 12px 0; }
 }
 .signup-input {
   background: transparent;
   border: 0;
   outline: none;
   font-family: var(--font-inter), sans-serif;
-  font-size: 17px;
+  font-size: 13px;
   color: var(--asphalt);
-  padding: 22px 22px;
-  width: 100%;
+  padding: 22px 0;
+  flex: 1;
+  min-width: 140px;
 }
 .signup-input::placeholder { color: var(--ink-3); }
 .signup-btn {
@@ -224,19 +220,14 @@ a { color: inherit; text-decoration: none; }
   font-size: 13px;
   letter-spacing: .14em;
   text-transform: uppercase;
-  padding: 10px 28px;
-  align-self: center;
+  padding: 10px 24px;
+  white-space: nowrap;
   cursor: pointer;
   display: inline-flex; align-items: center; gap: 10px;
   transition: background .12s ease-out;
 }
 .signup-btn:hover { background: #000; }
 .signup-btn:active { transform: translateY(1px); }
-.signup-btn .arrow { font-family: var(--font-jetbrains), monospace; font-weight: 400; }
-@media (max-width: 720px) {
-  .signup-input { padding: 12px 0; }
-  .signup-btn { padding: 10px 28px; font-size: 13px; align-self: center; justify-self: start; }
-}
 
 /* ============================================================
    ABOUT
