@@ -175,6 +175,10 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   border-bottom: 1px solid var(--line);
 }
+.signup-section > .page {
+  display: flex;
+  justify-content: flex-end;
+}
 .signup {
   margin-top: 0;
   max-width: 420px;
@@ -247,6 +251,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 10px; letter-spacing: .26em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 28px;
+  text-align: center;
 }
 .about-line {
   font-family: var(--font-barlow), sans-serif;
@@ -258,6 +263,9 @@ a { color: inherit; text-decoration: none; }
   color: var(--asphalt);
   max-width: 28ch;
   margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 .about-who {
   font-family: var(--font-inter), sans-serif;
@@ -266,6 +274,9 @@ a { color: inherit; text-decoration: none; }
   color: var(--ink-2);
   margin-top: 20px;
   max-width: 42ch;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 .about-foot {
   margin-top: 36px;
@@ -287,10 +298,11 @@ a { color: inherit; text-decoration: none; }
   border-bottom: 1px solid var(--line);
 }
 .links-head {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 20px;
-  align-items: end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
   border-bottom: 2px solid var(--asphalt);
   padding-bottom: 18px;
   margin-bottom: 0;
@@ -310,11 +322,6 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--font-jetbrains), monospace;
   font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink-3);
-  text-align: right;
-}
-@media (max-width: 720px) {
-  .links-head { grid-template-columns: 1fr; }
-  .links-head .lh-meta { text-align: left; }
 }
 
 .link-grid {
@@ -446,7 +453,7 @@ a { color: inherit; text-decoration: none; }
   padding: 48px 0 64px;
 }
 .foot-row {
-  display: flex; justify-content: space-between; align-items: baseline;
+  display: flex; justify-content: center; align-items: baseline;
   gap: 24px; flex-wrap: wrap;
 }
 .foot-wm {
