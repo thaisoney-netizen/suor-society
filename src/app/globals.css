@@ -100,13 +100,15 @@ a { color: inherit; text-decoration: none; }
    ABOVE FOLD
    ============================================================ */
 .above-fold {
-  /* desktop: transparent block wrapper, children use their own sizing */
+  display: block;
+  height: auto;
 }
 @media (max-width: 768px) {
   .above-fold {
     display: flex;
     flex-direction: column;
-    height: calc(100svh - 54px); /* 54px = scroll tracker on mobile */
+    height: calc(100vh - 54px);
+    height: calc(100svh - 54px);
   }
 }
 
@@ -115,7 +117,7 @@ a { color: inherit; text-decoration: none; }
    ============================================================ */
 .hero {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 90vh;
   overflow: hidden;
 }
