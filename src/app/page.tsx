@@ -29,18 +29,8 @@ export default function Home() {
               <span className="wm-society">SOCIETY</span>
             </a>
             <div className="nav-links">
-              <a href="/merch" className="nav-link">
-                Merch
-              </a>
-              <a
-                href="https://instagram.com/suorsociety"
-                className="ig"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>Instagram</span>
-                <span className="arrow" aria-hidden="true">↗</span>
-              </a>
+              <a href="/merch" className="nav-link">Shop</a>
+              <a href="/culture" className="nav-link">The Culture</a>
             </div>
           </div>
         </nav>
@@ -129,7 +119,7 @@ export default function Home() {
                 <h3 className="lc-title">Coming soon.</h3>
                 <p className="lc-desc">Details dropping. Stay close.</p>
               </div>
-              <div className="lc-meta">San Diego · Free · No drop</div>
+              <div className="lc-meta">Free · No drop</div>
             </span>
 
             <a className="link-card" href="#signup">
@@ -165,11 +155,33 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FOLLOW US */}
+      <section className="follow-us">
+        <div className="page">
+          <p className="follow-label">Follow us</p>
+          <a
+            href="https://instagram.com/suorsociety"
+            className="follow-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+          <a
+            href="https://youtube.com/@suorsociety"
+            className="follow-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            YouTube
+          </a>
+        </div>
+      </section>
+
       {/* FOOTER */}
       <footer className="footer">
         <div className="page foot-row">
           <span className="foot-wm">SUOR SOCIETY.</span>
-          <span className="foot-loc">San Diego</span>
         </div>
       </footer>
     </>

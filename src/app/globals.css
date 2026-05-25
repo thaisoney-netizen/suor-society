@@ -88,8 +88,10 @@ a { color: inherit; text-decoration: none; }
   padding-left: 12px;
   transform: translateY(-1px);
 }
-.nav .ig {
-  display: inline-flex; align-items: center; gap: 10px;
+.nav .nav-links {
+  display: flex; align-items: center; gap: 32px;
+}
+.nav .nav-link {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 600;
   font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
@@ -97,9 +99,7 @@ a { color: inherit; text-decoration: none; }
   padding: 10px 0;
   transition: opacity .12s ease-out;
 }
-.nav .ig svg { width: 16px; height: 16px; }
-.nav .ig .arrow { font-family: var(--font-jetbrains), monospace; font-weight: 400; opacity: .6; }
-.nav .ig:hover { opacity: .55; }
+.nav .nav-link:hover { opacity: .55; }
 
 /* ============================================================
    ABOVE FOLD
@@ -436,6 +436,31 @@ a { color: inherit; text-decoration: none; }
   background: currentColor;
   top: 2px; right: 2px;
 }
+
+/* ============================================================
+   FOLLOW US
+   ============================================================ */
+.follow-us {
+  width: 100%;
+  padding: 56px 0;
+  border-top: 1px solid var(--line);
+}
+.follow-label {
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 700;
+  font-size: 13px; letter-spacing: .28em; text-transform: uppercase;
+  color: var(--asphalt);
+  margin-bottom: 20px;
+}
+.follow-link {
+  display: block;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 15px;
+  color: var(--asphalt);
+  line-height: 1.8;
+  transition: opacity .12s ease-out;
+}
+.follow-link:hover { opacity: .5; }
 
 /* ============================================================
    FOOTER
