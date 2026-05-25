@@ -24,13 +24,13 @@ export default function Home() {
       <header className="hero">
         <nav className="nav">
           <div className="page nav-row">
-            <a href="#" className="wm" aria-label="Suor Society — home">
+            <a href="https://suorsociety.com" className="wm" aria-label="Suor Society — home">
               <span className="wm-suor">SUOR</span>
               <span className="wm-society">SOCIETY</span>
             </a>
             <div className="nav-links">
               <a href="/merch" className="nav-link">Shop</a>
-              <a href="/culture" className="nav-link">The Culture</a>
+              <a href="#culture" className="nav-link">The Culture</a>
             </div>
           </div>
         </nav>
@@ -137,7 +137,7 @@ export default function Home() {
               <div className="lc-meta">Weekly · Sundays · Inbox-only</div>
             </a>
 
-            <span className="link-card coming" aria-disabled="true">
+            <span id="culture" className="link-card coming" aria-disabled="true">
               <div className="lc-top">
                 <span className="lc-num">04</span>
                 <span className="lc-arrow" aria-hidden="true">·</span>
