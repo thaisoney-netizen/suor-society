@@ -5,8 +5,14 @@ import { useState } from "react";
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
 
-  function handleSignup(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSignup(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const email = (e.currentTarget.elements.namedItem("email") as HTMLInputElement).value;
+    await fetch("/api/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
     setSubmitted(true);
   }
 
