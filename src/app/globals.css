@@ -454,6 +454,94 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============================================================
+   NAV LINKS (multi-item row)
+   ============================================================ */
+.nav-links {
+  display: flex; align-items: center; gap: 28px;
+}
+.nav-link {
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  color: #fff;
+  transition: opacity .12s ease-out;
+}
+.nav-link:hover { opacity: .55; }
+.nav-link--dark { color: var(--asphalt); }
+.nav-link--dark:hover { opacity: .55; }
+
+/* ============================================================
+   SITE-NAV (static, light background pages)
+   ============================================================ */
+.site-nav {
+  border-bottom: 1px solid var(--line);
+}
+.site-nav .wm-suor--dark {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 26px; letter-spacing: .08em;
+  color: var(--asphalt);
+  line-height: 1;
+}
+.site-nav .wm-society--dark {
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 700;
+  font-size: 11px; letter-spacing: .42em;
+  color: var(--ink-2);
+  line-height: 1;
+  border-left: 1px solid var(--line-2);
+  padding-left: 12px;
+  transform: translateY(-1px);
+}
+.site-nav .ig--dark {
+  color: var(--asphalt);
+}
+
+/* ============================================================
+   MERCH PAGE
+   ============================================================ */
+.merch-stage {
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+}
+.merch-inner {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.merch-eye {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 10px; letter-spacing: .26em; text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 32px;
+}
+.merch-title {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: clamp(72px, 14vw, 180px);
+  line-height: .88;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--asphalt);
+}
+.merch-sub {
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 13px; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--ink-2);
+  margin-top: 40px;
+  max-width: 32ch;
+}
+.merch-back {
+  display: inline-block;
+  margin-top: 48px;
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ink-3);
+  transition: color .12s ease-out;
+}
+.merch-back:hover { color: var(--asphalt); }
+
+/* ============================================================
    SCROLL TRACKER
    ============================================================ */
 
