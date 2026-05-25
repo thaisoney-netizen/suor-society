@@ -1,7 +1,15 @@
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import { NextRequest } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const transporter = nodemailer.createTransport({
+  host: "smtp.purelymail.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASS,
+  },
+});
 
 export async function POST(req: NextRequest) {
   const { email } = await req.json();
@@ -10,7 +18,7 @@ export async function POST(req: NextRequest) {
     return Response.json({ error: "Invalid email" }, { status: 400 });
   }
 
-  await resend.emails.send({
+  await transporter.sendMail({
     from: "Suor Society <hello@suorsociety.com>",
     to: "hello@suorsociety.com",
     subject: "New signup",
