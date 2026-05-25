@@ -8,18 +8,8 @@ export default function Merch() {
             <span className="wm-society wm-society--dark">SOCIETY</span>
           </a>
           <div className="nav-links">
-            <a href="/merch" className="nav-link nav-link--dark">
-              Merch
-            </a>
-            <a
-              href="https://instagram.com/suorsociety"
-              className="ig ig--dark"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>Instagram</span>
-              <span className="arrow" aria-hidden="true">↗</span>
-            </a>
+            <a href="/merch" className="nav-link nav-link--dark">Shop</a>
+            <a href="/#culture" className="nav-link nav-link--dark">The Culture</a>
           </div>
         </div>
       </header>
