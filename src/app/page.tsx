@@ -28,15 +28,20 @@ export default function Home() {
               <span className="wm-suor">SUOR</span>
               <span className="wm-society">SOCIETY</span>
             </a>
-            <a
-              href="https://instagram.com/suorsociety"
-              className="ig"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>Instagram</span>
-              <span className="arrow" aria-hidden="true">↗</span>
-            </a>
+            <div className="nav-links">
+              <a href="/merch" className="nav-link">
+                Merch
+              </a>
+              <a
+                href="https://instagram.com/suorsociety"
+                className="ig"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Instagram</span>
+                <span className="arrow" aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
         </nav>
         <video className="hero-video" src="/hero.mp4" autoPlay muted loop playsInline />
