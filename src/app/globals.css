@@ -228,6 +228,7 @@ a { color: inherit; text-decoration: none; }
 }
 .signup-btn:hover { background: #000; }
 .signup-btn:active { transform: translateY(1px); }
+.signup-error { color: #cc3333; font-size: 12px; margin-top: 8px; }
 
 /* ============================================================
    ABOUT

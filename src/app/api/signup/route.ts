@@ -18,12 +18,17 @@ export async function POST(req: NextRequest) {
     return Response.json({ error: "Invalid email" }, { status: 400 });
   }
 
-  await transporter.sendMail({
-    from: "Suor Society <hello@suorsociety.com>",
-    to: "hello@suorsociety.com",
-    subject: "New signup",
-    text: `New signup: ${email}`,
-  });
+  try {
+    await transporter.sendMail({
+      from: "Suor Society <hello@suorsociety.com>",
+      to: "hello@suorsociety.com",
+      subject: "New signup",
+      text: `New signup: ${email}`,
+    });
+  } catch (err) {
+    console.error("Signup notification email failed:", err);
+    console.log("Signup email:", email);
+  }
 
   return Response.json({ ok: true });
 }
