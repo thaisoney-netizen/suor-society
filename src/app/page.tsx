@@ -4,16 +4,23 @@ import { useState } from "react";
 
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
+  const [signupError, setSignupError] = useState(false);
 
   async function handleSignup(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setSignupError(false);
     const email = (e.currentTarget.elements.namedItem("email") as HTMLInputElement).value;
-    await fetch("/api/signup", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email }),
-    });
-    setSubmitted(true);
+    try {
+      const res = await fetch("/api/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) throw new Error("server");
+      setSubmitted(true);
+    } catch {
+      setSignupError(true);
+    }
   }
 
   return (
@@ -61,6 +68,11 @@ export default function Home() {
             <button type="submit" className="signup-btn">
               {submitted ? "ON THE LIST." : "I'm in."}
             </button>
+            {signupError && (
+              <p className="signup-error">
+                Something went wrong. Email us at hello@suorsociety.com and we&rsquo;ll add you directly.
+              </p>
+            )}
           </form>
         </div>
       </div>
