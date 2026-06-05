@@ -45,7 +45,7 @@ const CA_RACES = [
     price: "Check site",
     status: "open" as const,
     statusLabel: "Open Registration",
-    url: "https://www.runguides.com/california/runs/half-marathon/all",
+    url: "https://www.alamedapint.com/",
   },
   {
     num: "05",
@@ -56,7 +56,7 @@ const CA_RACES = [
     price: "Check site",
     status: "open" as const,
     statusLabel: "Open Registration",
-    url: "https://www.runguides.com/california/runs/half-marathon/all",
+    url: "https://runsignup.com/Race/CA/SanRamon/BeerCityBishopRanch",
   },
   {
     num: "06",
@@ -89,7 +89,7 @@ const CA_RACES = [
     price: "Check site",
     status: "open" as const,
     statusLabel: "Open Registration",
-    url: "https://www.runguides.com/california/runs/half-marathon/all",
+    url: "https://otrraces.com/",
   },
   {
     num: "09",
