@@ -24,7 +24,7 @@ export default function Home() {
       <header className="hero">
         <nav className="nav">
           <div className="page nav-row">
-            <a href="https://suorsociety.com" className="wm" aria-label="Suor Society — home">
+            <a href="https://suorsociety.com" className="wm" aria-label="Suor Society, home">
               <span className="wm-suor">SUOR</span>
               <span className="wm-society">SOCIETY</span>
             </a>
@@ -71,7 +71,7 @@ export default function Home() {
         <div className="page">
           <div className="about-eye">What this is</div>
           <h2 className="about-line">
-            Gear drops, crew runs, workouts, race days, coffee stops, and everything in between.
+            Gear drops, crew runs, workouts, race days, coffee stops, and everything in between
           </h2>
           <p className="about-who">
             For the runner who lifts. The lifter who runs. And everyone figuring it out.
@@ -84,7 +84,7 @@ export default function Home() {
         <div className="page">
           <div className="links-head">
             <span className="lh-num">04 / Links</span>
-            <h2 className="lh-title">The board.</h2>
+            <h2 className="lh-title">The board</h2>
             <span className="lh-meta">04 entries · updated weekly</span>
           </div>
 
@@ -116,7 +116,7 @@ export default function Home() {
               </div>
               <div className="lc-body">
                 <span className="lc-eye">Next crew run</span>
-                <h3 className="lc-title">Coming soon.</h3>
+                <h3 className="lc-title">Coming soon</h3>
                 <p className="lc-desc">Details dropping. Stay close.</p>
               </div>
               <div className="lc-meta">Free · No drop</div>
@@ -137,20 +137,20 @@ export default function Home() {
               <div className="lc-meta">Weekly · Sundays · Inbox-only</div>
             </a>
 
-            <span id="culture" className="link-card coming" aria-disabled="true">
+            <a id="culture" className="link-card dark" href="/culture">
               <div className="lc-top">
                 <span className="lc-num">04</span>
-                <span className="lc-arrow" aria-hidden="true">·</span>
+                <span className="lc-arrow" aria-hidden="true">↗</span>
               </div>
               <div className="lc-body">
-                <span className="lc-eye">Coming soon</span>
-                <h3 className="lc-title">The culture archive.</h3>
+                <span className="lc-eye">The Culture Archive</span>
+                <h3 className="lc-title">2026 Race Guide</h3>
                 <p className="lc-desc">
-                  Editorial spotlights, shoe drops, crew interviews. Building it now.
+                  Best open entry races in California and the US. All certified. No qualifier needed.
                 </p>
               </div>
-              <div className="lc-meta">In the build · Summer 2026</div>
-            </span>
+              <div className="lc-meta">New · June 2026</div>
+            </a>
           </div>
         </div>
       </section>
@@ -181,7 +181,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="footer">
         <div className="page foot-row">
-          <span className="foot-wm">SUOR SOCIETY.</span>
+          <span className="foot-wm">SUOR SOCIETY</span>
         </div>
       </footer>
     </>

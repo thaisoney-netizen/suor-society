@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Suor Society — Hybrid running culture. San Diego.",
+  title: "Suor Society, a performance culture page.",
   description: "Gear drops, crew runs, race days, coffee stops, and everything in between.",
 };
 

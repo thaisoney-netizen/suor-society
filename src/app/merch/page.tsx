@@ -3,7 +3,7 @@ export default function Merch() {
     <>
       <header className="site-nav">
         <div className="page nav-row">
-          <a href="/" className="wm" aria-label="Suor Society — home">
+          <a href="/" className="wm" aria-label="Suor Society, home">
             <span className="wm-suor wm-suor--dark">SUOR</span>
             <span className="wm-society wm-society--dark">SOCIETY</span>
           </a>
@@ -17,7 +17,7 @@ export default function Merch() {
       <main className="merch-stage">
         <div className="page merch-inner">
           <p className="merch-eye">Suor Society / Merch</p>
-          <h1 className="merch-title">Drop<br />Coming<br />Soon.</h1>
+          <h1 className="merch-title">Drop<br />Coming<br />Soon</h1>
           <p className="merch-sub">
             First drop in the build. Stay close.
           </p>
@@ -29,7 +29,7 @@ export default function Merch() {
 
       <footer className="footer">
         <div className="page foot-row">
-          <span className="foot-wm">SUOR SOCIETY.</span>
+          <span className="foot-wm">SUOR SOCIETY</span>
           <span className="foot-loc">San Diego</span>
         </div>
       </footer>
