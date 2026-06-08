@@ -2,10 +2,10 @@ name: LinkedIn Marketing Jobs Alert
 
 on:
   schedule:
-    # 8 AM Pacific (UTC-7 summer / UTC-8 winter) → fire at 15:00 UTC
-    - cron: '0 15 * * *'
-    # 8 PM Pacific → fire at 03:00 UTC (next calendar day)
-    - cron: '0 3 * * *'
+    # 8:20 AM Pacific (UTC-7 summer) → 15:20 UTC
+    - cron: '20 15 * * *'
+    # 4:20 PM Pacific → 23:20 UTC
+    - cron: '20 23 * * *'
   # Allow manual trigger from the Actions tab
   workflow_dispatch:
 
