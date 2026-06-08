@@ -41,7 +41,16 @@ export default function Home() {
             </div>
           </div>
         </nav>
-        <video className="hero-video" src="/hero.mp4" autoPlay muted loop playsInline />
+        <video
+          className="hero-video"
+          src="/hero.mp4"
+          poster="/hero.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        />
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-text">
           <p className="hero-tagline">Run.<br />Lift.<br />Sweat.</p>
