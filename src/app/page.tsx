@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SiteHeader from "@/components/SiteHeader";
 
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
@@ -29,18 +30,7 @@ export default function Home() {
       <div className="above-fold">
       {/* HERO — full viewport with nav overlay */}
       <header className="hero">
-        <nav className="nav">
-          <div className="page nav-row">
-            <a href="https://suorsociety.com" className="wm" aria-label="Suor Society, home">
-              <span className="wm-suor">SUOR</span>
-              <span className="wm-society">SOCIETY</span>
-            </a>
-            <div className="nav-links">
-              <a href="/merch" className="nav-link">Shop</a>
-              <a href="#culture" className="nav-link">The Culture</a>
-            </div>
-          </div>
-        </nav>
+        <SiteHeader variant="hero" />
         <video
           className="hero-video"
           src="/hero.mp4"
@@ -53,13 +43,13 @@ export default function Home() {
         />
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-text">
-          <p className="hero-tagline">Run.<br />Lift.<br />Sweat.</p>
+          <p className="hero-tagline">The home of<br />hybrid running<br />athletes</p>
           <p className="hero-sub">a performance culture page</p>
         </div>
       </header>
 
       {/* SIGNUP */}
-      <div className="signup-section" style={{flexShrink: 0}}>
+      <div id="signup" className="signup-section" style={{flexShrink: 0}}>
         <div className="page">
           <form className="signup" onSubmit={handleSignup}>
             <label className="signup-label" htmlFor="email-hero">
@@ -87,26 +77,15 @@ export default function Home() {
       </div>
       </div>{/* /above-fold */}
 
-      {/* ABOUT */}
-      <section className="about">
-        <div className="page">
-          <div className="about-eye">What this is</div>
-          <h2 className="about-line">
-            Gear drops, crew runs, workouts, race days, coffee stops, and everything in between
-          </h2>
-          <p className="about-who">
-            For the runner who lifts. The lifter who runs. And everyone figuring it out.
-          </p>
-        </div>
-      </section>
-
-      {/* LINKS */}
+      {/* LINKS — the board, news-style index */}
       <section className="links">
         <div className="page">
           <div className="links-head">
-            <span className="lh-num">04 / Links</span>
-            <h2 className="lh-title">The board</h2>
-            <span className="lh-meta">04 entries · updated weekly</span>
+            <div className="section-bar">
+              <span className="section-bar-label">The Board</span>
+              <span className="section-bar-date">Updated weekly · June 2026</span>
+            </div>
+            <h2 className="lh-title">Latest from the crew</h2>
           </div>
 
           <div className="link-grid">
@@ -117,8 +96,11 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <div className="lc-top">
-                <span className="lc-num">01</span>
-                <span className="lc-arrow" aria-hidden="true">↗</span>
+                <span className="lc-cat">Social</span>
+                <span className="lc-top-r">
+                  <span className="lc-date">Daily</span>
+                  <span className="lc-arrow" aria-hidden="true">↗</span>
+                </span>
               </div>
               <div className="lc-body">
                 <span className="lc-eye">Follow</span>
@@ -132,8 +114,11 @@ export default function Home() {
 
             <span className="link-card coming" aria-disabled="true">
               <div className="lc-top">
-                <span className="lc-num">02</span>
-                <span className="lc-arrow" aria-hidden="true">·</span>
+                <span className="lc-cat">Events</span>
+                <span className="lc-top-r">
+                  <span className="lc-date">Soon</span>
+                  <span className="lc-arrow" aria-hidden="true">·</span>
+                </span>
               </div>
               <div className="lc-body">
                 <span className="lc-eye">Next crew run</span>
@@ -145,8 +130,11 @@ export default function Home() {
 
             <a className="link-card" href="#signup">
               <div className="lc-top">
-                <span className="lc-num">03</span>
-                <span className="lc-arrow" aria-hidden="true">→</span>
+                <span className="lc-cat">Dispatch</span>
+                <span className="lc-top-r">
+                  <span className="lc-date">Weekly</span>
+                  <span className="lc-arrow" aria-hidden="true">→</span>
+                </span>
               </div>
               <div className="lc-body">
                 <span className="lc-eye">The dispatch</span>
@@ -160,8 +148,11 @@ export default function Home() {
 
             <a id="culture" className="link-card dark" href="/culture">
               <div className="lc-top">
-                <span className="lc-num">04</span>
-                <span className="lc-arrow" aria-hidden="true">↗</span>
+                <span className="lc-cat">Guide</span>
+                <span className="lc-top-r">
+                  <span className="lc-date">June 2026</span>
+                  <span className="lc-arrow" aria-hidden="true">↗</span>
+                </span>
               </div>
               <div className="lc-body">
                 <span className="lc-eye">The Culture Archive</span>
@@ -173,6 +164,19 @@ export default function Home() {
               <div className="lc-meta">New · June 2026</div>
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section className="about">
+        <div className="page">
+          <div className="about-eye">What this is</div>
+          <h2 className="about-line">
+            Gear drops, crew runs, workouts, race days, coffee stops, and everything in between
+          </h2>
+          <p className="about-who">
+            For the runner who lifts. The lifter who runs. And everyone figuring it out.
+          </p>
         </div>
       </section>
 

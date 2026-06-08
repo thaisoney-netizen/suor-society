@@ -1,18 +1,9 @@
+import SiteHeader from "@/components/SiteHeader";
+
 export default function Merch() {
   return (
     <>
-      <header className="site-nav">
-        <div className="page nav-row">
-          <a href="/" className="wm" aria-label="Suor Society, home">
-            <span className="wm-suor wm-suor--dark">SUOR</span>
-            <span className="wm-society wm-society--dark">SOCIETY</span>
-          </a>
-          <div className="nav-links">
-            <a href="/merch" className="nav-link nav-link--dark">Shop</a>
-            <a href="/#culture" className="nav-link nav-link--dark">The Culture</a>
-          </div>
-        </div>
-      </header>
+      <SiteHeader variant="light" />
 
       <main className="merch-stage">
         <div className="page merch-inner">
