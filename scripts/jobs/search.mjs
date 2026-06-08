@@ -261,12 +261,28 @@ async function main() {
     });
 
     if (liAt) {
-      await context.addCookies([
-        { name: 'li_at', value: liAt, domain: '.linkedin.com', path: '/', secure: true, httpOnly: true },
-      ]);
+      const cookies = [
+        { name: 'li_at',      value: liAt,                                    domain: '.linkedin.com', path: '/', secure: true, httpOnly: true },
+      ];
+      if (process.env.LINKEDIN_JSESSIONID) {
+        cookies.push({ name: 'JSESSIONID', value: process.env.LINKEDIN_JSESSIONID, domain: '.linkedin.com', path: '/', secure: true, httpOnly: false });
+      }
+      if (process.env.LINKEDIN_BCOOKIE) {
+        cookies.push({ name: 'bcookie',    value: process.env.LINKEDIN_BCOOKIE,    domain: '.linkedin.com', path: '/', secure: true, httpOnly: false });
+      }
+      await context.addCookies(cookies);
     }
 
     const page = await context.newPage();
+
+    // Warm up the session before hitting search URLs
+    console.log('\nWarming up session…');
+    try {
+      await page.goto('https://www.linkedin.com/feed/', { waitUntil: 'domcontentloaded', timeout: 20000 });
+      await page.waitForTimeout(2000);
+    } catch {
+      // non-fatal — proceed anyway
+    }
 
     sdJobs     = await collectCategory(page, SD_24H,  SD_WEEK,  'San Diego',  sentIds, seenThisRun);
     remoteJobs = await collectCategory(page, REM_24H, REM_WEEK, 'Remote US',  sentIds, seenThisRun);

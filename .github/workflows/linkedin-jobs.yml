@@ -35,6 +35,8 @@ jobs:
       - name: Search LinkedIn and send email
         env:
           LINKEDIN_LI_AT: ${{ secrets.LINKEDIN_LI_AT }}
+          LINKEDIN_JSESSIONID: ${{ secrets.LINKEDIN_JSESSIONID }}
+          LINKEDIN_BCOOKIE: ${{ secrets.LINKEDIN_BCOOKIE }}
           MAIL_USER: ${{ secrets.MAIL_USER }}
           MAIL_PASS: ${{ secrets.MAIL_PASS }}
         run: node scripts/jobs/search.mjs
