@@ -609,9 +609,11 @@ export default function CultureArchive() {
             <span className="wm-society wm-society--dark">SOCIETY</span>
           </a>
           <div className="nav-links">
-            <a href="/#about"   className="nav-link nav-link--dark">About</a>
-            <a href="/merch"    className="nav-link nav-link--dark">Shop</a>
-            <a href="/culture"  className="nav-link nav-link--dark">The Culture</a>
+            <a href="/culture"   className="nav-link nav-link--dark">Culture</a>
+            <a href="/culture"   className="nav-link nav-link--dark">Race Picks</a>
+            <a href="/crew"      className="nav-link nav-link--dark">Crew</a>
+            <a href="/#dispatch" className="nav-link nav-link--dark">Dispatch</a>
+            <a href="/about"     className="nav-link nav-link--dark">About</a>
           </div>
         </div>
       </header>
