@@ -1,9 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Bebas_Neue, Barlow_Condensed, Inter, JetBrains_Mono } from "next/font/google";
+import { Bebas_Neue, Barlow_Condensed, Inter, JetBrains_Mono, Archivo_Black } from "next/font/google";
 import "./globals.css";
 import ScrollTracker from "@/components/ScrollTracker";
 
 const bebasNeue = Bebas_Neue({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const archivoBlack = Archivo_Black({
   weight: "400",
   subsets: ["latin"],
   display: "swap",
@@ -47,6 +53,7 @@ export default function RootLayout({
       lang="en"
       style={{
         "--font-bebas": bebasNeue.style.fontFamily,
+        "--font-archivo": archivoBlack.style.fontFamily,
         "--font-barlow": barlowCondensed.style.fontFamily,
         "--font-inter": inter.style.fontFamily,
         "--font-jetbrains": jetbrainsMono.style.fontFamily,
