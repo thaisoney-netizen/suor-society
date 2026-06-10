@@ -64,7 +64,6 @@ export default function Home() {
             </a>
             <div className="nav-links">
               <a href="#about" className="nav-link">About</a>
-              <a href="/merch" className="nav-link">Shop</a>
               <a href="#culture" className="nav-link">The Culture</a>
             </div>
           </div>
