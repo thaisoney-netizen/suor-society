@@ -2,6 +2,30 @@
 
 import { useState } from "react";
 
+// ── BOARD POSTS ──
+// To publish a new post: replace one of the `null` slots below with an object.
+// Order = display order. Keep this list at 3 entries.
+type BoardPost = {
+  href: string;
+  img: string;
+  eyebrow: string;
+  title: string;
+  desc: string;
+  meta: string;
+};
+const BOARD_POSTS: (BoardPost | null)[] = [
+  {
+    href: "/culture",
+    img: "/race-hero.jpg",
+    eyebrow: "The Culture Archive",
+    title: "2026 Race Guide",
+    desc: "Best open entry races in California and the US. All certified. No qualifier needed.",
+    meta: "New · June 2026 ↗",
+  },
+  null, // placeholder slot
+  null, // placeholder slot
+];
+
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
   const [signupError, setSignupError] = useState(false);
@@ -92,77 +116,48 @@ export default function Home() {
       </section>
 
       {/* LINKS */}
-      <section className="links">
+      <section className="links" id="culture">
         <div className="page">
           <div className="links-head">
             <span className="lh-num">04 / Links</span>
             <h2 className="lh-title">The board</h2>
-            <span className="lh-meta">04 entries · updated weekly</span>
+            <span className="lh-meta">Updated weekly</span>
           </div>
 
           <div className="link-grid">
-            <a
-              className="link-card"
-              href="https://instagram.com/suorsociety"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="lc-top">
-                <span className="lc-num">01</span>
-                <span className="lc-arrow" aria-hidden="true">↗</span>
-              </div>
-              <div className="lc-body">
-                <span className="lc-eye">Follow</span>
-                <h3 className="lc-title">Instagram</h3>
-                <p className="lc-desc">
-                  The daily feed. Crew shots, hot takes, shoe drops, half marathon build.
-                </p>
-              </div>
-              <div className="lc-meta">@suorsociety</div>
-            </a>
+            {BOARD_POSTS.map((post, i) =>
+              post ? (
+                <a key={i} className="link-card" href={post.href}>
+                  <div className="lc-img">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={post.img} alt={post.title} />
+                  </div>
+                  <div className="lc-content">
+                    <span className="lc-eye">{post.eyebrow}</span>
+                    <h3 className="lc-title">{post.title}</h3>
+                    <p className="lc-desc">{post.desc}</p>
+                    <div className="lc-meta">{post.meta}</div>
+                  </div>
+                </a>
+              ) : (
+                <span key={i} className="link-card coming" aria-disabled="true">
+                  <div className="lc-img lc-img--dark">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/hero.jpg" alt="" aria-hidden="true" />
+                  </div>
+                  <div className="lc-content">
+                    <span className="lc-eye">Next Post</span>
+                    <h3 className="lc-title">Coming Soon</h3>
+                    <p className="lc-desc">Placeholder. Next drop loading.</p>
+                    <div className="lc-meta">In the build</div>
+                  </div>
+                </span>
+              )
+            )}
+          </div>
 
-            <span className="link-card coming" aria-disabled="true">
-              <div className="lc-top">
-                <span className="lc-num">02</span>
-                <span className="lc-arrow" aria-hidden="true">·</span>
-              </div>
-              <div className="lc-body">
-                <span className="lc-eye">Next crew run</span>
-                <h3 className="lc-title">Coming soon</h3>
-                <p className="lc-desc">Details dropping. Stay close.</p>
-              </div>
-              <div className="lc-meta">Free · No drop</div>
-            </span>
-
-            <a className="link-card" href="#signup">
-              <div className="lc-top">
-                <span className="lc-num">03</span>
-                <span className="lc-arrow" aria-hidden="true">→</span>
-              </div>
-              <div className="lc-body">
-                <span className="lc-eye">The dispatch</span>
-                <h3 className="lc-title">Email signup</h3>
-                <p className="lc-desc">
-                  One note a week. Crew recap, one thing worth reading, one thing worth running to.
-                </p>
-              </div>
-              <div className="lc-meta">Weekly · Sundays · Inbox-only</div>
-            </a>
-
-            <a id="culture" className="link-card dark" href="/culture">
-              <div className="lc-top">
-                <span className="lc-num">04</span>
-                <span className="lc-arrow" aria-hidden="true">↗</span>
-              </div>
-              <div className="lc-body">
-                <span className="lc-eye">The Culture Archive</span>
-                <h3 className="lc-title">2026 Race Guide</h3>
-                <p className="lc-desc">
-                  Best open entry races in California and the US. All certified. No qualifier needed.
-                </p>
-              </div>
-              <div className="lc-meta">New · June 2026</div>
-            </a>
+          <div className="board-cta">
+            <a href="/culture" className="board-more">See all posts ↗</a>
           </div>
         </div>
       </section>
