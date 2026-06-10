@@ -15,7 +15,7 @@ type BoardPost = {
 };
 const BOARD_POSTS: BoardPost[] = [
   {
-    href: "/culture",
+    href: "/race-picks",
     img: "/race-hero.jpg",
     eyebrow: "The Culture Archive",
     title: "2026 Race Guide",
@@ -78,7 +78,7 @@ export default function Home() {
               SUOR SOCIETY covers the lift-and-run world. Races worth signing up for, gear worth knowing about, and the people doing both around a full-time job.
             </p>
             <div className="hero-ctas">
-              <a href="/culture" className="hero-cta hero-cta--primary">Read the Race Guide</a>
+              <a href="/race-picks" className="hero-cta hero-cta--primary">Read the Race Guide</a>
               <a href="#dispatch" className="hero-cta hero-cta--secondary">Get The Dispatch</a>
             </div>
           </div>
