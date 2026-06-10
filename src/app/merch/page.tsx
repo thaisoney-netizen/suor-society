@@ -8,6 +8,7 @@ export default function Merch() {
             <span className="wm-society wm-society--dark">SOCIETY</span>
           </a>
           <div className="nav-links">
+            <a href="/#about" className="nav-link nav-link--dark">About</a>
             <a href="/merch" className="nav-link nav-link--dark">Shop</a>
             <a href="/#culture" className="nav-link nav-link--dark">The Culture</a>
           </div>

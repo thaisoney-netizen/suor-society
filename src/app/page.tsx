@@ -60,6 +60,7 @@ export default function Home() {
               <span className="wm-society">SOCIETY</span>
             </a>
             <div className="nav-links">
+              <a href="#about" className="nav-link">About</a>
               <a href="/merch" className="nav-link">Shop</a>
               <a href="#culture" className="nav-link">The Culture</a>
             </div>
@@ -150,7 +151,7 @@ export default function Home() {
       </section>
 
       {/* ABOUT */}
-      <section className="about">
+      <section className="about" id="about">
         <div className="page">
           <div className="about-eye">What this is</div>
           <h2 className="about-line">
