@@ -102,19 +102,6 @@ export default function Home() {
       </div>
       </div>{/* /above-fold */}
 
-      {/* ABOUT */}
-      <section className="about">
-        <div className="page">
-          <div className="about-eye">What this is</div>
-          <h2 className="about-line">
-            Gear drops, crew runs, workouts, race days, coffee stops, and everything in between
-          </h2>
-          <p className="about-who">
-            For the runner who lifts. The lifter who runs. And everyone figuring it out.
-          </p>
-        </div>
-      </section>
-
       {/* LINKS */}
       <section className="links" id="culture">
         <div className="page">
@@ -159,6 +146,19 @@ export default function Home() {
           <div className="board-cta">
             <a href="/culture" className="board-more">See all posts ↗</a>
           </div>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section className="about">
+        <div className="page">
+          <div className="about-eye">What this is</div>
+          <h2 className="about-line">
+            Gear drops, crew runs, workouts, race days, coffee stops, and everything in between
+          </h2>
+          <p className="about-who">
+            For the runner who lifts. The lifter who runs. And everyone figuring it out.
+          </p>
         </div>
       </section>
 
