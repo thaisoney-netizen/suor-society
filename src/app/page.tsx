@@ -63,9 +63,11 @@ export default function Home() {
               <span className="wm-society">SOCIETY</span>
             </a>
             <div className="nav-links">
+              <a href="/culture" className="nav-link">Culture</a>
+              <a href="/culture" className="nav-link">Race Picks</a>
+              <a href="/crew" className="nav-link">Crew</a>
+              <a href="#dispatch" className="nav-link">Dispatch</a>
               <a href="#about" className="nav-link">About</a>
-              <a href="/merch" className="nav-link">Shop</a>
-              <a href="#culture" className="nav-link">The Culture</a>
             </div>
           </div>
         </nav>
@@ -88,13 +90,13 @@ export default function Home() {
           </p>
           <div className="hero-ctas">
             <a href="/culture" className="hero-cta hero-cta--primary">Read the Race Guide</a>
-            <a href="#signup" className="hero-cta hero-cta--secondary">Get The Dispatch</a>
+            <a href="#dispatch" className="hero-cta hero-cta--secondary">Get The Dispatch</a>
           </div>
         </div>
       </header>
 
       {/* SIGNUP */}
-      <div className="signup-section" id="signup" style={{flexShrink: 0}}>
+      <div className="signup-section" id="dispatch" style={{flexShrink: 0}}>
         <div className="page">
           <form className="signup" onSubmit={handleSignup}>
             <label className="signup-label" htmlFor="email-hero">
