@@ -3,8 +3,7 @@
 import { useState } from "react";
 
 // ── BOARD POSTS ──
-// To publish a new post: replace one of the `null` slots below with an object.
-// Order = display order. Keep this list at 3 entries.
+// To publish a new post: add an object to this array. Up to 3 renders as a 3-column grid.
 type BoardPost = {
   href: string;
   img: string;
@@ -13,7 +12,7 @@ type BoardPost = {
   desc: string;
   meta: string;
 };
-const BOARD_POSTS: (BoardPost | null)[] = [
+const BOARD_POSTS: BoardPost[] = [
   {
     href: "/culture",
     img: "/race-hero.jpg",
@@ -22,8 +21,6 @@ const BOARD_POSTS: (BoardPost | null)[] = [
     desc: "Best open entry races in California and the US. All certified. No qualifier needed.",
     meta: "New · June 2026 ↗",
   },
-  null, // placeholder slot
-  null, // placeholder slot
 ];
 
 export default function Home() {
@@ -46,6 +43,12 @@ export default function Home() {
       setSignupError(true);
     }
   }
+
+  const cols = Math.min(BOARD_POSTS.length, 3);
+  const gridStyle: React.CSSProperties = {
+    gridTemplateColumns: `repeat(${cols}, 1fr)`,
+    ...(cols === 1 && { maxWidth: "440px" }),
+  };
 
   return (
     <>
@@ -70,7 +73,7 @@ export default function Home() {
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-text">
           <p className="hero-tagline">Run.<br />Lift.<br />Sweat.</p>
-          <p className="hero-sub">a performance culture page</p>
+          <p className="hero-sub">a hybrid running culture page</p>
         </div>
       </header>
 
@@ -112,36 +115,21 @@ export default function Home() {
             <span className="lh-meta">Updated weekly</span>
           </div>
 
-          <div className="link-grid">
-            {BOARD_POSTS.map((post, i) =>
-              post ? (
-                <a key={i} className="link-card" href={post.href}>
-                  <div className="lc-img">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={post.img} alt={post.title} />
-                  </div>
-                  <div className="lc-content">
-                    <span className="lc-eye">{post.eyebrow}</span>
-                    <h3 className="lc-title">{post.title}</h3>
-                    <p className="lc-desc">{post.desc}</p>
-                    <div className="lc-meta">{post.meta}</div>
-                  </div>
-                </a>
-              ) : (
-                <span key={i} className="link-card coming" aria-disabled="true">
-                  <div className="lc-img lc-img--dark">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/hero.jpg" alt="" aria-hidden="true" />
-                  </div>
-                  <div className="lc-content">
-                    <span className="lc-eye">Next Post</span>
-                    <h3 className="lc-title">Coming Soon</h3>
-                    <p className="lc-desc">Placeholder. Next drop loading.</p>
-                    <div className="lc-meta">In the build</div>
-                  </div>
-                </span>
-              )
-            )}
+          <div className="link-grid" style={gridStyle}>
+            {BOARD_POSTS.map((post, i) => (
+              <a key={i} className="link-card" href={post.href}>
+                <div className="lc-img">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={post.img} alt={post.title} />
+                </div>
+                <div className="lc-content">
+                  <span className="lc-eye">{post.eyebrow}</span>
+                  <h3 className="lc-title">{post.title}</h3>
+                  <p className="lc-desc">{post.desc}</p>
+                  <div className="lc-meta">{post.meta}</div>
+                </div>
+              </a>
+            ))}
           </div>
 
           <div className="board-cta">
@@ -153,13 +141,24 @@ export default function Home() {
       {/* ABOUT */}
       <section className="about" id="about">
         <div className="page">
-          <div className="about-eye">What this is</div>
-          <h2 className="about-line">
-            Gear drops, crew runs, workouts, race days, coffee stops, and everything in between
-          </h2>
-          <p className="about-who">
-            For the runner who lifts. The lifter who runs. And everyone figuring it out.
-          </p>
+          <p className="about-eye">About</p>
+          <div className="about-narrative">
+            <p className="about-pg-p">
+              <strong>SUOR SOCIETY</strong> is a hybrid running culture page for people who run and lift around a real life.
+            </p>
+            <p className="about-pg-p">
+              It started because I went looking for running and hybrid accounts to follow and everything felt built for people who train full time. The 1:10 half. Two sessions a day. I loved the content and still felt left out by it.
+            </p>
+            <p className="about-pg-p">
+              So this is the page I wanted and couldn&rsquo;t find. We keep the greats in the feed. We just add the part that usually goes missing: that fast half took years, and the person ran it full time. Their normal isn&rsquo;t your normal, and it doesn&rsquo;t have to be for your Tuesday to count.
+            </p>
+            <p className="about-pg-p">
+              I&rsquo;m Thais. Marketer by day, hybrid athlete the rest of the time. I lift at Performance 360, I&rsquo;m training for my first half, and I run Mission Bay, North Park, and PB around a full-time job like everyone else here.
+            </p>
+            <p className="about-pg-p about-closing">
+              Two sports that complete each other, not compete. Consistency over perfection. The sweat, and the coffee after.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -174,14 +173,6 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             Instagram
-          </a>
-          <a
-            href="https://youtube.com/@suorsociety"
-            className="follow-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            YouTube
           </a>
         </div>
       </section>
