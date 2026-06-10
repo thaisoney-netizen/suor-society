@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SiteNav from "@/components/SiteNav";
 
 // ── BOARD POSTS ──
 // To publish a new post: add an object to this array. Up to 3 renders as a 3-column grid.
@@ -56,21 +57,7 @@ export default function Home() {
       <div className="above-fold">
       {/* HERO — full viewport with nav overlay */}
       <header className="hero">
-        <nav className="nav">
-          <div className="page nav-row">
-            <a href="https://suorsociety.com" className="wm" aria-label="Suor Society, home">
-              <span className="wm-suor">SUOR</span>
-              <span className="wm-society">SOCIETY</span>
-            </a>
-            <div className="nav-links">
-              <a href="/culture" className="nav-link">Culture</a>
-              <a href="/culture" className="nav-link">Race Picks</a>
-              <a href="/crew" className="nav-link">Crew</a>
-              <a href="#dispatch" className="nav-link">Dispatch</a>
-              <a href="#about" className="nav-link">About</a>
-            </div>
-          </div>
-        </nav>
+        <SiteNav variant="overlay" />
         <video
           className="hero-video"
           src="/hero.mp4"
@@ -82,15 +69,18 @@ export default function Home() {
         />
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-text">
-          <h1 className="hero-headline">
-            For runners, for lifters, for hybrids, for the sweat.
-          </h1>
-          <p className="hero-sub">
-            SUOR SOCIETY covers the lift-and-run world. Races worth signing up for, gear worth knowing about, and the people doing both around a full-time job.
-          </p>
-          <div className="hero-ctas">
-            <a href="/culture" className="hero-cta hero-cta--primary">Read the Race Guide</a>
-            <a href="#dispatch" className="hero-cta hero-cta--secondary">Get The Dispatch</a>
+          <div className="page">
+            <p className="hero-eye">Hybrid running culture · San Diego</p>
+            <h1 className="hero-headline">
+              For runners, for lifters, for hybrids, for the sweat.
+            </h1>
+            <p className="hero-sub">
+              SUOR SOCIETY covers the lift-and-run world. Races worth signing up for, gear worth knowing about, and the people doing both around a full-time job.
+            </p>
+            <div className="hero-ctas">
+              <a href="/culture" className="hero-cta hero-cta--primary">Read the Race Guide</a>
+              <a href="#dispatch" className="hero-cta hero-cta--secondary">Get The Dispatch</a>
+            </div>
           </div>
         </div>
       </header>
