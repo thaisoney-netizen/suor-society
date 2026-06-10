@@ -2,6 +2,7 @@
 
 :root {
   --paper:   #FFFFFF;
+  --bone:    #ECE7DC;
   --asphalt: #141414;
   --slate:   #2D3340;
   --slate-2: #3A4153;
@@ -132,28 +133,43 @@ a { color: inherit; text-decoration: none; }
   object-fit: cover;
   object-position: center center;
 }
+/* Asphalt over the footage — kept dark so Bone text never drops out on a
+   bright frame. Solid mid-tone across the centre where the headline sits,
+   weighted darker top (nav) and bottom for depth. */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.15) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(20,20,20,.62) 0%,
+    rgba(20,20,20,.44) 28%,
+    rgba(20,20,20,.44) 64%,
+    rgba(20,20,20,.72) 100%
+  );
   pointer-events: none;
 }
 .hero-text {
   position: absolute;
-  bottom: 80px;
-  right: 60px;
-  left: auto;
-  text-align: right;
+  inset: 0;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 72px 24px 40px;
 }
-.hero-tagline {
+.hero-headline {
   font-family: var(--font-bebas), sans-serif;
-  font-size: clamp(52px, 8vw, 110px);
-  line-height: .88;
-  letter-spacing: .04em;
+  font-weight: 400;
+  font-size: clamp(38px, 6.4vw, 96px);
+  line-height: .92;
+  letter-spacing: .03em;
   text-transform: uppercase;
-  color: #ffffff;
-  text-shadow: 0 2px 32px rgba(0,0,0,.35);
+  color: var(--bone);
+  text-shadow: 0 2px 32px rgba(0,0,0,.45);
+  text-wrap: balance;
+  max-width: 18ch;
 }
 .hero-sub {
   font-family: var(--font-barlow), sans-serif;
@@ -161,16 +177,45 @@ a { color: inherit; text-decoration: none; }
   font-size: 12px;
   letter-spacing: .28em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.65);
-  margin-top: 16px;
+  color: rgba(236,231,220,.72);
+  margin-top: 20px;
 }
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+.hero-cta {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 14px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: 13px 28px;
+  white-space: nowrap;
+  transition: background .14s ease-out, color .14s ease-out, border-color .14s ease-out;
+}
+.hero-cta--primary {
+  background: var(--bone);
+  color: var(--asphalt);
+  border: 1px solid var(--bone);
+}
+.hero-cta--primary:hover { background: #fff; border-color: #fff; }
+.hero-cta--secondary {
+  background: transparent;
+  color: var(--bone);
+  border: 1px solid rgba(236,231,220,.5);
+}
+.hero-cta--secondary:hover { border-color: var(--bone); background: rgba(236,231,220,.08); }
 @media (max-width: 768px) {
-  .hero { min-height: 300px; }
-  .hero-text { bottom: 100px; right: 22px; left: auto; text-align: right; }
-  .hero-tagline { font-size: 42px; }
+  .hero { min-height: 320px; }
+  .hero-text { padding: 64px 22px 36px; }
 }
 @media (max-width: 480px) {
-  .hero-tagline { font-size: 36px; }
+  .hero-headline { font-size: clamp(30px, 8.5vw, 44px); }
+  .hero-ctas { flex-direction: column; gap: 12px; width: 100%; max-width: 280px; }
+  .hero-cta { width: 100%; text-align: center; }
 }
 
 /* email signup */
