@@ -1,3 +1,5 @@
+import SiteNav from "@/components/SiteNav";
+
 export const metadata = {
   title: "Crew — Suor Society",
   description:
@@ -7,21 +9,7 @@ export const metadata = {
 export default function Crew() {
   return (
     <>
-      <header className="site-nav">
-        <div className="page nav-row">
-          <a href="/" className="wm" aria-label="Suor Society, home">
-            <span className="wm-suor wm-suor--dark">SUOR</span>
-            <span className="wm-society wm-society--dark">SOCIETY</span>
-          </a>
-          <div className="nav-links">
-            <a href="/culture" className="nav-link nav-link--dark">Culture</a>
-            <a href="/culture" className="nav-link nav-link--dark">Race Picks</a>
-            <a href="/crew" className="nav-link nav-link--dark">Crew</a>
-            <a href="/#dispatch" className="nav-link nav-link--dark">Dispatch</a>
-            <a href="/about" className="nav-link nav-link--dark">About</a>
-          </div>
-        </div>
-      </header>
+      <SiteNav />
 
       <main>
         {/* HERO */}
