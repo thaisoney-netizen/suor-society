@@ -53,9 +53,7 @@ export default function Home() {
 
   return (
     <>
-      {/* ABOVE FOLD — hero + signup as one unit */}
-      <div className="above-fold">
-      {/* HERO — full viewport with nav overlay */}
+      {/* HERO — full viewport, one message: headline + one CTA */}
       <header className="hero">
         <SiteNav variant="overlay" />
         <video
@@ -70,55 +68,30 @@ export default function Home() {
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-text">
           <div className="page">
-            <p className="hero-eye">Hybrid running culture · San Diego</p>
             <h1 className="hero-headline">
               For runners, for lifters, for hybrids, for the sweat.
             </h1>
-            <p className="hero-sub">
-              SUOR SOCIETY covers the lift-and-run world. Races worth signing up for, gear worth knowing about, and the people doing both around a full-time job.
+            <p className="hero-tag">
+              Race picks, gear, and culture for people who lift and run.
             </p>
-            <div className="hero-ctas">
-              <a href="/culture" className="hero-cta hero-cta--primary">Read the Race Guide</a>
-              <a href="#dispatch" className="hero-cta hero-cta--secondary">Get The Dispatch</a>
-            </div>
+            <a href="/culture" className="hero-cta">Read the Race Guide</a>
           </div>
         </div>
       </header>
 
-      {/* SIGNUP */}
-      <div className="signup-section" id="dispatch" style={{flexShrink: 0}}>
+      {/* STATEMENT — the positioning line, alone in white space */}
+      <section className="intro">
         <div className="page">
-          <form className="signup" onSubmit={handleSignup}>
-            <label className="signup-label" htmlFor="email-hero">
-              Get the weekly dispatch
-            </label>
-            <input
-              id="email-hero"
-              className="signup-input"
-              type="email"
-              name="email"
-              placeholder="you@somewhere.com"
-              required
-              autoComplete="email"
-            />
-            <button type="submit" className="signup-btn">
-              {submitted ? "ON THE LIST." : "I'm in."}
-            </button>
-            {signupError && (
-              <p className="signup-error">
-                Something went wrong. Email us at hello@suorsociety.com and we&rsquo;ll add you directly.
-              </p>
-            )}
-          </form>
+          <p className="intro-line">
+            SUOR SOCIETY covers the lift-and-run world. Races worth signing up for, gear worth knowing about, and the people doing both around a full-time job.
+          </p>
         </div>
-      </div>
-      </div>{/* /above-fold */}
+      </section>
 
       {/* LINKS */}
       <section className="links" id="culture">
         <div className="page">
           <div className="links-head">
-            <span className="lh-num">04 / Links</span>
             <h2 className="lh-title">The board</h2>
             <span className="lh-meta">Updated weekly</span>
           </div>
@@ -143,6 +116,40 @@ export default function Home() {
           <div className="board-cta">
             <a href="/culture" className="board-more">See all posts ↗</a>
           </div>
+        </div>
+      </section>
+
+      {/* DISPATCH SIGNUP */}
+      <section className="signup-section" id="dispatch">
+        <div className="page">
+          <form className="signup" onSubmit={handleSignup}>
+            <p className="signup-eye">The Dispatch</p>
+            <label className="signup-label" htmlFor="email-hero">
+              Get the weekly dispatch
+            </label>
+            <p className="signup-note">
+              One email a week. Races worth entering, gear worth knowing, no noise.
+            </p>
+            <div className="signup-row">
+              <input
+                id="email-hero"
+                className="signup-input"
+                type="email"
+                name="email"
+                placeholder="you@somewhere.com"
+                required
+                autoComplete="email"
+              />
+              <button type="submit" className="signup-btn">
+                {submitted ? "ON THE LIST." : "I'm in."}
+              </button>
+            </div>
+            {signupError && (
+              <p className="signup-error">
+                Something went wrong. Email us at hello@suorsociety.com and we&rsquo;ll add you directly.
+              </p>
+            )}
+          </form>
         </div>
       </section>
 
