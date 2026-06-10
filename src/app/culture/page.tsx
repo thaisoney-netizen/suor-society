@@ -636,10 +636,18 @@ export default function CultureArchive() {
             <h1 className="article-headline">
               40 Open Entry Races in <span>California</span> and the US You Can Still Run
             </h1>
+            <p className="article-updated">
+              Last updated: June 2026. Confirm details with the race organizer.
+            </p>
             <p className="article-deck">
               No qualifying time. No lottery. 20 California races, 20 across the US.
               From now through spring 2027. Every distance 5K to marathon, all USATF certified.
             </p>
+            <nav className="article-jump" aria-label="Jump to section">
+              <span className="article-jump-label">Jump to</span>
+              <a href="#california-races">California</a>
+              <a href="#us-races">US Certified</a>
+            </nav>
             <div className="article-meta">
               <span>Suor Society</span>
               <span>San Diego, CA</span>
@@ -671,10 +679,10 @@ export default function CultureArchive() {
         </section>
 
         {/* ── CALIFORNIA RACES ── */}
-        <section style={{ borderBottom: "1px solid var(--line)", paddingBottom: "56px" }}>
+        <section id="california-races" style={{ borderBottom: "1px solid var(--line)", paddingBottom: "56px" }}>
           <div className="page">
             <div className="article-section-head">
-              <div className="article-section-label">20 California Races</div>
+              <div className="article-section-label">20 California Race Picks</div>
               <div className="article-section-sub">Open Entry · Summer 2026 to Spring 2027</div>
             </div>
             <div className="race-list">
@@ -684,10 +692,10 @@ export default function CultureArchive() {
         </section>
 
         {/* ── US RACES ── */}
-        <section style={{ borderBottom: "1px solid var(--line)", paddingBottom: "56px" }}>
+        <section id="us-races" style={{ borderBottom: "1px solid var(--line)", paddingBottom: "56px" }}>
           <div className="page">
             <div className="article-section-head">
-              <div className="article-section-label">20 US Certified Races</div>
+              <div className="article-section-label">20 US Certified Race Picks</div>
               <div className="article-section-sub">No Qualifier · All USATF Certified</div>
             </div>
             <div className="race-list">
