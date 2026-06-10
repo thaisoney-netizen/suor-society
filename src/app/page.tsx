@@ -81,18 +81,20 @@ export default function Home() {
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-text">
           <h1 className="hero-headline">
-            For runners, for lifters,<br />for hybrids, for the sweat.
+            For runners, for lifters, for hybrids, for the sweat.
           </h1>
-          <p className="hero-sub">a hybrid running culture page</p>
+          <p className="hero-sub">
+            SUOR SOCIETY covers the lift-and-run world. Races worth signing up for, gear worth knowing about, and the people doing both around a full-time job.
+          </p>
           <div className="hero-ctas">
-            <a href="#culture" className="hero-cta hero-cta--primary">Read the dispatch</a>
-            <a href="#about" className="hero-cta hero-cta--secondary">Our story</a>
+            <a href="/culture" className="hero-cta hero-cta--primary">Read the Race Guide</a>
+            <a href="#signup" className="hero-cta hero-cta--secondary">Get The Dispatch</a>
           </div>
         </div>
       </header>
 
       {/* SIGNUP */}
-      <div className="signup-section" style={{flexShrink: 0}}>
+      <div className="signup-section" id="signup" style={{flexShrink: 0}}>
         <div className="page">
           <form className="signup" onSubmit={handleSignup}>
             <label className="signup-label" htmlFor="email-hero">
