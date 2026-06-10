@@ -72,7 +72,7 @@ export default function Home() {
         <video className="hero-video" src="/hero.mp4" autoPlay muted loop playsInline />
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-text">
-          <p className="hero-tagline">Run.<br />Lift.<br />Sweat.</p>
+          <p className="hero-tagline">For runners,<br />for lifters,<br />for hybrids,<br />for the sweat.</p>
           <p className="hero-sub">a hybrid running culture page</p>
         </div>
       </header>
