@@ -560,51 +560,6 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============================================================
-   MERCH PAGE
-   ============================================================ */
-.merch-stage {
-  min-height: 72vh;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid var(--line);
-}
-.merch-inner {
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-.merch-eye {
-  font-family: var(--font-jetbrains), monospace;
-  font-size: 10px; letter-spacing: .26em; text-transform: uppercase;
-  color: var(--ink-3);
-  margin-bottom: 32px;
-}
-.merch-title {
-  font-family: var(--font-bebas), sans-serif;
-  font-size: clamp(72px, 14vw, 180px);
-  line-height: .88;
-  letter-spacing: .03em;
-  text-transform: uppercase;
-  color: var(--asphalt);
-}
-.merch-sub {
-  font-family: var(--font-barlow), sans-serif;
-  font-weight: 600;
-  font-size: 13px; letter-spacing: .22em; text-transform: uppercase;
-  color: var(--ink-2);
-  margin-top: 40px;
-  max-width: 32ch;
-}
-.merch-back {
-  display: inline-block;
-  margin-top: 48px;
-  font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
-  color: var(--ink-3);
-  transition: color .12s ease-out;
-}
-.merch-back:hover { color: var(--asphalt); }
-
-/* ============================================================
    SCROLL TRACKER
    ============================================================ */
 
