@@ -33,8 +33,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Suor Society, a performance culture page.",
-  description: "Gear drops, crew runs, race days, coffee stops, and everything in between.",
+  title: "Suor Society, hybrid running culture.",
+  description:
+    "Hybrid running culture. Races worth entering, gear worth knowing, and the people who lift and run around a real life.",
 };
 
 export default function RootLayout({
