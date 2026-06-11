@@ -1,4 +1,5 @@
 import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata = {
   title: "About — Suor Society",
@@ -95,28 +96,9 @@ export default function About() {
           </div>
         </section>
 
-        {/* FOLLOW */}
-        <section className="follow-us">
-          <div className="page">
-            <p className="follow-label">Follow us</p>
-            <a
-              href="https://instagram.com/suorsociety"
-              className="follow-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram
-            </a>
-          </div>
-        </section>
       </main>
 
-      <footer className="footer">
-        <div className="page foot-row">
-          <span className="foot-wm">SUOR SOCIETY</span>
-          <span className="foot-loc">San Diego</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }
