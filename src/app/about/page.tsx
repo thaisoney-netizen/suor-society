@@ -2,9 +2,9 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 
 export const metadata = {
-  title: "About — Suor Society",
+  title: "About, Suor Society",
   description:
-    "Built in San Diego by a marketer who runs and lifts. A culture page for the hybrid athlete with a real life.",
+    "Built in San Diego by a marketer who runs and lifts. Hybrid running culture for people with a real life.",
 };
 
 export default function About() {

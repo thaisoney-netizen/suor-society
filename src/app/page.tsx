@@ -16,7 +16,7 @@ type BoardPost = {
 };
 const BOARD_POSTS: BoardPost[] = [
   {
-    href: "/race-picks",
+    href: "/culture/open-entry-races-2026",
     img: "/race-hero.jpg",
     eyebrow: "The Culture Archive",
     title: "2026 Race Guide",
@@ -75,26 +75,16 @@ export default function Home() {
             <p className="hero-tag">
               Race picks, gear, and culture for people who lift and run.
             </p>
-            <a href="/race-picks" className="hero-cta">See Races Left in 2026</a>
+            <a href="/culture/open-entry-races-2026" className="hero-cta">See Races Left in 2026</a>
           </div>
         </div>
       </header>
-
-      {/* STATEMENT — the positioning line, alone in white space */}
-      <section className="intro">
-        <div className="page">
-          <p className="intro-line">
-            SUOR SOCIETY covers the lift-and-run world. Races worth signing up for, gear worth knowing about, and the people doing both around a full-time job.
-          </p>
-        </div>
-      </section>
 
       {/* LINKS */}
       <section className="links" id="culture">
         <div className="page">
           <div className="links-head">
             <h2 className="lh-title">The board</h2>
-            <span className="lh-meta">Updated weekly</span>
           </div>
 
           <div className="link-grid" style={gridStyle}>
