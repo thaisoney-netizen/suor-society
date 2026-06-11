@@ -1,8 +1,12 @@
-"use client";
-
-import { useState } from "react";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import DownloadGate from "@/components/DownloadGate";
+
+export const metadata = {
+  title: "Open Entry Races 2026, Suor Society",
+  description:
+    "Open entry races worth signing up for. No qualifier, no lottery. Dates, prices, and direct registration links.",
+};
 
 const CA_RACES = [
   {
@@ -11,10 +15,10 @@ const CA_RACES = [
     where: "Alameda, CA · July 11, 2026",
     body: "Flat, fast, USATF certified Bay Area waterfront course. Good summer tune-up option. Craft beer at the finish.",
     dists: "5K · 10K · Half Marathon",
-    price: "Check site",
+    price: "From $27.50",
     status: "open" as const,
     statusLabel: "Open Registration",
-    url: "https://www.runguides.com/california/runs/half-marathon/all",
+    url: "https://www.alamedapint.com/",
   },
   {
     num: "02",
@@ -69,7 +73,7 @@ const CA_RACES = [
     price: "Check site",
     status: "open" as const,
     statusLabel: "Open Registration",
-    url: "https://www.runguides.com/california/runs/half-marathon/all",
+    url: "https://runsignup.com/Race/CA/SanRamon/BeerCityBishopRanch",
   },
   {
     num: "07",
@@ -465,7 +469,7 @@ const FAQS = [
   },
   {
     q: "Which California races are still open right now?",
-    a: "As of June 2026: San Francisco Marathon (half and shorter), Santa Rosa Marathon (half only), Californian Dreamin' in Long Beach, Beer City Half in Alameda (July) and San Ramon (September), 2XU Long Beach Marathon, Two Cities (Fresno/Clovis), Silverado, Santa Barbara Half (selling fast), Berkeley Half, San Diego Holiday Half, and Napa to Sonoma Rosé 5K. Monterey Bay and CIM are sold out — check charity options. 2027 races (Carlsbad, Surf City, LA, Mountains 2 Beach, OC, Rock 'n' Roll San Diego) are listed with annual registration windows.",
+    a: "As of June 2026: San Francisco Marathon (half and shorter), Santa Rosa Marathon (half only), Californian Dreamin' in Long Beach, Beer City Half in Alameda (July) and San Ramon (September), 2XU Long Beach Marathon, Two Cities (Fresno/Clovis), Silverado, Santa Barbara Half (selling fast), Berkeley Half, San Diego Holiday Half, and Napa to Sonoma Rosé 5K. Monterey Bay and CIM are sold out, check charity options. 2027 races (Carlsbad, Surf City, LA, Mountains 2 Beach, OC, Rock 'n' Roll San Diego) are listed with annual registration windows.",
   },
   {
     q: "Can a beginner run an open entry half marathon?",
@@ -503,104 +507,7 @@ function RaceRow({ race }: { race: typeof CA_RACES[0] }) {
   );
 }
 
-function DownloadGate() {
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError]         = useState(false);
-  const [loading, setLoading]     = useState(false);
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setError(false);
-    setLoading(true);
-
-    const form  = e.currentTarget;
-    const name  = (form.elements.namedItem("name")  as HTMLInputElement).value;
-    const email = (form.elements.namedItem("email") as HTMLInputElement).value;
-
-    try {
-      const res = await fetch("/api/race-guide", {
-        method:  "POST",
-        headers: { "Content-Type": "application/json" },
-        body:    JSON.stringify({ name, email }),
-      });
-      if (!res.ok) throw new Error("server");
-      setSubmitted(true);
-    } catch {
-      setError(true);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  if (submitted) {
-    return (
-      <div className="gate-success">
-        <div className="gate-success-tag">You&rsquo;re in</div>
-        <div className="gate-success-title">Your<br />Guide<br />Is Ready.</div>
-        <p className="gate-success-body">
-          40 open entry races. 20 in California, 20 across the US.
-          All certified. From now through spring 2027.
-        </p>
-        <a
-          className="gate-download-btn"
-          href="/2026-race-guide.pdf"
-          download="2026_Race_Guide_SuorSociety.pdf"
-        >
-          Download the PDF →
-        </a>
-      </div>
-    );
-  }
-
-  return (
-    <form className="gate-form" onSubmit={handleSubmit} noValidate>
-      <div className="gate-field">
-        <label className="gate-field-label" htmlFor="gate-name">First Name</label>
-        <input
-          id="gate-name"
-          className="gate-input"
-          type="text"
-          name="name"
-          placeholder="Your name"
-          autoComplete="given-name"
-        />
-      </div>
-
-      <div className="gate-field">
-        <label className="gate-field-label" htmlFor="gate-email">
-          Email *
-        </label>
-        <input
-          id="gate-email"
-          className="gate-input"
-          type="email"
-          name="email"
-          placeholder="you@somewhere.com"
-          required
-          autoComplete="email"
-        />
-      </div>
-
-      <button
-        type="submit"
-        className="gate-btn"
-        disabled={loading}
-      >
-        {loading ? "Sending…" : "Get the Guide →"}
-      </button>
-
-      {error && (
-        <p className="gate-error">
-          Something went wrong. Email us at hello@suorsociety.com and we&rsquo;ll send it directly.
-        </p>
-      )}
-
-      <p className="gate-fine">No spam. Just the guide. Unsubscribe any time.</p>
-    </form>
-  );
-}
-
-export default function RacePicks() {
+export default function OpenEntryRaces2026() {
   return (
     <>
       {/* NAV */}
@@ -652,7 +559,7 @@ export default function RacePicks() {
             <p>
               A few notes. Prices go up as race day gets closer. A handful of these are sold out
               of standard entries but have charity or benefactor spots. We&rsquo;ve flagged the
-              status on every one. Click through and verify before you register — race capacity
+              status on every one. Click through and verify before you register. Race capacity
               and pricing move fast.
             </p>
           </div>
@@ -716,8 +623,6 @@ export default function RacePicks() {
             <DownloadGate />
           </div>
         </section>
-
-        {/* ── FOLLOW ── */}
 
       </main>
 

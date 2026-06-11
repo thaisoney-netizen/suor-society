@@ -1144,3 +1144,139 @@ a { color: inherit; text-decoration: none; }
   transition: background .12s ease-out;
 }
 .gate-download-btn:hover { background: #000; }
+
+/* ============================================================
+   CULTURE ARCHIVE index
+   ============================================================ */
+.archive {
+  padding: 72px 0;
+  border-bottom: 1px solid var(--line);
+}
+.archive-list {
+  display: grid;
+  gap: 40px;
+}
+.archive-entry {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  overflow: hidden;
+}
+@media (max-width: 860px) {
+  .archive-entry { grid-template-columns: 1fr; }
+}
+.archive-entry-img {
+  min-height: 320px;
+  overflow: hidden;
+  background: var(--asphalt);
+}
+@media (max-width: 860px) {
+  .archive-entry-img { min-height: 0; height: 220px; }
+}
+.archive-entry-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease-out;
+}
+.archive-entry:hover .archive-entry-img img { transform: scale(1.03); }
+.archive-entry-body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 36px 40px;
+}
+@media (max-width: 720px) {
+  .archive-entry-body { padding: 26px 22px; }
+}
+.archive-entry-meta {
+  display: flex;
+  gap: 20px;
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.archive-entry-meta span:first-child { color: var(--accent); }
+.archive-entry-title {
+  font-family: var(--font-bebas), sans-serif;
+  font-weight: 400;
+  font-size: clamp(30px, 4vw, 52px);
+  letter-spacing: .02em;
+  line-height: .94;
+  text-transform: uppercase;
+  color: var(--asphalt);
+  max-width: 18ch;
+}
+.archive-entry-desc {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  max-width: 44ch;
+}
+.archive-entry-read {
+  margin-top: auto;
+  align-self: flex-start;
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--asphalt);
+  border: 1px solid var(--asphalt);
+  padding: 12px 26px;
+  transition: background .14s ease-out, color .14s ease-out;
+}
+.archive-entry:hover .archive-entry-read {
+  background: var(--asphalt);
+  color: var(--paper);
+}
+
+/* ============================================================
+   CREW PAGE
+   ============================================================ */
+.crew-lines {
+  padding: 72px 0;
+  border-bottom: 1px solid var(--line);
+}
+.crew-line {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: clamp(30px, 5.5vw, 72px);
+  letter-spacing: .02em;
+  line-height: .95;
+  text-transform: uppercase;
+  color: var(--asphalt);
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+.crew-line:last-child { border-bottom: none; }
+
+.crew-photos {
+  padding: 72px 0;
+  border-bottom: 1px solid var(--line);
+}
+.crew-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+@media (max-width: 720px) {
+  .crew-photo-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.crew-photo {
+  aspect-ratio: 4 / 5;
+  background: var(--bone);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.crew-photo span {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.crew-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
