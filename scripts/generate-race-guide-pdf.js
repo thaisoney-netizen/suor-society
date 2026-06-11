@@ -8,14 +8,14 @@ const { chromium } = require("playwright");
 const fs = require("fs");
 const path = require("path");
 
-// ─── DATA — keep in sync with src/app/culture/page.tsx ─────────────────────────
+// ─── DATA — keep in sync with src/app/culture/open-entry-races-2026/page.tsx ───
 const CA_RACES = [
-  { num: "01", name: "Beer City Half, Alameda", where: "Alameda, CA · July 11, 2026", body: "Flat, fast, USATF certified Bay Area waterfront course. Good summer tune-up option. Craft beer at the finish.", dists: "5K · 10K · Half Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.runguides.com/california/runs/half-marathon/all" },
+  { num: "01", name: "Beer City Half, Alameda", where: "Alameda, CA · July 11, 2026", body: "Flat, fast, USATF certified Bay Area waterfront course. Good summer tune-up option. Craft beer at the finish.", dists: "5K · 10K · Half Marathon", price: "From $27.50", status: "open", statusLabel: "Open Registration", url: "https://www.alamedapint.com/" },
   { num: "02", name: "The San Francisco Marathon", where: "San Francisco, CA · July 25-26, 2026", body: "Golden Gate Park, across the bridge, through the city. Half marathon and shorter distances open. Full marathon sold out.", dists: "5K · Half Marathon · Full Marathon", price: "From $165", status: "open", statusLabel: "Open Registration", url: "https://www.thesfmarathon.com/" },
   { num: "03", name: "Napa to Sonoma Wine Country Half", where: "Napa, CA · July 25-26, 2026", body: "Point-to-point through active vineyards. Half marathon sold out. Rosé 5K still open. Code N2SRG26 for $10 off.", dists: "Rosé 5K · Half Marathon", price: "From $208", status: "limit", statusLabel: "5K Open · Half Sold Out", url: "https://www.runnapatosonoma.com/" },
   { num: "04", name: "Santa Rosa Marathon", where: "Sonoma County, CA · Aug 22-23, 2026", body: "Wine country roads, mostly flat, multi-distance weekend. Half marathon still open. Full sold out.", dists: "5K · 10K · Half · Full Marathon", price: "From $114", status: "limit", statusLabel: "Half Open · Full Sold Out", url: "https://santarosamarathon.com/" },
   { num: "05", name: "Californian Dreamin' Half Marathon", where: "Long Beach, CA · Aug 23, 2026", body: "Coastal SoCal course from Venice to Long Beach. Three distances starting under $60. Beach finish in August.", dists: "5K · 10K · Half Marathon", price: "From $49.75", status: "open", statusLabel: "Open Registration", url: "https://runsignup.com/Race/CA/LongBeach/CalifornianDreaminKKHalfMarathon" },
-  { num: "06", name: "Beer City Half, Bishop Ranch", where: "San Ramon, CA · Sep 12, 2026", body: "East Bay edition. Multi-distance format with a 1-mile option. USATF certified. Good fall training tune-up.", dists: "1 Mile · 5K · 10K · Half", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.runguides.com/california/runs/half-marathon/all" },
+  { num: "06", name: "Beer City Half, Bishop Ranch", where: "San Ramon, CA · Sep 12, 2026", body: "East Bay edition. Multi-distance format with a 1-mile option. USATF certified. Good fall training tune-up.", dists: "1 Mile · 5K · 10K · Half", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://runsignup.com/Race/CA/SanRamon/BeerCityBishopRanch" },
   { num: "07", name: "2XU Long Beach Marathon", where: "Long Beach, CA · Oct 10-11, 2026", body: "One of SoCal's most consistent fall race weekends. City streets and coastline. October weather is as good as it gets.", dists: "5K · Half · Full Marathon", price: "From $139", status: "open", statusLabel: "Open Registration", url: "https://www.runlongbeach.com/" },
   { num: "08", name: "Two Cities Marathon", where: "Fresno/Clovis, CA · Nov 1, 2026", body: "Central Valley fall classic. Multi-distance, USATF certified, point-to-point. Smaller field, less hype.", dists: "5K · 10K · Half · Full Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.run2cm.com/" },
   { num: "09", name: "Silverado Half Marathon & 10K", where: "Silverado, CA · Nov 7, 2026", body: "Orange County wine country, canyon roads, fall race day. Less crowded than the big city events.", dists: "10K · Half · Full Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.runguides.com/california/runs/half-marathon/all" },
@@ -47,7 +47,7 @@ const US_RACES = [
   { num: "12", name: "Savannah Southern Half & 5K", where: "Savannah, GA · Nov 14, 2026", body: "Through historic squares and oak-lined streets. Finish through Savannah Bananas' Grayson Stadium.", dists: "5K · Half Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.southernhalf.com/" },
   { num: "13", name: "Allianz Richmond Marathon", where: "Richmond, VA · Nov 14, 2026", body: "America's Friendliest Marathon. USATF sanctioned and certified. A top Boston qualifier course.", dists: "8K · Half · Full Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.richmondmarathon.org/" },
   { num: "14", name: "Philadelphia Marathon Weekend", where: "Philadelphia, PA · Nov 20-22, 2026", body: "Full marathon sold out. Half marathon and 8K still open. Certified course through historic Philly.", dists: "8K · Half Marathon", price: "Check site", status: "limit", statusLabel: "Half & 8K Open · Full Sold Out", url: "https://www.philadelphiamarathon.com/" },
-  { num: "15", name: "BMW Dallas Marathon Festival", where: "Dallas, TX · Dec 11-13, 2026", body: "55th year. Dynamic pricing — register earlier, pay less. Multi-distance downtown Dallas weekend.", dists: "5K · 10K · Half · Full Marathon", price: "Dynamic pricing", status: "open", statusLabel: "Open Registration", url: "https://dallasmarathon.com/" },
+  { num: "15", name: "BMW Dallas Marathon Festival", where: "Dallas, TX · Dec 11-13, 2026", body: "55th year. Dynamic pricing. Register earlier, pay less. Multi-distance downtown Dallas weekend.", dists: "5K · 10K · Half · Full Marathon", price: "Dynamic pricing", status: "open", statusLabel: "Open Registration", url: "https://dallasmarathon.com/" },
   { num: "16", name: "JAL Honolulu Marathon", where: "Honolulu, HI · Dec 13, 2026", body: "No qualifier, no cutoff, ages 7+. Ala Moana through Waikiki, around Diamond Head. Bucket-list December marathon.", dists: "Merrie Mile · 10K · Full Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.honolulumarathon.org/" },
   { num: "17", name: "Chevron Houston Marathon Weekend", where: "Houston, TX · Jan 15-17, 2027", body: "Aramco Houston Half on Sunday Jan 17. Flat, fast, USATF certified. Registration Nov 1, 2026 to early January.", dists: "5K · Half · Full Marathon", price: "Check site", status: "open", statusLabel: "2027 Registration", url: "https://www.chevronhoustonmarathon.com/" },
   { num: "18", name: "Cherry Blossom Ten Mile", where: "Washington D.C. · April 2027", body: "Tidal Basin, cherry trees in peak bloom, ten flat miles. Lottery plus charity bibs. USATF certified.", dists: "5K · 10 Mile", price: "Check site", status: "limit", statusLabel: "Lottery + Charity Entries", url: "https://www.cherryblossom.org/" },
@@ -89,7 +89,7 @@ function html() {
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Suor Society — 2026 Race Guide</title>
+<title>Suor Society 2026 Race Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -222,13 +222,13 @@ function html() {
 <!-- INTRO -->
 <section class="intro">
   <h2>The rules<br/>of this list.</h2>
-  <p>It's race season. If you've been waiting for the right moment to sign up for something, this is it. 40 open entry road races — 20 in California, 20 across the US. All USATF certified. All open to everyone, no matter how fast or slow you run.</p>
+  <p>It's race season. If you've been waiting for the right moment to sign up for something, this is it. 40 open entry road races: 20 in California, 20 across the US. All USATF certified. All open to everyone, no matter how fast or slow you run.</p>
   <p>The rule for everything in this guide: <strong>no qualifying time, no lottery.</strong> You register, you train, you show up. Races run from now through spring 2027, so there's a window for whatever you're building toward.</p>
-  <p>Prices go up as race day gets closer. A handful of these are sold out of standard entries but still have charity or benefactor spots. We've flagged the status on every one. Click through and verify before you register — race capacity and pricing move fast.</p>
+  <p>Prices go up as race day gets closer. A handful of these are sold out of standard entries but still have charity or benefactor spots. We've flagged the status on every one. Click through and verify before you register. Race capacity and pricing move fast.</p>
   <div class="rules">
     <div class="rule-item"><div class="rule-num">01</div><div class="rule-text"><strong>Open entry.</strong> No qualifying time required. Pay the fee and you're in.</div></div>
     <div class="rule-item"><div class="rule-num">02</div><div class="rule-text"><strong>USATF certified.</strong> Course distance is officially measured. PRs count.</div></div>
-    <div class="rule-item"><div class="rule-num">03</div><div class="rule-text"><strong>Status flagged.</strong> Open · Limited · Sold Out — accurate as of June 2026.</div></div>
+    <div class="rule-item"><div class="rule-num">03</div><div class="rule-text"><strong>Status flagged.</strong> Open · Limited · Sold Out, accurate as of June 2026.</div></div>
     <div class="rule-item"><div class="rule-num">04</div><div class="rule-text"><strong>Verify before you register.</strong> Capacity and pricing can shift between updates.</div></div>
   </div>
 </section>
