@@ -601,50 +601,67 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============================================================
-   FOLLOW US
-   ============================================================ */
-.follow-us {
-  width: 100%;
-  padding: 56px 0;
-  border-top: 1px solid var(--line);
-}
-.follow-label {
-  font-family: var(--font-barlow), sans-serif;
-  font-weight: 700;
-  font-size: 13px; letter-spacing: .28em; text-transform: uppercase;
-  color: var(--asphalt);
-  margin-bottom: 20px;
-  text-align: center;
-}
-.follow-link {
-  display: block;
-  font-family: var(--font-inter), sans-serif;
-  font-size: 15px;
-  color: var(--asphalt);
-  line-height: 1.8;
-  transition: opacity .12s ease-out;
-  text-align: center;
-}
-.follow-link:hover { opacity: .5; }
-
-/* ============================================================
    FOOTER
    ============================================================ */
 .footer {
-  padding: 48px 0 64px;
+  border-top: 1px solid var(--line);
+  padding: 64px 0 36px;
 }
-.foot-row {
-  display: flex; justify-content: center; align-items: baseline;
-  gap: 24px; flex-wrap: wrap;
+.foot-grid {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 56px 96px;
+}
+@media (max-width: 720px) {
+  .foot-grid { grid-template-columns: 1fr 1fr; gap: 44px; }
+  .foot-brand { grid-column: 1 / -1; }
+}
+.foot-brand {
+  max-width: 320px;
 }
 .foot-wm {
+  display: block;
   font-family: var(--font-bebas), sans-serif;
-  font-size: 22px; letter-spacing: .08em;
+  font-size: 24px; letter-spacing: .08em;
   color: var(--asphalt);
+  margin-bottom: 14px;
 }
-.foot-loc {
+.foot-desc {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+.foot-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.foot-col-title {
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 700;
+  font-size: 11px; letter-spacing: .24em; text-transform: uppercase;
+  color: var(--asphalt);
+  margin-bottom: 6px;
+}
+.foot-link {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 13px;
+  color: var(--ink-2);
+  transition: color .12s ease-out;
+}
+.foot-link:hover { color: var(--asphalt); }
+.foot-legal {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
   color: var(--ink-3);
 }
 
