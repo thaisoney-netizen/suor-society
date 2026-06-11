@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 
 // ── BOARD POSTS ──
 // To publish a new post: add an object to this array. Up to 3 renders as a 3-column grid.
@@ -153,27 +154,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOLLOW US */}
-      <section className="follow-us">
-        <div className="page">
-          <p className="follow-label">Follow us</p>
-          <a
-            href="https://instagram.com/suorsociety"
-            className="follow-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Instagram
-          </a>
-        </div>
-      </section>
 
       {/* FOOTER */}
-      <footer className="footer">
-        <div className="page foot-row">
-          <span className="foot-wm">SUOR SOCIETY</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }
