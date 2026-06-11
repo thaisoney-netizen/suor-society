@@ -7,6 +7,7 @@ export default function ScrollTracker() {
   const [useKm, setUseKm] = useState(true);
   const [flash, setFlash] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [visible, setVisible] = useState(false);
   const lastY = useRef(0);
   const flashTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -24,6 +25,7 @@ export default function ScrollTracker() {
         document.documentElement.scrollTop ??
         0;
       const delta = Math.abs(y - lastY.current);
+      setVisible(y > 24);
       if (delta > 0) {
         lastY.current = y;
         setDistance((prev) => prev + delta);
@@ -54,7 +56,8 @@ export default function ScrollTracker() {
       <style>{`
         :root { --sunrise: #E8642A; }
         #ss-progress { position:fixed; top:0; left:0; height:2px; background:var(--sunrise); z-index:200; pointer-events:none; transition:width .08s linear; }
-        #ss-tracker { position:fixed; bottom:0; left:0; right:0; height:60px; background:#141414; border-top:1px solid rgba(255,255,255,.1); display:flex; align-items:center; justify-content:space-between; padding:0 32px; z-index:100; }
+        #ss-tracker { position:fixed; bottom:0; left:0; right:0; height:60px; background:#141414; border-top:1px solid rgba(255,255,255,.1); display:flex; align-items:center; justify-content:space-between; padding:0 32px; z-index:100; transform:translateY(100%); transition:transform .28s ease-out; }
+        #ss-tracker.ss-on { transform:none; }
         @media(max-width:720px){ #ss-tracker{padding:0 20px;height:54px;} }
         .ss-label-col { display:flex; flex-direction:column; gap:3px; }
         .ss-lbl { font-family:var(--font-barlow,'Barlow Condensed',sans-serif); font-weight:600; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.45); }
@@ -66,7 +69,7 @@ export default function ScrollTracker() {
         .ss-toggle:hover { color:var(--sunrise); border-color:var(--sunrise); }
       `}</style>
       <div id="ss-progress" style={{ width: `${progress}%` }} />
-      <div id="ss-tracker">
+      <div id="ss-tracker" className={visible ? "ss-on" : ""}>
         <div className="ss-label-col">
           <span className="ss-lbl">You have scrolled</span>
           <span
