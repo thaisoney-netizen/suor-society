@@ -153,30 +153,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section className="about" id="about">
-        <div className="page">
-          <p className="about-eye">About</p>
-          <div className="about-narrative">
-            <p className="about-pg-p">
-              <strong>SUOR SOCIETY</strong> is a hybrid running culture page for people who run and lift around a real life.
-            </p>
-            <p className="about-pg-p">
-              It started because I went looking for running and hybrid accounts to follow and everything felt built for people who train full time. The 1:10 half. Two sessions a day. I loved the content and still felt left out by it.
-            </p>
-            <p className="about-pg-p">
-              So this is the page I wanted and couldn&rsquo;t find. We keep the greats in the feed. We just add the part that usually goes missing: that fast half took years, and the person ran it full time. Their normal isn&rsquo;t your normal, and it doesn&rsquo;t have to be for your Tuesday to count.
-            </p>
-            <p className="about-pg-p">
-              I&rsquo;m Thais. Marketer by day, hybrid athlete the rest of the time. I lift at Performance 360, I&rsquo;m training for my first half, and I run Mission Bay, North Park, and PB around a full-time job like everyone else here.
-            </p>
-            <p className="about-pg-p about-closing">
-              Two sports that complete each other, not compete. Consistency over perfection. The sweat, and the coffee after.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* FOLLOW US */}
       <section className="follow-us">
         <div className="page">
