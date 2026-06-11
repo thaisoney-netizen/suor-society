@@ -74,7 +74,7 @@ export default function Home() {
             <p className="hero-tag">
               Race picks, gear, and culture for people who lift and run.
             </p>
-            <a href="/race-picks" className="hero-cta">Read the Race Guide</a>
+            <a href="/race-picks" className="hero-cta">See Races Left in 2026</a>
           </div>
         </div>
       </header>
