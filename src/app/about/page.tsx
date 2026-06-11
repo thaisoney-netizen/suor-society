@@ -32,10 +32,13 @@ export default function About() {
               <div className="about-pg-col">
                 <p className="about-pg-label">The founder</p>
                 <p className="about-pg-p">
+                  1x half marathon. Yet.
+                </p>
+                <p className="about-pg-p">
                   I&rsquo;m Thais. Marketer by day. Runner and lifter the rest of the time, six days a week, because nothing else clears my head like it does.
                 </p>
                 <p className="about-pg-p">
-                  Not for aesthetics. For the feeling of being strong and capable in your body and what happens to your brain when you stay consistent about it. Mission Bay loops before work. Tuesday squats at Performance 360. Strava screenshots, fast or slow.
+                  Not for aesthetics. For feeling strong and capable in my body and what staying consistent does to my brain. Some mornings that means the treadmill in my garage because I woke up late and forty minutes is what I&rsquo;ve got. The long runs are the favorite, the ones where I pick somewhere to go and just run there. Tuesday squats at Performance 360. Strava screenshots, fast or slow.
                 </p>
                 <p className="about-pg-p">
                   This started as something personal. Then I looked around for a page covering the lift-and-run world the way it deserved and couldn&rsquo;t find it. So I built one.
