@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 
@@ -28,6 +28,30 @@ const BOARD_POSTS: BoardPost[] = [
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
   const [signupError, setSignupError] = useState(false);
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+
+  // iOS blocks autoplay in Low Power Mode and leaves the poster frozen with a
+  // play button. Retry play() on mount and on any tap until playback starts.
+  useEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+    video.muted = true;
+    const tryPlay = () => {
+      video.play().catch(() => {});
+    };
+    const stopRetrying = () => {
+      window.removeEventListener("touchend", tryPlay);
+      window.removeEventListener("click", tryPlay);
+    };
+    video.addEventListener("playing", stopRetrying, { once: true });
+    window.addEventListener("touchend", tryPlay, { passive: true });
+    window.addEventListener("click", tryPlay);
+    tryPlay();
+    return () => {
+      stopRetrying();
+      video.removeEventListener("playing", stopRetrying);
+    };
+  }, []);
 
   async function handleSignup(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -58,9 +82,10 @@ export default function Home() {
       <header className="hero">
         <SiteNav variant="overlay" />
         <video
+          ref={heroVideoRef}
           className="hero-video"
           src="/hero.mp4"
-          poster="/hero.jpg"
+          poster="/hero-poster.jpg"
           autoPlay
           muted
           loop
