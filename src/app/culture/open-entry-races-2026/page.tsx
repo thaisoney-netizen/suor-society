@@ -543,6 +543,16 @@ export default function OpenEntryRaces2026() {
           </div>
         </section>
 
+        {/* ── STICKY JUMP NAV ── */}
+        <nav className="jump-nav" aria-label="On this page">
+          <div className="page jump-nav-row">
+            <a className="jump-link" href="#california">California</a>
+            <a className="jump-link" href="#us">US</a>
+            <a className="jump-link" href="#faq">FAQ</a>
+            <a className="jump-link jump-link--cta" href="#get-the-guide">Get the Guide</a>
+          </div>
+        </nav>
+
         {/* ── INTRO ── */}
         <section className="article-body">
           <div className="page">
@@ -565,47 +575,8 @@ export default function OpenEntryRaces2026() {
           </div>
         </section>
 
-        {/* ── CALIFORNIA RACES ── */}
-        <section style={{ borderBottom: "1px solid var(--line)", paddingBottom: "56px" }}>
-          <div className="page">
-            <div className="article-section-head">
-              <div className="article-section-label">20 California Races</div>
-              <div className="article-section-sub">Open Entry · Summer 2026 to Spring 2027</div>
-            </div>
-            <div className="race-list">
-              {CA_RACES.map((r) => <RaceRow key={r.num} race={r} />)}
-            </div>
-          </div>
-        </section>
-
-        {/* ── US RACES ── */}
-        <section style={{ borderBottom: "1px solid var(--line)", paddingBottom: "56px" }}>
-          <div className="page">
-            <div className="article-section-head">
-              <div className="article-section-label">20 US Certified Races</div>
-              <div className="article-section-sub">No Qualifier · All USATF Certified</div>
-            </div>
-            <div className="race-list">
-              {US_RACES.map((r) => <RaceRow key={r.num} race={r} />)}
-            </div>
-          </div>
-        </section>
-
-        {/* ── FAQ ── */}
-        <section className="faq-section">
-          <div className="page">
-            <div className="faq-head">Frequently Asked</div>
-            {FAQS.map((f, i) => (
-              <div key={i} className="faq-item">
-                <div className="faq-q">{f.q}</div>
-                <p className="faq-a">{f.a}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* ── DOWNLOAD GATE ── */}
-        <section className="download-gate">
+        <section id="get-the-guide" className="download-gate">
           <div className="page">
             <div className="gate-label">Free Download</div>
             <div className="gate-title">Get the<br />Full Guide</div>
@@ -621,6 +592,45 @@ export default function OpenEntryRaces2026() {
               <li>Availability and status updated June 2026</li>
             </ul>
             <DownloadGate />
+          </div>
+        </section>
+
+        {/* ── CALIFORNIA RACES ── */}
+        <section id="california" style={{ borderBottom: "1px solid var(--line)", paddingBottom: "56px" }}>
+          <div className="page">
+            <div className="article-section-head">
+              <div className="article-section-label">20 California Races</div>
+              <div className="article-section-sub">Open Entry · Summer 2026 to Spring 2027</div>
+            </div>
+            <div className="race-list">
+              {CA_RACES.map((r) => <RaceRow key={r.num} race={r} />)}
+            </div>
+          </div>
+        </section>
+
+        {/* ── US RACES ── */}
+        <section id="us" style={{ borderBottom: "1px solid var(--line)", paddingBottom: "56px" }}>
+          <div className="page">
+            <div className="article-section-head">
+              <div className="article-section-label">20 US Certified Races</div>
+              <div className="article-section-sub">No Qualifier · All USATF Certified</div>
+            </div>
+            <div className="race-list">
+              {US_RACES.map((r) => <RaceRow key={r.num} race={r} />)}
+            </div>
+          </div>
+        </section>
+
+        {/* ── FAQ ── */}
+        <section id="faq" className="faq-section">
+          <div className="page">
+            <div className="faq-head">Frequently Asked</div>
+            {FAQS.map((f, i) => (
+              <div key={i} className="faq-item">
+                <div className="faq-q">{f.q}</div>
+                <p className="faq-a">{f.a}</p>
+              </div>
+            ))}
           </div>
         </section>
 
