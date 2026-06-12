@@ -8,7 +8,7 @@ const { chromium } = require("playwright");
 const fs = require("fs");
 const path = require("path");
 
-// ─── DATA — keep in sync with src/app/culture/open-entry-races-2026/page.tsx ───
+// ─── DATA — keep in sync with src/app/race-picks/page.tsx ───
 const CA_RACES = [
   { num: "01", name: "Beer City Half, Alameda", where: "Alameda, CA · July 11, 2026", body: "Flat, fast, USATF certified Bay Area waterfront course. Good summer tune-up option. Craft beer at the finish.", dists: "5K · 10K · Half Marathon", price: "From $27.50", status: "open", statusLabel: "Open Registration", url: "https://www.alamedapint.com/" },
   { num: "02", name: "The San Francisco Marathon", where: "San Francisco, CA · July 25-26, 2026", body: "Golden Gate Park, across the bridge, through the city. Half marathon and shorter distances open. Full marathon sold out.", dists: "5K · Half Marathon · Full Marathon", price: "From $165", status: "open", statusLabel: "Open Registration", url: "https://www.thesfmarathon.com/" },
@@ -18,7 +18,7 @@ const CA_RACES = [
   { num: "06", name: "Beer City Half, Bishop Ranch", where: "San Ramon, CA · Sep 12, 2026", body: "East Bay edition. Multi-distance format with a 1-mile option. USATF certified. Good fall training tune-up.", dists: "1 Mile · 5K · 10K · Half", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://runsignup.com/Race/CA/SanRamon/BeerCityBishopRanch" },
   { num: "07", name: "2XU Long Beach Marathon", where: "Long Beach, CA · Oct 10-11, 2026", body: "One of SoCal's most consistent fall race weekends. City streets and coastline. October weather is as good as it gets.", dists: "5K · Half · Full Marathon", price: "From $139", status: "open", statusLabel: "Open Registration", url: "https://www.runlongbeach.com/" },
   { num: "08", name: "Two Cities Marathon", where: "Fresno/Clovis, CA · Nov 1, 2026", body: "Central Valley fall classic. Multi-distance, USATF certified, point-to-point. Smaller field, less hype.", dists: "5K · 10K · Half · Full Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.run2cm.com/" },
-  { num: "09", name: "Silverado Half Marathon & 10K", where: "Silverado, CA · Nov 7, 2026", body: "Orange County wine country, canyon roads, fall race day. Less crowded than the big city events.", dists: "10K · Half · Full Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.runguides.com/california/runs/half-marathon/all" },
+  { num: "09", name: "Saddleback Marathon, Half & 10K", where: "Silverado, CA · Nov 7, 2026", body: "Orange County trail race out of Black Star Canyon, running since 1988. Less crowded than the big city events.", dists: "10K · 25K · Half · Full Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://otrraces.com/" },
   { num: "10", name: "Santa Barbara Half Marathon & 5K", where: "Santa Barbara, CA · Nov 8, 2026", body: "Presented by HOKA. 13.1 along the coast plus a 5K and kids fun run. Sold out four weeks early in 2025.", dists: "5K · Half Marathon", price: "Check site", status: "open", statusLabel: "Open · Selling Fast", url: "https://santabarbarahalf.com/" },
   { num: "11", name: "Monterey Bay Half Marathon", where: "Monterey, CA · Nov 8, 2026", body: "Sold out in eight days. One of the most beautiful half courses in California. Charity spots are the path in.", dists: "Half Marathon", price: "Charity: $350+", status: "sold", statusLabel: "General Sold Out · Charity Spots", url: "https://www.montereybayhalfmarathon.org/" },
   { num: "12", name: "Berkeley Half Marathon", where: "Berkeley, CA · Nov 15, 2026", body: "USATF certified East Bay course winding through Berkeley campus, downtown, and the marina.", dists: "Half Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://berkeleyhalfmarathon.com/" },
@@ -279,7 +279,11 @@ function html() {
   fs.mkdirSync(outDir, { recursive: true });
 
   console.log("Launching headless Chromium…");
-  const browser = await chromium.launch();
+  // CHROMIUM_PATH overrides the browser binary when Playwright's own
+  // download isn't available.
+  const browser = await chromium.launch({
+    executablePath: process.env.CHROMIUM_PATH || undefined,
+  });
   const page = await browser.newPage();
 
   console.log("Loading HTML…");

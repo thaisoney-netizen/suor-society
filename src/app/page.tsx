@@ -16,7 +16,7 @@ type BoardPost = {
 };
 const BOARD_POSTS: BoardPost[] = [
   {
-    href: "/culture/open-entry-races-2026",
+    href: "/race-picks",
     img: "/race-hero.jpg",
     eyebrow: "The Culture Archive",
     title: "2026 Race Guide",
@@ -75,7 +75,7 @@ export default function Home() {
             <p className="hero-tag">
               Race picks, gear, and culture for people who lift and run.
             </p>
-            <a href="/culture/open-entry-races-2026" className="hero-cta">See Races Left in 2026</a>
+            <a href="/race-picks" className="hero-cta">See Races Left in 2026</a>
           </div>
         </div>
       </header>

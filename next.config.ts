@@ -3,10 +3,11 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   async redirects() {
     return [
-      // The race guide article used to render at /race-picks.
+      // /race-picks is the canonical home of the race guide; the article
+      // briefly lived under the culture archive.
       {
-        source: "/race-picks",
-        destination: "/culture/open-entry-races-2026",
+        source: "/culture/open-entry-races-2026",
+        destination: "/race-picks",
         permanent: true,
       },
     ];

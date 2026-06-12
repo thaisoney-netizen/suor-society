@@ -99,14 +99,14 @@ const CA_RACES = [
   },
   {
     num: "09",
-    name: "Silverado Half Marathon & 10K",
+    name: "Saddleback Marathon, Half & 10K",
     where: "Silverado, CA · Nov 7, 2026",
-    body: "Orange County wine country, canyon roads, fall race day. Less crowded than the big city events. Certified, open entry.",
-    dists: "10K · Half Marathon · Full Marathon",
+    body: "Orange County trail race out of Black Star Canyon, running since 1988. Fall race day in the Cleveland National Forest. Less crowded than the big city events. Open entry.",
+    dists: "10K · 25K · Half Marathon · Full Marathon",
     price: "Check site",
     status: "open" as const,
     statusLabel: "Open Registration",
-    url: "https://www.runguides.com/california/runs/half-marathon/all",
+    url: "https://otrraces.com/",
   },
   {
     num: "10",
@@ -469,7 +469,7 @@ const FAQS = [
   },
   {
     q: "Which California races are still open right now?",
-    a: "As of June 2026: San Francisco Marathon (half and shorter), Santa Rosa Marathon (half only), Californian Dreamin' in Long Beach, Beer City Half in Alameda (July) and San Ramon (September), 2XU Long Beach Marathon, Two Cities (Fresno/Clovis), Silverado, Santa Barbara Half (selling fast), Berkeley Half, San Diego Holiday Half, and Napa to Sonoma Rosé 5K. Monterey Bay and CIM are sold out, check charity options. 2027 races (Carlsbad, Surf City, LA, Mountains 2 Beach, OC, Rock 'n' Roll San Diego) are listed with annual registration windows.",
+    a: "As of June 2026: San Francisco Marathon (half and shorter), Santa Rosa Marathon (half only), Californian Dreamin' in Long Beach, Beer City Half in Alameda (July) and San Ramon (September), 2XU Long Beach Marathon, Two Cities (Fresno/Clovis), Saddleback in Silverado, Santa Barbara Half (selling fast), Berkeley Half, San Diego Holiday Half, and Napa to Sonoma Rosé 5K. Monterey Bay and CIM are sold out, check charity options. 2027 races (Carlsbad, Surf City, LA, Mountains 2 Beach, OC, Rock 'n' Roll San Diego) are listed with annual registration windows.",
   },
   {
     q: "Can a beginner run an open entry half marathon?",

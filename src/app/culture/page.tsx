@@ -19,7 +19,7 @@ type Post = {
 };
 const POSTS: Post[] = [
   {
-    href: "/culture/open-entry-races-2026",
+    href: "/race-picks",
     img: "/race-hero.jpg",
     tag: "Race Guide",
     date: "June 2026",

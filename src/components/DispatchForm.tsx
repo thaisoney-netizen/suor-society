@@ -60,7 +60,7 @@ export default function DispatchForm() {
       </div>
 
       <button type="submit" className="gate-btn" disabled={loading}>
-        {loading ? "Sending…" : "Subscribe →"}
+        {loading ? "Sending…" : "I'm in."}
       </button>
 
       {error && (

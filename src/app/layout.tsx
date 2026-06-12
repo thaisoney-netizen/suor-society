@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Suor Society, hybrid running culture.",
+  title: "Suor Society. Hybrid running culture.",
   description:
     "Hybrid running culture. Races worth entering, gear worth knowing, and the people who lift and run around a real life.",
 };
