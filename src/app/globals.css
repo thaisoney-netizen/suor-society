@@ -1324,3 +1324,18 @@ a { color: inherit; text-decoration: none; }
   object-fit: cover;
   display: block;
 }
+
+.crew-cover {
+  width: 100%;
+  height: clamp(320px, 52vw, 660px);
+  overflow: hidden;
+  background: var(--asphalt);
+  border-bottom: 1px solid var(--line);
+}
+.crew-cover img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  display: block;
+  filter: grayscale(60%) brightness(.7);
+}
