@@ -101,7 +101,6 @@ export default function Home() {
   const gridStyle = {
     "--cols": cols,
     ...(count === 1 && { maxWidth: "440px" }),
-    ...(count === 4 && { maxWidth: "760px", margin: "0 auto" }),
   } as React.CSSProperties;
 
   return (
