@@ -681,23 +681,18 @@ a { color: inherit; text-decoration: none; }
   color: var(--ink-3);
   margin-bottom: 32px;
 }
-.about-pg-hero-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 56px;
-  align-items: end;
-}
-@media (max-width: 860px) {
-  .about-pg-hero-grid { grid-template-columns: 1fr; gap: 40px; align-items: start; }
-}
 .about-pg-headline {
   font-family: var(--font-bebas), sans-serif;
-  font-size: clamp(40px, 6vw, 84px);
+  font-size: clamp(34px, 6vw, 104px);
   line-height: .9;
   letter-spacing: .03em;
   text-transform: uppercase;
   color: var(--asphalt);
-  max-width: 12ch;
+  white-space: nowrap;
+}
+/* Phones: let the line wrap so it never forces horizontal scroll. */
+@media (max-width: 720px) {
+  .about-pg-headline { white-space: normal; }
 }
 .about-pg-deck {
   font-family: var(--font-barlow), sans-serif;
@@ -706,23 +701,6 @@ a { color: inherit; text-decoration: none; }
   color: var(--ink-2);
   margin-top: 36px;
   line-height: 1.8;
-}
-.about-pg-hero-aside {
-  padding-left: 40px;
-  border-left: 1px solid var(--line);
-  padding-bottom: 6px;
-}
-@media (max-width: 860px) {
-  .about-pg-hero-aside {
-    padding-left: 0; border-left: none;
-    padding-top: 32px; border-top: 1px solid var(--line);
-  }
-}
-.about-pg-aside-p {
-  font-family: var(--font-inter), sans-serif;
-  font-size: 15px;
-  line-height: 1.75;
-  color: var(--ink-2);
 }
 
 .about-pg-body {
