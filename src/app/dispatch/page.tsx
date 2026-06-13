@@ -54,7 +54,7 @@ export default function Dispatch() {
         <section className="about-pg-hero">
           <div className="page">
             <p className="about-pg-eye">Suor Society / Dispatch</p>
-            <h1 className="about-pg-headline">Get the dispatch.</h1>
+            <h1 className="about-pg-headline">Get the dispatch</h1>
             <p className="about-pg-deck">
               One email a week.<br />
               The lift-and-run world, edited down.

@@ -17,7 +17,7 @@ export default function About() {
         <section className="about-pg-hero">
           <div className="page">
             <p className="about-pg-eye">Suor Society / The Culture</p>
-            <h1 className="about-pg-headline">Suor is Portuguese for sweat.</h1>
+            <h1 className="about-pg-headline">Suor is Portuguese for sweat</h1>
             <p className="about-pg-deck">
               Brazilian roots. Six-day training weeks.<br />
               Built in San Diego.

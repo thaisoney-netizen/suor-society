@@ -35,7 +35,7 @@ export default function DownloadGate() {
     return (
       <div className="gate-success">
         <div className="gate-success-tag">You&rsquo;re in</div>
-        <div className="gate-success-title">Your<br />Guide<br />Is Ready.</div>
+        <div className="gate-success-title">Your<br />Guide<br />Is Ready</div>
         <p className="gate-success-body">
           40 open entry races. 20 in California, 20 across the US.
           All certified. From now through spring 2027.

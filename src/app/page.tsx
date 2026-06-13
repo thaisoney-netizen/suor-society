@@ -95,7 +95,7 @@ export default function Home() {
         <div className="hero-text">
           <div className="page">
             <h1 className="hero-headline">
-              For runners, for lifters, for hybrids, for the sweat.
+              For runners, for lifters, for hybrids, for the sweat
             </h1>
             <p className="hero-tag">
               Race picks, gear, and culture for people who lift and run.

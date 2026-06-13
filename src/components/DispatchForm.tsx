@@ -33,7 +33,7 @@ export default function DispatchForm() {
     return (
       <div className="gate-success">
         <div className="gate-success-tag">You&rsquo;re in</div>
-        <div className="gate-success-title">On<br />The<br />List.</div>
+        <div className="gate-success-title">On<br />The<br />List</div>
         <p className="gate-success-body">
           The dispatch lands in your inbox each week. Races worth signing up for,
           gear worth knowing about, and the people doing both around a real life.

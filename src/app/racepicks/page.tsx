@@ -38,7 +38,7 @@ export default function RacePicks() {
         <section className="about-pg-hero">
           <div className="page">
             <p className="about-pg-eye">Suor Society / Race Picks</p>
-            <h1 className="about-pg-headline">Race Picks.</h1>
+            <h1 className="about-pg-headline">Race Picks</h1>
             <p className="about-pg-deck">
               Open entry races and start lines worth your training block.<br />
               No qualifier, no lottery, no guesswork.
