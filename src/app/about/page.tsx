@@ -35,7 +35,7 @@ export default function About() {
                   I&rsquo;m Thais. Marketer by day. Runner and lifter the rest of the time, six days a week, because nothing else clears my head like it does.
                 </p>
                 <p className="about-pg-p">
-                  Not for aesthetics. For the feeling of being strong and capable in your body and what happens to your brain when you stay consistent about it. Mission Bay loops before work. Tuesday squats at Performance 360. Strava screenshots, fast or slow.
+                  Not for aesthetics. For the feeling of being strong and capable in your body and what happens to your brain when you stay consistent about it. Long runs before work. Tuesday squats at the gym. Strava screenshots, fast or slow.
                 </p>
                 <p className="about-pg-p">
                   This started as something personal. Then I looked around for a page covering the lift-and-run world the way it deserved and couldn&rsquo;t find it. So I built one.
@@ -50,7 +50,7 @@ export default function About() {
                   Suor Society covers the lift-and-run world as a culture page. Shoe drops, athlete spotlights, race coverage, the San Diego scene. Plus the context that&rsquo;s almost always missing: the 1:10 half marathon took eight years. Your run counts the whole time you&rsquo;re chasing it.
                 </p>
                 <p className="about-pg-p">
-                  Currently 12 weeks out from my first half marathon. Lifting around the mileage. Posting all of it.
+                  Ran my first half marathon this spring. Lifting around the mileage. Posting all of it.
                 </p>
               </div>
             </div>
@@ -69,7 +69,7 @@ export default function About() {
               </div>
               <div className="about-pg-crew-row">
                 <span>Where</span>
-                <span>Mission Bay loop, San Diego</span>
+                <span>Pacific Beach boardwalk, San Diego</span>
               </div>
               <div className="about-pg-crew-row">
                 <span>Cost</span>
