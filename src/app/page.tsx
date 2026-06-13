@@ -23,6 +23,30 @@ const BOARD_POSTS: BoardPost[] = [
     desc: "Best open entry races in California and the US. All certified. No qualifier needed.",
     meta: "New · June 2026 ↗",
   },
+  {
+    href: "/dispatch/hyrox-fall-2026-schedule",
+    img: "/race-hero.jpg",
+    eyebrow: "The Dispatch",
+    title: "HYROX Fall 2026 Schedule",
+    desc: "10 races, four new cities, and Anaheim returns Dec 4 to 6. The full North America calendar.",
+    meta: "HYROX · June 2026 ↗",
+  },
+  {
+    href: "/dispatch/june-2026-shoe-drops",
+    img: "/race-hero.jpg",
+    eyebrow: "The Dispatch",
+    title: "June Shoe Drops",
+    desc: "The Endorphin Elite 3, a plateless Puma at $150, and why plateless super trainers are the trend.",
+    meta: "Gear · June 2026 ↗",
+  },
+  {
+    href: "/dispatch/cape-town-marathon-major",
+    img: "/race-hero.jpg",
+    eyebrow: "The Dispatch",
+    title: "Cape Town Joins the Majors",
+    desc: "Africa's first Abbott World Marathon Major joins the series May 23, 2027. What it changes for the star chase.",
+    meta: "Races · June 2026 ↗",
+  },
 ];
 
 export default function Home() {
@@ -70,11 +94,15 @@ export default function Home() {
     }
   }
 
-  const cols = Math.min(BOARD_POSTS.length, 3);
-  const gridStyle: React.CSSProperties = {
-    gridTemplateColumns: `repeat(${cols}, 1fr)`,
-    ...(cols === 1 && { maxWidth: "440px" }),
-  };
+  const count = BOARD_POSTS.length;
+  const cols = count === 4 ? 2 : Math.min(count, 3);
+  // Set columns via a CSS var so the mobile media query in globals.css can still
+  // override it to a single column (an inline grid-template-columns would not).
+  const gridStyle = {
+    "--cols": cols,
+    ...(count === 1 && { maxWidth: "440px" }),
+    ...(count === 4 && { maxWidth: "760px", margin: "0 auto" }),
+  } as React.CSSProperties;
 
   return (
     <>
