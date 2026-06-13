@@ -891,7 +891,7 @@ a { color: inherit; text-decoration: none; }
 .race-list { margin-bottom: 0; }
 .race-row {
   display: grid;
-  grid-template-columns: 32px 1fr auto;
+  grid-template-columns: 32px minmax(0, max-content) auto;
   gap: 20px;
   align-items: start;
   padding: 22px 0;
