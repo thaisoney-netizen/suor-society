@@ -53,43 +53,6 @@ export default function About() {
           </div>
         </section>
 
-        {/* CREW */}
-        <section className="about-pg-crew">
-          <div className="page">
-            <p className="about-pg-crew-eye">Community</p>
-            <h2 className="about-pg-crew-title">Saturday<br />Crew Runs</h2>
-            <div className="about-pg-crew-table">
-              <div className="about-pg-crew-row">
-                <span>When</span>
-                <span>Saturday mornings</span>
-              </div>
-              <div className="about-pg-crew-row">
-                <span>Where</span>
-                <span>Pacific Beach boardwalk, San Diego</span>
-              </div>
-              <div className="about-pg-crew-row">
-                <span>Cost</span>
-                <span>Free. Always.</span>
-              </div>
-              <div className="about-pg-crew-row">
-                <span>Pace</span>
-                <span>All of them</span>
-              </div>
-            </div>
-            <p className="about-pg-crew-note">
-              Follow{" "}
-              <a
-                href="https://instagram.com/suorsociety"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @suorsociety
-              </a>{" "}
-              for the callout each week.
-            </p>
-          </div>
-        </section>
-
       </main>
 
       <SiteFooter />
