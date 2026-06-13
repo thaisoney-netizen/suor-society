@@ -25,9 +25,6 @@ const LINES = [
   "Coffee after",
 ];
 
-// Placeholder slots. Swap each label for an <img> when photos are ready.
-const PHOTO_SLOTS = ["01", "02", "03", "04", "05", "06"];
-
 export default function Crew() {
   return (
     <>
@@ -35,7 +32,7 @@ export default function Crew() {
 
       <main>
         {/* HERO */}
-        <section className="about-pg-hero">
+        <section className="about-pg-hero crew-hero">
           <div className="page">
             <p className="about-pg-eye">Suor Society / Crew</p>
             <h1 className="about-pg-headline">Run with us</h1>
@@ -111,20 +108,6 @@ export default function Crew() {
             {LINES.map((line) => (
               <p key={line} className="crew-line">{line}</p>
             ))}
-          </div>
-        </section>
-
-        {/* PHOTOS */}
-        <section className="crew-photos">
-          <div className="page">
-            <p className="about-pg-eye">The crew</p>
-            <div className="crew-photo-grid">
-              {PHOTO_SLOTS.map((n) => (
-                <div key={n} className="crew-photo">
-                  <span>Photo {n}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
