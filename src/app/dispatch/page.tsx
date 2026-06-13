@@ -7,6 +7,43 @@ export const metadata = {
   description: "One email a week. The lift-and-run world, edited down.",
 };
 
+// ── DISPATCH POSTS ──
+// To publish a new post: add an object to the top of this array.
+type Post = {
+  href: string;
+  img: string;
+  tag: string;
+  date: string;
+  title: string;
+  desc: string;
+};
+const POSTS: Post[] = [
+  {
+    href: "/dispatch/hyrox-fall-2026-schedule",
+    img: "/race-hero.jpg",
+    tag: "HYROX",
+    date: "June 2026",
+    title: "HYROX Fall 2026: Anaheim Is Back and the Calendar Just Got Huge",
+    desc: "10 races, four new cities, and Anaheim returns Dec 4 to 6. The full North America schedule.",
+  },
+  {
+    href: "/dispatch/june-2026-shoe-drops",
+    img: "/race-hero.jpg",
+    tag: "Gear",
+    date: "June 2026",
+    title: "June Shoe Drops: Saucony Goes Big, Puma Pulls the Plate",
+    desc: "The Endorphin Elite 3, a plateless Puma at $150, and why plateless super trainers are the trend.",
+  },
+  {
+    href: "/dispatch/cape-town-marathon-major",
+    img: "/race-hero.jpg",
+    tag: "Races",
+    date: "June 2026",
+    title: "Cape Town Is Now a Marathon Major. Here's What Actually Changes",
+    desc: "Africa's first Abbott World Marathon Major joins the series May 23, 2027. What it does to the star chase.",
+  },
+];
+
 export default function Dispatch() {
   return (
     <>
@@ -40,6 +77,35 @@ export default function Dispatch() {
               <li>San Diego crew runs and meetups</li>
             </ul>
             <DispatchForm />
+          </div>
+        </section>
+
+        {/* LATEST POSTS */}
+        <section className="archive">
+          <div className="page">
+            <div className="article-section-head">
+              <div className="article-section-label">Latest from the Dispatch</div>
+              <div className="article-section-sub">Race news · HYROX · Gear</div>
+            </div>
+            <div className="archive-list">
+              {POSTS.map((post) => (
+                <a key={post.href} className="archive-entry" href={post.href}>
+                  <div className="archive-entry-img">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={post.img} alt={post.title} />
+                  </div>
+                  <div className="archive-entry-body">
+                    <div className="archive-entry-meta">
+                      <span>{post.tag}</span>
+                      <span>{post.date}</span>
+                    </div>
+                    <h2 className="archive-entry-title">{post.title}</h2>
+                    <p className="archive-entry-desc">{post.desc}</p>
+                    <span className="archive-entry-read">Read →</span>
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
         </section>
 
