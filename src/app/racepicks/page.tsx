@@ -23,7 +23,7 @@ const POSTS: Post[] = [
     img: "/race-hero.jpg",
     tag: "Race Guide",
     date: "June 2026",
-    title: "40 Open Entry Races in California and the US You Can Still Run",
+    title: "40 Open Entry Races in California and the US You Can Still Run in 2026",
     desc: "No qualifier, no lottery. 20 California races, 20 across the US, all USATF certified.",
   },
 ];

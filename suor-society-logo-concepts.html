@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suor Society — Logo Concepts V1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white:   #FFFFFF;
+      --asphalt: #141414;
+      --slate:   #2D3340;
+      --bone:    #ECE4D4;
+      --sunrise: #E08655;
+      --hi:      #EBC34A;
+      --rust:    #C14429;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--asphalt);
+      font-family: 'Barlow Condensed', system-ui, sans-serif;
+      padding: 52px 48px 100px;
+    }
+
+    /* ── HEADER ─────────────────────────────────── */
+    .hd {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 2.5px solid var(--asphalt);
+      padding-bottom: 18px;
+      margin-bottom: 56px;
+    }
+    .hd-eyebrow {
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 5px;
+    }
+    .hd-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 58px;
+      letter-spacing: 3px;
+      line-height: 1;
+    }
+    .hd-meta {
+      font-size: 9px;
+      font-weight: 300;
+      letter-spacing: 3px;
+      color: #888;
+      text-transform: uppercase;
+      text-align: right;
+      line-height: 1.8;
+    }
+
+    /* ── SECTION ─────────────────────────────────── */
+    .section { margin-bottom: 48px; }
+    .sec-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--asphalt);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .sec-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(20,20,20,0.15);
+    }
+
+    /* ── ICON GRID ───────────────────────────────── */
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .icon-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      padding: 40px 16px 26px;
+    }
+    .icon-card.bg-white   { background: var(--white); border: 1px solid rgba(20,20,20,0.1); }
+    .icon-card.bg-dark    { background: var(--asphalt); }
+    .icon-card.bg-bone    { background: var(--bone); border: 1px solid rgba(20,20,20,0.1); }
+
+    .icon-card svg { width: 96px; height: 96px; }
+
+    .card-label {
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--asphalt);
+      text-align: center;
+    }
+    .icon-card.bg-dark .card-label { color: rgba(236,228,212,0.5); }
+
+    .tag {
+      display: inline-block;
+      background: var(--asphalt);
+      color: var(--bone);
+      font-size: 7px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 2px 5px;
+      margin-left: 5px;
+      vertical-align: middle;
+    }
+
+    /* ── WORDMARK GRID ───────────────────────────── */
+    .wm-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .wm-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 52px 32px 32px;
+      min-height: 170px;
+    }
+    .wm-card.bg-white  { background: var(--white); border: 1px solid rgba(20,20,20,0.1); }
+    .wm-card.bg-dark   { background: var(--asphalt); }
+    .wm-card.bg-bone   { background: var(--bone); border: 1px solid rgba(20,20,20,0.1); }
+    .wm-card.bg-dark .card-label { color: rgba(236,228,212,0.4); }
+
+    /* ── COMBINATION GRID ────────────────────────── */
+    .combo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .combo-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 32px 16px 24px;
+      min-height: 160px;
+    }
+    .combo-card.bg-white  { background: var(--white); border: 1px solid rgba(20,20,20,0.1); }
+    .combo-card.bg-dark   { background: var(--asphalt); }
+    .combo-card.bg-bone   { background: var(--bone); border: 1px solid rgba(20,20,20,0.1); }
+    .combo-card svg { overflow: visible; }
+    .combo-card.bg-dark .card-label { color: rgba(236,228,212,0.4); }
+
+    /* ── PALETTE ─────────────────────────────────── */
+    .palette {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .swatch-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .swatch {
+      width: 56px;
+      height: 56px;
+    }
+    .sw-name {
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--asphalt);
+      text-align: center;
+    }
+    .sw-hex {
+      font-size: 8px;
+      font-weight: 300;
+      color: #888;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+    .sw-role {
+      font-size: 7px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: #aaa;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════ HEADER ══════ -->
+<div class="hd">
+  <div>
+    <div class="hd-eyebrow">Logo Concepts — V1 — Suor Society</div>
+    <div class="hd-title">Suor Society</div>
+  </div>
+  <div class="hd-meta">
+    San Diego, CA<br>
+    05.04.26<br>
+    Run. Lift. Sweat.
+  </div>
+</div>
+
+
+<!-- ══════ 01 / ICONS — LIGHT ══════ -->
+<div class="section">
+  <div class="sec-label">01 / Icon Mark — Light</div>
+  <div class="icon-grid">
+
+    <!-- A: S LETTERMARK -->
+    <div class="icon-card bg-white">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+        <text x="50" y="82"
+          font-family="'Bebas Neue', sans-serif"
+          font-size="96"
+          fill="#141414"
+          text-anchor="middle">S</text>
+      </svg>
+      <div class="card-label">A — S Lettermark</div>
+    </div>
+
+    <!-- B: SWEAT DROP -->
+    <div class="icon-card bg-white">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50,8 L77,66 A27,27 0 0,1 23,66 Z" fill="#141414"/>
+      </svg>
+      <div class="card-label">B — Sweat Drop</div>
+    </div>
+
+    <!-- C: MOTION MARK -->
+    <div class="icon-card bg-white">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <g transform="rotate(18, 50, 50)">
+          <rect x="14" y="10" width="16" height="80" rx="8" fill="#141414"/>
+          <rect x="36" y="10" width="16" height="80" rx="8" fill="#141414"/>
+          <rect x="58" y="10" width="16" height="80" rx="8" fill="#141414"/>
+        </g>
+      </svg>
+      <div class="card-label">C — Motion Mark</div>
+    </div>
+
+    <!-- D: CREW PACK (Surprise) -->
+    <div class="icon-card bg-white">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="78" r="13" fill="#141414"/>
+        <circle cx="50" cy="50" r="13" fill="#141414"/>
+        <circle cx="80" cy="22" r="13" fill="#141414"/>
+      </svg>
+      <div class="card-label">D — Crew Pack <span class="tag">Surprise</span></div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════ 02 / ICONS — DARK ══════ -->
+<div class="section">
+  <div class="sec-label">02 / Icon Mark — Dark</div>
+  <div class="icon-grid">
+
+    <div class="icon-card bg-dark">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+        <text x="50" y="82" font-family="'Bebas Neue', sans-serif" font-size="96" fill="#ECE4D4" text-anchor="middle">S</text>
+      </svg>
+      <div class="card-label">A — S Lettermark</div>
+    </div>
+
+    <div class="icon-card bg-dark">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50,8 L77,66 A27,27 0 0,1 23,66 Z" fill="#ECE4D4"/>
+      </svg>
+      <div class="card-label">B — Sweat Drop</div>
+    </div>
+
+    <div class="icon-card bg-dark">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <g transform="rotate(18, 50, 50)">
+          <rect x="14" y="10" width="16" height="80" rx="8" fill="#ECE4D4"/>
+          <rect x="36" y="10" width="16" height="80" rx="8" fill="#ECE4D4"/>
+          <rect x="58" y="10" width="16" height="80" rx="8" fill="#ECE4D4"/>
+        </g>
+      </svg>
+      <div class="card-label">C — Motion Mark</div>
+    </div>
+
+    <div class="icon-card bg-dark">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="78" r="13" fill="#ECE4D4"/>
+        <circle cx="50" cy="50" r="13" fill="#ECE4D4"/>
+        <circle cx="80" cy="22" r="13" fill="#ECE4D4"/>
+      </svg>
+      <div class="card-label">D — Crew Pack <span class="tag">Surprise</span></div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════ 03 / ICONS — SUNRISE ACCENT ══════ -->
+<div class="section">
+  <div class="sec-label">03 / Icon Mark — Sunrise Accent</div>
+  <div class="icon-grid">
+
+    <div class="icon-card bg-dark">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+        <text x="50" y="82" font-family="'Bebas Neue', sans-serif" font-size="96" fill="#E08655" text-anchor="middle">S</text>
+      </svg>
+      <div class="card-label">A — S Lettermark</div>
+    </div>
+
+    <div class="icon-card bg-dark">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50,8 L77,66 A27,27 0 0,1 23,66 Z" fill="#E08655"/>
+      </svg>
+      <div class="card-label">B — Sweat Drop</div>
+    </div>
+
+    <div class="icon-card bg-dark">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <g transform="rotate(18, 50, 50)">
+          <rect x="14" y="10" width="16" height="80" rx="8" fill="#E08655"/>
+          <rect x="36" y="10" width="16" height="80" rx="8" fill="#E08655"/>
+          <rect x="58" y="10" width="16" height="80" rx="8" fill="#E08655"/>
+        </g>
+      </svg>
+      <div class="card-label">C — Motion Mark</div>
+    </div>
+
+    <div class="icon-card bg-dark">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="78" r="13" fill="#ECE4D4"/>
+        <circle cx="50" cy="50" r="13" fill="#ECE4D4"/>
+        <circle cx="80" cy="22" r="13" fill="#E08655"/>
+      </svg>
+      <div class="card-label">D — Crew Pack <span class="tag">Surprise</span></div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════ 04 / WORDMARKS ══════ -->
+<div class="section">
+  <div class="sec-label">04 / Wordmarks</div>
+  <div class="wm-grid">
+
+    <!-- SUOR — White -->
+    <div class="wm-card bg-white">
+      <svg viewBox="0 0 260 94" width="260" height="94" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+        <text x="130" y="76"
+          font-family="'Bebas Neue', sans-serif"
+          font-size="88"
+          fill="#141414"
+          text-anchor="middle"
+          letter-spacing="6">SUOR</text>
+      </svg>
+      <div class="card-label">SUOR — Light</div>
+    </div>
+
+    <!-- SUOR SOCIETY — White -->
+    <div class="wm-card bg-white">
+      <svg viewBox="0 0 310 120" width="310" height="120" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+        <text x="157.5" y="70"
+          font-family="'Bebas Neue', sans-serif"
+          font-size="72"
+          fill="#141414"
+          text-anchor="middle"
+          letter-spacing="5">SUOR</text>
+        <text x="162.5" y="98"
+          font-family="'Barlow Condensed', sans-serif"
+          font-weight="600"
+          font-size="17"
+          fill="#141414"
+          text-anchor="middle"
+          letter-spacing="15">SOCIETY</text>
+      </svg>
+      <div class="card-label">SUOR SOCIETY — Light</div>
+    </div>
+
+    <!-- SUOR — Dark -->
+    <div class="wm-card bg-dark">
+      <svg viewBox="0 0 260 94" width="260" height="94" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+        <text x="130" y="76"
+          font-family="'Bebas Neue', sans-serif"
+          font-size="88"
+          fill="#ECE4D4"
+          text-anchor="middle"
+          letter-spacing="6">SUOR</text>
+      </svg>
+      <div class="card-label">SUOR — Dark</div>
+    </div>
+
+    <!-- SUOR SOCIETY — Dark + Sunrise accent -->
+    <div class="wm-card bg-dark">
+      <svg viewBox="0 0 310 120" width="310" height="120" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+        <text x="157.5" y="70"
+          font-family="'Bebas Neue', sans-serif"
+          font-size="72"
+          fill="#ECE4D4"
+          text-anchor="middle"
+          letter-spacing="5">SUOR</text>
+        <text x="162.5" y="98"
+          font-family="'Barlow Condensed', sans-serif"
+          font-weight="600"
+          font-size="17"
+          fill="#E08655"
+          text-anchor="middle"
+          letter-spacing="15">SOCIETY</text>
+      </svg>
+      <div class="card-label">SUOR SOCIETY — Dark / Sunrise</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════ 05 / COMBINATIONS (Icon + Wordmark) ══════ -->
+<div class="section">
+  <div class="sec-label">05 / Combination Samples</div>
+  <div class="combo-grid">
+
+    <!-- Sweat Drop + SUOR, light -->
+    <div class="combo-card bg-white">
+      <svg viewBox="0 0 120 170" width="120" height="170" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+        <g transform="translate(60, 0) scale(0.55)">
+          <path d="M50,8 L77,66 A27,27 0 0,1 23,66 Z" fill="#141414" transform="translate(-50,0)"/>
+        </g>
+        <text x="62" y="122"
+          font-family="'Bebas Neue', sans-serif"
+          font-size="44"
+          fill="#141414"
+          text-anchor="middle"
+          letter-spacing="4">SUOR</text>
+        <text x="64.5" y="142"
+          font-family="'Barlow Condensed', sans-serif"
+          font-weight="600"
+          font-size="10"
+          fill="#141414"
+          text-anchor="middle"
+          letter-spacing="9">SOCIETY</text>
+      </svg>
+      <div class="card-label">B + Wordmark — Light</div>
+    </div>
+
+    <!-- Sweat Drop + SUOR, dark -->
+    <div class="combo-card bg-dark">
+      <svg viewBox="0 0 120 170" width="120" height="170" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+        <g transform="translate(60, 0) scale(0.55)">
+          <path d="M50,8 L77,66 A27,27 0 0,1 23,66 Z" fill="#E08655" transform="translate(-50,0)"/>
+        </g>
+        <text x="62" y="122"
+          font-family="'Bebas Neue', sans-serif"
+          font-size="44"
+          fill="#ECE4D4"
+          text-anchor="middle"
+          letter-spacing="4">SUOR</text>
+        <text x="64.5" y="142"
+          font-family="'Barlow Condensed', sans-serif"
+          font-weight="600"
+          font-size="10"
+          fill="#E08655"
+          text-anchor="middle"
+          letter-spacing="9">SOCIETY</text>
+      </svg>
+      <div class="card-label">B + Wordmark — Dark</div>
+    </div>
+
+    <!-- Crew Pack + SUOR, light -->
+    <div class="combo-card bg-white">
+      <svg viewBox="0 0 120 170" width="120" height="170" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+        <g transform="translate(5, 0) scale(0.58)">
+          <circle cx="20" cy="78" r="13" fill="#141414"/>
+          <circle cx="50" cy="50" r="13" fill="#141414"/>
+          <circle cx="80" cy="22" r="13" fill="#141414"/>
+        </g>
+        <text x="62" y="122"
+          font-family="'Bebas Neue', sans-serif"
+          font-size="44"
+          fill="#141414"
+          text-anchor="middle"
+          letter-spacing="4">SUOR</text>
+        <text x="64.5" y="142"
+          font-family="'Barlow Condensed', sans-serif"
+          font-weight="600"
+          font-size="10"
+          fill="#141414"
+          text-anchor="middle"
+          letter-spacing="9">SOCIETY</text>
+      </svg>
+      <div class="card-label">D + Wordmark — Light</div>
+    </div>
+
+    <!-- Crew Pack + SUOR, dark -->
+    <div class="combo-card bg-dark">
+      <svg viewBox="0 0 120 170" width="120" height="170" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+        <g transform="translate(5, 0) scale(0.58)">
+          <circle cx="20" cy="78" r="13" fill="#ECE4D4"/>
+          <circle cx="50" cy="50" r="13" fill="#ECE4D4"/>
+          <circle cx="80" cy="22" r="13" fill="#E08655"/>
+        </g>
+        <text x="62" y="122"
+          font-family="'Bebas Neue', sans-serif"
+          font-size="44"
+          fill="#ECE4D4"
+          text-anchor="middle"
+          letter-spacing="4">SUOR</text>
+        <text x="64.5" y="142"
+          font-family="'Barlow Condensed', sans-serif"
+          font-weight="600"
+          font-size="10"
+          fill="#E08655"
+          text-anchor="middle"
+          letter-spacing="9">SOCIETY</text>
+      </svg>
+      <div class="card-label">D + Wordmark — Dark</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════ 06 / PALETTE ══════ -->
+<div class="section">
+  <div class="sec-label">06 / Brand Palette</div>
+  <div class="palette">
+    <div class="swatch-wrap">
+      <div class="swatch" style="background:#FFFFFF; outline:1px solid rgba(0,0,0,0.1);"></div>
+      <div class="sw-name">White</div>
+      <div class="sw-hex">#FFFFFF</div>
+      <div class="sw-role">Primary BG</div>
+    </div>
+    <div class="swatch-wrap">
+      <div class="swatch" style="background:#141414;"></div>
+      <div class="sw-name">Asphalt</div>
+      <div class="sw-hex">#141414</div>
+      <div class="sw-role">Primary Type</div>
+    </div>
+    <div class="swatch-wrap">
+      <div class="swatch" style="background:#2D3340;"></div>
+      <div class="sw-name">Slate</div>
+      <div class="sw-hex">#2D3340</div>
+      <div class="sw-role">Dark Bands</div>
+    </div>
+    <div class="swatch-wrap">
+      <div class="swatch" style="background:#ECE4D4; outline:1px solid rgba(0,0,0,0.1);"></div>
+      <div class="sw-name">Bone</div>
+      <div class="sw-hex">#ECE4D4</div>
+      <div class="sw-role">Card Surface</div>
+    </div>
+    <div class="swatch-wrap">
+      <div class="swatch" style="background:#E08655;"></div>
+      <div class="sw-name">Sunrise</div>
+      <div class="sw-hex">#E08655</div>
+      <div class="sw-role">Accent</div>
+    </div>
+    <div class="swatch-wrap">
+      <div class="swatch" style="background:#EBC34A;"></div>
+      <div class="sw-name">Highlight</div>
+      <div class="sw-hex">#EBC34A</div>
+      <div class="sw-role">Accent</div>
+    </div>
+    <div class="swatch-wrap">
+      <div class="swatch" style="background:#C14429;"></div>
+      <div class="sw-name">Rust</div>
+      <div class="sw-hex">#C14429</div>
+      <div class="sw-role">Accent</div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

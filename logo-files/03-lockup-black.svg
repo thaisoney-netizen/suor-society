@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 360" width="3200" height="720">
+  
+  <rect width="1600" height="360" fill="#FFFFFF"></rect>
+
+  
+  <g transform="translate(80, 60)">
+    <circle cx="120" cy="120" r="120" fill="#0A0A0A"></circle>
+    <g transform="translate(50, 24)">
+      <defs>
+        <mask id="lockup-strides">
+          <rect width="200" height="236" fill="#fff"></rect>
+          <rect x="40" y="118" width="44" height="9" fill="#000" transform="rotate(-22 62 122)"></rect>
+          <rect x="100" y="138" width="60" height="9" fill="#000" transform="rotate(-22 130 142)"></rect>
+          <rect x="56" y="160" width="80" height="9" fill="#000" transform="rotate(-22 96 164)"></rect>
+        </mask>
+      </defs>
+      <path d="M100,16 L154,132 A54,54 0 0,1 46,132 Z" fill="#FFFFFF" mask="url(#lockup-strides)"></path>
+    </g>
+  </g>
+
+  
+  <g transform="translate(420, 0)">
+    <text x="0" y="230" font-family="&#39;Bebas Neue&#39;, Impact, sans-serif" font-size="180" font-weight="400" fill="#0A0A0A" letter-spacing="14">SUOR</text>
+    <line x1="490" y1="135" x2="490" y2="225" stroke="#0A0A0A" stroke-width="2"></line>
+    <text x="540" y="198" font-family="&#39;Barlow Condensed&#39;, &#39;Helvetica Neue&#39;, sans-serif" font-weight="600" font-size="38" fill="#0A0A0A" letter-spacing="14">SOCIETY</text>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="1024" height="1024">
+  <rect width="240" height="240" fill="#0A0A0A"></rect>
+  <defs>
+    <mask id="strides">
+      <rect width="240" height="240" fill="#fff"></rect>
+      <rect x="60" y="120" width="44" height="9" fill="#000" transform="rotate(-22 82 124)"></rect>
+      <rect x="120" y="140" width="60" height="9" fill="#000" transform="rotate(-22 150 144)"></rect>
+      <rect x="76" y="162" width="80" height="9" fill="#000" transform="rotate(-22 116 166)"></rect>
+    </mask>
+  </defs>
+  <path d="M120,20 L174,136 A54,54 0 0,1 66,136 Z" fill="#FFFFFF" mask="url(#strides)"></path>
+</svg>

@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<!-- saved from url=(0309)https://019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/index.html?t=0ca7f40de92a4bb7d7079c7d11d6c1aa70e09b17b98828d63fba90a8e7534016.d71541c8-5039-427f-a155-f853edda854d.6cb7147e-1af6-4a72-8de2-059a861a43f8.1778269918 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style data-omelette-injected="">html,body{background:transparent}</style><script data-omelette-injected="">(()=>{var j=["https://claude.ai","https://preview.claude.ai"];var x=true;var S=30000;var f=3000;document.addEventListener("DOMContentLoaded",()=>{const H=window.Babel;const G="om-src-id";if(H&&H.registerPlugin&&!(H.availablePlugins&&H.availablePlugins[G])){H.registerPlugin(G,({types:Y})=>({visitor:{JSXOpeningElement(U,Q){const J=U.node;if(J.name&&J.name.type==="JSXMemberExpression")return;for(let V=0;V<J.attributes.length;V++){const L=J.attributes[V];if(L.type==="JSXAttribute"&&L.name&&L.name.name==="data-om-id")return}const W=Q.file&&Q.file.opts&&Q.file.opts.filename||"?";const Z=J.loc&&J.loc.start;const z=`jsx:${W}:${J.start??0}:${Z?Z.line:0}:${Z?Z.column+1:0}`;J.attributes.push(Y.jsxAttribute(Y.jsxIdentifier("data-om-id"),Y.stringLiteral(z)))}}}))}const k="om-text-extract";let A=false;if(x&&H&&H.registerPlugin&&!(H.availablePlugins&&H.availablePlugins[k])){const Y=window.React;if(Y&&Y.useSyncExternalStore&&Y.createElement){A=true;const U={};const Q=new Set;let J=0;window.__omTextO=U;window.__omTextSet=(z)=>{for(const V in z){const L=z[V];if(L==null)delete U[V];else U[V]=L}J++;Q.forEach((V)=>V())};const W=(z)=>{Q.add(z);return()=>Q.delete(z)};const Z=()=>J;window.__OmT=function z(V){Y.useSyncExternalStore(W,Z,Z);return Y.createElement("span",{"data-om-text":V.i,className:"__om-t"},V.i in U?U[V.i]:V.children)};H.registerPlugin(k,({types:z})=>{const V={style:1,script:1,noscript:1,textarea:1,title:1,option:1,text:1,tspan:1,textPath:1};const L={placeholder:1,alt:1,title:1,label:1,"aria-label":1,"aria-description":1,"aria-placeholder":1};const _=($,C)=>z.logicalExpression("??",z.memberExpression(z.logicalExpression("||",z.memberExpression(z.identifier("window"),z.identifier("__omTextO")),z.objectExpression([])),z.stringLiteral($),true),C);const E=($)=>$.file&&$.file.opts&&$.file.opts.filename||"?";const B=($)=>$.file&&$.file.code||"";const b=($,C)=>{const X=(F)=>F&&F.start!=null&&F.end!=null&&(F.type==="StringLiteral"||F.type==="TemplateLiteral"&&F.expressions.length===0)?[F.start,F.end]:null;const N=X(C);if(N)return N;if(C&&C.type==="Identifier"){const F=$.scope.getBinding(C.name);if(F&&F.constant&&F.path.node.type==="VariableDeclarator"){return X(F.path.node.init)}}return null};const M=($,C,X)=>{const N=$.node;let F=false;const w=(K,q)=>{F=true;return z.jsxElement(z.jsxOpeningElement(z.jsxIdentifier("__OmT"),[z.jsxAttribute(z.jsxIdentifier("i"),z.stringLiteral(K))],false),z.jsxClosingElement(z.jsxIdentifier("__OmT")),[q],false)};const D=N.children.map((K)=>{if(K.type==="JSXText"){if(K.start==null||K.end==null)return K;const q=X.slice(K.start,K.end);const R=q.length-q.trimStart().length;const m=q.length-q.trimEnd().length;if(R+m>=q.length)return K;return w(`txt:${C}:${K.start+R}:${K.end-m}`,K)}if(K.type==="JSXExpressionContainer"){const q=b($,K.expression);if(q)return w(`str:${C}:${q[0]}:${q[1]}`,K)}return K});if(F)N.children=D};return{visitor:{JSXOpeningElement($,C){const X=$.node;const N=E(C);const F={};for(let w=0;w<X.attributes.length;w++){const D=X.attributes[w];if(D.type!=="JSXAttribute"||!D.name)continue;const K=D.name.name;if(!L[K])continue;if(!D.value||D.value.type!=="StringLiteral")continue;if(D.value.start==null||D.value.end==null)continue;const q=`txt:${N}:${D.value.start}:${D.value.end}`;F[K]=q;D.value=z.jsxExpressionContainer(_(q,z.stringLiteral(D.value.value)))}if(Object.keys(F).length){X.attributes.push(z.jsxAttribute(z.jsxIdentifier("data-om-text-attrs"),z.stringLiteral(JSON.stringify(F))))}},JSXElement($,C){const X=$.node.openingElement;const N=X&&X.name&&X.name.name;if(N==="__OmT")return;if(typeof N==="string"&&V[N])return;M($,E(C),B(C))},JSXFragment($,C){M($,E(C),B(C))}}}})}}const u=A?["transform-react-jsx-source",G,k]:["transform-react-jsx-source",G];document.querySelectorAll('script[type="text/babel"],script[type="text/jsx"]').forEach((Y,U)=>{const Q=Y.getAttribute("data-plugins")||"";const J=u.filter((W)=>Q.indexOf(W)<0);if(J.length){Y.setAttribute("data-plugins",Q?`${Q},${J.join(",")}`:J.join(","))}if(!Y.hasAttribute("data-filename")){Y.setAttribute("data-filename",Y.getAttribute("src")||`inline-${U}`)}})});var y=window.parent;if(y&&y!==window){const H=(Q,J)=>{try{y.postMessage({__omelette_log:true,type:Q,data:J},"*")}catch{}};["log","warn","error"].forEach((Q)=>{const J=console[Q];console[Q]=(...W)=>{const Z=W.map((z)=>{try{return typeof z==="object"?JSON.stringify(z):String(z)}catch{try{return String(z)}catch{return"[unstringifiable]"}}}).join(" ");H(Q,Z);J.apply(console,W)}});window.addEventListener("error",(Q)=>{const J=Q.target;if(J&&J!==window&&J.tagName){const W=J.src||J.href||"";H("resource_error",`${J.tagName} failed to load: ${W}`)}else{H("error",`${Q.message||"Unknown error"} at ${Q.filename||"?"}:${Q.lineno||0}:${Q.colno||0}`)}},true);window.addEventListener("unhandledrejection",(Q)=>{const J=Q.reason;const W=J instanceof Error?`${J.message} ${J.stack}`:String(J);H("error",`Unhandled rejection: ${W}`)});const G=()=>{try{y.postMessage({type:"omelette:height",height:document.documentElement.scrollHeight},"*")}catch{}};if(document.readyState==="complete")G();else window.addEventListener("load",G);if(window.ResizeObserver)new ResizeObserver(G).observe(document.documentElement);const k={};let A=0;window.claude={complete(Q){return new Promise((J,W)=>{if(!j.length){W(new Error("claude.complete: no parent origin"));return}const Z=`c${++A}`;const z=()=>setTimeout(()=>{delete k[Z];W(new Error(`claude.complete: no data for ${S/1000}s`))},S);const V=z();k[Z]={resolve:J,reject:W,text:"",t:V,arm:z};try{for(const L of j){y.postMessage({__om_api:true,id:Z,body:Q},L)}}catch(L){clearTimeout(V);delete k[Z];W(L)}})}};const u={};let Y=0;window.omelette={writeFile:(Q,J)=>new Promise((W,Z)=>{if(!j.length){W();return}const z=`f${++Y}`;const V=setTimeout(()=>{delete u[z];W()},f);u[z]={resolve:W,reject:Z,t:V};try{for(const L of j){y.postMessage({__om_file:true,id:z,op:"write",path:Q,content:J},L)}}catch{clearTimeout(V);delete u[z];W()}})};const U=(Q)=>{try{return JSON.stringify(Q)}catch{return JSON.stringify(String(Q))}};window.addEventListener("message",(Q)=>{if(j.indexOf(Q.origin)<0)return;if(Q.source!==y)return;const J=Q.data;if(!J)return;if(J.type==="omelette-preview-refresh"){if(typeof J.token!=="string"||!/^[0-9a-f.-]+$/.test(J.token))return;const z=Math.max(1,Math.floor((J.expiresAt||0)-Date.now()/1000));document.cookie="__Host-omelette-preview="+J.token+"; Path=/; Secure; SameSite=None; Partitioned; Max-Age="+z;return}if(J.__om_file_r){const z=u[J.id];if(!z)return;clearTimeout(z.t);delete u[J.id];if(J.ok)z.resolve();else z.reject(new Error(J.error||"write failed"));return}if(J.__om_api_r){const z=k[J.id];if(!z)return;if(J.error!=null){clearTimeout(z.t);delete k[J.id];z.reject(new Error(J.error));return}if(J.chunk!=null){clearTimeout(z.t);z.t=z.arm();z.text+=J.chunk;return}if(J.done){clearTimeout(z.t);delete k[J.id];z.resolve(J.text!=null?J.text:z.text);return}return}if(!J.__om_eval)return;const W=J;const Z=(z)=>{Q.source.postMessage({...z,__om_eval_r:1,id:W.id},Q.origin)};try{const z=(0,eval)(W.code);if(z&&typeof z.then==="function"){z.then((V)=>Z({ok:1,v:U(V)}),(V)=>Z({ok:0,e:String(V)}))}else{Z({ok:1,v:U(z)})}}catch(z){Z({ok:0,e:String(z)})}})}})();
+</script>
+
+
+<title>Suor Society — Instagram</title>
+<link rel="stylesheet" href="./colors_and_type.css">
+<link rel="stylesheet" href="./instagram.css">
+<style>
+  /* tab + simple page chrome */
+  .ig-topbar {
+    position: sticky; top:0; z-index: 50;
+    background: rgba(20,20,20,.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .ig-logo {
+    font-family: var(--font-display); font-size: 22px;
+    text-transform: uppercase; letter-spacing: -.02em; color: var(--bone);
+  }
+  .ig-logo .accent { color: var(--sunrise); }
+  .ig-search {
+    background: var(--bg-elev-1); border: 1px solid var(--border);
+    padding: 8px 14px; color: var(--fg-2); font-size: 13px;
+    width: 240px; font-family: var(--font-body);
+  }
+  .ig-nav { display: flex; gap: 18px; }
+  .ig-nav svg { color: var(--bone); cursor: pointer; }
+</style>
+<script>"use strict";
+
+var _jsxFileName = "/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx";
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+// Header.jsx — Suor Society IG profile header
+var _React = React,
+  useState = _React.useState;
+function IGIcon(_ref) {
+  var children = _ref.children;
+  return /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5,
+      columnNumber: 10
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:117:5:10"
+  }, children);
+}
+function Header() {
+  var _txtHttps019df5f, _txtHttps019df5f2;
+  var _useState = useState(false),
+    _useState2 = _slicedToArray(_useState, 2),
+    following = _useState2[0],
+    setFollowing = _useState2[1];
+  return /*#__PURE__*/React.createElement("div", {
+    className: "ig-header",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 5
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:285:11:5"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "ig-avatar",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 7
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:319:12:7"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "../../assets/logo-drop-sunrise.svg",
+    alt: (_txtHttps019df5f = (window.__omTextO || {})["txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:405:419"]) !== null && _txtHttps019df5f !== void 0 ? _txtHttps019df5f : "Suor Society",
+    style: {
+      padding: 18
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 9
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:355:13:9",
+    "data-om-text-attrs": "{\"alt\":\"txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:405:419\"}"
+  })), /*#__PURE__*/React.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 7
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:462:15:7"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "ig-handle",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 9
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:476:16:9"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "name",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 11
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:514:17:11"
+  }, /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:537:548",
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:0:0:0"
+  }, "suorsociety")), /*#__PURE__*/React.createElement("span", {
+    className: "verified",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 11
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:566:18:11"
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "11",
+    height: "11",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "3",
+    strokeLinecap: "square",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 13
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:606:19:13"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M5 13l4 4L19 7",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 134
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:727:19:134"
+  }))), /*#__PURE__*/React.createElement("div", {
+    className: "ig-actions",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
+      columnNumber: 11
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:788:21:11"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: following ? 'ig-btn ig-btn-secondary' : 'ig-btn ig-btn-primary',
+    onClick: function onClick() {
+      return setFollowing(function (f) {
+        return !f;
+      });
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22,
+      columnNumber: 13
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:829:22:13"
+  }, following ? 'Following' : 'Follow'), /*#__PURE__*/React.createElement("button", {
+    className: "ig-btn ig-btn-secondary",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26,
+      columnNumber: 13
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1057:26:13"
+  }, /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1101:1108",
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:0:0:0"
+  }, "Message")), /*#__PURE__*/React.createElement("button", {
+    className: "ig-btn ig-btn-icon",
+    "aria-label": (_txtHttps019df5f2 = (window.__omTextO || {})["txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1180:1186"]) !== null && _txtHttps019df5f2 !== void 0 ? _txtHttps019df5f2 : "More",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27,
+      columnNumber: 13
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1130:27:13",
+    "data-om-text-attrs": "{\"aria-label\":\"txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1180:1186\"}"
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "14",
+    height: "14",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28,
+      columnNumber: 15
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1202:28:15"
+  }, /*#__PURE__*/React.createElement("circle", {
+    cx: "12",
+    cy: "12",
+    r: "1",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28,
+      columnNumber: 113
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1300:28:113"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "6",
+    cy: "12",
+    r: "1",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28,
+      columnNumber: 144
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1331:28:144"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "18",
+    cy: "12",
+    r: "1",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28,
+      columnNumber: 174
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1361:28:174"
+  }))))), /*#__PURE__*/React.createElement("div", {
+    className: "ig-stats",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32,
+      columnNumber: 9
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1461:32:9"
+  }, /*#__PURE__*/React.createElement("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 11
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1498:33:11"
+  }, /*#__PURE__*/React.createElement("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 17
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1504:33:17"
+  }, /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1512:1515",
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:0:0:0"
+  }, "342")), " ", /*#__PURE__*/React.createElement("span", {
+    className: "label",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 38
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1525:33:38"
+  }, /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1549:1554",
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:0:0:0"
+  }, "posts"))), /*#__PURE__*/React.createElement("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34,
+      columnNumber: 11
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1579:34:11"
+  }, /*#__PURE__*/React.createElement("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34,
+      columnNumber: 17
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1585:34:17"
+  }, /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1593:1598",
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:0:0:0"
+  }, "4,287")), " ", /*#__PURE__*/React.createElement("span", {
+    className: "label",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34,
+      columnNumber: 40
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1608:34:40"
+  }, /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1632:1641",
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:0:0:0"
+  }, "followers"))), /*#__PURE__*/React.createElement("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 11
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1666:35:11"
+  }, /*#__PURE__*/React.createElement("strong", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 17
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1672:35:17"
+  }, /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1680:1683",
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:0:0:0"
+  }, "518")), " ", /*#__PURE__*/React.createElement("span", {
+    className: "label",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 38
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1693:35:38"
+  }, /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1717:1726",
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:0:0:0"
+  }, "following")))), /*#__PURE__*/React.createElement("div", {
+    className: "ig-bio",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37,
+      columnNumber: 9
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1764:37:9"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "display-name",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38,
+      columnNumber: 11
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1799:38:11"
+  }, /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1830:1842",
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:0:0:0"
+  }, "Suor Society")), /*#__PURE__*/React.createElement("span", {
+    className: "tagline",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 11
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1860:39:11"
+  }, /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1886:1941",
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:0:0:0"
+  }, "For the runner who lifts. The lifter who runs. And everyone figuring it out.")), /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1959:1992",
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:0:0:0"
+  }, "San Diego. A hybrid running culture page."), /*#__PURE__*/React.createElement("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40,
+      columnNumber: 44
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1992:40:44"
+  }), /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:2008:2058",
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:0:0:0"
+  }, "Crew runs Saturdays \xB7 Mission Bay 8am \xB7 all paces."), /*#__PURE__*/React.createElement("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41,
+      columnNumber: 61
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:2058:41:61"
+  }), /*#__PURE__*/React.createElement("a", {
+    className: "link",
+    href: "#",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42,
+      columnNumber: 11
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:2074:42:11"
+  }, /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:2103:2123",
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:0:0:0"
+  }, "suorsociety.com/crew")))));
+}
+window.Header = Header;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJfUmVhY3QiLCJSZWFjdCIsInVzZVN0YXRlIiwiSUdJY29uIiwiX3JlZiIsImNoaWxkcmVuIiwiY3JlYXRlRWxlbWVudCIsInN0eWxlIiwiZGlzcGxheSIsImFsaWduSXRlbXMiLCJfX3NvdXJjZSIsImZpbGVOYW1lIiwiX2pzeEZpbGVOYW1lIiwibGluZU51bWJlciIsImNvbHVtbk51bWJlciIsIkhlYWRlciIsIl90eHRIdHRwczAxOWRmNWYiLCJfdHh0SHR0cHMwMTlkZjVmMiIsIl91c2VTdGF0ZSIsIl91c2VTdGF0ZTIiLCJfc2xpY2VkVG9BcnJheSIsImZvbGxvd2luZyIsInNldEZvbGxvd2luZyIsImNsYXNzTmFtZSIsInNyYyIsImFsdCIsIndpbmRvdyIsIl9fb21UZXh0TyIsInBhZGRpbmciLCJfX09tVCIsImkiLCJ3aWR0aCIsImhlaWdodCIsInZpZXdCb3giLCJmaWxsIiwic3Ryb2tlIiwic3Ryb2tlV2lkdGgiLCJzdHJva2VMaW5lY2FwIiwiZCIsIm9uQ2xpY2siLCJmIiwiY3giLCJjeSIsInIiLCJocmVmIl0sInNvdXJjZXMiOlsiaHR0cHM6Ly8wMTlkZjVmOC0wMjdiLTczZjUtYjMwNS1iZWYwOTBlOWNiNzguY2xhdWRldXNlcmNvbnRlbnQuY29tL3YxL2Rlc2lnbi9wcm9qZWN0cy8wMTlkZjVmOC0wMjdiLTczZjUtYjMwNS1iZWYwOTBlOWNiNzgvc2VydmUvdWlfa2l0cy9pbnN0YWdyYW0vSGVhZGVyLmpzeCJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBIZWFkZXIuanN4IOKAlCBTdW9yIFNvY2lldHkgSUcgcHJvZmlsZSBoZWFkZXJcbmNvbnN0IHsgdXNlU3RhdGUgfSA9IFJlYWN0O1xuXG5mdW5jdGlvbiBJR0ljb24oeyBjaGlsZHJlbiB9KSB7XG4gIHJldHVybiA8c3BhbiBzdHlsZT17e2Rpc3BsYXk6J2lubGluZS1mbGV4JyxhbGlnbkl0ZW1zOidjZW50ZXInfX0+e2NoaWxkcmVufTwvc3Bhbj47XG59XG5cbmZ1bmN0aW9uIEhlYWRlcigpIHtcbiAgY29uc3QgW2ZvbGxvd2luZywgc2V0Rm9sbG93aW5nXSA9IHVzZVN0YXRlKGZhbHNlKTtcbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cImlnLWhlYWRlclwiPlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJpZy1hdmF0YXJcIj5cbiAgICAgICAgPGltZyBzcmM9XCIuLi8uLi9hc3NldHMvbG9nby1kcm9wLXN1bnJpc2Uuc3ZnXCIgYWx0PVwiU3VvciBTb2NpZXR5XCIgc3R5bGU9e3twYWRkaW5nOjE4fX0vPlxuICAgICAgPC9kaXY+XG4gICAgICA8ZGl2PlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImlnLWhhbmRsZVwiPlxuICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cIm5hbWVcIj5zdW9yc29jaWV0eTwvc3Bhbj5cbiAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJ2ZXJpZmllZFwiPlxuICAgICAgICAgICAgPHN2ZyB3aWR0aD1cIjExXCIgaGVpZ2h0PVwiMTFcIiB2aWV3Qm94PVwiMCAwIDI0IDI0XCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjNcIiBzdHJva2VMaW5lY2FwPVwic3F1YXJlXCI+PHBhdGggZD1cIk01IDEzbDQgNEwxOSA3XCIvPjwvc3ZnPlxuICAgICAgICAgIDwvc3Bhbj5cbiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImlnLWFjdGlvbnNcIj5cbiAgICAgICAgICAgIDxidXR0b24gY2xhc3NOYW1lPXtmb2xsb3dpbmcgPyAnaWctYnRuIGlnLWJ0bi1zZWNvbmRhcnknIDogJ2lnLWJ0biBpZy1idG4tcHJpbWFyeSd9XG4gICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNldEZvbGxvd2luZyhmID0+ICFmKX0+XG4gICAgICAgICAgICAgIHtmb2xsb3dpbmcgPyAnRm9sbG93aW5nJyA6ICdGb2xsb3cnfVxuICAgICAgICAgICAgPC9idXR0b24+XG4gICAgICAgICAgICA8YnV0dG9uIGNsYXNzTmFtZT1cImlnLWJ0biBpZy1idG4tc2Vjb25kYXJ5XCI+TWVzc2FnZTwvYnV0dG9uPlxuICAgICAgICAgICAgPGJ1dHRvbiBjbGFzc05hbWU9XCJpZy1idG4gaWctYnRuLWljb25cIiBhcmlhLWxhYmVsPVwiTW9yZVwiPlxuICAgICAgICAgICAgICA8c3ZnIHdpZHRoPVwiMTRcIiBoZWlnaHQ9XCIxNFwiIHZpZXdCb3g9XCIwIDAgMjQgMjRcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMlwiPjxjaXJjbGUgY3g9XCIxMlwiIGN5PVwiMTJcIiByPVwiMVwiLz48Y2lyY2xlIGN4PVwiNlwiIGN5PVwiMTJcIiByPVwiMVwiLz48Y2lyY2xlIGN4PVwiMThcIiBjeT1cIjEyXCIgcj1cIjFcIi8+PC9zdmc+XG4gICAgICAgICAgICA8L2J1dHRvbj5cbiAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgPC9kaXY+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaWctc3RhdHNcIj5cbiAgICAgICAgICA8c3Bhbj48c3Ryb25nPjM0Mjwvc3Ryb25nPiA8c3BhbiBjbGFzc05hbWU9XCJsYWJlbFwiPnBvc3RzPC9zcGFuPjwvc3Bhbj5cbiAgICAgICAgICA8c3Bhbj48c3Ryb25nPjQsMjg3PC9zdHJvbmc+IDxzcGFuIGNsYXNzTmFtZT1cImxhYmVsXCI+Zm9sbG93ZXJzPC9zcGFuPjwvc3Bhbj5cbiAgICAgICAgICA8c3Bhbj48c3Ryb25nPjUxODwvc3Ryb25nPiA8c3BhbiBjbGFzc05hbWU9XCJsYWJlbFwiPmZvbGxvd2luZzwvc3Bhbj48L3NwYW4+XG4gICAgICAgIDwvZGl2PlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImlnLWJpb1wiPlxuICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cImRpc3BsYXktbmFtZVwiPlN1b3IgU29jaWV0eTwvc3Bhbj5cbiAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJ0YWdsaW5lXCI+Rm9yIHJ1bm5lcnMgwrcgZm9yIGxpZnRlcnMgwrcgZm9yIGh5YnJpZHMgwrcgZm9yIHRoZSBzd2VhdDwvc3Bhbj5cbiAgICAgICAgICBTYW4gRGllZ28gaHlicmlkIHJ1bm5pbmcgY3VsdHVyZS48YnIvPlxuICAgICAgICAgIENyZXcgcnVucyBTYXR1cmRheXMgwrcgTWlzc2lvbiBCYXkgOGFtIMK3IGFsbCBwYWNlcy48YnIvPlxuICAgICAgICAgIDxhIGNsYXNzTmFtZT1cImxpbmtcIiBocmVmPVwiI1wiPnN1b3Jzb2NpZXR5LmNvbS9jcmV3PC9hPlxuICAgICAgICA8L2Rpdj5cbiAgICAgIDwvZGl2PlxuICAgIDwvZGl2PlxuICApO1xufVxuXG53aW5kb3cuSGVhZGVyID0gSGVhZGVyO1xuIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7QUFBQTtBQUNBLElBQUFBLE1BQUEsR0FBcUJDLEtBQUs7RUFBbEJDLFFBQVEsR0FBQUYsTUFBQSxDQUFSRSxRQUFRO0FBRWhCLFNBQVNDLE1BQU1BLENBQUFDLElBQUEsRUFBZTtFQUFBLElBQVpDLFFBQVEsR0FBQUQsSUFBQSxDQUFSQyxRQUFRO0VBQ3hCLG9CQUFPSixLQUFBLENBQUFLLGFBQUE7SUFBTUMsS0FBSyxFQUFFO01BQUNDLE9BQU8sRUFBQyxhQUFhO01BQUNDLFVBQVUsRUFBQztJQUFRLENBQUU7SUFBQUMsUUFBQTtNQUFBQyxRQUFBLEVBQUFDLFlBQUE7TUFBQUMsVUFBQTtNQUFBQyxZQUFBO0lBQUE7SUFBQTtFQUFBLEdBQUVULFFBQWUsQ0FBQztBQUNwRjtBQUVBLFNBQVNVLE1BQU1BLENBQUEsRUFBRztFQUFBLElBQUFDLGdCQUFBLEVBQUFDLGlCQUFBO0VBQ2hCLElBQUFDLFNBQUEsR0FBa0NoQixRQUFRLENBQUMsS0FBSyxDQUFDO0lBQUFpQixVQUFBLEdBQUFDLGNBQUEsQ0FBQUYsU0FBQTtJQUExQ0csU0FBUyxHQUFBRixVQUFBO0lBQUVHLFlBQVksR0FBQUgsVUFBQTtFQUM5QixvQkFDRWxCLEtBQUEsQ0FBQUssYUFBQTtJQUFLaUIsU0FBUyxFQUFDLFdBQVc7SUFB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</script><script>"use strict";
+
+var _jsxFileName = "/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx";
+// Highlights.jsx — IG story highlight reels for Suor Society
+function Highlights() {
+  var items = [{
+    label: 'Crew',
+    word: 'CREW',
+    bg: 'linear-gradient(180deg,#3a3f4d,#1A1A19)'
+  }, {
+    label: 'Gear',
+    word: 'GEAR',
+    bg: 'linear-gradient(180deg,#5a3220,#1A1A19)'
+  }, {
+    label: 'SD Scene',
+    word: 'SD',
+    bg: 'linear-gradient(180deg,#2D3340,#141414)'
+  }, {
+    label: 'Half Block',
+    word: '13.1',
+    bg: 'linear-gradient(180deg,#C14429,#5a1a0a)'
+  }, {
+    label: 'Hot Takes',
+    word: 'HOT',
+    bg: 'linear-gradient(180deg,#E08855,#5a3220)'
+  }, {
+    label: 'P360',
+    word: 'P360',
+    bg: 'linear-gradient(180deg,#1F1F1E,#0A0A0A)'
+  }, {
+    label: 'Coffee',
+    word: 'COFF',
+    bg: 'linear-gradient(180deg,#3D3D3A,#1F1F1E)'
+  }, {
+    label: 'Spotlights',
+    word: 'SPOT',
+    bg: 'linear-gradient(180deg,#2D3340,#0A0A0A)'
+  }];
+  return /*#__PURE__*/React.createElement("div", {
+    className: "ig-highlights",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14,
+      columnNumber: 5
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:816:14:5"
+  }, items.map(function (h) {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "ig-highlight",
+      key: h.label,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16,
+        columnNumber: 9
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:880:16:9"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "ig-highlight-circle",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17,
+        columnNumber: 11
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:935:17:11"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "ig-highlight-inner",
+      style: {
+        background: h.bg
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18,
+        columnNumber: 13
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:985:18:13"
+    }, h.word)), /*#__PURE__*/React.createElement("div", {
+      className: "ig-highlight-label",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20,
+        columnNumber: 11
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:1090:20:11"
+    }, h.label));
+  }));
+}
+window.Highlights = Highlights;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJIaWdobGlnaHRzIiwiaXRlbXMiLCJsYWJlbCIsIndvcmQiLCJiZyIsIlJlYWN0IiwiY3JlYXRlRWxlbWVudCIsImNsYXNzTmFtZSIsIl9fc291cmNlIiwiZmlsZU5hbWUiLCJfanN4RmlsZU5hbWUiLCJsaW5lTnVtYmVyIiwiY29sdW1uTnVtYmVyIiwibWFwIiwiaCIsImtleSIsInN0eWxlIiwiYmFja2dyb3VuZCIsIndpbmRvdyJdLCJzb3VyY2VzIjpbImh0dHBzOi8vMDE5ZGY1ZjgtMDI3Yi03M2Y1LWIzMDUtYmVmMDkwZTljYjc4LmNsYXVkZXVzZXJjb250ZW50LmNvbS92MS9kZXNpZ24vcHJvamVjdHMvMDE5ZGY1ZjgtMDI3Yi03M2Y1LWIzMDUtYmVmMDkwZTljYjc4L3NlcnZlL3VpX2tpdHMvaW5zdGFncmFtL0hpZ2hsaWdodHMuanN4Il0sInNvdXJjZXNDb250ZW50IjpbIi8vIEhpZ2hsaWdodHMuanN4IOKAlCBJRyBzdG9yeSBoaWdobGlnaHQgcmVlbHMgZm9yIFN1b3IgU29jaWV0eVxuZnVuY3Rpb24gSGlnaGxpZ2h0cygpIHtcbiAgY29uc3QgaXRlbXMgPSBbXG4gICAgeyBsYWJlbDogJ0NyZXcnLCB3b3JkOiAnQ1JFVycsIGJnOiAnbGluZWFyLWdyYWRpZW50KDE4MGRlZywjM2EzZjRkLCMxQTFBMTkpJyB9LFxuICAgIHsgbGFiZWw6ICdHZWFyJywgd29yZDogJ0dFQVInLCBiZzogJ2xpbmVhci1ncmFkaWVudCgxODBkZWcsIzVhMzIyMCwjMUExQTE5KScgfSxcbiAgICB7IGxhYmVsOiAnU0QgU2NlbmUnLCB3b3JkOiAnU0QnLCBiZzogJ2xpbmVhci1ncmFkaWVudCgxODBkZWcsIzJEMzM0MCwjMTQxNDE0KScgfSxcbiAgICB7IGxhYmVsOiAnSGFsZiBCbG9jaycsIHdvcmQ6ICcxMy4xJywgYmc6ICdsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCNDMTQ0MjksIzVhMWEwYSknIH0sXG4gICAgeyBsYWJlbDogJ0hvdCBUYWtlcycsIHdvcmQ6ICdIT1QnLCBiZzogJ2xpbmVhci1ncmFkaWVudCgxODBkZWcsI0UwODg1NSwjNWEzMjIwKScgfSxcbiAgICB7IGxhYmVsOiAnUDM2MCcsIHdvcmQ6ICdQMzYwJywgYmc6ICdsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCMxRjFGMUUsIzBBMEEwQSknIH0sXG4gICAgeyBsYWJlbDogJ0NvZmZlZScsIHdvcmQ6ICdDT0ZGJywgYmc6ICdsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCMzRDNEM0EsIzFGMUYxRSknIH0sXG4gICAgeyBsYWJlbDogJ1Nwb3RsaWdodHMnLCB3b3JkOiAnU1BPVCcsIGJnOiAnbGluZWFyLWdyYWRpZW50KDE4MGRlZywjMkQzMzQwLCMwQTBBMEEpJyB9LFxuICBdO1xuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPVwiaWctaGlnaGxpZ2h0c1wiPlxuICAgICAge2l0ZW1zLm1hcChoID0+IChcbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJpZy1oaWdobGlnaHRcIiBrZXk9e2gubGFiZWx9PlxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaWctaGlnaGxpZ2h0LWNpcmNsZVwiPlxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJpZy1oaWdobGlnaHQtaW5uZXJcIiBzdHlsZT17e2JhY2tncm91bmQ6IGguYmd9fT57aC53b3JkfTwvZGl2PlxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaWctaGlnaGxpZ2h0LWxhYmVsXCI+e2gubGFiZWx9PC9kaXY+XG4gICAgICAgIDwvZGl2PlxuICAgICAgKSl9XG4gICAgPC9kaXY+XG4gICk7XG59XG53aW5kb3cuSGlnaGxpZ2h0cyA9IEhpZ2hsaWdodHM7XG4iXSwibWFwcGluZ3MiOiI7OztBQUFBO0FBQ0EsU0FBU0EsVUFBVUEsQ0FBQSxFQUFHO0VBQ3BCLElBQU1DLEtBQUssR0FBRyxDQUNaO0lBQUVDLEtBQUssRUFBRSxNQUFNO0lBQUVDLElBQUksRUFBRSxNQUFNO0lBQUVDLEVBQUUsRUFBRTtFQUEwQyxDQUFDLEVBQzlFO0lBQUVGLEtBQUssRUFBRSxNQUFNO0lBQUVDLElBQUksRUFBRSxNQUFNO0lBQUVDLEVBQUUsRUFBRTtFQUEwQyxDQUFDLEVBQzlFO0lBQUVGLEtBQUssRUFBRSxVQUFVO0lBQUVDLElBQUksRUFBRSxJQUFJO0lBQUVDLEVBQUUsRUFBRTtFQUEwQyxDQUFDLEVBQ2hGO0lBQUVGLEtBQUssRUFBRSxZQUFZO0lBQUVDLElBQUksRUFBRSxNQUFNO0lBQUVDLEVBQUUsRUFBRTtFQUEwQyxDQUFDLEVBQ3BGO0lBQUVGLEtBQUssRUFBRSxXQUFXO0lBQUVDLElBQUksRUFBRSxLQUFLO0lBQUVDLEVBQUUsRUFBRTtFQUEwQyxDQUFDLEVBQ2xGO0lBQUVGLEtBQUssRUFBRSxNQUFNO0lBQUVDLElBQUksRUFBRSxNQUFNO0lBQUVDLEVBQUUsRUFBRTtFQUEwQyxDQUFDLEVBQzlFO0lBQUVGLEtBQUssRUFBRSxRQUFRO0lBQUVDLElBQUksRUFBRSxNQUFNO0lBQUVDLEVBQUUsRUFBRTtFQUEwQyxDQUFDLEVBQ2hGO0lBQUVGLEtBQUssRUFBRSxZQUFZO0lBQUVDLElBQUksRUFBRSxNQUFNO0lBQUVDLEVBQUUsRUFBRTtFQUEwQyxDQUFDLENBQ3JGO0VBQ0Qsb0JBQ0VDLEtBQUEsQ0FBQUMsYUFBQTtJQUFLQyxTQUFTLEVBQUMsZUFBZTtJQUFBQyxRQUFBO01BQUFDLFFBQUEsRUFBQUMsWUFBQTtNQUFBQyxVQUFBO01BQUFDLFlBQUE7SUFBQTtJQUFBO0VBQUEsR0FDM0JYLEtBQUssQ0FBQ1ksR0FBRyxDQUFDLFVBQUFDLENBQUM7SUFBQSxvQkFDVlQsS0FBQSxDQUFBQyxhQUFBO01BQUtDLFNBQVMsRUFBQyxjQUFjO01BQUNRLEdBQUcsRUFBRUQsQ0FBQyxDQUFDWixLQUFNO01BQUFNLFFBQUE7UUFBQUMsUUFBQSxFQUFBQyxZQUFBO1FBQUFDLFVBQUE7UUFBQUMsWUFBQTtNQUFBO01BQUE7SUFBQSxnQkFDekNQLEtBQUEsQ0FBQUMsYUFBQTtNQUFLQyxTQUFTLEVBQUMscUJBQXFCO01BQUFDLFFBQUE7UUFBQUMsUUFBQSxFQUFBQyxZQUFBO1FBQUFDLFVBQUE7UUFBQUMsWUFBQTtNQUFBO01BQUE7SUFBQSxnQkFDbENQLEtBQUEsQ0FBQUMsYUFBQTtNQUFLQyxTQUFTLEVBQUMsb0JBQW9CO01BQUNTLEtBQUssRUFBRTtRQUFDQyxVQUFVLEVBQUVILENBQUMsQ0FBQ1Y7TUFBRSxDQUFFO01BQUFJLFFBQUE7UUFBQUMsUUFBQSxFQUFBQyxZQUFBO1FBQUFDLFVBQUE7UUFBQUMsWUFBQTtNQUFBO01BQUE7SUFBQSxHQUFFRSxDQUFDLENBQUNYLElBQVUsQ0FDekUsQ0FBQyxlQUNORSxLQUFBLENBQUFDLGFBQUE7TUFBS0MsU0FBUyxFQUFDLG9CQUFvQjtNQUFBQyxRQUFBO1FBQUFDLFFBQUEsRUFBQUMsWUFBQTtRQUFBQyxVQUFBO1FBQUFDLFlBQUE7TUFBQTtNQUFBO0lBQUEsR0FBRUUsQ0FBQyxDQUFDWixLQUFXLENBQy9DLENBQUM7RUFBQSxDQUNQLENBQ0UsQ0FBQztBQUVWO0FBQ0FnQixNQUFNLENBQUNsQixVQUFVLEdBQUdBLFVBQVUiLCJpZ25vcmVMaXN0IjpbXX0=</script><script>"use strict";
+
+var _jsxFileName = "/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx";
+// FeedGrid.jsx — Suor Society 12-post grid with editorial overlays
+function FeedGrid(_ref) {
+  var onOpen = _ref.onOpen;
+  // Each tile: bg class, category, overlay JSX, full caption (for modal)
+  var tiles = [{
+    cls: 'ig-tile-1',
+    cat: 'CREW',
+    overlay: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:238:241",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "SAT"), /*#__PURE__*/React.createElement("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 5,
+        columnNumber: 50
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:241:5:50"
+    }), /*#__PURE__*/React.createElement("span", {
+      className: "sunrise",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 5,
+        columnNumber: 55
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:246:5:55"
+    }, /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:272:275",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "8AM"))),
+    caption: 'Saturday crew run. Mission Bay loop. 8am. All paces. Coffee after at Communal.'
+  }, {
+    cls: 'ig-tile-2',
+    cat: 'GEAR',
+    overlay: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:432:436",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "SHOE"), /*#__PURE__*/React.createElement("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7,
+        columnNumber: 51
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:436:7:51"
+    }), /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:441:445",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "DROP")),
+    caption: 'These just dropped and nobody is talking about them. Quiet release. Hybrid-friendly stack.'
+  }, {
+    cls: 'ig-tile-3',
+    cat: 'CULTURE',
+    overlay: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:610:613",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "HOT"), /*#__PURE__*/React.createElement("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9,
+        columnNumber: 53
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:613:9:53"
+    }), /*#__PURE__*/React.createElement("span", {
+      className: "accent",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9,
+        columnNumber: 58
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:618:9:58"
+    }, /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:643:647",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "TAKE"))),
+    caption: "The question should never be \"what was your pace.\" The question is \"how'd it feel.\""
+  }, {
+    cls: 'stamp-tile',
+    cat: 'EDITORIAL',
+    overlay: /*#__PURE__*/React.createElement("span", {
+      className: "rust",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11,
+        columnNumber: 51
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:817:11:51"
+    }, /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:840:843",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "BAD")),
+    caption: 'Bad runs count too. Three weeks into the half block. Tuesday felt awful. Showed up. That was the point.'
+  }, {
+    cls: 'ig-tile-5',
+    cat: 'CREW',
+    overlay: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1022:1026",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "5 OF"), /*#__PURE__*/React.createElement("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13,
+        columnNumber: 51
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1026:13:51"
+    }), /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1031:1034",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "US.")),
+    caption: 'Mission Bay this morning was that weird purple light kind of cold. Five of us out there at 5:47. No one wanted to be there. All of us better for it. Hell yeah to a Tuesday.'
+  }, {
+    cls: 'ig-tile-6',
+    cat: 'PERSONAL',
+    overlay: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1282:1287",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "FIRST"), /*#__PURE__*/React.createElement("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15,
+        columnNumber: 56
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1287:15:56"
+    }), /*#__PURE__*/React.createElement("span", {
+      className: "accent",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15,
+        columnNumber: 61
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1292:15:61"
+    }, /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1317:1320",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "SIX"))),
+    caption: 'First six miler in the build. Felt like garbage at mile two. Felt like a person at mile four. Showed up. Counts.'
+  }, {
+    cls: 'ig-tile-7',
+    cat: 'SPOTLIGHT',
+    overlay: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1516:1522",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "300 LB"), /*#__PURE__*/React.createElement("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17,
+        columnNumber: 58
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1522:17:58"
+    }), /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1527:1531",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "1:42")),
+    caption: 'Athlete spotlight. Local hybrid pulled 300 last week and ran a 1:42 half this weekend. Real people doing real things.'
+  }, {
+    cls: 'ig-tile-8',
+    cat: 'SD SCENE',
+    overlay: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1724:1729",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "NORTH"), /*#__PURE__*/React.createElement("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19,
+        columnNumber: 56
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1729:19:56"
+    }), /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1734:1738",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "PARK")),
+    caption: 'Three new SD routes worth knowing about before summer. Saved this week.'
+  }, {
+    cls: 'ig-tile-9',
+    cat: 'TIPS',
+    overlay: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1881:1887",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "3 TIPS"), /*#__PURE__*/React.createElement("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21,
+        columnNumber: 53
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1887:21:53"
+    }), /*#__PURE__*/React.createElement("span", {
+      className: "sunrise",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21,
+        columnNumber: 58
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1892:21:58"
+    }, /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1918:1919",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "\u2192"))),
+    caption: '3 ways to schedule lifting around race week without the wheels coming off.'
+  }, {
+    cls: 'ig-tile-10',
+    cat: 'CULTURE',
+    overlay: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2076:2081",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "CREAM"), /*#__PURE__*/React.createElement("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23,
+        columnNumber: 56
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2081:23:56"
+    }), /*#__PURE__*/React.createElement("span", {
+      className: "accent",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23,
+        columnNumber: 61
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2086:23:61"
+    }, /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2111:2116",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "RISES"))),
+    caption: 'Editorial cover. Runners who lift don\'t get enough credit. You squatted heavy yesterday and ran six today. That\'s insane.'
+  }, {
+    cls: 'ig-tile-11',
+    cat: 'GEAR',
+    overlay: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2317:2319",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "NB"), /*#__PURE__*/React.createElement("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25,
+        columnNumber: 50
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2319:25:50"
+    }), /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2324:2328",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "1080")),
+    caption: 'NB 1080v14 quiet drop. Worth the hype this time. Stack feels right for the long Saturday.'
+  }, {
+    cls: 'ig-tile-12',
+    cat: 'P360',
+    overlay: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2490:2496",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "RUNNERS WHO LIFT"), /*#__PURE__*/React.createElement("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27,
+        columnNumber: 54
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2496:27:54"
+    }), /*#__PURE__*/React.createElement("span", {
+      className: "sunrise",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27,
+        columnNumber: 59
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2501:27:59"
+    }, /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2527:2530",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "DAY"))),
+    caption: 'Performance 360 collab. Workout. Run. Coffee. 90 minutes. Saturday. Free for the crew.'
+  }];
+  return /*#__PURE__*/React.createElement("div", {
+    className: "ig-grid",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32,
+      columnNumber: 5
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2670:32:5"
+  }, tiles.map(function (t, i) {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "ig-tile ".concat(t.cls),
+      key: i,
+      onClick: function onClick() {
+        return onOpen(t, i);
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 34,
+        columnNumber: 9
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2733:34:9"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "ig-tile-cat",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35,
+        columnNumber: 11
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2817:35:11"
+    }, t.cat), /*#__PURE__*/React.createElement("div", {
+      className: "ig-tile-stamp",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36,
+        columnNumber: 11
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2870:36:11"
+    }, /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2901:2902",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:0:0:0"
+    }, "S")), /*#__PURE__*/React.createElement("div", {
+      className: "ig-tile-bg",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37,
+        columnNumber: 11
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2919:37:11"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "ig-tile-overlay",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37,
+        columnNumber: 39
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2947:37:39"
+    }, t.overlay)));
+  }));
+}
+window.FeedGrid = FeedGrid;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJGZWVkR3JpZCIsIl9yZWYiLCJvbk9wZW4iLCJ0aWxlcyIsImNscyIsImNhdCIsIm92ZXJsYXkiLCJSZWFjdCIsImNyZWF0ZUVsZW1lbnQiLCJGcmFnbWVudCIsIl9fT21UIiwiaSIsIl9fc291cmNlIiwiZmlsZU5hbWUiLCJfanN4RmlsZU5hbWUiLCJsaW5lTnVtYmVyIiwiY29sdW1uTnVtYmVyIiwiY2xhc3NOYW1lIiwiY2FwdGlvbiIsIm1hcCIsInQiLCJjb25jYXQiLCJrZXkiLCJvbkNsaWNrIiwid2luZG93Il0sInNvdXJjZXMiOlsiaHR0cHM6Ly8wMTlkZjVmOC0wMjdiLTczZjUtYjMwNS1iZWYwOTBlOWNiNzguY2xhdWRldXNlcmNvbnRlbnQuY29tL3YxL2Rlc2lnbi9wcm9qZWN0cy8wMTlkZjVmOC0wMjdiLTczZjUtYjMwNS1iZWYwOTBlOWNiNzgvc2VydmUvdWlfa2l0cy9pbnN0YWdyYW0vRmVlZEdyaWQuanN4Il0sInNvdXJjZXNDb250ZW50IjpbIi8vIEZlZWRHcmlkLmpzeCDigJQgU3VvciBTb2NpZXR5IDEyLXBvc3QgZ3JpZCB3aXRoIGVkaXRvcmlhbCBvdmVybGF5c1xuZnVuY3Rpb24gRmVlZEdyaWQoeyBvbk9wZW4gfSkge1xuICAvLyBFYWNoIHRpbGU6IGJnIGNsYXNzLCBjYXRlZ29yeSwgb3ZlcmxheSBKU1gsIGZ1bGwgY2FwdGlvbiAoZm9yIG1vZGFsKVxuICBjb25zdCB0aWxlcyA9IFtcbiAgICB7IGNsczonaWctdGlsZS0xJywgY2F0OidDUkVXJywgb3ZlcmxheTogPD5TQVQ8YnIvPjxzcGFuIGNsYXNzTmFtZT1cInN1bnJpc2VcIj44QU08L3NwYW4+PC8+LFxuICAgICAgY2FwdGlvbjogJ1NhdHVyZGF5IGNyZXcgcnVuLiBNaXNzaW9uIEJheSBsb29wLiA4YW0uIEFsbCBwYWNlcy4gQ29mZmVlIGFmdGVyIGF0IENvbW11bmFsLicgfSxcbiAgICB7IGNsczonaWctdGlsZS0yJywgY2F0OidHRUFSJywgb3ZlcmxheTogPD5TSE9FPGJyLz5EUk9QPC8+LFxuICAgICAgY2FwdGlvbjogJ1RoZXNlIGp1c3QgZHJvcHBlZCBhbmQgbm9ib2R5IGlzIHRhbGtpbmcgYWJvdXQgdGhlbS4gUXVpZXQgcmVsZWFzZS4gSHlicmlkLWZyaWVuZGx5IHN0YWNrLicgfSxcbiAgICB7IGNsczonaWctdGlsZS0zJywgY2F0OidDVUxUVVJFJywgb3ZlcmxheTogPD5IT1Q8YnIvPjxzcGFuIGNsYXNzTmFtZT1cImFjY2VudFwiPlRBS0U8L3NwYW4+PC8+LFxuICAgICAgY2FwdGlvbjogXCJUaGUgcXVlc3Rpb24gc2hvdWxkIG5ldmVyIGJlIFxcXCJ3aGF0IHdhcyB5b3VyIHBhY2UuXFxcIiBUaGUgcXVlc3Rpb24gaXMgXFxcImhvdydkIGl0IGZlZWwuXFxcIlwiIH0sXG4gICAgeyBjbHM6J3N0YW1wLXRpbGUnLCBjYXQ6J0VESVRPUklBTCcsIG92ZXJsYXk6IDxzcGFuIGNsYXNzTmFtZT1cInJ1c3RcIj5CQUQ8L3NwYW4+LFxuICAgICAgY2FwdGlvbjogJ0JhZCBydW5zIGNvdW50IHRvby4gVGhyZWUgd2Vla3MgaW50byB0aGUgaGFsZiBibG9jay4gVHVlc2RheSBmZWx0IGF3ZnVsLiBTaG93ZWQgdXAuIFRoYXQgd2FzIHRoZSBwb2ludC4nIH0sXG4gICAgeyBjbHM6J2lnLXRpbGUtNScsIGNhdDonQ1JFVycsIG92ZXJsYXk6IDw+NSBPRjxici8+VVMuPC8+LFxuICAgICAgY2FwdGlvbjogJ01pc3Npb24gQmF5IHRoaXMgbW9ybmluZyB3YXMgdGhhdCB3ZWlyZCBwdXJwbGUgbGlnaHQga2luZCBvZiBjb2xkLiBGaXZlIG9mIHVzIG91dCB0aGVyZSBhdCA1OjQ3LiBObyBvbmUgd2FudGVkIHRvIGJlIHRoZXJlLiBBbGwgb2YgdXMgYmV0dGVyIGZvciBpdC4gSGVsbCB5ZWFoIHRvIGEgVHVlc2RheS4nIH0sXG4gICAgeyBjbHM6J2lnLXRpbGUtNicsIGNhdDonUEVSU09OQUwnLCBvdmVybGF5OiA8PkZJUlNUPGJyLz48c3BhbiBjbGFzc05hbWU9XCJhY2NlbnRcIj5TSVg8L3NwYW4+PC8+LFxuICAgICAgY2FwdGlvbjogJ0ZpcnN0IHNpeCBtaWxlciBpbiB0aGUgYnVpbGQuIEZlbHQgbGlrZSBnYXJiYWdlIGF0IG1pbGUgdHdvLiBGZWx0IGxpa2UgYSBwZXJzb24gYXQgbWlsZSBmb3VyLiBTaG93ZWQgdXAuIENvdW50cy4nIH0sXG4gICAgeyBjbHM6J2lnLXRpbGUtNycsIGNhdDonU1BPVExJR0hUJywgb3ZlcmxheTogPD4zMDAgTEI8YnIvPjE6NDI8Lz4sXG4gICAgICBjYXB0aW9uOiAnQXRobGV0ZSBzcG90bGlnaHQuIExvY2FsIGh5YnJpZCBwdWxsZWQgMzAwIGxhc3Qgd2VlayBhbmQgcmFuIGEgMTo0MiBoYWxmIHRoaXMgd2Vla2VuZC4gUmVhbCBwZW9wbGUgZG9pbmcgcmVhbCB0aGluZ3MuJyB9LFxuICAgIHsgY2xzOidpZy10aWxlLTgnLCBjYXQ6J1NEIFNDRU5FJywgb3ZlcmxheTogPD5OT1JUSDxici8+UEFSSzwvPixcbiAgICAgIGNhcHRpb246ICdUaHJlZSBuZXcgU0Qgcm91dGVzIHdvcnRoIGtub3dpbmcgYWJvdXQgYmVmb3JlIHN1bW1lci4gU2F2ZWQgdGhpcyB3ZWVrLicgfSxcbiAgICB7IGNsczonaWctdGlsZS05JywgY2F0OidUSVBTJywgb3ZlcmxheTogPD4zIFRJUFM8YnIvPjxzcGFuIGNsYXNzTmFtZT1cInN1bnJpc2VcIj7ihpI8L3NwYW4+PC8+LFxuICAgICAgY2FwdGlvbjogJzMgd2F5cyB0byBzY2hlZHVsZSBsaWZ0aW5nIGFyb3VuZCByYWNlIHdlZWsgd2l0aG91dCB0aGUgd2hlZWxzIGNvbWluZyBvZmYuJyB9LFxuICAgIHsgY2xzOidpZy10aWxlLTEwJywgY2F0OidDVUxUVVJFJywgb3ZlcmxheTogPD5DUkVBTTxici8+PHNwYW4gY2xhc3NOYW1lPVwiYWNjZW50XCI+UklTRVM8L3NwYW4+PC8+LFxuICAgICAgY2FwdGlvbjogJ0VkaXRvcmlhbCBjb3Zlci4gSHlicmlkIHJ1bm5lcnMgZG9uXFwndCBnZXQgZW5vdWdoIGNyZWRpdC4gWW91IHNxdWF0dGVkIGhlYXZ5IHllc3RlcmRheSBhbmQgcmFuIHNpeCB0b2RheS4gVGhhdFxcJ3MgaW5zYW5lLicgfSxcbiAgICB7IGNsczonaWctdGlsZS0xMScsIGNhdDonR0VBUicsIG92ZXJsYXk6IDw+TkI8YnIvPjEwODA8Lz4sXG4gICAgICBjYXB0aW9uOiAnTkIgMTA4MHYxNCBxdWlldCBkcm9wLiBXb3J0aCB0aGUgaHlwZSB0aGlzIHRpbWUuIFN0YWNrIGZlZWxzIHJpZ2h0IGZvciB0aGUgbG9uZyBTYXR1cmRheS4nIH0sXG4gICAgeyBjbHM6J2lnLXRpbGUtMTInLCBjYXQ6J1AzNjAnLCBvdmVybGF5OiA8PkhZQlJJRDxici8+PHNwYW4gY2xhc3NOYW1lPVwic3VucmlzZVwiPkRBWTwvc3Bhbj48Lz4sXG4gICAgICBjYXB0aW9uOiAnUGVyZm9ybWFuY2UgMzYwIGNvbGxhYi4gV29ya291dC4gUnVuLiBDb2ZmZWUuIDkwIG1pbnV0ZXMuIFNhdHVyZGF5LiBGcmVlIGZvciB0aGUgY3Jldy4nIH0sXG4gIF07XG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cImlnLWdyaWRcIj5cbiAgICAgIHt0aWxlcy5tYXAoKHQsIGkpID0+IChcbiAgICAgICAgPGRpdiBjbGFzc05hbWU9e2BpZy10aWxlICR7dC5jbHN9YH0ga2V5PXtpfSBvbkNsaWNrPXsoKSA9PiBvbk9wZW4odCwgaSl9PlxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaWctdGlsZS1jYXRcIj57dC5jYXR9PC9kaXY+XG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJpZy10aWxlLXN0YW1wXCI+UzwvZGl2PlxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaWctdGlsZS1iZ1wiPjxkaXYgY2xhc3NOYW1lPVwiaWctdGlsZS1vdmVybGF5XCI+e3Qub3ZlcmxheX08L2Rpdj48L2Rpdj5cbiAgICAgICAgPC9kaXY+XG4gICAgICApKX1cbiAgICA8L2Rpdj5cbiAgKTtcbn1cbndpbmRvdy5GZWVkR3JpZCA9IEZlZWRHcmlkO1xuIl0sIm1hcHBpbmdzIjoiOzs7QUFBQTtBQUNBLFNBQVNBLFFBQVFBLENBQUFDLElBQUEsRUFBYTtFQUFBLElBQVZDLE1BQU0sR0FBQUQsSUFBQSxDQUFOQyxNQUFNO0VBQ3hCO0VBQ0EsSUFBTUMsS0FBSyxHQUFHLENBQ1o7SUFBRUMsR0FBRyxFQUFDLFdBQVc7SUFBRUMsR0FBRyxFQUFDLE1BQU07SUFBRUMsT0FBTyxlQUFFQyxLQUFBLENBQUFDLGFBQUEsQ0FBQUQsS0FBQSxDQUFBRSxRQUFBLHFCQUFBRixLQUFBLENBQUFDLGFBQUEsQ0FBQUUsS0FBQTtNQUFBQyxDQUFBO01BQUE7SUFBQSxHQUFFLEtBQUcsZ0JBQUFKLEtBQUEsQ0FBQUMsYUFBQTtNQUFBSSxRQUFBO1FBQUFDLFFBQUEsRUFBQUMsWUFBQTtRQUFBQyxVQUFBO1FBQUFDLFlBQUE7TUFBQTtNQUFBO0lBQUEsQ0FBSSxDQUFDLGVBQUFULEtBQUEsQ0FBQUMsYUFBQTtNQUFNUyxTQUFTLEVBQUMsU0FBUztNQUFBTCxRQUFBO1FBQUFDLFFBQUEsRUFBQUMsWUFBQTtRQUFBQyxVQUFBO1FBQUFDLFlBQUE7TUFBQTtNQUFBO0lBQUEsZ0JBQUFULEtBQUEsQ0FBQUMsYUFBQSxDQUFBRSxLQUFBO01BQUFDLENBQUE7TUFBQTtJQUFBLEdBQUMsS0FBRyxDQUFNLENBQUcsQ0FBQztJQUN2Rk8sT0FBTyxFQUFFO0VBQWlGLENBQUMsRUFDN0Y7SUFBRWQsR0FBRyxFQUFDLFdBQVc7SUFBRUMsR0FBRyxFQUFDLE1BQU07SUFBRUMsT0FBTyxlQUFFQyxLQUFBLENBQUFDLGFBQUEsQ0FBQUQsS0FBQSxDQUFBRSxRQUFBLHFCQUFBRixLQUFBLENBQUFDLGFBQUEsQ0FBQUUsS0FBQTtNQUFBQyxDQUFBO01BQUE7SUFBQSxHQUFFLE1BQUksZ0JBQUFKLEtBQUEsQ0FBQUMsYUFBQTtNQUFBSSxRQUFBO1FBQUFDLFFBQUEsRUFBQUMsWUFBQTtRQUFBQyxVQUFBO1FBQUFDLFlBQUE7TUFBQTtNQUFBO0lBQUEsQ0FBSSxDQUFDLGVBQUFULEtBQUEsQ0FBQUMsYUFBQSxDQUFBRSxLQUFBO01BQUFDLENBQUE7TUFBQTtJQUFBLFNBQUksQ0FBRSxDQUFDO0lBQ3hETyxPQUFPLEVBQUU7RUFBNkYsQ0FBQyxFQUN6RztJQUFFZCxHQUFHLEVBQUMsV0FBVztJQUFFQyxHQUFHLEVBQUMsU0FBUztJQUFFQyxPQUFPLGVBQUVDLEtBQUEsQ0FBQUMsYUFBQSxDQUFBRCxLQUFBLENBQUFFLFFBQUEscUJBQUFGLEtBQUEsQ0FBQUMsYUFBQSxDQUFBRSxLQUFBO01BQUFDLENBQUE7TUFBQTtJQUFBLEdBQUUsS0FBRyxnQkFBQUosS0FBQSxDQUFBQyxhQUFBO01BQUFJLFFBQUE7UUFBQUMsUUFBQSxFQUFBQyxZQUFBO1FBQUFDLFVBQUE7UUFBQUMsWUFBQTtNQUFBO01BQUE7SUFBQSxDQUFJLENBQUMsZUFBQVQsS0FBQSxDQUFBQyxhQUFBO01BQU1TLFNBQVMsRUFBQyxRQUFRO01BQUFMLFFBQUE7UUFBQUMsUUFBQSxFQUFBQyxZQUFBO1FBQUFDLFVBQUE7UUFBQUMsWUFBQTtNQUFBO01BQUE7SUFBQSxnQkFBQVQsS0FBQSxDQUFBQyxhQUFBLENBQUFFLEtBQUE7TUFBQUMsQ0FBQTtNQUFBO0lBQUEsR0FBQyxNQUFJLENBQU0sQ0FBRyxDQUFDO0lBQzFGTyxPQUFPLEVBQUU7RUFBMEYsQ0FBQyxFQUN0RztJQUFFZCxHQUFHLEVBQUMsWUFBWTtJQUFFQyxHQUFHLEVBQUMsV0FBVztJQUFFQyxPQUFPLGVBQUVDLEtBQUEsQ0FBQUMsYUFBQTtNQUFNUyxTQUFTLEVBQUMsTUFBTTtNQUFBTCxRQUFBO1FBQUFDLFFBQUEsRUFBQUMsWUFBQTtRQUFBQyxVQUFBO1FBQUFDLFlBQUE7TUFBQTtNQUFBO0lBQUEsZ0JBQUFULEtBQUEsQ0FBQUMsYUFBQSxDQUFBRSxLQUFBO01BQUFDLENBQUE7TUFBQTtJQUFBLEdBQUMsS0FBRyxDQUFNLENBQUM7SUFDN0VPLE9BQU8sRUFBRTtFQUEwRyxDQUFDLEVBQ3RIO0lBQUVkLEdBQUcsRUFBQyxXQUFXO0lBQUVDLEdBQUcsRUFBQyxNQUFNO0lBQUVDLE9BQU8sZUFBRUMsS0FBQSxDQUFBQyxhQUFBLENBQUFELEtBQUEsQ0FBQUUsUUFBQSxxQkFBQUYsS0FBQSxDQUFBQyxhQUFBLENBQUFFLEtBQUE7TUFBQUMsQ0FBQTtNQUFBO0lBQUEsR0FBRSxNQUFJLGdCQUFBSixLQUFBLENBQUFDLGFBQUE7TUFBQUksUUFBQTtRQUFBQyxRQUFBLEVBQUFDLFlBQUE7UUFBQUMsVUFBQTtRQUFBQyxZQUFBO01BQUE7TUFBQTtJQUFBLENBQUksQ0FBQyxlQUFBVCxLQUFBLENBQUFDLGFBQUEsQ0FBQUUsS0FBQTtNQUFBQyxDQUFBO01BQUE7SUFBQSxRQUFHLENBQUUsQ0FBQztJQUN2RE8sT0FBTyxFQUFFO0VBQStLLENBQUMsRUFDM0w7SUFBRWQsR0FBRyxFQUFDLFdBQVc7SUFBRUMsR0FBRyxFQUFDLFVBQVU7SUFBRUMsT0FBTyxlQUFFQyxLQUFBLENBQUFDLGFBQUEsQ0FBQUQsS0FBQSxDQUFBRSxRQUFBLHFCQUFBRixLQUFBLENBQUFDLGFBQUEsQ0FBQUUsS0FBQTtNQUFBQyxDQUFBO01BQUE7SUFBQSxHQUFFLE9BQUssZ0JBQUFKLEtBQUEsQ0FBQUMsYUFBQTtNQUFBSSxRQUFBO1FBQUFDLFFBQUEsRUFBQUMsWUFBQTtRQUFBQyxVQUFBO1FBQUFDLFlBQUE7TUFBQTtNQUFBO0lBQUEsQ0FBSSxDQUFDLGVBQUFULEtBQUEsQ0FBQUMsYUFBQTtNQUFNUyxTQUFTLEVBQUMsUUFBUTtNQUFBTCxRQUFBO1FBQUFDLFFBQUEsRUFBQUMsWUFBQTtRQUFBQyxVQUFBO1FBQUFDLFlBQUE7TUFBQTtNQUFBO0lBQUEsZ0JBQUFULEtBQUEsQ0FBQUMsYUFBQSxDQUFBRSxLQUFBO01BQUFDLENBQUE7TUFBQTtJQUFBLEdBQUMsS0FBRyxDQUFNLENBQUcsQ0FBQztJQUM1Rk8sT0FBTyxFQUFFO0VBQW1ILENBQUMsRUFDL0g7SUFBRWQsR0FBRyxFQUFDLFdBQVc7SUFBRUMsR0FBRyxFQUFDLFdBQVc7SUFBRUMsT0FBTyxlQUFFQyxLQUFBLENBQUFDLGFBQUEsQ0FBQUQsS0FBQSxDQUFBRSxRQUFBLHFCQUFBRixLQUFBLENBQUFDLGFBQUEsQ0FBQUUsS0FBQTtNQUFBQyxDQUFBO01BQUE7SUFBQSxHQUFFLFFBQU0sZ0JBQUFKLEtBQUEsQ0FBQUMsYUFBQTtNQUFBSSxRQUFBO1FBQUFDLFFBQUEsRUFBQUMsWUFBQTtRQUFBQyxVQUFBO1FBQUFDLFlBQUE7TUFBQTtNQUFBO0lBQUEsQ0FBSSxDQUFDLGVBQUFULEtBQUEsQ0FBQUMsYUFBQSxDQUFBRSxLQUFBO01BQUFDLENBQUE7TUFBQTtJQUFBLFNBQUksQ0FBRSxDQUFDO0lBQy9ETyxPQUFPLEVBQUU7RUFBd0gsQ0FBQyxFQUNwSTtJQUFFZCxHQUFHLEVBQUMsV0FBVztJQUFFQyxHQUFHLEVBQUMsVUFBVTtJQUFFQyxPQUFPLGVBQUVDLEtBQUEsQ0FBQUMsYUFBQSxDQUFBRCxLQUFBLENBQUFFLFFBQUEscUJBQUFGLEtBQUEsQ0FBQUMsYUFBQSxDQUFBRSxLQUFBO01BQUFDLENBQUE7TUFBQTtJQUFBLEdBQUUsT0FBSyxnQkFBQUosS0FBQSxDQUFBQyxhQUFBO01BQUFJLFFBQUE7UUFBQUMsUUFBQSxFQUFBQyxZQUFBO1FBQUFDLFVBQUE7UUFBQUMsWUFBQTtNQUFBO01BQUE7SUFBQSxDQUFJLENBQUMsZUFBQVQsS0FBQSxDQUFBQyxhQUFBLENBQUFFLEtBQUE7TUFBQUMsQ0FBQTtNQUFBO0lBQUEsU0FBSSxDQUFFLENBQUM7SUFDN0RPLE9BQU8sRUFBRTtFQUEwRSxDQUFDLEVBQ3RGO0lBQUVkLEdBQUcsRUFBQyxXQUFXO0lBQUVDLEdBQUcsRUFBQyxNQUFNO0lBQUVDLE9BQU8sZUFBRUMsS0FBQSxDQUFBQyxhQUFBLENBQUFELEtBQUEsQ0FBQUUsUUFBQSxxQkFBQUYsS0FBQSxDQUFBQyxhQUFBLENBQUFFLEtBQUE7TUFBQUMsQ0FBQTtNQUFBO0lBQUEsR0FBRSxRQUFNLGdCQUFBSixLQUFBLENBQUFDLGFBQUE7TUFBQUksUUFBQTtRQUFBQyxRQUFBLEVBQUFDLFlBQUE7UUFBQUMsVUFBQTtRQUFBQyxZQUFBO01BQUE7TUFBQTtJQUFBLENBQUksQ0FBQyxlQUFBVCxLQUFBLENBQUFDLGFBQUE7TUFBTVMsU0FBUyxFQUFDLFNBQVM7TUFBQUwsUUFBQTtRQUFBQyxRQUFBLEVBQUFDLFlBQUE7UUFBQUMsVUFBQTtRQUFBQyxZQUFBO01BQUE7TUFBQTtJQUFBLGdCQUFBVCxLQUFBLENBQUFDLGFBQUEsQ0FBQUUsS0FBQTtNQUFBQyxDQUFBO01BQUE7SUFBQSxHQUFDLFFBQUMsQ0FBTSxDQUFHLENBQUM7SUFDeEZPLE9BQU8sRUFBRTtFQUE2RSxDQUFDLEVBQ3pGO0lBQUVkLEdBQUcsRUFBQyxZQUFZO0lBQUVDLEdBQUcsRUFBQyxTQUFTO0lBQUVDLE9BQU8sZUFBRUMsS0FBQSxDQUFBQyxhQUFBLENBQUFELEtBQUEsQ0FBQUUsUUFBQSxxQkFBQUYsS0FBQSxDQUFBQyxhQUFBLENBQUFFLEtBQUE7TUFBQUMsQ0FBQTtNQUFBO0lBQUEsR0FBRSxPQUFLLGdCQUFBSixLQUFBLENBQUFDLGFBQUE7TUFBQUksUUFBQTtRQUFBQyxRQUFBLEVBQUFDLFlBQUE7UUFBQUMsVUFBQTtRQUFBQyxZQUFBO01BQUE7TUFBQTtJQUFBLENBQUksQ0FBQyxlQUFBVCxLQUFBLENBQUFDLGFBQUE7TUFBTVMsU0FBUyxFQUFDLFFBQVE7TUFBQUwsUUFBQTtRQUFBQyxRQUFBLEVBQUFDLFlBQUE7UUFBQUMsVUFBQTtRQUFBQyxZQUFBO01BQUE7TUFBQTtJQUFBLGdCQUFBVCxLQUFBLENBQUFDLGFBQUEsQ0FBQUUsS0FBQTtNQUFBQyxDQUFBO01BQUE7SUFBQSxHQUFDLE9BQUssQ0FBTSxDQUFHLENBQUM7SUFDOUZPLE9BQU8sRUFBRTtFQUE0SCxDQUFDLEVBQ3hJO0lBQUVkLEdBQUcsRUFBQyxZQUFZO0lBQUVDLEdBQUcsRUFBQyxNQUFNO0lBQUVDLE9BQU8sZUFBRUMsS0FBQSxDQUFBQyxhQUFBLENBQUFELEtBQUEsQ0FBQUUsUUFBQSxxQkFBQUYsS0FBQSxDQUFBQyxhQUFBLENBQUFFLEtBQUE7TUFBQUMsQ0FBQTtNQUFBO0lBQUEsR0FBRSxJQUFFLGdCQUFBSixLQUFBLENBQUFDLGFBQUE7TUFBQUksUUFBQTtRQUFBQyxRQUFBLEVBQUFDLFlBQUE7UUFBQUMsVUFBQTtRQUFBQyxZQUFBO01BQUE7TUFBQTtJQUFBLENBQUksQ0FBQyxlQUFBVCxLQUFBLENBQUFDLGFBQUEsQ0FBQUUsS0FBQTtNQUFBQyxDQUFBO01BQUE7SUFBQSxTQUFJLENBQUUsQ0FBQztJQUN2RE8sT0FBTyxFQUFFO0VBQTRGLENBQUMsRUFDeEc7SUFBRWQsR0FBRyxFQUFDLFlBQVk7SUFBRUMsR0FBRyxFQUFDLE1BQU07SUFBRUMsT0FBTyxlQUFFQyxLQUFBLENBQUFDLGFBQUEsQ0FBQUQsS0FBQSxDQUFBRSxRQUFBLHFCQUFBRixLQUFBLENBQUFDLGFBQUEsQ0FBQUUsS0FBQTtNQUFBQyxDQUFBO01BQUE7SUFBQSxHQUFFLFFBQU0sZ0JBQUFKLEtBQUEsQ0FBQUMsYUFBQTtNQUFBSSxRQUFBO1FBQUFDLFFBQUEsRUFBQUMsWUFBQTtRQUFBQyxVQUFBO1FBQUFDLFlBQUE7TUFBQTtNQUFBO0lBQUEsQ0FBSSxDQUFDLGVBQUFULEtBQUEsQ0FBQUMsYUFBQTtNQUFNUyxTQUFTLEVBQUMsU0FBUztNQUFBTCxRQUFBO1FBQUFDLFFBQUEsRUFBQUMsWUFBQTtRQUFBQyxVQUFBO1FBQUFDLFlBQUE7TUFBQTtNQUFBO0lBQUEsZ0JBQUFULEtBQUEsQ0FBQUMsYUFBQSxDQUFBRSxLQUFBO01BQUFDLENBQUE7TUFBQTtJQUFBLEdBQUMsS0FBRyxDQUFNLENBQUcsQ0FBQztJQUMzRk8sT0FBTyxFQUFFO0VBQXlGLENBQUMsQ0FDdEc7RUFFRCxvQkFDRVgsS0FBQSxDQUFBQyxhQUFBO0lBQUtTLFNBQVMsRUFBQyxTQUFTO0lBQUFMLFFBQUE7TUFBQUMsUUFBQSxFQUFBQyxZQUFBO01BQUFDLFVBQUE7TUFBQUMsWUFBQTtJQUFBO0lBQUE7RUFBQSxHQUNyQmIsS0FBSyxDQUFDZ0IsR0FBRyxDQUFDLFVBQUNDLENBQUMsRUFBRVQsQ0FBQztJQUFBLG9CQUNkSixLQUFBLENBQUFDLGFBQUE7TUFBS1MsU0FBUyxhQUFBSSxNQUFBLENBQWFELENBQUMsQ0FBQ2hCLEdBQUcsQ0FBRztNQUFDa0IsR0FBRyxFQUFFWCxDQUFFO01BQUNZLE9BQU8sRUFBRSxTQUFUQSxPQUFPQSxDQUFBO1FBQUEsT0FBUXJCLE1BQU0sQ0FBQ2tCLENBQUMsRUFBRVQsQ0FBQyxDQUFDO01BQUEsQ0FBQztNQUFBQyxRQUFBO1FBQUFDLFFBQUEsRUFBQUMsWUFBQTtRQUFBQyxVQUFBO1FBQUFDLFlBQUE7TUFBQTtNQUFBO0lBQUEsZ0JBQ3RFVCxLQUFBLENBQUFDLGFBQUE7TUFBS1MsU0FBUyxFQUFDLGFBQWE7TUFBQUwsUUFBQTtRQUFBQyxRQUFBLEVBQUFDLFlBQUE7UUFBQUMsVUFBQTtRQUFBQyxZQUFBO01BQUE7TUFBQTtJQUFBLEdBQUVJLENBQUMsQ0FBQ2YsR0FBUyxDQUFDLGVBQzFDRSxLQUFBLENBQUFDLGFBQUE7TUFBS1MsU0FBUyxFQUFDLGVBQWU7TUFBQUwsUUFBQTtRQUFBQyxRQUFBLEVBQUFDLFlBQUE7UUFBQUMsVUFBQTtRQUFBQyxZQUFBO01BQUE7TUFBQTtJQUFBLGdCQUFBVCxLQUFBLENBQUFDLGFBQUEsQ0FBQUUsS0FBQTtNQUFBQyxDQUFBO01BQUE7SUFBQSxHQUFDLEdBQUMsQ0FBSyxDQUFDLGVBQ3RDSixLQUFBLENBQUFDLGFBQUE7TUFBS1MsU0FBUyxFQUFDLFlBQVk7TUFBQUwsUUFBQTtRQUFBQyxRQUFBLEVBQUFDLFlBQUE7UUFBQUMsVUFBQTtRQUFBQyxZQUFBO01BQUE7TUFBQTtJQUFBLGdCQUFDVCxLQUFBLENBQUFDLGFBQUE7TUFBS1MsU0FBUyxFQUFDLGlCQUFpQjtNQUFBTCxRQUFBO1FBQUFDLFFBQUEsRUFBQUMsWUFBQTtRQUFBQyxVQUFBO1FBQUFDLFlBQUE7TUFBQTtNQUFBO0lBQUEsR0FBRUksQ0FBQyxDQUFDZCxPQUFhLENBQU0sQ0FDaEYsQ0FBQztFQUFBLENBQ1AsQ0FDRSxDQUFDO0FBRVY7QUFDQWtCLE1BQU0sQ0FBQ3hCLFFBQVEsR0FBR0EsUUFBUSIsImlnbm9yZUxpc3QiOltdfQ==</script><script>"use strict";
+
+var _jsxFileName = "/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx";
+// PostDetail.jsx — modal post detail
+function PostDetail(_ref) {
+  var post = _ref.post,
+    open = _ref.open,
+    onClose = _ref.onClose;
+  if (!post) return null;
+  var cls = open ? 'ig-modal-bg open' : 'ig-modal-bg';
+  var comments = [{
+    name: 'p360_sd',
+    text: 'showed up. counts.',
+    time: '4h'
+  }, {
+    name: 'maya.runs',
+    text: 'Mission Bay was unreal this morning',
+    time: '3h'
+  }, {
+    name: 'communalcoffee',
+    text: 'see you saturday',
+    time: '2h'
+  }, {
+    name: 'hybridhank',
+    text: 'this is the only feed worth saving',
+    time: '1h'
+  }];
+  return /*#__PURE__*/React.createElement("div", {
+    className: cls,
+    onClick: onClose,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14,
+      columnNumber: 5
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:514:14:5"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "ig-modal-close",
+    onClick: onClose,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 7
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:560:15:7"
+  }, /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:613:614",
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:0:0:0"
+  }, "\xD7")), /*#__PURE__*/React.createElement("div", {
+    className: "ig-modal",
+    onClick: function onClick(e) {
+      return e.stopPropagation();
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 7
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:630:16:7"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "ig-modal-img",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 9
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:700:17:9"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "ig-tile ".concat(post.cls),
+    style: {
+      width: '100%',
+      height: '100%',
+      aspectRatio: 'auto',
+      cursor: 'default'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 11
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:741:18:11"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "ig-tile-cat",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 13
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:866:19:13"
+  }, post.cat), /*#__PURE__*/React.createElement("div", {
+    className: "ig-tile-stamp",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 13
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:924:20:13"
+  }, /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:955:956",
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:0:0:0"
+  }, "S")), /*#__PURE__*/React.createElement("div", {
+    className: "ig-tile-bg",
+    style: {
+      padding: 32
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
+      columnNumber: 13
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:975:21:13"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "ig-tile-overlay",
+    style: {
+      fontSize: post.cls === 'stamp-tile' ? 140 : 56
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22,
+      columnNumber: 15
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:1039:22:15"
+  }, post.overlay)))), /*#__PURE__*/React.createElement("div", {
+    className: "ig-modal-side",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28,
+      columnNumber: 9
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:1239:28:9"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "ig-modal-head",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29,
+      columnNumber: 11
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:1281:29:11"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "av",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30,
+      columnNumber: 13
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:1325:30:13"
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "h-name",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31,
+      columnNumber: 13
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:1364:31:13"
+  }, /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:1388:1399",
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:0:0:0"
+  }, "suorsociety"))), /*#__PURE__*/React.createElement("div", {
+    className: "ig-modal-body",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 11
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:1433:33:11"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "ig-modal-cap",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34,
+      columnNumber: 13
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:1477:34:13"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "av",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 15
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:1522:35:15"
+  }), /*#__PURE__*/React.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36,
+      columnNumber: 15
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:1563:36:15"
+  }, /*#__PURE__*/React.createElement("b", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36,
+      columnNumber: 20
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:1568:36:20"
+  }, /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:1571:1582",
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:0:0:0"
+  }, "suorsociety")), post.caption)), comments.map(function (c, i) {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "ig-comment",
+      key: i,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 39,
+        columnNumber: 15
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:1677:39:15"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "av",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40,
+        columnNumber: 17
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:1730:40:17"
+    }), /*#__PURE__*/React.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 41,
+        columnNumber: 17
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:1773:41:17"
+    }, /*#__PURE__*/React.createElement("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 42,
+        columnNumber: 19
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:1797:42:19"
+    }, /*#__PURE__*/React.createElement("b", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 42,
+        columnNumber: 25
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:1803:42:25"
+    }, c.name), c.text), /*#__PURE__*/React.createElement("div", {
+      className: "meta",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 43,
+        columnNumber: 19
+      },
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:1852:43:19"
+    }, c.time, /*#__PURE__*/React.createElement(__OmT, {
+      i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:1883:1890",
+      "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:0:0:0"
+    }, " \xB7 reply"))));
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "ig-modal-actions",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48,
+      columnNumber: 11
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:1984:48:11"
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "22",
+    height: "22",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.75",
+    strokeLinecap: "square",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49,
+      columnNumber: 13
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:2031:49:13"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M20.84 4.6a5.5 5.5 0 00-7.78 0L12 5.7l-1.06-1.1a5.5 5.5 0 00-7.78 7.8L12 21l8.84-8.6a5.5 5.5 0 000-7.8z",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49,
+      columnNumber: 137
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:2155:49:137"
+  })), /*#__PURE__*/React.createElement("svg", {
+    width: "22",
+    height: "22",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.75",
+    strokeLinecap: "square",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50,
+      columnNumber: 13
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:2289:50:13"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M21 11.5a8.4 8.4 0 01-1 4 8.5 8.5 0 01-7.5 4.5 8.4 8.4 0 01-4-1L3 21l2-5a8.4 8.4 0 01-1-4 8.5 8.5 0 014.5-7.5 8.4 8.4 0 014-1 8.5 8.5 0 018.5 8z",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50,
+      columnNumber: 137
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:2413:50:137"
+  })), /*#__PURE__*/React.createElement("svg", {
+    width: "22",
+    height: "22",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.75",
+    strokeLinecap: "square",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51,
+      columnNumber: 13
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:2588:51:13"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M22 2L11 13M22 2l-7 20-4-9-9-4z",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51,
+      columnNumber: 137
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:2712:51:137"
+  })), /*#__PURE__*/React.createElement("svg", {
+    width: "22",
+    height: "22",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.75",
+    strokeLinecap: "square",
+    style: {
+      marginLeft: 'auto'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52,
+      columnNumber: 13
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:2774:52:13"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52,
+      columnNumber: 165
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:2926:52:165"
+  }))), /*#__PURE__*/React.createElement("div", {
+    className: "ig-modal-likes",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54,
+      columnNumber: 11
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:3017:54:11"
+  }, /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:3049:3058",
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:0:0:0"
+  }, "428 likes")), /*#__PURE__*/React.createElement("div", {
+    className: "ig-modal-time",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55,
+      columnNumber: 11
+    },
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:3075:55:11"
+  }, /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:3106:3129",
+    "data-om-id": "jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/PostDetail.jsx:0:0:0"
+  }, "2 hours ago \xB7 San Diego")))));
+}
+window.PostDetail = PostDetail;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJQb3N0RGV0YWlsIiwiX3JlZiIsInBvc3QiLCJvcGVuIiwib25DbG9zZSIsImNscyIsImNvbW1lbnRzIiwibmFtZSIsInRleHQiLCJ0aW1lIiwiUmVhY3QiLCJjcmVhdGVFbGVtZW50IiwiY2xhc3NOYW1lIiwib25DbGljayIsIl9fc291cmNlIiwiZmlsZU5hbWUiLCJfanN4RmlsZU5hbWUiLCJsaW5lTnVtYmVyIiwiY29sdW1uTnVtYmVyIiwiX19PbVQiLCJpIiwiZSIsInN0b3BQcm9wYWdhdGlvbiIsImNvbmNhdCIsInN0eWxlIiwid2lkdGgiLCJoZWlnaHQiLCJhc3BlY3RSYXRpbyIsImN1cnNvciIsImNhdCIsInBhZGRpbmciLCJmb250U2l6ZSIsIm92ZXJsYXkiLCJjYXB0aW9uIiwibWFwIiwiYyIsImtleSIsInZpZXdCb3giLCJmaWxsIiwic3Ryb2tlIiwic3Ryb2tlV2lkdGgiLCJzdHJva2VMaW5lY2FwIiwiZCIsIm1hcmdpbkxlZnQiLCJ3aW5kb3ciXSwic291cmNlcyI6WyJodHRwczovLzAxOWRmNWY4LTAyN2ItNzNmNS1iMzA1LWJlZjA5MGU5Y2I3OC5jbGF1ZGV1c2VyY29udGVudC5jb20vdjEvZGVzaWduL3Byb2plY3RzLzAxOWRmNWY4LTAyN2ItNzNmNS1iMzA1LWJlZjA5MGU5Y2I3OC9zZXJ2ZS91aV9raXRzL2luc3RhZ3JhbS9Qb3N0RGV0YWlsLmpzeCJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBQb3N0RGV0YWlsLmpzeCDigJQgbW9kYWwgcG9zdCBkZXRhaWxcbmZ1bmN0aW9uIFBvc3REZXRhaWwoeyBwb3N0LCBvcGVuLCBvbkNsb3NlIH0pIHtcbiAgaWYgKCFwb3N0KSByZXR1cm4gbnVsbDtcbiAgY29uc3QgY2xzID0gb3BlbiA/ICdpZy1tb2RhbC1iZyBvcGVuJyA6ICdpZy1tb2RhbC1iZyc7XG5cbiAgY29uc3QgY29tbWVudHMgPSBbXG4gICAgeyBuYW1lOiAncDM2MF9zZCcsIHRleHQ6ICdzaG93ZWQgdXAuIGNvdW50cy4nLCB0aW1lOiAnNGgnIH0sXG4gICAgeyBuYW1lOiAnbWF5YS5ydW5zJywgdGV4dDogJ01pc3Npb24gQmF5IHdhcyB1bnJlYWwgdGhpcyBtb3JuaW5nJywgdGltZTogJzNoJyB9LFxuICAgIHsgbmFtZTogJ2NvbW11bmFsY29mZmVlJywgdGV4dDogJ3NlZSB5b3Ugc2F0dXJkYXknLCB0aW1lOiAnMmgnIH0sXG4gICAgeyBuYW1lOiAnaHlicmlkaGFuaycsIHRleHQ6ICd0aGlzIGlzIHRoZSBvbmx5IGZlZWQgd29ydGggc2F2aW5nJywgdGltZTogJzFoJyB9LFxuICBdO1xuXG4gIHJldHVybiAoXG4gICAgPGRpdiBjbGFzc05hbWU9e2Nsc30gb25DbGljaz17b25DbG9zZX0+XG4gICAgICA8YnV0dG9uIGNsYXNzTmFtZT1cImlnLW1vZGFsLWNsb3NlXCIgb25DbGljaz17b25DbG9zZX0+w5c8L2J1dHRvbj5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaWctbW9kYWxcIiBvbkNsaWNrPXtlID0+IGUuc3RvcFByb3BhZ2F0aW9uKCl9PlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImlnLW1vZGFsLWltZ1wiPlxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPXtgaWctdGlsZSAke3Bvc3QuY2xzfWB9IHN0eWxlPXt7d2lkdGg6JzEwMCUnLGhlaWdodDonMTAwJScsYXNwZWN0UmF0aW86J2F1dG8nLGN1cnNvcjonZGVmYXVsdCd9fT5cbiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaWctdGlsZS1jYXRcIj57cG9zdC5jYXR9PC9kaXY+XG4gICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImlnLXRpbGUtc3RhbXBcIj5TPC9kaXY+XG4gICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImlnLXRpbGUtYmdcIiBzdHlsZT17e3BhZGRpbmc6MzJ9fT5cbiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJpZy10aWxlLW92ZXJsYXlcIiBzdHlsZT17e2ZvbnRTaXplOiBwb3N0LmNscz09PSdzdGFtcC10aWxlJyA/IDE0MCA6IDU2fX0+XG4gICAgICAgICAgICAgICAge3Bvc3Qub3ZlcmxheX1cbiAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgPC9kaXY+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaWctbW9kYWwtc2lkZVwiPlxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaWctbW9kYWwtaGVhZFwiPlxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJhdlwiPjwvZGl2PlxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJoLW5hbWVcIj5zdW9yc29jaWV0eTwvZGl2PlxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaWctbW9kYWwtYm9keVwiPlxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJpZy1tb2RhbC1jYXBcIj5cbiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJhdlwiPjwvZGl2PlxuICAgICAgICAgICAgICA8ZGl2PjxiPnN1b3Jzb2NpZXR5PC9iPntwb3N0LmNhcHRpb259PC9kaXY+XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIHtjb21tZW50cy5tYXAoKGMsaSkgPT4gKFxuICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImlnLWNvbW1lbnRcIiBrZXk9e2l9PlxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiYXZcIj48L2Rpdj5cbiAgICAgICAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgICAgICAgPHNwYW4+PGI+e2MubmFtZX08L2I+e2MudGV4dH08L3NwYW4+XG4gICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm1ldGFcIj57Yy50aW1lfSDCtyByZXBseTwvZGl2PlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICkpfVxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaWctbW9kYWwtYWN0aW9uc1wiPlxuICAgICAgICAgICAgPHN2ZyB3aWR0aD1cIjIyXCIgaGVpZ2h0PVwiMjJcIiB2aWV3Qm94PVwiMCAwIDI0IDI0XCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNzVcIiBzdHJva2VMaW5lY2FwPVwic3F1YXJlXCI+PHBhdGggZD1cIk0yMC44NCA0LjZhNS41IDUuNSAwIDAwLTcuNzggMEwxMiA1LjdsLTEuMDYtMS4xYTUuNSA1LjUgMCAwMC03Ljc4IDcuOEwxMiAyMWw4Ljg0LTguNmE1LjUgNS41IDAgMDAwLTcuOHpcIi8+PC9zdmc+XG4gICAgICAgICAgICA8c3ZnIHdpZHRoPVwiMjJcIiBoZWlnaHQ9XCIyMlwiIHZpZXdCb3g9XCIwIDAgMjQgMjRcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMS43NVwiIHN0cm9rZUxpbmVjYXA9XCJzcXVhcmVcIj48cGF0aCBkPVwiTTIxIDExLjVhOC40IDguNCAwIDAxLTEgNCA4LjUgOC41IDAgMDEtNy41IDQuNSA4LjQgOC40IDAgMDEtNC0xTDMgMjFsMi01YTguNCA4LjQgMCAwMS0xLTQgOC41IDguNSAwIDAxNC41LTcuNSA4LjQgOC40IDAgMDE0LTEgOC41IDguNSAwIDAxOC41IDh6XCIvPjwvc3ZnPlxuICAgICAgICAgICAgPHN2ZyB3aWR0aD1cIjIyXCIgaGVpZ2h0PVwiMjJcIiB2aWV3Qm94PVwiMCAwIDI0IDI0XCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNzVcIiBzdHJva2VMaW5lY2FwPVwic3F1YXJlXCI+PHBhdGggZD1cIk0yMiAyTDExIDEzTTIyIDJsLTcgMjAtNC05LTktNHpcIi8+PC9zdmc+XG4gICAgICAgICAgICA8c3ZnIHdpZHRoPVwiMjJcIiBoZWlnaHQ9XCIyMlwiIHZpZXdCb3g9XCIwIDAgMjQgMjRcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMS43NVwiIHN0cm9rZUxpbmVjYXA9XCJzcXVhcmVcIiBzdHlsZT17e21hcmdpbkxlZnQ6J2F1dG8nfX0+PHBhdGggZD1cIk0xOSAyMWwtNy01LTcgNVY1YTIgMiAwIDAxMi0yaDEwYTIgMiAwIDAxMiAyelwiLz48L3N2Zz5cbiAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImlnLW1vZGFsLWxpa2VzXCI+NDI4IGxpa2VzPC9kaXY+XG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJpZy1tb2RhbC10aW1lXCI+MiBob3VycyBhZ28gwrcgU2FuIERpZWdvPC9kaXY+XG4gICAgICAgIDwvZGl2PlxuICAgICAgPC9kaXY+XG4gICAgPC9kaXY+XG4gICk7XG59XG53aW5kb3cuUG9zdERldGFpbCA9IFBvc3REZXRhaWw7XG4iXSwibWFwcGluZ3MiOiI7OztBQUFBO0FBQ0EsU0FBU0EsVUFBVUEsQ0FBQUMsSUFBQSxFQUEwQjtFQUFBLElBQXZCQyxJQUFJLEdBQUFELElBQUEsQ0FBSkMsSUFBSTtJQUFFQyxJQUFJLEdBQUFGLElBQUEsQ0FBSkUsSUFBSTtJQUFFQyxPQUFPLEdBQUFILElBQUEsQ0FBUEcsT0FBTztFQUN2QyxJQUFJLENBQUNGLElBQUksRUFBRSxPQUFPLElBQUk7RUFDdEIsSUFBTUcsR0FBRyxHQUFHRixJQUFJLEdBQUcsa0JBQWtCLEdBQUcsYUFBYTtFQUVyRCxJQUFNRyxRQUFRLEdBQUcsQ0FDZjtJQUFFQyxJQUFJLEVBQUUsU0FBUztJQUFFQyxJQUFJLEVBQUUsb0JBQW9CO0lBQUVDLElBQUksRUFBRTtFQUFLLENBQUMsRUFDM0Q7SUFBRUYsSUFBSSxFQUFFLFdBQVc7SUFBRUMsSUFBSSxFQUFFLHFDQUFxQztJQUFFQyxJQUFJLEVBQUU7RUFBSyxDQUFDLEVBQzlFO0lBQUVGLElBQUksRUFBRSxnQkFBZ0I7SUFBRUMsSUFBSSxFQUFFLGtC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LFNBQVMsRUFBQyxlQUFlO0lBQUFFLFFBQUE7TUFBQUMsUUFBQSxFQUFBQyxZQUFBO01BQUFDLFVBQUE7TUFBQUMsWUFBQTtJQUFBO0lBQUE7RUFBQSxnQkFDNUJSLEtBQUEsQ0FBQUMsYUFBQTtJQUFLQyxTQUFTLEVBQUMsZUFBZTtJQUFBRSxRQUFBO01BQUFDLFFBQUEsRUFBQUMsWUFBQTtNQUFBQyxVQUFBO01BQUFDLFlBQUE7SUFBQTtJQUFBO0VBQUEsZ0JBQzVCUixLQUFBLENBQUFDLGFBQUE7SUFBS0MsU0FBUyxFQUFDLElBQUk7SUFBQUUsUUFBQTtNQUFBQyxRQUFBLEVBQUFDLFlBQUE7TUFBQUMsVUFBQTtNQUFBQyxZQUFBO0lBQUE7SUFBQTtFQUFBLENBQU0sQ0FBQyxlQUMxQlIsS0FBQSxDQUFBQyxhQUFBO0lBQUtDLFNBQVMsRUFBQyxRQUFRO0lBQUFFLFFBQUE7TUFBQUMsUUFBQSxFQUFBQyxZQUFBO01BQUFDLFVBQUE7TUFBQUMsWUFBQTtJQUFBO0lBQUE7RUFBQSxnQkFBQVIsS0FBQSxDQUFBQyxhQUFBLENBQUFRLEtBQUE7SUFBQUMsQ0FBQTtJQUFBO0VBQUEsR0FBQyxhQUFXLENBQUssQ0FDckMsQ0FBQyxlQUNOVixLQUFBLENBQUFDLGFBQUE7SUFBS0MsU0FBUyxFQUFDLGVBQWU7SUFBQUUsUUFBQTtNQUFBQyxRQUFBLEVBQUFDLFlBQUE7TUFBQUMsVUFBQTtNQUFBQyxZQUFBO0lBQUE7SUFBQTtFQUFBLGdCQUM1QlIsS0FBQSxDQUFBQyxhQUFBO0lBQUtDLFNBQVMsRUFBQyxjQUFjO0lBQUFFLFFBQUE7TUFBQUMsUUFBQSxFQUFBQyxZQUFBO01BQUFDLFVBQUE7TUFBQUMsWUFBQTtJQUFBO0lBQUE7RUFBQSxnQkFDM0JSLEtBQUEsQ0FBQUMsYUFBQTtJQUFLQyxTQUFTLEVBQUMsSUFBSTtJQUFBRSxRQUFBO01BQUFDLFFBQUEsRUFBQUMsWUFBQTtNQUFBQyxVQUFBO01BQUFDLFlBQUE7SUFBQTtJQUFBO0VBQUEsQ0FBTSxDQUFDLGVBQzFCUixLQUFBLENBQUFDLGFBQUE7SUFB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</script><script>"use strict";
+
+var _jsxFileName = "/Inline Babel script";
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+var _React = React,
+  useState = _React.useState;
+function Tabs(_ref) {
+  var active = _ref.active,
+    setActive = _ref.setActive;
+  var items = [{
+    id: 'posts',
+    label: 'Posts',
+    icon: /*#__PURE__*/React.createElement("svg", {
+      width: "11",
+      height: "11",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 6,
+        columnNumber: 39
+      },
+      "data-om-id": "jsx:/Inline Babel script:125:6:39"
+    }, /*#__PURE__*/React.createElement("rect", {
+      x: "3",
+      y: "3",
+      width: "7",
+      height: "7",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 6,
+        columnNumber: 137
+      },
+      "data-om-id": "jsx:/Inline Babel script:223:6:137"
+    }), /*#__PURE__*/React.createElement("rect", {
+      x: "14",
+      y: "3",
+      width: "7",
+      height: "7",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 6,
+        columnNumber: 177
+      },
+      "data-om-id": "jsx:/Inline Babel script:263:6:177"
+    }), /*#__PURE__*/React.createElement("rect", {
+      x: "3",
+      y: "14",
+      width: "7",
+      height: "7",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 6,
+        columnNumber: 218
+      },
+      "data-om-id": "jsx:/Inline Babel script:304:6:218"
+    }), /*#__PURE__*/React.createElement("rect", {
+      x: "14",
+      y: "14",
+      width: "7",
+      height: "7",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 6,
+        columnNumber: 259
+      },
+      "data-om-id": "jsx:/Inline Babel script:345:6:259"
+    }))
+  }, {
+    id: 'reels',
+    label: 'Reels',
+    icon: /*#__PURE__*/React.createElement("svg", {
+      width: "11",
+      height: "11",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7,
+        columnNumber: 39
+      },
+      "data-om-id": "jsx:/Inline Babel script:435:7:39"
+    }, /*#__PURE__*/React.createElement("rect", {
+      x: "2",
+      y: "2",
+      width: "20",
+      height: "20",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7,
+        columnNumber: 137
+      },
+      "data-om-id": "jsx:/Inline Babel script:533:7:137"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M2 8h20M8 2v20",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7,
+        columnNumber: 179
+      },
+      "data-om-id": "jsx:/Inline Babel script:575:7:179"
+    }))
+  }, {
+    id: 'tagged',
+    label: 'Tagged',
+    icon: /*#__PURE__*/React.createElement("svg", {
+      width: "11",
+      height: "11",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 8,
+        columnNumber: 41
+      },
+      "data-om-id": "jsx:/Inline Babel script:651:8:41"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M20 12V5a2 2 0 00-2-2H6a2 2 0 00-2 2v7l8 9 8-9z",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 8,
+        columnNumber: 139
+      },
+      "data-om-id": "jsx:/Inline Babel script:749:8:139"
+    }))
+  }];
+  return /*#__PURE__*/React.createElement("div", {
+    className: "ig-tabs",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 5
+    },
+    "data-om-id": "jsx:/Inline Babel script:838:11:5"
+  }, items.map(function (t) {
+    return /*#__PURE__*/React.createElement("div", {
+      key: t.id,
+      className: "ig-tab ".concat(active === t.id ? 'active' : ''),
+      onClick: function onClick() {
+        return setActive(t.id);
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13,
+        columnNumber: 9
+      },
+      "data-om-id": "jsx:/Inline Babel script:896:13:9"
+    }, t.icon, t.label);
+  }));
+}
+function App() {
+  var _useState = useState('posts'),
+    _useState2 = _slicedToArray(_useState, 2),
+    active = _useState2[0],
+    setActive = _useState2[1];
+  var _useState3 = useState(null),
+    _useState4 = _slicedToArray(_useState3, 2),
+    post = _useState4[0],
+    setPost = _useState4[1];
+  var _useState5 = useState(false),
+    _useState6 = _slicedToArray(_useState5, 2),
+    open = _useState6[0],
+    setOpen = _useState6[1];
+  var onOpen = function onOpen(p) {
+    setPost(p);
+    setOpen(true);
+  };
+  var onClose = function onClose() {
+    return setOpen(false);
+  };
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Header, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30,
+      columnNumber: 7
+    },
+    "data-om-id": "jsx:/Inline Babel script:1337:30:7"
+  }), /*#__PURE__*/React.createElement(Highlights, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31,
+      columnNumber: 7
+    },
+    "data-om-id": "jsx:/Inline Babel script:1354:31:7"
+  }), /*#__PURE__*/React.createElement(Tabs, {
+    active: active,
+    setActive: setActive,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32,
+      columnNumber: 7
+    },
+    "data-om-id": "jsx:/Inline Babel script:1375:32:7"
+  }), active === 'posts' && /*#__PURE__*/React.createElement(FeedGrid, {
+    onOpen: onOpen,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 28
+    },
+    "data-om-id": "jsx:/Inline Babel script:1449:33:28"
+  }), active === 'reels' && /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '80px 0',
+      textAlign: 'center',
+      fontFamily: 'var(--font-condensed)',
+      fontSize: 24,
+      letterSpacing: '.18em',
+      color: 'var(--fg-2)'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34,
+      columnNumber: 28
+    },
+    "data-om-id": "jsx:/Inline Babel script:1506:34:28"
+  }, /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/Inline Babel script:1646:1663",
+    "data-om-id": "jsx:/Inline Babel script:0:0:0"
+  }, "REELS COMING SOON")), active === 'tagged' && /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '80px 0',
+      textAlign: 'center',
+      fontFamily: 'var(--font-condensed)',
+      fontSize: 24,
+      letterSpacing: '.18em',
+      color: 'var(--fg-2)'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 29
+    },
+    "data-om-id": "jsx:/Inline Babel script:1699:35:29"
+  }, /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/Inline Babel script:1839:1858",
+    "data-om-id": "jsx:/Inline Babel script:0:0:0"
+  }, "NO TAGGED POSTS YET")), /*#__PURE__*/React.createElement(PostDetail, {
+    post: post,
+    open: open,
+    onClose: onClose,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36,
+      columnNumber: 7
+    },
+    "data-om-id": "jsx:/Inline Babel script:1872:36:7"
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "ig-footer",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37,
+      columnNumber: 7
+    },
+    "data-om-id": "jsx:/Inline Babel script:1935:37:7"
+  }, /*#__PURE__*/React.createElement(__OmT, {
+    i: "txt:/Inline Babel script:1962:1997",
+    "data-om-id": "jsx:/Inline Babel script:0:0:0"
+  }, "SUOR SOCIETY \xB7 SAN DIEGO \xB7 04.30.26")));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(/*#__PURE__*/React.createElement(App, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 42,
+    columnNumber: 61
+  },
+  "data-om-id": "jsx:/Inline Babel script:2080:42:61"
+}));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJfUmVhY3QiLCJSZWFjdCIsInVzZVN0YXRlIiwiVGFicyIsIl9yZWYiLCJhY3RpdmUiLCJzZXRBY3RpdmUiLCJpdGVtcyIsImlkIiwibGFiZWwiLCJpY29uIiwiY3JlYXRlRWxlbWVudCIsIndpZHRoIiwiaGVpZ2h0Iiwidmlld0JveCIsImZpbGwiLCJzdHJva2UiLCJzdHJva2VXaWR0aCIsIl9fc291cmNlIiwiZmlsZU5hbWUiLCJfanN4RmlsZU5hbWUiLCJsaW5lTnVtYmVyIiwiY29sdW1uTnVtYmVyIiwieCIsInkiLCJkIiwiY2xhc3NOYW1lIiwibWFwIiwidCIsImtleSIsImNvbmNhdCIsIm9uQ2xpY2siLCJBcHAiLCJfdXNlU3RhdGUiLCJfdXNlU3RhdGUyIiwiX3NsaWNlZFRvQXJyYXkiLCJfdXNlU3RhdGUzIiwiX3VzZVN0YXRlNCIsInBvc3QiLCJzZXRQb3N0IiwiX3VzZVN0YXRlNSIsIl91c2VTdGF0ZTYiLCJvcGVuIiwic2V0T3BlbiIsIm9uT3BlbiIsInAiLCJvbkNsb3NlIiwiRnJhZ21lbnQiLCJIZWFkZXIiLCJIaWdobGlnaHRzIiwiRmVlZEdyaWQiLCJzdHlsZSIsInBhZGRpbmciLCJ0ZXh0QWxpZ24iLCJmb250RmFtaWx5IiwiZm9udFNpemUiLCJsZXR0ZXJTcGFjaW5nIiwiY29sb3IiLCJfX09tVCIsImkiLCJQb3N0RGV0YWlsIiwiUmVhY3RET00iLCJjcmVhdGVSb290IiwiZG9jdW1lbnQiLCJnZXRFbGVtZW50QnlJZCIsInJlbmRlciJdLCJzb3VyY2VzIjpbIklubGluZSBCYWJlbCBzY3JpcHQiXSwic291cmNlc0NvbnRlbnQiOlsiXG5jb25zdCB7IHVzZVN0YXRlIH0gPSBSZWFjdDtcblxuZnVuY3Rpb24gVGFicyh7IGFjdGl2ZSwgc2V0QWN0aXZlIH0pIHtcbiAgY29uc3QgaXRlbXMgPSBbXG4gICAgeyBpZDoncG9zdHMnLCBsYWJlbDonUG9zdHMnLCBpY29uOjxzdmcgd2lkdGg9XCIxMVwiIGhlaWdodD1cIjExXCIgdmlld0JveD1cIjAgMCAyNCAyNFwiIGZpbGw9XCJub25lXCIgc3Ryb2tlPVwiY3VycmVudENvbG9yXCIgc3Ryb2tlV2lkdGg9XCIyXCI+PHJlY3QgeD1cIjNcIiB5PVwiM1wiIHdpZHRoPVwiN1wiIGhlaWdodD1cIjdcIi8+PHJlY3QgeD1cIjE0XCIgeT1cIjNcIiB3aWR0aD1cIjdcIiBoZWlnaHQ9XCI3XCIvPjxyZWN0IHg9XCIzXCIgeT1cIjE0XCIgd2lkdGg9XCI3XCIgaGVpZ2h0PVwiN1wiLz48cmVjdCB4PVwiMTRcIiB5PVwiMTRcIiB3aWR0aD1cIjdcIiBoZWlnaHQ9XCI3XCIvPjwvc3ZnPiB9LFxuICAgIHsgaWQ6J3JlZWxzJywgbGFiZWw6J1JlZWxzJywgaWNvbjo8c3ZnIHdpZHRoPVwiMTFcIiBoZWlnaHQ9XCIxMVwiIHZpZXdCb3g9XCIwIDAgMjQgMjRcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMlwiPjxyZWN0IHg9XCIyXCIgeT1cIjJcIiB3aWR0aD1cIjIwXCIgaGVpZ2h0PVwiMjBcIi8+PHBhdGggZD1cIk0yIDhoMjBNOCAydjIwXCIvPjwvc3ZnPiB9LFxuICAgIHsgaWQ6J3RhZ2dlZCcsIGxhYmVsOidUYWdnZWQnLCBpY29uOjxzdmcgd2lkdGg9XCIxMVwiIGhlaWdodD1cIjExXCIgdmlld0JveD1cIjAgMCAyNCAyNFwiIGZpbGw9XCJub25lXCIgc3Ryb2tlPVwiY3VycmVudENvbG9yXCIgc3Ryb2tlV2lkdGg9XCIyXCI+PHBhdGggZD1cIk0yMCAxMlY1YTIgMiAwIDAwLTItMkg2YTIgMiAwIDAwLTIgMnY3bDggOSA4LTl6XCIvPjwvc3ZnPiB9LFxuICBdO1xuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPVwiaWctdGFic1wiPlxuICAgICAge2l0ZW1zLm1hcCh0ID0+IChcbiAgICAgICAgPGRpdiBrZXk9e3QuaWR9IGNsYXNzTmFtZT17YGlnLXRhYiAke2FjdGl2ZT09PXQuaWQ/J2FjdGl2ZSc6Jyd9YH0gb25DbGljaz17KCk9PnNldEFjdGl2ZSh0LmlkKX0+XG4gICAgICAgICAge3QuaWNvbn17dC5sYWJlbH1cbiAgICAgICAgPC9kaXY+XG4gICAgICApKX1cbiAgICA8L2Rpdj5cbiAgKTtcbn1cblxuZnVuY3Rpb24gQXBwKCkge1xuICBjb25zdCBbYWN0aXZlLCBzZXRBY3RpdmVdID0gdXNlU3RhdGUoJ3Bvc3RzJyk7XG4gIGNvbnN0IFtwb3N0LCBzZXRQb3N0XSA9IHVzZVN0YXRlKG51bGwpO1xuICBjb25zdCBbb3Blbiwgc2V0T3Blbl0gPSB1c2VTdGF0ZShmYWxzZSk7XG4gIGNvbnN0IG9uT3BlbiA9IChwKSA9PiB7IHNldFBvc3QocCk7IHNldE9wZW4odHJ1ZSk7IH07XG4gIGNvbnN0IG9uQ2xvc2UgPSAoKSA9PiBzZXRPcGVuKGZhbHNlKTtcblxuICByZXR1cm4gKFxuICAgIDw+XG4gICAgICA8SGVhZGVyIC8+XG4gICAgICA8SGlnaGxpZ2h0cyAvPlxuICAgICAgPFRhYnMgYWN0aXZlPXthY3RpdmV9IHNldEFjdGl2ZT17c2V0QWN0aXZlfSAvPlxuICAgICAge2FjdGl2ZT09PSdwb3N0cycgJiYgPEZlZWRHcmlkIG9uT3Blbj17b25PcGVufSAvPn1cbiAgICAgIHthY3RpdmU9PT0ncmVlbHMnICYmIDxkaXYgc3R5bGU9e3twYWRkaW5nOic4MHB4IDAnLHRleHRBbGlnbjonY2VudGVyJyxmb250RmFtaWx5Oid2YXIoLS1mb250LWNvbmRlbnNlZCknLGZvbnRTaXplOjI0LGxldHRlclNwYWNpbmc6Jy4xOGVtJyxjb2xvcjondmFyKC0tZmctMiknfX0+UkVFTFMgQ09NSU5HIFNPT048L2Rpdj59XG4gICAgICB7YWN0aXZlPT09J3RhZ2dlZCcgJiYgPGRpdiBzdHlsZT17e3BhZGRpbmc6JzgwcHggMCcsdGV4dEFsaWduOidjZW50ZXInLGZvbnRGYW1pbHk6J3ZhcigtLWZvbnQtY29uZGVuc2VkKScsZm9udFNpemU6MjQsbGV0dGVyU3BhY2luZzonLjE4ZW0nLGNvbG9yOid2YXIoLS1mZy0yKSd9fT5OTyBUQUdHRUQgUE9TVFMgWUVUPC9kaXY+fVxuICAgICAgPFBvc3REZXRhaWwgcG9zdD17cG9zdH0gb3Blbj17b3Blbn0gb25DbG9zZT17b25DbG9zZX0gLz5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaWctZm9vdGVyXCI+U1VPUiBTT0NJRVRZIMK3IFNBTiBESUVHTyDCtyAwNC4zMC4yNjwvZGl2PlxuICAgIDwvPlxuICApO1xufVxuXG5SZWFjdERPTS5jcmVhdGVSb290KGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdyb290JykpLnJlbmRlcig8QXBwIC8+KTtcbiJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7O0FBQ0EsSUFBQUEsTUFBQSxHQUFxQkMsS0FBSztFQUFsQkMsUUFBUSxHQUFBRixNQUFBLENBQVJFLFFBQVE7QUFFaEIsU0FBU0MsSUFBSUEsQ0FBQUMsSUFBQSxFQUF3QjtFQUFBLElBQXJCQyxNQUFNLEdBQUFELElBQUEsQ0FBTkMsTUFBTTtJQUFFQyxTQUFTLEdBQUFGLElBQUEsQ0FBVEUsU0FBUztFQUMvQixJQUFNQyxLQUFLLEdBQUcsQ0FDWjtJQUFFQyxFQUFFLEVBQUMsT0FBTztJQUFFQyxLQUFLLEVBQUMsT0FBTztJQUFFQyxJQUFJLGVBQUNULEtBQUEsQ0FBQVUsYUFBQTtNQUFLQyxLQUFLLEVBQUMsSUFBSTtNQUFDQyxNQUFNLEVBQUMsSUFBSTtNQUFDQyxPQUFPLEVBQUMsV0FBVztNQUFDQyxJQUFJLEVBQUMsTUFBTTtNQUFDQyxNQUFNLEVBQUMsY0FBYztNQUFDQyxXQUFXLEVBQUMsR0FBRztNQUFBQyxRQUFBO1FBQUFDLFFBQUEsRUFBQUMsWUFBQTtRQUFBQyxVQUFBO1FBQUFDLFlBQUE7TUFBQTtNQUFBO0lBQUEsZ0JBQUNyQixLQUFBLENBQUFVLGFBQUE7TUFBTVksQ0FBQyxFQUFDLEdBQUc7TUFBQ0MsQ0FBQyxFQUFDLEdBQUc7TUFBQ1osS0FBSyxFQUFDLEdBQUc7TUFBQ0MsTUFBTSxFQUFDLEdBQUc7TUFBQUssUUFBQTtRQUFBQyxRQUFBLEVBQUFDLFlBQUE7UUFBQUMsVUFBQTtRQUFBQyxZQUFB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</script></head>
+<body>
+<div class="ig-shell">
+  <div class="ig-topbar">
+    <div class="ig-logo">SUOR<span class="accent">.</span></div>
+    <input class="ig-search" placeholder="Search">
+    <div class="ig-nav">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square"><path d="M3 12l9-9 9 9M5 10v10h14V10"></path></svg>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"></path></svg>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square"><path d="M12 5v14M5 12h14"></path></svg>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square"><path d="M20.84 4.6a5.5 5.5 0 00-7.78 0L12 5.7l-1.06-1.1a5.5 5.5 0 00-7.78 7.8L12 21l8.84-8.6a5.5 5.5 0 000-7.8z"></path></svg>
+    </div>
+  </div>
+
+  <div class="ig-frame">
+    <div id="root"><div class="ig-header" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:285:11:5"><div class="ig-avatar" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:319:12:7"><img src="./logo-drop-sunrise.svg" alt="Suor Society" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:355:13:9" data-om-text-attrs="{&quot;alt&quot;:&quot;txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:405:419&quot;}" style="padding: 18px;"></div><div data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:462:15:7"><div class="ig-handle" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:476:16:9"><span class="name" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:514:17:11"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:537:548" class="__om-t">suorsociety</span></span><span class="verified" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:566:18:11"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:606:19:13"><path d="M5 13l4 4L19 7" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:727:19:134"></path></svg></span><div class="ig-actions" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:788:21:11"><button class="ig-btn ig-btn-primary" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:829:22:13">Follow</button><button class="ig-btn ig-btn-secondary" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1057:26:13"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1101:1108" class="__om-t">Message</span></button><button class="ig-btn ig-btn-icon" aria-label="More" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1130:27:13" data-om-text-attrs="{&quot;aria-label&quot;:&quot;txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1180:1186&quot;}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1202:28:15"><circle cx="12" cy="12" r="1" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1300:28:113"></circle><circle cx="6" cy="12" r="1" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1331:28:144"></circle><circle cx="18" cy="12" r="1" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1361:28:174"></circle></svg></button></div></div><div class="ig-stats" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1461:32:9"><span data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1498:33:11"><strong data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1504:33:17"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1512:1515" class="__om-t">342</span></strong> <span class="label" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1525:33:38"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1549:1554" class="__om-t">posts</span></span></span><span data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1579:34:11"><strong data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1585:34:17"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1593:1598" class="__om-t">4,287</span></strong> <span class="label" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1608:34:40"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1632:1641" class="__om-t">followers</span></span></span><span data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1666:35:11"><strong data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1672:35:17"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1680:1683" class="__om-t">518</span></strong> <span class="label" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1693:35:38"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1717:1726" class="__om-t">following</span></span></span></div><div class="ig-bio" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1764:37:9"><span class="display-name" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1799:38:11"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1830:1842" class="__om-t">Suor Society</span></span><span class="tagline" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1860:39:11"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1886:1941" class="__om-t">For the runner who lifts. The lifter who runs. And everyone figuring it out.</span></span><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1959:1992" class="__om-t">San Diego. A hybrid running culture page.</span><br data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:1992:40:44"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:2008:2058" class="__om-t">Crew runs Saturdays · Mission Bay 8am · all paces.</span><br data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:2058:41:61"><a class="link" href="https://019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/index.html?t=0ca7f40de92a4bb7d7079c7d11d6c1aa70e09b17b98828d63fba90a8e7534016.d71541c8-5039-427f-a155-f853edda854d.6cb7147e-1af6-4a72-8de2-059a861a43f8.1778269918#" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:2074:42:11"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Header.jsx:2103:2123" class="__om-t">suorsociety.com/crew</span></a></div></div></div><div class="ig-highlights" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:816:14:5"><div class="ig-highlight" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:880:16:9"><div class="ig-highlight-circle" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:935:17:11"><div class="ig-highlight-inner" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:985:18:13" style="background: linear-gradient(rgb(58, 63, 77), rgb(26, 26, 25));">CREW</div></div><div class="ig-highlight-label" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:1090:20:11">Crew</div></div><div class="ig-highlight" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:880:16:9"><div class="ig-highlight-circle" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:935:17:11"><div class="ig-highlight-inner" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:985:18:13" style="background: linear-gradient(rgb(90, 50, 32), rgb(26, 26, 25));">GEAR</div></div><div class="ig-highlight-label" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:1090:20:11">Gear</div></div><div class="ig-highlight" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:880:16:9"><div class="ig-highlight-circle" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:935:17:11"><div class="ig-highlight-inner" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:985:18:13" style="background: linear-gradient(rgb(45, 51, 64), rgb(20, 20, 20));">SD</div></div><div class="ig-highlight-label" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:1090:20:11">SD Scene</div></div><div class="ig-highlight" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:880:16:9"><div class="ig-highlight-circle" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:935:17:11"><div class="ig-highlight-inner" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:985:18:13" style="background: linear-gradient(rgb(193, 68, 41), rgb(90, 26, 10));">13.1</div></div><div class="ig-highlight-label" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:1090:20:11">Half Block</div></div><div class="ig-highlight" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:880:16:9"><div class="ig-highlight-circle" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:935:17:11"><div class="ig-highlight-inner" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:985:18:13" style="background: linear-gradient(rgb(224, 136, 85), rgb(90, 50, 32));">HOT</div></div><div class="ig-highlight-label" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:1090:20:11">Hot Takes</div></div><div class="ig-highlight" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:880:16:9"><div class="ig-highlight-circle" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:935:17:11"><div class="ig-highlight-inner" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:985:18:13" style="background: linear-gradient(rgb(31, 31, 30), rgb(10, 10, 10));">P360</div></div><div class="ig-highlight-label" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:1090:20:11">P360</div></div><div class="ig-highlight" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:880:16:9"><div class="ig-highlight-circle" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:935:17:11"><div class="ig-highlight-inner" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:985:18:13" style="background: linear-gradient(rgb(61, 61, 58), rgb(31, 31, 30));">COFF</div></div><div class="ig-highlight-label" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:1090:20:11">Coffee</div></div><div class="ig-highlight" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:880:16:9"><div class="ig-highlight-circle" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:935:17:11"><div class="ig-highlight-inner" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:985:18:13" style="background: linear-gradient(rgb(45, 51, 64), rgb(10, 10, 10));">SPOT</div></div><div class="ig-highlight-label" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/Highlights.jsx:1090:20:11">Spotlights</div></div></div><div class="ig-tabs" data-om-id="jsx:/Inline Babel script:838:11:5"><div class="ig-tab active" data-om-id="jsx:/Inline Babel script:896:13:9"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-om-id="jsx:/Inline Babel script:125:6:39"><rect x="3" y="3" width="7" height="7" data-om-id="jsx:/Inline Babel script:223:6:137"></rect><rect x="14" y="3" width="7" height="7" data-om-id="jsx:/Inline Babel script:263:6:177"></rect><rect x="3" y="14" width="7" height="7" data-om-id="jsx:/Inline Babel script:304:6:218"></rect><rect x="14" y="14" width="7" height="7" data-om-id="jsx:/Inline Babel script:345:6:259"></rect></svg>Posts</div><div class="ig-tab " data-om-id="jsx:/Inline Babel script:896:13:9"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-om-id="jsx:/Inline Babel script:435:7:39"><rect x="2" y="2" width="20" height="20" data-om-id="jsx:/Inline Babel script:533:7:137"></rect><path d="M2 8h20M8 2v20" data-om-id="jsx:/Inline Babel script:575:7:179"></path></svg>Reels</div><div class="ig-tab " data-om-id="jsx:/Inline Babel script:896:13:9"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-om-id="jsx:/Inline Babel script:651:8:41"><path d="M20 12V5a2 2 0 00-2-2H6a2 2 0 00-2 2v7l8 9 8-9z" data-om-id="jsx:/Inline Babel script:749:8:139"></path></svg>Tagged</div></div><div class="ig-grid" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2670:32:5"><div class="ig-tile ig-tile-1" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2733:34:9"><div class="ig-tile-cat" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2817:35:11">CREW</div><div class="ig-tile-stamp" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2870:36:11"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2901:2902" class="__om-t">S</span></div><div class="ig-tile-bg" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2919:37:11"><div class="ig-tile-overlay" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2947:37:39"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:238:241" class="__om-t">SAT</span><br data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:241:5:50"><span class="sunrise" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:246:5:55"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:272:275" class="__om-t">8AM</span></span></div></div></div><div class="ig-tile ig-tile-2" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2733:34:9"><div class="ig-tile-cat" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2817:35:11">GEAR</div><div class="ig-tile-stamp" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2870:36:11"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2901:2902" class="__om-t">S</span></div><div class="ig-tile-bg" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2919:37:11"><div class="ig-tile-overlay" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2947:37:39"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:432:436" class="__om-t">SHOE</span><br data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:436:7:51"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:441:445" class="__om-t">DROP</span></div></div></div><div class="ig-tile ig-tile-3" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2733:34:9"><div class="ig-tile-cat" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2817:35:11">CULTURE</div><div class="ig-tile-stamp" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2870:36:11"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2901:2902" class="__om-t">S</span></div><div class="ig-tile-bg" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2919:37:11"><div class="ig-tile-overlay" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2947:37:39"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:610:613" class="__om-t">HOT</span><br data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:613:9:53"><span class="accent" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:618:9:58"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:643:647" class="__om-t">TAKE</span></span></div></div></div><div class="ig-tile stamp-tile" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2733:34:9"><div class="ig-tile-cat" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2817:35:11">EDITORIAL</div><div class="ig-tile-stamp" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2870:36:11"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2901:2902" class="__om-t">S</span></div><div class="ig-tile-bg" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2919:37:11"><div class="ig-tile-overlay" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2947:37:39"><span class="rust" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:817:11:51"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:840:843" class="__om-t">BAD</span></span></div></div></div><div class="ig-tile ig-tile-5" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2733:34:9"><div class="ig-tile-cat" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2817:35:11">CREW</div><div class="ig-tile-stamp" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2870:36:11"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2901:2902" class="__om-t">S</span></div><div class="ig-tile-bg" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2919:37:11"><div class="ig-tile-overlay" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2947:37:39"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1022:1026" class="__om-t">5 OF</span><br data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1026:13:51"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1031:1034" class="__om-t">US.</span></div></div></div><div class="ig-tile ig-tile-6" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2733:34:9"><div class="ig-tile-cat" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2817:35:11">PERSONAL</div><div class="ig-tile-stamp" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2870:36:11"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2901:2902" class="__om-t">S</span></div><div class="ig-tile-bg" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2919:37:11"><div class="ig-tile-overlay" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2947:37:39"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1282:1287" class="__om-t">FIRST</span><br data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1287:15:56"><span class="accent" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1292:15:61"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1317:1320" class="__om-t">SIX</span></span></div></div></div><div class="ig-tile ig-tile-7" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2733:34:9"><div class="ig-tile-cat" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2817:35:11">SPOTLIGHT</div><div class="ig-tile-stamp" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2870:36:11"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2901:2902" class="__om-t">S</span></div><div class="ig-tile-bg" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2919:37:11"><div class="ig-tile-overlay" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2947:37:39"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1516:1522" class="__om-t">300 LB</span><br data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1522:17:58"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1527:1531" class="__om-t">1:42</span></div></div></div><div class="ig-tile ig-tile-8" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2733:34:9"><div class="ig-tile-cat" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2817:35:11">SD SCENE</div><div class="ig-tile-stamp" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2870:36:11"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2901:2902" class="__om-t">S</span></div><div class="ig-tile-bg" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2919:37:11"><div class="ig-tile-overlay" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2947:37:39"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1724:1729" class="__om-t">NORTH</span><br data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1729:19:56"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1734:1738" class="__om-t">PARK</span></div></div></div><div class="ig-tile ig-tile-9" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2733:34:9"><div class="ig-tile-cat" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2817:35:11">TIPS</div><div class="ig-tile-stamp" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2870:36:11"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2901:2902" class="__om-t">S</span></div><div class="ig-tile-bg" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2919:37:11"><div class="ig-tile-overlay" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2947:37:39"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1881:1887" class="__om-t">3 TIPS</span><br data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1887:21:53"><span class="sunrise" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1892:21:58"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:1918:1919" class="__om-t">→</span></span></div></div></div><div class="ig-tile ig-tile-10" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2733:34:9"><div class="ig-tile-cat" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2817:35:11">CULTURE</div><div class="ig-tile-stamp" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2870:36:11"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2901:2902" class="__om-t">S</span></div><div class="ig-tile-bg" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2919:37:11"><div class="ig-tile-overlay" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2947:37:39"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2076:2081" class="__om-t">CREAM</span><br data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2081:23:56"><span class="accent" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2086:23:61"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2111:2116" class="__om-t">RISES</span></span></div></div></div><div class="ig-tile ig-tile-11" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2733:34:9"><div class="ig-tile-cat" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2817:35:11">GEAR</div><div class="ig-tile-stamp" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2870:36:11"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2901:2902" class="__om-t">S</span></div><div class="ig-tile-bg" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2919:37:11"><div class="ig-tile-overlay" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2947:37:39"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2317:2319" class="__om-t">NB</span><br data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2319:25:50"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2324:2328" class="__om-t">1080</span></div></div></div><div class="ig-tile ig-tile-12" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2733:34:9"><div class="ig-tile-cat" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2817:35:11">P360</div><div class="ig-tile-stamp" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2870:36:11"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2901:2902" class="__om-t">S</span></div><div class="ig-tile-bg" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2919:37:11"><div class="ig-tile-overlay" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2947:37:39"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2490:2496" class="__om-t">RUNNERS WHO LIFT</span><br data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2496:27:54"><span class="sunrise" data-om-id="jsx:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2501:27:59"><span data-om-text="txt:/https:/019df5f8-027b-73f5-b305-bef090e9cb78.claudeusercontent.com/v1/design/projects/019df5f8-027b-73f5-b305-bef090e9cb78/serve/ui_kits/instagram/FeedGrid.jsx:2527:2530" class="__om-t">DAY</span></span></div></div></div></div><div class="ig-footer" data-om-id="jsx:/Inline Babel script:1935:37:7"><span data-om-text="txt:/Inline Babel script:1962:1997" class="__om-t">SUOR SOCIETY · SAN DIEGO · 04.30.26</span></div></div>
+  </div>
+</div>
+
+<script src="./react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="./react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="./babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="./Header.jsx" data-plugins="transform-react-jsx-source,om-src-id,om-text-extract" data-filename="Header.jsx"></script>
+<script type="text/babel" src="./Highlights.jsx" data-plugins="transform-react-jsx-source,om-src-id,om-text-extract" data-filename="Highlights.jsx"></script>
+<script type="text/babel" src="./FeedGrid.jsx" data-plugins="transform-react-jsx-source,om-src-id,om-text-extract" data-filename="FeedGrid.jsx"></script>
+<script type="text/babel" src="./PostDetail.jsx" data-plugins="transform-react-jsx-source,om-src-id,om-text-extract" data-filename="PostDetail.jsx"></script>
+
+<script type="text/babel" data-plugins="transform-react-jsx-source,om-src-id,om-text-extract" data-filename="inline-4">
+const { useState } = React;
+
+function Tabs({ active, setActive }) {
+  const items = [
+    { id:'posts', label:'Posts', icon:<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg> },
+    { id:'reels', label:'Reels', icon:<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="2" width="20" height="20"/><path d="M2 8h20M8 2v20"/></svg> },
+    { id:'tagged', label:'Tagged', icon:<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 12V5a2 2 0 00-2-2H6a2 2 0 00-2 2v7l8 9 8-9z"/></svg> },
+  ];
+  return (
+    <div className="ig-tabs">
+      {items.map(t => (
+        <div key={t.id} className={`ig-tab ${active===t.id?'active':''}`} onClick={()=>setActive(t.id)}>
+          {t.icon}{t.label}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function App() {
+  const [active, setActive] = useState('posts');
+  const [post, setPost] = useState(null);
+  const [open, setOpen] = useState(false);
+  const onOpen = (p) => { setPost(p); setOpen(true); };
+  const onClose = () => setOpen(false);
+
+  return (
+    <>
+      <Header />
+      <Highlights />
+      <Tabs active={active} setActive={setActive} />
+      {active==='posts' && <FeedGrid onOpen={onOpen} />}
+      {active==='reels' && <div style={{padding:'80px 0',textAlign:'center',fontFamily:'var(--font-condensed)',fontSize:24,letterSpacing:'.18em',color:'var(--fg-2)'}}>REELS COMING SOON</div>}
+      {active==='tagged' && <div style={{padding:'80px 0',textAlign:'center',fontFamily:'var(--font-condensed)',fontSize:24,letterSpacing:'.18em',color:'var(--fg-2)'}}>NO TAGGED POSTS YET</div>}
+      <PostDetail post={post} open={open} onClose={onClose} />
+      <div className="ig-footer">SUOR SOCIETY · SAN DIEGO · 04.30.26</div>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+
+
+</body></html>

@@ -529,7 +529,7 @@ export default function OpenEntryRaces2026() {
           <div className="page">
             <div className="article-eye">The Culture Archive &nbsp;/&nbsp; June 2026</div>
             <h1 className="article-headline">
-              40 Open Entry Races in <span>California</span> and the US You Can Still Run
+              40 Open Entry Races in <span>California</span> and the US You Can Still Run in 2026
             </h1>
             <p className="article-deck">
               No qualifying time. No lottery. 20 California races, 20 across the US.
