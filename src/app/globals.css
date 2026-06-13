@@ -1335,7 +1335,7 @@ a { color: inherit; text-decoration: none; }
 .crew-cover img {
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: center 38%;
+  object-position: center 52%;
   display: block;
   filter: grayscale(60%) brightness(.7);
 }
