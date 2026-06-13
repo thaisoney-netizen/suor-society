@@ -899,7 +899,7 @@ a { color: inherit; text-decoration: none; }
 }
 .article-body li:last-child { border-bottom: none; }
 .article-body li::before {
-  content: "—";
+  content: "·";
   position: absolute;
   left: 0;
   color: var(--ink-3);
