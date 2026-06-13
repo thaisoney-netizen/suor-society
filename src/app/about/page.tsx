@@ -17,11 +17,21 @@ export default function About() {
         <section className="about-pg-hero">
           <div className="page">
             <p className="about-pg-eye">Suor Society / The Culture</p>
-            <h1 className="about-pg-headline">Suor is Portuguese for sweat</h1>
-            <p className="about-pg-deck">
-              Brazilian roots. Six-day training weeks.<br />
-              Built in San Diego.
-            </p>
+            <div className="about-pg-hero-grid">
+              <div className="about-pg-hero-main">
+                <h1 className="about-pg-headline">Suor is Portuguese for sweat</h1>
+                <p className="about-pg-deck">
+                  Brazilian roots. Six-day training weeks.<br />
+                  Built in San Diego.
+                </p>
+              </div>
+              <div className="about-pg-hero-aside">
+                <p className="about-pg-label">What this is</p>
+                <p className="about-pg-aside-p">
+                  Hybrid running culture for people with a real life. Built in San Diego by a marketer who runs and lifts.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -81,8 +91,6 @@ export default function About() {
               </div>
             </div>
             <p className="about-pg-crew-note">
-              The fastest person waits at every turn. Coffee after. That&rsquo;s the whole point.
-              <br /><br />
               Follow{" "}
               <a
                 href="https://instagram.com/suorsociety"
