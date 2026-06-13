@@ -62,32 +62,31 @@ export default function Dispatch() {
           </div>
         </section>
 
-        {/* SIGNUP */}
-        <section className="download-gate">
+        {/* SIGNUP — slim, side by side */}
+        <section className="download-gate dispatch-signup">
           <div className="page">
             <div className="gate-label">The Weekly Dispatch</div>
-            <div className="gate-title">Sign up<br />Free</div>
-            <p className="gate-desc">
-              Races worth signing up for, gear worth knowing about, and the people
-              doing both around a full-time job. No noise, no daily blast.
-            </p>
-            <ul className="gate-what">
-              <li>Open-entry races worth your weekend</li>
-              <li>Hybrid training and gear we actually use</li>
-              <li>San Diego crew runs and meetups</li>
-            </ul>
-            <DispatchForm />
+            <div className="dispatch-signup-row">
+              <div className="dispatch-signup-intro">
+                <div className="gate-title">Sign up<br />Free</div>
+                <p className="gate-desc">
+                  Races worth signing up for and gear worth knowing about. One
+                  email a week, no daily blast
+                </p>
+              </div>
+              <DispatchForm />
+            </div>
           </div>
         </section>
 
-        {/* LATEST POSTS */}
+        {/* LATEST POSTS — two up */}
         <section className="archive">
           <div className="page">
             <div className="article-section-head">
               <div className="article-section-label">Latest from the Dispatch</div>
               <div className="article-section-sub">Race news · HYROX · Gear</div>
             </div>
-            <div className="archive-list">
+            <div className="archive-list dispatch-grid">
               {POSTS.map((post) => (
                 <a key={post.href} className="archive-entry" href={post.href}>
                   <div className="archive-entry-img">
@@ -106,6 +105,18 @@ export default function Dispatch() {
                 </a>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* WHAT YOU GET — moved below the posts */}
+        <section className="dispatch-perks">
+          <div className="page">
+            <div className="article-section-label">What lands in your inbox</div>
+            <ul className="gate-what">
+              <li>Open-entry races worth your weekend</li>
+              <li>Hybrid training and gear we actually use</li>
+              <li>San Diego crew runs and meetups</li>
+            </ul>
           </div>
         </section>
 
