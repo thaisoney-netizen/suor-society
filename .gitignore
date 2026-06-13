@@ -42,3 +42,26 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local brand assets, design files, sensitive notes — never commit (not part of the deployed app).
+# Root-anchored so they don't affect real site assets under /public.
+/Branding/
+/Daily Content Sweeps/
+/Images/
+/logo-files/
+/Suor Society Design System_files/
+/recovery-codes.txt
+/test_write.txt
+/*.mp4
+/*.png
+/*.jpeg
+/*.jpg
+/*.webp
+/*.pdf
+/Suor Society Design System.html
+/Suor_Society_Homepage.html
+/suor-society-logo-concepts.html
+/canva-prompt-pack.md
+/design.md
+/hybrid-running-business.md
+/generate_logos_v3.py
