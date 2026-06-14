@@ -59,7 +59,7 @@ export default function Dispatch() {
 
       <main>
         {/* HERO */}
-        <section className="about-pg-hero">
+        <section className="about-pg-hero dispatch-hero">
           <div className="page">
             <p className="about-pg-eye">Suor Society / Dispatch</p>
             <h1 className="about-pg-headline">Get the dispatch</h1>
@@ -70,61 +70,55 @@ export default function Dispatch() {
           </div>
         </section>
 
-        {/* SIGNUP — slim, side by side */}
-        <section className="download-gate dispatch-signup">
+        {/* POSTS (left) + SLIM SIGNUP (right) — both above the fold */}
+        <section className="dispatch-main">
           <div className="page">
-            <div className="gate-label">The Weekly Dispatch</div>
-            <div className="dispatch-signup-row">
-              <div className="dispatch-signup-intro">
-                <div className="gate-title">Sign up<br />Free</div>
-                <p className="gate-desc">
-                  Races worth signing up for and gear worth knowing about. One
-                  email a week, no daily blast
-                </p>
+            <div className="dispatch-layout">
+              {/* LEFT — latest posts */}
+              <div className="dispatch-posts">
+                <div className="article-section-head">
+                  <div className="article-section-label">Latest from the Dispatch</div>
+                  <div className="article-section-sub">Race news · HYROX · Gear</div>
+                </div>
+                <div className="archive-list dispatch-grid">
+                  {POSTS.map((post) => (
+                    <a key={post.href} className="archive-entry" href={post.href}>
+                      <div className="archive-entry-img">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={post.img} alt={post.title} />
+                      </div>
+                      <div className="archive-entry-body">
+                        <div className="archive-entry-meta">
+                          <span>{post.tag}</span>
+                          <span>{post.date}</span>
+                        </div>
+                        <h2 className="archive-entry-title">{post.title}</h2>
+                        <p className="archive-entry-desc">{post.desc}</p>
+                        <span className="archive-entry-read">Read →</span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
               </div>
-              <DispatchForm />
-            </div>
-          </div>
-        </section>
 
-        {/* LATEST POSTS — two up */}
-        <section className="archive">
-          <div className="page">
-            <div className="article-section-head">
-              <div className="article-section-label">Latest from the Dispatch</div>
-              <div className="article-section-sub">Race news · HYROX · Gear</div>
+              {/* RIGHT — slim email signup, sticky */}
+              <aside className="dispatch-aside">
+                <div className="dispatch-aside-card">
+                  <div className="gate-label">The Weekly Dispatch</div>
+                  <div className="gate-title">Sign up<br />Free</div>
+                  <p className="gate-desc">
+                    Races worth signing up for and gear worth knowing about.
+                    One email a week, no daily blast
+                  </p>
+                  <DispatchForm />
+                  <ul className="gate-what">
+                    <li>Open-entry races worth your weekend</li>
+                    <li>Hybrid training and gear we actually use</li>
+                    <li>San Diego crew runs and meetups</li>
+                  </ul>
+                </div>
+              </aside>
             </div>
-            <div className="archive-list dispatch-grid">
-              {POSTS.map((post) => (
-                <a key={post.href} className="archive-entry" href={post.href}>
-                  <div className="archive-entry-img">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={post.img} alt={post.title} />
-                  </div>
-                  <div className="archive-entry-body">
-                    <div className="archive-entry-meta">
-                      <span>{post.tag}</span>
-                      <span>{post.date}</span>
-                    </div>
-                    <h2 className="archive-entry-title">{post.title}</h2>
-                    <p className="archive-entry-desc">{post.desc}</p>
-                    <span className="archive-entry-read">Read →</span>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* WHAT YOU GET — moved below the posts */}
-        <section className="dispatch-perks">
-          <div className="page">
-            <div className="article-section-label">What lands in your inbox</div>
-            <ul className="gate-what">
-              <li>Open-entry races worth your weekend</li>
-              <li>Hybrid training and gear we actually use</li>
-              <li>San Diego crew runs and meetups</li>
-            </ul>
           </div>
         </section>
 
