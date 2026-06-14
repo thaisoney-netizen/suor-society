@@ -36,7 +36,7 @@ const POSTS: Post[] = [
   },
   {
     href: "/dispatch/june-2026-shoe-drops",
-    img: "/race-hero.jpg",
+    img: "/june-shoe-drops-hero.png",
     tag: "Gear",
     date: "June 2026",
     title: "June Shoe Drops: Saucony Goes Big, Puma Pulls the Plate",
