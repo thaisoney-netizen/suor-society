@@ -157,7 +157,7 @@ export default function Home() {
           </div>
 
           <div className="board-cta">
-            <a href="/racepicks" className="board-more">See all posts ↗</a>
+            <a href="/dispatch" className="board-more">See all posts ↗</a>
           </div>
         </div>
       </section>
