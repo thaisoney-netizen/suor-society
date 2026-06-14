@@ -41,7 +41,7 @@ const BOARD_POSTS: BoardPost[] = [
   },
   {
     href: "/dispatch/cape-town-marathon-major",
-    img: "/city-run.webp",
+    img: "/cape-town-hero.jpg",
     eyebrow: "The Dispatch",
     title: "Cape Town Joins the Majors",
     desc: "Africa's first Abbott World Marathon Major joins the series May 23, 2027. What it changes for the star chase.",
