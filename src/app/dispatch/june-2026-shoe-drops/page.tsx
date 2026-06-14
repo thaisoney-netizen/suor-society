@@ -32,7 +32,7 @@ export default function JuneShoeDrops() {
         <div className="article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/race-hero.jpg"
+            src="/june-shoe-drops-hero.png"
             alt="June 2026 running shoe releases including the Saucony Endorphin Elite 3"
           />
         </div>
