@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 
 const NAV_LINKS = [
   { href: "/racepicks", label: "Race Picks" },
+  { href: "/about", label: "The Culture" },
   { href: "/crew", label: "Crew" },
   { href: "/dispatch", label: "Dispatch" },
-  { href: "/about", label: "The Culture" },
 ];
 
 // variant "overlay" sits on top of the home hero (light text on footage);
