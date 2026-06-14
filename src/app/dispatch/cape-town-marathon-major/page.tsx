@@ -1,5 +1,6 @@
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import { PostSubscribe } from "@/components/PostAside";
 
 export const metadata = {
   title: "Cape Town Is Now a Marathon Major, Suor Society",
@@ -27,7 +28,7 @@ export default function CapeTownMajor() {
     <>
       <SiteNav />
 
-      <main>
+      <main className="post">
         {/* ── ARTICLE MASTHEAD (title above the cover) ── */}
         <section className="article-masthead">
           <div className="page">
@@ -46,6 +47,10 @@ export default function CapeTownMajor() {
             alt="Aerial view of Cape Town with Table Mountain and the stadium, home of the eighth Abbott World Marathon Major"
           />
         </div>
+
+        {/* ── BODY + STICKY RAIL ── */}
+        <div className="post-shell">
+          <div className="post-main">
 
         {/* ── ARTICLE HERO (deck + meta) ── */}
         <section className="article-hero">
@@ -126,6 +131,13 @@ export default function CapeTownMajor() {
             ))}
           </div>
         </section>
+
+          </div>{/* /.post-main */}
+
+          <aside className="post-aside post-aside--sub">
+            <PostSubscribe />
+          </aside>
+        </div>{/* /.post-shell */}
 
       </main>
 

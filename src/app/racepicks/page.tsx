@@ -7,26 +7,18 @@ export const metadata = {
     "Race Picks. Open entry races, guides, and start lines worth your training block, all in one place.",
 };
 
-// ── RACE PICKS POSTS ──
-// To publish a new race pick: add an object to the top of this array.
-type Post = {
-  href: string;
-  img: string;
-  tag: string;
-  date: string;
-  title: string;
-  desc: string;
+// ── RACE PICKS ──
+// One post lives here for now, so the page presents it as a single feature
+// rather than an archive grid. When a second pick ships, switch this back to
+// the POSTS array + .archive-list grid (see git history) and add the new card.
+const FEATURE = {
+  href: "/culture/open-entry-races-2026",
+  img: "/race-hero.jpg",
+  tag: "Race Guide",
+  date: "June 2026",
+  title: "40 Open Entry Races in California and the US You Can Still Run in 2026",
+  desc: "No qualifier, no lottery. 20 California races, 20 across the US, all USATF certified, with dates, prices, and direct registration links.",
 };
-const POSTS: Post[] = [
-  {
-    href: "/culture/open-entry-races-2026",
-    img: "/race-hero.jpg",
-    tag: "Race Guide",
-    date: "June 2026",
-    title: "40 Open Entry Races in California and the US You Can Still Run in 2026",
-    desc: "No qualifier, no lottery. 20 California races, 20 across the US, all USATF certified.",
-  },
-];
 
 export default function RacePicks() {
   return (
@@ -46,30 +38,24 @@ export default function RacePicks() {
           </div>
         </section>
 
-        {/* ARCHIVE */}
-        <section className="archive">
+        {/* SINGLE FEATURE */}
+        <section className="rp-feature-section">
           <div className="page">
-            <div className="archive-list">
-              {POSTS.map((post) => (
-                <a key={post.href} className="archive-entry" href={post.href}>
-                  <div className="archive-entry-head">
-                    <div className="archive-entry-meta">
-                      <span>{post.tag}</span>
-                      <span>{post.date}</span>
-                    </div>
-                    <h2 className="archive-entry-title">{post.title}</h2>
-                  </div>
-                  <div className="archive-entry-img">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={post.img} alt={post.title} />
-                  </div>
-                  <div className="archive-entry-body">
-                    <p className="archive-entry-desc">{post.desc}</p>
-                    <span className="archive-entry-read">Read →</span>
-                  </div>
-                </a>
-              ))}
-            </div>
+            <a className="rp-feature" href={FEATURE.href}>
+              <div className="rp-feature-media">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={FEATURE.img} alt={FEATURE.title} />
+              </div>
+              <div className="rp-feature-body">
+                <div className="archive-entry-meta">
+                  <span>{FEATURE.tag}</span>
+                  <span>{FEATURE.date}</span>
+                </div>
+                <h2 className="rp-feature-title">{FEATURE.title}</h2>
+                <p className="rp-feature-desc">{FEATURE.desc}</p>
+                <span className="archive-entry-read">Read the guide →</span>
+              </div>
+            </a>
           </div>
         </section>
 

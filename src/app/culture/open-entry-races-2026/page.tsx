@@ -1,6 +1,14 @@
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import DownloadGate from "@/components/DownloadGate";
+import { PostToc } from "@/components/PostAside";
+
+const TOC = [
+  { id: "california", label: "20 California Races" },
+  { id: "us-races", label: "20 US Races" },
+  { id: "faq", label: "Frequently Asked" },
+  { id: "download", label: "Get the Guide" },
+];
 
 export const metadata = {
   title: "Open Entry Races 2026, Suor Society",
@@ -513,7 +521,7 @@ export default function OpenEntryRaces2026() {
       {/* NAV */}
       <SiteNav />
 
-      <main>
+      <main className="post">
 
         {/* ── ARTICLE MASTHEAD (title above the cover) ── */}
         <section className="article-masthead">
@@ -533,6 +541,10 @@ export default function OpenEntryRaces2026() {
             alt="Thousands of runners at the start line of the Rock 'n' Roll San Diego Marathon and Half Marathon"
           />
         </div>
+
+        {/* ── BODY + STICKY RAIL ── */}
+        <div className="post-shell">
+          <div className="post-main">
 
         {/* ── ARTICLE HERO (deck + meta) ── */}
         <section className="article-hero">
@@ -572,7 +584,7 @@ export default function OpenEntryRaces2026() {
         </section>
 
         {/* ── CALIFORNIA RACES ── */}
-        <section style={{ borderBottom: "1px solid var(--line)", paddingBottom: "56px" }}>
+        <section id="california" style={{ borderBottom: "1px solid var(--line)", paddingBottom: "56px" }}>
           <div className="page">
             <div className="article-section-head">
               <div className="article-section-label">20 California Races</div>
@@ -585,7 +597,7 @@ export default function OpenEntryRaces2026() {
         </section>
 
         {/* ── US RACES ── */}
-        <section style={{ borderBottom: "1px solid var(--line)", paddingBottom: "56px" }}>
+        <section id="us-races" style={{ borderBottom: "1px solid var(--line)", paddingBottom: "56px" }}>
           <div className="page">
             <div className="article-section-head">
               <div className="article-section-label">20 US Certified Races</div>
@@ -598,7 +610,7 @@ export default function OpenEntryRaces2026() {
         </section>
 
         {/* ── FAQ ── */}
-        <section className="faq-section">
+        <section id="faq" className="faq-section">
           <div className="page">
             <div className="faq-head">Frequently Asked</div>
             {FAQS.map((f, i) => (
@@ -611,7 +623,7 @@ export default function OpenEntryRaces2026() {
         </section>
 
         {/* ── DOWNLOAD GATE ── */}
-        <section className="download-gate">
+        <section id="download" className="download-gate">
           <div className="page">
             <div className="gate-label">Free Download</div>
             <div className="gate-title">Get the<br />Full Guide</div>
@@ -629,6 +641,13 @@ export default function OpenEntryRaces2026() {
             <DownloadGate />
           </div>
         </section>
+
+          </div>{/* /.post-main */}
+
+          <aside className="post-aside post-aside--toc">
+            <PostToc items={TOC} />
+          </aside>
+        </div>{/* /.post-shell */}
 
       </main>
 

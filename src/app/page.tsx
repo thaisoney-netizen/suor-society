@@ -19,7 +19,7 @@ const BOARD_POSTS: BoardPost[] = [
     href: "/culture/open-entry-races-2026",
     img: "/race-hero.jpg",
     eyebrow: "The Culture Archive",
-    title: "2026 Race Guide",
+    title: "Race Picks",
     desc: "Best open entry races in California and the US. All certified. No qualifier needed.",
     meta: "New · June 2026 ↗",
   },

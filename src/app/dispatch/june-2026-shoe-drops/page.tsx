@@ -1,5 +1,6 @@
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import { PostSubscribe } from "@/components/PostAside";
 
 export const metadata = {
   title: "June 2026 Running Shoe Drops, Suor Society",
@@ -27,7 +28,7 @@ export default function JuneShoeDrops() {
     <>
       <SiteNav />
 
-      <main>
+      <main className="post">
         {/* ── ARTICLE MASTHEAD (title above the cover) ── */}
         <section className="article-masthead">
           <div className="page">
@@ -46,6 +47,10 @@ export default function JuneShoeDrops() {
             alt="June 2026 running shoe releases including the Saucony Endorphin Elite 3"
           />
         </div>
+
+        {/* ── BODY + STICKY RAIL ── */}
+        <div className="post-shell">
+          <div className="post-main">
 
         {/* ── ARTICLE HERO (deck + meta) ── */}
         <section className="article-hero">
@@ -131,6 +136,13 @@ export default function JuneShoeDrops() {
             ))}
           </div>
         </section>
+
+          </div>{/* /.post-main */}
+
+          <aside className="post-aside post-aside--sub">
+            <PostSubscribe />
+          </aside>
+        </div>{/* /.post-shell */}
 
       </main>
 

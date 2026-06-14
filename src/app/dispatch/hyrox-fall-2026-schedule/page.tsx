@@ -1,5 +1,6 @@
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import { PostSubscribe } from "@/components/PostAside";
 
 export const metadata = {
   title: "HYROX Fall 2026 US Schedule, Suor Society",
@@ -44,7 +45,7 @@ export default function HyroxFall2026() {
     <>
       <SiteNav />
 
-      <main>
+      <main className="post">
         {/* ── ARTICLE MASTHEAD (title above the cover) ── */}
         <section className="article-masthead">
           <div className="page">
@@ -63,6 +64,10 @@ export default function HyroxFall2026() {
             alt="Athlete pressing a kettlebell overhead during a HYROX-style training session"
           />
         </div>
+
+        {/* ── BODY + STICKY RAIL ── */}
+        <div className="post-shell">
+          <div className="post-main">
 
         {/* ── ARTICLE HERO (deck + meta) ── */}
         <section className="article-hero">
@@ -139,6 +144,13 @@ export default function HyroxFall2026() {
             ))}
           </div>
         </section>
+
+          </div>{/* /.post-main */}
+
+          <aside className="post-aside post-aside--sub">
+            <PostSubscribe />
+          </aside>
+        </div>{/* /.post-shell */}
 
       </main>
 
