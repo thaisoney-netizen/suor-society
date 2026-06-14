@@ -49,8 +49,8 @@ export default function HyroxFall2026() {
         <div className="article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/race-hero.jpg"
-            alt="HYROX athletes pushing sleds at a North America race"
+            src="/hyrox-hero.jpg"
+            alt="Athlete pressing a kettlebell overhead during a HYROX-style training session"
           />
         </div>
 
