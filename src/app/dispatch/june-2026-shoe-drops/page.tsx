@@ -28,6 +28,16 @@ export default function JuneShoeDrops() {
       <SiteNav />
 
       <main>
+        {/* ── ARTICLE MASTHEAD (title above the cover) ── */}
+        <section className="article-masthead">
+          <div className="page">
+            <div className="article-eye">The Dispatch &nbsp;/&nbsp; Gear</div>
+            <h1 className="article-headline">
+              June Shoe Drops: Saucony Goes Big, Puma Pulls the <span>Plate</span>
+            </h1>
+          </div>
+        </section>
+
         {/* ── COVER IMAGE ── */}
         <div className="article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -37,13 +47,9 @@ export default function JuneShoeDrops() {
           />
         </div>
 
-        {/* ── ARTICLE HERO ── */}
+        {/* ── ARTICLE HERO (deck + meta) ── */}
         <section className="article-hero">
           <div className="page">
-            <div className="article-eye">The Dispatch &nbsp;/&nbsp; Gear</div>
-            <h1 className="article-headline">
-              June Shoe Drops: Saucony Goes Big, Puma Pulls the <span>Plate</span>
-            </h1>
             <p className="article-deck">
               June is the biggest shoe month of the summer, and this one delivered. Here&rsquo;s what&rsquo;s worth
               knowing, and the one trend underneath all of it.

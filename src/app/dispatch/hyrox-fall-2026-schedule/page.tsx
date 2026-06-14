@@ -45,6 +45,16 @@ export default function HyroxFall2026() {
       <SiteNav />
 
       <main>
+        {/* ── ARTICLE MASTHEAD (title above the cover) ── */}
+        <section className="article-masthead">
+          <div className="page">
+            <div className="article-eye">The Dispatch &nbsp;/&nbsp; HYROX</div>
+            <h1 className="article-headline">
+              HYROX Fall 2026: Anaheim Is Back and the Calendar Just Got <span>Huge</span>
+            </h1>
+          </div>
+        </section>
+
         {/* ── COVER IMAGE ── */}
         <div className="article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -54,13 +64,9 @@ export default function HyroxFall2026() {
           />
         </div>
 
-        {/* ── ARTICLE HERO ── */}
+        {/* ── ARTICLE HERO (deck + meta) ── */}
         <section className="article-hero">
           <div className="page">
-            <div className="article-eye">The Dispatch &nbsp;/&nbsp; HYROX</div>
-            <h1 className="article-headline">
-              HYROX Fall 2026: Anaheim Is Back and the Calendar Just Got <span>Huge</span>
-            </h1>
             <p className="article-deck">
               The fall 2026 North America schedule lists 10 races from Labor Day through December. Four
               cities get their first race ever, and Anaheim is the one to circle if you&rsquo;re near San Diego.
