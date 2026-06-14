@@ -28,7 +28,7 @@ const POSTS: Post[] = [
   },
   {
     href: "/dispatch/hyrox-fall-2026-schedule",
-    img: "/race-hero.jpg",
+    img: "/hyrox-hero.jpg",
     tag: "HYROX",
     date: "June 2026",
     title: "HYROX Fall 2026: Anaheim Is Back and the Calendar Just Got Huge",

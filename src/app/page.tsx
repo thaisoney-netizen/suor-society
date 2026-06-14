@@ -25,7 +25,7 @@ const BOARD_POSTS: BoardPost[] = [
   },
   {
     href: "/dispatch/hyrox-fall-2026-schedule",
-    img: "/crew-suor.jpg",
+    img: "/hyrox-hero.jpg",
     eyebrow: "The Dispatch",
     title: "HYROX Fall 2026 Schedule",
     desc: "10 races, four new cities, and Anaheim returns Dec 4 to 6. The full North America calendar.",
