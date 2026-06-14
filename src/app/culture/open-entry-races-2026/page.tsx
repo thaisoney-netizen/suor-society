@@ -515,6 +515,16 @@ export default function OpenEntryRaces2026() {
 
       <main>
 
+        {/* ── ARTICLE MASTHEAD (title above the cover) ── */}
+        <section className="article-masthead">
+          <div className="page">
+            <div className="article-eye">The Culture Archive &nbsp;/&nbsp; June 2026</div>
+            <h1 className="article-headline">
+              40 Open Entry Races in <span>California</span> and the US You Can Still Run in 2026
+            </h1>
+          </div>
+        </section>
+
         {/* ── COVER IMAGE ── */}
         <div className="article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -524,13 +534,9 @@ export default function OpenEntryRaces2026() {
           />
         </div>
 
-        {/* ── ARTICLE HERO ── */}
+        {/* ── ARTICLE HERO (deck + meta) ── */}
         <section className="article-hero">
           <div className="page">
-            <div className="article-eye">The Culture Archive &nbsp;/&nbsp; June 2026</div>
-            <h1 className="article-headline">
-              40 Open Entry Races in <span>California</span> and the US You Can Still Run in 2026
-            </h1>
             <p className="article-deck">
               No qualifying time. No lottery. 20 California races, 20 across the US.
               From now through spring 2027. Every distance 5K to marathon, all USATF certified.

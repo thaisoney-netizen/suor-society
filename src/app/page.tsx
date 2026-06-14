@@ -142,13 +142,15 @@ export default function Home() {
           <div className="link-grid" style={gridStyle}>
             {BOARD_POSTS.map((post, i) => (
               <a key={i} className="link-card" href={post.href}>
+                <div className="lc-head">
+                  <span className="lc-eye">{post.eyebrow}</span>
+                  <h3 className="lc-title">{post.title}</h3>
+                </div>
                 <div className="lc-img">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={post.img} alt={post.title} />
                 </div>
                 <div className="lc-content">
-                  <span className="lc-eye">{post.eyebrow}</span>
-                  <h3 className="lc-title">{post.title}</h3>
                   <p className="lc-desc">{post.desc}</p>
                   <div className="lc-meta">{post.meta}</div>
                 </div>

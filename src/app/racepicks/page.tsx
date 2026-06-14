@@ -52,16 +52,18 @@ export default function RacePicks() {
             <div className="archive-list">
               {POSTS.map((post) => (
                 <a key={post.href} className="archive-entry" href={post.href}>
-                  <div className="archive-entry-img">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={post.img} alt={post.title} />
-                  </div>
-                  <div className="archive-entry-body">
+                  <div className="archive-entry-head">
                     <div className="archive-entry-meta">
                       <span>{post.tag}</span>
                       <span>{post.date}</span>
                     </div>
                     <h2 className="archive-entry-title">{post.title}</h2>
+                  </div>
+                  <div className="archive-entry-img">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={post.img} alt={post.title} />
+                  </div>
+                  <div className="archive-entry-body">
                     <p className="archive-entry-desc">{post.desc}</p>
                     <span className="archive-entry-read">Read →</span>
                   </div>

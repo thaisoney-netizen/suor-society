@@ -28,6 +28,16 @@ export default function CapeTownMajor() {
       <SiteNav />
 
       <main>
+        {/* ── ARTICLE MASTHEAD (title above the cover) ── */}
+        <section className="article-masthead">
+          <div className="page">
+            <div className="article-eye">The Dispatch &nbsp;/&nbsp; Races</div>
+            <h1 className="article-headline">
+              Cape Town Is Now a Marathon Major. Here&rsquo;s What Actually <span>Changes</span>
+            </h1>
+          </div>
+        </section>
+
         {/* ── COVER IMAGE ── */}
         <div className="article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -37,13 +47,9 @@ export default function CapeTownMajor() {
           />
         </div>
 
-        {/* ── ARTICLE HERO ── */}
+        {/* ── ARTICLE HERO (deck + meta) ── */}
         <section className="article-hero">
           <div className="page">
-            <div className="article-eye">The Dispatch &nbsp;/&nbsp; Races</div>
-            <h1 className="article-headline">
-              Cape Town Is Now a Marathon Major. Here&rsquo;s What Actually <span>Changes</span>
-            </h1>
             <p className="article-deck">
               The Sanlam Cape Town Marathon is officially the eighth Abbott World Marathon Major and the
               first one on African soil. The announcement landed June 10, 2026.
