@@ -25,7 +25,7 @@ const BOARD_POSTS: BoardPost[] = [
   },
   {
     href: "/dispatch/hyrox-fall-2026-schedule",
-    img: "/race-hero.jpg",
+    img: "/crew-suor.jpg",
     eyebrow: "The Dispatch",
     title: "HYROX Fall 2026 Schedule",
     desc: "10 races, four new cities, and Anaheim returns Dec 4 to 6. The full North America calendar.",
@@ -33,7 +33,7 @@ const BOARD_POSTS: BoardPost[] = [
   },
   {
     href: "/dispatch/june-2026-shoe-drops",
-    img: "/race-hero.jpg",
+    img: "/shoe-drops.jpeg",
     eyebrow: "The Dispatch",
     title: "June Shoe Drops",
     desc: "The Endorphin Elite 3, a plateless Puma at $150, and why plateless super trainers are the trend.",
@@ -41,7 +41,7 @@ const BOARD_POSTS: BoardPost[] = [
   },
   {
     href: "/dispatch/cape-town-marathon-major",
-    img: "/race-hero.jpg",
+    img: "/city-run.webp",
     eyebrow: "The Dispatch",
     title: "Cape Town Joins the Majors",
     desc: "Africa's first Abbott World Marathon Major joins the series May 23, 2027. What it changes for the star chase.",
