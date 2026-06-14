@@ -33,7 +33,7 @@ const BOARD_POSTS: BoardPost[] = [
   },
   {
     href: "/dispatch/june-2026-shoe-drops",
-    img: "/shoe-drops.jpeg",
+    img: "/june-shoe-drops-hero.png",
     eyebrow: "The Dispatch",
     title: "June Shoe Drops",
     desc: "The Endorphin Elite 3, a plateless Puma at $150, and why plateless super trainers are the trend.",
