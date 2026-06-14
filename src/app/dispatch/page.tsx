@@ -19,6 +19,14 @@ type Post = {
 };
 const POSTS: Post[] = [
   {
+    href: "/culture/open-entry-races-2026",
+    img: "/race-hero.jpg",
+    tag: "Race Picks",
+    date: "June 2026",
+    title: "40 Open Entry Races in California and the US You Can Still Run in 2026",
+    desc: "No qualifier, no lottery. 20 California races, 20 across the US, all USATF certified.",
+  },
+  {
     href: "/dispatch/hyrox-fall-2026-schedule",
     img: "/race-hero.jpg",
     tag: "HYROX",
