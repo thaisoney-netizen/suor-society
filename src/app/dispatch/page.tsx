@@ -44,7 +44,7 @@ const POSTS: Post[] = [
   },
   {
     href: "/dispatch/cape-town-marathon-major",
-    img: "/race-hero.jpg",
+    img: "/cape-town-hero.jpg",
     tag: "Races",
     date: "June 2026",
     title: "Cape Town Is Now a Marathon Major. Here's What Actually Changes",

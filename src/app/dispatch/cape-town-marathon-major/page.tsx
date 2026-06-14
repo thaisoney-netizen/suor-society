@@ -42,8 +42,8 @@ export default function CapeTownMajor() {
         <div className="article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/race-hero.jpg"
-            alt="Runners at the Sanlam Cape Town Marathon, the eighth Abbott World Marathon Major"
+            src="/cape-town-hero.jpg"
+            alt="Aerial view of Cape Town with Table Mountain and the stadium, home of the eighth Abbott World Marathon Major"
           />
         </div>
 
