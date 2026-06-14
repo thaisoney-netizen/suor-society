@@ -33,14 +33,14 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://suorsociety.com"),
+  metadataBase: new URL("https://www.suorsociety.com"),
   title: "Suor Society, hybrid running culture.",
   description:
     "Hybrid running culture. Races worth entering, gear worth knowing, and the people who lift and run around a real life.",
   openGraph: {
     type: "website",
     siteName: "Suor Society",
-    url: "https://suorsociety.com",
+    url: "https://www.suorsociety.com",
     title: "Suor Society, hybrid running culture.",
     description:
       "Hybrid running culture. Races worth entering, gear worth knowing, and the people who lift and run around a real life.",
