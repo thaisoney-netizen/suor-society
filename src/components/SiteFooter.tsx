@@ -1,5 +1,7 @@
+// Race Picks links straight to the single article while only one post exists.
+// When a second pick ships, switch this back to "/racepicks".
 const FOOT_LINKS = [
-  { href: "/racepicks", label: "Race Picks" },
+  { href: "/culture/open-entry-races-2026", label: "Race Picks" },
   { href: "/crew", label: "Crew" },
   { href: "/dispatch", label: "Dispatch" },
   { href: "/about", label: "The Culture" },

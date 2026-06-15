@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from "react";
 
+// Race Picks links straight to the single article while only one post exists.
+// When a second pick ships, switch this back to "/racepicks".
 const NAV_LINKS = [
-  { href: "/racepicks", label: "Race Picks" },
+  { href: "/culture/open-entry-races-2026", label: "Race Picks" },
   { href: "/about", label: "The Culture" },
   { href: "/crew", label: "Crew" },
   { href: "/dispatch", label: "Dispatch" },

@@ -113,7 +113,7 @@ export default function CapeTownMajor() {
             </p>
             <p>
               And if a full in Cape Town sounds like a lot right now, that&rsquo;s fine. Closer to home, our{" "}
-              <a href="/racepicks">open entry race picks</a> have races you can register for today, no
+              <a href="/culture/open-entry-races-2026">open entry race picks</a> have races you can register for today, no
               lottery, no qualifier.
             </p>
           </div>
