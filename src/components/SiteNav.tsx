@@ -13,9 +13,13 @@ const NAV_LINKS = [
 
 // variant "overlay" sits on top of the home hero (light text on footage);
 // variant "light" is the static bar used on paper-background pages.
+// Single horizontal wordmark; on dark backgrounds (overlay hero, mobile menu)
+// the black artwork is flipped to white with a CSS filter.
+const WORDMARK = "/logos/wordmark-horizontal.png";
+
 export default function SiteNav({ variant = "light" }: { variant?: "overlay" | "light" }) {
   const [open, setOpen] = useState(false);
-  const lockup = variant === "overlay" ? "/logos/horizontal-stamp-light.svg" : "/logos/horizontal-stamp-dark.svg";
+  const lockupClass = variant === "overlay" ? "wm-lockup wm-lockup--light" : "wm-lockup";
 
   useEffect(() => {
     if (!open) return;
@@ -30,7 +34,7 @@ export default function SiteNav({ variant = "light" }: { variant?: "overlay" | "
     <nav className={`nav nav--${variant}`}>
       <div className="page nav-row">
         <a href="/" className="wm" aria-label="Suor Society, home">
-          <img src={lockup} alt="Suor Society" className="wm-lockup" />
+          <img src={WORDMARK} alt="Suor Society" className={lockupClass} />
         </a>
         <div className="nav-links">
           {NAV_LINKS.map((link) => (
@@ -55,7 +59,7 @@ export default function SiteNav({ variant = "light" }: { variant?: "overlay" | "
       <div id="nav-menu" className={`nav-menu ${open ? "is-open" : ""}`}>
         <div className="page nav-row nav-menu-head">
           <a href="/" className="wm" aria-label="Suor Society, home">
-            <img src="/logos/horizontal-stamp-light.svg" alt="Suor Society" className="wm-lockup" />
+            <img src={WORDMARK} alt="Suor Society" className="wm-lockup wm-lockup--light" />
           </a>
           <button
             type="button"
