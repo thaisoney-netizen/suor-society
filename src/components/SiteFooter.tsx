@@ -13,7 +13,7 @@ export default function SiteFooter() {
       <div className="page">
         <div className="foot-grid">
           <div className="foot-brand">
-            <span className="foot-wm">SUOR SOCIETY</span>
+            <img src="/logos/horizontal-stamp-dark.svg" alt="Suor Society" className="foot-wm" />
             <p className="foot-desc">
               Hybrid running culture from San Diego. Races, gear, and the people who lift and run around a real life.
             </p>

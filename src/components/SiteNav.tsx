@@ -15,6 +15,7 @@ const NAV_LINKS = [
 // variant "light" is the static bar used on paper-background pages.
 export default function SiteNav({ variant = "light" }: { variant?: "overlay" | "light" }) {
   const [open, setOpen] = useState(false);
+  const lockup = variant === "overlay" ? "/logos/horizontal-stamp-light.svg" : "/logos/horizontal-stamp-dark.svg";
 
   useEffect(() => {
     if (!open) return;
@@ -29,8 +30,7 @@ export default function SiteNav({ variant = "light" }: { variant?: "overlay" | "
     <nav className={`nav nav--${variant}`}>
       <div className="page nav-row">
         <a href="/" className="wm" aria-label="Suor Society, home">
-          <span className="wm-suor">SUOR</span>
-          <span className="wm-society">SOCIETY</span>
+          <img src={lockup} alt="Suor Society" className="wm-lockup" />
         </a>
         <div className="nav-links">
           {NAV_LINKS.map((link) => (
@@ -55,8 +55,7 @@ export default function SiteNav({ variant = "light" }: { variant?: "overlay" | "
       <div id="nav-menu" className={`nav-menu ${open ? "is-open" : ""}`}>
         <div className="page nav-row nav-menu-head">
           <a href="/" className="wm" aria-label="Suor Society, home">
-            <span className="wm-suor">SUOR</span>
-            <span className="wm-society">SOCIETY</span>
+            <img src="/logos/horizontal-stamp-light.svg" alt="Suor Society" className="wm-lockup" />
           </a>
           <button
             type="button"
