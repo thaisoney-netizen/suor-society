@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 // Branded social share card used for Open Graph and Twitter previews.
-export const alt = "Suor Society — hybrid running culture";
+export const alt = "Suor Society — hybrid running page";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
