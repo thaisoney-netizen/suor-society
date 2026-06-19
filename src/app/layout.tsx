@@ -34,22 +34,22 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.suorsociety.com"),
-  title: "Suor Society, hybrid running page",
+  title: "Suor Society, hybrid running culture page",
   description:
-    "Hybrid running page. Races worth entering, gear worth knowing, and the people who lift and run around a real life.",
+    "A hybrid running culture page for people who run and lift around everything else. Race picks, gear, and the scene.",
   openGraph: {
     type: "website",
     siteName: "Suor Society",
     url: "https://www.suorsociety.com",
-    title: "Suor Society, hybrid running page",
+    title: "Suor Society, hybrid running culture page",
     description:
-      "Hybrid running page. Races worth entering, gear worth knowing, and the people who lift and run around a real life.",
+      "A hybrid running culture page for people who run and lift around everything else. Race picks, gear, and the scene.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Suor Society, hybrid running page",
+    title: "Suor Society, hybrid running culture page",
     description:
-      "Hybrid running page. Races worth entering, gear worth knowing, and the people who lift and run around a real life.",
+      "A hybrid running culture page for people who run and lift around everything else. Race picks, gear, and the scene.",
   },
 };
 
