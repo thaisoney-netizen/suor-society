@@ -52,6 +52,9 @@ export const metadata: Metadata = {
     description:
       "A hybrid running culture page for people who run and lift around everything else. Race picks, gear, and the scene.",
   },
+  verification: {
+    google: "YDm19JsCu27EgusYeNzYTF9-ztIk8kzRh4eFN2H1j40",
+  },
 };
 
 export default function RootLayout({
