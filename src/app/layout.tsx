@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, Barlow_Condensed, Inter, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import ScrollTracker from "@/components/ScrollTracker";
 
@@ -71,6 +72,18 @@ export default function RootLayout({
       <body style={{ paddingBottom: "60px" }}>
         {children}
         <ScrollTracker />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XG414LX946"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XG414LX946');
+          `}
+        </Script>
       </body>
     </html>
   );
