@@ -15,7 +15,7 @@ export default function SiteFooter() {
           <div className="foot-brand">
             <img src="/logos/wordmark-horizontal.png" alt="Suor Society" className="foot-wm" />
             <p className="foot-desc">
-              Hybrid running culture from San Diego. Races, gear, and the people who lift and run around a real life.
+              Hybrid running culture from San Diego. Races, gear, and the people who lift and run around everything else.
             </p>
           </div>
           <div className="foot-col">
