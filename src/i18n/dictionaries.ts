@@ -161,7 +161,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
           img: "/june-shoe-drops-hero.png",
           eyebrow: "The Dispatch",
           title: "Lançamentos de tênis de junho",
-          desc: "O Endorphin Elite 3, um Puma sem placa por US$ 150 e por que os super trainers sem placa viraram tendência.",
+          desc: "O Endorphin Elite 3, um Puma sem placa de carbono por US$ 150 e por que os super trainers sem placa viraram tendência.",
           meta: "Equipamentos · Junho 2026 ↗",
         },
         {
