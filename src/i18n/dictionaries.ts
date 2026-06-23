@@ -152,6 +152,20 @@ type Dictionary = {
     featureDesc: string;
     readLabel: string;
   };
+  downloadGate: {
+    successTag: string;
+    successTitleLines: string[];
+    successBody: string;
+    nameLabel: string;
+    namePlaceholder: string;
+    emailLabel: string;
+    emailPlaceholder: string;
+    sending: string;
+    submit: string;
+    error: string;
+    fine: string;
+    downloadBtn: string;
+  };
 };
 
 export const dictionaries: Record<Lang, Dictionary> = {
@@ -338,6 +352,22 @@ export const dictionaries: Record<Lang, Dictionary> = {
       featureDesc:
         "No qualifier, no lottery. 20 California races, 20 across the US, all USATF certified, with dates, prices, and direct registration links.",
       readLabel: "Read the guide →",
+    },
+    downloadGate: {
+      successTag: "You’re in",
+      successTitleLines: ["Your", "Guide", "Is Ready"],
+      successBody:
+        "40 open entry races. 20 in California, 20 across the US. All certified. From now through spring 2027.",
+      nameLabel: "First Name",
+      namePlaceholder: "Your name",
+      emailLabel: "Email *",
+      emailPlaceholder: "you@somewhere.com",
+      sending: "Sending…",
+      submit: "Get the Guide →",
+      error:
+        "Something went wrong. Email us at hello@suorsociety.com and we’ll send it directly.",
+      fine: "No spam. Just the guide. Unsubscribe any time.",
+      downloadBtn: "Download the PDF →",
     },
   },
 
@@ -527,6 +557,22 @@ export const dictionaries: Record<Lang, Dictionary> = {
       featureDesc:
         "Sem índice, sem sorteio. 20 corridas na Califórnia, 20 pelos EUA, todas certificadas pela USATF, com datas, preços e links diretos de inscrição.",
       readLabel: "Ler o guia →",
+    },
+    downloadGate: {
+      successTag: "Você tá dentro",
+      successTitleLines: ["Seu", "Guia", "Está Pronto"],
+      successBody:
+        "40 corridas de inscrição aberta. 20 na Califórnia, 20 pelos EUA. Todas certificadas. De agora até meados de 2027.",
+      nameLabel: "Nome",
+      namePlaceholder: "Seu nome",
+      emailLabel: "E-mail *",
+      emailPlaceholder: "seu@email.com",
+      sending: "Enviando…",
+      submit: "Quero o guia →",
+      error:
+        "Algo deu errado. Escreve pra gente em hello@suorsociety.com que a gente envia direto.",
+      fine: "Sem spam. Só o guia. Cancele quando quiser.",
+      downloadBtn: "Baixar o PDF →",
     },
   },
 };
