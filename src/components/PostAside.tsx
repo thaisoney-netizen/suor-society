@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import DispatchForm from "@/components/DispatchForm";
+import { dictionaries, type Lang } from "@/i18n/dictionaries";
 
 type TocItem = { id: string; label: string };
 
@@ -61,24 +62,25 @@ export function PostToc({
  * Sticky email subscribe card for short posts that don't warrant a ToC.
  * Reuses the dispatch sidebar styling so it matches /dispatch.
  */
-export function PostSubscribe() {
+export function PostSubscribe({ lang = "en" }: { lang?: Lang }) {
+  const t = dictionaries[lang].dispatch;
   return (
     <div className="dispatch-aside-card">
-      <div className="gate-label">The Weekly Dispatch</div>
+      <div className="gate-label">{t.asideLabel}</div>
       <div className="gate-title">
-        Sign up
-        <br />
-        Free
+        {t.asideTitleLines.map((line, i) => (
+          <span key={i}>
+            {line}
+            {i < t.asideTitleLines.length - 1 && <br />}
+          </span>
+        ))}
       </div>
-      <p className="gate-desc">
-        Races worth signing up for and gear worth knowing about. One email a
-        week, no daily blast
-      </p>
-      <DispatchForm />
+      <p className="gate-desc">{t.asideDesc}</p>
+      <DispatchForm lang={lang} />
       <ul className="gate-what">
-        <li>Open-entry races worth your weekend</li>
-        <li>Hybrid training and gear we actually use</li>
-        <li>San Diego crew runs and meetups</li>
+        {t.asideWhat.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
       </ul>
     </div>
   );

@@ -6,6 +6,13 @@ export const metadata = {
   title: "Cape Town Is Now a Marathon Major, Suor Society",
   description:
     "Cape Town was confirmed as the eighth Abbott World Marathon Major on June 10, 2026. Africa's first Major joins the series on May 23, 2027. Here's what changes.",
+  alternates: {
+    canonical: "/dispatch/cape-town-marathon-major",
+    languages: {
+      en: "/dispatch/cape-town-marathon-major",
+      "pt-BR": "/pt-br/dispatch/cape-town-marathon-major",
+    },
+  },
 };
 
 const FAQS = [
