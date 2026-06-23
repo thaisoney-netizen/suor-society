@@ -6,6 +6,7 @@ import {
   LOCALE_HREF,
   LOCALE_LABEL,
   LOCALES,
+  localizeHref,
   type Lang,
 } from "@/i18n/dictionaries";
 
@@ -73,7 +74,7 @@ export default function SiteNav({
         </a>
         <div className="nav-links">
           {NAV_LINKS.map((link) => (
-            <a key={link.label} href={link.href} className="nav-link">
+            <a key={link.label} href={localizeHref(link.href, lang)} className="nav-link">
               {link.label}
             </a>
           ))}
@@ -137,7 +138,7 @@ export default function SiteNav({
           {NAV_LINKS.map((link, i) => (
             <a
               key={link.label}
-              href={link.href}
+              href={localizeHref(link.href, lang)}
               className="nav-menu-link"
               onClick={() => setOpen(false)}
             >

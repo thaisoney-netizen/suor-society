@@ -1,4 +1,4 @@
-import { dictionaries, type Lang } from "@/i18n/dictionaries";
+import { dictionaries, localizeHref, type Lang } from "@/i18n/dictionaries";
 
 // Race Picks links straight to the single article while only one post exists.
 // When a second pick ships, switch this back to "/racepicks".
@@ -24,7 +24,7 @@ export default function SiteFooter({ lang = "en" }: { lang?: Lang }) {
           <div className="foot-col">
             <p className="foot-col-title">{t.exploreTitle}</p>
             {FOOT_LINKS.map((link) => (
-              <a key={link.label} href={link.href} className="foot-link">
+              <a key={link.label} href={localizeHref(link.href, lang)} className="foot-link">
                 {link.label}
               </a>
             ))}

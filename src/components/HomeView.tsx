@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import LanguageBanner from "@/components/LanguageBanner";
-import { dictionaries, type Lang } from "@/i18n/dictionaries";
+import { dictionaries, localizeHref, type Lang } from "@/i18n/dictionaries";
 
 // The home page, shared by the English route (/) and the Portuguese route
 // (/pt-br) so the layout never drifts between locales. All copy comes from the
@@ -90,7 +90,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
             <p className="hero-tag">
               Race picks, gear, and culture for people who lift and run.
             </p>
-            <a href="/culture/open-entry-races-2026" className="hero-cta">{t.heroCta}</a>
+            <a href={localizeHref("/culture/open-entry-races-2026", lang)} className="hero-cta">{t.heroCta}</a>
           </div>
         </div>
       </header>
@@ -104,7 +104,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
 
           <div className="link-grid" style={gridStyle}>
             {t.boardPosts.map((post, i) => (
-              <a key={i} className="link-card" href={post.href}>
+              <a key={i} className="link-card" href={localizeHref(post.href, lang)}>
                 <div className="lc-head">
                   <span className="lc-eye">{post.eyebrow}</span>
                   <h3 className="lc-title">{post.title}</h3>
@@ -122,7 +122,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
           </div>
 
           <div className="board-cta">
-            <a href="/dispatch" className="board-more">{t.boardMore}</a>
+            <a href={localizeHref("/dispatch", lang)} className="board-more">{t.boardMore}</a>
           </div>
         </div>
       </section>
