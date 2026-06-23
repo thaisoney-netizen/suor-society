@@ -22,6 +22,15 @@ export const LOCALE_TAG: Record<Lang, string> = {
   pt: "pt-BR",
 };
 
+// Endonyms shown in the language switcher (each in its own language).
+export const LOCALE_LABEL: Record<Lang, string> = {
+  en: "English",
+  pt: "Português",
+};
+
+// Order languages appear in the switcher dropdown.
+export const LOCALES: Lang[] = ["en", "pt"];
+
 type BoardPost = {
   href: string;
   img: string;
@@ -33,10 +42,8 @@ type BoardPost = {
 
 type Dictionary = {
   nav: {
-    // Manual language switch shown in the nav. `label` is the language the
-    // link switches TO.
-    switchLabel: string;
-    switchAria: string;
+    // Accessible label for the language switcher control.
+    langLabel: string;
   };
   home: {
     heroCta: string;
@@ -68,8 +75,7 @@ type Dictionary = {
 export const dictionaries: Record<Lang, Dictionary> = {
   en: {
     nav: {
-      switchLabel: "PT",
-      switchAria: "Ler em português",
+      langLabel: "Select language",
     },
     home: {
       heroCta: "See Races Left in 2026",
@@ -133,8 +139,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
 
   pt: {
     nav: {
-      switchLabel: "EN",
-      switchAria: "Read in English",
+      langLabel: "Selecionar idioma",
     },
     home: {
       heroCta: "Veja as corridas que faltam em 2026",

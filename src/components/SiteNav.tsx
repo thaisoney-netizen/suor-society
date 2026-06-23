@@ -1,7 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { dictionaries, LOCALE_HREF, type Lang } from "@/i18n/dictionaries";
+import { useEffect, useRef, useState } from "react";
+import {
+  dictionaries,
+  LOCALE_HREF,
+  LOCALE_LABEL,
+  LOCALES,
+  type Lang,
+} from "@/i18n/dictionaries";
 
 // Race Picks links straight to the single article while only one post exists.
 // When a second pick ships, switch this back to "/racepicks".
@@ -26,12 +32,11 @@ export default function SiteNav({
   lang?: Lang;
 }) {
   const [open, setOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const langWrapRef = useRef<HTMLDivElement>(null);
   const lockupClass = variant === "overlay" ? "wm-lockup wm-lockup--light" : "wm-lockup";
 
-  // Manual language switch: link to the other locale's home.
-  const otherLang: Lang = lang === "en" ? "pt" : "en";
-  const switchHref = LOCALE_HREF[otherLang];
-  const switchCopy = dictionaries[lang].nav;
+  const navCopy = dictionaries[lang].nav;
   const homeHref = LOCALE_HREF[lang];
 
   useEffect(() => {
@@ -42,6 +47,23 @@ export default function SiteNav({
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
+
+  // Close the language dropdown on outside click or Escape.
+  useEffect(() => {
+    if (!langOpen) return;
+    const onDown = (e: MouseEvent) => {
+      if (!langWrapRef.current?.contains(e.target as Node)) setLangOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLangOpen(false);
+    };
+    window.addEventListener("mousedown", onDown);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("mousedown", onDown);
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [langOpen]);
 
   return (
     <nav className={`nav nav--${variant}`}>
@@ -55,13 +77,34 @@ export default function SiteNav({
               {link.label}
             </a>
           ))}
-          <a
-            href={switchHref}
-            className="nav-link nav-lang"
-            aria-label={switchCopy.switchAria}
-          >
-            {switchCopy.switchLabel}
-          </a>
+          <div className="nav-lang-wrap" ref={langWrapRef}>
+            <button
+              type="button"
+              className="nav-link nav-lang"
+              aria-label={navCopy.langLabel}
+              aria-haspopup="true"
+              aria-expanded={langOpen}
+              onClick={() => setLangOpen((v) => !v)}
+            >
+              {LOCALE_LABEL[lang]}
+              <span className="nav-lang-caret" aria-hidden="true">⌄</span>
+            </button>
+            {langOpen && (
+              <div className="nav-lang-menu" role="menu">
+                {LOCALES.map((l) => (
+                  <a
+                    key={l}
+                    href={LOCALE_HREF[l]}
+                    role="menuitem"
+                    aria-current={l === lang ? "true" : undefined}
+                    className={`nav-lang-opt${l === lang ? " is-current" : ""}`}
+                  >
+                    {LOCALE_LABEL[l]}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
         <button
           type="button"
@@ -112,14 +155,19 @@ export default function SiteNav({
           >
             Instagram ↗
           </a>
-          <a
-            href={switchHref}
-            className="nav-menu-ig nav-menu-lang"
-            aria-label={switchCopy.switchAria}
-            onClick={() => setOpen(false)}
-          >
-            {switchCopy.switchAria} ↗
-          </a>
+          <div className="nav-menu-langs" aria-label={navCopy.langLabel}>
+            {LOCALES.map((l) => (
+              <a
+                key={l}
+                href={LOCALE_HREF[l]}
+                aria-current={l === lang ? "true" : undefined}
+                className={`nav-menu-lang${l === lang ? " is-current" : ""}`}
+                onClick={() => setOpen(false)}
+              >
+                {LOCALE_LABEL[l]}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </nav>
