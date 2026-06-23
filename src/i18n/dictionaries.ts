@@ -110,6 +110,48 @@ type Dictionary = {
     formatEye: string;
     lines: string[];
   };
+  dispatchForm: {
+    successTag: string;
+    successTitleLines: string[];
+    successBody: string;
+    emailLabel: string;
+    placeholder: string;
+    sending: string;
+    subscribe: string;
+    error: string;
+    fine: string;
+  };
+  dispatch: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    headline: string;
+    deck1: string;
+    deck2: string;
+    sectionLabel: string;
+    sectionSub: string;
+    posts: { href: string; img: string; tag: string; date: string; title: string; desc: string }[];
+    readLabel: string;
+    asideLabel: string;
+    asideTitleLines: string[];
+    asideDesc: string;
+    asideWhat: string[];
+  };
+  racepicks: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    headline: string;
+    deck1: string;
+    deck2: string;
+    featureHref: string;
+    featureImg: string;
+    featureTag: string;
+    featureDate: string;
+    featureTitle: string;
+    featureDesc: string;
+    readLabel: string;
+  };
 };
 
 export const dictionaries: Record<Lang, Dictionary> = {
@@ -220,6 +262,82 @@ export const dictionaries: Record<Lang, Dictionary> = {
         "The fastest person waits at every turn",
         "Coffee after",
       ],
+    },
+    dispatchForm: {
+      successTag: "You’re in",
+      successTitleLines: ["On", "The", "List"],
+      successBody:
+        "The dispatch lands in your inbox each week. Races worth signing up for, gear worth knowing about, and the people doing both around a real life.",
+      emailLabel: "Email *",
+      placeholder: "you@somewhere.com",
+      sending: "Sending…",
+      subscribe: "Subscribe →",
+      error:
+        "Something went wrong. Email us at hello@suorsociety.com and we’ll add you directly.",
+      fine: "No spam. One email a week. Unsubscribe any time.",
+    },
+    dispatch: {
+      metaTitle: "Dispatch, Suor Society",
+      metaDescription: "One email a week. The lift-and-run world, edited down.",
+      eyebrow: "Suor Society / Dispatch",
+      headline: "Get the dispatch",
+      deck1: "One email a week.",
+      deck2: "The lift-and-run world, edited down.",
+      sectionLabel: "Latest from the Dispatch",
+      sectionSub: "Race news · HYROX · Gear",
+      posts: [
+        {
+          href: "/dispatch/hyrox-fall-2026-schedule",
+          img: "/hyrox-hero.jpg",
+          tag: "HYROX",
+          date: "June 2026",
+          title: "HYROX Fall 2026: Anaheim Is Back and the Calendar Just Got Huge",
+          desc: "10 races, four new cities, and Anaheim returns Dec 4 to 6. The full North America schedule.",
+        },
+        {
+          href: "/dispatch/june-2026-shoe-drops",
+          img: "/june-shoe-drops-hero.png",
+          tag: "Gear",
+          date: "June 2026",
+          title: "June Shoe Drops: Saucony Goes Big, Puma Pulls the Plate",
+          desc: "The Endorphin Elite 3, a plateless Puma at $150, and why plateless super trainers are the trend.",
+        },
+        {
+          href: "/dispatch/cape-town-marathon-major",
+          img: "/cape-town-hero.jpg",
+          tag: "Races",
+          date: "June 2026",
+          title: "Cape Town Is Now a Marathon Major. Here's What Actually Changes",
+          desc: "Africa's first Abbott World Marathon Major joins the series May 23, 2027. What it does to the star chase.",
+        },
+      ],
+      readLabel: "Read →",
+      asideLabel: "The Weekly Dispatch",
+      asideTitleLines: ["Sign up", "Free"],
+      asideDesc:
+        "Races worth signing up for and gear worth knowing about. One email a week, no daily blast",
+      asideWhat: [
+        "Open-entry races worth your weekend",
+        "Hybrid training and gear we actually use",
+        "San Diego crew runs and meetups",
+      ],
+    },
+    racepicks: {
+      metaTitle: "Race Picks, Suor Society",
+      metaDescription:
+        "Race Picks. Open entry races, guides, and start lines worth your training block, all in one place.",
+      eyebrow: "Suor Society / Race Picks",
+      headline: "Race Picks",
+      deck1: "Open entry races and start lines worth your training block.",
+      deck2: "No qualifier, no lottery, no guesswork.",
+      featureHref: "/culture/open-entry-races-2026",
+      featureImg: "/race-hero.jpg",
+      featureTag: "Race Guide",
+      featureDate: "June 2026",
+      featureTitle: "40 Open Entry Races in California and the US You Can Still Run in 2026",
+      featureDesc:
+        "No qualifier, no lottery. 20 California races, 20 across the US, all USATF certified, with dates, prices, and direct registration links.",
+      readLabel: "Read the guide →",
     },
   },
 
@@ -333,6 +451,82 @@ export const dictionaries: Record<Lang, Dictionary> = {
         "Quem é mais rápido espera em cada esquina",
         "Café depois",
       ],
+    },
+    dispatchForm: {
+      successTag: "Você tá dentro",
+      successTitleLines: ["Na", "Lista"],
+      successBody:
+        "O Dispatch chega na sua caixa de entrada toda semana. Corridas que valem a inscrição, equipamentos que valem a pena e a galera que faz os dois no meio de uma vida de verdade.",
+      emailLabel: "E-mail *",
+      placeholder: "seu@email.com",
+      sending: "Enviando…",
+      subscribe: "Assinar →",
+      error:
+        "Algo deu errado. Escreve pra gente em hello@suorsociety.com que a gente te adiciona na mão.",
+      fine: "Sem spam. Um e-mail por semana. Cancele quando quiser.",
+    },
+    dispatch: {
+      metaTitle: "Dispatch, Suor Society",
+      metaDescription: "Um e-mail por semana. O mundo de quem corre e levanta peso, resumido.",
+      eyebrow: "Suor Society / Dispatch",
+      headline: "Receba o Dispatch",
+      deck1: "Um e-mail por semana.",
+      deck2: "O mundo de quem corre e levanta peso, resumido.",
+      sectionLabel: "Últimas do Dispatch",
+      sectionSub: "Notícias de provas · HYROX · Equipamentos",
+      posts: [
+        {
+          href: "/dispatch/hyrox-fall-2026-schedule",
+          img: "/hyrox-hero.jpg",
+          tag: "HYROX",
+          date: "Junho 2026",
+          title: "HYROX 2º semestre de 2026: Anaheim está de volta e o calendário ficou gigante",
+          desc: "10 provas, quatro cidades novas e Anaheim de volta de 4 a 6 de dezembro. O calendário completo da América do Norte.",
+        },
+        {
+          href: "/dispatch/june-2026-shoe-drops",
+          img: "/june-shoe-drops-hero.png",
+          tag: "Equipamentos",
+          date: "Junho 2026",
+          title: "Lançamentos de tênis de junho: Saucony aposta alto e a Puma tira a placa",
+          desc: "O Endorphin Elite 3, um Puma sem placa de carbono por US$ 150 e por que os super trainers sem placa viraram tendência.",
+        },
+        {
+          href: "/dispatch/cape-town-marathon-major",
+          img: "/cape-town-hero.jpg",
+          tag: "Corridas",
+          date: "Junho 2026",
+          title: "Cidade do Cabo agora é uma Marathon Major. O que muda de verdade",
+          desc: "A primeira Abbott World Marathon Major da África entra para a série em 23 de maio de 2027. O que isso faz com a busca pelas seis estrelas.",
+        },
+      ],
+      readLabel: "Ler →",
+      asideLabel: "O Dispatch semanal",
+      asideTitleLines: ["Assine", "De graça"],
+      asideDesc:
+        "Corridas que valem a inscrição e equipamentos que valem a pena. Um e-mail por semana, sem bombardeio diário.",
+      asideWhat: [
+        "Corridas de inscrição aberta que valem o fim de semana",
+        "Treino híbrido e equipamentos que a gente usa de verdade",
+        "Treinos e encontros da crew em San Diego",
+      ],
+    },
+    racepicks: {
+      metaTitle: "Race Picks, Suor Society",
+      metaDescription:
+        "Race Picks. Corridas de inscrição aberta, guias e provas que valem o seu ciclo de treino, tudo num lugar só.",
+      eyebrow: "Suor Society / Race Picks",
+      headline: "Race Picks",
+      deck1: "Corridas de inscrição aberta e provas que valem o seu ciclo de treino.",
+      deck2: "Sem índice, sem sorteio, sem achismo.",
+      featureHref: "/culture/open-entry-races-2026",
+      featureImg: "/race-hero.jpg",
+      featureTag: "Guia de Corridas",
+      featureDate: "Junho 2026",
+      featureTitle: "40 corridas de inscrição aberta na Califórnia e nos EUA que você ainda pode correr em 2026",
+      featureDesc:
+        "Sem índice, sem sorteio. 20 corridas na Califórnia, 20 pelos EUA, todas certificadas pela USATF, com datas, preços e links diretos de inscrição.",
+      readLabel: "Ler o guia →",
     },
   },
 };
