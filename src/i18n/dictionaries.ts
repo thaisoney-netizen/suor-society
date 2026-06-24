@@ -439,9 +439,9 @@ export const dictionaries: Record<Lang, Dictionary> = {
       metaDescription:
         "Feito em San Diego por uma profissional de marketing que corre e levanta peso. Cultura de corrida híbrida para quem tem uma vida de verdade.",
       eyebrow: "Suor Society / The Culture",
-      // "Suor" already means sweat in Portuguese, so the English line that
-      // explains the name would fall flat here — adapt the spirit instead.
-      headline: "Tudo começa no suor",
+      // Brand line — stays in English on every locale, like the home hero
+      // headline and tagline.
+      headline: "Suor is Portuguese for sweat",
       col1Label: "A fundadora",
       col1: [
         "Sou a Thais. Marketing de dia. Corro e levanto peso no resto do tempo, seis dias por semana, porque nada esvazia a minha cabeça como isso.",
