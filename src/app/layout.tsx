@@ -38,6 +38,13 @@ export const metadata: Metadata = {
   title: "Suor Society, hybrid running culture page",
   description:
     "A hybrid running culture page for people who run and lift around everything else. Race picks, gear, and the scene.",
+  alternates: {
+    canonical: "/",
+    languages: {
+      en: "/",
+      "pt-BR": "/pt-br",
+    },
+  },
   openGraph: {
     type: "website",
     siteName: "Suor Society",

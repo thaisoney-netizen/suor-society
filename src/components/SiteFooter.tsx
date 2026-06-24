@@ -1,3 +1,5 @@
+import { dictionaries, localizeHref, type Lang } from "@/i18n/dictionaries";
+
 // Race Picks links straight to the single article while only one post exists.
 // When a second pick ships, switch this back to "/racepicks".
 const FOOT_LINKS = [
@@ -7,7 +9,8 @@ const FOOT_LINKS = [
   { href: "/about", label: "The Culture" },
 ];
 
-export default function SiteFooter() {
+export default function SiteFooter({ lang = "en" }: { lang?: Lang }) {
+  const t = dictionaries[lang].footer;
   return (
     <footer className="footer">
       <div className="page">
@@ -15,19 +18,19 @@ export default function SiteFooter() {
           <div className="foot-brand">
             <img src="/logos/wordmark-horizontal.png" alt="Suor Society" className="foot-wm" />
             <p className="foot-desc">
-              Hybrid running culture from San Diego. Races, gear, and the people who lift and run around everything else.
+              {t.desc}
             </p>
           </div>
           <div className="foot-col">
-            <p className="foot-col-title">Explore</p>
+            <p className="foot-col-title">{t.exploreTitle}</p>
             {FOOT_LINKS.map((link) => (
-              <a key={link.label} href={link.href} className="foot-link">
+              <a key={link.label} href={localizeHref(link.href, lang)} className="foot-link">
                 {link.label}
               </a>
             ))}
           </div>
           <div className="foot-col">
-            <p className="foot-col-title">Connect</p>
+            <p className="foot-col-title">{t.connectTitle}</p>
             <a
               href="https://instagram.com/suorsociety"
               className="foot-link"
@@ -43,7 +46,7 @@ export default function SiteFooter() {
         </div>
         <div className="foot-legal">
           <span>© {new Date().getFullYear()} Suor Society</span>
-          <span>San Diego, CA</span>
+          <span>{t.location}</span>
         </div>
       </div>
     </footer>

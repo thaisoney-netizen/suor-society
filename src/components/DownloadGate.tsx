@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { dictionaries, type Lang } from "@/i18n/dictionaries";
 
-export default function DownloadGate() {
+export default function DownloadGate({ lang = "en" }: { lang?: Lang }) {
+  const t = dictionaries[lang].downloadGate;
   const [submitted, setSubmitted] = useState(false);
   const [error, setError]         = useState(false);
   const [loading, setLoading]     = useState(false);
@@ -34,18 +36,22 @@ export default function DownloadGate() {
   if (submitted) {
     return (
       <div className="gate-success">
-        <div className="gate-success-tag">You&rsquo;re in</div>
-        <div className="gate-success-title">Your<br />Guide<br />Is Ready</div>
-        <p className="gate-success-body">
-          40 open entry races. 20 in California, 20 across the US.
-          All certified. From now through spring 2027.
-        </p>
+        <div className="gate-success-tag">{t.successTag}</div>
+        <div className="gate-success-title">
+          {t.successTitleLines.map((line, i) => (
+            <span key={i}>
+              {line}
+              {i < t.successTitleLines.length - 1 && <br />}
+            </span>
+          ))}
+        </div>
+        <p className="gate-success-body">{t.successBody}</p>
         <a
           className="gate-download-btn"
           href="/2026-race-guide.pdf"
           download="2026_Race_Guide_SuorSociety.pdf"
         >
-          Download the PDF →
+          {t.downloadBtn}
         </a>
       </div>
     );
@@ -54,27 +60,27 @@ export default function DownloadGate() {
   return (
     <form className="gate-form" onSubmit={handleSubmit} noValidate>
       <div className="gate-field">
-        <label className="gate-field-label" htmlFor="gate-name">First Name</label>
+        <label className="gate-field-label" htmlFor="gate-name">{t.nameLabel}</label>
         <input
           id="gate-name"
           className="gate-input"
           type="text"
           name="name"
-          placeholder="Your name"
+          placeholder={t.namePlaceholder}
           autoComplete="given-name"
         />
       </div>
 
       <div className="gate-field">
         <label className="gate-field-label" htmlFor="gate-email">
-          Email *
+          {t.emailLabel}
         </label>
         <input
           id="gate-email"
           className="gate-input"
           type="email"
           name="email"
-          placeholder="you@somewhere.com"
+          placeholder={t.emailPlaceholder}
           required
           autoComplete="email"
         />
@@ -85,16 +91,12 @@ export default function DownloadGate() {
         className="gate-btn"
         disabled={loading}
       >
-        {loading ? "Sending…" : "Get the Guide →"}
+        {loading ? t.sending : t.submit}
       </button>
 
-      {error && (
-        <p className="gate-error">
-          Something went wrong. Email us at hello@suorsociety.com and we&rsquo;ll send it directly.
-        </p>
-      )}
+      {error && <p className="gate-error">{t.error}</p>}
 
-      <p className="gate-fine">No spam. Just the guide. Unsubscribe any time.</p>
+      <p className="gate-fine">{t.fine}</p>
     </form>
   );
 }

@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { dictionaries, type Lang } from "@/i18n/dictionaries";
 
-export default function DispatchForm() {
+export default function DispatchForm({ lang = "en" }: { lang?: Lang }) {
+  const t = dictionaries[lang].dispatchForm;
   const [submitted, setSubmitted] = useState(false);
   const [error, setError]         = useState(false);
   const [loading, setLoading]     = useState(false);
@@ -32,12 +34,16 @@ export default function DispatchForm() {
   if (submitted) {
     return (
       <div className="gate-success">
-        <div className="gate-success-tag">You&rsquo;re in</div>
-        <div className="gate-success-title">On<br />The<br />List</div>
-        <p className="gate-success-body">
-          The dispatch lands in your inbox each week. Races worth signing up for,
-          gear worth knowing about, and the people doing both around a real life.
-        </p>
+        <div className="gate-success-tag">{t.successTag}</div>
+        <div className="gate-success-title">
+          {t.successTitleLines.map((line, i) => (
+            <span key={i}>
+              {line}
+              {i < t.successTitleLines.length - 1 && <br />}
+            </span>
+          ))}
+        </div>
+        <p className="gate-success-body">{t.successBody}</p>
       </div>
     );
   }
@@ -46,30 +52,26 @@ export default function DispatchForm() {
     <form className="gate-form" onSubmit={handleSubmit} noValidate>
       <div className="gate-field">
         <label className="gate-field-label" htmlFor="dispatch-email">
-          Email *
+          {t.emailLabel}
         </label>
         <input
           id="dispatch-email"
           className="gate-input"
           type="email"
           name="email"
-          placeholder="you@somewhere.com"
+          placeholder={t.placeholder}
           required
           autoComplete="email"
         />
       </div>
 
       <button type="submit" className="gate-btn" disabled={loading}>
-        {loading ? "Sending…" : "Subscribe →"}
+        {loading ? t.sending : t.subscribe}
       </button>
 
-      {error && (
-        <p className="gate-error">
-          Something went wrong. Email us at hello@suorsociety.com and we&rsquo;ll add you directly.
-        </p>
-      )}
+      {error && <p className="gate-error">{t.error}</p>}
 
-      <p className="gate-fine">No spam. One email a week. Unsubscribe any time.</p>
+      <p className="gate-fine">{t.fine}</p>
     </form>
   );
 }

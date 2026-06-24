@@ -6,6 +6,13 @@ export const metadata = {
   title: "June 2026 Running Shoe Drops, Suor Society",
   description:
     "June 2026 running shoe releases: Saucony Endorphin Elite 3 and Triumph 24, Puma's plateless Deviate Nitro, Asics GT-1000 15, and why plateless super trainers are the trend of the summer.",
+  alternates: {
+    canonical: "/dispatch/june-2026-shoe-drops",
+    languages: {
+      en: "/dispatch/june-2026-shoe-drops",
+      "pt-BR": "/pt-br/dispatch/june-2026-shoe-drops",
+    },
+  },
 };
 
 const FAQS = [

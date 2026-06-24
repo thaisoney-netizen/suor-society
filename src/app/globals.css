@@ -1603,3 +1603,127 @@ a { color: inherit; text-decoration: none; }
   .crew-scenes-grid { grid-template-columns: 1fr 1fr; }
   .crew-scenes-grid img:last-child { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
 }
+
+/* ── LANGUAGE SWITCH (nav) ── */
+/* Dropdown showing the current language; opens a menu of locales. */
+.nav-lang-wrap { position: relative; display: inline-flex; }
+.nav-lang {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: inherit;
+}
+.nav-lang:hover { border-bottom-color: var(--accent); }
+.nav-lang-caret {
+  font-size: 14px;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+.nav-lang-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 50;
+  min-width: 150px;
+  background: var(--asphalt);
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 8px;
+  padding: 6px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+}
+.nav-lang-opt {
+  display: block;
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .08em;
+  color: rgba(255, 255, 255, .82);
+  padding: 9px 12px;
+  border-radius: 5px;
+  transition: background-color .14s ease-out, color .14s ease-out;
+}
+.nav-lang-opt:hover { background: rgba(255, 255, 255, .08); color: #fff; }
+.nav-lang-opt.is-current {
+  color: var(--accent);
+  cursor: default;
+}
+
+/* Mobile menu: list locales side by side, current one marked. */
+.nav-menu-langs { display: flex; gap: 20px; margin-top: 14px; }
+.nav-menu-lang {
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .6);
+}
+.nav-menu-lang:hover { color: #fff; }
+.nav-menu-lang.is-current {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 2px;
+}
+
+/* ── LANGUAGE SUGGESTION TOAST ── */
+/* Sits above the fixed 60px scroll tracker so the two never overlap. */
+.lang-suggest {
+  position: fixed;
+  left: 20px;
+  bottom: 76px;
+  z-index: 150;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: calc(100vw - 40px);
+  background: var(--asphalt);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 12px 14px 12px 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  animation: lang-suggest-in .28s ease-out;
+}
+@keyframes lang-suggest-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+.lang-suggest-text {
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: .01em;
+}
+.lang-suggest-cta {
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--asphalt);
+  background: var(--accent);
+  border-radius: 5px;
+  padding: 8px 12px;
+  transition: filter .15s ease-out;
+}
+.lang-suggest-cta:hover { filter: brightness(1.08); }
+.lang-suggest-x {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, .5);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+  transition: color .15s ease-out;
+}
+.lang-suggest-x:hover { color: #fff; }
+@media (max-width: 480px) {
+  .lang-suggest { left: 12px; right: 12px; bottom: 70px; }
+}

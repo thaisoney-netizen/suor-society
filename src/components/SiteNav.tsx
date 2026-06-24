@@ -1,6 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import {
+  dictionaries,
+  LOCALE_HREF,
+  LOCALE_LABEL,
+  LOCALES,
+  localizeHref,
+  type Lang,
+} from "@/i18n/dictionaries";
 
 // Race Picks links straight to the single article while only one post exists.
 // When a second pick ships, switch this back to "/racepicks".
@@ -17,9 +25,20 @@ const NAV_LINKS = [
 // the black artwork is flipped to white with a CSS filter.
 const WORDMARK = "/logos/wordmark-horizontal.png";
 
-export default function SiteNav({ variant = "light" }: { variant?: "overlay" | "light" }) {
+export default function SiteNav({
+  variant = "light",
+  lang = "en",
+}: {
+  variant?: "overlay" | "light";
+  lang?: Lang;
+}) {
   const [open, setOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const langWrapRef = useRef<HTMLDivElement>(null);
   const lockupClass = variant === "overlay" ? "wm-lockup wm-lockup--light" : "wm-lockup";
+
+  const navCopy = dictionaries[lang].nav;
+  const homeHref = LOCALE_HREF[lang];
 
   useEffect(() => {
     if (!open) return;
@@ -30,18 +49,63 @@ export default function SiteNav({ variant = "light" }: { variant?: "overlay" | "
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
+  // Close the language dropdown on outside click or Escape.
+  useEffect(() => {
+    if (!langOpen) return;
+    const onDown = (e: MouseEvent) => {
+      if (!langWrapRef.current?.contains(e.target as Node)) setLangOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLangOpen(false);
+    };
+    window.addEventListener("mousedown", onDown);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("mousedown", onDown);
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [langOpen]);
+
   return (
     <nav className={`nav nav--${variant}`}>
       <div className="page nav-row">
-        <a href="/" className="wm" aria-label="Suor Society, home">
+        <a href={homeHref} className="wm" aria-label="Suor Society, home">
           <img src={WORDMARK} alt="Suor Society" className={lockupClass} />
         </a>
         <div className="nav-links">
           {NAV_LINKS.map((link) => (
-            <a key={link.label} href={link.href} className="nav-link">
+            <a key={link.label} href={localizeHref(link.href, lang)} className="nav-link">
               {link.label}
             </a>
           ))}
+          <div className="nav-lang-wrap" ref={langWrapRef}>
+            <button
+              type="button"
+              className="nav-link nav-lang"
+              aria-label={navCopy.langLabel}
+              aria-haspopup="true"
+              aria-expanded={langOpen}
+              onClick={() => setLangOpen((v) => !v)}
+            >
+              {LOCALE_LABEL[lang]}
+              <span className="nav-lang-caret" aria-hidden="true">⌄</span>
+            </button>
+            {langOpen && (
+              <div className="nav-lang-menu" role="menu">
+                {LOCALES.map((l) => (
+                  <a
+                    key={l}
+                    href={LOCALE_HREF[l]}
+                    role="menuitem"
+                    aria-current={l === lang ? "true" : undefined}
+                    className={`nav-lang-opt${l === lang ? " is-current" : ""}`}
+                  >
+                    {LOCALE_LABEL[l]}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
         <button
           type="button"
@@ -58,7 +122,7 @@ export default function SiteNav({ variant = "light" }: { variant?: "overlay" | "
 
       <div id="nav-menu" className={`nav-menu ${open ? "is-open" : ""}`}>
         <div className="page nav-row nav-menu-head">
-          <a href="/" className="wm" aria-label="Suor Society, home">
+          <a href={homeHref} className="wm" aria-label="Suor Society, home">
             <img src={WORDMARK} alt="Suor Society" className="wm-lockup wm-lockup--light" />
           </a>
           <button
@@ -74,7 +138,7 @@ export default function SiteNav({ variant = "light" }: { variant?: "overlay" | "
           {NAV_LINKS.map((link, i) => (
             <a
               key={link.label}
-              href={link.href}
+              href={localizeHref(link.href, lang)}
               className="nav-menu-link"
               onClick={() => setOpen(false)}
             >
@@ -92,6 +156,19 @@ export default function SiteNav({ variant = "light" }: { variant?: "overlay" | "
           >
             Instagram ↗
           </a>
+          <div className="nav-menu-langs" aria-label={navCopy.langLabel}>
+            {LOCALES.map((l) => (
+              <a
+                key={l}
+                href={LOCALE_HREF[l]}
+                aria-current={l === lang ? "true" : undefined}
+                className={`nav-menu-lang${l === lang ? " is-current" : ""}`}
+                onClick={() => setOpen(false)}
+              >
+                {LOCALE_LABEL[l]}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </nav>
