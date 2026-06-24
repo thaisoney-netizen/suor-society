@@ -1670,11 +1670,14 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ── LANGUAGE SUGGESTION TOAST ── */
-/* Sits above the fixed 60px scroll tracker so the two never overlap. */
+/* Scroll-aware: sits low at the top of the page (below the bottom-anchored hero
+   CTA), then lifts above the fixed 60px scroll tracker once scrolling starts —
+   see LanguageBanner.tsx. The two states never collide because the tracker only
+   appears after the same scroll threshold that adds .lang-suggest--lifted. */
 .lang-suggest {
   position: fixed;
   left: 20px;
-  bottom: 76px;
+  bottom: calc(16px + env(safe-area-inset-bottom));
   z-index: 150;
   display: flex;
   align-items: center;
@@ -1688,6 +1691,10 @@ a { color: inherit; text-decoration: none; }
   padding: 12px 14px 12px 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
   animation: lang-suggest-in .28s ease-out;
+  transition: bottom .28s ease-out;
+}
+.lang-suggest--lifted {
+  bottom: calc(76px + env(safe-area-inset-bottom));
 }
 @keyframes lang-suggest-in {
   from { opacity: 0; transform: translateY(8px); }
@@ -1725,5 +1732,6 @@ a { color: inherit; text-decoration: none; }
 }
 .lang-suggest-x:hover { color: #fff; }
 @media (max-width: 480px) {
-  .lang-suggest { left: 12px; right: 12px; bottom: 70px; }
+  .lang-suggest { left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); }
+  .lang-suggest--lifted { bottom: calc(70px + env(safe-area-inset-bottom)); }
 }
