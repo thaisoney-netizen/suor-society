@@ -597,6 +597,13 @@ export default function OpenEntryRaces2026() {
               <div className="article-section-label">20 California Races</div>
               <div className="article-section-sub">Open Entry · Summer 2026 to Spring 2027</div>
             </div>
+            <div className="guide-cta">
+              <div className="guide-cta-inner">
+                <span className="guide-cta-tag">Free PDF</span>
+                <p className="guide-cta-text">All 40 races in one formatted guide — dates, prices, and direct registration links, ready to save or share.</p>
+              </div>
+              <a className="guide-cta-btn" href="#download">Download the Full Guide ↓</a>
+            </div>
             <div className="race-list">
               {CA_RACES.map((r) => <RaceRow key={r.num} race={r} />)}
             </div>

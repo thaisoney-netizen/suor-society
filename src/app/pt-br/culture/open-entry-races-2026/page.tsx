@@ -598,6 +598,13 @@ export default function OpenEntryRaces2026PtBr() {
               <div className="article-section-label">20 corridas na Califórnia</div>
               <div className="article-section-sub">Inscrição aberta · do 2º semestre de 2026 a meados de 2027</div>
             </div>
+            <div className="guide-cta">
+              <div className="guide-cta-inner">
+                <span className="guide-cta-tag">PDF Grátis</span>
+                <p className="guide-cta-text">Todas as 40 corridas em um guia formatado — datas, preços e links de inscrição, prontos para salvar ou compartilhar.</p>
+              </div>
+              <a className="guide-cta-btn" href="#download">Baixar o Guia Completo ↓</a>
+            </div>
             <div className="race-list">
               {CA_RACES.map((r) => <RaceRow key={r.num} race={r} />)}
             </div>

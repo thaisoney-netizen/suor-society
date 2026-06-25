@@ -1241,6 +1241,61 @@ a { color: inherit; text-decoration: none; }
 .gate-download-btn:hover { background: #000; }
 
 /* ============================================================
+   GUIDE CTA STRIP (inline, before race list)
+   ============================================================ */
+.guide-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 40px;
+}
+.guide-cta-inner {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  flex: 1;
+  min-width: 0;
+}
+.guide-cta-tag {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 10px;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.guide-cta-text {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.guide-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  background: var(--asphalt);
+  color: var(--paper);
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 13px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background .12s ease-out;
+}
+.guide-cta-btn:hover { background: #000; }
+@media (max-width: 640px) {
+  .guide-cta { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .guide-cta-inner { flex-direction: column; gap: 6px; }
+}
+
+/* ============================================================
    CULTURE ARCHIVE index
    ============================================================ */
 .archive {
