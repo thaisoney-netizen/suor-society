@@ -79,7 +79,7 @@ export default function CrewView({ lang }: { lang: Lang }) {
             </div>
           </div>
           <div className="crew-split-media">
-            <img src="/crew-suor.jpg" alt="Suor Society crew run" />
+            <img src="/crew-run.jpg" alt={t.splitImgAlt} />
           </div>
         </section>
 
@@ -90,6 +90,18 @@ export default function CrewView({ lang }: { lang: Lang }) {
             {t.lines.map((line) => (
               <p key={line} className="crew-line">{line}</p>
             ))}
+          </div>
+        </section>
+
+        {/* SCENES */}
+        <section className="crew-scenes">
+          <div className="page">
+            <p className="about-pg-eye">{t.scenesEye}</p>
+          </div>
+          <div className="crew-scenes-grid">
+            <img src="/road-run.jpg" alt={t.scenesAlts.road} />
+            <img src="/trail-run.jpg" alt={t.scenesAlts.trail} />
+            <img src="/crew-suor.jpg" alt={t.scenesAlts.crew} />
           </div>
         </section>
       </main>

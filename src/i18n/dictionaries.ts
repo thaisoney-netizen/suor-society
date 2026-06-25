@@ -85,6 +85,7 @@ type Dictionary = {
     metaDescription: string;
     eyebrow: string;
     headline: string;
+    mediaAlts: { press: string; pull: string };
     col1Label: string;
     col1: string[];
     col2Label: string;
@@ -109,6 +110,9 @@ type Dictionary = {
     unscheduledNotePost: string;
     formatEye: string;
     lines: string[];
+    splitImgAlt: string;
+    scenesEye: string;
+    scenesAlts: { road: string; trail: string; crew: string };
   };
   dispatchForm: {
     successTag: string;
@@ -237,6 +241,10 @@ export const dictionaries: Record<Lang, Dictionary> = {
         "Built in San Diego by a marketer who runs and lifts. Hybrid running culture for people with a real life.",
       eyebrow: "Suor Society / The Culture",
       headline: "Suor is Portuguese for sweat",
+      mediaAlts: {
+        press: "Thais pressing a kettlebell overhead",
+        pull: "Thais working through pull-ups on the rack",
+      },
       col1Label: "The founder",
       col1: [
         "I’m Thais. Marketer by day. Runner and lifter the rest of the time, six days a week, because nothing else clears my head like it does.",
@@ -246,7 +254,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       col2Label: "What this is",
       col2: [
         "Most hybrid content online is made by people whose whole life is training. Two-a-days, full sponsorships, 20-hour weeks. It’s inspiring. It’s also completely disconnected from the person with a real job, a commute, and forty minutes on a Tuesday.",
-        "Suor Society covers the lift-and-run world as a culture page. Shoe drops, athlete spotlights, race coverage, the San Diego scene. Plus the context that’s almost always missing: the 1:10 half marathon took eight years. Your run counts the whole time you’re chasing it.",
+        "Suor Society is a hybrid running culture page for people who run and lift around everything else. Shoe drops, athlete spotlights, race coverage, the San Diego scene. Plus the context that’s almost always missing: the 1:10 half marathon took eight years. Your run counts the whole time you’re chasing it.",
         "Ran my first half marathon this spring. Lifting around the mileage. Posting all of it.",
       ],
     },
@@ -276,6 +284,13 @@ export const dictionaries: Record<Lang, Dictionary> = {
         "The fastest person waits at every turn",
         "Coffee after",
       ],
+      splitImgAlt: "Suor Society crew on a palm-lined San Diego street",
+      scenesEye: "Out there",
+      scenesAlts: {
+        road: "Two runners on a morning road",
+        trail: "Trail running in the San Diego hills",
+        crew: "Suor Society runners mid-stride",
+      },
     },
     dispatchForm: {
       successTag: "You’re in",
@@ -442,6 +457,10 @@ export const dictionaries: Record<Lang, Dictionary> = {
       // Brand line — stays in English on every locale, like the home hero
       // headline and tagline.
       headline: "Suor is Portuguese for sweat",
+      mediaAlts: {
+        press: "Thais empurrando um kettlebell acima da cabeça",
+        pull: "Thais fazendo barras na grade",
+      },
       col1Label: "A fundadora",
       col1: [
         "Sou a Thais. Marketing de dia. Corro e levanto peso no resto do tempo, seis dias por semana, porque nada esvazia a minha cabeça como isso.",
@@ -451,7 +470,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       col2Label: "O que é isso aqui",
       col2: [
         "A maior parte do conteúdo híbrido na internet é feita por gente cuja vida inteira é treino. Dois treinos por dia, patrocínio cheio, 20 horas por semana. É inspirador. E também totalmente desconectado de quem tem um trabalho de verdade, trânsito todo dia e quarenta minutos numa terça.",
-        "O Suor Society cobre o mundo de quem corre e levanta peso como página de cultura. Lançamentos de tênis, perfis de atletas, cobertura de provas, a cena de San Diego. Mais o contexto que quase sempre falta: aquela meia maratona de 1h10 levou oito anos. A sua corrida vale o tempo inteiro em que você corre atrás dela.",
+        "O Suor Society é uma página de cultura de corrida híbrida para quem corre e levanta peso em volta de tudo mais. Lançamentos de tênis, perfis de atletas, cobertura de provas, a cena de San Diego. Mais o contexto que quase sempre falta: aquela meia maratona de 1h10 levou oito anos. A sua corrida vale o tempo inteiro em que você corre atrás dela.",
         "Corri minha primeira meia maratona este ano. Puxando ferro no meio da quilometragem. Postando tudo.",
       ],
     },
@@ -481,6 +500,13 @@ export const dictionaries: Record<Lang, Dictionary> = {
         "Quem é mais rápido espera em cada esquina",
         "Café depois",
       ],
+      splitImgAlt: "Crew do Suor Society numa rua de San Diego com palmeiras",
+      scenesEye: "Na rua",
+      scenesAlts: {
+        road: "Dois corredores numa estrada de manhã",
+        trail: "Trail nos morros de San Diego",
+        crew: "Corredores do Suor Society em movimento",
+      },
     },
     dispatchForm: {
       successTag: "Você tá dentro",

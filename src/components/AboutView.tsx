@@ -18,6 +18,16 @@ export default function AboutView({ lang }: { lang: Lang }) {
           </div>
         </section>
 
+        {/* FOUNDER MEDIA */}
+        <section className="about-pg-media">
+          <figure className="about-pg-shot">
+            <img src="/founder-press.jpg" alt={t.mediaAlts.press} />
+          </figure>
+          <figure className="about-pg-shot">
+            <img src="/founder-pull.jpg" alt={t.mediaAlts.pull} />
+          </figure>
+        </section>
+
         {/* BODY */}
         <section className="about-pg-body">
           <div className="page">
