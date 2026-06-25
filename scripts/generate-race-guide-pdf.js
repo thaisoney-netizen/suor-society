@@ -47,7 +47,7 @@ const US_RACES = [
   { num: "12", name: "Savannah Southern Half & 5K", where: "Savannah, GA · Nov 14, 2026", body: "Through historic squares and oak-lined streets. Finish through Savannah Bananas' Grayson Stadium.", dists: "5K · Half Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.southernhalf.com/" },
   { num: "13", name: "Allianz Richmond Marathon", where: "Richmond, VA · Nov 14, 2026", body: "America's Friendliest Marathon. USATF sanctioned and certified. A top Boston qualifier course.", dists: "8K · Half · Full Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.richmondmarathon.org/" },
   { num: "14", name: "Philadelphia Marathon Weekend", where: "Philadelphia, PA · Nov 20-22, 2026", body: "Full marathon sold out. Half marathon and 8K still open. Certified course through historic Philly.", dists: "8K · Half Marathon", price: "Check site", status: "limit", statusLabel: "Half & 8K Open · Full Sold Out", url: "https://www.philadelphiamarathon.com/" },
-  { num: "15", name: "BMW Dallas Marathon Festival", where: "Dallas, TX · Dec 11-13, 2026", body: "55th year. Dynamic pricing. Register earlier, pay less. Multi-distance downtown Dallas weekend.", dists: "5K · 10K · Half · Full Marathon", price: "Dynamic pricing", status: "open", statusLabel: "Open Registration", url: "https://dallasmarathon.com/" },
+  { num: "15", name: "BMW Dallas Marathon Festival", where: "Dallas, TX · Dec 11-13, 2026", body: "55th year. Pricing climbs as race day gets closer, so registering early pays off. Multi-distance downtown Dallas weekend.", dists: "5K · 10K · Half · Full Marathon", price: "Tiered pricing", status: "open", statusLabel: "Open Registration", url: "https://dallasmarathon.com/" },
   { num: "16", name: "JAL Honolulu Marathon", where: "Honolulu, HI · Dec 13, 2026", body: "No qualifier, no cutoff, ages 7+. Ala Moana through Waikiki, around Diamond Head. Bucket-list December marathon.", dists: "Merrie Mile · 10K · Full Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.honolulumarathon.org/" },
   { num: "17", name: "Chevron Houston Marathon Weekend", where: "Houston, TX · Jan 15-17, 2027", body: "Aramco Houston Half on Sunday Jan 17. Flat, fast, USATF certified. Registration Nov 1, 2026 to early January.", dists: "5K · Half · Full Marathon", price: "Check site", status: "open", statusLabel: "2027 Registration", url: "https://www.chevronhoustonmarathon.com/" },
   { num: "18", name: "Cherry Blossom Ten Mile", where: "Washington D.C. · April 2027", body: "Tidal Basin, cherry trees in peak bloom, ten flat miles. Lottery plus charity bibs. USATF certified.", dists: "5K · 10 Mile", price: "Check site", status: "limit", statusLabel: "Lottery + Charity Entries", url: "https://www.cherryblossom.org/" },
@@ -206,14 +206,14 @@ function html() {
   </div>
   <div class="cover-mid">
     <div class="cover-eye">2026 Race Guide</div>
-    <h1 class="cover-title">40 Open<br/>Entry Races.<br/><em>No Qualifier.</em></h1>
+    <h1 class="cover-title">40 Open<br/>Entry Races,<br/><em>No Qualifier</em></h1>
     <p class="cover-deck">
-      20 in California. 20 across the US. All USATF certified. From summer 2026 through spring 2027. The complete guide for the runner who lifts and the lifter who runs.
+      20 in California, 20 across the US, all USATF certified. From summer 2026 through spring 2027, a window for whatever you're building toward. For the runner who lifts and the lifter who runs.
     </p>
   </div>
   <div class="cover-bottom">
     <div class="cover-credits">
-      <span>SUOR SOCIETY</span><span>SAN DIEGO, CA</span><span>SUORSOCIETY.COM</span>
+      <span>Suor Society</span><span>SAN DIEGO, CA</span><span>SUORSOCIETY.COM</span>
     </div>
     <div class="cover-count">40 / 40</div>
   </div>
@@ -221,15 +221,15 @@ function html() {
 
 <!-- INTRO -->
 <section class="intro">
-  <h2>The rules<br/>of this list.</h2>
+  <h2>The rules<br/>of this list</h2>
   <p>It's race season. If you've been waiting for the right moment to sign up for something, this is it. 40 open entry road races: 20 in California, 20 across the US. All USATF certified. All open to everyone, no matter how fast or slow you run.</p>
   <p>The rule for everything in this guide: <strong>no qualifying time, no lottery.</strong> You register, you train, you show up. Races run from now through spring 2027, so there's a window for whatever you're building toward.</p>
   <p>Prices go up as race day gets closer. A handful of these are sold out of standard entries but still have charity or benefactor spots. We've flagged the status on every one. Click through and verify before you register. Race capacity and pricing move fast.</p>
   <div class="rules">
-    <div class="rule-item"><div class="rule-num">01</div><div class="rule-text"><strong>Open entry.</strong> No qualifying time required. Pay the fee and you're in.</div></div>
-    <div class="rule-item"><div class="rule-num">02</div><div class="rule-text"><strong>USATF certified.</strong> Course distance is officially measured. PRs count.</div></div>
-    <div class="rule-item"><div class="rule-num">03</div><div class="rule-text"><strong>Status flagged.</strong> Open · Limited · Sold Out, accurate as of June 2026.</div></div>
-    <div class="rule-item"><div class="rule-num">04</div><div class="rule-text"><strong>Verify before you register.</strong> Capacity and pricing can shift between updates.</div></div>
+    <div class="rule-item"><div class="rule-num">01</div><div class="rule-text"><strong>Open entry:</strong> no qualifying time required. Pay the fee and you're in.</div></div>
+    <div class="rule-item"><div class="rule-num">02</div><div class="rule-text"><strong>USATF certified:</strong> course distance is officially measured. PRs count.</div></div>
+    <div class="rule-item"><div class="rule-num">03</div><div class="rule-text"><strong>Status flagged:</strong> Open, Limited, or Sold Out, accurate as of June 2026.</div></div>
+    <div class="rule-item"><div class="rule-num">04</div><div class="rule-text"><strong>Verify before you register:</strong> capacity and pricing can shift between updates.</div></div>
   </div>
 </section>
 
@@ -237,7 +237,7 @@ function html() {
 <section>
   <div class="section-head">
     <div class="section-num">01 / California</div>
-    <h2 class="section-title">20 California<br/>Races.</h2>
+    <h2 class="section-title">20 California<br/>Races</h2>
     <div class="section-sub">Open Entry · Summer 2026 to Spring 2027</div>
   </div>
   <div class="race-list">
@@ -249,7 +249,7 @@ function html() {
 <section>
   <div class="section-head">
     <div class="section-num">02 / United States</div>
-    <h2 class="section-title">20 US Certified<br/>Races.</h2>
+    <h2 class="section-title">20 US Certified<br/>Races</h2>
     <div class="section-sub">No Qualifier · All USATF Certified</div>
   </div>
   <div class="race-list">
@@ -261,7 +261,7 @@ function html() {
 <section class="footer-band">
   <div class="footer-line">Run. Lift.<br/>Sweat.</div>
   <div class="footer-meta">
-    SUOR SOCIETY<br/>
+    Suor Society<br/>
     <a href="https://suorsociety.com">SUORSOCIETY.COM</a><br/>
     <a href="https://instagram.com/suorsociety">@SUORSOCIETY</a><br/>
     UPDATED JUNE 2026
