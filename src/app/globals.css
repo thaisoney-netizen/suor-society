@@ -84,10 +84,10 @@ a { color: inherit; text-decoration: none; }
 }
 .wm-lockup {
   display: block;
-  height: 26px;
+  height: 34px;
   width: auto;
 }
-@media (max-width: 720px) { .wm-lockup { height: 20px; } }
+@media (max-width: 720px) { .wm-lockup { height: 28px; } }
 
 /* Flip the black artwork to white on dark backgrounds (hero overlay, menu). */
 .wm-lockup--light { filter: brightness(0) invert(1); }
@@ -637,7 +637,7 @@ a { color: inherit; text-decoration: none; }
 }
 .foot-wm {
   display: block;
-  height: 28px;
+  height: 36px;
   width: auto;
   margin-bottom: 16px;
 }
