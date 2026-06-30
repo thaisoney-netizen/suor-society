@@ -86,8 +86,6 @@ type Dictionary = {
     eyebrow: string;
     headline: string;
     mediaAlts: { press: string; pull: string };
-    col1Label: string;
-    col1: string[];
     col2Label: string;
     col2: string[];
   };
@@ -245,12 +243,6 @@ export const dictionaries: Record<Lang, Dictionary> = {
         press: "Thais pressing a kettlebell overhead",
         pull: "Thais working through pull-ups on the rack",
       },
-      col1Label: "The founder",
-      col1: [
-        "I’m Thais. Marketer by day. Runner and lifter the rest of the time, six days a week, because nothing else clears my head like it does.",
-        "Not for aesthetics. For the feeling of being strong and capable in your body and what happens to your brain when you stay consistent about it. Long runs before work. Tuesday squats at the gym. Strava screenshots, fast or slow.",
-        "This started as something personal. Then I looked around for a page covering the lift-and-run world the way it deserved and couldn’t find it. So I built one.",
-      ],
       col2Label: "What this is",
       col2: [
         "Most hybrid content online is made by people whose whole life is training. Two-a-days, full sponsorships, 20-hour weeks. It’s inspiring. It’s also completely disconnected from the person with a real job, a commute, and forty minutes on a Tuesday.",
@@ -461,12 +453,6 @@ export const dictionaries: Record<Lang, Dictionary> = {
         press: "Thais empurrando um kettlebell acima da cabeça",
         pull: "Thais fazendo barras na grade",
       },
-      col1Label: "A fundadora",
-      col1: [
-        "Sou a Thais. Marketing de dia. Corro e levanto peso no resto do tempo, seis dias por semana, porque nada esvazia a minha cabeça como isso.",
-        "Não é pela estética. É pela sensação de ser forte e capaz no próprio corpo — e pelo que acontece com a sua cabeça quando você mantém a constância. Longão antes do trabalho. Agachamento na terça, na academia. Print do Strava, rápido ou devagar.",
-        "Começou como uma coisa pessoal. Aí fui procurar uma página que cobrisse o mundo de quem corre e levanta peso do jeito que merece, e não achei. Então construí uma.",
-      ],
       col2Label: "O que é isso aqui",
       col2: [
         "A maior parte do conteúdo híbrido na internet é feita por gente cuja vida inteira é treino. Dois treinos por dia, patrocínio cheio, 20 horas por semana. É inspirador. E também totalmente desconectado de quem tem um trabalho de verdade, trânsito todo dia e quarenta minutos numa terça.",

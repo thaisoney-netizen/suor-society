@@ -21,19 +21,11 @@ export default function AboutView({ lang }: { lang: Lang }) {
         {/* BODY */}
         <section className="about-pg-body">
           <div className="page">
-            <div className="about-pg-grid">
-              <div className="about-pg-col">
-                <p className="about-pg-label">{t.col2Label}</p>
-                {t.col2.map((p, i) => (
-                  <p key={i} className="about-pg-p">{p}</p>
-                ))}
-              </div>
-              <div className="about-pg-col">
-                <p className="about-pg-label">{t.col1Label}</p>
-                {t.col1.map((p, i) => (
-                  <p key={i} className="about-pg-p">{p}</p>
-                ))}
-              </div>
+            <div className="about-pg-col">
+              <p className="about-pg-label">{t.col2Label}</p>
+              {t.col2.map((p, i) => (
+                <p key={i} className="about-pg-p">{p}</p>
+              ))}
             </div>
           </div>
         </section>
