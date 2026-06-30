@@ -35,7 +35,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.suorsociety.com"),
-  title: "Suor Society, hybrid running culture page",
+  title: "Suor Society",
   description:
     "A hybrid running culture page for people who run and lift around everything else. Race picks, gear, and the scene.",
   alternates: {
@@ -49,13 +49,13 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Suor Society",
     url: "https://www.suorsociety.com",
-    title: "Suor Society, hybrid running culture page",
+    title: "Suor Society — hybrid running culture page",
     description:
       "A hybrid running culture page for people who run and lift around everything else. Race picks, gear, and the scene.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Suor Society, hybrid running culture page",
+    title: "Suor Society — hybrid running culture page",
     description:
       "A hybrid running culture page for people who run and lift around everything else. Race picks, gear, and the scene.",
   },
