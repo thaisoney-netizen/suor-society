@@ -9,6 +9,18 @@ const nextConfig: NextConfig = {
         destination: "/culture/open-entry-races-2026",
         permanent: true,
       },
+      // The pt-BR posts used to be translations of the US race guide and
+      // HYROX schedule; they were replaced by Brazil-specific regional pages.
+      {
+        source: "/pt-br/culture/open-entry-races-2026",
+        destination: "/pt-br/culture/corridas-brasil-2026",
+        permanent: true,
+      },
+      {
+        source: "/pt-br/dispatch/hyrox-fall-2026-schedule",
+        destination: "/pt-br/dispatch/hyrox-brasil-2026",
+        permanent: true,
+      },
     ];
   },
 };

@@ -1,9 +1,16 @@
 import { dictionaries, localizeHref, type Lang } from "@/i18n/dictionaries";
 
-// Race Picks links straight to the single article while only one post exists.
-// When a second pick ships, switch this back to "/racepicks".
-const FOOT_LINKS = [
-  { href: "/culture/open-entry-races-2026", label: "Race Picks" },
+// Race Picks links straight to the single guide while only one post exists
+// per locale. When a second pick ships, switch this back to "/racepicks".
+// The guide is a regional page (US races on /, Brazil races on /pt-br), not
+// a translation, so its path differs per locale.
+const RACE_PICKS_HREF: Record<Lang, string> = {
+  en: "/culture/open-entry-races-2026",
+  pt: "/culture/corridas-brasil-2026",
+};
+
+const footLinksFor = (lang: Lang) => [
+  { href: RACE_PICKS_HREF[lang], label: "Race Picks" },
   { href: "/crew", label: "Crew" },
   { href: "/dispatch", label: "Dispatch" },
   { href: "/about", label: "The Culture" },
@@ -11,6 +18,7 @@ const FOOT_LINKS = [
 
 export default function SiteFooter({ lang = "en" }: { lang?: Lang }) {
   const t = dictionaries[lang].footer;
+  const footLinks = footLinksFor(lang);
   return (
     <footer className="footer">
       <div className="page">
@@ -23,7 +31,7 @@ export default function SiteFooter({ lang = "en" }: { lang?: Lang }) {
           </div>
           <div className="foot-col">
             <p className="foot-col-title">{t.exploreTitle}</p>
-            {FOOT_LINKS.map((link) => (
+            {footLinks.map((link) => (
               <a key={link.label} href={localizeHref(link.href, lang)} className="foot-link">
                 {link.label}
               </a>

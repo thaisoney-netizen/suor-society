@@ -1,9 +1,13 @@
 // Central place for site copy in each language.
 //
-// Scope note (phase 1): only the home page is translated. The brand headline
-// and hero tagline stay in English on every locale on purpose — they read as
-// the brand line, not as copy to translate. Brand/section names (The Culture,
-// The Dispatch, Race Picks, Crew) also stay in English.
+// Scope note: the brand headline ("For runners / for lifters / …") stays in
+// English on every locale on purpose — it reads as the brand line, not as copy
+// to translate. Brand/section names (The Culture, The Dispatch, Race Picks,
+// Crew) also stay in English. The hero tagline IS translated per locale.
+//
+// Regional pages: the race guide and the HYROX post are not translations —
+// each locale has its own regional version with its own races (US on /,
+// Brazil on /pt-br), so their hrefs differ per locale below.
 //
 // To add a new language: add a key to `dictionaries` and a matching `<lang>`
 // route under src/app. To add a new page: extend the `Dictionary` type with
@@ -56,7 +60,11 @@ type Dictionary = {
     langLabel: string;
   };
   home: {
+    heroTag: string;
     heroCta: string;
+    // Locale-specific target for the hero CTA (the race guide is a regional
+    // page, not a translation, so the path differs per locale).
+    heroCtaHref: string;
     boardTitle: string;
     boardPosts: BoardPost[];
     boardMore: string;
@@ -167,6 +175,9 @@ type Dictionary = {
     error: string;
     fine: string;
     downloadBtn: string;
+    // Each locale gates its own regional guide PDF.
+    pdfHref: string;
+    pdfName: string;
   };
 };
 
@@ -176,7 +187,9 @@ export const dictionaries: Record<Lang, Dictionary> = {
       langLabel: "Select language",
     },
     home: {
+      heroTag: "Race picks, gear, and culture for people who lift and run.",
       heroCta: "See Races Left in 2026",
+      heroCtaHref: "/culture/open-entry-races-2026",
       boardTitle: "The board",
       boardPosts: [
         {
@@ -375,6 +388,8 @@ export const dictionaries: Record<Lang, Dictionary> = {
         "Something went wrong. Email us at hello@suorsociety.com and we’ll send it directly.",
       fine: "No spam. Just the guide. Unsubscribe any time.",
       downloadBtn: "Download the PDF →",
+      pdfHref: "/2026-race-guide.pdf",
+      pdfName: "2026_Race_Guide_SuorSociety.pdf",
     },
   },
 
@@ -383,23 +398,25 @@ export const dictionaries: Record<Lang, Dictionary> = {
       langLabel: "Selecionar idioma",
     },
     home: {
+      heroTag: "Corridas, equipamentos e cultura para quem levanta peso e corre.",
       heroCta: "Veja as corridas que faltam em 2026",
+      heroCtaHref: "/culture/corridas-brasil-2026",
       boardTitle: "O mural",
       boardPosts: [
         {
-          href: "/culture/open-entry-races-2026",
+          href: "/culture/corridas-brasil-2026",
           img: "/race-hero.jpg",
           eyebrow: "The Culture · Arquivo",
           title: "Race Picks",
-          desc: "As melhores corridas de inscrição aberta na Califórnia e nos EUA. Todas certificadas. Sem índice.",
+          desc: "As corridas de rua que valem a inscrição no Brasil em 2026. São Silvestre, maratonas de SP e Rio e mais.",
           meta: "Novo · Junho 2026 ↗",
         },
         {
-          href: "/dispatch/hyrox-fall-2026-schedule",
+          href: "/dispatch/hyrox-brasil-2026",
           img: "/hyrox-hero.jpg",
           eyebrow: "The Dispatch",
-          title: "Calendário HYROX – 2º semestre de 2026",
-          desc: "10 provas, quatro cidades novas e Anaheim de volta de 4 a 6 de dezembro. O calendário completo da América do Norte.",
+          title: "HYROX no Brasil 2026",
+          desc: "São Paulo confirmada pra 17 de outubro no Distrito Anhembi, mais Rio e Fortaleza na temporada 26/27.",
           meta: "HYROX · Junho 2026 ↗",
         },
         {
@@ -518,12 +535,12 @@ export const dictionaries: Record<Lang, Dictionary> = {
       sectionSub: "Notícias de provas · HYROX · Equipamentos",
       posts: [
         {
-          href: "/dispatch/hyrox-fall-2026-schedule",
+          href: "/dispatch/hyrox-brasil-2026",
           img: "/hyrox-hero.jpg",
           tag: "HYROX",
           date: "Junho 2026",
-          title: "HYROX 2º semestre de 2026: Anaheim está de volta e o calendário ficou gigante",
-          desc: "10 provas, quatro cidades novas e Anaheim de volta de 4 a 6 de dezembro. O calendário completo da América do Norte.",
+          title: "HYROX no Brasil 2026: São Paulo volta maior em 17 de outubro",
+          desc: "São Paulo em 17 de outubro no Distrito Anhembi, mais Rio e Fortaleza. Datas, cidades e como treinar pra prova.",
         },
         {
           href: "/dispatch/june-2026-shoe-drops",
@@ -556,25 +573,25 @@ export const dictionaries: Record<Lang, Dictionary> = {
     racepicks: {
       metaTitle: "Race Picks, Suor Society",
       metaDescription:
-        "Race Picks. Corridas de inscrição aberta, guias e provas que valem o seu ciclo de treino, tudo num lugar só.",
+        "Race Picks. As corridas de rua que valem a inscrição no Brasil em 2026, com datas, distâncias e links diretos, tudo num lugar só.",
       eyebrow: "Suor Society / Race Picks",
       headline: "Race Picks",
       deck1: "Corridas de inscrição aberta e provas que valem o seu ciclo de treino.",
       deck2: "Sem índice, sem sorteio, sem achismo.",
-      featureHref: "/culture/open-entry-races-2026",
+      featureHref: "/culture/corridas-brasil-2026",
       featureImg: "/race-hero.jpg",
       featureTag: "Guia de Corridas",
       featureDate: "Junho 2026",
-      featureTitle: "40 corridas de inscrição aberta na Califórnia e nos EUA que você ainda pode correr em 2026",
+      featureTitle: "As corridas de rua que valem a inscrição no Brasil em 2026",
       featureDesc:
-        "Sem índice, sem sorteio. 20 corridas na Califórnia, 20 pelos EUA, todas certificadas pela USATF, com datas, preços e links diretos de inscrição.",
+        "São Silvestre, maratonas de SP e Rio, circuitos e provas que valem a viagem. Datas, distâncias e links diretos de inscrição.",
       readLabel: "Ler o guia →",
     },
     downloadGate: {
       successTag: "Você tá dentro",
       successTitleLines: ["Seu", "Guia", "Está Pronto"],
       successBody:
-        "40 corridas de inscrição aberta. 20 na Califórnia, 20 pelos EUA. Todas certificadas. De agora até meados de 2027.",
+        "As grandes corridas do Brasil em 2026 num PDF formatado. Maratonas, meias e provas de rua, com datas, distâncias e links diretos de inscrição.",
       nameLabel: "Nome",
       namePlaceholder: "Seu nome",
       emailLabel: "E-mail *",
@@ -585,6 +602,8 @@ export const dictionaries: Record<Lang, Dictionary> = {
         "Algo deu errado. Escreve pra gente em hello@suorsociety.com que a gente envia direto.",
       fine: "Sem spam. Só o guia. Cancele quando quiser.",
       downloadBtn: "Baixar o PDF →",
+      pdfHref: "/guia-corridas-brasil-2026.pdf",
+      pdfName: "Guia_Corridas_Brasil_2026_SuorSociety.pdf",
     },
   },
 };

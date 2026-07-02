@@ -48,8 +48,8 @@ export default function DownloadGate({ lang = "en" }: { lang?: Lang }) {
         <p className="gate-success-body">{t.successBody}</p>
         <a
           className="gate-download-btn"
-          href="/2026-race-guide.pdf"
-          download="2026_Race_Guide_SuorSociety.pdf"
+          href={t.pdfHref}
+          download={t.pdfName}
         >
           {t.downloadBtn}
         </a>
