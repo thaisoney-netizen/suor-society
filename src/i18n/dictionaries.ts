@@ -246,7 +246,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       col2Label: "What this is",
       col2: [
         "Most hybrid content online is made by people whose whole life is training. Two-a-days, full sponsorships, 20-hour weeks. It’s inspiring. It’s also completely disconnected from anyone building this around an actual life, kids, a business, whatever the rest of your day looks like.",
-        "Suor Society is a hybrid culture page for people who run, lift, and race HYROX around everything else already going on. Shoe drops, athlete spotlights, race coverage. Plus the context that’s almost always missing: the 1:10 half marathon took eight years. Your run counts the whole time you’re chasing it.",
+        "Suor Society is a hybrid culture page for people who run and lift around everything else already going on. Shoe drops, athlete spotlights, race coverage. Plus the context that’s almost always missing: the 1:10 half marathon took eight years. Your run counts the whole time you’re chasing it.",
       ],
     },
     crew: {
@@ -455,7 +455,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       col2Label: "O que é isso aqui",
       col2: [
         "A maior parte do conteúdo híbrido na internet é feita por gente cuja vida inteira é treino. Dois treinos por dia, patrocínio cheio, 20 horas por semana. É inspirador. E também totalmente desconectado de quem constrói isso em cima de uma vida de verdade, filhos, um negócio, o que for que o resto do seu dia tiver.",
-        "O Suor Society é uma página de cultura híbrida para quem corre, levanta peso e também encara o HYROX no meio de tudo mais que já está rolando. Lançamentos de tênis, perfis de atletas, cobertura de provas. Mais o contexto que quase sempre falta: aquela meia maratona de 1h10 levou oito anos. A sua corrida vale o tempo inteiro em que você corre atrás dela.",
+        "O Suor Society é uma página de cultura híbrida para quem corre e levanta peso no meio de tudo mais que já está rolando. Lançamentos de tênis, perfis de atletas, cobertura de provas. Mais o contexto que quase sempre falta: aquela meia maratona de 1h10 levou oito anos. A sua corrida vale o tempo inteiro em que você corre atrás dela.",
       ],
     },
     crew: {
