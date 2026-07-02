@@ -245,9 +245,8 @@ export const dictionaries: Record<Lang, Dictionary> = {
       },
       col2Label: "What this is",
       col2: [
-        "Most hybrid content online is made by people whose whole life is training. Two-a-days, full sponsorships, 20-hour weeks. It’s inspiring. It’s also completely disconnected from the person with a real job, a commute, and forty minutes on a Tuesday.",
+        "Most hybrid content online is made by people whose whole life is training. Two-a-days, full sponsorships, 20-hour weeks. It’s inspiring. It’s also completely disconnected from anyone squeezing in forty minutes between a job and a commute.",
         "Suor Society is a hybrid running culture page for people who run and lift around everything else. Shoe drops, athlete spotlights, race coverage, the San Diego scene. Plus the context that’s almost always missing: the 1:10 half marathon took eight years. Your run counts the whole time you’re chasing it.",
-        "Ran my first half marathon this spring. Lifting around the mileage. Posting all of it.",
       ],
     },
     crew: {
@@ -455,9 +454,8 @@ export const dictionaries: Record<Lang, Dictionary> = {
       },
       col2Label: "O que é isso aqui",
       col2: [
-        "A maior parte do conteúdo híbrido na internet é feita por gente cuja vida inteira é treino. Dois treinos por dia, patrocínio cheio, 20 horas por semana. É inspirador. E também totalmente desconectado de quem tem um trabalho de verdade, trânsito todo dia e quarenta minutos numa terça.",
+        "A maior parte do conteúdo híbrido na internet é feita por gente cuja vida inteira é treino. Dois treinos por dia, patrocínio cheio, 20 horas por semana. É inspirador. E também totalmente desconectado de quem espreme quarenta minutos entre o trabalho e o trânsito.",
         "O Suor Society é uma página de cultura de corrida híbrida para quem corre e levanta peso em volta de tudo mais. Lançamentos de tênis, perfis de atletas, cobertura de provas, a cena de San Diego. Mais o contexto que quase sempre falta: aquela meia maratona de 1h10 levou oito anos. A sua corrida vale o tempo inteiro em que você corre atrás dela.",
-        "Corri minha primeira meia maratona este ano. Puxando ferro no meio da quilometragem. Postando tudo.",
       ],
     },
     crew: {
