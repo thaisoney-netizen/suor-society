@@ -67,6 +67,10 @@ export default function HomeView({ lang }: { lang: Lang }) {
 
   return (
     <>
+      {/* "Vindo do Brasil?" strip above the nav, for Portuguese-speaking
+          visitors on the English home only. */}
+      {lang === "en" && <LanguageBanner />}
+
       {/* HERO — full viewport, one message: headline + one CTA */}
       <header className="hero">
         <SiteNav variant="overlay" lang={lang} />
@@ -163,9 +167,6 @@ export default function HomeView({ lang }: { lang: Lang }) {
 
       {/* FOOTER */}
       <SiteFooter lang={lang} />
-
-      {/* Suggest pt-BR to Portuguese-speaking visitors (English home only). */}
-      {lang === "en" && <LanguageBanner />}
     </>
   );
 }

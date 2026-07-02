@@ -437,8 +437,8 @@ export const dictionaries: Record<Lang, Dictionary> = {
     },
     // Shown on the English home to visitors whose browser prefers Portuguese.
     suggest: {
-      text: "Quer ler em português?",
-      cta: "Ler em português",
+      text: "Vindo do Brasil?",
+      cta: "Leia em português",
       dismiss: "Fechar",
     },
     about: {

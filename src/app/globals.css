@@ -1669,44 +1669,33 @@ a { color: inherit; text-decoration: none; }
   padding-bottom: 2px;
 }
 
-/* ── LANGUAGE SUGGESTION TOAST ── */
-/* Scroll-aware: sits low at the top of the page (below the bottom-anchored hero
-   CTA), then lifts above the fixed 60px scroll tracker once scrolling starts —
-   see LanguageBanner.tsx. The two states never collide because the tracker only
-   appears after the same scroll threshold that adds .lang-suggest--lifted. */
-.lang-suggest {
-  position: fixed;
-  left: 20px;
-  bottom: calc(16px + env(safe-area-inset-bottom));
-  z-index: 150;
+/* ── "VINDO DO BRASIL?" TOP STRIP ── */
+/* Slim full-width bar at the very top of the page, above the hero/nav — see
+   LanguageBanner.tsx. Rendered in normal flow so it pushes the page down
+   rather than covering the overlay nav. */
+.lang-strip {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 14px;
-  max-width: calc(100vw - 40px);
+  padding: 10px 44px 10px 16px;
+  position: relative;
   background: var(--asphalt);
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, .14);
-  border-left: 3px solid var(--accent);
-  border-radius: 8px;
-  padding: 12px 14px 12px 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
-  animation: lang-suggest-in .28s ease-out;
-  transition: bottom .28s ease-out;
+  border-bottom: 2px solid var(--accent);
+  animation: lang-strip-in .28s ease-out;
 }
-.lang-suggest--lifted {
-  bottom: calc(76px + env(safe-area-inset-bottom));
-}
-@keyframes lang-suggest-in {
-  from { opacity: 0; transform: translateY(8px); }
+@keyframes lang-strip-in {
+  from { opacity: 0; transform: translateY(-8px); }
   to   { opacity: 1; transform: none; }
 }
-.lang-suggest-text {
+.lang-strip-text {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 600;
   font-size: 14px;
   letter-spacing: .01em;
 }
-.lang-suggest-cta {
+.lang-strip-cta {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 700;
   font-size: 11px;
@@ -1716,22 +1705,26 @@ a { color: inherit; text-decoration: none; }
   color: var(--asphalt);
   background: var(--accent);
   border-radius: 5px;
-  padding: 8px 12px;
+  padding: 7px 12px;
   transition: filter .15s ease-out;
 }
-.lang-suggest-cta:hover { filter: brightness(1.08); }
-.lang-suggest-x {
+.lang-strip-cta:hover { filter: brightness(1.08); }
+.lang-strip-x {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
   background: none;
   border: none;
   color: rgba(255, 255, 255, .5);
   font-size: 14px;
   line-height: 1;
   cursor: pointer;
-  padding: 4px;
+  padding: 8px;
   transition: color .15s ease-out;
 }
-.lang-suggest-x:hover { color: #fff; }
+.lang-strip-x:hover { color: #fff; }
 @media (max-width: 480px) {
-  .lang-suggest { left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); }
-  .lang-suggest--lifted { bottom: calc(70px + env(safe-area-inset-bottom)); }
+  .lang-strip { gap: 10px; padding: 9px 40px 9px 12px; }
+  .lang-strip-text { font-size: 13px; }
 }
