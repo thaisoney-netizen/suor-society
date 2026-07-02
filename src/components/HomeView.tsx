@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
-import LanguageBanner from "@/components/LanguageBanner";
 import { dictionaries, localizeHref, type Lang } from "@/i18n/dictionaries";
 
 // The home page, shared by the English route (/) and the Portuguese route
@@ -67,10 +66,6 @@ export default function HomeView({ lang }: { lang: Lang }) {
 
   return (
     <>
-      {/* "Vindo do Brasil?" strip above the nav, for Portuguese-speaking
-          visitors on the English home only. */}
-      {lang === "en" && <LanguageBanner />}
-
       {/* HERO — full viewport, one message: headline + one CTA */}
       <header className="hero">
         <SiteNav variant="overlay" lang={lang} />
