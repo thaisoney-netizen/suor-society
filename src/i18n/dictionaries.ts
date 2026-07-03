@@ -405,7 +405,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardPosts: [
         {
           href: "/culture/corridas-brasil-2026",
-          img: "/race-hero.jpg",
+          img: "/sao-silvestre-hero.webp",
           eyebrow: "The Culture · Arquivo",
           title: "Race Picks",
           desc: "As corridas de rua que valem a inscrição no Brasil em 2026. São Silvestre, maratonas de SP e Rio e mais.",
@@ -579,7 +579,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       deck1: "Corridas de inscrição aberta e provas que valem o seu ciclo de treino.",
       deck2: "Sem índice, sem sorteio, sem achismo.",
       featureHref: "/culture/corridas-brasil-2026",
-      featureImg: "/race-hero.jpg",
+      featureImg: "/sao-silvestre-hero.webp",
       featureTag: "Guia de Corridas",
       featureDate: "Junho 2026",
       featureTitle: "As corridas de rua que valem a inscrição no Brasil em 2026",

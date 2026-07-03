@@ -259,8 +259,8 @@ export default function CorridasBrasil2026() {
         <div className="article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/race-hero.jpg"
-            alt="Milhares de corredores na linha de largada de uma grande corrida de rua"
+            src="/sao-silvestre-hero.webp"
+            alt="Pelotão de elite na largada da Corrida de São Silvestre, na Avenida Paulista"
           />
         </div>
 
