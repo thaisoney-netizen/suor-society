@@ -72,7 +72,6 @@ const RSS_SOURCES = [
   { name: 'Believe in the Run', url: 'https://believeintherun.com/feed/' },
   { name: 'Road Trail Run', url: 'https://www.roadtrailrun.com/feeds/posts/default?alt=rss' },
   { name: 'Rox Lyfe (Hyrox)', url: 'https://roxlyfe.com/feed/' },
-  { name: 'Fast Women', url: 'https://fastwomen.substack.com/feed' },
   { name: 'Marathon Handbook', url: 'https://marathonhandbook.com/feed/' },
 ];
 
