@@ -1,9 +1,17 @@
 # Suor Society Trend Radar — Watchlist (SUOR-7)
 
-This file drives the daily trend scan (SUOR-8). A scheduled cloud session reads
-it every morning, runs the queries below via web search, and delivers 2–5 trend
-candidates with post angles. Edit this file to change what gets scanned — the
-next morning's run picks it up automatically.
+This file drives the daily trend scan (SUOR-8), which runs in two layers:
+
+1. **Morning email digest** — a scheduled GitHub Action
+   (`.github/workflows/trend-radar.yml`) runs `scripts/trends/scan.mjs`,
+   which pulls the sources below and emails matched candidates, grouped by
+   topic. No laptop needed — it lands in the inbox.
+2. **Deeper dive on demand** — any Claude session can be pointed at this file
+   ("run the trend radar") and will work the queries below via web search,
+   apply the post-or-skip filter, and write up candidates with post angles.
+
+Edit this file (and the topic keywords in `scripts/trends/scan.mjs`) to change
+what gets scanned.
 
 ## Why web search instead of social media scanning
 
