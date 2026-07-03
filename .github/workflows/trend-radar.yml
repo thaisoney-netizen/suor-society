@@ -1,0 +1,36 @@
+name: Suor Trend Radar
+
+# NOTE: GitHub only runs scheduled workflows from the default branch, so the
+# schedule activates once this file lands on main. Until then (and any time
+# after), it can be run manually from the Actions tab via workflow_dispatch.
+
+on:
+  schedule:
+    # 6:53 AM Pacific (UTC-7 summer) → 13:53 UTC — morning digest before the day starts
+    - cron: '53 13 * * *'
+  workflow_dispatch:
+
+jobs:
+  scan-and-email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        env:
+          # playwright is a devDependency for other scripts; this job doesn't
+          # need its browsers, so skip the ~400 MB download
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+        run: npm ci
+
+      - name: Scan trend sources and email digest
+        env:
+          MAIL_USER: ${{ secrets.MAIL_USER }}
+          MAIL_PASS: ${{ secrets.MAIL_PASS }}
+        run: node scripts/trends/scan.mjs
