@@ -121,7 +121,7 @@ export default function HyroxBrasil2026() {
               rápido quando abrem.
             </p>
 
-            <h2>Se você também levanta</h2>
+            <h2>Se você também levanta peso</h2>
             <p>
               Aqui é onde o calendário fica interessante pra quem é híbrido. Contando de trás pra
               frente a partir de 17 de outubro, um bloco de HYROX de 10 a 12 semanas começa no fim de
