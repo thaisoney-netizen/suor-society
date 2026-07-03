@@ -3,7 +3,9 @@
  *
  * Social feeds (Instagram/TikTok) can't be scanned reliably, so this watches
  * where trends surface in scannable form instead: running media RSS, gear
- * sites, Hyrox coverage, and Reddit's public JSON. Emails a morning digest.
+ * sites, and Hyrox coverage. Emails a morning digest. (Reddit is deliberately
+ * absent — it 403s requests from GitHub runners; hot threads still reach the
+ * radar via the web-search deep dives, where they rank in results.)
  * See trend-radar/watchlist.md for the strategy and post angles.
  *
  * Requires:
@@ -65,22 +67,13 @@ const TOPICS = [
 const RSS_SOURCES = [
   { name: 'LetsRun', url: 'https://www.letsrun.com/feed/' },
   { name: "Runner's World", url: 'https://www.runnersworld.com/rss/all.xml' },
-  { name: 'Citius Mag', url: 'https://citiusmag.com/feed/' },
   { name: 'Canadian Running', url: 'https://runningmagazine.ca/feed/' },
   { name: 'iRunFar', url: 'https://www.irunfar.com/feed/' },
   { name: 'Believe in the Run', url: 'https://believeintherun.com/feed/' },
   { name: 'Road Trail Run', url: 'https://www.roadtrailrun.com/feeds/posts/default?alt=rss' },
   { name: 'Rox Lyfe (Hyrox)', url: 'https://roxlyfe.com/feed/' },
-  { name: 'BarBend', url: 'https://barbend.com/feed/' },
-];
-
-// Reddit public JSON: the sub IS the topic, so items pass on score alone.
-const REDDIT_SOURCES = [
-  { name: 'r/Hyrox', sub: 'Hyrox', minScore: 40, topic: 'hyrox' },
-  { name: 'r/hybridathlete', sub: 'hybridathlete', minScore: 40, topic: 'strength' },
-  { name: 'r/running', sub: 'running', minScore: 300, topic: 'culture' },
-  { name: 'r/AdvancedRunning', sub: 'AdvancedRunning', minScore: 150, topic: 'races' },
-  { name: 'r/RunningShoeGeeks', sub: 'RunningShoeGeeks', minScore: 100, topic: 'shoes' },
+  { name: 'Fast Women', url: 'https://fastwomen.substack.com/feed' },
+  { name: 'Marathon Handbook', url: 'https://marathonhandbook.com/feed/' },
 ];
 
 // ── Fetch helpers ─────────────────────────────────────────────────────────────
@@ -154,31 +147,6 @@ async function collect() {
         kept++;
       }
       sourceStatus.push(`${src.name}: ok (${items.length} items, ${kept} matched)`);
-    } catch (err) {
-      sourceStatus.push(`${src.name}: FAILED (${err.message})`);
-    }
-  }
-
-  for (const src of REDDIT_SOURCES) {
-    try {
-      const json = JSON.parse(
-        await fetchText(`https://www.reddit.com/r/${src.sub}/top/.json?t=day&limit=15`)
-      );
-      let kept = 0;
-      for (const child of json?.data?.children ?? []) {
-        const p = child.data;
-        if (!p || p.score < src.minScore) continue;
-        if (p.created_utc * 1000 < cutoff) continue;
-        byTopic[src.topic].push({
-          title: p.title,
-          link: `https://www.reddit.com${p.permalink}`,
-          description: `${p.score} points, ${p.num_comments} comments`,
-          pubDate: new Date(p.created_utc * 1000),
-          source: src.name,
-        });
-        kept++;
-      }
-      sourceStatus.push(`${src.name}: ok (${kept} above ${src.minScore} points)`);
     } catch (err) {
       sourceStatus.push(`${src.name}: FAILED (${err.message})`);
     }
