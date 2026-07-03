@@ -122,7 +122,7 @@ export default function CapeTownMajorPtBr() {
             </p>
             <p>
               E se uma maratona completa na Cidade do Cabo parece muito agora, tudo bem. Mais perto de casa,
-              nossas <a href="/pt-br/culture/open-entry-races-2026">escolhas de corridas de inscrição aberta</a> têm
+              nossas <a href="/pt-br/culture/corridas-brasil-2026">escolhas de corridas que valem a inscrição</a> têm
               provas em que você se inscreve hoje, sem sorteio, sem índice.
             </p>
           </div>

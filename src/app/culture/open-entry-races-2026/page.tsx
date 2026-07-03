@@ -14,12 +14,10 @@ export const metadata = {
   title: "Open Entry Races 2026, Suor Society",
   description:
     "Open entry races worth signing up for. No qualifier, no lottery. Dates, prices, and direct registration links.",
+  // No hreflang here: the pt-BR counterpart (/pt-br/culture/corridas-brasil-2026)
+  // is a regional Brazil guide, not a translation of this page.
   alternates: {
     canonical: "/culture/open-entry-races-2026",
-    languages: {
-      en: "/culture/open-entry-races-2026",
-      "pt-BR": "/pt-br/culture/open-entry-races-2026",
-    },
   },
 };
 

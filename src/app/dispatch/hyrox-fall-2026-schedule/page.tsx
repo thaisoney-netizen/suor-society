@@ -6,12 +6,10 @@ export const metadata = {
   title: "HYROX Fall 2026 US Schedule, Suor Society",
   description:
     "HYROX's fall 2026 North America calendar lists 10 races from Labor Day through December, including Anaheim Dec 4 to 6 and first-time stops in Salt Lake City, Tampa, Denver, and Nashville.",
+  // No hreflang here: the pt-BR counterpart (/pt-br/dispatch/hyrox-brasil-2026)
+  // is a regional Brazil post, not a translation of this page.
   alternates: {
     canonical: "/dispatch/hyrox-fall-2026-schedule",
-    languages: {
-      en: "/dispatch/hyrox-fall-2026-schedule",
-      "pt-BR": "/pt-br/dispatch/hyrox-fall-2026-schedule",
-    },
   },
 };
 

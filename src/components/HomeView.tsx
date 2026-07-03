@@ -8,8 +8,7 @@ import { dictionaries, localizeHref, type Lang } from "@/i18n/dictionaries";
 
 // The home page, shared by the English route (/) and the Portuguese route
 // (/pt-br) so the layout never drifts between locales. All copy comes from the
-// dictionary; the brand headline and hero tagline are intentionally English on
-// every locale.
+// dictionary; the brand headline is intentionally English on every locale.
 export default function HomeView({ lang }: { lang: Lang }) {
   const t = dictionaries[lang].home;
   const [submitted, setSubmitted] = useState(false);
@@ -83,14 +82,16 @@ export default function HomeView({ lang }: { lang: Lang }) {
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-text">
           <div className="page">
-            {/* Brand headline + tagline stay in English on every locale. */}
+            {/* Brand headline stays in English on every locale; the tagline
+                and CTA are localized (the CTA points at each locale's own
+                regional race guide). */}
             <h1 className="hero-headline">
               For runners<br />for lifters<br />for hybrids<br />for the sweat
             </h1>
             <p className="hero-tag">
-              Race picks, gear, and culture for people who lift and run.
+              {t.heroTag}
             </p>
-            <a href={localizeHref("/culture/open-entry-races-2026", lang)} className="hero-cta">{t.heroCta}</a>
+            <a href={localizeHref(t.heroCtaHref, lang)} className="hero-cta">{t.heroCta}</a>
           </div>
         </div>
       </header>

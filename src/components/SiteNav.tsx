@@ -10,10 +10,17 @@ import {
   type Lang,
 } from "@/i18n/dictionaries";
 
-// Race Picks links straight to the single article while only one post exists.
-// When a second pick ships, switch this back to "/racepicks".
-const NAV_LINKS = [
-  { href: "/culture/open-entry-races-2026", label: "Race Picks" },
+// Race Picks links straight to the single guide while only one post exists
+// per locale. When a second pick ships, switch this back to "/racepicks".
+// The guide is a regional page (US races on /, Brazil races on /pt-br), not
+// a translation, so its path differs per locale.
+const RACE_PICKS_HREF: Record<Lang, string> = {
+  en: "/culture/open-entry-races-2026",
+  pt: "/culture/corridas-brasil-2026",
+};
+
+const navLinksFor = (lang: Lang) => [
+  { href: RACE_PICKS_HREF[lang], label: "Race Picks" },
   { href: "/about", label: "The Culture" },
   { href: "/crew", label: "Crew" },
   { href: "/dispatch", label: "Dispatch" },
@@ -39,6 +46,7 @@ export default function SiteNav({
 
   const navCopy = dictionaries[lang].nav;
   const homeHref = LOCALE_HREF[lang];
+  const navLinks = navLinksFor(lang);
 
   useEffect(() => {
     if (!open) return;
@@ -73,7 +81,7 @@ export default function SiteNav({
           <img src={WORDMARK} alt="Suor Society" className={lockupClass} />
         </a>
         <div className="nav-links">
-          {NAV_LINKS.map((link) => (
+          {navLinks.map((link) => (
             <a key={link.label} href={localizeHref(link.href, lang)} className="nav-link">
               {link.label}
             </a>
@@ -135,7 +143,7 @@ export default function SiteNav({
           </button>
         </div>
         <div className="page nav-menu-links">
-          {NAV_LINKS.map((link, i) => (
+          {navLinks.map((link, i) => (
             <a
               key={link.label}
               href={localizeHref(link.href, lang)}
