@@ -1,6 +1,7 @@
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { PostSubscribe } from "@/components/PostAside";
+import AuthorCard from "@/components/AuthorCard";
 
 export const metadata = {
   title: "Cidade do Cabo agora é uma Marathon Major, Suor Society",
@@ -68,7 +69,7 @@ export default function CapeTownMajorPtBr() {
               primeira em solo africano. O anúncio saiu em 10 de junho de 2026.
             </p>
             <div className="article-meta">
-              <span>Suor Society</span>
+              <span>Por <a href="/pt-br/author/thais-oney">Thais Oney</a></span>
               <span>San Diego, CA</span>
               <span>Junho 2026</span>
             </div>
@@ -140,6 +141,9 @@ export default function CapeTownMajorPtBr() {
             ))}
           </div>
         </section>
+
+        {/* ── AUTHOR ── */}
+        <AuthorCard lang="pt" />
 
           </div>{/* /.post-main */}
 

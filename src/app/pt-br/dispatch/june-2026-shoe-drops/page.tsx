@@ -1,6 +1,7 @@
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { PostSubscribe } from "@/components/PostAside";
+import AuthorCard from "@/components/AuthorCard";
 
 export const metadata = {
   title: "Lançamentos de tênis de junho de 2026, Suor Society",
@@ -68,7 +69,7 @@ export default function JuneShoeDropsPtBr() {
               saber, e a única tendência por trás de tudo isso.
             </p>
             <div className="article-meta">
-              <span>Suor Society</span>
+              <span>Por <a href="/pt-br/author/thais-oney">Thais Oney</a></span>
               <span>San Diego, CA</span>
               <span>Junho 2026</span>
             </div>
@@ -146,6 +147,9 @@ export default function JuneShoeDropsPtBr() {
             ))}
           </div>
         </section>
+
+        {/* ── AUTHOR ── */}
+        <AuthorCard lang="pt" />
 
           </div>{/* /.post-main */}
 

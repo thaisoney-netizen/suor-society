@@ -2,6 +2,7 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import DownloadGate from "@/components/DownloadGate";
 import { PostToc } from "@/components/PostAside";
+import AuthorCard from "@/components/AuthorCard";
 
 const TOC = [
   { id: "california", label: "20 California Races" },
@@ -559,7 +560,7 @@ export default function OpenEntryRaces2026() {
               From now through spring 2027. Every distance 5K to marathon, all USATF certified.
             </p>
             <div className="article-meta">
-              <span>Suor Society</span>
+              <span>By <a href="/author/thais-oney">Thais Oney</a></span>
               <span>San Diego, CA</span>
               <span>June 2026</span>
             </div>
@@ -646,6 +647,9 @@ export default function OpenEntryRaces2026() {
             <DownloadGate />
           </div>
         </section>
+
+        {/* ── AUTHOR ── */}
+        <AuthorCard />
 
           </div>{/* /.post-main */}
 

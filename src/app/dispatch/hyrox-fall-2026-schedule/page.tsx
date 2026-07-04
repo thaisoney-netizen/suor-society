@@ -1,6 +1,7 @@
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { PostSubscribe } from "@/components/PostAside";
+import AuthorCard from "@/components/AuthorCard";
 
 export const metadata = {
   title: "HYROX Fall 2026 US Schedule, Suor Society",
@@ -82,7 +83,7 @@ export default function HyroxFall2026() {
               cities get their first race ever, and Anaheim is the one to circle if you&rsquo;re near San Diego.
             </p>
             <div className="article-meta">
-              <span>Suor Society</span>
+              <span>By <a href="/author/thais-oney">Thais Oney</a></span>
               <span>San Diego, CA</span>
               <span>June 2026</span>
             </div>
@@ -149,6 +150,9 @@ export default function HyroxFall2026() {
             ))}
           </div>
         </section>
+
+        {/* ── AUTHOR ── */}
+        <AuthorCard />
 
           </div>{/* /.post-main */}
 
