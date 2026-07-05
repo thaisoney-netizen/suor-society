@@ -292,7 +292,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       eyebrow: "Suor Society / Author",
       name: "Thais Oney",
       role: "Founder & Editor",
-      photoAlt: "Thais Oney pressing a kettlebell overhead",
+      photoAlt: "Portrait of Thais Oney, founder of Suor Society",
       bioLabel: "Who writes this",
       bio: [
         "Thais Oney is the founder of Suor Society. Originally from Brazil and based in San Diego, she holds an MBA in Digital Marketing and Communications and has spent her career running multi-channel marketing campaigns across the hospitality, agency, and wellness industries.",
@@ -551,7 +551,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       eyebrow: "Suor Society / Autora",
       name: "Thais Oney",
       role: "Fundadora e editora",
-      photoAlt: "Thais Oney empurrando um kettlebell acima da cabeça",
+      photoAlt: "Retrato de Thais Oney, fundadora do Suor Society",
       bioLabel: "Quem escreve",
       bio: [
         "Thais Oney é a fundadora do Suor Society. Brasileira, morando em San Diego, tem MBA em Marketing Digital e Comunicação e construiu a carreira gerenciando campanhas de marketing multicanal nos setores de hotelaria, agências e bem-estar.",

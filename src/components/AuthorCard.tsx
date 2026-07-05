@@ -10,7 +10,7 @@ export default function AuthorCard({ lang = "en" }: { lang?: Lang }) {
         <div className="author-card">
           <a className="author-card-photo" href={href}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/founder-press.jpg" alt={t.photoAlt} />
+            <img src="/thais-oney.jpg" alt={t.photoAlt} />
           </a>
           <div className="author-card-body">
             <div className="author-card-label">{t.cardLabel}</div>

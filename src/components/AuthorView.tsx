@@ -25,7 +25,7 @@ export default function AuthorView({ lang }: { lang: Lang }) {
             <div className="author-pg-grid">
               <figure className="author-pg-photo">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/founder-press.jpg" alt={t.photoAlt} />
+                <img src="/thais-oney.jpg" alt={t.photoAlt} />
               </figure>
               <div className="author-pg-bio">
                 <p className="about-pg-label">{t.bioLabel}</p>

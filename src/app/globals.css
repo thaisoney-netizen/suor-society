@@ -1136,7 +1136,6 @@ a { color: inherit; text-decoration: none; }
 .author-card-photo img {
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: center 20%;
   display: block;
 }
 .author-card-label {
@@ -1197,7 +1196,7 @@ a { color: inherit; text-decoration: none; }
 .author-pg-photo img {
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center 20%;
   display: block;
 }
 
