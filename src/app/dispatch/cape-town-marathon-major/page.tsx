@@ -1,6 +1,7 @@
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { PostSubscribe } from "@/components/PostAside";
+import AuthorCard from "@/components/AuthorCard";
 
 export const metadata = {
   title: "Cape Town Is Now a Marathon Major, Suor Society",
@@ -67,7 +68,7 @@ export default function CapeTownMajor() {
               first one on African soil. The announcement landed June 10, 2026.
             </p>
             <div className="article-meta">
-              <span>Suor Society</span>
+              <span>By <a href="/author/thais-oney">Thais Oney</a></span>
               <span>San Diego, CA</span>
               <span>June 2026</span>
             </div>
@@ -138,6 +139,9 @@ export default function CapeTownMajor() {
             ))}
           </div>
         </section>
+
+        {/* ── AUTHOR ── */}
+        <AuthorCard />
 
           </div>{/* /.post-main */}
 

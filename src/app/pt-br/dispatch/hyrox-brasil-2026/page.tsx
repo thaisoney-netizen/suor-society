@@ -1,6 +1,7 @@
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { PostSubscribe } from "@/components/PostAside";
+import AuthorCard from "@/components/AuthorCard";
 
 // Regional pair of the US "HYROX Fall 2026 Schedule" post, NOT a translation:
 // this one covers HYROX in Brazil for the pt-BR audience. No hreflang between
@@ -84,7 +85,7 @@ export default function HyroxBrasil2026() {
               8 km de corrida em trechos de 1 km, intercalados com 8 estações de força.
             </p>
             <div className="article-meta">
-              <span>Suor Society</span>
+              <span>Por <a href="/pt-br/author/thais-oney">Thais Oney</a></span>
               <span>San Diego, CA</span>
               <span>Junho 2026</span>
             </div>
@@ -164,6 +165,9 @@ export default function HyroxBrasil2026() {
             ))}
           </div>
         </section>
+
+        {/* ── AUTHOR ── */}
+        <AuthorCard lang="pt" />
 
           </div>{/* /.post-main */}
 

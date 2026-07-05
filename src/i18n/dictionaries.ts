@@ -45,6 +45,10 @@ export function localizeHref(path: string, lang: Lang): string {
   return `${LOCALE_HREF.pt}${path}`;
 }
 
+// Canonical (unprefixed) path of the author bio page; run through
+// localizeHref to stay in the current language.
+export const AUTHOR_PATH = "/author/thais-oney";
+
 type BoardPost = {
   href: string;
   img: string;
@@ -96,6 +100,25 @@ type Dictionary = {
     mediaAlts: { press: string; pull: string };
     col2Label: string;
     col2: string[];
+  };
+  author: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    name: string;
+    role: string;
+    photoAlt: string;
+    bioLabel: string;
+    bio: string[];
+    articlesLabel: string;
+    // Regional pages differ per locale (see scope note above), so each locale
+    // lists its own articles. Hrefs are unprefixed; localizeHref adds /pt-br.
+    articles: { href: string; tag: string; date: string; title: string }[];
+    // Post byline ("By" / "Por") and the author card at the end of each post.
+    byLabel: string;
+    cardLabel: string;
+    cardBlurb: string;
+    cardCta: string;
   };
   crew: {
     metaTitle: string;
@@ -261,6 +284,52 @@ export const dictionaries: Record<Lang, Dictionary> = {
         "Most hybrid content online is made by people whose whole life is training. Two-a-days, full sponsorships, 20-hour weeks. It’s inspiring. It’s also completely disconnected from anyone building this around an actual life, kids, a business, whatever the rest of your day looks like.",
         "Suor Society is a hybrid culture page for people who run and lift around everything else already going on. Shoe drops, athlete spotlights, race coverage. Plus the context that’s almost always missing: the 1:10 half marathon took eight years. Your run counts the whole time you’re chasing it.",
       ],
+    },
+    author: {
+      metaTitle: "Thais Oney, Suor Society",
+      metaDescription:
+        "Thais Oney is the founder of Suor Society. Originally from Brazil and based in San Diego, she writes about hybrid running culture: races, gear, and training around a real life.",
+      eyebrow: "Suor Society / Author",
+      name: "Thais Oney",
+      role: "Founder & Editor",
+      photoAlt: "Portrait of Thais Oney, founder of Suor Society",
+      bioLabel: "Who writes this",
+      bio: [
+        "Thais Oney is the founder of Suor Society. Originally from Brazil and based in San Diego, she holds an MBA in Digital Marketing and Communications and has spent her career running multi-channel marketing campaigns across the hospitality, agency, and wellness industries.",
+        "Outside of work she lifts, cross-trains, and runs, and has completed a half marathon. She started Suor Society to cover hybrid running culture for people who train around everything else in their life: the races, the gear, the athletes, and the context that usually gets left out.",
+      ],
+      articlesLabel: "Articles by Thais",
+      articles: [
+        {
+          href: "/culture/open-entry-races-2026",
+          tag: "The Culture Archive",
+          date: "June 2026",
+          title: "40 Open Entry Races in California and the US You Can Still Run in 2026",
+        },
+        {
+          href: "/dispatch/hyrox-fall-2026-schedule",
+          tag: "HYROX",
+          date: "June 2026",
+          title: "HYROX Fall 2026: Anaheim Is Back and the Calendar Just Got Huge",
+        },
+        {
+          href: "/dispatch/june-2026-shoe-drops",
+          tag: "Gear",
+          date: "June 2026",
+          title: "June Shoe Drops: Saucony Goes Big, Puma Pulls the Plate",
+        },
+        {
+          href: "/dispatch/cape-town-marathon-major",
+          tag: "Races",
+          date: "June 2026",
+          title: "Cape Town Is Now a Marathon Major. Here's What Actually Changes",
+        },
+      ],
+      byLabel: "By",
+      cardLabel: "About the author",
+      cardBlurb:
+        "Thais Oney is the founder of Suor Society. Originally from Brazil and based in San Diego, she holds an MBA in Digital Marketing and Communications and writes about hybrid running culture for people who train around a real life.",
+      cardCta: "Read full bio →",
     },
     crew: {
       metaTitle: "Crew, Suor Society",
@@ -474,6 +543,52 @@ export const dictionaries: Record<Lang, Dictionary> = {
         "A maior parte do conteúdo híbrido na internet é feita por gente cuja vida inteira é treino. Dois treinos por dia, patrocínio cheio, 20 horas por semana. É inspirador. E também totalmente desconectado de quem constrói isso em cima de uma vida de verdade, filhos, um negócio, o que for que o resto do seu dia tiver.",
         "O Suor Society é uma página de cultura híbrida para quem corre e levanta peso no meio de tudo mais que já está rolando. Lançamentos de tênis, perfis de atletas, cobertura de provas. Mais o contexto que quase sempre falta: aquela meia maratona de 1h10 levou oito anos. A sua corrida vale o tempo inteiro em que você corre atrás dela.",
       ],
+    },
+    author: {
+      metaTitle: "Thais Oney, Suor Society",
+      metaDescription:
+        "Thais Oney é a fundadora do Suor Society. Brasileira, morando em San Diego, escreve sobre cultura de corrida híbrida: provas, equipamentos e treino no meio da vida real.",
+      eyebrow: "Suor Society / Autora",
+      name: "Thais Oney",
+      role: "Fundadora e editora",
+      photoAlt: "Retrato de Thais Oney, fundadora do Suor Society",
+      bioLabel: "Quem escreve",
+      bio: [
+        "Thais Oney é a fundadora do Suor Society. Brasileira, morando em San Diego, tem MBA em Marketing Digital e Comunicação e construiu a carreira gerenciando campanhas de marketing multicanal nos setores de hotelaria, agências e bem-estar.",
+        "Fora do trabalho, ela levanta peso, faz cross-training e corre, e já completou uma meia maratona. Criou o Suor Society para cobrir a cultura de corrida híbrida para quem treina no meio de tudo o mais que acontece na vida: as provas, os equipamentos, os atletas e o contexto que quase sempre fica de fora.",
+      ],
+      articlesLabel: "Textos da Thais",
+      articles: [
+        {
+          href: "/culture/corridas-brasil-2026",
+          tag: "The Culture Archive",
+          date: "Junho 2026",
+          title: "As corridas de rua que valem a inscrição no Brasil em 2026",
+        },
+        {
+          href: "/dispatch/hyrox-brasil-2026",
+          tag: "HYROX",
+          date: "Junho 2026",
+          title: "HYROX no Brasil 2026: São Paulo volta maior em 17 de outubro",
+        },
+        {
+          href: "/dispatch/june-2026-shoe-drops",
+          tag: "Equipamentos",
+          date: "Junho 2026",
+          title: "Lançamentos de tênis de junho: Saucony aposta alto e a Puma tira a placa",
+        },
+        {
+          href: "/dispatch/cape-town-marathon-major",
+          tag: "Corridas",
+          date: "Junho 2026",
+          title: "Cidade do Cabo agora é uma Marathon Major. O que muda de verdade",
+        },
+      ],
+      byLabel: "Por",
+      cardLabel: "Sobre a autora",
+      cardBlurb:
+        "Thais Oney é a fundadora do Suor Society. Brasileira, morando em San Diego, tem MBA em Marketing Digital e Comunicação e escreve sobre cultura de corrida híbrida para quem treina no meio da vida real.",
+      cardCta: "Bio completa →",
     },
     crew: {
       metaTitle: "Crew, Suor Society",

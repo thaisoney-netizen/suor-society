@@ -2,6 +2,7 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import DownloadGate from "@/components/DownloadGate";
 import { PostToc } from "@/components/PostAside";
+import AuthorCard from "@/components/AuthorCard";
 
 // Regional pair of the US "Open Entry Races 2026" post, NOT a translation:
 // this page covers Brazilian races for the pt-BR audience. No hreflang between
@@ -279,7 +280,7 @@ export default function CorridasBrasil2026() {
               com a nossa leitura de cada uma.
             </p>
             <div className="article-meta">
-              <span>Suor Society</span>
+              <span>Por <a href="/pt-br/author/thais-oney">Thais Oney</a></span>
               <span>San Diego, CA</span>
               <span>Junho 2026</span>
             </div>
@@ -391,6 +392,9 @@ export default function CorridasBrasil2026() {
             <DownloadGate lang="pt" />
           </div>
         </section>
+
+        {/* ── AUTHOR ── */}
+        <AuthorCard lang="pt" />
 
           </div>{/* /.post-main */}
 
