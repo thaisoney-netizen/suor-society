@@ -216,12 +216,20 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardTitle: "The board",
       boardPosts: [
         {
+          href: "/culture/join-a-run-club-not-a-runner",
+          img: "/run-club-hero.jpg",
+          eyebrow: "The Culture Archive",
+          title: "Not Really a Runner?",
+          desc: "You can still join a run club. What no-drop and all paces welcome actually mean at your first group run.",
+          meta: "New · July 2026 ↗",
+        },
+        {
           href: "/culture/open-entry-races-2026",
           img: "/race-hero.jpg",
           eyebrow: "The Culture Archive",
           title: "Race Picks",
           desc: "Best open entry races in California and the US. All certified. No qualifier needed.",
-          meta: "New · June 2026 ↗",
+          meta: "Races · June 2026 ↗",
         },
         {
           href: "/dispatch/hyrox-fall-2026-schedule",
@@ -300,6 +308,12 @@ export const dictionaries: Record<Lang, Dictionary> = {
       ],
       articlesLabel: "Articles by Thais",
       articles: [
+        {
+          href: "/culture/join-a-run-club-not-a-runner",
+          tag: "The Culture Archive",
+          date: "July 2026",
+          title: "Can You Join a Run Club If You're Not Really a Runner?",
+        },
         {
           href: "/culture/open-entry-races-2026",
           tag: "The Culture Archive",
