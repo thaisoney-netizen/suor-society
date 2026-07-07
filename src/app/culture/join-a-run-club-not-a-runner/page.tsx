@@ -7,7 +7,7 @@ import AuthorCard from "@/components/AuthorCard";
 export const metadata = {
   title: "Can You Join a Run Club If You're Not Really a Runner?, Suor Society",
   description:
-    "Yes. Most run clubs are free, no-drop, and full of people who had the same worry. What all paces welcome actually means, what you need, and what's coming to San Diego.",
+    "Yes. Most run clubs are free, no-drop, and full of people who had the same worry. What all paces welcome actually means, and what you need to show up.",
   alternates: {
     canonical: "/culture/join-a-run-club-not-a-runner",
   },
@@ -39,8 +39,7 @@ const FAQS: { q: string; a: ReactNode }[] = [
         <a href="https://www.rrca.org/clubs/" target="_blank" rel="noopener noreferrer">
           RRCA club directory
         </a>{" "}
-        lists registered clubs too. And SUOR SOCIETY is bringing crew runs to San Diego
-        soon, The Dispatch gets it first.
+        lists registered clubs too.
       </>
     ),
   },
@@ -176,14 +175,9 @@ export default function JoinARunClub() {
               ))}
             </div>
 
-            <h2>San Diego, this is where we&rsquo;re headed</h2>
+            <h2>When a group run turns into a start line</h2>
             <p>
-              SUOR SOCIETY is coming to San Diego. Crew runs are on the way, free, every pace
-              including run-walk. When it&rsquo;s time, <a href="/dispatch">The Dispatch</a> gets
-              it first
-            </p>
-            <p>
-              And when a few group runs turn into wanting a start line of your own, our{" "}
+              When a few group runs turn into wanting a start line of your own, our{" "}
               <a href="/culture/open-entry-races-2026">open entry race picks</a> list races you
               can register for today, no qualifier, no lottery.
             </p>
