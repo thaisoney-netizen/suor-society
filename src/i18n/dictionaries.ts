@@ -500,12 +500,20 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardTitle: "O mural",
       boardPosts: [
         {
+          href: "/culture/join-a-run-club-not-a-runner",
+          img: "/run-club-hero.jpg",
+          eyebrow: "The Culture · Arquivo",
+          title: "Não se acha corredor?",
+          desc: "Dá pra entrar num clube de corrida do mesmo jeito. O que no-drop e todos os paces são bem-vindos significam de verdade no seu primeiro treino em grupo.",
+          meta: "Novo · Julho 2026 ↗",
+        },
+        {
           href: "/culture/corridas-brasil-2026",
           img: "/sao-silvestre-hero.webp",
           eyebrow: "The Culture · Arquivo",
           title: "Race Picks",
           desc: "As corridas de rua que valem a inscrição no Brasil em 2026. São Silvestre, maratonas de SP e Rio e mais.",
-          meta: "Novo · Junho 2026 ↗",
+          meta: "Corridas · Junho 2026 ↗",
         },
         {
           href: "/dispatch/hyrox-brasil-2026",
@@ -587,6 +595,12 @@ export const dictionaries: Record<Lang, Dictionary> = {
       ],
       articlesLabel: "Textos da Thais",
       articles: [
+        {
+          href: "/culture/join-a-run-club-not-a-runner",
+          tag: "The Culture Archive",
+          date: "Julho 2026",
+          title: "Dá pra entrar num clube de corrida sem se achar corredor?",
+        },
         {
           href: "/culture/corridas-brasil-2026",
           tag: "The Culture Archive",
