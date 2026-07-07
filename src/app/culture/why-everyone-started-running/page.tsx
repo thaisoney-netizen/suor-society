@@ -258,8 +258,7 @@ export default function WhyEveryoneStartedRunning() {
                   <a href="/culture/join-a-run-club-not-a-runner">no-drop run club</a> where every
                   pace is welcome, and when you want a start line of your own, our{" "}
                   <a href="/culture/open-entry-races-2026">open entry race picks</a> list races you
-                  can register for today, no qualifier, no lottery. <a href="/dispatch">The
-                  Dispatch</a> has the date of the first SUOR SOCIETY crew run in San Diego.
+                  can register for today, no qualifier, no lottery.
                 </p>
               </div>
             </section>

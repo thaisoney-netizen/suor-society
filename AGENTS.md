@@ -21,6 +21,18 @@ The weekly content-freshness sweep also audits this, but keep it correct at
 publish time — don't rely on the sweep.
 <!-- END:author-page-upkeep -->
 
+<!-- BEGIN:run-club-hold -->
+# Suor Society run club / crew runs — do NOT mention
+
+The Suor Society run club / crew runs (Saturday crew runs in San Diego, "the
+first SUOR SOCIETY crew run", "SUOR SOCIETY is coming to San Diego", etc.) are
+on hold with no launch date. Do NOT add any mention, teaser, or call-to-action
+about the club, crew runs, or a San Diego launch to posts — including new posts,
+FAQs, closing paragraphs, and The Dispatch teasers. Leave existing `/dispatch`
+content alone unless asked. This hold stays until Thais explicitly lifts it; if
+a request seems to want a club mention, confirm first.
+<!-- END:run-club-hold -->
+
 <!-- BEGIN:branch-hygiene -->
 # Branch hygiene
 
