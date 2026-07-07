@@ -40,7 +40,7 @@ const FAQS: { q: string; a: ReactNode }[] = [
           RRCA club directory
         </a>{" "}
         lists registered clubs too. And SUOR SOCIETY is bringing crew runs to San Diego
-        soon. No date yet, but The Dispatch gets it first.
+        soon, The Dispatch gets it first.
       </>
     ),
   },
@@ -179,8 +179,8 @@ export default function JoinARunClub() {
             <h2>San Diego, this is where we&rsquo;re headed</h2>
             <p>
               SUOR SOCIETY is coming to San Diego. Crew runs are on the way, free, every pace
-              including run-walk. I don&rsquo;t have a date yet and I&rsquo;m not going to fake one,
-              but when it&rsquo;s real <a href="/dispatch">The Dispatch</a> gets it first
+              including run-walk. When it&rsquo;s time, <a href="/dispatch">The Dispatch</a> gets
+              it first
             </p>
             <p>
               And when a few group runs turn into wanting a start line of your own, our{" "}
