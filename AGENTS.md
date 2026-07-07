@@ -17,9 +17,19 @@ Every post is bylined "By/Por Thais Oney" linking to the author bio page
    locale(s) it belongs to, newest work at the top. Regional pages (US vs
    Brazil versions) go only in their own locale's list.
 
-A scheduled reconciler also audits this weekly, but keep it correct at
-publish time — don't rely on the reconciler.
+The weekly content-freshness sweep also audits this, but keep it correct at
+publish time — don't rely on the sweep.
 <!-- END:author-page-upkeep -->
+
+<!-- BEGIN:branch-hygiene -->
+# Branch hygiene
+
+The branch `claude/linkedin-marketing-jobs-6tWHJ` is LOAD-BEARING: the
+LinkedIn jobs workflow checks it out and commits state back to it on a
+schedule. Never delete it when pruning merged `claude/*` branches, and note
+that editing `scripts/jobs/search.mjs` on main does nothing — the live copy
+is on that branch.
+<!-- END:branch-hygiene -->
 
 <!-- BEGIN:suor-pm-protocol -->
 # Task board protocol
