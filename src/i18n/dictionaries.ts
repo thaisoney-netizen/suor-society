@@ -216,12 +216,20 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardTitle: "The board",
       boardPosts: [
         {
+          href: "/culture/why-everyone-started-running",
+          img: "/crew-run.jpg",
+          eyebrow: "The Culture Archive",
+          title: "Why Everyone Started Running",
+          desc: "Race numbers passed 2019, run clubs jumped 59%, London took 1.1M applications. The stats behind the boom and what changed after 2024.",
+          meta: "New · July 2026 ↗",
+        },
+        {
           href: "/culture/join-a-run-club-not-a-runner",
           img: "/run-club-hero.jpg",
           eyebrow: "The Culture Archive",
           title: "Not Really a Runner?",
           desc: "You can still join a run club. What no-drop and all paces welcome actually mean at your first group run.",
-          meta: "New · July 2026 ↗",
+          meta: "July 2026 ↗",
         },
         {
           href: "/culture/open-entry-races-2026",
@@ -308,6 +316,12 @@ export const dictionaries: Record<Lang, Dictionary> = {
       ],
       articlesLabel: "Articles by Thais",
       articles: [
+        {
+          href: "/culture/why-everyone-started-running",
+          tag: "The Culture Archive",
+          date: "July 2026",
+          title: "Why Did Everyone Start Running? The Running Boom, Explained",
+        },
         {
           href: "/culture/join-a-run-club-not-a-runner",
           tag: "The Culture Archive",
