@@ -1,61 +1,43 @@
-// Generates the Suor Society 2026 Race Guide PDF.
-// Run with: node scripts/generate-race-guide-pdf.js
-// Outputs: public/2026-race-guide.pdf
+// Generates the Suor Society race guide PDFs (English + pt-BR) from the same
+// JSON data the site pages render, so the page and the downloadable guide can
+// never drift apart.
 //
-// To update content: edit CA_RACES / US_RACES below to mirror src/app/culture/page.tsx.
+//   Data:    src/content/races-en.json  →  public/2026-race-guide.pdf
+//            src/content/races-br.json  →  public/guia-corridas-brasil-2026.pdf
+//   Run:     node scripts/generate-race-guide-pdf.js
+//
+// Edit the JSON (or the copy blocks below), re-run, commit both PDFs.
 
 const { chromium } = require("playwright");
 const fs = require("fs");
 const path = require("path");
 
-// ─── DATA — keep in sync with src/app/culture/open-entry-races-2026/page.tsx ───
-const CA_RACES = [
-  { num: "01", name: "Beer City Half, Alameda", where: "Alameda, CA · July 11, 2026", body: "Flat, fast, USATF certified Bay Area waterfront course. Good summer tune-up option. Craft beer at the finish.", dists: "5K · 10K · Half Marathon", price: "From $27.50", status: "open", statusLabel: "Open Registration", url: "https://www.alamedapint.com/" },
-  { num: "02", name: "The San Francisco Marathon", where: "San Francisco, CA · July 25-26, 2026", body: "Golden Gate Park, across the bridge, through the city. Half marathon and shorter distances open. Full marathon sold out.", dists: "5K · Half Marathon · Full Marathon", price: "From $165", status: "open", statusLabel: "Open Registration", url: "https://www.thesfmarathon.com/" },
-  { num: "03", name: "Napa to Sonoma Wine Country Half", where: "Napa, CA · July 25-26, 2026", body: "Point-to-point through active vineyards. Half marathon sold out. Rosé 5K still open. Code N2SRG26 for $10 off.", dists: "Rosé 5K · Half Marathon", price: "From $208", status: "limit", statusLabel: "5K Open · Half Sold Out", url: "https://www.runnapatosonoma.com/" },
-  { num: "04", name: "Santa Rosa Marathon", where: "Sonoma County, CA · Aug 22-23, 2026", body: "Wine country roads, mostly flat, multi-distance weekend. Half marathon still open. Full sold out.", dists: "5K · 10K · Half · Full Marathon", price: "From $114", status: "limit", statusLabel: "Half Open · Full Sold Out", url: "https://santarosamarathon.com/" },
-  { num: "05", name: "Californian Dreamin' Half Marathon", where: "Long Beach, CA · Aug 23, 2026", body: "Coastal SoCal course from Venice to Long Beach. Three distances starting under $60. Beach finish in August.", dists: "5K · 10K · Half Marathon", price: "From $49.75", status: "open", statusLabel: "Open Registration", url: "https://runsignup.com/Race/CA/LongBeach/CalifornianDreaminKKHalfMarathon" },
-  { num: "06", name: "Beer City Half, Bishop Ranch", where: "San Ramon, CA · Sep 12, 2026", body: "East Bay edition. Multi-distance format with a 1-mile option. USATF certified. Good fall training tune-up.", dists: "1 Mile · 5K · 10K · Half", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://runsignup.com/Race/CA/SanRamon/BeerCityBishopRanch" },
-  { num: "07", name: "2XU Long Beach Marathon", where: "Long Beach, CA · Oct 10-11, 2026", body: "One of SoCal's most consistent fall race weekends. City streets and coastline. October weather is as good as it gets.", dists: "5K · Half · Full Marathon", price: "From $139", status: "open", statusLabel: "Open Registration", url: "https://www.runlongbeach.com/" },
-  { num: "08", name: "Two Cities Marathon", where: "Fresno/Clovis, CA · Nov 1, 2026", body: "Central Valley fall classic. Multi-distance, USATF certified, point-to-point. Smaller field, less hype.", dists: "5K · 10K · Half · Full Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.run2cm.com/" },
-  { num: "09", name: "Silverado Half Marathon & 10K", where: "Silverado, CA · Nov 7, 2026", body: "Orange County wine country, canyon roads, fall race day. Less crowded than the big city events.", dists: "10K · Half · Full Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.runguides.com/california/runs/half-marathon/all" },
-  { num: "10", name: "Santa Barbara Half Marathon & 5K", where: "Santa Barbara, CA · Nov 8, 2026", body: "Presented by HOKA. 13.1 along the coast plus a 5K and kids fun run. Sold out four weeks early in 2025.", dists: "5K · Half Marathon", price: "Check site", status: "open", statusLabel: "Open · Selling Fast", url: "https://santabarbarahalf.com/" },
-  { num: "11", name: "Monterey Bay Half Marathon", where: "Monterey, CA · Nov 8, 2026", body: "Sold out in eight days. One of the most beautiful half courses in California. Charity spots are the path in.", dists: "Half Marathon", price: "Charity: $350+", status: "sold", statusLabel: "General Sold Out · Charity Spots", url: "https://www.montereybayhalfmarathon.org/" },
-  { num: "12", name: "Berkeley Half Marathon", where: "Berkeley, CA · Nov 15, 2026", body: "USATF certified East Bay course winding through Berkeley campus, downtown, and the marina.", dists: "Half Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://berkeleyhalfmarathon.com/" },
-  { num: "13", name: "California International Marathon", where: "Sacramento, CA · Dec 6, 2026", body: "Net downhill, point-to-point, USATF and World Athletics certified. One of the fastest marathon courses in the US.", dists: "Full Marathon", price: "$230 (Gold)", status: "sold", statusLabel: "Sold Out · Check Charity Options", url: "https://runsra.org/california-international-marathon/" },
-  { num: "14", name: "San Diego Holiday Half & 5K", where: "San Diego, CA · Dec 19, 2026", body: "13.1 with a 711-foot net elevation drop along a rolling downhill bike path. End the year with a PR attempt.", dists: "5K · Half Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.sandiegoholidayhalf.com/" },
-  { num: "15", name: "Carlsbad Marathon, Half & 5K", where: "Carlsbad, CA · Jan 17-18, 2027", body: "Coastal SoCal race down Carlsbad Boulevard with Pacific views for most of the course.", dists: "5K · Half · Full Marathon", price: "Early bird pricing", status: "open", statusLabel: "Open Registration", url: "https://inmotionevents.com/event/carlsbad-marathon/" },
-  { num: "16", name: "Surf City Marathon & Half", where: "Huntington Beach, CA · Feb 2027", body: "Pacific Coast Highway through Huntington Beach on Super Bowl Sunday. Surfboard finisher medal.", dists: "5K · Half · Full Marathon", price: "Check site", status: "open", statusLabel: "2027 Registration", url: "https://www.runsurfcity.com/" },
-  { num: "17", name: "Los Angeles Marathon", where: "Los Angeles, CA · March 2027", body: "Stadium to the Sea. Dodger Stadium to Santa Monica. One of the most iconic point-to-point courses in the country.", dists: "Full Marathon", price: "Check site", status: "open", statusLabel: "2027 Registration", url: "https://www.lamarathon.com/" },
-  { num: "18", name: "Mountains 2 Beach Marathon & Half", where: "Ojai to Ventura, CA · April 2027", body: "Net downhill from Ojai to the Ventura coast. One of the fastest BQ courses in California.", dists: "Half · Full Marathon", price: "Check site", status: "open", statusLabel: "2027 Registration", url: "https://www.mountains2beachmarathon.com/" },
-  { num: "19", name: "Hoag OC Marathon Running Festival", where: "Costa Mesa, CA · May 2027", body: "Annual SoCal weekend with marathon, half, 5K, and combo challenges. Open entry, multi-distance.", dists: "5K · Half · Full Marathon", price: "Check site", status: "open", statusLabel: "2027 Registration", url: "https://ocmarathon.com/" },
-  { num: "20", name: "Rock 'n' Roll San Diego", where: "San Diego, CA · May 2027", body: "Balboa Park start, finish in Little Italy, live music every mile. Annual SoCal classic.", dists: "5K · Half · Full Marathon", price: "Check site", status: "open", statusLabel: "2027 Registration", url: "https://www.runrocknroll.com/events/san-diego" },
-];
+const racesEn = require("../src/content/races-en.json");
+const racesBr = require("../src/content/races-br.json");
 
-const US_RACES = [
-  { num: "01", name: "Stars & Stripes Half Marathon", where: "Hoffman Estates, IL · Jun 27, 2026", body: "USATF certified, open entry. Summer race in the Chicago suburbs celebrating America's 250th.", dists: "5K · 10K · Half Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://allcommunityevents.com/starsandstripesrun" },
-  { num: "02", name: "Peachtree Road Race", where: "Atlanta, GA · July 4, 2026", body: "The largest 10K in the world. 60,000 runners. USATF certified. A 10K in Atlanta on the Fourth is a specific kind of experience.", dists: "10K", price: "$60 to $80", status: "open", statusLabel: "Late Registration Open", url: "https://www.atlantatrackclub.org/" },
-  { num: "03", name: "Tunnel Light Marathon", where: "Snoqualmie Pass, WA · Sep 17, 2026", body: "Net downhill point-to-point through the old Iron Horse rail tunnel. Cult favorite for PR attempts.", dists: "Half · Full Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.tunnelmarathon.com/" },
-  { num: "04", name: "Life Time Chicago Half Marathon & 5K", where: "Chicago, IL · Sep 27, 2026", body: "Big-city feel without the lottery. Welcoming crowds, energetic course support. USATF certified.", dists: "5K · Half Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.chicagohalf.com/" },
-  { num: "05", name: "Twin Cities Marathon", where: "Minneapolis-St. Paul, MN · Oct 4, 2026", body: "Consistently called the Most Beautiful Urban Marathon. Lakes, parks, fall foliage. Open entry, no qualifier.", dists: "10K · Half · Full Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.tcmevents.org/" },
-  { num: "06", name: "Hartford Marathon & Half", where: "Hartford, CT · Oct 10, 2026", body: "Flat, fast, USATF certified. A popular Boston qualifier course. Rarely sells out early.", dists: "Half · Full Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://hartfordmarathon.com/" },
-  { num: "07", name: "Steamtown Marathon", where: "Scranton, PA · Oct 11, 2026", body: "Point-to-point, significant net downhill, USATF certified. Serious runners target this course for PRs.", dists: "Full Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://steamtownmarathon.com/" },
-  { num: "08", name: "Baltimore Running Festival", where: "Baltimore, MD · Oct 17, 2026", body: "26th annual event with a scenic harbor course. USATF certified, open entry, multi-distance.", dists: "5K · Half · Full Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.thebaltimoremarathon.com/" },
-  { num: "09", name: "Rocket Mortgage Detroit Free Press", where: "Detroit, MI · Oct 18, 2026", body: "International Half crosses the Ambassador Bridge into Windsor. Marathon and Motor City Half are sold out.", dists: "5K · International Half · 1 Mile", price: "Check site", status: "limit", statusLabel: "Intl Half Open · Marathon Sold Out", url: "https://www.freepmarathon.com/" },
-  { num: "10", name: "Marine Corps Marathon", where: "Arlington / D.C. · Oct 25, 2026", body: "No prize money, no elite wave. Goes past the Lincoln Memorial and through D.C. landmarks. Charity through Jul 31.", dists: "10K · Full Marathon", price: "$240 (Military $225)", status: "limit", statusLabel: "Charity Spots Open", url: "https://www.marinemarathon.com/event/marine-corps-marathon/" },
-  { num: "11", name: "CNO Indianapolis Monumental", where: "Indianapolis, IN · Nov 7, 2026", body: "Flat, fast, USATF certified. Open registration, no lottery, no qualifier. One of the most runner-friendly setups.", dists: "5K · Half · Full Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://monumentalmarathon.com/" },
-  { num: "12", name: "Savannah Southern Half & 5K", where: "Savannah, GA · Nov 14, 2026", body: "Through historic squares and oak-lined streets. Finish through Savannah Bananas' Grayson Stadium.", dists: "5K · Half Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.southernhalf.com/" },
-  { num: "13", name: "Allianz Richmond Marathon", where: "Richmond, VA · Nov 14, 2026", body: "America's Friendliest Marathon. USATF sanctioned and certified. A top Boston qualifier course.", dists: "8K · Half · Full Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.richmondmarathon.org/" },
-  { num: "14", name: "Philadelphia Marathon Weekend", where: "Philadelphia, PA · Nov 20-22, 2026", body: "Full marathon sold out. Half marathon and 8K still open. Certified course through historic Philly.", dists: "8K · Half Marathon", price: "Check site", status: "limit", statusLabel: "Half & 8K Open · Full Sold Out", url: "https://www.philadelphiamarathon.com/" },
-  { num: "15", name: "BMW Dallas Marathon Festival", where: "Dallas, TX · Dec 11-13, 2026", body: "55th year. Pricing climbs as race day gets closer, so registering early pays off. Multi-distance downtown Dallas weekend.", dists: "5K · 10K · Half · Full Marathon", price: "Tiered pricing", status: "open", statusLabel: "Open Registration", url: "https://dallasmarathon.com/" },
-  { num: "16", name: "JAL Honolulu Marathon", where: "Honolulu, HI · Dec 13, 2026", body: "No qualifier, no cutoff, ages 7+. Ala Moana through Waikiki, around Diamond Head. Bucket-list December marathon.", dists: "Merrie Mile · 10K · Full Marathon", price: "Check site", status: "open", statusLabel: "Open Registration", url: "https://www.honolulumarathon.org/" },
-  { num: "17", name: "Chevron Houston Marathon Weekend", where: "Houston, TX · Jan 15-17, 2027", body: "Aramco Houston Half on Sunday Jan 17. Flat, fast, USATF certified. Registration Nov 1, 2026 to early January.", dists: "5K · Half · Full Marathon", price: "Check site", status: "open", statusLabel: "2027 Registration", url: "https://www.chevronhoustonmarathon.com/" },
-  { num: "18", name: "Cherry Blossom Ten Mile", where: "Washington D.C. · April 2027", body: "Tidal Basin, cherry trees in peak bloom, ten flat miles. Lottery plus charity bibs. USATF certified.", dists: "5K · 10 Mile", price: "Check site", status: "limit", statusLabel: "Lottery + Charity Entries", url: "https://www.cherryblossom.org/" },
-  { num: "19", name: "Crescent City Classic 10K", where: "New Orleans, LA · April 2027", body: "One of the oldest 10Ks in the country. Downtown New Orleans, the French Quarter, Esplanade Ave.", dists: "10K", price: "$55 to $80", status: "open", statusLabel: "2027 Registration Open", url: "https://ccc10k.com/" },
-  { num: "20", name: "NYCRUNS Brooklyn Spring Half", where: "Brooklyn, NY · April 25, 2027", body: "Prospect Park loop course. Clean operation: easy bib pickup, USATF certified, no lottery.", dists: "5K · Half Marathon", price: "Check site", status: "open", statusLabel: "2027 Registration", url: "https://brooklynexperience.com/" },
-];
+const UPDATED_EN = new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" });
+const UPDATED_PT = new Date().toLocaleDateString("pt-BR", { month: "long", year: "numeric" });
 
-// ─── HTML ─────────────────────────────────────────────────────────────────────
+// Fonts are vendored in scripts/fonts (latin subsets) and embedded as data
+// URIs so the render needs no network access and looks the same everywhere.
+const FONT_FACES = [
+  ["Bebas Neue", 400, "bebas-neue-400.woff2"],
+  ["Barlow Condensed", 600, "barlow-condensed-600.woff2"],
+  ["Barlow Condensed", 700, "barlow-condensed-700.woff2"],
+  ["Inter", 400, "inter-400.woff2"],
+  ["Inter", 500, "inter-500.woff2"],
+  ["Inter", 600, "inter-600.woff2"],
+  ["Inter", 700, "inter-700.woff2"],
+  ["JetBrains Mono", 400, "jetbrains-mono-400.woff2"],
+  ["JetBrains Mono", 600, "jetbrains-mono-600.woff2"],
+]
+  .map(([family, weight, file]) => {
+    const data = fs.readFileSync(path.join(__dirname, "fonts", file)).toString("base64");
+    return `@font-face { font-family: '${family}'; font-style: normal; font-weight: ${weight}; src: url(data:font/woff2;base64,${data}) format('woff2'); }`;
+  })
+  .join("\n");
+
+// ─── SHARED RENDERING ─────────────────────────────────────────────────────────
 function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
@@ -78,22 +60,27 @@ function raceRow(r) {
         <div class="race-status"><span class="dot" style="background:${statusDot(r.status)}"></span>${escapeHtml(r.statusLabel)}</div>
       </div>
       <div class="race-meta">
-        <div class="race-price">${escapeHtml(r.price)}</div>
+        ${r.price ? `<div class="race-price">${escapeHtml(r.price)}</div>` : ""}
         <div class="race-link">${escapeHtml(r.url.replace(/^https?:\/\//, "").replace(/\/$/, ""))}</div>
       </div>
     </div>`;
 }
 
-function html() {
-  return `<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Suor Society 2026 Race Guide</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<style>
+function section(num, title, sub, races) {
+  return `
+<section>
+  <div class="section-head">
+    <div class="section-num">${num}</div>
+    <h2 class="section-title">${title}</h2>
+    <div class="section-sub">${sub}</div>
+  </div>
+  <div class="race-list">
+    ${races.map(raceRow).join("\n")}
+  </div>
+</section>`;
+}
+
+const STYLE = `
   :root {
     --paper: #FFFFFF;
     --ink: #0A0A0A;
@@ -194,68 +181,65 @@ function html() {
   .footer-line { font-family: 'Bebas Neue', sans-serif; font-size: 32pt; line-height: 1; }
   .footer-meta { font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; text-align: right; line-height: 1.7; }
   .footer-meta a { color: var(--ink); text-decoration: none; }
-</style>
+`;
+
+function shell(lang, title, body) {
+  return `<!doctype html>
+<html lang="${lang}">
+<head>
+<meta charset="utf-8">
+<title>${escapeHtml(title)}</title>
+<style>${FONT_FACES}</style>
+<style>${STYLE}</style>
 </head>
 <body>
+${body}
+</body>
+</html>`;
+}
 
+// ─── ENGLISH GUIDE ────────────────────────────────────────────────────────────
+function htmlEn() {
+  const total = racesEn.ca.length + racesEn.us.length;
+  return shell("en", "Suor Society 2026 Race Guide", `
 <!-- COVER -->
 <section class="cover">
   <div class="cover-top">
     <div class="wm">SUOR<span class="pipe">|</span>SOCIETY</div>
-    <div class="cover-meta">The Culture Archive · June 2026</div>
+    <div class="cover-meta">The Culture Archive · ${UPDATED_EN}</div>
   </div>
   <div class="cover-mid">
     <div class="cover-eye">2026 Race Guide</div>
-    <h1 class="cover-title">40 Open<br/>Entry Races,<br/><em>No Qualifier</em></h1>
+    <h1 class="cover-title">${total} Open<br/>Entry Races,<br/><em>No Qualifier</em></h1>
     <p class="cover-deck">
-      20 in California, 20 across the US, all USATF certified. From summer 2026 through spring 2027, a window for whatever you're building toward. For the runner who lifts and the lifter who runs.
+      ${racesEn.ca.length} in California, ${racesEn.us.length} across the US, all USATF certified. From summer 2026 through spring 2027, a window for whatever you're building toward. For the runner who lifts and the lifter who runs.
     </p>
   </div>
   <div class="cover-bottom">
     <div class="cover-credits">
       <span>Suor Society</span><span>SAN DIEGO, CA</span><span>SUORSOCIETY.COM</span>
     </div>
-    <div class="cover-count">40 / 40</div>
+    <div class="cover-count">${total} / ${total}</div>
   </div>
 </section>
 
 <!-- INTRO -->
 <section class="intro">
   <h2>The rules<br/>of this list</h2>
-  <p>It's race season. If you've been waiting for the right moment to sign up for something, this is it. 40 open entry road races: 20 in California, 20 across the US. All USATF certified. All open to everyone, no matter how fast or slow you run.</p>
+  <p>It's race season. If you've been waiting for the right moment to sign up for something, this is it. ${total} open entry road races: ${racesEn.ca.length} in California, ${racesEn.us.length} across the US. All USATF certified. All open to everyone, no matter how fast or slow you run.</p>
   <p>The rule for everything in this guide: <strong>no qualifying time, no lottery.</strong> You register, you train, you show up. Races run from now through spring 2027, so there's a window for whatever you're building toward.</p>
   <p>Prices go up as race day gets closer. A handful of these are sold out of standard entries but still have charity or benefactor spots. We've flagged the status on every one. Click through and verify before you register. Race capacity and pricing move fast.</p>
   <div class="rules">
     <div class="rule-item"><div class="rule-num">01</div><div class="rule-text"><strong>Open entry:</strong> no qualifying time required. Pay the fee and you're in.</div></div>
     <div class="rule-item"><div class="rule-num">02</div><div class="rule-text"><strong>USATF certified:</strong> course distance is officially measured. PRs count.</div></div>
-    <div class="rule-item"><div class="rule-num">03</div><div class="rule-text"><strong>Status flagged:</strong> Open, Limited, or Sold Out, accurate as of June 2026.</div></div>
+    <div class="rule-item"><div class="rule-num">03</div><div class="rule-text"><strong>Status flagged:</strong> Open, Limited, or Sold Out, accurate as of ${UPDATED_EN}.</div></div>
     <div class="rule-item"><div class="rule-num">04</div><div class="rule-text"><strong>Verify before you register:</strong> capacity and pricing can shift between updates.</div></div>
   </div>
 </section>
 
-<!-- CA SECTION -->
-<section>
-  <div class="section-head">
-    <div class="section-num">01 / California</div>
-    <h2 class="section-title">20 California<br/>Races</h2>
-    <div class="section-sub">Open Entry · Summer 2026 to Spring 2027</div>
-  </div>
-  <div class="race-list">
-    ${CA_RACES.map(raceRow).join("\n")}
-  </div>
-</section>
+${section("01 / California", `${racesEn.ca.length} California<br/>Races`, "Open Entry · Summer 2026 to Spring 2027", racesEn.ca)}
 
-<!-- US SECTION -->
-<section>
-  <div class="section-head">
-    <div class="section-num">02 / United States</div>
-    <h2 class="section-title">20 US Certified<br/>Races</h2>
-    <div class="section-sub">No Qualifier · All USATF Certified</div>
-  </div>
-  <div class="race-list">
-    ${US_RACES.map(raceRow).join("\n")}
-  </div>
-</section>
+${section("02 / United States", `${racesEn.us.length} US Certified<br/>Races`, "No Qualifier · All USATF Certified", racesEn.us)}
 
 <!-- FOOTER -->
 <section class="footer-band">
@@ -264,40 +248,110 @@ function html() {
     Suor Society<br/>
     <a href="https://suorsociety.com">SUORSOCIETY.COM</a><br/>
     <a href="https://instagram.com/suorsociety">@SUORSOCIETY</a><br/>
-    UPDATED JUNE 2026
+    UPDATED ${UPDATED_EN.toUpperCase()}
+  </div>
+</section>`);
+}
+
+// ─── PT-BR GUIDE ──────────────────────────────────────────────────────────────
+function htmlBr() {
+  const total = racesBr.grandes.length + racesBr.peloBrasil.length + racesBr.circuitos.length;
+  return shell("pt-BR", "Suor Society — Guia de Corridas Brasil 2026", `
+<!-- COVER -->
+<section class="cover">
+  <div class="cover-top">
+    <div class="wm">SUOR<span class="pipe">|</span>SOCIETY</div>
+    <div class="cover-meta">The Culture Archive · ${UPDATED_PT}</div>
+  </div>
+  <div class="cover-mid">
+    <div class="cover-eye">Guia de Corridas Brasil 2026</div>
+    <h1 class="cover-title">Corridas que<br/>Valem a<br/><em>Inscrição</em></h1>
+    <p class="cover-deck">
+      São Silvestre, maratonas de SP e Rio, provas que valem a viagem e circuitos o ano todo. Datas, distâncias e links diretos de inscrição, pra quem corre e levanta peso no meio de tudo.
+    </p>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-credits">
+      <span>Suor Society</span><span>SAN DIEGO, CA</span><span>SUORSOCIETY.COM</span>
+    </div>
+    <div class="cover-count">${total} provas</div>
   </div>
 </section>
 
-</body>
-</html>`;
+<!-- INTRO -->
+<section class="intro">
+  <h2>As regras<br/>desta lista</h2>
+  <p>O calendário brasileiro é gigante. São centenas de provas por ano, em todo estado, e listar todas não ajuda ninguém. Então isto não é um calendário completo. É uma seleção: as âncoras que se repetem todo ano e as provas que valem a viagem, com a leitura de quem corre e levanta peso em volta de tudo o resto.</p>
+  <p>A regra de quase tudo aqui: <strong>inscrição aberta, sem índice, sem sorteio.</strong> Você se inscreve, treina e aparece. A exceção está sinalizada na própria prova.</p>
+  <p>Datas, lotes e vagas mudam rápido no Brasil. As inscrições abrem por lote, com preço subindo até o dia da prova, e as grandes esgotam. Clique e confirme no site oficial antes de se inscrever.</p>
+  <div class="rules">
+    <div class="rule-item"><div class="rule-num">01</div><div class="rule-text"><strong>Inscrição aberta:</strong> sem tempo de qualificação. Pagou, está dentro.</div></div>
+    <div class="rule-item"><div class="rule-num">02</div><div class="rule-text"><strong>Âncoras anuais:</strong> provas sem data confirmada aparecem com o mês de sempre.</div></div>
+    <div class="rule-item"><div class="rule-num">03</div><div class="rule-text"><strong>Status sinalizado:</strong> Abertas, Em breve ou Esgotadas, conferido em ${UPDATED_PT}.</div></div>
+    <div class="rule-item"><div class="rule-num">04</div><div class="rule-text"><strong>Confirme antes de se inscrever:</strong> lote e capacidade mudam entre atualizações.</div></div>
+  </div>
+</section>
+
+${section("01 / As grandes do ano", "As Grandes<br/>do Ano", "Âncoras anuais · As que você marca no calendário primeiro", racesBr.grandes)}
+
+${section("02 / Pelo Brasil", "Provas que<br/>Valem a Viagem", "De norte a sul", racesBr.peloBrasil)}
+
+${section("03 / Circuitos", "Circuitos o<br/>Ano Todo", "Várias etapas, uma inscrição de cada vez", racesBr.circuitos)}
+
+<!-- FOOTER -->
+<section class="footer-band">
+  <div class="footer-line">Run. Lift.<br/>Sweat.</div>
+  <div class="footer-meta">
+    Suor Society<br/>
+    <a href="https://suorsociety.com/pt-br">SUORSOCIETY.COM/PT-BR</a><br/>
+    <a href="https://instagram.com/suorsociety">@SUORSOCIETY</a><br/>
+    ATUALIZADO EM ${UPDATED_PT.toUpperCase()}
+  </div>
+</section>`);
 }
 
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
-(async () => {
-  const outDir = path.join(__dirname, "..", "public");
-  const outFile = path.join(outDir, "2026-race-guide.pdf");
-  fs.mkdirSync(outDir, { recursive: true });
-
-  console.log("Launching headless Chromium…");
-  const browser = await chromium.launch();
-  const page = await browser.newPage();
-
-  console.log("Loading HTML…");
-  await page.setContent(html(), { waitUntil: "networkidle" });
-  // Give Google Fonts a beat to settle.
-  await page.waitForTimeout(800);
-
-  console.log("Rendering PDF…");
+async function render(browser, html, outFile) {
+  // ignoreHTTPSErrors keeps Google Fonts loading behind TLS-intercepting
+  // proxies (managed cloud environments); it changes nothing elsewhere.
+  const context = await browser.newContext({ ignoreHTTPSErrors: true });
+  const page = await context.newPage();
+  await page.setContent(html, { waitUntil: "networkidle" });
+  await page.evaluate(() => document.fonts.ready);
   await page.pdf({
     path: outFile,
     format: "Letter",
     printBackground: true,
     margin: { top: "0.5in", right: "0.55in", bottom: "0.5in", left: "0.55in" },
   });
-
-  await browser.close();
+  await context.close();
   const stat = fs.statSync(outFile);
   console.log(`Wrote ${outFile} (${(stat.size / 1024).toFixed(0)} KB)`);
+}
+
+(async () => {
+  const outDir = path.join(__dirname, "..", "public");
+  fs.mkdirSync(outDir, { recursive: true });
+
+  console.log("Launching headless Chromium…");
+  // Route through the outbound proxy when the environment defines one
+  // (Chromium doesn't read HTTPS_PROXY on its own).
+  const proxyServer = process.env.HTTPS_PROXY || process.env.https_proxy;
+  const launchOpts = proxyServer ? { proxy: { server: proxyServer } } : {};
+  let browser;
+  try {
+    browser = await chromium.launch(launchOpts);
+  } catch (err) {
+    // Managed environments ship a system Chromium instead of the
+    // playwright-managed download; fall back to it.
+    const fallback = process.env.CHROMIUM_PATH || "/opt/pw-browsers/chromium";
+    if (!fs.existsSync(fallback)) throw err;
+    console.log(`Default launch failed, using ${fallback}`);
+    browser = await chromium.launch({ ...launchOpts, executablePath: fallback });
+  }
+  await render(browser, htmlEn(), path.join(outDir, "2026-race-guide.pdf"));
+  await render(browser, htmlBr(), path.join(outDir, "guia-corridas-brasil-2026.pdf"));
+  await browser.close();
 })().catch((e) => {
   console.error(e);
   process.exit(1);

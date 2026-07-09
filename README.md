@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Suor Society
 
-## Getting Started
+Hybrid running culture site — [suorsociety.com](https://www.suorsociety.com).
+Next.js App Router, English at `/` and Brazilian Portuguese at `/pt-br`.
 
-First, run the development server:
+## Develop
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # production build (also validates sitemap/metadata)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How the site is wired
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Piece | Where | Notes |
+| --- | --- | --- |
+| Copy & i18n | `src/i18n/dictionaries.ts` | All shared copy, both locales, plus locale helpers |
+| SEO plumbing | `src/lib/seo.tsx` | `pageMeta()` for canonical/hreflang/OG, JSON-LD components |
+| Sitemap / robots | `src/app/sitemap.ts`, `src/app/robots.ts` | Generated from the filesystem — new pages are picked up automatically |
+| Race guide data | `src/content/races-*.json` | Single source for the guide pages **and** the gated PDFs |
+| PDF generator | `scripts/generate-race-guide-pdf.js` | `node scripts/generate-race-guide-pdf.js` regenerates both PDFs |
+| Signup APIs | `src/app/api/*`, `src/lib/subscribe.ts` | Notification email + optional Buttondown (set `BUTTONDOWN_API_KEY`) |
+| Analytics | `src/lib/analytics.ts` | GA4 events: `sign_up`, `generate_lead`, `file_download` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Adding a post? Follow the checklist in [AGENTS.md](AGENTS.md).
 
-## Learn More
+## Automations (GitHub Actions)
 
-To learn more about Next.js, take a look at the following resources:
+- **Trend radar** (`trend-radar.yml`) — daily content-source digest by email.
+- **LinkedIn jobs** (`linkedin-jobs.yml`) — twice-daily job alert; state lives on
+  the `claude/linkedin-marketing-jobs-6tWHJ` branch (do not delete it).
+- **Stale dates** (`stale-dates.yml`) — monthly scan for race listings whose
+  dates have passed; files a `content-freshness` issue with the findings.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Environment variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Var | Used for |
+| --- | --- |
+| `MAIL_USER` / `MAIL_PASS` | SMTP (purelymail) for signup notifications + workflow digests |
+| `BUTTONDOWN_API_KEY` | Optional: stores newsletter signups in Buttondown when set |

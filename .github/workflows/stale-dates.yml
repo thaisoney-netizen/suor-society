@@ -1,0 +1,66 @@
+name: Stale Content Dates
+
+# Monthly sweep for calendar dates that have already passed (race listings,
+# dispatch posts). Opens/updates a GitHub issue with the report so the fix can
+# be picked up in the next content session. Manual runs via the Actions tab.
+
+on:
+  schedule:
+    # 1st of the month, 6:15 AM Pacific (13:15 UTC standard / 14:15 DST-safe pick)
+    - cron: '15 14 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Dependency-free script: no npm install needed.
+      - name: Scan for stale dates
+        id: scan
+        run: |
+          set +e
+          node scripts/content/check-stale-dates.mjs > report.txt
+          echo "stale=$?" >> "$GITHUB_OUTPUT"
+          cat report.txt
+
+      - name: Open or update issue
+        if: steps.scan.outputs.stale == '1'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('report.txt', 'utf8');
+            const title = 'Content freshness: stale dates found';
+            const body = `The monthly stale-date sweep found content advertising past dates.\n\n${report}\n\n_Auto-filed by .github/workflows/stale-dates.yml_`;
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'content-freshness',
+            });
+            if (issues.length > 0) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issues[0].number,
+                body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['content-freshness'],
+              });
+            }

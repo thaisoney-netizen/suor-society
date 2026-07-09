@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { dictionaries, type Lang } from "@/i18n/dictionaries";
+import { track } from "@/lib/analytics";
 
 export default function DispatchForm({ lang = "en" }: { lang?: Lang }) {
   const t = dictionaries[lang].dispatchForm;
@@ -23,6 +24,7 @@ export default function DispatchForm({ lang = "en" }: { lang?: Lang }) {
         body:    JSON.stringify({ email, source: "dispatch-page" }),
       });
       if (!res.ok) throw new Error("server");
+      track("sign_up", { method: "newsletter", source: "dispatch-page" });
       setSubmitted(true);
     } catch {
       setError(true);

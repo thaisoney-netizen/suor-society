@@ -18,6 +18,18 @@ export default function AboutView({ lang }: { lang: Lang }) {
           </div>
         </section>
 
+        {/* MEDIA */}
+        <div className="about-pg-media">
+          <figure className="about-pg-shot">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/founder-press.jpg" alt={t.mediaAlts.press} />
+          </figure>
+          <figure className="about-pg-shot">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/founder-pull.jpg" alt={t.mediaAlts.pull} />
+          </figure>
+        </div>
+
         {/* BODY */}
         <section className="about-pg-body">
           <div className="page">

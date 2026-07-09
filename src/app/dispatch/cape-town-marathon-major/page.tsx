@@ -2,19 +2,16 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { PostSubscribe } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
+import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
-export const metadata = {
+const META = {
+  path: "/dispatch/cape-town-marathon-major",
   title: "Cape Town Is Now a Marathon Major, Suor Society",
   description:
     "Cape Town was confirmed as the eighth Abbott World Marathon Major on June 10, 2026. Africa's first Major joins the series on May 23, 2027. Here's what changes.",
-  alternates: {
-    canonical: "/dispatch/cape-town-marathon-major",
-    languages: {
-      en: "/dispatch/cape-town-marathon-major",
-      "pt-BR": "/pt-br/dispatch/cape-town-marathon-major",
-    },
-  },
+  image: "/cape-town-hero.jpg",
 };
+export const metadata = pageMeta({ ...META, paired: true });
 
 const FAQS = [
   {
@@ -34,6 +31,8 @@ const FAQS = [
 export default function CapeTownMajor() {
   return (
     <>
+      <ArticleJsonLd {...META} datePublished="2026-06-14" />
+      <FaqJsonLd faqs={FAQS} />
       <SiteNav />
 
       <main className="post">

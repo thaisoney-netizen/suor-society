@@ -5,6 +5,7 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import LanguageBanner from "@/components/LanguageBanner";
 import { dictionaries, localizeHref, type Lang } from "@/i18n/dictionaries";
+import { track } from "@/lib/analytics";
 
 // The home page, shared by the English route (/) and the Portuguese route
 // (/pt-br) so the layout never drifts between locales. All copy comes from the
@@ -46,9 +47,10 @@ export default function HomeView({ lang }: { lang: Lang }) {
       const res = await fetch("/api/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, source: "home" }),
       });
       if (!res.ok) throw new Error("server");
+      track("sign_up", { method: "newsletter", source: "home", lang });
       setSubmitted(true);
     } catch {
       setSignupError(true);

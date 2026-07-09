@@ -2,20 +2,19 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { PostSubscribe } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
+import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
 // Regional pair of the US "HYROX Fall 2026 Schedule" post, NOT a translation:
 // this one covers HYROX in Brazil for the pt-BR audience. No hreflang between
 // the two on purpose; they cross-link to each other instead.
-
-export const metadata = {
+const META = {
+  path: "/pt-br/dispatch/hyrox-brasil-2026",
   title: "HYROX Brasil 2026, Suor Society",
   description:
     "HYROX no Brasil em 2026: São Paulo em 17 de outubro no Distrito Anhembi, mais Rio e Fortaleza. Datas, cidades e como treinar pra prova.",
-  alternates: {
-    canonical: "/pt-br/dispatch/hyrox-brasil-2026",
-  },
-  openGraph: { locale: "pt_BR" },
+  image: "/hyrox-hero.jpg",
 };
+export const metadata = pageMeta(META);
 
 const AGENDA = [
   { city: "São Paulo, SP", date: "17 de outubro de 2026", venue: "Distrito Anhembi (terceira edição, confirmada)" },
@@ -48,7 +47,9 @@ const FAQS = [
 
 export default function HyroxBrasil2026() {
   return (
-    <div lang="pt-BR">
+    <>
+      <ArticleJsonLd {...META} datePublished="2026-07-02" />
+      <FaqJsonLd faqs={FAQS} />
       <SiteNav lang="pt" />
 
       <main className="post">
@@ -179,6 +180,6 @@ export default function HyroxBrasil2026() {
       </main>
 
       <SiteFooter lang="pt" />
-    </div>
+    </>
   );
 }

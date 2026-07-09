@@ -1,34 +1,23 @@
-import nodemailer from "nodemailer";
 import { NextRequest } from "next/server";
-
-const transporter = nodemailer.createTransport({
-  host: "smtp.purelymail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.MAIL_USER,
-    pass: process.env.MAIL_PASS,
-  },
-});
+import { recordSignup } from "@/lib/subscribe";
 
 export async function POST(req: NextRequest) {
-  const { email } = await req.json();
+  const { email, source } = await req.json();
 
-  if (!email || typeof email !== "string") {
+  if (!email || typeof email !== "string" || !email.includes("@")) {
     return Response.json({ error: "Invalid email" }, { status: 400 });
   }
 
-  try {
-    await transporter.sendMail({
-      from: "Suor Society <hello@suorsociety.com>",
-      to: "hello@suorsociety.com",
-      subject: "New signup",
-      text: `New signup: ${email}`,
-    });
-  } catch (err) {
-    console.error("Signup notification email failed:", err);
-    console.log("Signup email:", email);
-  }
+  const tag = typeof source === "string" && source ? source : "home";
+  const ok = await recordSignup({
+    email: email.trim(),
+    source: `newsletter-${tag}`,
+    subject: "New signup",
+    body: `New signup: ${email.trim()}\nSource: ${tag}`,
+  });
 
+  // Fail loudly when nothing durable happened, so the form shows the
+  // mailto fallback instead of silently dropping the address.
+  if (!ok) return Response.json({ error: "Signup failed" }, { status: 500 });
   return Response.json({ ok: true });
 }

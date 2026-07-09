@@ -1,8 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { dictionaries, langFromPathname } from "@/i18n/dictionaries";
 
 export default function ScrollTracker() {
+  // Rendered once in the root layout, so the language comes from the URL.
+  const lang = langFromPathname(usePathname() ?? "/");
+  const t = dictionaries[lang].tracker;
   const [distance, setDistance] = useState(0);
   const [useKm, setUseKm] = useState(true);
   const [flash, setFlash] = useState(false);
@@ -71,7 +76,7 @@ export default function ScrollTracker() {
       <div id="ss-progress" style={{ width: `${progress}%` }} />
       <div id="ss-tracker" className={visible ? "ss-on" : ""}>
         <div className="ss-label-col">
-          <span className="ss-lbl">You have scrolled</span>
+          <span className="ss-lbl">{t.scrolledLabel}</span>
           <span
             className="ss-lbl"
             style={{ color: "rgba(255,255,255,.22)", fontSize: 9, letterSpacing: ".12em" }}

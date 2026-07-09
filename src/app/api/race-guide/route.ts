@@ -1,15 +1,5 @@
-import nodemailer from "nodemailer";
 import { NextRequest } from "next/server";
-
-const transporter = nodemailer.createTransport({
-  host: "smtp.purelymail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.MAIL_USER,
-    pass: process.env.MAIL_PASS,
-  },
-});
+import { recordSignup } from "@/lib/subscribe";
 
 export async function POST(req: NextRequest) {
   const { name, email } = await req.json();
@@ -27,17 +17,15 @@ export async function POST(req: NextRequest) {
     "Source: Culture Archive, 2026 Race Guide post",
   ].join("\n");
 
-  try {
-    await transporter.sendMail({
-      from: "Suor Society <hello@suorsociety.com>",
-      to: "hello@suorsociety.com",
-      subject: "Race Guide Download, Suor Society",
-      text: submissionText,
-    });
-  } catch (err) {
-    console.error("Race guide notification email failed:", err);
-    console.log("Submission details:\n" + submissionText);
-  }
+  const ok = await recordSignup({
+    email: email.trim(),
+    source: "race-guide",
+    subject: "Race Guide Download, Suor Society",
+    body: submissionText,
+  });
 
+  // Fail loudly when nothing durable happened, so the form shows the
+  // mailto fallback instead of silently dropping the address.
+  if (!ok) return Response.json({ error: "Signup failed" }, { status: 500 });
   return Response.json({ ok: true });
 }

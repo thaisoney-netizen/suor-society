@@ -3,17 +3,18 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { PostSubscribe } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
+import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
-export const metadata = {
+const META = {
+  path: "/culture/join-a-run-club-not-a-runner",
   title: "Can You Join a Run Club If You're Not Really a Runner?, Suor Society",
   description:
     "Yes. Most run clubs are free, no-drop, and full of people who had the same worry. What all paces welcome actually means, what you need, and what's coming to San Diego.",
-  alternates: {
-    canonical: "/culture/join-a-run-club-not-a-runner",
-  },
+  image: "/run-club-hero.jpg",
 };
+export const metadata = pageMeta({ ...META, paired: true });
 
-const FAQS: { q: string; a: ReactNode }[] = [
+const FAQS: { q: string; a: ReactNode; plain?: string }[] = [
   {
     q: "Do I need to be fast to join a run club?",
     a: "No. Most clubs are no-drop, meaning the group regroups so nobody gets left behind. Paces at a typical club range from 7-minute miles to run-walk intervals, at the same event.",
@@ -32,6 +33,8 @@ const FAQS: { q: string; a: ReactNode }[] = [
   },
   {
     q: "How do I find a run club in San Diego?",
+    plain:
+      "Instagram is where most SD clubs organize: search your neighborhood plus “run club.” The RRCA club directory lists registered clubs too. And Suor Society is bringing crew runs to San Diego soon; The Dispatch gets it first.",
     a: (
       <>
         Instagram is where most SD clubs organize, search your neighborhood plus &ldquo;run
@@ -57,6 +60,8 @@ const SWAP = [
 export default function JoinARunClub() {
   return (
     <>
+      <ArticleJsonLd {...META} datePublished="2026-07-06" />
+      <FaqJsonLd faqs={FAQS} />
       <SiteNav />
 
       <main className="post">

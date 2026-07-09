@@ -1,5 +1,11 @@
 import HomeView from "@/components/HomeView";
+import { WebSiteJsonLd } from "@/lib/seo";
 
 export default function Home() {
-  return <HomeView lang="en" />;
+  return (
+    <>
+      <WebSiteJsonLd />
+      <HomeView lang="en" />
+    </>
+  );
 }

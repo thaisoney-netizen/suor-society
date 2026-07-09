@@ -2,20 +2,16 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { PostSubscribe } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
+import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
-export const metadata = {
+const META = {
+  path: "/pt-br/culture/join-a-run-club-not-a-runner",
   title: "Dá pra entrar num clube de corrida sem se achar corredor?, Suor Society",
   description:
     "Dá. A maioria dos clubes de corrida é de graça, ninguém fica pra trás, e tá cheio de gente que teve a mesma dúvida. O que todos os paces são bem-vindos significa na prática.",
-  alternates: {
-    canonical: "/pt-br/culture/join-a-run-club-not-a-runner",
-    languages: {
-      en: "/culture/join-a-run-club-not-a-runner",
-      "pt-BR": "/pt-br/culture/join-a-run-club-not-a-runner",
-    },
-  },
-  openGraph: { locale: "pt_BR" },
+  image: "/run-club-hero.jpg",
 };
+export const metadata = pageMeta({ ...META, paired: true });
 
 const FAQS = [
   {
@@ -51,6 +47,8 @@ const SWAP = [
 export default function EntrarNumClubeDeCorrida() {
   return (
     <>
+      <ArticleJsonLd {...META} datePublished="2026-07-07" />
+      <FaqJsonLd faqs={FAQS} />
       <SiteNav lang="pt" />
 
       <main className="post">

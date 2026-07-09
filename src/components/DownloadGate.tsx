@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { dictionaries, type Lang } from "@/i18n/dictionaries";
+import { track } from "@/lib/analytics";
 
 export default function DownloadGate({ lang = "en" }: { lang?: Lang }) {
   const t = dictionaries[lang].downloadGate;
@@ -25,6 +26,7 @@ export default function DownloadGate({ lang = "en" }: { lang?: Lang }) {
         body:    JSON.stringify({ name, email }),
       });
       if (!res.ok) throw new Error("server");
+      track("generate_lead", { source: "race-guide", lang });
       setSubmitted(true);
     } catch {
       setError(true);
@@ -50,6 +52,7 @@ export default function DownloadGate({ lang = "en" }: { lang?: Lang }) {
           className="gate-download-btn"
           href={t.pdfHref}
           download={t.pdfName}
+          onClick={() => track("file_download", { file: t.pdfName, lang })}
         >
           {t.downloadBtn}
         </a>
