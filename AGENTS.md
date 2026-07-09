@@ -4,6 +4,15 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
+<!-- BEGIN:brand-name-casing -->
+# Brand name casing
+
+The brand is written "Suor Society" — title case, never all caps. Do NOT write
+"SUOR SOCIETY" in posts, headings, metadata, alt text, or any user-facing copy
+(all-caps styling, when wanted, is a CSS concern, not the source text). This
+applies everywhere the name appears.
+<!-- END:brand-name-casing -->
+
 <!-- BEGIN:author-page-upkeep -->
 # Author page upkeep
 
@@ -25,7 +34,7 @@ publish time — don't rely on the sweep.
 # Suor Society run club / crew runs — do NOT mention
 
 The Suor Society run club / crew runs (Saturday crew runs in San Diego, "the
-first SUOR SOCIETY crew run", "SUOR SOCIETY is coming to San Diego", etc.) are
+first Suor Society crew run", "Suor Society is coming to San Diego", etc.) are
 on hold with no launch date. Do NOT add any mention, teaser, or call-to-action
 about the club, crew runs, or a San Diego launch to posts — including new posts,
 FAQs, closing paragraphs, and The Dispatch teasers. Leave existing `/dispatch`
