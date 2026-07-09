@@ -36,7 +36,7 @@ const FAQS = [
   },
   {
     q: "Como acho um clube de corrida perto de mim?",
-    a: "O Instagram é onde a maioria se organiza: procure o nome do seu bairro ou da sua cidade junto com clube de corrida ou run club. E se estiver vindo pra San Diego, os treinos de crew da SUOR SOCIETY estão chegando no calçadão de Pacific Beach. Sem data ainda, o Dispatch recebe primeiro.",
+    a: "O Instagram é onde a maioria se organiza: procure o nome do seu bairro ou da sua cidade junto com clube de corrida ou run club.",
   },
 ];
 
@@ -172,13 +172,7 @@ export default function EntrarNumClubeDeCorrida() {
               ))}
             </div>
 
-            <h2>E se você estiver vindo pra San Diego</h2>
-            <p>
-              Os treinos de crew da SUOR SOCIETY estão chegando: sábado de manhã no calçadão de
-              Pacific Beach, 5 a 8 km, de graça, todos os paces, incluindo corrida com
-              caminhada. Se a viagem ou a mudança te trouxer pra cá, apareça no primeiro.{" "}
-              <a href="/pt-br/dispatch">O Dispatch</a> recebe a data primeiro.
-            </p>
+            <h2>Quando o treino em grupo virar vontade de provar</h2>
             <p>
               E quando os treinos em grupo virarem vontade de ter uma prova sua, o nosso{" "}
               <a href="/pt-br/culture/corridas-brasil-2026">guia de corridas no Brasil</a> lista
