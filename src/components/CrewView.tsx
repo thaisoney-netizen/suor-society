@@ -101,7 +101,7 @@ export default function CrewView({ lang }: { lang: Lang }) {
           <div className="crew-scenes-grid">
             <img src="/road-run.jpg" alt={t.scenesAlts.road} />
             <img src="/trail-run.jpg" alt={t.scenesAlts.trail} />
-            <img src="/crew-suor.jpg" alt={t.scenesAlts.crew} />
+            <img src="/crew-suor.webp" alt={t.scenesAlts.crew} />
           </div>
         </section>
       </main>

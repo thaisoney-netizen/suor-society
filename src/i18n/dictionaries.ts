@@ -49,6 +49,35 @@ export function localizeHref(path: string, lang: Lang): string {
 // localizeHref to stay in the current language.
 export const AUTHOR_PATH = "/author/thais-oney";
 
+// Regional counterparts: same slot in each locale but different content
+// (US races vs Brazil races). Keys are EN paths, values pt-BR paths. True
+// translations share their slug and need no entry here.
+export const REGIONAL_PAIRS: Record<string, string> = {
+  "/culture/open-entry-races-2026": "/pt-br/culture/corridas-brasil-2026",
+  "/dispatch/hyrox-fall-2026-schedule": "/pt-br/dispatch/hyrox-brasil-2026",
+};
+
+export function langFromPathname(pathname: string): Lang {
+  return pathname === LOCALE_HREF.pt || pathname.startsWith(`${LOCALE_HREF.pt}/`)
+    ? "pt"
+    : "en";
+}
+
+// Where the language switcher lands for `target` from the current pathname:
+// the regional counterpart when one exists, otherwise the same slug in the
+// other locale (ship translations together — see AGENTS.md — so this always
+// resolves to a real page).
+export function switchLocaleHref(pathname: string, target: Lang): string {
+  const current = langFromPathname(pathname);
+  if (current === target) return pathname;
+  if (current === "en") {
+    return REGIONAL_PAIRS[pathname] ?? localizeHref(pathname, "pt");
+  }
+  const regionalEn = Object.entries(REGIONAL_PAIRS).find(([, pt]) => pt === pathname)?.[0];
+  if (regionalEn) return regionalEn;
+  return pathname.slice(LOCALE_HREF.pt.length) || "/";
+}
+
 type BoardPost = {
   href: string;
   img: string;
@@ -62,6 +91,10 @@ type Dictionary = {
   nav: {
     // Accessible label for the language switcher control.
     langLabel: string;
+  };
+  // Bottom scroll-distance tracker (rendered on every page).
+  tracker: {
+    scrolledLabel: string;
   };
   home: {
     heroTag: string;
@@ -209,6 +242,9 @@ export const dictionaries: Record<Lang, Dictionary> = {
     nav: {
       langLabel: "Select language",
     },
+    tracker: {
+      scrolledLabel: "You have scrolled",
+    },
     home: {
       heroTag: "Race picks, gear, and culture for people who lift and run.",
       heroCta: "See Races Left in 2026",
@@ -249,7 +285,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
         },
         {
           href: "/dispatch/june-2026-shoe-drops",
-          img: "/june-shoe-drops-hero.png",
+          img: "/june-shoe-drops-hero.webp",
           eyebrow: "The Dispatch",
           title: "June Shoe Drops",
           desc: "The Endorphin Elite 3, a plateless Puma at $150, and why plateless super trainers are the trend.",
@@ -426,7 +462,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
         },
         {
           href: "/dispatch/june-2026-shoe-drops",
-          img: "/june-shoe-drops-hero.png",
+          img: "/june-shoe-drops-hero.webp",
           tag: "Gear",
           date: "June 2026",
           title: "June Shoe Drops: Saucony Goes Big, Puma Pulls the Plate",
@@ -493,6 +529,9 @@ export const dictionaries: Record<Lang, Dictionary> = {
     nav: {
       langLabel: "Selecionar idioma",
     },
+    tracker: {
+      scrolledLabel: "Você já percorreu",
+    },
     home: {
       heroTag: "Corridas, equipamentos e cultura para quem levanta peso e corre.",
       heroCta: "Veja as corridas que faltam em 2026",
@@ -500,12 +539,20 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardTitle: "O mural",
       boardPosts: [
         {
+          href: "/culture/why-everyone-started-running",
+          img: "/crew-run.jpg",
+          eyebrow: "The Culture · Arquivo",
+          title: "Por que todo mundo começou a correr",
+          desc: "As provas passaram 2019, os clubes de corrida saltaram 59% e Londres recebeu 1,1 milhão de inscrições. Os números por trás do boom e o que mudou depois de 2024.",
+          meta: "Novo · Julho 2026 ↗",
+        },
+        {
           href: "/culture/join-a-run-club-not-a-runner",
           img: "/run-club-hero.jpg",
           eyebrow: "The Culture · Arquivo",
           title: "Não se acha corredor?",
           desc: "Dá pra entrar num clube de corrida do mesmo jeito. O que no-drop e todos os paces são bem-vindos significam de verdade no seu primeiro treino em grupo.",
-          meta: "Novo · Julho 2026 ↗",
+          meta: "Julho 2026 ↗",
         },
         {
           href: "/culture/corridas-brasil-2026",
@@ -525,7 +572,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
         },
         {
           href: "/dispatch/june-2026-shoe-drops",
-          img: "/june-shoe-drops-hero.png",
+          img: "/june-shoe-drops-hero.webp",
           eyebrow: "The Dispatch",
           title: "Lançamentos de tênis de junho",
           desc: "O Endorphin Elite 3, um Puma sem placa de carbono por US$ 150 e por que os super trainers sem placa viraram tendência.",
@@ -595,6 +642,12 @@ export const dictionaries: Record<Lang, Dictionary> = {
       ],
       articlesLabel: "Textos da Thais",
       articles: [
+        {
+          href: "/culture/why-everyone-started-running",
+          tag: "The Culture Archive",
+          date: "Julho 2026",
+          title: "Por que todo mundo começou a correr? O boom da corrida, explicado",
+        },
         {
           href: "/culture/join-a-run-club-not-a-runner",
           tag: "The Culture Archive",
@@ -699,7 +752,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
         },
         {
           href: "/dispatch/june-2026-shoe-drops",
-          img: "/june-shoe-drops-hero.png",
+          img: "/june-shoe-drops-hero.webp",
           tag: "Equipamentos",
           date: "Junho 2026",
           title: "Lançamentos de tênis de junho: Saucony aposta alto e a Puma tira a placa",

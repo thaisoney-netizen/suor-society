@@ -1,21 +1,16 @@
 import AboutView from "@/components/AboutView";
 import { dictionaries } from "@/i18n/dictionaries";
+import { pageMeta } from "@/lib/seo";
 
 const t = dictionaries.pt.about;
-export const metadata = {
+export const metadata = pageMeta({
+  path: "/pt-br/about",
   title: t.metaTitle,
   description: t.metaDescription,
-  alternates: {
-    canonical: "/pt-br/about",
-    languages: { en: "/about", "pt-BR": "/pt-br/about" },
-  },
-  openGraph: { locale: "pt_BR" },
-};
+  paired: true,
+  ogType: "website",
+});
 
 export default function AboutPtBr() {
-  return (
-    <div lang="pt-BR">
-      <AboutView lang="pt" />
-    </div>
-  );
+  return <AboutView lang="pt" />;
 }

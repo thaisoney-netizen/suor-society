@@ -1,21 +1,17 @@
 import RacePicksView from "@/components/RacePicksView";
 import { dictionaries } from "@/i18n/dictionaries";
+import { pageMeta } from "@/lib/seo";
 
 const t = dictionaries.pt.racepicks;
-export const metadata = {
+export const metadata = pageMeta({
+  path: "/pt-br/racepicks",
   title: t.metaTitle,
   description: t.metaDescription,
-  alternates: {
-    canonical: "/pt-br/racepicks",
-    languages: { en: "/racepicks", "pt-BR": "/pt-br/racepicks" },
-  },
-  openGraph: { locale: "pt_BR" },
-};
+  image: "/sao-silvestre-hero.webp",
+  paired: true,
+  ogType: "website",
+});
 
 export default function RacePicksPtBr() {
-  return (
-    <div lang="pt-BR">
-      <RacePicksView lang="pt" />
-    </div>
-  );
+  return <RacePicksView lang="pt" />;
 }

@@ -2,20 +2,16 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { PostSubscribe } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
+import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
-export const metadata = {
+const META = {
+  path: "/pt-br/dispatch/june-2026-shoe-drops",
   title: "Lançamentos de tênis de junho de 2026, Suor Society",
   description:
     "Lançamentos de tênis de corrida em junho de 2026: Saucony Endorphin Elite 3 e Triumph 24, o Deviate Nitro sem placa da Puma, o Asics GT-1000 15 e por que os super trainers sem placa são a tendência do momento.",
-  alternates: {
-    canonical: "/pt-br/dispatch/june-2026-shoe-drops",
-    languages: {
-      en: "/dispatch/june-2026-shoe-drops",
-      "pt-BR": "/pt-br/dispatch/june-2026-shoe-drops",
-    },
-  },
-  openGraph: { locale: "pt_BR" },
+  image: "/june-shoe-drops-hero.webp",
 };
+export const metadata = pageMeta({ ...META, paired: true });
 
 const FAQS = [
   {
@@ -34,7 +30,9 @@ const FAQS = [
 
 export default function JuneShoeDropsPtBr() {
   return (
-    <div lang="pt-BR">
+    <>
+      <ArticleJsonLd {...META} datePublished="2026-06-23" />
+      <FaqJsonLd faqs={FAQS} />
       <SiteNav lang="pt" />
 
       <main className="post">
@@ -52,7 +50,7 @@ export default function JuneShoeDropsPtBr() {
         <div className="article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/june-shoe-drops-hero.png"
+            src="/june-shoe-drops-hero.webp"
             alt="Lançamentos de tênis de corrida de junho de 2026, incluindo o Saucony Endorphin Elite 3"
           />
         </div>
@@ -161,6 +159,6 @@ export default function JuneShoeDropsPtBr() {
       </main>
 
       <SiteFooter lang="pt" />
-    </div>
+    </>
   );
 }

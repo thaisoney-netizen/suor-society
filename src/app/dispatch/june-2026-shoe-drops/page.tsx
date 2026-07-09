@@ -2,19 +2,16 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { PostSubscribe } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
+import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
-export const metadata = {
+const META = {
+  path: "/dispatch/june-2026-shoe-drops",
   title: "June 2026 Running Shoe Drops, Suor Society",
   description:
     "June 2026 running shoe releases: Saucony Endorphin Elite 3 and Triumph 24, Puma's plateless Deviate Nitro, Asics GT-1000 15, and why plateless super trainers are the trend of the summer.",
-  alternates: {
-    canonical: "/dispatch/june-2026-shoe-drops",
-    languages: {
-      en: "/dispatch/june-2026-shoe-drops",
-      "pt-BR": "/pt-br/dispatch/june-2026-shoe-drops",
-    },
-  },
+  image: "/june-shoe-drops-hero.webp",
 };
+export const metadata = pageMeta({ ...META, paired: true });
 
 const FAQS = [
   {
@@ -34,6 +31,8 @@ const FAQS = [
 export default function JuneShoeDrops() {
   return (
     <>
+      <ArticleJsonLd {...META} datePublished="2026-06-14" />
+      <FaqJsonLd faqs={FAQS} />
       <SiteNav />
 
       <main className="post">
@@ -51,7 +50,7 @@ export default function JuneShoeDrops() {
         <div className="article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/june-shoe-drops-hero.png"
+            src="/june-shoe-drops-hero.webp"
             alt="June 2026 running shoe releases including the Saucony Endorphin Elite 3"
           />
         </div>

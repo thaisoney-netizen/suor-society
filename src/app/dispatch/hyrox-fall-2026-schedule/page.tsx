@@ -2,17 +2,18 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { PostSubscribe } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
+import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
-export const metadata = {
+// No hreflang pair here: the pt-BR counterpart (/pt-br/dispatch/hyrox-brasil-2026)
+// is a regional Brazil post, not a translation of this page.
+const META = {
+  path: "/dispatch/hyrox-fall-2026-schedule",
   title: "HYROX Fall 2026 US Schedule, Suor Society",
   description:
     "HYROX's fall 2026 North America calendar lists 10 races from Labor Day through December, including Anaheim Dec 4 to 6 and first-time stops in Salt Lake City, Tampa, Denver, and Nashville.",
-  // No hreflang here: the pt-BR counterpart (/pt-br/dispatch/hyrox-brasil-2026)
-  // is a regional Brazil post, not a translation of this page.
-  alternates: {
-    canonical: "/dispatch/hyrox-fall-2026-schedule",
-  },
+  image: "/hyrox-hero.jpg",
 };
+export const metadata = pageMeta(META);
 
 const SCHEDULE = [
   { city: "Washington, DC", date: "Sept 3 to 7", venue: "Walter E. Washington Convention Center (moved from its usual spring slot)" },
@@ -49,6 +50,8 @@ const FAQS = [
 export default function HyroxFall2026() {
   return (
     <>
+      <ArticleJsonLd {...META} datePublished="2026-06-14" />
+      <FaqJsonLd faqs={FAQS} />
       <SiteNav />
 
       <main className="post">

@@ -1,16 +1,22 @@
 import AuthorView from "@/components/AuthorView";
 import { dictionaries } from "@/i18n/dictionaries";
+import { pageMeta, PersonJsonLd } from "@/lib/seo";
 
 const t = dictionaries.en.author;
-export const metadata = {
+export const metadata = pageMeta({
+  path: "/author/thais-oney",
   title: t.metaTitle,
   description: t.metaDescription,
-  alternates: {
-    canonical: "/author/thais-oney",
-    languages: { en: "/author/thais-oney", "pt-BR": "/pt-br/author/thais-oney" },
-  },
-};
+  image: "/thais-oney.jpg",
+  paired: true,
+  ogType: "website",
+});
 
 export default function AuthorThaisOney() {
-  return <AuthorView lang="en" />;
+  return (
+    <>
+      <PersonJsonLd lang="en" description={t.metaDescription} />
+      <AuthorView lang="en" />
+    </>
+  );
 }

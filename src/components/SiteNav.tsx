@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import {
   dictionaries,
   LOCALE_HREF,
   LOCALE_LABEL,
   LOCALES,
   localizeHref,
+  switchLocaleHref,
   type Lang,
 } from "@/i18n/dictionaries";
 
@@ -47,6 +49,9 @@ export default function SiteNav({
   const navCopy = dictionaries[lang].nav;
   const homeHref = LOCALE_HREF[lang];
   const navLinks = navLinksFor(lang);
+  // Language switcher targets the current page's counterpart in the other
+  // locale (regional pairs map across; true translations share their slug).
+  const pathname = usePathname() ?? LOCALE_HREF[lang];
 
   useEffect(() => {
     if (!open) return;
@@ -103,7 +108,7 @@ export default function SiteNav({
                 {LOCALES.map((l) => (
                   <a
                     key={l}
-                    href={LOCALE_HREF[l]}
+                    href={switchLocaleHref(pathname, l)}
                     role="menuitem"
                     aria-current={l === lang ? "true" : undefined}
                     className={`nav-lang-opt${l === lang ? " is-current" : ""}`}
@@ -168,7 +173,7 @@ export default function SiteNav({
             {LOCALES.map((l) => (
               <a
                 key={l}
-                href={LOCALE_HREF[l]}
+                href={switchLocaleHref(pathname, l)}
                 aria-current={l === lang ? "true" : undefined}
                 className={`nav-menu-lang${l === lang ? " is-current" : ""}`}
                 onClick={() => setOpen(false)}

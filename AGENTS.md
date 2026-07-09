@@ -4,6 +4,38 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
+<!-- BEGIN:new-post-checklist -->
+# Adding a page or post (the automated way)
+
+The SEO plumbing is centralized so a new page needs NO manual sitemap,
+robots, hreflang, or OG work. Follow this and nothing needs correcting later:
+
+1. **Ship locales together.** A true translation lives at the SAME slug under
+   `/pt-br` (e.g. `/culture/foo` + `/pt-br/culture/foo`). Regional pages
+   (different content per market) get different slugs AND an entry in
+   `REGIONAL_PAIRS` in `src/i18n/dictionaries.ts` so the language switcher
+   maps across.
+2. **Metadata via the helper.** Define one `META` const and pass it to both
+   `pageMeta()` and the JSON-LD component — copy the top of any existing post:
+   `export const metadata = pageMeta({ ...META, paired: true })` (`paired`
+   only when a true translation exists at the same slug; it emits hreflang).
+3. **Structured data.** Render `<ArticleJsonLd {...META} datePublished="…" />`
+   first inside the returned fragment; add `<FaqJsonLd faqs={FAQS} />` if the
+   post has a FAQ section (JSX answers need a `plain` string twin).
+4. **Sitemap/robots: nothing to do.** `src/app/sitemap.ts` scans the
+   filesystem at build time and pairs same-slug translations automatically.
+5. **Dictionaries.** Add the post to `home.boardPosts` (newest first, move the
+   "New/Novo" meta tag) and `author.articles` for each locale it belongs to.
+6. **Media.** Hero images go in `public/` as WebP ≤ 300 KB (use
+   `cwebp -q 82 -resize 1600 0 in.jpg -o out.webp`). No PNG/JPEG over 500 KB.
+7. **Race data** lives in `src/content/races-*.json` — the guide pages and the
+   gated PDFs render the same JSON. After editing it, run
+   `node scripts/generate-race-guide-pdf.js` and commit the PDFs too.
+8. **Dates.** Any "City · Month D, YYYY" listing you add is watched by the
+   monthly stale-date sweep (`scripts/content/check-stale-dates.mjs`); run it
+   locally before publishing a dated list.
+<!-- END:new-post-checklist -->
+
 <!-- BEGIN:author-page-upkeep -->
 # Author page upkeep
 

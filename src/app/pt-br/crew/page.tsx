@@ -1,21 +1,17 @@
 import CrewView from "@/components/CrewView";
 import { dictionaries } from "@/i18n/dictionaries";
+import { pageMeta } from "@/lib/seo";
 
 const t = dictionaries.pt.crew;
-export const metadata = {
+export const metadata = pageMeta({
+  path: "/pt-br/crew",
   title: t.metaTitle,
   description: t.metaDescription,
-  alternates: {
-    canonical: "/pt-br/crew",
-    languages: { en: "/crew", "pt-BR": "/pt-br/crew" },
-  },
-  openGraph: { locale: "pt_BR" },
-};
+  image: "/crew-suor.webp",
+  paired: true,
+  ogType: "website",
+});
 
 export default function CrewPtBr() {
-  return (
-    <div lang="pt-BR">
-      <CrewView lang="pt" />
-    </div>
-  );
+  return <CrewView lang="pt" />;
 }

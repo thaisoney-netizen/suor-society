@@ -3,15 +3,16 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { PostToc } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
+import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
-export const metadata = {
+const META = {
+  path: "/culture/why-everyone-started-running",
   title: "Why Did Everyone Start Running? The Running Boom, Explained, Suor Society",
   description:
     "It's not in your head. Race numbers passed pre-pandemic levels, run club participation jumped 59% in a year, and London took 1.1 million marathon applications. The stats behind the running boom and what changed after 2024.",
-  alternates: {
-    canonical: "/culture/why-everyone-started-running",
-  },
+  image: "/crew-run.jpg",
 };
+export const metadata = pageMeta({ ...META, paired: true });
 
 const TOC = [
   { id: "numbers", label: "By the numbers" },
@@ -30,7 +31,7 @@ const THEN_NOW = [
   { then: "Under-25s roughly 5% of major fields", now: "Over 10% now, double the share of five years ago" },
 ];
 
-const FAQS: { q: string; a: ReactNode }[] = [
+const FAQS: { q: string; a: ReactNode; plain?: string }[] = [
   {
     q: "Why is everyone running all of a sudden?",
     a: "Because running turned social. After 2024, run clubs, group runs, and races became the way people see each other, not just a fitness habit. Strava logged a 59% jump in run club participation in one year, and social connection is now the top reason people say they work out.",
@@ -49,6 +50,8 @@ const FAQS: { q: string; a: ReactNode }[] = [
   },
   {
     q: "Is it too late to start running in 2026?",
+    plain:
+      "Not even close. At the 2025 Paris Marathon, 51% of the field was running a marathon for the first time. First-timers aren't behind the boom, they are the boom. If you want a low stakes way in, join a run club before you ever pin on a bib.",
     a: (
       <>
         Not even close. At the 2025 Paris Marathon, 51% of the field was running a marathon for the
@@ -63,6 +66,8 @@ const FAQS: { q: string; a: ReactNode }[] = [
 export default function WhyEveryoneStartedRunning() {
   return (
     <>
+      <ArticleJsonLd {...META} datePublished="2026-07-06" />
+      <FaqJsonLd faqs={FAQS} />
       <SiteNav />
 
       <main className="post">

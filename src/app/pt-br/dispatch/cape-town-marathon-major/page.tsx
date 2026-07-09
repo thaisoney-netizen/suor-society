@@ -2,20 +2,16 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { PostSubscribe } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
+import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
-export const metadata = {
+const META = {
+  path: "/pt-br/dispatch/cape-town-marathon-major",
   title: "Cidade do Cabo agora é uma Marathon Major, Suor Society",
   description:
     "A Cidade do Cabo foi confirmada como a oitava Abbott World Marathon Major em 10 de junho de 2026. A primeira Major da África entra para a série em 23 de maio de 2027. Veja o que muda.",
-  alternates: {
-    canonical: "/pt-br/dispatch/cape-town-marathon-major",
-    languages: {
-      en: "/dispatch/cape-town-marathon-major",
-      "pt-BR": "/pt-br/dispatch/cape-town-marathon-major",
-    },
-  },
-  openGraph: { locale: "pt_BR" },
+  image: "/cape-town-hero.jpg",
 };
+export const metadata = pageMeta({ ...META, paired: true });
 
 const FAQS = [
   {
@@ -34,7 +30,9 @@ const FAQS = [
 
 export default function CapeTownMajorPtBr() {
   return (
-    <div lang="pt-BR">
+    <>
+      <ArticleJsonLd {...META} datePublished="2026-06-23" />
+      <FaqJsonLd faqs={FAQS} />
       <SiteNav lang="pt" />
 
       <main className="post">
@@ -155,6 +153,6 @@ export default function CapeTownMajorPtBr() {
       </main>
 
       <SiteFooter lang="pt" />
-    </div>
+    </>
   );
 }
