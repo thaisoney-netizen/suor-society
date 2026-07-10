@@ -55,6 +55,8 @@ export const AUTHOR_PATH = "/author/thais-oney";
 export const REGIONAL_PAIRS: Record<string, string> = {
   "/culture/open-entry-races-2026": "/pt-br/culture/corridas-brasil-2026",
   "/dispatch/hyrox-fall-2026-schedule": "/pt-br/dispatch/hyrox-brasil-2026",
+  // True translation, different slug per locale: switcher needs the mapping.
+  "/dispatch/ikea-marathon-croydon-2026": "/pt-br/dispatch/maratona-ikea-croydon-2026",
 };
 
 export function langFromPathname(pathname: string): Lang {
@@ -252,12 +254,20 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardTitle: "The board",
       boardPosts: [
         {
+          href: "/dispatch/ikea-marathon-croydon-2026",
+          img: "/ikea-marathon-hero.avif",
+          eyebrow: "The Dispatch",
+          title: "The IKEA Marathon Is Real",
+          desc: "26.2 miles inside IKEA Croydon, Dec 13. 100 places, a 6pm start, a six-hour cutoff, and a self-assembly medal.",
+          meta: "New · Races · July 2026 ↗",
+        },
+        {
           href: "/culture/why-everyone-started-running",
           img: "/crew-run.jpg",
           eyebrow: "The Culture Archive",
           title: "Why Everyone Started Running",
           desc: "Race numbers passed 2019, run clubs jumped 59%, London took 1.1M applications. The stats behind the boom and what changed after 2024.",
-          meta: "New · July 2026 ↗",
+          meta: "July 2026 ↗",
         },
         {
           href: "/culture/join-a-run-club-not-a-runner",
@@ -352,6 +362,12 @@ export const dictionaries: Record<Lang, Dictionary> = {
       ],
       articlesLabel: "Articles by Thais",
       articles: [
+        {
+          href: "/dispatch/ikea-marathon-croydon-2026",
+          tag: "The Dispatch",
+          date: "July 2026",
+          title: "The IKEA Marathon Is Real: 26.2 Miles Inside a Store",
+        },
         {
           href: "/culture/why-everyone-started-running",
           tag: "The Culture Archive",
@@ -453,6 +469,14 @@ export const dictionaries: Record<Lang, Dictionary> = {
       sectionSub: "Race news · HYROX · Gear",
       posts: [
         {
+          href: "/dispatch/ikea-marathon-croydon-2026",
+          img: "/ikea-marathon-hero.avif",
+          tag: "Races",
+          date: "July 2026",
+          title: "The IKEA Marathon Is Real: 26.2 Miles Inside a Store",
+          desc: "The first official IKEA Marathon runs Dec 13 inside IKEA Croydon. 100 places, a 6pm start, a six-hour cutoff, and a medal you assemble yourself.",
+        },
+        {
           href: "/dispatch/hyrox-fall-2026-schedule",
           img: "/hyrox-hero.jpg",
           tag: "HYROX",
@@ -539,12 +563,20 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardTitle: "O mural",
       boardPosts: [
         {
+          href: "/dispatch/maratona-ikea-croydon-2026",
+          img: "/ikea-marathon-hero.avif",
+          eyebrow: "The Dispatch",
+          title: "A Maratona da IKEA É Real",
+          desc: "42km dentro da IKEA de Croydon, 13 de dezembro. 100 vagas, largada às 18h, corte de seis horas e uma medalha que você monta.",
+          meta: "Novo · Corridas · Julho 2026 ↗",
+        },
+        {
           href: "/culture/why-everyone-started-running",
           img: "/crew-run.jpg",
           eyebrow: "The Culture · Arquivo",
           title: "Por que todo mundo começou a correr",
           desc: "As provas passaram 2019, os clubes de corrida saltaram 59% e Londres recebeu 1,1 milhão de inscrições. Os números por trás do boom e o que mudou depois de 2024.",
-          meta: "Novo · Julho 2026 ↗",
+          meta: "Julho 2026 ↗",
         },
         {
           href: "/culture/join-a-run-club-not-a-runner",
@@ -642,6 +674,12 @@ export const dictionaries: Record<Lang, Dictionary> = {
       ],
       articlesLabel: "Textos da Thais",
       articles: [
+        {
+          href: "/dispatch/maratona-ikea-croydon-2026",
+          tag: "The Dispatch",
+          date: "Julho 2026",
+          title: "A Maratona da IKEA É Real: 42km Dentro de Uma Loja",
+        },
         {
           href: "/culture/why-everyone-started-running",
           tag: "The Culture Archive",
@@ -742,6 +780,14 @@ export const dictionaries: Record<Lang, Dictionary> = {
       sectionLabel: "Últimas do Dispatch",
       sectionSub: "Notícias de provas · HYROX · Equipamentos",
       posts: [
+        {
+          href: "/dispatch/maratona-ikea-croydon-2026",
+          img: "/ikea-marathon-hero.avif",
+          tag: "Corridas",
+          date: "Julho 2026",
+          title: "A Maratona da IKEA É Real: 42km Dentro de Uma Loja",
+          desc: "A primeira Maratona IKEA oficial acontece em 13 de dezembro dentro da IKEA de Croydon. 100 vagas, largada às 18h, corte de seis horas e uma medalha que você monta.",
+        },
         {
           href: "/dispatch/hyrox-brasil-2026",
           img: "/hyrox-hero.jpg",

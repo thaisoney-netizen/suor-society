@@ -38,6 +38,12 @@ export type PageMetaOptions = {
    * (US vs Brazil content) and posts that exist in one language only.
    */
   paired?: boolean;
+  /**
+   * Explicit counterpart path when the translation lives at a different slug
+   * (not just the /pt-br prefix). Set alongside `paired` for true translations
+   * whose EN and pt-BR slugs differ, so hreflang points at the real page.
+   */
+  counterpart?: string;
   ogType?: "website" | "article";
 };
 
@@ -47,10 +53,11 @@ export function pageMeta({
   description,
   image,
   paired = false,
+  counterpart,
   ogType = "article",
 }: PageMetaOptions): Metadata {
   const lang = langOfPath(path);
-  const other = counterpartPath(path);
+  const other = counterpart ?? counterpartPath(path);
   const en = lang === "en" ? path : other;
   const pt = lang === "pt" ? path : other;
   return {
