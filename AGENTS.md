@@ -28,6 +28,16 @@ robots, hreflang, or OG work. Follow this and nothing needs correcting later:
    "New/Novo" meta tag) and `author.articles` for each locale it belongs to.
 6. **Media.** Hero images go in `public/` as WebP ≤ 300 KB (use
    `cwebp -q 82 -resize 1600 0 in.jpg -o out.webp`). No PNG/JPEG over 500 KB.
+   For the post cover, reuse the existing `.article-cover` block — it is
+   already height-capped on mobile (see the "MOBILE HEADER IMAGE SIZING"
+   comment in `globals.css`), so covers stay a short landscape band on phones
+   instead of a full-screen image. If you add any NEW full-bleed header image
+   with its own class, cap it there too: on `max-width: 720–860px` set
+   `aspect-ratio: auto; height: 60vw; min-height: 220px; max-height: 340px;`
+   and place that override AFTER the element's base rule so the `aspect-ratio`
+   override wins. Never ship a portrait-ratio (4/5, 3/4) image that goes
+   full-width on mobile without capping its height. Run /responsive-check
+   before pushing.
 7. **Race data** lives in `src/content/races-*.json` — the guide pages and the
    gated PDFs render the same JSON. After editing it, run
    `node scripts/generate-race-guide-pdf.js` and commit the PDFs too.
