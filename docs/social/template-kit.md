@@ -3,6 +3,24 @@
 Build each once in Canva (specs below are Canva-ready), then every post is a
 fill-in. Reels are assembled in CapCut/IG with the same type rules.
 
+## Canva starters (generated July 2026)
+
+Folder: **Suor Society — Social Templates** —
+<https://www.canva.com/folder/FAHPZUljp64>
+
+| Template | Saved starter (edit link) | Alternate candidates |
+| --- | --- | --- |
+| T1 The Take | <https://www.canva.com/d/UItsRJ3vZ9RqNAt> | [B](https://www.canva.com/d/DhWBrmq-Wj2DhQn) · [C](https://www.canva.com/d/Ff2OxGrdb7pULU5) · [D](https://www.canva.com/d/GmU7aYPWxVEx5w-) |
+| T3 Race Intel | <https://www.canva.com/d/x6Ka0DB52WforWV> | [B](https://www.canva.com/d/vlVJRtXUBBBEOgg) · [C](https://www.canva.com/d/Brr3BqQt7mz2hhb) · [D](https://www.canva.com/d/jRLJ4WzxE4VkBaC) |
+| T5 Suor World | <https://www.canva.com/d/oSBWfHKI6d7cDmX> | [B](https://www.canva.com/d/Wob54oLL5WDBodI) · [C](https://www.canva.com/d/8SS6JJyFNE54gsg) · [D](https://www.canva.com/d/x-kchD5XOYt4WU1) |
+| T6 Dispatch Teaser | <https://www.canva.com/d/8Y-H08p-rtcVvNZ> | [B](https://www.canva.com/d/j3nGT3dwCU80HS_) · [C](https://www.canva.com/d/XqUrqyl2pwpC78w) · [D](https://www.canva.com/d/Y0GKc4pMMnPmAZu) |
+
+These are AI-generated starting points saved to the account — check each
+against the spec below (exact hex values, fonts, wordmark placement) and
+correct anything the generator fudged before first use. T2 (hook reel) is
+video and lives in CapCut/IG, not Canva; T4 (gear verdict) gets built when
+the next drop happens.
+
 ## Brand tokens (from `src/app/globals.css` — social must match the site)
 
 | Token | Value | Social use |
