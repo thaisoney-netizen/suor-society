@@ -57,7 +57,10 @@ export default function HomeView({ lang }: { lang: Lang }) {
     }
   }
 
-  const count = t.boardPosts.length;
+  // The home board is a teaser: newest four posts only (dictionary keeps them
+  // newest-first). The full archive lives on /dispatch via "See all posts".
+  const boardPosts = t.boardPosts.slice(0, 4);
+  const count = boardPosts.length;
   const cols = count === 4 ? 2 : Math.min(count, 3);
   // Set columns via a CSS var so the mobile media query in globals.css can still
   // override it to a single column (an inline grid-template-columns would not).
@@ -106,7 +109,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
           </div>
 
           <div className="link-grid" style={gridStyle}>
-            {t.boardPosts.map((post, i) => (
+            {boardPosts.map((post, i) => (
               <a key={i} className="link-card" href={localizeHref(post.href, lang)}>
                 <div className="lc-head">
                   <span className="lc-eye">{post.eyebrow}</span>

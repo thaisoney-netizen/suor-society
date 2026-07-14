@@ -465,8 +465,8 @@ export const dictionaries: Record<Lang, Dictionary> = {
       headline: "Get the dispatch",
       deck1: "One email a week.",
       deck2: "The lift-and-run world, edited down.",
-      sectionLabel: "Latest from the Dispatch",
-      sectionSub: "Race news · HYROX · Gear",
+      sectionLabel: "Every post",
+      sectionSub: "Races · HYROX · Gear · Culture",
       posts: [
         {
           href: "/dispatch/ikea-marathon-croydon-2026",
@@ -475,6 +475,30 @@ export const dictionaries: Record<Lang, Dictionary> = {
           date: "July 2026",
           title: "The IKEA Marathon Is Real: 26.2 Miles Inside a Store",
           desc: "The first official IKEA Marathon runs Dec 13 inside IKEA Croydon. 100 places, a 6pm start, a six-hour cutoff, and a medal you assemble yourself.",
+        },
+        {
+          href: "/culture/why-everyone-started-running",
+          img: "/crew-run.jpg",
+          tag: "Culture",
+          date: "July 2026",
+          title: "Why Everyone Started Running",
+          desc: "Race numbers passed 2019, run clubs jumped 59%, London took 1.1M applications. The stats behind the boom and what changed after 2024.",
+        },
+        {
+          href: "/culture/join-a-run-club-not-a-runner",
+          img: "/run-club-hero.jpg",
+          tag: "Culture",
+          date: "July 2026",
+          title: "Not Really a Runner? You Can Still Join a Run Club",
+          desc: "What no-drop and all paces welcome actually mean at your first group run.",
+        },
+        {
+          href: "/culture/open-entry-races-2026",
+          img: "/race-hero.jpg",
+          tag: "Races",
+          date: "June 2026",
+          title: "40 Open Entry Races You Can Still Run in 2026",
+          desc: "Best open entry races in California and the US. All certified, no qualifier needed, with dates and direct registration links.",
         },
         {
           href: "/dispatch/hyrox-fall-2026-schedule",
@@ -777,8 +801,8 @@ export const dictionaries: Record<Lang, Dictionary> = {
       headline: "Receba o Dispatch",
       deck1: "Um e-mail por semana.",
       deck2: "O mundo de quem corre e levanta peso, resumido.",
-      sectionLabel: "Últimas do Dispatch",
-      sectionSub: "Notícias de provas · HYROX · Equipamentos",
+      sectionLabel: "Todos os posts",
+      sectionSub: "Corridas · HYROX · Equipamentos · Cultura",
       posts: [
         {
           href: "/dispatch/maratona-ikea-croydon-2026",
@@ -787,6 +811,30 @@ export const dictionaries: Record<Lang, Dictionary> = {
           date: "Julho 2026",
           title: "A Maratona da IKEA É Real: 42km Dentro de Uma Loja",
           desc: "A primeira Maratona IKEA oficial acontece em 13 de dezembro dentro da IKEA de Croydon. 100 vagas, largada às 18h, corte de seis horas e uma medalha que você monta.",
+        },
+        {
+          href: "/culture/why-everyone-started-running",
+          img: "/crew-run.jpg",
+          tag: "Cultura",
+          date: "Julho 2026",
+          title: "Por que todo mundo começou a correr",
+          desc: "As provas passaram 2019, os clubes de corrida saltaram 59% e Londres recebeu 1,1 milhão de inscrições. Os números por trás do boom e o que mudou depois de 2024.",
+        },
+        {
+          href: "/culture/join-a-run-club-not-a-runner",
+          img: "/run-club-hero.jpg",
+          tag: "Cultura",
+          date: "Julho 2026",
+          title: "Não se acha corredor? Dá pra entrar num clube do mesmo jeito",
+          desc: "O que no-drop e todos os paces são bem-vindos significam de verdade no seu primeiro treino em grupo.",
+        },
+        {
+          href: "/culture/corridas-brasil-2026",
+          img: "/sao-silvestre-hero.webp",
+          tag: "Corridas",
+          date: "Junho 2026",
+          title: "As corridas de rua que valem a inscrição no Brasil em 2026",
+          desc: "São Silvestre, maratonas de SP e Rio e mais. Datas, preços e links de inscrição.",
         },
         {
           href: "/dispatch/hyrox-brasil-2026",
