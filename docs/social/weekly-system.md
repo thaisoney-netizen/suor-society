@@ -22,8 +22,9 @@ Run it as a checklist, same order every week:
    Pick 1–2 hooks from the evergreen library (template kit). Pick the week's
    Race Intel topic and check if any gear dropped. Slot into the weekly grid
    (below).
-2. **Design (60–75 min).** Fill the Canva templates — carousel, static,
-   gear card. Templates start 80% done; you're changing words and one image.
+2. **Design (60–75 min).** Fill your own templates — carousel, static, gear
+   card — from the content briefs in the template kit. Once a template exists,
+   you're only changing words and one image.
 3. **Cut reels (45–60 min).** Assemble the week's b-roll in CapCut/IG, drop
    the hook text on, trending-or-quiet audio. A hook reel is 7–15 seconds —
    two per week is four minutes of finished video.

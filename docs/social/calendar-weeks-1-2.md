@@ -9,7 +9,9 @@ caption skeletons are in `template-kit.md`.
 - [ ] Change the IG bio link from the IKEA article to `suorsociety.com/dispatch`
       (until a `/links` page exists).
 - [ ] Bio line stays — it's good. Add location "San Diego · Brasil 🇧🇷" if it fits.
-- [ ] Build T1, T3, T5, T6 shells in Canva (T4 can wait for the next drop).
+- [ ] Design your own reusable templates for T1, T3, T5, T6 (T4 can wait for
+      the next drop) — use the content briefs + brand tokens in the template
+      kit, make the look yours.
 - [ ] Mirror bio/link on TikTok; create/verify the Suor Society LinkedIn page.
 - [ ] Bank this week's b-roll: grab 5 clips from the shot list on your next
       two workouts.
