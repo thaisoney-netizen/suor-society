@@ -6,13 +6,15 @@ name: Suor Trend Radar
 
 on:
   schedule:
-    # 6:53 AM Pacific (UTC-7 summer) → 13:53 UTC — morning digest before the day starts
+    # 6:53 AM Pacific (UTC-7 summer) → 13:53 UTC — morning scan before the day starts
     - cron: '53 13 * * *'
   workflow_dispatch:
 
 jobs:
-  scan-and-email:
+  scan-and-post:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to commit the updated sent-trends.json
 
     steps:
       - uses: actions/checkout@v4
@@ -29,8 +31,16 @@ jobs:
           PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
         run: npm ci
 
-      - name: Scan trend sources and email digest
+      - name: Scan trend sources and post cards to Notion
         env:
-          MAIL_USER: ${{ secrets.MAIL_USER }}
-          MAIL_PASS: ${{ secrets.MAIL_PASS }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
         run: node scripts/trends/scan.mjs
+
+      - name: Commit updated dedup list
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add scripts/trends/sent-trends.json
+          git diff --staged --quiet || git commit -m "chore: update trend radar sent list [skip ci]"
+          git push
