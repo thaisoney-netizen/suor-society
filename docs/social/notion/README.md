@@ -1,12 +1,21 @@
-# The content calendar — Notion import
+# The content calendar — Notion
+
+> ✅ **Built live (Jul 2026).** The calendar now lives in the **Content
+> Calendar** database embedded in the **SUOR SOCIETY HQ** page, populated with
+> weeks 1 & 2 (Jul 20 – Aug 2). Schema extended with **Pillar / Template /
+> Source**, **Platform** made multi-select (+ LinkedIn), and two views added:
+> **Calendar** (by Publish Date) and **By Status** (board). That live board is
+> the source of truth now — edit it there.
+>
+> The CSVs below are kept only as a **backup / re-seed** if you ever need to
+> rebuild the database from scratch. You don't need to import them.
+
+---
+
+## Backup: rebuild from CSV (only if the live board is lost)
 
 Two CSVs Notion turns into databases in one click. Weeks 1 & 2 are already
-filled in, so importing = the relaunch is planned and sitting in front of you.
-
-> **Why CSV and not a live Notion build?** Building the database directly
-> needs Notion connected to an interactive Claude session. When it is, ask me
-> to "build the content calendar in Notion" and I'll create it live instead.
-> Until then, this import gets you the exact same thing.
+filled in.
 
 ## Import (2 minutes, works on laptop or phone browser)
 
