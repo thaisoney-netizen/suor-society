@@ -78,10 +78,10 @@ Reel/carousel reach → profile visit → bio link → Dispatch signup
 - **CTA rotation** (one per post, never more): Save this → Send to your run
   partner → Follow for the culture → "The Dispatch goes deeper — link in bio."
   Roughly 2 soft : 1 follow : 1 Dispatch per week.
-- **Bio link must be signup-first.** Today it points at a single article.
-  Minimum fix: point it at `/dispatch`. Better fix: a `/links` page on the
-  site (Dispatch form on top, latest 3 posts, race-guide PDFs below) — small
-  build, can ship any time.
+- **Bio link must be signup-first.** ✅ Built: `suorsociety.com/links` — the
+  link-in-bio hub (Dispatch signup on top, then latest stories, the free race
+  guide, and the crew; noindex, on-brand). Point every bio — IG, TikTok,
+  LinkedIn — at it. It replaces the old link straight to a single article.
 - **T6 (Dispatch teaser) runs every Friday** — the only post whose entire job
   is conversion.
 

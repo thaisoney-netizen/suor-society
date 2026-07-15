@@ -6,8 +6,9 @@ caption skeletons are in `template-kit.md`.
 
 **Before Monday (one-time setup, ~45 min):**
 
-- [ ] Change the IG bio link from the IKEA article to `suorsociety.com/dispatch`
-      (until a `/links` page exists).
+- [ ] Change the IG bio link from the IKEA article to `suorsociety.com/links`
+      (the new link-in-bio hub — Dispatch signup on top, latest stories, race
+      guide, crew). Mirror it on TikTok and LinkedIn.
 - [ ] Bio line stays — it's good. Add location "San Diego · Brasil 🇧🇷" if it fits.
 - [ ] Design your own reusable templates for T1, T3, T5, T6 (T4 can wait for
       the next drop) — use the content briefs + brand tokens in the template
