@@ -1916,3 +1916,86 @@ a { color: inherit; text-decoration: none; }
   .lang-suggest { left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); }
   .lang-suggest--lifted { bottom: calc(70px + env(safe-area-inset-bottom)); }
 }
+
+/* ============================================================
+   LINK-IN-BIO HUB  (/links)
+   Chromeless, conversion-first bio destination. Dark asphalt
+   field; the signup sits on a light card so the shared gate-*
+   styles read as designed.
+   ============================================================ */
+.links-page {
+  min-height: 100vh;
+  background: var(--asphalt);
+  color: var(--bone);
+  padding: 48px 20px calc(48px + env(safe-area-inset-bottom));
+  display: flex;
+  justify-content: center;
+}
+.links-inner { width: 100%; max-width: 460px; }
+
+.links-brand { display: block; text-align: center; margin-bottom: 18px; }
+.links-brand img { height: 30px; width: auto; display: inline-block; }
+
+.links-tagline {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--bone-on-slate);
+  text-align: center;
+  max-width: 34ch;
+  margin: 0 auto 32px;
+}
+
+.links-signup {
+  background: var(--paper);
+  border-radius: 14px;
+  padding: 28px 24px;
+  margin-bottom: 36px;
+}
+.links-signup .gate-title { margin-bottom: 10px; }
+.links-signup .gate-desc { font-size: 13px; margin-bottom: 20px; max-width: none; }
+
+.links-section { margin-bottom: 28px; }
+.links-section-label {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 10px; letter-spacing: .26em; text-transform: uppercase;
+  color: var(--bone-on-slate);
+  margin-bottom: 12px;
+}
+.links-stack { display: flex; flex-direction: column; gap: 10px; }
+
+.links-btn {
+  display: block;
+  background: var(--slate);
+  border: 1px solid var(--slate-2);
+  border-radius: 12px;
+  padding: 14px 18px;
+  text-decoration: none;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.links-btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+.links-btn-kicker {
+  display: block;
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 5px;
+}
+.links-btn-label {
+  display: block;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px; font-weight: 500; line-height: 1.35;
+  color: var(--paper);
+}
+
+.links-social {
+  display: flex; justify-content: center; gap: 24px;
+  margin-top: 36px;
+}
+.links-social a {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--bone-on-slate);
+  text-decoration: none;
+}
+.links-social a:hover { color: var(--accent); }

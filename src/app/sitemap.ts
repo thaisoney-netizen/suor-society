@@ -12,6 +12,10 @@ import { SITE_URL } from "@/lib/seo";
 const APP_DIR = path.join(process.cwd(), "src", "app");
 const PT_PREFIX = "/pt-br";
 
+// Utility routes that are intentionally noindex (see their metadata) and so
+// must stay out of the sitemap. Matched against the route segment name.
+const EXCLUDE_SEGMENTS = new Set(["links"]);
+
 function collectRoutes(dir: string, urlPath: string, routes: string[]) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
   if (entries.some((e) => e.isFile() && /^page\.(tsx|ts|jsx|js|mdx)$/.test(e.name))) {
@@ -20,6 +24,7 @@ function collectRoutes(dir: string, urlPath: string, routes: string[]) {
   for (const e of entries) {
     if (!e.isDirectory()) continue;
     if (e.name === "api" || e.name.startsWith("_") || e.name.startsWith("(")) continue;
+    if (EXCLUDE_SEGMENTS.has(e.name)) continue;
     collectRoutes(path.join(dir, e.name), `${urlPath}/${e.name}`, routes);
   }
 }
