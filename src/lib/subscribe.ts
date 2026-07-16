@@ -7,11 +7,24 @@ import nodemailer from "nodemailer";
 //      subscriber durably in the newsletter tool. Activating it is a Vercel
 //      env-var change, no code edit: create a Buttondown account and set
 //      BUTTONDOWN_API_KEY.
-//   2. Notification email to hello@ — keeps the human in the loop either way.
+//   2. Notification email — keeps the human in the loop either way. Goes to
+//      hello@suorsociety.com by default; set SIGNUP_NOTIFY_TO (comma-separated
+//      for multiple inboxes, e.g. a personal Gmail) to change or add
+//      recipients with no code edit.
 //
 // A signup only counts as successful if at least one layer succeeded, so the
 // form shows its error path (with the mailto fallback) instead of silently
 // losing an address.
+
+// Who receives signup notifications. Defaults to hello@suorsociety.com; override
+// with SIGNUP_NOTIFY_TO="a@x.com, b@y.com" in the environment (Vercel) so alerts
+// reach a monitored inbox without a deploy.
+const NOTIFY_TO =
+  process.env.SIGNUP_NOTIFY_TO
+    ?.split(",")
+    .map((addr) => addr.trim())
+    .filter(Boolean)
+    .join(", ") || "hello@suorsociety.com";
 
 const transporter = nodemailer.createTransport({
   host: "smtp.purelymail.com",
@@ -67,7 +80,7 @@ export async function recordSignup({
   try {
     await transporter.sendMail({
       from: "Suor Society <hello@suorsociety.com>",
-      to: "hello@suorsociety.com",
+      to: NOTIFY_TO,
       subject,
       text: body,
     });
