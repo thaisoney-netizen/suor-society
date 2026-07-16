@@ -37,11 +37,11 @@
       "num": "04",
       "name": "Santa Rosa Marathon",
       "where": "Sonoma County, CA · Aug 22-23, 2026",
-      "body": "Wine country roads, mostly flat, multi-distance weekend. Half marathon still open. Full sold out, so grab the half before that goes too.",
+      "body": "Wine country roads, mostly flat, multi-distance weekend. Half and full marathon are both sold out. The 5K and 10K on Saturday may still have room.",
       "dists": "5K · 10K · Half Marathon · Full Marathon",
       "price": "From $114",
       "status": "limit",
-      "statusLabel": "Half Open · Full Sold Out",
+      "statusLabel": "5K/10K Open · Half & Full Sold Out",
       "url": "https://santarosamarathon.com/"
     },
     {
@@ -70,11 +70,11 @@
       "num": "07",
       "name": "2XU Long Beach Marathon",
       "where": "Long Beach, CA · Oct 10-11, 2026",
-      "body": "One of SoCal's most consistent fall race weekends. City streets and coastline. October in Long Beach is as close to perfect race conditions as SoCal gets.",
+      "body": "One of SoCal's most consistent fall race weekends. City streets and coastline. Half and full marathon are sold out — join the waitlist. October in Long Beach is as close to perfect race conditions as SoCal gets.",
       "dists": "5K · Half Marathon · Full Marathon",
       "price": "From $139",
-      "status": "open",
-      "statusLabel": "Open Registration",
+      "status": "limit",
+      "statusLabel": "5K Open · Half & Full Sold Out",
       "url": "https://www.runlongbeach.com/"
     },
     {
@@ -336,11 +336,11 @@
       "num": "11",
       "name": "Allianz Richmond Marathon",
       "where": "Richmond, VA · Nov 14, 2026",
-      "body": "Called America's Friendliest Marathon. USATF sanctioned, certified, and a top Boston qualifier course. Capacity limited but registration currently open.",
+      "body": "Called America's Friendliest Marathon. USATF sanctioned, certified, and a top Boston qualifier course. Full marathon sold out at the fastest pace in event history. Half marathon and 8K still open, waitlist for the full.",
       "dists": "8K · Half Marathon · Full Marathon",
       "price": "Check site",
-      "status": "open",
-      "statusLabel": "Open Registration",
+      "status": "limit",
+      "statusLabel": "Half & 8K Open · Full Sold Out",
       "url": "https://www.richmondmarathon.org/"
     },
     {
@@ -369,11 +369,11 @@
       "num": "14",
       "name": "Space Coast Marathon & Half",
       "where": "Cocoa, FL · Nov 22, 2026",
-      "body": "Florida's oldest marathon, 55 years running. Space-themed race day along the Indian River from historic Cocoa Village with a riverfront finish. Open registration with early pricing tiers.",
+      "body": "Florida's oldest marathon, 55 years running. Space-themed race day along the Indian River from historic Cocoa Village with a riverfront finish. Full marathon sold out early, the earliest in event history. Half marathon still open but selling fast.",
       "dists": "Half Marathon · Full Marathon",
       "price": "Check site",
-      "status": "open",
-      "statusLabel": "Open Registration",
+      "status": "limit",
+      "statusLabel": "Half Open · Full Sold Out",
       "url": "https://www.spacecoastmarathon.com/"
     },
     {
