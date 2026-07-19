@@ -2,12 +2,16 @@ import nodemailer from "nodemailer";
 
 // Server-side signup handling shared by /api/signup and /api/race-guide.
 //
-// Two layers, in order:
+// Three independent layers, in order:
 //   1. Buttondown (or nothing, if BUTTONDOWN_API_KEY is unset) — stores the
 //      subscriber durably in the newsletter tool. Activating it is a Vercel
 //      env-var change, no code edit: create a Buttondown account and set
 //      BUTTONDOWN_API_KEY.
-//   2. Notification email — keeps the human in the loop either way. Goes to
+//   2. Google Sheet backup (or nothing, if SIGNUP_SHEET_WEBHOOK is unset) —
+//      appends every signup as a row via a Google Apps Script web-app URL, so
+//      there's a plain spreadsheet of everyone even without Buttondown. No
+//      Google credentials live here; the deployed Apps Script owns the sheet.
+//   3. Notification email — keeps the human in the loop either way. Goes to
 //      hello@suorsociety.com by default; set SIGNUP_NOTIFY_TO (comma-separated
 //      for multiple inboxes, e.g. a personal Gmail) to change or add
 //      recipients with no code edit.
@@ -58,6 +62,19 @@ async function addToButtondown(email: string, source: string): Promise<boolean> 
   return false;
 }
 
+async function appendToSheet(email: string, source: string): Promise<boolean> {
+  const url = process.env.SIGNUP_SHEET_WEBHOOK;
+  if (!url) return false;
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, source, date: new Date().toISOString() }),
+  });
+  if (res.ok) return true;
+  console.error("Sheet backup failed:", res.status, await res.text().catch(() => ""));
+  return false;
+}
+
 export async function recordSignup({
   email,
   subject,
@@ -74,6 +91,13 @@ export async function recordSignup({
     stored = await addToButtondown(email, source);
   } catch (err) {
     console.error("Buttondown error:", err);
+  }
+
+  try {
+    // OR-in so the sheet counts as durable storage even when Buttondown is off.
+    stored = (await appendToSheet(email, source)) || stored;
+  } catch (err) {
+    console.error("Sheet backup error:", err);
   }
 
   let notified = false;
