@@ -39,3 +39,4 @@ Adding a post? Follow the checklist in [AGENTS.md](AGENTS.md).
 | --- | --- |
 | `MAIL_USER` / `MAIL_PASS` | SMTP (purelymail) for signup notifications + workflow digests |
 | `BUTTONDOWN_API_KEY` | Optional: stores newsletter signups in Buttondown when set |
+| `SIGNUP_NOTIFY_TO` | Optional: where signup alerts are emailed (comma-separated). Defaults to `hello@suorsociety.com` |
