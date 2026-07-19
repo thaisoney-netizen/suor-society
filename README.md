@@ -39,4 +39,5 @@ Adding a post? Follow the checklist in [AGENTS.md](AGENTS.md).
 | --- | --- |
 | `MAIL_USER` / `MAIL_PASS` | SMTP (purelymail) for signup notifications + workflow digests |
 | `BUTTONDOWN_API_KEY` | Optional: stores newsletter signups in Buttondown when set |
+| `SIGNUP_SHEET_WEBHOOK` | Optional: Google Apps Script web-app URL; appends every signup to a Google Sheet as a backup. See `docs/signup-sheet-backup.md` |
 | `SIGNUP_NOTIFY_TO` | Optional: where signup alerts are emailed (comma-separated). Defaults to `hello@suorsociety.com` |
