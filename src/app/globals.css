@@ -998,6 +998,38 @@ a { color: inherit; text-decoration: none; }
 .swap-head span,
 .swap-head span:first-child { color: var(--asphalt); }
 
+/* ── Numbered week plan (HowTo steps) ── */
+.article-body ol.week-plan {
+  list-style: none;
+  counter-reset: week-day;
+  max-width: 62ch;
+  margin: 0 0 18px;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.article-body ol.week-plan li {
+  counter-increment: week-day;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-2);
+  padding: 12px 0 12px 42px;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+.article-body ol.week-plan li:last-child { border-bottom: none; }
+.article-body ol.week-plan li::before {
+  content: counter(week-day, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 12px;
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 12px;
+  letter-spacing: .06em;
+  color: var(--ink-3);
+}
+.article-body ol.week-plan li strong { color: var(--asphalt); font-weight: 600; }
+
 /* ── Section heading inside article ── */
 .article-section-head {
   padding: 48px 0 0;
