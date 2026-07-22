@@ -303,6 +303,16 @@ export default function CorridaEMusculacaoNaMesmaSemana() {
             {/* ── AUTHOR ── */}
             <AuthorCard lang="pt" />
 
+            {/* ── DISCLAIMER ── */}
+            <section className="post-disclaimer-section">
+              <div className="page">
+                <p className="post-disclaimer">
+                  Isto é informação geral, não aconselhamento médico nem de treinamento. Se você está
+                  lidando com uma lesão ou começando agora, fale com um médico ou um treinador antes.
+                </p>
+              </div>
+            </section>
+
           </div>{/* /.post-main */}
 
           <aside className="post-aside post-aside--toc">

@@ -299,6 +299,16 @@ export default function RunAndLiftSameWeek() {
             {/* ── AUTHOR ── */}
             <AuthorCard />
 
+            {/* ── DISCLAIMER ── */}
+            <section className="post-disclaimer-section">
+              <div className="page">
+                <p className="post-disclaimer">
+                  This is general information, not medical or coaching advice. If you&rsquo;re
+                  managing an injury or just starting out, check with a doctor or a coach first.
+                </p>
+              </div>
+            </section>
+
           </div>{/* /.post-main */}
 
           <aside className="post-aside post-aside--toc">
