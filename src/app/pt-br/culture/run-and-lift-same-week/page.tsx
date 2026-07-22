@@ -46,8 +46,8 @@ const WEEK = [
   },
   {
     day: "Sexta",
-    body: "Folga. Folga total. É o dia que as pessoas pulam e o que segura a semana em pé.",
-    plain: "Sexta: um dia de folga total, completamente sem treino.",
+    body: "Força leve ou folga. Corpo todo bem leve, ou nada. Leia a semana que você teve e escolha.",
+    plain: "Sexta: um treino de força leve de corpo todo ou mais um dia de folga, dependendo de como foi a semana.",
   },
   {
     day: "Sábado",
@@ -56,8 +56,8 @@ const WEEK = [
   },
   {
     day: "Domingo",
-    body: "Força leve ou folga. Corpo todo bem leve, ou nada. Leia a semana que você teve e escolha.",
-    plain: "Domingo: um treino de força leve de corpo todo ou mais um dia de folga, dependendo de como foi a semana.",
+    body: "Folga. Folga total. É o dia que as pessoas pulam e o que segura a semana em pé.",
+    plain: "Domingo: um dia de folga total, completamente sem treino.",
   },
 ];
 
@@ -72,7 +72,7 @@ const FAQS: { q: string; a: ReactNode; plain?: string }[] = [
   },
   {
     q: "Quantos dias de descanso uma semana híbrida precisa?",
-    a: "Pelo menos um dia inteiro de folga, e pra maioria de quem trabalha, mais um leve ou de folga. A semana acima deixa a sexta totalmente livre e permite que o domingo seja leve ou nada. A recuperação é quando o treino de fato gruda, então esses dias estão trabalhando de verdade.",
+    a: "Pelo menos um dia inteiro de folga, e pra maioria de quem trabalha, mais um leve ou de folga. A semana acima deixa o domingo totalmente livre e permite que a sexta seja leve ou nada. A recuperação é quando o treino de fato gruda, então esses dias estão trabalhando de verdade.",
   },
   {
     q: "Musculação vai me deixar mais lento?",

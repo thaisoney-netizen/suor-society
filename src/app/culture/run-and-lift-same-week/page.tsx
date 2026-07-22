@@ -46,8 +46,8 @@ const WEEK = [
   },
   {
     day: "Friday",
-    body: "Off. Fully off. This is the day people skip and the one holding the week together.",
-    plain: "Friday: a full rest day, completely off.",
+    body: "Easy lift or off. Light full body, or nothing. Read the week you just had and pick.",
+    plain: "Friday: a light full-body lift or another rest day, depending on how the week felt.",
   },
   {
     day: "Saturday",
@@ -56,8 +56,8 @@ const WEEK = [
   },
   {
     day: "Sunday",
-    body: "Easy lift or off. Light full body, or nothing. Read the week you just had and pick.",
-    plain: "Sunday: a light full-body lift or another rest day, depending on how the week felt.",
+    body: "Off. Fully off. This is the day people skip and the one holding the week together.",
+    plain: "Sunday: a full rest day, completely off.",
   },
 ];
 
@@ -72,7 +72,7 @@ const FAQS: { q: string; a: ReactNode; plain?: string }[] = [
   },
   {
     q: "How many rest days does a hybrid week need?",
-    a: "At least one full day off, and for most people with a job, one more that's easy or off. The week above keeps Friday completely off and lets Sunday be light or nothing. Recovery is when the training actually sticks, so those days are doing real work.",
+    a: "At least one full day off, and for most people with a job, one more that's easy or off. The week above keeps Sunday completely off and lets Friday be light or nothing. Recovery is when the training actually sticks, so those days are doing real work.",
   },
   {
     q: "Will lifting make me slower?",
