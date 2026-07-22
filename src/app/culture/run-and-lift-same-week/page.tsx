@@ -72,7 +72,7 @@ const FAQS: { q: string; a: ReactNode; plain?: string }[] = [
   },
   {
     q: "How many rest days does a hybrid week need?",
-    a: "One full day off is the part you don't skip. A second easy or off day helps most people who also work a job, but it's optional, not a rule. The week above keeps Sunday fully off and leaves Friday as that flex day, light or nothing depending on how the legs feel. Recovery is when the training actually sticks, so those days are doing real work.",
+    a: "One full day off is the part you don't skip. A second easy or off day helps most people with a busy schedule, but it's optional, not a rule. The week above keeps Sunday fully off and leaves Friday as that flex day, light or nothing depending on how the legs feel. Recovery is when the training actually sticks, so those days are doing real work.",
   },
   {
     q: "Will lifting make me slower?",
