@@ -152,17 +152,16 @@ export default function RunAndLiftSameWeek() {
               <div className="page">
                 <h2>The two-a-day trap</h2>
                 <p>
-                  A friend of mine fell straight into this, and he&rsquo;s a personal trainer, so he
-                  knew the theory cold. Didn&rsquo;t save him. He ran most mornings, lifted most
-                  nights, nothing on paper tying the two together, just a good engine and the
-                  assumption that more is more.
+                  Here&rsquo;s how it usually goes. Run most mornings, lift most nights, nothing on
+                  paper tying the two together, just a good engine and the assumption that more is
+                  more.
                 </p>
                 <p>
-                  It felt incredible for about three weeks. Then it all showed up at once. Not one
+                  It feels incredible for about three weeks. Then it all shows up at once. Not one
                   big injury, just a body that stopped bouncing back. Legs flat every session, sleep
-                  gone weird, a knee that started talking on the stairs. He wasn&rsquo;t doing too
-                  much work. He was doing too much hard work. Every run and every lift landed in the
-                  same medium-hard middle, the zone where nothing is easy enough to recover from and
+                  gone weird, a knee that starts talking on the stairs. The problem was never too
+                  much work. It was too much hard work. Every run and every lift landing in the same
+                  medium-hard middle, the zone where nothing is easy enough to recover from and
                   nothing is hard enough to make you better.
                 </p>
                 <p>

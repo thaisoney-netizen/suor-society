@@ -153,17 +153,17 @@ export default function CorridaEMusculacaoNaMesmaSemana() {
               <div className="page">
                 <h2>A armadilha dos dois treinos no mesmo dia</h2>
                 <p>
-                  Um amigo meu caiu direto nessa, e ele é personal trainer, então sabia a teoria de
-                  cor. Não adiantou. Ele corria quase toda manhã, malhava quase toda noite, nada no
-                  papel ligando as duas coisas, só um bom motor e a ideia de que mais é sempre melhor.
+                  Normalmente é assim que acontece. Correr quase toda manhã, malhar quase toda noite,
+                  nada no papel ligando as duas coisas, só um bom motor e a ideia de que mais é sempre
+                  melhor.
                 </p>
                 <p>
-                  Foi incrível por umas três semanas. Aí veio tudo de uma vez. Não foi uma lesão
-                  grande, foi um corpo que parou de se recuperar. Perna pesada em todo treino, sono
-                  esquisito, um joelho que começou a reclamar na escada. Ele não estava treinando
-                  demais. Estava treinando forte demais. Cada corrida e cada série caíam no mesmo
-                  meio moderado-forte, a zona onde nada é leve o suficiente pra recuperar e nada é
-                  forte o suficiente pra te fazer evoluir.
+                  Parece incrível por umas três semanas. Aí vem tudo de uma vez. Não é uma lesão
+                  grande, é um corpo que para de se recuperar. Perna pesada em todo treino, sono
+                  esquisito, um joelho que começa a reclamar na escada. O problema nunca foi treinar
+                  demais. Foi treinar forte demais. Cada corrida e cada série caindo no mesmo meio
+                  moderado-forte, a zona onde nada é leve o suficiente pra recuperar e nada é forte o
+                  suficiente pra te fazer evoluir.
                 </p>
                 <p>
                   Esse meio é a armadilha. Dois treinos no mesmo dia funcionam. Só funcionam quando
