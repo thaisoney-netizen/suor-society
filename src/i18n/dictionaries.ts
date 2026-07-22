@@ -255,7 +255,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardPosts: [
         {
           href: "/culture/run-and-lift-same-week",
-          img: "/founder-press.jpg",
+          img: "/run-and-lift-hero.webp",
           eyebrow: "The Culture Archive",
           title: "Run and Lift in the Same Week",
           desc: "One hard session a day, 48 hours between your hardest run and heaviest leg day. The hybrid week that holds up around a job, plus the two-a-day trap that breaks people.",
@@ -578,7 +578,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardPosts: [
         {
           href: "/culture/run-and-lift-same-week",
-          img: "/founder-press.jpg",
+          img: "/run-and-lift-hero.webp",
           eyebrow: "The Culture · Arquivo",
           title: "Corrida e musculação na mesma semana",
           desc: "Um treino forte por dia, 48 horas entre a corrida mais puxada e o dia de perna mais pesado. A semana híbrida que se sustenta no meio do trabalho, e a armadilha que quebra as pessoas.",
