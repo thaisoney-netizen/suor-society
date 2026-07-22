@@ -10,7 +10,7 @@ const META = {
   title: "How to Run and Lift in the Same Week Without Breaking Down, Suor Society",
   description:
     "Run and lift in the same week by keeping one hard session a day and putting 48 hours between your hardest run and heaviest leg day. A hybrid week that holds up around a job.",
-  image: "/founder-press.jpg",
+  image: "/run-and-lift-hero.webp",
 };
 export const metadata = pageMeta({ ...META, paired: true });
 
@@ -109,8 +109,8 @@ export default function RunAndLiftSameWeek() {
         <div className="article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/founder-press.jpg"
-            alt="A hybrid athlete pressing a weight overhead in a gym"
+            src="/run-and-lift-hero.webp"
+            alt="A runner kneeling on a track lacing up a shoe before a session"
           />
         </div>
 

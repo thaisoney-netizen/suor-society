@@ -10,7 +10,7 @@ const META = {
   title: "Corrida e musculação na mesma semana sem se quebrar, Suor Society",
   description:
     "Dá pra correr e fazer musculação na mesma semana mantendo um treino forte por dia e 48 horas entre a corrida mais puxada e o dia de perna mais pesado. Uma semana híbrida que se sustenta.",
-  image: "/founder-press.jpg",
+  image: "/run-and-lift-hero.webp",
 };
 export const metadata = pageMeta({ ...META, paired: true });
 
@@ -109,8 +109,8 @@ export default function CorridaEMusculacaoNaMesmaSemana() {
         <div className="article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/founder-press.jpg"
-            alt="Uma atleta híbrida levantando um peso acima da cabeça numa academia"
+            src="/run-and-lift-hero.webp"
+            alt="Um corredor ajoelhado na pista amarrando o tênis antes do treino"
           />
         </div>
 
