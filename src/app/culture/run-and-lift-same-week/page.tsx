@@ -26,28 +26,28 @@ const TOC = [
 const WEEK = [
   {
     day: "Monday",
-    body: "Heavy lift. The big strength day of the week, lower or full body.",
-    plain: "Monday: heavy lift, the big strength day of the week, lower or full body.",
+    body: "Hard leg day. The heaviest lift of the week, lower body. Everything else bends around this.",
+    plain: "Monday: a heavy lower-body lift, the hardest strength day of the week.",
   },
   {
     day: "Tuesday",
-    body: "Quality run. Intervals, a tempo, something that costs you. The one hard run.",
-    plain: "Tuesday: quality run such as intervals or a tempo, the one hard run of the week.",
+    body: "Easy run. Conversational the whole way. If you can't talk, you're going too fast.",
+    plain: "Tuesday: an easy conversational run, slow enough to hold a conversation.",
   },
   {
     day: "Wednesday",
-    body: "Easy run. Conversational the whole way. If you can't talk, you're going too fast.",
-    plain: "Wednesday: easy conversational run, slow enough to hold a conversation.",
+    body: "Upper-body lift. Push and pull, nothing that hits the legs while they're still recovering from Monday.",
+    plain: "Wednesday: an upper-body lift, no heavy leg work.",
   },
   {
     day: "Thursday",
-    body: "Lift plus a short easy run. Upper-focused strength, then 20 to 30 easy minutes if you want them.",
-    plain: "Thursday: an upper-body focused lift plus an optional 20 to 30 minute easy run.",
+    body: "Tempo run. The one hard run of the week. Comfortably hard, held for a stretch, not all-out.",
+    plain: "Thursday: a tempo run, the one hard run of the week.",
   },
   {
     day: "Friday",
-    body: "Easy lift or off. Light full body, or nothing. Read the week you just had and pick.",
-    plain: "Friday: a light full-body lift or another rest day, depending on how the week felt.",
+    body: "Full-body lift. Lighter than Monday, rounding out whatever the week missed.",
+    plain: "Friday: a lighter full-body lift.",
   },
   {
     day: "Saturday",
@@ -56,8 +56,8 @@ const WEEK = [
   },
   {
     day: "Sunday",
-    body: "Off. Fully off. This is the day people skip and the one holding the week together.",
-    plain: "Sunday: a full rest day, completely off.",
+    body: "Off or a walk. Fully off the training, an easy walk if you feel like moving. This is the day holding the week together.",
+    plain: "Sunday: a full rest day, an easy walk at most.",
   },
 ];
 
@@ -72,7 +72,7 @@ const FAQS: { q: string; a: ReactNode; plain?: string }[] = [
   },
   {
     q: "How many rest days does a hybrid week need?",
-    a: "At least one full day off, and for most people with a job, one more that's easy or off. The week above keeps Sunday completely off and lets Friday be light or nothing. Recovery is when the training actually sticks, so those days are doing real work.",
+    a: "At least one full day off. A second easy or off day helps, but it doesn't have to be its own day on the calendar. The week above keeps Sunday completely off, and the easy Tuesday run plus the long stretch your legs get between Monday and Saturday soak up most of the recovery. Recovery is when the training actually sticks, so those easy days are doing real work.",
   },
   {
     q: "Will lifting make me slower?",
