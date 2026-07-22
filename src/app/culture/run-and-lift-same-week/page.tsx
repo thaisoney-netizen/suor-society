@@ -9,7 +9,7 @@ const META = {
   path: "/culture/run-and-lift-same-week",
   title: "How to Run and Lift in the Same Week Without Breaking Down, Suor Society",
   description:
-    "Run and lift in the same week by keeping one hard session a day and putting 48 hours between your hardest run and heaviest leg day. A hybrid week that holds up around a job.",
+    "Run and lift in the same week by keeping one hard session a day and putting 48 hours between your hardest run and heaviest leg day. A hybrid week that holds up around a busy schedule.",
   image: "/run-and-lift-hero.webp",
 };
 export const metadata = pageMeta({ ...META, paired: true });
@@ -87,7 +87,7 @@ export default function RunAndLiftSameWeek() {
       <HowToJsonLd
         path={META.path}
         name="A hybrid running and lifting week that holds up"
-        description="A weekly template for running and lifting around a full-time job, built so the hard days never collide: three runs, two lifts, one full rest day."
+        description="A weekly template for running and lifting around a busy schedule, built so the hard days never collide: three runs, two lifts, one full rest day."
         image={META.image}
         steps={WEEK.map((d) => ({ name: d.day, text: d.plain }))}
       />
@@ -124,7 +124,8 @@ export default function RunAndLiftSameWeek() {
                 <p className="article-deck">
                   You can run and lift in the same week by keeping one hard session a day and
                   separating your hardest run from your heaviest leg day by at least 48 hours. Most
-                  people with a job do well on three runs and two or three lifts. The mistake that
+                  people with a full-time job or a busy schedule do well on three runs and two or
+                  three lifts. The mistake that
                   breaks people isn&rsquo;t volume, it&rsquo;s running every morning and lifting
                   every night with everything at medium-hard intensity.
                 </p>
@@ -140,7 +141,7 @@ export default function RunAndLiftSameWeek() {
             <section className="article-body">
               <div className="page">
                 <p>
-                  Two sports, one body, five or six days a week, around a job that does not care
+                  Two sports, one body, five or six days a week, around a life that does not care
                   about your training. It works. It just needs a shape. Here&rsquo;s the week I run,
                   why it holds, and the mistake that quietly takes people out.
                 </p>
@@ -207,7 +208,7 @@ export default function RunAndLiftSameWeek() {
               <div className="page">
                 <h2>A week that holds up</h2>
                 <p>
-                  Here&rsquo;s a week that holds up for someone training around a full-time job.
+                  Here&rsquo;s a week that holds up for someone training around a busy schedule.
                   Three runs, two lifts, built so the hard days never collide.
                 </p>
                 <ol className="week-plan">
