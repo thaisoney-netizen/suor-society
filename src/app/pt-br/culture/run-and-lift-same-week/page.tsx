@@ -26,28 +26,28 @@ const TOC = [
 const WEEK = [
   {
     day: "Segunda",
-    body: "Força pesada. O grande dia de força da semana, inferior ou corpo todo.",
-    plain: "Segunda: musculação pesada, o principal dia de força da semana, inferior ou corpo todo.",
+    body: "Dia de perna pesado. O treino mais pesado da semana, membros inferiores. Todo o resto se ajusta em volta dele.",
+    plain: "Segunda: um treino pesado de membros inferiores, o dia de força mais forte da semana.",
   },
   {
     day: "Terça",
-    body: "Corrida de qualidade. Tiros, um tempo run, algo que te custa. A única corrida forte.",
-    plain: "Terça: corrida de qualidade, como tiros ou um tempo run, a única corrida forte da semana.",
+    body: "Corrida leve. Dá pra conversar o tempo todo. Se não dá, você está rápido demais.",
+    plain: "Terça: uma corrida leve e conversável, devagar o suficiente pra manter uma conversa.",
   },
   {
     day: "Quarta",
-    body: "Corrida leve. Dá pra conversar o tempo todo. Se não dá, você está rápido demais.",
-    plain: "Quarta: corrida leve e conversável, devagar o suficiente pra manter uma conversa.",
+    body: "Força de superior. Empurrar e puxar, nada que pese nas pernas enquanto elas ainda se recuperam da segunda.",
+    plain: "Quarta: um treino de força de membros superiores, sem trabalho pesado de perna.",
   },
   {
     day: "Quinta",
-    body: "Força mais uma corrida leve curta. Foco em superior, depois 20 a 30 minutos leves se quiser.",
-    plain: "Quinta: um treino de força com foco em membros superiores mais uma corrida leve opcional de 20 a 30 minutos.",
+    body: "Tempo run. A única corrida forte da semana. Confortavelmente forte, mantido por um trecho, não no talo.",
+    plain: "Quinta: um tempo run, a única corrida forte da semana.",
   },
   {
     day: "Sexta",
-    body: "Força leve ou folga. Corpo todo bem leve, ou nada. Leia a semana que você teve e escolha.",
-    plain: "Sexta: um treino de força leve de corpo todo ou mais um dia de folga, dependendo de como foi a semana.",
+    body: "Força de corpo todo. Mais leve que a segunda, fechando o que a semana deixou passar.",
+    plain: "Sexta: um treino de força de corpo todo mais leve.",
   },
   {
     day: "Sábado",
@@ -56,8 +56,8 @@ const WEEK = [
   },
   {
     day: "Domingo",
-    body: "Folga. Folga total. É o dia que as pessoas pulam e o que segura a semana em pé.",
-    plain: "Domingo: um dia de folga total, completamente sem treino.",
+    body: "Folga ou caminhada. Totalmente fora do treino, uma caminhada leve se der vontade de se mexer. É o dia que segura a semana em pé.",
+    plain: "Domingo: um dia de folga total, no máximo uma caminhada leve.",
   },
 ];
 
@@ -72,7 +72,7 @@ const FAQS: { q: string; a: ReactNode; plain?: string }[] = [
   },
   {
     q: "Quantos dias de descanso uma semana híbrida precisa?",
-    a: "Pelo menos um dia inteiro de folga, e pra maioria de quem trabalha, mais um leve ou de folga. A semana acima deixa o domingo totalmente livre e permite que a sexta seja leve ou nada. A recuperação é quando o treino de fato gruda, então esses dias estão trabalhando de verdade.",
+    a: "Pelo menos um dia inteiro de folga. Um segundo dia leve ou de folga ajuda, mas não precisa ser um dia separado no calendário. A semana acima deixa o domingo totalmente livre, e a corrida leve de terça mais o tempo que as pernas descansam entre segunda e sábado absorvem boa parte da recuperação. A recuperação é quando o treino de fato gruda, então esses dias leves estão trabalhando de verdade.",
   },
   {
     q: "Musculação vai me deixar mais lento?",
