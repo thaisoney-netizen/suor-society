@@ -72,7 +72,7 @@ const FAQS: { q: string; a: ReactNode; plain?: string }[] = [
   },
   {
     q: "Quantos dias de descanso uma semana híbrida precisa?",
-    a: "Pelo menos um dia inteiro de folga, e pra maioria de quem trabalha, mais um leve ou de folga. A semana acima deixa o domingo totalmente livre e permite que a sexta seja leve ou nada. A recuperação é quando o treino de fato gruda, então esses dias estão trabalhando de verdade.",
+    a: "Um dia inteiro de folga é a parte que você não pula. Um segundo dia leve ou de folga ajuda a maioria de quem também trabalha, mas é opcional, não regra. A semana acima deixa o domingo totalmente livre e usa a sexta como esse dia flex, leve ou nada dependendo de como as pernas estão. A recuperação é quando o treino de fato gruda, então esses dias estão trabalhando de verdade.",
   },
   {
     q: "Musculação vai me deixar mais lento?",
