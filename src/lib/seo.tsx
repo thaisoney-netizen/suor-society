@@ -183,6 +183,44 @@ export function FaqJsonLd({
   );
 }
 
+// HowTo for step-by-step sections (e.g. a sample training week). Steps are
+// numbered in document order; pass a plain-text `text` for each so the answer
+// is usable even where the visible copy carries links or markup.
+export function HowToJsonLd({
+  name,
+  description,
+  steps,
+  image,
+  path,
+}: {
+  name: string;
+  description: string;
+  steps: { name: string; text: string }[];
+  /** Optional hero image path under /public. */
+  image?: string;
+  path: string;
+}) {
+  const lang = langOfPath(path);
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        name,
+        description,
+        inLanguage: LOCALE_TAG[lang],
+        ...(image && { image: `${SITE_URL}${image}` }),
+        step: steps.map((s, i) => ({
+          "@type": "HowToStep",
+          position: i + 1,
+          name: s.name,
+          text: s.text,
+        })),
+      }}
+    />
+  );
+}
+
 export function PersonJsonLd({ lang, description }: { lang: Lang; description: string }) {
   return (
     <JsonLd

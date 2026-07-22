@@ -254,12 +254,20 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardTitle: "The board",
       boardPosts: [
         {
+          href: "/culture/run-and-lift-same-week",
+          img: "/founder-press.jpg",
+          eyebrow: "The Culture Archive",
+          title: "Run and Lift in the Same Week",
+          desc: "One hard session a day, 48 hours between your hardest run and heaviest leg day. The hybrid week that holds up around a job, plus the two-a-day trap that breaks people.",
+          meta: "New · Training · July 2026 ↗",
+        },
+        {
           href: "/dispatch/ikea-marathon-croydon-2026",
           img: "/ikea-marathon-hero.avif",
           eyebrow: "The Dispatch",
           title: "The IKEA Marathon Is Real",
           desc: "26.2 miles inside IKEA Croydon, Dec 13. 100 places, a 6pm start, a six-hour cutoff, and a self-assembly medal.",
-          meta: "New · Races · July 2026 ↗",
+          meta: "Races · July 2026 ↗",
         },
         {
           href: "/culture/why-everyone-started-running",
@@ -362,6 +370,12 @@ export const dictionaries: Record<Lang, Dictionary> = {
       ],
       articlesLabel: "Articles by Thais",
       articles: [
+        {
+          href: "/culture/run-and-lift-same-week",
+          tag: "The Culture Archive",
+          date: "July 2026",
+          title: "How to Run and Lift in the Same Week Without Breaking Down",
+        },
         {
           href: "/dispatch/ikea-marathon-croydon-2026",
           tag: "The Dispatch",
@@ -563,12 +577,20 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardTitle: "O mural",
       boardPosts: [
         {
+          href: "/culture/run-and-lift-same-week",
+          img: "/founder-press.jpg",
+          eyebrow: "The Culture · Arquivo",
+          title: "Corrida e musculação na mesma semana",
+          desc: "Um treino forte por dia, 48 horas entre a corrida mais puxada e o dia de perna mais pesado. A semana híbrida que se sustenta no meio do trabalho, e a armadilha que quebra as pessoas.",
+          meta: "Novo · Treino · Julho 2026 ↗",
+        },
+        {
           href: "/dispatch/maratona-ikea-croydon-2026",
           img: "/ikea-marathon-hero.avif",
           eyebrow: "The Dispatch",
           title: "A Maratona da IKEA É Real",
           desc: "42km dentro da IKEA de Croydon, 13 de dezembro. 100 vagas, largada às 18h, corte de seis horas e uma medalha que você monta.",
-          meta: "Novo · Corridas · Julho 2026 ↗",
+          meta: "Corridas · Julho 2026 ↗",
         },
         {
           href: "/culture/why-everyone-started-running",
@@ -674,6 +696,12 @@ export const dictionaries: Record<Lang, Dictionary> = {
       ],
       articlesLabel: "Textos da Thais",
       articles: [
+        {
+          href: "/culture/run-and-lift-same-week",
+          tag: "The Culture Archive",
+          date: "Julho 2026",
+          title: "Corrida e musculação na mesma semana sem se quebrar",
+        },
         {
           href: "/dispatch/maratona-ikea-croydon-2026",
           tag: "The Dispatch",
