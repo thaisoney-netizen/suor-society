@@ -108,6 +108,7 @@ const ORG = {
   name: SITE_NAME,
   url: SITE_URL,
   logo: `${SITE_URL}/logos/wordmark-horizontal.png`,
+  sameAs: ["https://instagram.com/suorsociety"],
 };
 
 function personFor(lang: Lang) {
