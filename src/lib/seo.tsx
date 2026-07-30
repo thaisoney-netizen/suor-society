@@ -103,12 +103,17 @@ function JsonLd({ data }: { data: object }) {
   );
 }
 
+const SOCIAL_PROFILES = [
+  "https://instagram.com/suorsociety",
+  "https://www.tiktok.com/@suor.society",
+];
+
 const ORG = {
   "@type": "Organization",
   name: SITE_NAME,
   url: SITE_URL,
   logo: `${SITE_URL}/logos/wordmark-horizontal.png`,
-  sameAs: ["https://instagram.com/suorsociety"],
+  sameAs: SOCIAL_PROFILES,
 };
 
 function personFor(lang: Lang) {
@@ -231,7 +236,7 @@ export function PersonJsonLd({ lang, description }: { lang: Lang; description: s
         description,
         image: `${SITE_URL}/thais-oney.jpg`,
         worksFor: ORG,
-        sameAs: ["https://instagram.com/suorsociety"],
+        sameAs: SOCIAL_PROFILES,
       }}
     />
   );
