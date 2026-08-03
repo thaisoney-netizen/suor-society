@@ -8,7 +8,8 @@
       "dists": "15K",
       "status": "limit",
       "statusLabel": "Inscrições em breve",
-      "url": "https://www.saosilvestre.com.br/"
+      "url": "https://www.saosilvestre.com.br/",
+      "checked": "2026-07-07"
     },
     {
       "num": "02",
@@ -18,7 +19,8 @@
       "dists": "42K · 21K · 10K · 7K",
       "status": "limit",
       "statusLabel": "Próxima edição (abril)",
-      "url": "https://www.yescom.com.br/"
+      "url": "https://www.yescom.com.br/",
+      "checked": "2026-07-07"
     },
     {
       "num": "03",
@@ -28,7 +30,8 @@
       "dists": "42K · 21K · 10K · 5K",
       "status": "limit",
       "statusLabel": "Próxima edição (junho)",
-      "url": "https://www.maratonadorio.com.br/"
+      "url": "https://www.maratonadorio.com.br/",
+      "checked": "2026-07-07"
     },
     {
       "num": "04",
@@ -38,7 +41,8 @@
       "dists": "5K · 15K · 21K",
       "status": "limit",
       "statusLabel": "Próxima edição (abril)",
-      "url": "https://www.meiamaratonasaopaulo.com.br/"
+      "url": "https://www.meiamaratonasaopaulo.com.br/",
+      "checked": "2026-08-03"
     },
     {
       "num": "05",
@@ -48,7 +52,8 @@
       "dists": "42K (solo, dupla ou quarteto)",
       "status": "open",
       "statusLabel": "Inscrições abertas",
-      "url": "https://www.fila.com.br/maratona"
+      "url": "https://www.fila.com.br/maratona",
+      "checked": "2026-08-03"
     },
     {
       "num": "06",
@@ -58,7 +63,8 @@
       "dists": "42K · 21K · 10K · 5K",
       "status": "limit",
       "statusLabel": "Próxima edição (junho)",
-      "url": "https://www.maratonaemeiadebh.com.br/"
+      "url": "https://www.maratonaemeiadebh.com.br/",
+      "checked": "2026-07-07"
     }
   ],
   "peloBrasil": [
@@ -70,7 +76,8 @@
       "dists": "42K · 21K · 10K · 5K",
       "status": "limit",
       "statusLabel": "Próxima edição (abril)",
-      "url": "https://www.ticketsports.com.br/"
+      "url": "https://www.ticketsports.com.br/",
+      "checked": "2026-07-07"
     },
     {
       "num": "08",
@@ -80,7 +87,8 @@
       "dists": "42K · 21K · 10K · 5K · 3K",
       "status": "limit",
       "statusLabel": "Próxima edição (abril)",
-      "url": "https://brasilcorrida.com.br/"
+      "url": "https://brasilcorrida.com.br/",
+      "checked": "2026-07-07"
     },
     {
       "num": "09",
@@ -90,7 +98,8 @@
       "dists": "42K · 21K · 10K · 5K",
       "status": "limit",
       "statusLabel": "Próxima edição (abril)",
-      "url": "https://www.maratonadejoaopessoa.com.br/"
+      "url": "https://www.maratonadejoaopessoa.com.br/",
+      "checked": "2026-07-07"
     },
     {
       "num": "10",
@@ -100,7 +109,8 @@
       "dists": "42K · 21K · 10K · 5K",
       "status": "limit",
       "statusLabel": "Próxima edição (abril)",
-      "url": "https://maratonademanaus.com.br/"
+      "url": "https://maratonademanaus.com.br/",
+      "checked": "2026-07-07"
     },
     {
       "num": "11",
@@ -110,7 +120,8 @@
       "dists": "3K · 5K · 10K",
       "status": "open",
       "statusLabel": "Inscrições abertas",
-      "url": "https://www.trofeuindependenciabrasil.com.br/"
+      "url": "https://www.trofeuindependenciabrasil.com.br/",
+      "checked": "2026-07-07"
     },
     {
       "num": "12",
@@ -120,7 +131,8 @@
       "dists": "21K",
       "status": "limit",
       "statusLabel": "Próxima edição (agosto) · exige índice",
-      "url": "https://www.desafiodaponteoficial.com.br/"
+      "url": "https://www.desafiodaponteoficial.com.br/",
+      "checked": "2026-08-03"
     }
   ],
   "circuitos": [
@@ -132,7 +144,8 @@
       "dists": "4K · 5K · 10K · 15K",
       "status": "open",
       "statusLabel": "Etapas o ano todo",
-      "url": "https://www.tfsports.com.br/"
+      "url": "https://www.tfsports.com.br/",
+      "checked": "2026-07-07"
     },
     {
       "num": "14",
@@ -142,7 +155,8 @@
       "dists": "5K · 10K · 13K",
       "status": "open",
       "statusLabel": "Etapas o ano todo",
-      "url": "https://www.circuitodasestacoes.com.br/"
+      "url": "https://www.circuitodasestacoes.com.br/",
+      "checked": "2026-07-07"
     }
   ]
 }

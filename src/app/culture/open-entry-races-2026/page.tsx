@@ -34,6 +34,9 @@ type Race = {
   status: "open" | "limit" | "sold";
   statusLabel: string;
   url: string;
+  /** ISO date this race's registration status was last confirmed against the
+   *  official site. Read by scripts/content/check-stale-dates.mjs. */
+  checked?: string;
 };
 
 // Race data lives in src/content/races-en.json — the PDF generator
@@ -41,6 +44,74 @@ type Race = {
 // JSON updates the page and the downloadable guide together.
 const CA_RACES = races.ca as Race[];
 const US_RACES = races.us as Race[];
+
+// Bump both when the race list gets a full re-verification pass. VERIFIED is
+// the only place the "as of" month is written; the FAQ and the download gate
+// both read it, so they cannot drift apart.
+const VERIFIED = "August 2026";
+const GUIDE_SEASON = 2026;
+
+// Every `where` value ends in the race year ("Nov 8, 2026", "Feb 2027").
+const raceYear = (where: string) => Number(where.match(/(\d{4})\s*$/)?.[1] ?? GUIDE_SEASON);
+
+function listSentence(items: string[]): string {
+  if (items.length === 0) return "";
+  if (items.length === 1) return items[0];
+  if (items.length === 2) return `${items[0]} and ${items[1]}`;
+  // Several race names carry their own comma ("Beer City Half, Alameda"),
+  // which makes a comma-separated list ambiguous. Switch to semicolons.
+  const sep = items.some(i => i.includes(",")) ? ";" : ",";
+  return `${items.slice(0, -1).join(`${sep} `)}${sep} and ${items[items.length - 1]}`;
+}
+
+// The "which races are still open" answer is generated from the race data
+// rather than written by hand. The hand-written version silently contradicted
+// the list for weeks after a sold-out sync in July 2026, because updating the
+// JSON did not update the prose.
+function caStatusAnswer(): string {
+  const season = CA_RACES.filter(r => raceYear(r.where) <= GUIDE_SEASON);
+  const next = CA_RACES.filter(r => raceYear(r.where) > GUIDE_SEASON);
+
+  const label = (r: Race) => r.statusLabel.replace(/^Open · /, "");
+  const parts: string[] = [];
+
+  const open = season.filter(r => r.status === "open");
+  if (open.length > 0) {
+    parts.push(
+      `Open right now: ${listSentence(
+        open.map(r => (r.statusLabel === "Open Registration" ? r.name : `${r.name} (${label(r)})`))
+      )}.`
+    );
+  }
+
+  const limited = season.filter(r => r.status === "limit");
+  if (limited.length > 0) {
+    parts.push(
+      `Partly open: ${listSentence(limited.map(r => `${r.name} (${r.statusLabel})`))}.`
+    );
+  }
+
+  const sold = season.filter(r => r.status === "sold");
+  if (sold.length > 0) {
+    parts.push(
+      `Sold out at standard entry: ${listSentence(sold.map(r => r.name))}. Check charity options on those.`
+    );
+  }
+
+  // Deliberately neutral: this group mixes races whose 2026 edition has been
+  // run and rolled forward with races that were always in the 2027 tail of the
+  // guide. Nothing in the data separates the two, so claim only what is true
+  // of both. Each race row spells out which it is.
+  if (next.length > 0) {
+    parts.push(
+      `On next season's dates, each with its own registration window: ${listSentence(
+        next.map(r => `${r.name} (${label(r)})`)
+      )}.`
+    );
+  }
+
+  return `As of ${VERIFIED}, here's where the California list stands. ${parts.join(" ")}`;
+}
 
 const FAQS = [
   {
@@ -57,7 +128,7 @@ const FAQS = [
   },
   {
     q: "Which California races are still open right now?",
-    a: "As of August 2026: Californian Dreamin' in Long Beach, Beer City Half in San Ramon (September), Two Cities (Fresno/Clovis), Silverado, Santa Barbara Half (selling fast), Berkeley Half, San Diego Holiday Half, and Carlsbad in January. Santa Rosa and 2XU Long Beach are down to their short distances only, both halves and fulls are gone. Monterey Bay and CIM are sold out, check charity options. The July races (San Francisco, Napa to Sonoma, Beer City Alameda) have already been run, so they're listed here on their 2027 dates. The other 2027 races (Surf City, LA, Mountains 2 Beach, OC, Rock 'n' Roll San Diego) are listed with annual registration windows.",
+    a: caStatusAnswer(),
   },
   {
     q: "Can a beginner run an open entry half marathon?",
@@ -218,7 +289,7 @@ export default function OpenEntryRaces2026() {
               <li>20 top US USATF-certified races, no qualifier needed</li>
               <li>Every distance: 5K, 10K, Half Marathon, Full Marathon</li>
               <li>Current prices and direct registration links</li>
-              <li>Availability and status updated August 2026</li>
+              <li>Availability and status updated {VERIFIED}</li>
             </ul>
             <DownloadGate />
           </div>

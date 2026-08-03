@@ -1,13 +1,22 @@
-name: Stale Content Dates
+name: Content Freshness
 
-# Monthly sweep for calendar dates that have already passed (race listings,
-# dispatch posts). Opens/updates a GitHub issue with the report so the fix can
-# be picked up in the next content session. Manual runs via the Actions tab.
+# Weekly sweep over race guides and dispatch posts for two things: calendar
+# dates that have already passed, and upcoming races whose registration status
+# has not been re-verified lately (status drifts with no date changing).
+#
+# Reports to two places on purpose. The GitHub issue is the durable, deduped
+# record; the Notion card is the nudge that actually gets seen. A monthly
+# issue-only run went unread for two days in Aug 2026 while the race picks post
+# advertised three races that had already been run.
+#
+# Manual runs via the Actions tab.
 
 on:
   schedule:
-    # 1st of the month, 6:15 AM Pacific (13:15 UTC standard / 14:15 DST-safe pick)
-    - cron: '15 14 1 * *'
+    # Mondays, 6:15 AM Pacific standard / 7:15 AM during DST → 14:15 UTC.
+    # Weekly rather than monthly: a race that runs on the 2nd used to sit
+    # wrong for four weeks.
+    - cron: '15 14 * * 1'
   workflow_dispatch:
 
 permissions:
@@ -24,24 +33,24 @@ jobs:
         with:
           node-version: '20'
 
-      # Dependency-free script: no npm install needed.
-      - name: Scan for stale dates
+      # Dependency-free scripts: no npm install needed.
+      - name: Scan for stale dates and unverified races
         id: scan
         run: |
           set +e
           node scripts/content/check-stale-dates.mjs > report.txt
-          echo "stale=$?" >> "$GITHUB_OUTPUT"
+          echo "findings=$?" >> "$GITHUB_OUTPUT"
           cat report.txt
 
       - name: Open or update issue
-        if: steps.scan.outputs.stale == '1'
+        if: steps.scan.outputs.findings == '1'
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
             const report = fs.readFileSync('report.txt', 'utf8');
-            const title = 'Content freshness: stale dates found';
-            const body = `The monthly stale-date sweep found content advertising past dates.\n\n${report}\n\n_Auto-filed by .github/workflows/stale-dates.yml_`;
+            const title = 'Content freshness: review needed';
+            const body = `The weekly content freshness sweep found content to review.\n\n${report}\n\n_Auto-filed by .github/workflows/stale-dates.yml_`;
             const { data: issues } = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -53,6 +62,7 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: issues[0].number,
+                title,
                 body,
               });
             } else {
@@ -62,5 +72,44 @@ jobs:
                 title,
                 body,
                 labels: ['content-freshness'],
+              });
+            }
+
+      # Runs after the issue so a Notion outage still leaves the durable record.
+      # Allowed to fail the job: a broken notification path should be loud,
+      # since a silent one is the problem this workflow exists to fix.
+      - name: Post card to the Notion board
+        if: steps.scan.outputs.findings == '1'
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: node scripts/content/notify-board.mjs report.txt
+
+      # Sweep came back clean, so close any issue left open from a prior run.
+      - name: Close resolved issue
+        if: steps.scan.outputs.findings == '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'content-freshness',
+            });
+            for (const issue of issues) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: 'Sweep is clean as of this run. Closing automatically.\n\n_.github/workflows/stale-dates.yml_',
+              });
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: 'closed',
+                state_reason: 'completed',
               });
             }

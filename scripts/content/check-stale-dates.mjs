@@ -1,18 +1,33 @@
-// Scans site content for calendar dates that have already passed, so race
-// guides and dispatch posts never advertise a past event as upcoming.
+// Content freshness sweep. Two independent checks:
+//
+//   1. STALE DATES — any listing date that has already passed, so race guides
+//      and dispatch posts never advertise a past event as upcoming.
+//   2. UNVERIFIED UPCOMING RACES — races inside the verification window whose
+//      `checked` stamp has gone stale. Registration status (open, waitlist,
+//      sold out) drifts with no date changing, and check 1 is blind to it.
+//      Sell-outs cluster in the weeks before race day, which is the window
+//      this covers.
 //
 //   Run:  node scripts/content/check-stale-dates.mjs
-//   Exit: 0 when clean, 1 when stale dates were found (report on stdout).
+//   Exit: 0 when clean, 1 when either check reports something (report on stdout).
 //
-// Runs monthly via .github/workflows/stale-dates.yml, which opens a GitHub
-// issue with the report. Dependency-free on purpose so the workflow needs no
-// npm install.
+// Runs weekly via .github/workflows/stale-dates.yml, which opens a GitHub issue
+// and posts a card to the Notion board. Dependency-free on purpose so the
+// workflow needs no npm install.
 
 import fs from "node:fs";
 import path from "node:path";
 
 const ROOTS = ["src/app", "src/content", "src/i18n"];
 const EXTS = new Set([".tsx", ".ts", ".json"]);
+const RACE_FILES = ["src/content/races-en.json", "src/content/races-br.json"];
+
+// A race this close to its date is in sell-out season and its status is worth
+// re-confirming against the official site.
+const VERIFY_WINDOW_DAYS = 45;
+// ...but only if we have not confirmed it in this long. Re-verifying bumps
+// `checked` in the JSON, which quiets the race until the stamp ages out again.
+const VERIFY_MAX_AGE_DAYS = 30;
 
 // "July 11, 2026", "Nov 21-22, 2026", "Dec 4 to 6, 2026" (year required)
 const EN_DATE =
@@ -43,9 +58,18 @@ function isListingLine(line, file) {
   return /^\s*"?(where|date|meta)"?:\s/.test(line) || line.includes("·");
 }
 
-const today = new Date();
+// FRESHNESS_TODAY pins "today" (YYYY-MM-DD) so the sweep can be tested against
+// a future date without waiting for the calendar. Unset in normal runs.
+const today = process.env.FRESHNESS_TODAY
+  ? new Date(`${process.env.FRESHNESS_TODAY}T00:00:00`)
+  : new Date();
 today.setHours(0, 0, 0, 0);
-const findings = [];
+const dayMs = 24 * 60 * 60 * 1000;
+const daysFromToday = d => Math.round((d - today) / dayMs);
+
+// ── Check 1: dates already in the past ───────────────────────────────────────
+
+const stale = [];
 
 for (const root of ROOTS) {
   if (!fs.existsSync(root)) continue;
@@ -57,28 +81,105 @@ for (const root of ROOTS) {
         const month = EN_MONTHS[m[1].slice(0, 3).toLowerCase()];
         const day = Number(m[3] ?? m[2]); // ranges stale only after the END day
         const d = new Date(Number(m[4]), month, day);
-        if (d < today) findings.push({ file, line: i + 1, text: m[0].trim() });
+        if (d < today) stale.push({ file, line: i + 1, text: m[0].trim() });
       }
       for (const m of line.matchAll(PT_DATE)) {
         const month = PT_MONTHS[m[3].toLowerCase()];
         const day = Number(m[2] ?? m[1]);
         const d = new Date(Number(m[4]), month, day);
-        if (d < today) findings.push({ file, line: i + 1, text: m[0].trim() });
+        if (d < today) stale.push({ file, line: i + 1, text: m[0].trim() });
       }
     });
   }
 }
 
-if (findings.length === 0) {
-  console.log("No stale dates found.");
+// ── Check 2: upcoming races whose status has not been re-verified ────────────
+
+// Pulls the race date out of a `where` field ("Alameda, CA · July 10, 2027").
+// Returns null for month-only entries ("Feb 2027") and annual anchors
+// ("Abril (âncora anual)", "Etapas o ano todo") — those have no precise date
+// to approach, so they are outside this check by design. Uses the START day of
+// a range, since a multi-day weekend enters sell-out season on its first day.
+function raceDate(where) {
+  for (const m of where.matchAll(EN_DATE)) {
+    return new Date(Number(m[4]), EN_MONTHS[m[1].slice(0, 3).toLowerCase()], Number(m[2]));
+  }
+  for (const m of where.matchAll(PT_DATE)) {
+    return new Date(Number(m[4]), PT_MONTHS[m[3].toLowerCase()], Number(m[1]));
+  }
+  return null;
+}
+
+const unverified = [];
+
+for (const file of RACE_FILES) {
+  if (!fs.existsSync(file)) continue;
+  const data = JSON.parse(fs.readFileSync(file, "utf8"));
+  for (const races of Object.values(data)) {
+    for (const race of races) {
+      const date = raceDate(race.where);
+      if (!date) continue;
+      const daysOut = daysFromToday(date);
+      if (daysOut < 0 || daysOut > VERIFY_WINDOW_DAYS) continue;
+
+      const checkedAge = race.checked
+        ? -daysFromToday(new Date(`${race.checked}T00:00:00`))
+        : Infinity;
+      if (checkedAge <= VERIFY_MAX_AGE_DAYS) continue;
+
+      unverified.push({
+        file,
+        name: race.name,
+        where: race.where,
+        statusLabel: race.statusLabel,
+        daysOut,
+        checked: race.checked ?? "never",
+      });
+    }
+  }
+}
+
+unverified.sort((a, b) => a.daysOut - b.daysOut);
+
+// ── Report ───────────────────────────────────────────────────────────────────
+
+if (stale.length === 0 && unverified.length === 0) {
+  console.log("Content freshness: clean. No stale dates, no races due for a status re-check.");
   process.exit(0);
 }
 
-console.log(`Found ${findings.length} date(s) already in the past (today: ${today.toISOString().slice(0, 10)}):\n`);
-for (const f of findings) {
-  console.log(`- \`${f.file}:${f.line}\` — "${f.text}"`);
+console.log(`Content freshness report (today: ${today.toISOString().slice(0, 10)})\n`);
+
+if (stale.length > 0) {
+  console.log(`## ${stale.length} date(s) already in the past\n`);
+  for (const f of stale) {
+    console.log(`- \`${f.file}:${f.line}\` — "${f.text}"`);
+  }
+  console.log(
+    "\nFor each hit: remove the entry, reframe it as an annual anchor, or replace it with an upcoming edition."
+  );
+  console.log("");
 }
+
+if (unverified.length > 0) {
+  console.log(`## ${unverified.length} upcoming race(s) due for a status re-check\n`);
+  console.log(
+    `Races within ${VERIFY_WINDOW_DAYS} days not verified in the last ${VERIFY_MAX_AGE_DAYS} days. ` +
+    "Registration status drifts without any date changing, so these need eyes on the official site.\n"
+  );
+  for (const r of unverified) {
+    const when = r.daysOut === 0 ? "today" : `in ${r.daysOut} day${r.daysOut === 1 ? "" : "s"}`;
+    console.log(`- **${r.name}** (${when}) — currently "${r.statusLabel}" · last checked ${r.checked}`);
+    console.log(`  ${r.where} · \`${r.file}\``);
+  }
+  console.log(
+    "\nConfirm each against its official registration page, correct `status`/`statusLabel` if it moved, " +
+    "and set `checked` to today's date either way."
+  );
+  console.log("");
+}
+
 console.log(
-  "\nFor each hit: remove the entry, reframe it as an annual anchor, or replace it with an upcoming edition. Race data lives in src/content/races-*.json; re-run `node scripts/generate-race-guide-pdf.js` after editing it."
+  "Race data lives in src/content/races-*.json; re-run `node scripts/generate-race-guide-pdf.js` after editing it."
 );
 process.exit(1);

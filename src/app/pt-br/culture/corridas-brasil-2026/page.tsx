@@ -36,6 +36,9 @@ type Race = {
   status: "open" | "limit" | "sold";
   statusLabel: string;
   url: string;
+  /** ISO date this race's registration status was last confirmed against the
+   *  official site. Read by scripts/content/check-stale-dates.mjs. */
+  checked?: string;
 };
 
 // Race data lives in src/content/races-br.json — the PDF generator
