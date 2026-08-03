@@ -32,12 +32,12 @@
     },
     {
       "num": "04",
-      "name": "Meia Maratona de São Paulo",
-      "where": "São Paulo, SP · Julho de 2026",
-      "body": "Percurso inédito anunciado para 2026. Meia de inverno paulistano, clima mais fresco, boa janela para quem está construindo para uma maratona no segundo semestre.",
-      "dists": "21K · 10K · 5K",
-      "status": "open",
-      "statusLabel": "Inscrições abertas",
+      "name": "Meia Maratona Internacional da Cidade de São Paulo",
+      "where": "São Paulo, SP · Abril (âncora anual)",
+      "body": "Largada no Obelisco do Ibirapuera, descida pela 23 de Maio até o centro e chegada na Praça Charles Miller, em frente ao Pacaembu. A 26ª edição saiu em abril de 2026, com percurso inédito e 13 mil inscritos. A próxima é em abril de 2027, e as inscrições costumam abrir no começo do ano.",
+      "dists": "5K · 15K · 21K",
+      "status": "limit",
+      "statusLabel": "Próxima edição (abril)",
       "url": "https://www.meiamaratonasaopaulo.com.br/"
     },
     {
@@ -115,11 +115,11 @@
     {
       "num": "12",
       "name": "Desafio da Ponte, Rio-Niterói",
-      "where": "Rio de Janeiro / Niterói, RJ · 2 de agosto de 2026",
-      "body": "A única chance no ano de correr a Ponte Rio-Niterói fechada, com vista da Baía de Guanabara que você não tem de outro jeito. Em 2026 a prova virou 21K e passou a exigir índice (meia em até 2h30/2h35), então é a exceção da lista: não é mais pra estreante. 8 mil vagas que somem rápido.",
+      "where": "Rio de Janeiro / Niterói, RJ · Agosto (âncora anual)",
+      "body": "A única chance no ano de correr a Ponte Rio-Niterói fechada, com vista da Baía de Guanabara que você não tem de outro jeito. A 2ª edição, em agosto de 2026, levou 6 mil corredores do Caminho Niemeyer, em Niterói, até a Praça Mauá. A prova virou 21K e passou a exigir índice (meia em até 2h30/2h35), então é a exceção da lista: não é mais pra estreante. A data de 2027 ainda não saiu, e as vagas somem rápido quando abre.",
       "dists": "21K",
       "status": "limit",
-      "statusLabel": "Inscrições abertas · exige índice",
+      "statusLabel": "Próxima edição (agosto) · exige índice",
       "url": "https://www.desafiodaponteoficial.com.br/"
     }
   ],

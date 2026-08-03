@@ -57,7 +57,7 @@ const FAQS = [
   },
   {
     q: "Which California races are still open right now?",
-    a: "As of June 2026: San Francisco Marathon (half and shorter), Santa Rosa Marathon (half only), Californian Dreamin' in Long Beach, Beer City Half in Alameda (July) and San Ramon (September), 2XU Long Beach Marathon, Two Cities (Fresno/Clovis), Silverado, Santa Barbara Half (selling fast), Berkeley Half, San Diego Holiday Half, and Napa to Sonoma Rosé 5K. Monterey Bay and CIM are sold out, check charity options. 2027 races (Carlsbad, Surf City, LA, Mountains 2 Beach, OC, Rock 'n' Roll San Diego) are listed with annual registration windows.",
+    a: "As of August 2026: Californian Dreamin' in Long Beach, Beer City Half in San Ramon (September), Two Cities (Fresno/Clovis), Silverado, Santa Barbara Half (selling fast), Berkeley Half, San Diego Holiday Half, and Carlsbad in January. Santa Rosa and 2XU Long Beach are down to their short distances only, both halves and fulls are gone. Monterey Bay and CIM are sold out, check charity options. The July races (San Francisco, Napa to Sonoma, Beer City Alameda) have already been run, so they're listed here on their 2027 dates. The other 2027 races (Surf City, LA, Mountains 2 Beach, OC, Rock 'n' Roll San Diego) are listed with annual registration windows.",
   },
   {
     q: "Can a beginner run an open entry half marathon?",
@@ -98,7 +98,7 @@ function RaceRow({ race }: { race: Race }) {
 export default function OpenEntryRaces2026() {
   return (
     <>
-      <ArticleJsonLd {...META} datePublished="2026-06-14" dateModified="2026-07-07" />
+      <ArticleJsonLd {...META} datePublished="2026-06-14" dateModified="2026-08-03" />
       <FaqJsonLd faqs={FAQS} />
       {/* NAV */}
       <SiteNav />
@@ -218,7 +218,7 @@ export default function OpenEntryRaces2026() {
               <li>20 top US USATF-certified races, no qualifier needed</li>
               <li>Every distance: 5K, 10K, Half Marathon, Full Marathon</li>
               <li>Current prices and direct registration links</li>
-              <li>Availability and status updated July 2026</li>
+              <li>Availability and status updated August 2026</li>
             </ul>
             <DownloadGate />
           </div>
