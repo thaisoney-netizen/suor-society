@@ -3,6 +3,7 @@ import { Bebas_Neue, Barlow_Condensed, Inter, JetBrains_Mono } from "next/font/g
 import Script from "next/script";
 import "./globals.css";
 import ScrollTracker from "@/components/ScrollTracker";
+import { SITE_URL } from "@/lib/seo";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -34,10 +35,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.suorsociety.com"),
-  title: "Suor Society",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Suor Society, hybrid running culture for people with jobs",
+    template: "%s",
+  },
   description:
-    "A hybrid running culture page for people who run and lift around everything else. Race picks, gear, and the scene.",
+    "Hybrid running culture for people who run and lift around a full-time job. Race picks, gear that earns its place, training that fits a real week.",
   alternates: {
     canonical: "/",
     languages: {
@@ -48,16 +52,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Suor Society",
-    url: "https://www.suorsociety.com",
-    title: "Suor Society — hybrid running culture page",
+    url: SITE_URL,
+    title: "Suor Society, hybrid running culture for people with jobs",
     description:
-      "A hybrid running culture page for people who run and lift around everything else. Race picks, gear, and the scene.",
+      "Hybrid running culture for people who run and lift around a full-time job. Race picks, gear that earns its place, training that fits a real week.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Suor Society — hybrid running culture page",
+    title: "Suor Society, hybrid running culture for people with jobs",
     description:
-      "A hybrid running culture page for people who run and lift around everything else. Race picks, gear, and the scene.",
+      "Hybrid running culture for people who run and lift around a full-time job. Race picks, gear that earns its place, training that fits a real week.",
   },
   verification: {
     google: "YDm19JsCu27EgusYeNzYTF9-ztIk8kzRh4eFN2H1j40",

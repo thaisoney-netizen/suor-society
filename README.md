@@ -1,6 +1,6 @@
 # Suor Society
 
-Hybrid running culture site — [suorsociety.com](https://www.suorsociety.com).
+Hybrid running culture site — [suorsociety.com](https://suorsociety.com).
 Next.js App Router, English at `/` and Brazilian Portuguese at `/pt-br`.
 
 ## Develop
@@ -16,8 +16,9 @@ npm run build   # production build (also validates sitemap/metadata)
 | Piece | Where | Notes |
 | --- | --- | --- |
 | Copy & i18n | `src/i18n/dictionaries.ts` | All shared copy, both locales, plus locale helpers |
-| SEO plumbing | `src/lib/seo.tsx` | `pageMeta()` for canonical/hreflang/OG, JSON-LD components |
+| SEO plumbing | `src/lib/seo.tsx` | `pageMeta()` for canonical/hreflang/OG, JSON-LD components. `SITE_URL` is the apex (no `www`) because that is the host serving 200 |
 | Sitemap / robots | `src/app/sitemap.ts`, `src/app/robots.ts` | Generated from the filesystem — new pages are picked up automatically |
+| AI answer map | `src/app/llms.txt/route.ts` | `/llms.txt` for ChatGPT/Claude/Perplexity. Also filesystem-generated, titles read from each page's own metadata |
 | Race guide data | `src/content/races-*.json` | Single source for the guide pages **and** the gated PDFs |
 | PDF generator | `scripts/generate-race-guide-pdf.js` | `node scripts/generate-race-guide-pdf.js` regenerates both PDFs |
 | Signup APIs | `src/app/api/*`, `src/lib/subscribe.ts` | Notification email + optional Buttondown (set `BUTTONDOWN_API_KEY`) |

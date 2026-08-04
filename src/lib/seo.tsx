@@ -6,7 +6,12 @@ import { AUTHOR_PATH, LOCALE_TAG, type Lang } from "@/i18n/dictionaries";
 // canonical URLs, hreflang pairs, Open Graph and structured data then stay
 // consistent site-wide without per-page corrections.
 
-export const SITE_URL = "https://www.suorsociety.com";
+// Apex, no www. Vercel serves the apex with a 200 and 307s www -> apex, so a
+// www canonical would point every page at a URL that redirects away (Google
+// files those under "Page with redirect" and drops them from the index).
+// This constant feeds canonicals, OG urls, hreflang, JSON-LD, sitemap and
+// robots, so it must match the host that actually answers 200.
+export const SITE_URL = "https://suorsociety.com";
 export const SITE_NAME = "Suor Society";
 
 const PT_PREFIX = "/pt-br";

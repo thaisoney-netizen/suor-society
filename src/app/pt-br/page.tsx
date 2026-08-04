@@ -3,9 +3,9 @@ import { pageMeta, WebSiteJsonLd } from "@/lib/seo";
 
 export const metadata = pageMeta({
   path: "/pt-br",
-  title: "Suor Society, hybrid running culture page",
+  title: "Suor Society, cultura de corrida híbrida pra quem trabalha",
   description:
-    "Cultura de corrida híbrida para quem corre e treina força no meio de tudo. Race picks, equipamentos e a cena.",
+    "Cultura de corrida híbrida pra quem corre e treina força mesmo trabalhando o dia inteiro. Race picks, equipamentos que valem a pena e treino que cabe numa semana real.",
   paired: true,
   ogType: "website",
 });
