@@ -88,6 +88,23 @@ LinkedIn jobs workflow checks it out and commits state back to it on a
 schedule. Never delete it when pruning merged `claude/*` branches, and note
 that editing `scripts/jobs/search.mjs` on main does nothing — the live copy
 is on that branch.
+
+The branch `claude/website-blocked-it-security-goiawh` is ARCHIVAL: commit
+`638370a` on it holds the only copy in git of the `Branding/` design system
+(`design.md`, `tokens.css`, the logo SVG/PNG set, the Brand Guidelines PDF
+and HTML). `/Branding/` is gitignored on purpose, so those files live
+untracked on Thais's machine and exist nowhere else in version control.
+Deleting this branch destroys the only backup. Never prune it.
+
+To read the files without merging anything:
+`git archive 638370a Branding | tar -x -C /tmp/branding`
+
+Note that `hybrid-running-business` (the skill) names `Branding/design.md`
+as the source of truth for all color tokens, type scale, and the logo
+system. Because the folder is gitignored, cloud sessions cannot see it —
+which is how `src/app/globals.css` drifted from the spec. If you are
+generating anything visual in a cloud session, extract it from `638370a`
+first rather than guessing or restating hex codes.
 <!-- END:branch-hygiene -->
 
 <!-- BEGIN:suor-pm-protocol -->
