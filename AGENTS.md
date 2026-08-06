@@ -41,9 +41,26 @@ robots, hreflang, or OG work. Follow this and nothing needs correcting later:
 7. **Race data** lives in `src/content/races-*.json` — the guide pages and the
    gated PDFs render the same JSON. After editing it, run
    `node scripts/generate-race-guide-pdf.js` and commit the PDFs too.
+   Every race carries a `checked` field: the ISO date its registration status
+   was last confirmed against the official site. **Whenever you touch a race's
+   `status`/`statusLabel`, or confirm it is still correct, set `checked` to
+   today.** Never stamp a race you did not actually verify; the whole point is
+   that the date means something.
 8. **Dates.** Any "City · Month D, YYYY" listing you add is watched by the
-   monthly stale-date sweep (`scripts/content/check-stale-dates.mjs`); run it
-   locally before publishing a dated list.
+   weekly content-freshness sweep (`scripts/content/check-stale-dates.mjs`);
+   run it locally before publishing a dated list. It checks two things: dates
+   already in the past, and races within 45 days whose `checked` stamp is more
+   than 30 days old. Test it against a future date with
+   `FRESHNESS_TODAY=2026-09-20 node scripts/content/check-stale-dates.mjs`.
+   The sweep reports to a GitHub issue *and* a Notion board card, because an
+   issue on its own goes unread.
+9. **Never hand-write status prose that restates the race data.** The
+   "which races are still open" FAQ answer on
+   `/culture/open-entry-races-2026` is generated from the JSON
+   (`caStatusAnswer()`), and the "as of" month comes from the single
+   `VERIFIED` constant that the download gate also reads. A hand-written
+   version of that answer silently contradicted the race rows for weeks. If
+   you add similar summary copy, derive it the same way.
 <!-- END:new-post-checklist -->
 
 <!-- BEGIN:author-page-upkeep -->

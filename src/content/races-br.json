@@ -8,7 +8,8 @@
       "dists": "15K",
       "status": "limit",
       "statusLabel": "Inscrições em breve",
-      "url": "https://www.saosilvestre.com.br/"
+      "url": "https://www.saosilvestre.com.br/",
+      "checked": "2026-07-07"
     },
     {
       "num": "02",
@@ -18,7 +19,8 @@
       "dists": "42K · 21K · 10K · 7K",
       "status": "limit",
       "statusLabel": "Próxima edição (abril)",
-      "url": "https://www.yescom.com.br/"
+      "url": "https://www.yescom.com.br/",
+      "checked": "2026-07-07"
     },
     {
       "num": "03",
@@ -28,17 +30,19 @@
       "dists": "42K · 21K · 10K · 5K",
       "status": "limit",
       "statusLabel": "Próxima edição (junho)",
-      "url": "https://www.maratonadorio.com.br/"
+      "url": "https://www.maratonadorio.com.br/",
+      "checked": "2026-07-07"
     },
     {
       "num": "04",
-      "name": "Meia Maratona de São Paulo",
-      "where": "São Paulo, SP · Julho de 2026",
-      "body": "Percurso inédito anunciado para 2026. Meia de inverno paulistano, clima mais fresco, boa janela para quem está construindo para uma maratona no segundo semestre.",
-      "dists": "21K · 10K · 5K",
-      "status": "open",
-      "statusLabel": "Inscrições abertas",
-      "url": "https://www.meiamaratonasaopaulo.com.br/"
+      "name": "Meia Maratona Internacional da Cidade de São Paulo",
+      "where": "São Paulo, SP · Abril (âncora anual)",
+      "body": "Largada no Obelisco do Ibirapuera, descida pela 23 de Maio até o centro e chegada na Praça Charles Miller, em frente ao Pacaembu. A 26ª edição saiu em abril de 2026, com percurso inédito e 13 mil inscritos. A próxima é em abril de 2027, e as inscrições costumam abrir no começo do ano.",
+      "dists": "5K · 15K · 21K",
+      "status": "limit",
+      "statusLabel": "Próxima edição (abril)",
+      "url": "https://www.meiamaratonasaopaulo.com.br/",
+      "checked": "2026-08-03"
     },
     {
       "num": "05",
@@ -48,7 +52,8 @@
       "dists": "42K (solo, dupla ou quarteto)",
       "status": "open",
       "statusLabel": "Inscrições abertas",
-      "url": "https://www.fila.com.br/maratona"
+      "url": "https://www.fila.com.br/maratona",
+      "checked": "2026-08-03"
     },
     {
       "num": "06",
@@ -58,7 +63,8 @@
       "dists": "42K · 21K · 10K · 5K",
       "status": "limit",
       "statusLabel": "Próxima edição (junho)",
-      "url": "https://www.maratonaemeiadebh.com.br/"
+      "url": "https://www.maratonaemeiadebh.com.br/",
+      "checked": "2026-07-07"
     }
   ],
   "peloBrasil": [
@@ -70,7 +76,8 @@
       "dists": "42K · 21K · 10K · 5K",
       "status": "limit",
       "statusLabel": "Próxima edição (abril)",
-      "url": "https://www.ticketsports.com.br/"
+      "url": "https://www.ticketsports.com.br/",
+      "checked": "2026-07-07"
     },
     {
       "num": "08",
@@ -80,7 +87,8 @@
       "dists": "42K · 21K · 10K · 5K · 3K",
       "status": "limit",
       "statusLabel": "Próxima edição (abril)",
-      "url": "https://brasilcorrida.com.br/"
+      "url": "https://brasilcorrida.com.br/",
+      "checked": "2026-07-07"
     },
     {
       "num": "09",
@@ -90,7 +98,8 @@
       "dists": "42K · 21K · 10K · 5K",
       "status": "limit",
       "statusLabel": "Próxima edição (abril)",
-      "url": "https://www.maratonadejoaopessoa.com.br/"
+      "url": "https://www.maratonadejoaopessoa.com.br/",
+      "checked": "2026-07-07"
     },
     {
       "num": "10",
@@ -100,7 +109,8 @@
       "dists": "42K · 21K · 10K · 5K",
       "status": "limit",
       "statusLabel": "Próxima edição (abril)",
-      "url": "https://maratonademanaus.com.br/"
+      "url": "https://maratonademanaus.com.br/",
+      "checked": "2026-07-07"
     },
     {
       "num": "11",
@@ -110,17 +120,19 @@
       "dists": "3K · 5K · 10K",
       "status": "open",
       "statusLabel": "Inscrições abertas",
-      "url": "https://www.trofeuindependenciabrasil.com.br/"
+      "url": "https://www.trofeuindependenciabrasil.com.br/",
+      "checked": "2026-07-07"
     },
     {
       "num": "12",
       "name": "Desafio da Ponte, Rio-Niterói",
-      "where": "Rio de Janeiro / Niterói, RJ · 2 de agosto de 2026",
-      "body": "A única chance no ano de correr a Ponte Rio-Niterói fechada, com vista da Baía de Guanabara que você não tem de outro jeito. Em 2026 a prova virou 21K e passou a exigir índice (meia em até 2h30/2h35), então é a exceção da lista: não é mais pra estreante. 8 mil vagas que somem rápido.",
+      "where": "Rio de Janeiro / Niterói, RJ · Agosto (âncora anual)",
+      "body": "A única chance no ano de correr a Ponte Rio-Niterói fechada, com vista da Baía de Guanabara que você não tem de outro jeito. A 2ª edição, em agosto de 2026, levou 6 mil corredores do Caminho Niemeyer, em Niterói, até a Praça Mauá. A prova virou 21K e passou a exigir índice (meia em até 2h30/2h35), então é a exceção da lista: não é mais pra estreante. A data de 2027 ainda não saiu, e as vagas somem rápido quando abre.",
       "dists": "21K",
       "status": "limit",
-      "statusLabel": "Inscrições abertas · exige índice",
-      "url": "https://www.desafiodaponteoficial.com.br/"
+      "statusLabel": "Próxima edição (agosto) · exige índice",
+      "url": "https://www.desafiodaponteoficial.com.br/",
+      "checked": "2026-08-03"
     }
   ],
   "circuitos": [
@@ -132,7 +144,8 @@
       "dists": "4K · 5K · 10K · 15K",
       "status": "open",
       "statusLabel": "Etapas o ano todo",
-      "url": "https://www.tfsports.com.br/"
+      "url": "https://www.tfsports.com.br/",
+      "checked": "2026-07-07"
     },
     {
       "num": "14",
@@ -142,7 +155,8 @@
       "dists": "5K · 10K · 13K",
       "status": "open",
       "statusLabel": "Etapas o ano todo",
-      "url": "https://www.circuitodasestacoes.com.br/"
+      "url": "https://www.circuitodasestacoes.com.br/",
+      "checked": "2026-07-07"
     }
   ]
 }

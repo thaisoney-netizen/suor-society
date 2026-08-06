@@ -36,6 +36,9 @@ type Race = {
   status: "open" | "limit" | "sold";
   statusLabel: string;
   url: string;
+  /** ISO date this race's registration status was last confirmed against the
+   *  official site. Read by scripts/content/check-stale-dates.mjs. */
+  checked?: string;
 };
 
 // Race data lives in src/content/races-br.json — the PDF generator
@@ -100,7 +103,7 @@ function RaceRow({ race }: { race: Race }) {
 export default function CorridasBrasil2026() {
   return (
     <>
-      <ArticleJsonLd {...META} datePublished="2026-07-02" dateModified="2026-07-07" />
+      <ArticleJsonLd {...META} datePublished="2026-07-02" dateModified="2026-08-03" />
       <FaqJsonLd faqs={FAQS} />
       {/* NAV */}
       <SiteNav lang="pt" />
@@ -248,7 +251,7 @@ export default function CorridasBrasil2026() {
               <li>As grandes corridas do Brasil em 2026</li>
               <li>Maratonas, meias e provas de rua que valem a inscrição</li>
               <li>Todas as distâncias: 5K, 10K, 21K, 42K</li>
-              <li>Status e links diretos atualizados em julho de 2026</li>
+              <li>Status e links diretos atualizados em agosto de 2026</li>
             </ul>
             <DownloadGate lang="pt" />
           </div>

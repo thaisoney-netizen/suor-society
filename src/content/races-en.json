@@ -3,35 +3,38 @@
     {
       "num": "01",
       "name": "Beer City Half, Alameda",
-      "where": "Alameda, CA · July 11, 2026",
-      "body": "Flat, fast, USATF certified Bay Area waterfront course. Good summer tune-up option. Craft beer at the finish.",
+      "where": "Alameda, CA · July 10, 2027",
+      "body": "Flat, fast, USATF certified Bay Area waterfront course. Good summer tune-up option. Craft beer at the finish. The 2026 race is done. Registration for the 2027 edition opens December 1, 2026.",
       "dists": "5K · 10K · Half Marathon",
-      "price": "From $27.50",
-      "status": "open",
-      "statusLabel": "Open Registration",
-      "url": "https://www.alamedapint.com/"
+      "price": "Check site",
+      "status": "limit",
+      "statusLabel": "2027 Registration Opens Dec 1",
+      "url": "https://www.alamedapint.com/",
+      "checked": "2026-08-03"
     },
     {
       "num": "02",
       "name": "The San Francisco Marathon",
-      "where": "San Francisco, CA · July 25-26, 2026",
-      "body": "Golden Gate Park, across the bridge, through the city. Half marathon and shorter distances open. Full marathon sold out. Join the waitlist if that's your target.",
+      "where": "San Francisco, CA · July 24-25, 2027",
+      "body": "Golden Gate Park, across the bridge, through the city. The 2026 race is run, 30,000 finishers across the weekend. Next one is the 50th anniversary edition and registration is already open.",
       "dists": "5K · Half Marathon · Full Marathon",
-      "price": "From $165",
+      "price": "Check site",
       "status": "open",
-      "statusLabel": "Open Registration",
-      "url": "https://www.thesfmarathon.com/"
+      "statusLabel": "2027 Registration Open",
+      "url": "https://www.thesfmarathon.com/",
+      "checked": "2026-08-03"
     },
     {
       "num": "03",
       "name": "Napa to Sonoma Wine Country Half",
-      "where": "Napa, CA · July 25-26, 2026",
-      "body": "Point-to-point through active vineyards. Half marathon sold out. Rosé 5K still open. Use code N2SRG26 for $10 off.",
-      "dists": "Rosé 5K (July 25) · Half Marathon (July 26)",
-      "price": "From $208",
+      "where": "Napa, CA · July 18, 2027",
+      "body": "Point-to-point through active vineyards, Cuvaison Estate to Sonoma Plaza, with the Rosé 5K on the plaza the day before. The 2026 race is run. The 2027 waitlist is open now and gets you early access pricing plus registration 48 hours before everyone else.",
+      "dists": "Rosé 5K (Saturday) · Half Marathon (Sunday)",
+      "price": "Check site",
       "status": "limit",
-      "statusLabel": "5K Open · Half Sold Out",
-      "url": "https://www.runnapatosonoma.com/"
+      "statusLabel": "2027 Waitlist Open",
+      "url": "https://www.runnapatosonoma.com/",
+      "checked": "2026-08-03"
     },
     {
       "num": "04",
@@ -42,7 +45,8 @@
       "price": "From $114",
       "status": "limit",
       "statusLabel": "5K/10K Open · Half & Full Sold Out",
-      "url": "https://santarosamarathon.com/"
+      "url": "https://santarosamarathon.com/",
+      "checked": "2026-08-03"
     },
     {
       "num": "05",
@@ -53,7 +57,8 @@
       "price": "From $49.75",
       "status": "open",
       "statusLabel": "Open Registration",
-      "url": "https://runsignup.com/Race/CA/LongBeach/CalifornianDreaminKKHalfMarathon"
+      "url": "https://runsignup.com/Race/CA/LongBeach/CalifornianDreaminKKHalfMarathon",
+      "checked": "2026-07-07"
     },
     {
       "num": "06",
@@ -64,7 +69,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "Open Registration",
-      "url": "https://runsignup.com/Race/CA/SanRamon/BeerCityBishopRanch"
+      "url": "https://runsignup.com/Race/CA/SanRamon/BeerCityBishopRanch",
+      "checked": "2026-07-07"
     },
     {
       "num": "07",
@@ -75,7 +81,8 @@
       "price": "From $139",
       "status": "limit",
       "statusLabel": "5K Open · Half & Full Sold Out",
-      "url": "https://www.runlongbeach.com/"
+      "url": "https://www.runlongbeach.com/",
+      "checked": "2026-07-19"
     },
     {
       "num": "08",
@@ -86,7 +93,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "Open Registration",
-      "url": "https://www.run2cm.com/"
+      "url": "https://www.run2cm.com/",
+      "checked": "2026-07-07"
     },
     {
       "num": "09",
@@ -97,7 +105,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "Open Registration",
-      "url": "https://www.runguides.com/california/runs/half-marathon/all"
+      "url": "https://www.runguides.com/california/runs/half-marathon/all",
+      "checked": "2026-07-07"
     },
     {
       "num": "10",
@@ -108,7 +117,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "Open · Selling Fast",
-      "url": "https://santabarbarahalf.com/"
+      "url": "https://santabarbarahalf.com/",
+      "checked": "2026-07-07"
     },
     {
       "num": "11",
@@ -119,7 +129,8 @@
       "price": "Charity: $350+",
       "status": "sold",
       "statusLabel": "General Sold Out · Charity Spots Open",
-      "url": "https://www.montereybayhalfmarathon.org/"
+      "url": "https://www.montereybayhalfmarathon.org/",
+      "checked": "2026-07-07"
     },
     {
       "num": "12",
@@ -130,7 +141,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "Open Registration",
-      "url": "https://berkeleyhalfmarathon.com/"
+      "url": "https://berkeleyhalfmarathon.com/",
+      "checked": "2026-08-03"
     },
     {
       "num": "13",
@@ -141,7 +153,8 @@
       "price": "$230 (Gold)",
       "status": "sold",
       "statusLabel": "Sold Out · Check Charity Options",
-      "url": "https://runsra.org/california-international-marathon/"
+      "url": "https://runsra.org/california-international-marathon/",
+      "checked": "2026-07-07"
     },
     {
       "num": "14",
@@ -152,7 +165,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "Open Registration",
-      "url": "https://www.sandiegoholidayhalf.com/"
+      "url": "https://www.sandiegoholidayhalf.com/",
+      "checked": "2026-07-07"
     },
     {
       "num": "15",
@@ -163,7 +177,8 @@
       "price": "Early bird pricing",
       "status": "open",
       "statusLabel": "Open Registration",
-      "url": "https://inmotionevents.com/event/carlsbad-marathon/"
+      "url": "https://inmotionevents.com/event/carlsbad-marathon/",
+      "checked": "2026-07-07"
     },
     {
       "num": "16",
@@ -174,7 +189,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "2027 Registration",
-      "url": "https://www.runsurfcity.com/"
+      "url": "https://www.runsurfcity.com/",
+      "checked": "2026-07-07"
     },
     {
       "num": "17",
@@ -185,7 +201,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "2027 Registration",
-      "url": "https://www.lamarathon.com/"
+      "url": "https://www.lamarathon.com/",
+      "checked": "2026-07-07"
     },
     {
       "num": "18",
@@ -196,7 +213,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "2027 Registration",
-      "url": "https://www.mountains2beachmarathon.com/"
+      "url": "https://www.mountains2beachmarathon.com/",
+      "checked": "2026-07-07"
     },
     {
       "num": "19",
@@ -207,7 +225,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "2027 Registration",
-      "url": "https://ocmarathon.com/"
+      "url": "https://ocmarathon.com/",
+      "checked": "2026-07-07"
     },
     {
       "num": "20",
@@ -218,20 +237,22 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "2027 Registration",
-      "url": "https://www.runrocknroll.com/events/san-diego"
+      "url": "https://www.runrocknroll.com/events/san-diego",
+      "checked": "2026-07-07"
     }
   ],
   "us": [
     {
       "num": "01",
       "name": "Tunnel Light Marathon",
-      "where": "Snoqualmie Pass, WA · Sep 17, 2026",
-      "body": "Net downhill point-to-point through the old Iron Horse rail tunnel and along the Snoqualmie Valley Trail. USATF certified. Cult favorite for PR attempts.",
+      "where": "North Bend, WA · Sep 13, 2026",
+      "body": "Net downhill point-to-point through the old Iron Horse rail tunnel and along the Snoqualmie Valley Trail. USATF certified. Cult favorite for PR attempts. Storm damage closed sections of the usual course, so 2026 runs an alternate permitted route. Registration closes September 6.",
       "dists": "Half Marathon · Full Marathon",
       "price": "Check site",
       "status": "open",
-      "statusLabel": "Open Registration",
-      "url": "https://www.tunnelmarathon.com/"
+      "statusLabel": "Open · Closes Sep 6",
+      "url": "https://www.tunnelmarathon.com/",
+      "checked": "2026-08-03"
     },
     {
       "num": "02",
@@ -242,7 +263,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "Open Registration",
-      "url": "https://www.chicagohalf.com/"
+      "url": "https://www.chicagohalf.com/",
+      "checked": "2026-07-07"
     },
     {
       "num": "03",
@@ -253,7 +275,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "Open Registration",
-      "url": "https://www.tcmevents.org/"
+      "url": "https://www.tcmevents.org/",
+      "checked": "2026-08-03"
     },
     {
       "num": "04",
@@ -264,7 +287,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "Open Registration",
-      "url": "https://hartfordmarathon.com/"
+      "url": "https://hartfordmarathon.com/",
+      "checked": "2026-07-07"
     },
     {
       "num": "05",
@@ -275,7 +299,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "Open Registration",
-      "url": "https://steamtownmarathon.com/"
+      "url": "https://steamtownmarathon.com/",
+      "checked": "2026-08-03"
     },
     {
       "num": "06",
@@ -286,7 +311,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "Open Registration",
-      "url": "https://www.thebaltimoremarathon.com/"
+      "url": "https://www.thebaltimoremarathon.com/",
+      "checked": "2026-07-07"
     },
     {
       "num": "07",
@@ -297,7 +323,8 @@
       "price": "Check site",
       "status": "limit",
       "statusLabel": "Intl Half Open · Marathon Sold Out",
-      "url": "https://www.freepmarathon.com/"
+      "url": "https://www.freepmarathon.com/",
+      "checked": "2026-07-07"
     },
     {
       "num": "08",
@@ -308,7 +335,8 @@
       "price": "$240 (Military $225)",
       "status": "limit",
       "statusLabel": "Charity Spots Open",
-      "url": "https://www.marinemarathon.com/event/marine-corps-marathon/"
+      "url": "https://www.marinemarathon.com/event/marine-corps-marathon/",
+      "checked": "2026-07-07"
     },
     {
       "num": "09",
@@ -319,7 +347,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "Open Registration",
-      "url": "https://monumentalmarathon.com/"
+      "url": "https://monumentalmarathon.com/",
+      "checked": "2026-07-07"
     },
     {
       "num": "10",
@@ -330,7 +359,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "Open Registration",
-      "url": "https://www.southernhalf.com/"
+      "url": "https://www.southernhalf.com/",
+      "checked": "2026-07-07"
     },
     {
       "num": "11",
@@ -341,7 +371,8 @@
       "price": "Check site",
       "status": "limit",
       "statusLabel": "Half & 8K Open · Full Sold Out",
-      "url": "https://www.richmondmarathon.org/"
+      "url": "https://www.richmondmarathon.org/",
+      "checked": "2026-07-19"
     },
     {
       "num": "12",
@@ -352,7 +383,8 @@
       "price": "Check site",
       "status": "limit",
       "statusLabel": "Half & 8K Open · Full Sold Out",
-      "url": "https://www.philadelphiamarathon.com/"
+      "url": "https://www.philadelphiamarathon.com/",
+      "checked": "2026-07-07"
     },
     {
       "num": "13",
@@ -363,7 +395,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "Open Registration",
-      "url": "https://www.route66marathon.com/"
+      "url": "https://www.route66marathon.com/",
+      "checked": "2026-07-07"
     },
     {
       "num": "14",
@@ -374,7 +407,8 @@
       "price": "Check site",
       "status": "limit",
       "statusLabel": "Half Open · Full Sold Out",
-      "url": "https://www.spacecoastmarathon.com/"
+      "url": "https://www.spacecoastmarathon.com/",
+      "checked": "2026-07-19"
     },
     {
       "num": "15",
@@ -385,7 +419,8 @@
       "price": "Dynamic pricing",
       "status": "open",
       "statusLabel": "Open Registration",
-      "url": "https://dallasmarathon.com/"
+      "url": "https://dallasmarathon.com/",
+      "checked": "2026-07-07"
     },
     {
       "num": "16",
@@ -396,7 +431,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "Open Registration",
-      "url": "https://www.honolulumarathon.org/"
+      "url": "https://www.honolulumarathon.org/",
+      "checked": "2026-07-07"
     },
     {
       "num": "17",
@@ -407,7 +443,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "2027 Registration",
-      "url": "https://www.chevronhoustonmarathon.com/"
+      "url": "https://www.chevronhoustonmarathon.com/",
+      "checked": "2026-07-07"
     },
     {
       "num": "18",
@@ -418,7 +455,8 @@
       "price": "Check site",
       "status": "limit",
       "statusLabel": "Lottery + Charity Entries",
-      "url": "https://www.cherryblossom.org/"
+      "url": "https://www.cherryblossom.org/",
+      "checked": "2026-07-07"
     },
     {
       "num": "19",
@@ -429,7 +467,8 @@
       "price": "$55 to $80",
       "status": "open",
       "statusLabel": "2027 Registration Open",
-      "url": "https://ccc10k.com/"
+      "url": "https://ccc10k.com/",
+      "checked": "2026-07-07"
     },
     {
       "num": "20",
@@ -440,7 +479,8 @@
       "price": "Check site",
       "status": "open",
       "statusLabel": "2027 Registration",
-      "url": "https://brooklynexperience.com/"
+      "url": "https://brooklynexperience.com/",
+      "checked": "2026-07-07"
     }
   ]
 }
