@@ -22,11 +22,7 @@ export default function AboutView({ lang }: { lang: Lang }) {
         <div className="about-pg-media">
           <figure className="about-pg-shot">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/founder-press.jpg" alt={t.mediaAlts.press} />
-          </figure>
-          <figure className="about-pg-shot">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/founder-pull.jpg" alt={t.mediaAlts.pull} />
+            <img src="/founder-rio.webp" alt={t.mediaAlts.race} />
           </figure>
         </div>
 

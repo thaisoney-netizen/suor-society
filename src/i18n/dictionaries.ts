@@ -132,7 +132,7 @@ type Dictionary = {
     metaDescription: string;
     eyebrow: string;
     headline: string;
-    mediaAlts: { press: string; pull: string };
+    mediaAlts: { race: string };
     col2Label: string;
     col2: string[];
   };
@@ -346,8 +346,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       eyebrow: "Suor Society / The Culture",
       headline: "Suor is Portuguese for sweat",
       mediaAlts: {
-        press: "Thais pressing a kettlebell overhead",
-        pull: "Thais working through pull-ups on the rack",
+        race: "Thais racing on the road in Rio, Christ the Redeemer on the mountain behind her",
       },
       col2Label: "What this is",
       col2: [
@@ -672,8 +671,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       // headline and tagline.
       headline: "Suor is Portuguese for sweat",
       mediaAlts: {
-        press: "Thais empurrando um kettlebell acima da cabeça",
-        pull: "Thais fazendo barras na grade",
+        race: "Thais correndo uma prova no Rio, com o Cristo Redentor no morro atrás dela",
       },
       col2Label: "O que é isso aqui",
       col2: [
