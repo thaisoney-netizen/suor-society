@@ -10,7 +10,7 @@ const META = {
   title: "Por que todo mundo começou a correr? O boom da corrida, explicado, Suor Society",
   description:
     "Não é impressão sua. As provas passaram os níveis pré-pandemia, a participação em clubes de corrida saltou 59% em um ano e Londres recebeu 1,1 milhão de inscrições no sorteio. Os números por trás do boom da corrida e o que mudou depois de 2024.",
-  image: "/crew-run.jpg",
+  image: "/running-boom-hero.webp",
 };
 export const metadata = pageMeta({ ...META, paired: true });
 
@@ -83,11 +83,14 @@ export default function PorQueTodoMundoComecouACorrer() {
         </section>
 
         {/* ── COVER IMAGE ── */}
+        {/* Portrait source (736x1600), so the shared `center 30%` crop clips the
+            top of her head. 23% keeps the whole head in frame at every width. */}
         <div className="article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/crew-run.jpg"
-            alt="Um grupo grande de corredores espalhado por uma rua com palmeiras num treino de manhã"
+            style={{ objectPosition: "center 23%" }}
+            src="/running-boom-hero.webp"
+            alt="Uma corredora em passada na Avenida Atlântica, no Rio, com o número de peito na cintura e o Copacabana Palace ao fundo, e um pelotão de corredores atravessando a rua ao lado"
           />
         </div>
 

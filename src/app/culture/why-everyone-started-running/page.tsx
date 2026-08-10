@@ -10,7 +10,7 @@ const META = {
   title: "Why Did Everyone Start Running? The Running Boom, Explained, Suor Society",
   description:
     "It's not in your head. Race numbers passed pre-pandemic levels, run club participation jumped 59% in a year, and London took 1.1 million marathon applications. The stats behind the running boom and what changed after 2024.",
-  image: "/crew-run.jpg",
+  image: "/running-boom-hero.webp",
 };
 export const metadata = pageMeta({ ...META, paired: true });
 
@@ -82,11 +82,14 @@ export default function WhyEveryoneStartedRunning() {
         </section>
 
         {/* ── COVER IMAGE ── */}
+        {/* Portrait source (736x1600), so the shared `center 30%` crop clips the
+            top of her head. 23% keeps the whole head in frame at every width. */}
         <div className="article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/crew-run.jpg"
-            alt="A large group of runners spread across a palm-lined street at a morning group run"
+            style={{ objectPosition: "center 23%" }}
+            src="/running-boom-hero.webp"
+            alt="A runner mid-stride on Avenida Atlantica in Rio, race bib on her waistband and the Copacabana Palace behind her, with a pack of other runners crossing the road alongside"
           />
         </div>
 
