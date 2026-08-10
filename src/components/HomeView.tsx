@@ -114,7 +114,11 @@ export default function HomeView({ lang }: { lang: Lang }) {
                 </div>
                 <div className="lc-img">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={post.img} alt={post.title} />
+                  <img
+                    src={post.img}
+                    alt={post.title}
+                    style={post.imgPos ? { objectPosition: post.imgPos } : undefined}
+                  />
                 </div>
                 <div className="lc-content">
                   <p className="lc-desc">{post.desc}</p>
