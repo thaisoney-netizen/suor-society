@@ -83,9 +83,6 @@ export function switchLocaleHref(pathname: string, target: Lang): string {
 type BoardPost = {
   href: string;
   img: string;
-  /** object-position for the card crop. Only needed for portrait sources, where
-      the default centre crop lands on the middle of the body. */
-  imgPos?: string;
   eyebrow: string;
   title: string;
   desc: string;
@@ -275,7 +272,6 @@ export const dictionaries: Record<Lang, Dictionary> = {
         {
           href: "/culture/why-everyone-started-running",
           img: "/running-boom-hero.webp",
-          imgPos: "center 28%",
           eyebrow: "The Culture Archive",
           title: "Why Everyone Started Running",
           desc: "Race numbers passed 2019, run clubs jumped 59%, London took 1.1M applications. The stats behind the boom and what changed after 2024.",
@@ -598,7 +594,6 @@ export const dictionaries: Record<Lang, Dictionary> = {
         {
           href: "/culture/why-everyone-started-running",
           img: "/running-boom-hero.webp",
-          imgPos: "center 28%",
           eyebrow: "The Culture · Arquivo",
           title: "Por que todo mundo começou a correr",
           desc: "As provas passaram 2019, os clubes de corrida saltaram 59% e Londres recebeu 1,1 milhão de inscrições. Os números por trás do boom e o que mudou depois de 2024.",

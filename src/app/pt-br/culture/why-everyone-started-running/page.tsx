@@ -83,14 +83,14 @@ export default function PorQueTodoMundoComecouACorrer() {
         </section>
 
         {/* ── COVER IMAGE ── */}
-        {/* Portrait source (736x1600), so the shared `center 30%` crop clips the
-            top of her head. 23% keeps the whole head in frame at every width. */}
+        {/* Heads sit right at the top of this frame, so the shared `center 30%`
+            crop cuts the rightmost runner's face. Anchor to the top instead. */}
         <div className="article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            style={{ objectPosition: "center 23%" }}
+            style={{ objectPosition: "center top" }}
             src="/running-boom-hero.webp"
-            alt="Uma corredora em passada na Avenida Atlântica, no Rio, com o número de peito na cintura e o Copacabana Palace ao fundo, e um pelotão de corredores atravessando a rua ao lado"
+            alt="Quatro corredores lado a lado numa cobertura acima da cidade num dia claro"
           />
         </div>
 
