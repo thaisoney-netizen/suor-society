@@ -82,14 +82,14 @@ export default function WhyEveryoneStartedRunning() {
         </section>
 
         {/* ── COVER IMAGE ── */}
-        {/* Portrait source (736x1600), so the shared `center 30%` crop clips the
-            top of her head. 23% keeps the whole head in frame at every width. */}
+        {/* Heads sit right at the top of this frame, so the shared `center 30%`
+            crop cuts the rightmost runner's face. Anchor to the top instead. */}
         <div className="article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            style={{ objectPosition: "center 23%" }}
+            style={{ objectPosition: "center top" }}
             src="/running-boom-hero.webp"
-            alt="A runner mid-stride on Avenida Atlantica in Rio, race bib on her waistband and the Copacabana Palace behind her, with a pack of other runners crossing the road alongside"
+            alt="Four runners moving together across a rooftop above the city on a clear day"
           />
         </div>
 
