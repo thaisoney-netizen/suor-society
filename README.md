@@ -21,7 +21,7 @@ npm run build   # production build (also validates sitemap/metadata)
 | AI answer map | `src/app/llms.txt/route.ts` | `/llms.txt` for ChatGPT/Claude/Perplexity. Also filesystem-generated, titles read from each page's own metadata |
 | Race guide data | `src/content/races-*.json` | Single source for the guide pages **and** the gated PDFs |
 | PDF generator | `scripts/generate-race-guide-pdf.js` | `node scripts/generate-race-guide-pdf.js` regenerates both PDFs |
-| Signup APIs | `src/app/api/*`, `src/lib/subscribe.ts` | Notification email + optional Buttondown (set `BUTTONDOWN_API_KEY`) |
+| Signup APIs | `src/app/api/*`, `src/lib/subscribe.ts` | Notification email + optional beehiiv (set `BEEHIIV_API_KEY` + `BEEHIIV_PUBLICATION_ID`) |
 | Analytics | `src/lib/analytics.ts` | GA4 events: `sign_up`, `generate_lead`, `file_download` |
 
 Adding a post? Follow the checklist in [AGENTS.md](AGENTS.md).
@@ -39,6 +39,6 @@ Adding a post? Follow the checklist in [AGENTS.md](AGENTS.md).
 | Var | Used for |
 | --- | --- |
 | `MAIL_USER` / `MAIL_PASS` | SMTP (purelymail) for signup notifications + workflow digests |
-| `BUTTONDOWN_API_KEY` | Optional: stores newsletter signups in Buttondown when set |
+| `BEEHIIV_API_KEY` / `BEEHIIV_PUBLICATION_ID` | Optional: stores newsletter signups in beehiiv when both are set. The API is scoped per publication, so the ID is as required as the key |
 | `SIGNUP_SHEET_WEBHOOK` | Optional: Google Apps Script web-app URL; appends every signup to a Google Sheet as a backup. See `docs/signup-sheet-backup.md` |
 | `SIGNUP_NOTIFY_TO` | Optional: where signup alerts are emailed (comma-separated). Defaults to `hello@suorsociety.com` |

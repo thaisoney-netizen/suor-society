@@ -3,10 +3,11 @@ import nodemailer from "nodemailer";
 // Server-side signup handling shared by /api/signup and /api/race-guide.
 //
 // Three independent layers, in order:
-//   1. Buttondown (or nothing, if BUTTONDOWN_API_KEY is unset) — stores the
-//      subscriber durably in the newsletter tool. Activating it is a Vercel
-//      env-var change, no code edit: create a Buttondown account and set
-//      BUTTONDOWN_API_KEY.
+//   1. beehiiv (or nothing, if BEEHIIV_API_KEY / BEEHIIV_PUBLICATION_ID are
+//      unset) — stores the subscriber durably in the newsletter tool.
+//      Activating it is a Vercel env-var change, no code edit: create a
+//      beehiiv publication and set both vars. The endpoint is scoped per
+//      publication, so the ID is as required as the key.
 //   2. Google Sheet backup (or nothing, if SIGNUP_SHEET_WEBHOOK is unset) —
 //      appends every signup as a row via a Google Apps Script web-app URL, so
 //      there's a plain spreadsheet of everyone even without Buttondown. No
@@ -40,25 +41,41 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-async function addToButtondown(email: string, source: string): Promise<boolean> {
-  const key = process.env.BUTTONDOWN_API_KEY;
-  if (!key) return false;
-  const res = await fetch("https://api.buttondown.com/v1/subscribers", {
-    method: "POST",
-    headers: {
-      Authorization: `Token ${key}`,
-      "Content-Type": "application/json",
+async function addToBeehiiv(email: string, source: string): Promise<boolean> {
+  const key = process.env.BEEHIIV_API_KEY;
+  const publicationId = process.env.BEEHIIV_PUBLICATION_ID;
+  if (!key || !publicationId) return false;
+
+  const res = await fetch(
+    `https://api.beehiiv.com/v2/publications/${publicationId}/subscriptions`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${key}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        // Re-submitting the form after unsubscribing is a request to come back.
+        reactivate_existing: true,
+        // Welcome email stays off until there's one written in beehiiv worth
+        // sending; the default template is not ours.
+        send_welcome_email: false,
+        utm_source: source,
+        referring_site: "suorsociety.com",
+      }),
     },
-    body: JSON.stringify({ email_address: email, tags: [source] }),
-  });
-  // 201 = created; 400 with "already subscribed" also means the address is
-  // safely on the list.
-  if (res.status === 201) return true;
-  if (res.status === 400) {
-    const body = await res.text();
-    if (body.includes("already")) return true;
-  }
-  console.error("Buttondown subscribe failed:", res.status, await res.text().catch(() => ""));
+  );
+
+  // beehiiv answers 2xx for a new subscriber and for one already on the list,
+  // so either way the address is stored.
+  if (res.ok) return true;
+
+  console.error(
+    "beehiiv subscribe failed:",
+    res.status,
+    await res.text().catch(() => ""),
+  );
   return false;
 }
 
@@ -88,13 +105,13 @@ export async function recordSignup({
 }): Promise<boolean> {
   let stored = false;
   try {
-    stored = await addToButtondown(email, source);
+    stored = await addToBeehiiv(email, source);
   } catch (err) {
-    console.error("Buttondown error:", err);
+    console.error("beehiiv error:", err);
   }
 
   try {
-    // OR-in so the sheet counts as durable storage even when Buttondown is off.
+    // OR-in so the sheet counts as durable storage even when beehiiv is off.
     stored = (await appendToSheet(email, source)) || stored;
   } catch (err) {
     console.error("Sheet backup error:", err);
