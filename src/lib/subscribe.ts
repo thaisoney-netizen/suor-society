@@ -41,9 +41,27 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+// "beehiiv" is a spelling trap — double e, double i, no trailing e — and a
+// mistyped env var name fails exactly like an unset one, silently and with no
+// error to trace. Accept the two near-misses that have actually been typed into
+// the dashboard so a stray character can't disable the whole layer again.
+function beehiivEnv(suffix: string): string | undefined {
+  for (const prefix of ["BEEHIIV", "BEEHIIVE", "BEHIIV"]) {
+    const value = process.env[`${prefix}_${suffix}`];
+    if (!value) continue;
+    if (prefix !== "BEEHIIV") {
+      console.warn(
+        `Read ${prefix}_${suffix}; rename it to BEEHIIV_${suffix} when convenient.`,
+      );
+    }
+    return value;
+  }
+  return undefined;
+}
+
 async function addToBeehiiv(email: string, source: string): Promise<boolean> {
-  const key = process.env.BEEHIIV_API_KEY;
-  const publicationId = process.env.BEEHIIV_PUBLICATION_ID;
+  const key = beehiivEnv("API_KEY");
+  const publicationId = beehiivEnv("PUBLICATION_ID");
   if (!key || !publicationId) return false;
 
   const res = await fetch(
