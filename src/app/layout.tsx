@@ -3,6 +3,7 @@ import { Bebas_Neue, Barlow_Condensed, Inter, JetBrains_Mono } from "next/font/g
 import Script from "next/script";
 import "./globals.css";
 import ScrollTracker from "@/components/ScrollTracker";
+import CookieConsent from "@/components/CookieConsent";
 import { SITE_URL } from "@/lib/seo";
 
 const bebasNeue = Bebas_Neue({
@@ -86,6 +87,35 @@ export default function RootLayout({
       <body style={{ paddingBottom: "60px" }}>
         {children}
         <ScrollTracker />
+        <CookieConsent />
+        {/*
+          Google Consent Mode v2. This has to run BEFORE gtag.js loads, which is
+          why it is beforeInteractive: it is injected into the initial HTML and
+          executes ahead of any Next module. Every visitor starts denied, so GA4
+          sends cookieless pings and sets no _ga cookie until the consent bar is
+          accepted. wait_for_update gives that click a window to land before the
+          first hit goes out. A stored "accepted" is replayed here so returning
+          visitors are not asked again.
+        */}
+        <Script id="consent-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('consent', 'default', {
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+              analytics_storage: 'denied',
+              wait_for_update: 500
+            });
+            try {
+              if (localStorage.getItem('ss-cookie-consent') === 'accepted') {
+                gtag('consent', 'update', { analytics_storage: 'granted' });
+              }
+            } catch (e) {}
+          `}
+        </Script>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XG414LX946"
           strategy="afterInteractive"

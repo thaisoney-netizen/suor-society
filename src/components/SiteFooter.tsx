@@ -54,6 +54,9 @@ export default function SiteFooter({ lang = "en" }: { lang?: Lang }) {
         </div>
         <div className="foot-legal">
           <span>© {new Date().getFullYear()} Suor Society</span>
+          <a href={localizeHref("/privacy", lang)} className="foot-legal-link">
+            {t.privacy}
+          </a>
           <span>{t.location}</span>
         </div>
       </div>

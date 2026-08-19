@@ -121,12 +121,52 @@ type Dictionary = {
     exploreTitle: string;
     connectTitle: string;
     location: string;
+    privacy: string;
   };
   // Cross-language suggestion banner (shown to pt-speaking visitors on /).
   suggest: {
     text: string;
     cta: string;
     dismiss: string;
+  };
+  // Cookie consent bar. Wording has to stay accurate against the Consent Mode
+  // defaults in layout.tsx: nothing is stored until Accept is clicked.
+  consent: {
+    ariaLabel: string;
+    text: string;
+    policyLink: string;
+    accept: string;
+    reject: string;
+  };
+  privacy: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    headline: string;
+    updated: string;
+    sections: { id?: string; title: string; body: string[]; list?: string[] }[];
+    // Rendered after the cookie/provider/choice blocks, before Contact.
+    tailSections: { id?: string; title: string; body: string[]; list?: string[] }[];
+    cookies: {
+      title: string;
+      body: string[];
+      headers: { name: string; purpose: string; life: string };
+      rows: { name: string; purpose: string; life: string }[];
+    };
+    providers: {
+      title: string;
+      body: string[];
+      list: { name: string; role: string; href: string }[];
+    };
+    choices: {
+      title: string;
+      body: string[];
+      statusAccepted: string;
+      statusRejected: string;
+      statusNone: string;
+      resetBtn: string;
+    };
+    contact: { title: string; body: string };
   };
   about: {
     metaTitle: string;
@@ -335,11 +375,142 @@ export const dictionaries: Record<Lang, Dictionary> = {
       exploreTitle: "Explore",
       connectTitle: "Connect",
       location: "San Diego, CA",
+      privacy: "Privacy",
     },
     suggest: {
       text: "Want to read this in English?",
       cta: "Read in English",
       dismiss: "Dismiss",
+    },
+    consent: {
+      ariaLabel: "Cookie consent",
+      text: "We use Google Analytics to see which posts actually get read. No cookies get set unless you say yes.",
+      policyLink: "Privacy policy",
+      accept: "Accept",
+      reject: "Reject",
+    },
+    privacy: {
+      metaTitle: "Privacy, Suor Society",
+      metaDescription:
+        "What Suor Society collects, what it never does with your data, and how to change your cookie choice at any time.",
+      eyebrow: "How your data gets handled",
+      headline: "Privacy policy",
+      updated: "Last updated August 18, 2026",
+      sections: [
+        {
+          id: "short-version",
+          title: "The short version",
+          body: [
+            "This is a small running site, so there is not much to tell. We collect as little as we can, we don’t sell any of it, and analytics don’t run at all unless you accept cookies.",
+            "If you sign up for the Dispatch or download a race guide, we keep your email address so we can send you the thing you asked for. Everything below is just the detail.",
+          ],
+        },
+        {
+          id: "what-we-collect",
+          title: "What we collect",
+          body: ["Three things, depending on what you do here."],
+          list: [
+            "Analytics, but only after you accept cookies. Google Analytics tells us which pages get read, roughly what part of the world you are in, what browser you are using, and how far down a post you scroll. It does not tell us who you are.",
+            "Your email address, if you sign up for the Dispatch or fill in the form to download a race guide. The race guide form also asks for a first name, so the email doesn’t have to open with “Hi there”.",
+            "Whatever you write to us, if you email hello@suorsociety.com. That lands in a normal inbox and gets treated like any other email.",
+          ],
+        },
+        {
+          id: "what-we-dont-do",
+          title: "What we don’t do",
+          body: [
+            "We don’t sell, rent, or trade your email address to anyone. There are no advertising pixels on this site, no retargeting, and nothing that follows you to other websites.",
+            "We also don’t try to work out who you are from analytics data, and we don’t build a profile on you.",
+          ],
+        },
+      ],
+      tailSections: [
+        {
+          id: "how-long",
+          title: "How long we keep things",
+          body: [
+            "Analytics data expires on Google’s schedule, which is currently 14 months. Your email address stays on the list until you unsubscribe or ask us to delete it. Emails you send us sit in the inbox until you ask us to clear them out.",
+          ],
+        },
+        {
+          id: "kids-and-changes",
+          title: "Kids, and changes to this page",
+          body: [
+            "The site isn’t aimed at children and we don’t knowingly collect anything from anyone under 13.",
+            "If this policy changes, the date at the top changes with it, and anything significant gets a mention in the Dispatch rather than a quiet edit.",
+          ],
+        },
+      ],
+      cookies: {
+        title: "Cookies",
+        body: [
+          "Nothing is stored on your device until you choose. Until then Google Analytics runs in a mode where it sends anonymous, cookieless pings, which is why the site works normally whether you accept or reject.",
+          "The last two rows aren’t technically cookies, they are browser local storage. They are listed anyway because the distinction doesn’t change anything for you.",
+        ],
+        headers: { name: "Name", purpose: "What it does", life: "How long it lasts" },
+        rows: [
+          {
+            name: "_ga",
+            purpose:
+              "Google Analytics. Tells one visitor apart from another, so a return visit isn’t counted as a new person.",
+            life: "2 years",
+          },
+          {
+            name: "_ga_XG414LX946",
+            purpose: "Google Analytics. Keeps track of a single visit.",
+            life: "2 years",
+          },
+          {
+            name: "ss-cookie-consent",
+            purpose: "Remembers whether you accepted or rejected, so the bar stops asking.",
+            life: "Until you clear it",
+          },
+          {
+            name: "ss-lang-suggest-dismissed",
+            purpose: "Remembers that you closed the prompt offering the Portuguese version.",
+            life: "Until you clear it",
+          },
+        ],
+      },
+      providers: {
+        title: "Who else sees it",
+        body: [
+          "A few companies handle pieces of this site, and your data passes through them. Each one has its own privacy policy.",
+        ],
+        list: [
+          {
+            name: "Google",
+            role: "runs the analytics, and holds a backup copy of the signup list in a spreadsheet.",
+            href: "https://policies.google.com/privacy",
+          },
+          {
+            name: "beehiiv",
+            role: "stores the newsletter list and sends the Dispatch.",
+            href: "https://www.beehiiv.com/privacy",
+          },
+          {
+            name: "Vercel",
+            role: "hosts the site and keeps the usual server logs.",
+            href: "https://vercel.com/legal/privacy-policy",
+          },
+        ],
+      },
+      choices: {
+        title: "Your choices",
+        body: [
+          "You can change your cookie decision whenever you want, and rejecting is exactly as easy as accepting. The button below clears your choice so the bar asks again.",
+          "Every Dispatch email has an unsubscribe link at the bottom and it works straight away. If you would rather have your address deleted entirely, email us and we will do it.",
+          "If you are in the EU, the UK, or Brazil, you have the right to ask what we hold about you, to get a copy, to have it corrected, and to have it deleted. Email us and we will sort it out. There is no form to fill in.",
+        ],
+        statusAccepted: "Right now: you accepted analytics cookies",
+        statusRejected: "Right now: you rejected analytics cookies",
+        statusNone: "Right now: you haven’t made a choice yet",
+        resetBtn: "Change my choice",
+      },
+      contact: {
+        title: "Contact",
+        body: "Questions about any of this, or you want your data gone, write to",
+      },
     },
     about: {
       metaTitle: "About, Suor Society",
@@ -658,12 +829,143 @@ export const dictionaries: Record<Lang, Dictionary> = {
       exploreTitle: "Explorar",
       connectTitle: "Contato",
       location: "San Diego, CA",
+      privacy: "Privacidade",
     },
     // Shown on the English home to visitors whose browser prefers Portuguese.
     suggest: {
       text: "Quer ler em português?",
       cta: "Ler em português",
       dismiss: "Fechar",
+    },
+    consent: {
+      ariaLabel: "Consentimento de cookies",
+      text: "A gente usa Google Analytics pra saber quais posts as pessoas leem de verdade. Nenhum cookie é salvo se você não aceitar.",
+      policyLink: "Política de privacidade",
+      accept: "Aceitar",
+      reject: "Recusar",
+    },
+    privacy: {
+      metaTitle: "Privacidade, Suor Society",
+      metaDescription:
+        "O que a Suor Society coleta, o que nunca faz com os seus dados, e como mudar sua escolha de cookies quando quiser.",
+      eyebrow: "Como seus dados são tratados",
+      headline: "Política de privacidade",
+      updated: "Última atualização em 18 de agosto de 2026",
+      sections: [
+        {
+          id: "short-version",
+          title: "A versão curta",
+          body: [
+            "Esse é um site pequeno de corrida, então não tem muito o que contar. A gente coleta o mínimo possível, não vende nada disso, e o analytics só roda se você aceitar os cookies.",
+            "Se você assina a Dispatch ou baixa um guia de corridas, a gente guarda seu email pra conseguir mandar aquilo que você pediu. O resto aqui embaixo é só o detalhe.",
+          ],
+        },
+        {
+          id: "what-we-collect",
+          title: "O que a gente coleta",
+          body: ["Três coisas, dependendo do que você faz por aqui."],
+          list: [
+            "Analytics, mas só depois que você aceita os cookies. O Google Analytics mostra quais páginas são lidas, mais ou menos em que parte do mundo você está, qual navegador você usa e até onde você rola o post. Ele não diz quem você é.",
+            "Seu email, se você assina a Dispatch ou preenche o formulário pra baixar um guia de corridas. O formulário do guia também pede um primeiro nome, pra que o email não comece com “Olá”.",
+            "O que você escrever pra gente, se mandar mensagem pro hello@suorsociety.com. Isso cai numa caixa de entrada normal e é tratado como qualquer outro email.",
+          ],
+        },
+        {
+          id: "what-we-dont-do",
+          title: "O que a gente não faz",
+          body: [
+            "A gente não vende, não aluga e não troca seu email com ninguém. Não tem pixel de publicidade nesse site, não tem retargeting, e não tem nada que te siga por outros sites.",
+            "A gente também não tenta descobrir quem você é a partir dos dados de analytics, e não monta um perfil seu.",
+          ],
+        },
+      ],
+      tailSections: [
+        {
+          id: "how-long",
+          title: "Por quanto tempo a gente guarda",
+          body: [
+            "Os dados de analytics expiram no prazo do Google, hoje 14 meses. Seu email fica na lista até você cancelar a inscrição ou pedir pra apagar. Emails que você manda ficam na caixa de entrada até você pedir pra limpar.",
+          ],
+        },
+        {
+          id: "kids-and-changes",
+          title: "Crianças, e mudanças nessa página",
+          body: [
+            "O site não é feito pra crianças e a gente não coleta nada de ninguém com menos de 13 anos de forma consciente.",
+            "Se essa política mudar, a data lá em cima muda junto, e qualquer coisa importante vira assunto na Dispatch em vez de uma edição silenciosa.",
+          ],
+        },
+      ],
+      cookies: {
+        title: "Cookies",
+        body: [
+          "Nada é salvo no seu aparelho antes de você escolher. Até lá o Google Analytics roda num modo que manda sinais anônimos e sem cookie, e é por isso que o site funciona normal tanto se você aceitar quanto se recusar.",
+          "As duas últimas linhas não são cookies de verdade, são armazenamento local do navegador. Estão listadas assim mesmo porque essa diferença não muda nada pra você.",
+        ],
+        headers: { name: "Nome", purpose: "O que faz", life: "Quanto tempo dura" },
+        rows: [
+          {
+            name: "_ga",
+            purpose:
+              "Google Analytics. Diferencia um visitante do outro, pra que uma volta ao site não conte como uma pessoa nova.",
+            life: "2 anos",
+          },
+          {
+            name: "_ga_XG414LX946",
+            purpose: "Google Analytics. Acompanha uma visita específica.",
+            life: "2 anos",
+          },
+          {
+            name: "ss-cookie-consent",
+            purpose: "Lembra se você aceitou ou recusou, pra barra parar de perguntar.",
+            life: "Até você apagar",
+          },
+          {
+            name: "ss-lang-suggest-dismissed",
+            purpose: "Lembra que você fechou o aviso que oferece a versão em português.",
+            life: "Até você apagar",
+          },
+        ],
+      },
+      providers: {
+        title: "Quem mais vê isso",
+        body: [
+          "Algumas empresas cuidam de partes desse site, e seus dados passam por elas. Cada uma tem a própria política de privacidade.",
+        ],
+        list: [
+          {
+            name: "Google",
+            role: "roda o analytics e guarda uma cópia de backup da lista de inscritos numa planilha.",
+            href: "https://policies.google.com/privacy",
+          },
+          {
+            name: "beehiiv",
+            role: "armazena a lista da newsletter e envia a Dispatch.",
+            href: "https://www.beehiiv.com/privacy",
+          },
+          {
+            name: "Vercel",
+            role: "hospeda o site e mantém os logs de servidor de sempre.",
+            href: "https://vercel.com/legal/privacy-policy",
+          },
+        ],
+      },
+      choices: {
+        title: "Suas escolhas",
+        body: [
+          "Você pode mudar sua decisão sobre cookies quando quiser, e recusar é exatamente tão fácil quanto aceitar. O botão aqui embaixo apaga sua escolha pra barra perguntar de novo.",
+          "Todo email da Dispatch tem link de cancelamento no rodapé e ele funciona na hora. Se você preferir apagar seu endereço de vez, escreve pra gente que a gente apaga.",
+          "Se você está no Brasil, na União Europeia ou no Reino Unido, você tem direito de perguntar o que a gente guarda sobre você, receber uma cópia, corrigir e apagar. Escreve pra gente que a gente resolve. Não tem formulário pra preencher.",
+        ],
+        statusAccepted: "Agora: você aceitou os cookies de analytics",
+        statusRejected: "Agora: você recusou os cookies de analytics",
+        statusNone: "Agora: você ainda não escolheu",
+        resetBtn: "Mudar minha escolha",
+      },
+      contact: {
+        title: "Contato",
+        body: "Dúvida sobre qualquer coisa aqui, ou se você quer seus dados apagados, escreve pra",
+      },
     },
     about: {
       metaTitle: "Sobre, Suor Society",
