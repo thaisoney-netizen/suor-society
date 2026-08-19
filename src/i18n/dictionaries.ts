@@ -113,6 +113,7 @@ type Dictionary = {
     signupPlaceholder: string;
     signupBtn: string;
     signupBtnDone: string;
+    signupSuccess: string;
     signupError: string;
   };
   footer: {
@@ -325,6 +326,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       signupPlaceholder: "you@somewhere.com",
       signupBtn: "I'm in.",
       signupBtnDone: "ON THE LIST.",
+      signupSuccess: "Thanks for subscribing!",
       signupError:
         "Something went wrong. Email us at hello@suorsociety.com and we’ll add you directly.",
     },
@@ -647,6 +649,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       signupPlaceholder: "seu@email.com",
       signupBtn: "Tô dentro.",
       signupBtnDone: "NA LISTA.",
+      signupSuccess: "Obrigada por se inscrever!",
       signupError:
         "Algo deu errado. Escreve pra gente em hello@suorsociety.com que a gente te adiciona na mão.",
     },

@@ -155,6 +155,11 @@ export default function HomeView({ lang }: { lang: Lang }) {
                 {submitted ? t.signupBtnDone : t.signupBtn}
               </button>
             </div>
+            {submitted && (
+              <p className="signup-success" role="status">
+                {t.signupSuccess}
+              </p>
+            )}
             {signupError && (
               <p className="signup-error">
                 {t.signupError}

@@ -413,6 +413,12 @@ a { color: inherit; text-decoration: none; }
 .signup-btn:hover { background: #000; }
 .signup-btn:active { transform: translateY(1px); }
 .signup-error { color: #cc3333; font-size: 12px; margin-top: 12px; }
+.signup-success {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  color: var(--asphalt);
+  margin-top: 14px;
+}
 
 /* ============================================================
    ABOUT
