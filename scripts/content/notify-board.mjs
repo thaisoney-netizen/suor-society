@@ -3,8 +3,16 @@
 // a GitHub issue that can sit unread.
 //
 //   Run:  node scripts/content/notify-board.mjs [report.txt]
+//         node scripts/content/notify-board.mjs --check   (preflight only)
 //   Env:  NOTION_TOKEN, NOTION_DATABASE_ID   (GitHub Secrets)
 //         GITHUB_RUN_URL                     (optional, links back to the run)
+//
+// --check proves the board connection works without posting anything. The
+// workflow runs it on EVERY sweep, including clean ones, because both Notion
+// secrets were wrong for the first three weeks this script existed and nothing
+// ever said so: the only step that touched Notion ran last and only on runs
+// that had findings. A credential you never exercise is a credential you do
+// not have.
 //
 // Dependency-free on purpose so the workflow needs no npm install. Exits 0 when
 // the report is clean (nothing worth a card).
@@ -29,7 +37,21 @@ async function notion(token, path, method, body) {
     signal: AbortSignal.timeout(20000),
   });
   if (!res.ok) {
-    throw new Error(`Notion ${method} ${path} → HTTP ${res.status}: ${await res.text()}`);
+    // Notion echoes the database ID back inside the error body, and workflow
+    // logs on a public repo are public. Keep the machine-readable code, drop
+    // the prose; `diagnose` turns the status into something actionable.
+    let code = "";
+    try {
+      code = (await res.json()).code ?? "";
+    } catch {
+      /* non-JSON error body: the status alone has to carry it */
+    }
+    const err = new Error(
+      `Notion ${method} /${path.split("/")[0]} → HTTP ${res.status}${code ? ` (${code})` : ""}`
+    );
+    err.status = res.status;
+    err.code = code;
+    throw err;
   }
   return res.json();
 }
@@ -77,15 +99,67 @@ function reportBlocks(report) {
   return blocks;
 }
 
+// Each of these has actually happened to this repo, so the text names the fix
+// rather than the symptom. Never quote the secret values back.
+function diagnose(status, code) {
+  // A Notion error always carries a `code`. Without one, the body was not a
+  // Notion error at all, so something between the runner and api.notion.com
+  // answered instead (egress proxy, WAF, outage). Calling that a credential
+  // problem sends you off rotating perfectly good secrets.
+  if (!code) {
+    return (
+      `No Notion error code came back, so this HTTP ${status} likely did not originate at Notion. ` +
+      "Check network egress to api.notion.com before touching either secret."
+    );
+  }
+  if (status === 401) {
+    return (
+      "NOTION_TOKEN is not a valid Notion secret. Refresh it at notion.so/my-integrations " +
+      "(open the integration, Configuration tab, Internal Integration Secret) and update the " +
+      "repo secret. It starts with `ntn_`. A database ID pasted into this field fails exactly " +
+      "this way."
+    );
+  }
+  if (status === 404) {
+    return (
+      "NOTION_DATABASE_ID does not name a database this integration can see. It must be the " +
+      "board's 32-character ID, hex only, with no title words from the URL slug. Also confirm " +
+      "the board is shared with the integration: open it in Notion, ... menu, Connections."
+    );
+  }
+  if (status === 403) {
+    return "The integration lacks a capability it needs on this board: read content and insert content.";
+  }
+  if (status === 429) {
+    return "Rate limited by Notion. Transient, and the next sweep should clear it.";
+  }
+  return `Unexpected HTTP ${status} from the Notion API.`;
+}
+
 async function main() {
   const token = process.env.NOTION_TOKEN;
   const databaseId = process.env.NOTION_DATABASE_ID;
+  const args = process.argv.slice(2);
+  const checkOnly = args.includes("--check");
+  const reportPath = args.find(a => !a.startsWith("--")) ?? "report.txt";
+
   if (!token || !databaseId) {
-    console.error("NOTION_TOKEN and NOTION_DATABASE_ID environment variables must be set.");
+    console.error(
+      `Missing ${!token ? "NOTION_TOKEN" : ""}${!token && !databaseId ? " and " : ""}` +
+      `${!databaseId ? "NOTION_DATABASE_ID" : ""}. Both are repo secrets under ` +
+      "Settings, Secrets and variables, Actions."
+    );
     process.exit(1);
   }
 
-  const reportPath = process.argv[2] ?? "report.txt";
+  // Preflight. Reaching the database proves the token authenticates, the ID
+  // resolves, and the integration is actually connected to the board.
+  if (checkOnly) {
+    const titleProp = await titlePropName(token, databaseId);
+    console.log(`Notion board connection OK. Cards will title on the "${titleProp}" property.`);
+    return;
+  }
+
   const report = fs.readFileSync(reportPath, "utf8").trim();
 
   if (report === "" || report.startsWith("Content freshness: clean")) {
@@ -121,6 +195,7 @@ async function main() {
 }
 
 main().catch(err => {
-  console.error("Fatal:", err);
+  console.error(err.message);
+  if (err.status) console.error(diagnose(err.status, err.code));
   process.exit(1);
 });
