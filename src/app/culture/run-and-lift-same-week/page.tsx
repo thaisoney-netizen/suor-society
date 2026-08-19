@@ -87,7 +87,7 @@ export default function RunAndLiftSameWeek() {
       <HowToJsonLd
         path={META.path}
         name="A hybrid running and lifting week that holds up"
-        description="A weekly template for running and lifting around a full-time job, built so the hard days never collide: three runs, two lifts, one full rest day."
+        description="A weekly template for running and lifting when you don't train for a living, built so the hard days never collide: three runs, two lifts, one full rest day."
         image={META.image}
         steps={WEEK.map((d) => ({ name: d.day, text: d.plain }))}
       />
@@ -207,7 +207,7 @@ export default function RunAndLiftSameWeek() {
               <div className="page">
                 <h2>A week that holds up</h2>
                 <p>
-                  Here&rsquo;s a week that holds up for someone training around a full-time job.
+                  Here&rsquo;s a week that holds up for someone who doesn&rsquo;t train for a living.
                   Three runs, two lifts, built so the hard days never collide.
                 </p>
                 <ol className="week-plan">

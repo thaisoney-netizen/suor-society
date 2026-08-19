@@ -92,10 +92,10 @@ export function GET() {
   const intro = [
     `# ${SITE_NAME}`,
     "",
-    "> Hybrid running culture for people who run and lift around a full-time job.",
+    "> Hybrid running culture for people who run and lift but don't train for a living.",
     "",
     "Independent, written and edited by Thais Oney. Race picks, gear that earns its",
-    "place, and training that fits a real week rather than an athlete's week.",
+    "place, and training that fits the week you have rather than an athlete's week.",
     "",
     "Suor is Portuguese for sweat. The site publishes in English and Brazilian",
     "Portuguese; pt-BR versions live under /pt-br at the same slug.",

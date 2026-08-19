@@ -87,7 +87,7 @@ export default function CorridaEMusculacaoNaMesmaSemana() {
       <HowToJsonLd
         path={META.path}
         name="Uma semana híbrida de corrida e musculação que se sustenta"
-        description="Um modelo de semana pra correr e fazer musculação no meio de um trabalho de tempo integral, montado pra que os dias fortes nunca se choquem: três corridas, dois treinos de força, um dia de folga total."
+        description="Um modelo de semana pra correr e fazer musculação pra quem não vive de treinar, montado pra que os dias fortes nunca se choquem: três corridas, dois treinos de força, um dia de folga total."
         image={META.image}
         steps={WEEK.map((d) => ({ name: d.day, text: d.plain }))}
       />
@@ -124,7 +124,7 @@ export default function CorridaEMusculacaoNaMesmaSemana() {
                 <p className="article-deck">
                   Dá pra correr e fazer musculação na mesma semana mantendo só um treino forte por
                   dia e separando a corrida mais puxada do dia de perna mais pesado por pelo menos 48
-                  horas. Quem tem um trabalho de tempo integral costuma ir bem com três corridas e
+                  horas. Quem não vive de treinar costuma ir bem com três corridas e
                   dois ou três treinos de força. O erro que quebra as pessoas não é o volume, é
                   correr toda manhã e malhar toda noite com tudo numa intensidade moderada-forte.
                 </p>
@@ -140,7 +140,7 @@ export default function CorridaEMusculacaoNaMesmaSemana() {
             <section className="article-body">
               <div className="page">
                 <p>
-                  Dois esportes, um corpo, cinco ou seis dias por semana, no meio de um trabalho que
+                  Dois esportes, um corpo, cinco ou seis dias por semana, no meio de uma rotina que
                   não está nem aí pro seu treino. Funciona. Só precisa de uma forma. Aqui está a
                   semana que eu corro, por que ela se sustenta, e o erro que tira as pessoas de campo
                   caladinho.
@@ -209,8 +209,8 @@ export default function CorridaEMusculacaoNaMesmaSemana() {
               <div className="page">
                 <h2>Uma semana que se sustenta</h2>
                 <p>
-                  Aqui está uma semana que se sustenta pra quem treina no meio de um trabalho de
-                  tempo integral. Três corridas, dois treinos de força, montada pra que os dias fortes
+                  Aqui está uma semana que se sustenta pra quem não vive de treinar. Três
+                  corridas, dois treinos de força, montada pra que os dias fortes
                   nunca se choquem.
                 </p>
                 <ol className="week-plan">

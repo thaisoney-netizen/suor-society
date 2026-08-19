@@ -258,7 +258,7 @@ export default function WhyEveryoneStartedRunning() {
                 <p>
                   The trap is thinking you need a fast time or an athlete&rsquo;s schedule before
                   any of it counts. You don&rsquo;t. Maybe you run a fast half someday, the YET is
-                  real, and the 40-minute run you squeeze in around a full-time job counts the whole
+                  real, and the 40-minute run you squeeze in around everything else counts the whole
                   time you&rsquo;re chasing it. Both things are true at once.
                 </p>
                 <p>

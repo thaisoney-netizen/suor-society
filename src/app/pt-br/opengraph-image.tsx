@@ -1,7 +1,7 @@
 import { buildShareCard, shareCardSize } from "@/lib/share-card";
 
 // pt-BR share card — tagline mirrors the pt-BR home hero (dictionaries.ts heroTag)
-export const alt = "Suor Society, cultura de corrida híbrida pra quem trabalha";
+export const alt = "Suor Society, cultura de corrida híbrida pra quem não vive de treinar";
 export const size = shareCardSize;
 export const contentType = "image/png";
 

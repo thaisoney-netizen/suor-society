@@ -38,11 +38,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Suor Society, hybrid running culture for people with jobs",
+    default: "Suor Society, hybrid running culture for people who don’t train for a living",
     template: "%s",
   },
   description:
-    "Hybrid running culture for people who run and lift around a full-time job. Race picks, gear that earns its place, training that fits a real week.",
+    "Hybrid running culture for people who run and lift but don’t train for a living. Race picks, gear that earns its place, training that fits the week you have.",
   alternates: {
     canonical: "/",
     languages: {
@@ -54,15 +54,15 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Suor Society",
     url: SITE_URL,
-    title: "Suor Society, hybrid running culture for people with jobs",
+    title: "Suor Society, hybrid running culture for people who don’t train for a living",
     description:
-      "Hybrid running culture for people who run and lift around a full-time job. Race picks, gear that earns its place, training that fits a real week.",
+      "Hybrid running culture for people who run and lift but don’t train for a living. Race picks, gear that earns its place, training that fits the week you have.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Suor Society, hybrid running culture for people with jobs",
+    title: "Suor Society, hybrid running culture for people who don’t train for a living",
     description:
-      "Hybrid running culture for people who run and lift around a full-time job. Race picks, gear that earns its place, training that fits a real week.",
+      "Hybrid running culture for people who run and lift but don’t train for a living. Race picks, gear that earns its place, training that fits the week you have.",
   },
   verification: {
     google: "YDm19JsCu27EgusYeNzYTF9-ztIk8kzRh4eFN2H1j40",

@@ -260,8 +260,8 @@ export default function PorQueTodoMundoComecouACorrer() {
                 <p>
                   A armadilha é achar que você precisa de um tempo rápido ou de uma agenda de atleta
                   antes de qualquer coisa contar. Não precisa. Talvez um dia você corra uma meia
-                  rápida, o AINDA existe, e a corrida de 40 minutos que você encaixa no meio de um
-                  trabalho em tempo integral conta o tempo inteiro em que você corre atrás disso. As
+                  rápida, o AINDA existe, e a corrida de 40 minutos que você encaixa no meio de
+                  todo o resto conta o tempo inteiro em que você corre atrás disso. As
                   duas coisas são verdade ao mesmo tempo.
                 </p>
                 <p>

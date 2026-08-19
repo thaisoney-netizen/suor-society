@@ -515,7 +515,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
     about: {
       metaTitle: "About, Suor Society",
       metaDescription:
-        "Built in San Diego by a marketer who runs and lifts. Hybrid running culture for people with a real life.",
+        "Built in San Diego by a marketer who runs and lifts. Hybrid running culture for people who don’t train for a living.",
       eyebrow: "Suor Society / The Culture",
       headline: "Suor is Portuguese for sweat",
       mediaAlts: {
@@ -530,7 +530,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
     author: {
       metaTitle: "Thais Oney, Suor Society",
       metaDescription:
-        "Thais Oney is the founder of Suor Society. Originally from Brazil and based in San Diego, she writes about hybrid running culture: races, gear, and training around a real life.",
+        "Thais Oney is the founder of Suor Society. Originally from Brazil and based in San Diego, she writes about hybrid running culture: races, gear, and training that fits around everything else.",
       eyebrow: "Suor Society / Author",
       name: "Thais Oney",
       role: "Founder & Editor",
@@ -594,7 +594,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       byLabel: "By",
       cardLabel: "About the author",
       cardBlurb:
-        "Thais Oney is the founder of Suor Society. Originally from Brazil and based in San Diego, she holds an MBA in Digital Marketing and Communications and writes about hybrid running culture for people who train around a real life.",
+        "Thais Oney is the founder of Suor Society. Originally from Brazil and based in San Diego, she holds an MBA in Digital Marketing and Communications and writes about hybrid running culture for people who don’t train for a living.",
       cardCta: "Read full bio →",
     },
     crew: {
@@ -635,7 +635,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       successTag: "You’re in",
       successTitleLines: ["On", "The", "List"],
       successBody:
-        "The dispatch lands in your inbox each week. Races worth signing up for, gear worth knowing about, and the people doing both around a real life.",
+        "The dispatch lands in your inbox each week. Races worth signing up for, gear worth knowing about, and the people doing both around everything else.",
       emailLabel: "Email *",
       placeholder: "you@somewhere.com",
       sending: "Sending…",
@@ -753,7 +753,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
           img: "/run-and-lift-hero.webp",
           eyebrow: "The Culture · Arquivo",
           title: "Corrida e musculação na mesma semana",
-          desc: "Um treino forte por dia, 48 horas entre a corrida mais puxada e o dia de perna mais pesado. A semana híbrida que se sustenta no meio do trabalho, e a armadilha que quebra as pessoas.",
+          desc: "Um treino forte por dia, 48 horas entre a corrida mais puxada e o dia de perna mais pesado. A semana híbrida que se sustenta no meio de todo o resto, e a armadilha que quebra as pessoas.",
           meta: "Novo · Treino · Julho 2026 ↗",
         },
         {
@@ -987,7 +987,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
     author: {
       metaTitle: "Thais Oney, Suor Society",
       metaDescription:
-        "Thais Oney é a fundadora do Suor Society. Brasileira, morando em San Diego, escreve sobre cultura de corrida híbrida: provas, equipamentos e treino no meio da vida real.",
+        "Thais Oney é a fundadora do Suor Society. Brasileira, morando em San Diego, escreve sobre cultura de corrida híbrida: provas, equipamentos e treino que cabe no meio de todo o resto.",
       eyebrow: "Suor Society / Autora",
       name: "Thais Oney",
       role: "Fundadora e editora",
@@ -1051,7 +1051,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       byLabel: "Por",
       cardLabel: "Sobre a autora",
       cardBlurb:
-        "Thais Oney é a fundadora do Suor Society. Brasileira, morando em San Diego, tem MBA em Marketing Digital e Comunicação e escreve sobre cultura de corrida híbrida para quem treina no meio da vida real.",
+        "Thais Oney é a fundadora do Suor Society. Brasileira, morando em San Diego, tem MBA em Marketing Digital e Comunicação e escreve sobre cultura de corrida híbrida para quem não vive de treinar.",
       cardCta: "Bio completa →",
     },
     crew: {
