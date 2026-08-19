@@ -42,15 +42,52 @@ jobs:
           echo "findings=$?" >> "$GITHUB_OUTPUT"
           cat report.txt
 
+      # Runs on EVERY sweep, including clean ones, and before anything needs it.
+      # Both Notion secrets were wrong for the first three weeks this workflow
+      # existed and no run ever said so, because the only step that touched
+      # Notion ran last and only when there were findings. A clean sweep skipped
+      # it entirely, so the broken path stayed invisible.
+      - name: Check the Notion board connection
+        id: board
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        run: |
+          set +e
+          node scripts/content/notify-board.mjs --check > board.txt 2>&1
+          status=$?
+          cat board.txt
+          if [ $status -eq 0 ]; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Filed when there is content to review OR when the board is unreachable,
+      # since in that second case this issue is the only surviving channel.
       - name: Open or update issue
-        if: steps.scan.outputs.findings == '1'
+        if: steps.scan.outputs.findings == '1' || steps.board.outputs.ok == 'false'
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
             const report = fs.readFileSync('report.txt', 'utf8');
-            const title = 'Content freshness: review needed';
-            const body = `The weekly content freshness sweep found content to review.\n\n${report}\n\n_Auto-filed by .github/workflows/stale-dates.yml_`;
+            const boardOk = '${{ steps.board.outputs.ok }}' === 'true';
+
+            // When the board is down this issue is the last channel standing,
+            // so it has to say so itself. Nothing else will.
+            const banner = boardOk ? '' :
+              '> [!WARNING]\n' +
+              '> **The Notion board card could not be posted, so this issue is the only copy of this report.**\n' +
+              '>\n' +
+              fs.readFileSync('board.txt', 'utf8').trim().split('\n')
+                .map(l => '> ' + l).join('\n') +
+              '\n\n';
+
+            const title = boardOk
+              ? 'Content freshness: review needed'
+              : 'Content freshness: Notion board unreachable';
+            const body = `${banner}${report}\n\n_Auto-filed by .github/workflows/stale-dates.yml_`;
             const { data: issues } = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -79,16 +116,17 @@ jobs:
       # Allowed to fail the job: a broken notification path should be loud,
       # since a silent one is the problem this workflow exists to fix.
       - name: Post card to the Notion board
-        if: steps.scan.outputs.findings == '1'
+        if: steps.scan.outputs.findings == '1' && steps.board.outputs.ok == 'true'
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
           GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: node scripts/content/notify-board.mjs report.txt
 
-      # Sweep came back clean, so close any issue left open from a prior run.
+      # Sweep came back clean AND the board is healthy, so close any issue left
+      # open from a prior run. A broken board keeps it open on purpose.
       - name: Close resolved issue
-        if: steps.scan.outputs.findings == '0'
+        if: steps.scan.outputs.findings == '0' && steps.board.outputs.ok == 'true'
         uses: actions/github-script@v7
         with:
           script: |
@@ -113,3 +151,10 @@ jobs:
                 state_reason: 'completed',
               });
             }
+
+      # Last, so the issue above is already filed when the job goes red.
+      - name: Fail if the board connection is broken
+        if: steps.board.outputs.ok == 'false'
+        run: |
+          echo "::error::Notion board unreachable. The content-freshness issue has the diagnosis."
+          exit 1
