@@ -3,7 +3,6 @@ import { Bebas_Neue, Barlow_Condensed, Inter, JetBrains_Mono } from "next/font/g
 import Script from "next/script";
 import "./globals.css";
 import ScrollTracker from "@/components/ScrollTracker";
-import CookieConsent from "@/components/CookieConsent";
 import { SITE_URL } from "@/lib/seo";
 
 const bebasNeue = Bebas_Neue({
@@ -87,35 +86,16 @@ export default function RootLayout({
       <body style={{ paddingBottom: "60px" }}>
         {children}
         <ScrollTracker />
-        <CookieConsent />
         {/*
-          Google Consent Mode v2. This has to run BEFORE gtag.js loads, which is
-          why it is beforeInteractive: it is injected into the initial HTML and
-          executes ahead of any Next module. Every visitor starts denied, so GA4
-          sends cookieless pings and sets no _ga cookie until the consent bar is
-          accepted. wait_for_update gives that click a window to land before the
-          first hit goes out. A stored "accepted" is replayed here so returning
-          visitors are not asked again.
+          GA4 runs in its default state: analytics cookies are set on arrival,
+          with no consent gate in front of it. The Consent Mode v2 defaults and
+          the cookie bar that used to sit here were removed 2026-08-19 on the
+          call that a site this size, with traffic that is overwhelmingly US,
+          does not need the extra step. /privacy documents the cookies and
+          points to Google's opt-out add-on instead. Putting the gate back means
+          restoring the `consent default` script BEFORE gtag.js loads (it has to
+          be beforeInteractive) along with a bar that flips analytics_storage.
         */}
-        <Script id="consent-default" strategy="beforeInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            window.gtag = gtag;
-            gtag('consent', 'default', {
-              ad_storage: 'denied',
-              ad_user_data: 'denied',
-              ad_personalization: 'denied',
-              analytics_storage: 'denied',
-              wait_for_update: 500
-            });
-            try {
-              if (localStorage.getItem('ss-cookie-consent') === 'accepted') {
-                gtag('consent', 'update', { analytics_storage: 'granted' });
-              }
-            } catch (e) {}
-          `}
-        </Script>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XG414LX946"
           strategy="afterInteractive"
@@ -124,6 +104,10 @@ export default function RootLayout({
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            // Assigned explicitly because src/lib/analytics.ts calls
+            // window.gtag to fire the sign_up / generate_lead / file_download
+            // conversion events. The removed consent script used to set it.
+            window.gtag = gtag;
             gtag('js', new Date());
             gtag('config', 'G-XG414LX946');
           `}

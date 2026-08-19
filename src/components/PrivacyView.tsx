@@ -1,7 +1,10 @@
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
-import ConsentReset from "@/components/ConsentReset";
 import { dictionaries, type Lang } from "@/i18n/dictionaries";
+
+// Google's own add-on, the one honest opt-out available now that the site sets
+// analytics cookies without asking. Linked from "Your choices" below.
+const GA_OPT_OUT = "https://tools.google.com/dlpage/gaoptout";
 
 // Privacy policy, shared by the English and Portuguese routes. Copy lives in
 // dictionaries.ts like every other page. Reuses the article body styles so it
@@ -84,10 +87,15 @@ export default function PrivacyView({ lang }: { lang: Lang }) {
             </ul>
 
             <h2 id="choices">{t.choices.title}</h2>
+            <p>
+              {t.choices.optOut}{" "}
+              <a href={GA_OPT_OUT} target="_blank" rel="noopener noreferrer">
+                {t.choices.optOutLink}
+              </a>
+            </p>
             {t.choices.body.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
-            <ConsentReset lang={lang} />
 
             {t.tailSections.map((section) => (
               <div key={section.title} id={section.id}>

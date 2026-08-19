@@ -129,15 +129,6 @@ type Dictionary = {
     cta: string;
     dismiss: string;
   };
-  // Cookie consent bar. Wording has to stay accurate against the Consent Mode
-  // defaults in layout.tsx: nothing is stored until Accept is clicked.
-  consent: {
-    ariaLabel: string;
-    text: string;
-    policyLink: string;
-    accept: string;
-    reject: string;
-  };
   privacy: {
     metaTitle: string;
     metaDescription: string;
@@ -161,10 +152,11 @@ type Dictionary = {
     choices: {
       title: string;
       body: string[];
-      statusAccepted: string;
-      statusRejected: string;
-      statusNone: string;
-      resetBtn: string;
+      // Opt-out sentence + the label for the Google add-on link that closes it.
+      // There is no on-site consent control to point at, so this is the real
+      // answer to "how do I turn analytics off".
+      optOut: string;
+      optOutLink: string;
     };
     contact: { title: string; body: string };
   };
@@ -382,26 +374,19 @@ export const dictionaries: Record<Lang, Dictionary> = {
       cta: "Read in English",
       dismiss: "Dismiss",
     },
-    consent: {
-      ariaLabel: "Cookie consent",
-      text: "We use Google Analytics to see which posts actually get read. No cookies get set unless you say yes.",
-      policyLink: "Privacy policy",
-      accept: "Accept",
-      reject: "Reject",
-    },
     privacy: {
       metaTitle: "Privacy, Suor Society",
       metaDescription:
-        "What Suor Society collects, what it never does with your data, and how to change your cookie choice at any time.",
+        "What Suor Society collects, what it never does with your data, and how to switch the analytics off if you would rather not be counted.",
       eyebrow: "How your data gets handled",
       headline: "Privacy policy",
-      updated: "Last updated August 18, 2026",
+      updated: "Last updated August 19, 2026",
       sections: [
         {
           id: "short-version",
           title: "The short version",
           body: [
-            "This is a small running site, so there is not much to tell. We collect as little as we can, we don’t sell any of it, and analytics don’t run at all unless you accept cookies.",
+            "This is a small running site, so there is not much to tell. We collect as little as we can and we don’t sell any of it. Google Analytics runs here and sets a cookie when you arrive, which is how we know which posts get read, and you can switch it off in about ten seconds if you would rather not be counted.",
             "If you sign up for the Dispatch or download a race guide, we keep your email address so we can send you the thing you asked for. Everything below is just the detail.",
           ],
         },
@@ -410,7 +395,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
           title: "What we collect",
           body: ["Three things, depending on what you do here."],
           list: [
-            "Analytics, but only after you accept cookies. Google Analytics tells us which pages get read, roughly what part of the world you are in, what browser you are using, and how far down a post you scroll. It does not tell us who you are.",
+            "Analytics, from the moment you land. Google Analytics tells us which pages get read, roughly what part of the world you are in, what browser you are using, and how far down a post you scroll. It does not tell us who you are, and the Your choices section explains how to turn it off.",
             "Your email address, if you sign up for the Dispatch or fill in the form to download a race guide. The race guide form also asks for a first name, so the email doesn’t have to open with “Hi there”.",
             "Whatever you write to us, if you email hello@suorsociety.com. That lands in a normal inbox and gets treated like any other email.",
           ],
@@ -444,8 +429,9 @@ export const dictionaries: Record<Lang, Dictionary> = {
       cookies: {
         title: "Cookies",
         body: [
-          "Nothing is stored on your device until you choose. Until then Google Analytics runs in a mode where it sends anonymous, cookieless pings, which is why the site works normally whether you accept or reject.",
-          "The last two rows aren’t technically cookies, they are browser local storage. They are listed anyway because the distinction doesn’t change anything for you.",
+          "There is no accept or reject bar on this site. Google Analytics sets the two cookies below when you arrive, and they do nothing except count visits and tell a return visit apart from a first one. Nothing here is used for advertising.",
+          "If you would rather not be counted, the Your choices section further down has the opt-out, and the site behaves exactly the same once you use it.",
+          "The last row isn’t technically a cookie, it is browser local storage. It is listed anyway because the distinction doesn’t change anything for you.",
         ],
         headers: { name: "Name", purpose: "What it does", life: "How long it lasts" },
         rows: [
@@ -459,11 +445,6 @@ export const dictionaries: Record<Lang, Dictionary> = {
             name: "_ga_XG414LX946",
             purpose: "Google Analytics. Keeps track of a single visit.",
             life: "2 years",
-          },
-          {
-            name: "ss-cookie-consent",
-            purpose: "Remembers whether you accepted or rejected, so the bar stops asking.",
-            life: "Until you clear it",
           },
           {
             name: "ss-lang-suggest-dismissed",
@@ -497,15 +478,14 @@ export const dictionaries: Record<Lang, Dictionary> = {
       },
       choices: {
         title: "Your choices",
+        optOut:
+          "You can opt out of the analytics entirely and you don’t have to take our word for it working. Google publishes a browser add-on that switches Google Analytics off on every site you visit, this one included, and it installs in about ten seconds:",
+        optOutLink: "Google Analytics opt-out add-on",
         body: [
-          "You can change your cookie decision whenever you want, and rejecting is exactly as easy as accepting. The button below clears your choice so the bar asks again.",
+          "Blocking cookies for this site in your browser settings does the same job, and so does any tracker blocker or a private window. Whichever route you take, the site works normally afterwards. If you would rather we deleted analytics data tied to your visit, email us and we will ask Google to remove it.",
           "Every Dispatch email has an unsubscribe link at the bottom and it works straight away. If you would rather have your address deleted entirely, email us and we will do it.",
           "If you are in the EU, the UK, or Brazil, you have the right to ask what we hold about you, to get a copy, to have it corrected, and to have it deleted. Email us and we will sort it out. There is no form to fill in.",
         ],
-        statusAccepted: "Right now: you accepted analytics cookies",
-        statusRejected: "Right now: you rejected analytics cookies",
-        statusNone: "Right now: you haven’t made a choice yet",
-        resetBtn: "Change my choice",
       },
       contact: {
         title: "Contact",
@@ -837,26 +817,19 @@ export const dictionaries: Record<Lang, Dictionary> = {
       cta: "Ler em português",
       dismiss: "Fechar",
     },
-    consent: {
-      ariaLabel: "Consentimento de cookies",
-      text: "A gente usa Google Analytics pra saber quais posts as pessoas leem de verdade. Nenhum cookie é salvo se você não aceitar.",
-      policyLink: "Política de privacidade",
-      accept: "Aceitar",
-      reject: "Recusar",
-    },
     privacy: {
       metaTitle: "Privacidade, Suor Society",
       metaDescription:
-        "O que a Suor Society coleta, o que nunca faz com os seus dados, e como mudar sua escolha de cookies quando quiser.",
+        "O que a Suor Society coleta, o que nunca faz com os seus dados, e como desligar o analytics se você preferir não ser contado.",
       eyebrow: "Como seus dados são tratados",
       headline: "Política de privacidade",
-      updated: "Última atualização em 18 de agosto de 2026",
+      updated: "Última atualização em 19 de agosto de 2026",
       sections: [
         {
           id: "short-version",
           title: "A versão curta",
           body: [
-            "Esse é um site pequeno de corrida, então não tem muito o que contar. A gente coleta o mínimo possível, não vende nada disso, e o analytics só roda se você aceitar os cookies.",
+            "Esse é um site pequeno de corrida, então não tem muito o que contar. A gente coleta o mínimo possível e não vende nada disso. O Google Analytics roda aqui e salva um cookie quando você chega, que é como a gente sabe quais posts são lidos, e dá pra desligar em uns dez segundos se você preferir não ser contado.",
             "Se você assina a Dispatch ou baixa um guia de corridas, a gente guarda seu email pra conseguir mandar aquilo que você pediu. O resto aqui embaixo é só o detalhe.",
           ],
         },
@@ -865,7 +838,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
           title: "O que a gente coleta",
           body: ["Três coisas, dependendo do que você faz por aqui."],
           list: [
-            "Analytics, mas só depois que você aceita os cookies. O Google Analytics mostra quais páginas são lidas, mais ou menos em que parte do mundo você está, qual navegador você usa e até onde você rola o post. Ele não diz quem você é.",
+            "Analytics, desde a hora que você chega. O Google Analytics mostra quais páginas são lidas, mais ou menos em que parte do mundo você está, qual navegador você usa e até onde você rola o post. Ele não diz quem você é, e a seção Suas escolhas explica como desligar.",
             "Seu email, se você assina a Dispatch ou preenche o formulário pra baixar um guia de corridas. O formulário do guia também pede um primeiro nome, pra que o email não comece com “Olá”.",
             "O que você escrever pra gente, se mandar mensagem pro hello@suorsociety.com. Isso cai numa caixa de entrada normal e é tratado como qualquer outro email.",
           ],
@@ -899,8 +872,9 @@ export const dictionaries: Record<Lang, Dictionary> = {
       cookies: {
         title: "Cookies",
         body: [
-          "Nada é salvo no seu aparelho antes de você escolher. Até lá o Google Analytics roda num modo que manda sinais anônimos e sem cookie, e é por isso que o site funciona normal tanto se você aceitar quanto se recusar.",
-          "As duas últimas linhas não são cookies de verdade, são armazenamento local do navegador. Estão listadas assim mesmo porque essa diferença não muda nada pra você.",
+          "Não tem barra de aceitar ou recusar nesse site. O Google Analytics salva os dois cookies aqui embaixo quando você chega, e eles não fazem nada além de contar visitas e diferenciar quem volta de quem chegou agora. Nada disso é usado pra publicidade.",
+          "Se você preferir não ser contado, a seção Suas escolhas mais pra baixo tem como desligar, e o site continua funcionando igual depois disso.",
+          "A última linha não é um cookie de verdade, é armazenamento local do navegador. Está listada assim mesmo porque essa diferença não muda nada pra você.",
         ],
         headers: { name: "Nome", purpose: "O que faz", life: "Quanto tempo dura" },
         rows: [
@@ -914,11 +888,6 @@ export const dictionaries: Record<Lang, Dictionary> = {
             name: "_ga_XG414LX946",
             purpose: "Google Analytics. Acompanha uma visita específica.",
             life: "2 anos",
-          },
-          {
-            name: "ss-cookie-consent",
-            purpose: "Lembra se você aceitou ou recusou, pra barra parar de perguntar.",
-            life: "Até você apagar",
           },
           {
             name: "ss-lang-suggest-dismissed",
@@ -952,15 +921,14 @@ export const dictionaries: Record<Lang, Dictionary> = {
       },
       choices: {
         title: "Suas escolhas",
+        optOut:
+          "Dá pra desligar o analytics por completo, e você não precisa acreditar na nossa palavra de que funcionou. O Google publica uma extensão de navegador que desativa o Google Analytics em todo site que você visita, incluindo esse, e ela instala em uns dez segundos:",
+        optOutLink: "extensão de opt-out do Google Analytics",
         body: [
-          "Você pode mudar sua decisão sobre cookies quando quiser, e recusar é exatamente tão fácil quanto aceitar. O botão aqui embaixo apaga sua escolha pra barra perguntar de novo.",
+          "Bloquear os cookies desse site nas configurações do navegador faz o mesmo, e qualquer bloqueador de rastreadores ou uma janela anônima também. Seja qual for o caminho, o site funciona normal depois. Se você preferir que a gente apague os dados de analytics ligados à sua visita, escreve pra gente que a gente pede a remoção pro Google.",
           "Todo email da Dispatch tem link de cancelamento no rodapé e ele funciona na hora. Se você preferir apagar seu endereço de vez, escreve pra gente que a gente apaga.",
           "Se você está no Brasil, na União Europeia ou no Reino Unido, você tem direito de perguntar o que a gente guarda sobre você, receber uma cópia, corrigir e apagar. Escreve pra gente que a gente resolve. Não tem formulário pra preencher.",
         ],
-        statusAccepted: "Agora: você aceitou os cookies de analytics",
-        statusRejected: "Agora: você recusou os cookies de analytics",
-        statusNone: "Agora: você ainda não escolheu",
-        resetBtn: "Mudar minha escolha",
       },
       contact: {
         title: "Contato",
