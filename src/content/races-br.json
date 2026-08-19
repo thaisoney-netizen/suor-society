@@ -48,12 +48,12 @@
       "num": "05",
       "name": "Maratona Fila São Paulo",
       "where": "São Paulo, SP · 23 de agosto de 2026",
-      "body": "Formato solo, dupla e quarteto, com largada e chegada na USP. A opção de revezamento muda o jogo: dá pra trazer uma crew de níveis diferentes e todo mundo corre a mesma prova. Agosto em SP costuma entregar clima ameno.",
+      "body": "Formato solo, dupla e quarteto, com largada e chegada na USP. A opção de revezamento muda o jogo: dá pra trazer uma crew de níveis diferentes e todo mundo corre a mesma prova. Agosto em SP costuma entregar clima ameno. As inscrições fecharam em 16 de agosto, antes da prova. A próxima chance é 2027.",
       "dists": "42K (solo, dupla ou quarteto)",
-      "status": "open",
-      "statusLabel": "Inscrições abertas",
+      "status": "sold",
+      "statusLabel": "Inscrições encerradas",
       "url": "https://www.fila.com.br/maratona",
-      "checked": "2026-08-03"
+      "checked": "2026-08-19"
     },
     {
       "num": "06",
@@ -121,7 +121,7 @@
       "status": "open",
       "statusLabel": "Inscrições abertas",
       "url": "https://www.trofeuindependenciabrasil.com.br/",
-      "checked": "2026-07-07"
+      "checked": "2026-08-19"
     },
     {
       "num": "12",

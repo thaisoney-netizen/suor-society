@@ -46,7 +46,7 @@
       "status": "limit",
       "statusLabel": "5K/10K Open · Half & Full Sold Out",
       "url": "https://santarosamarathon.com/",
-      "checked": "2026-08-03"
+      "checked": "2026-08-19"
     },
     {
       "num": "05",
@@ -58,7 +58,7 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://runsignup.com/Race/CA/LongBeach/CalifornianDreaminKKHalfMarathon",
-      "checked": "2026-07-07"
+      "checked": "2026-08-19"
     },
     {
       "num": "06",
@@ -70,7 +70,7 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://runsignup.com/Race/CA/SanRamon/BeerCityBishopRanch",
-      "checked": "2026-07-07"
+      "checked": "2026-08-19"
     },
     {
       "num": "07",
@@ -252,19 +252,19 @@
       "status": "open",
       "statusLabel": "Open · Closes Sep 6",
       "url": "https://www.tunnelmarathon.com/",
-      "checked": "2026-08-03"
+      "checked": "2026-08-19"
     },
     {
       "num": "02",
       "name": "Life Time Chicago Half Marathon & 5K",
       "where": "Chicago, IL · Sep 27, 2026",
-      "body": "Big-city feel without the lottery. Welcoming crowds, energetic course support. USATF certified. Open registration, no qualifier.",
+      "body": "Big-city feel without the lottery. Welcoming crowds, energetic course support. USATF certified. The half is sold out now. Waitlist opened August 17, picks go out September 1. The 5K is still open.",
       "dists": "5K · Half Marathon",
       "price": "Check site",
-      "status": "open",
-      "statusLabel": "Open Registration",
+      "status": "limit",
+      "statusLabel": "5K Open · Half Waitlist",
       "url": "https://www.chicagohalf.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-08-19"
     },
     {
       "num": "03",

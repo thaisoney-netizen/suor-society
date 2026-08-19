@@ -5,8 +5,8 @@
 //   2. UNVERIFIED UPCOMING RACES — races inside the verification window whose
 //      `checked` stamp has gone stale. Registration status (open, waitlist,
 //      sold out) drifts with no date changing, and check 1 is blind to it.
-//      Sell-outs cluster in the weeks before race day, which is the window
-//      this covers.
+//      Sell-outs cluster in the weeks before race day, so the staleness bar
+//      tightens as the race approaches rather than sitting at one flat number.
 //
 //   Run:  node scripts/content/check-stale-dates.mjs
 //   Exit: 0 when clean, 1 when either check reports something (report on stdout).
@@ -25,9 +25,19 @@ const RACE_FILES = ["src/content/races-en.json", "src/content/races-br.json"];
 // A race this close to its date is in sell-out season and its status is worth
 // re-confirming against the official site.
 const VERIFY_WINDOW_DAYS = 45;
-// ...but only if we have not confirmed it in this long. Re-verifying bumps
-// `checked` in the JSON, which quiets the race until the stamp ages out again.
-const VERIFY_MAX_AGE_DAYS = 30;
+// ...but how fresh the `checked` stamp has to be scales with how close race day
+// is. A flat 30-day rule went quiet exactly when it mattered most: a race three
+// days out carrying a 20-day-old stamp was never flagged, and sell-outs cluster
+// in the last two weeks. Re-verifying bumps `checked` in the JSON, which quiets
+// the race until the stamp ages past the bar for its new distance out.
+// First tier whose `withinDays` covers the race wins.
+const VERIFY_TIERS = [
+  { withinDays: 7, maxAgeDays: 3 },
+  { withinDays: 14, maxAgeDays: 7 },
+  { withinDays: 30, maxAgeDays: 14 },
+  { withinDays: VERIFY_WINDOW_DAYS, maxAgeDays: 30 },
+];
+const maxAgeFor = daysOut => VERIFY_TIERS.find(t => daysOut <= t.withinDays).maxAgeDays;
 
 // "July 11, 2026", "Nov 21-22, 2026", "Dec 4 to 6, 2026" (year required)
 const EN_DATE =
@@ -122,10 +132,11 @@ for (const file of RACE_FILES) {
       const daysOut = daysFromToday(date);
       if (daysOut < 0 || daysOut > VERIFY_WINDOW_DAYS) continue;
 
+      const maxAge = maxAgeFor(daysOut);
       const checkedAge = race.checked
         ? -daysFromToday(new Date(`${race.checked}T00:00:00`))
         : Infinity;
-      if (checkedAge <= VERIFY_MAX_AGE_DAYS) continue;
+      if (checkedAge <= maxAge) continue;
 
       unverified.push({
         file,
@@ -133,6 +144,7 @@ for (const file of RACE_FILES) {
         where: race.where,
         statusLabel: race.statusLabel,
         daysOut,
+        maxAge,
         checked: race.checked ?? "never",
       });
     }
@@ -164,12 +176,16 @@ if (stale.length > 0) {
 if (unverified.length > 0) {
   console.log(`## ${unverified.length} upcoming race(s) due for a status re-check\n`);
   console.log(
-    `Races within ${VERIFY_WINDOW_DAYS} days not verified in the last ${VERIFY_MAX_AGE_DAYS} days. ` +
+    `Races within ${VERIFY_WINDOW_DAYS} days whose \`checked\` stamp is older than this race allows ` +
+    `(${VERIFY_TIERS.map(t => `≤${t.withinDays}d out: ${t.maxAgeDays}d`).join(", ")}). ` +
     "Registration status drifts without any date changing, so these need eyes on the official site.\n"
   );
   for (const r of unverified) {
     const when = r.daysOut === 0 ? "today" : `in ${r.daysOut} day${r.daysOut === 1 ? "" : "s"}`;
-    console.log(`- **${r.name}** (${when}) — currently "${r.statusLabel}" · last checked ${r.checked}`);
+    console.log(
+      `- **${r.name}** (${when}) — currently "${r.statusLabel}" · last checked ${r.checked} ` +
+      `(needs a stamp under ${r.maxAge} days old)`
+    );
     console.log(`  ${r.where} · \`${r.file}\``);
   }
   console.log(
