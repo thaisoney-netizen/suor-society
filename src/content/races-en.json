@@ -40,25 +40,25 @@
       "num": "04",
       "name": "Santa Rosa Marathon",
       "where": "Sonoma County, CA · Aug 22-23, 2026",
-      "body": "Wine country roads, mostly flat, multi-distance weekend. Half and full marathon are both sold out. The 5K and 10K on Saturday may still have room.",
+      "body": "Wine country roads, mostly flat, multi-distance weekend. The marathon, half and 10K have all sold out. The Saturday 5K is the only distance still open.",
       "dists": "5K · 10K · Half Marathon · Full Marathon",
-      "price": "From $114",
+      "price": "5K: $72.77",
       "status": "limit",
-      "statusLabel": "5K/10K Open · Half & Full Sold Out",
+      "statusLabel": "5K Only · 10K, Half & Full Sold Out",
       "url": "https://santarosamarathon.com/",
-      "checked": "2026-08-03"
+      "checked": "2026-08-21"
     },
     {
       "num": "05",
       "name": "Californian Dreamin' Half Marathon",
       "where": "Long Beach, CA · Aug 23, 2026",
-      "body": "Coastal SoCal course from Venice to Long Beach. Three distances starting under $60. Beach finish in August. Hard to beat this value for a certified coastal half.",
+      "body": "Flat out-and-back loops on the Long Beach beach path, starting and finishing on Ocean Blvd. Three distances, USATF certified, and the 5K and 10K both come in under $60.",
       "dists": "5K · 10K · Half Marathon",
-      "price": "From $49.75",
+      "price": "From $52.93",
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://runsignup.com/Race/CA/LongBeach/CalifornianDreaminKKHalfMarathon",
-      "checked": "2026-07-07"
+      "checked": "2026-08-21"
     },
     {
       "num": "06",
@@ -66,11 +66,11 @@
       "where": "San Ramon, CA · Sep 12, 2026",
       "body": "East Bay edition. Multi-distance format with a 1-mile option. USATF certified. Good fall training block tune-up.",
       "dists": "1 Mile · 5K · 10K · Half Marathon",
-      "price": "Check site",
+      "price": "From $32.80",
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://runsignup.com/Race/CA/SanRamon/BeerCityBishopRanch",
-      "checked": "2026-07-07"
+      "checked": "2026-08-21"
     },
     {
       "num": "07",
@@ -98,42 +98,30 @@
     },
     {
       "num": "09",
-      "name": "Silverado Half Marathon & 10K",
-      "where": "Silverado, CA · Nov 7, 2026",
-      "body": "Orange County wine country, canyon roads, fall race day. Less crowded than the big city events. Certified, open entry.",
-      "dists": "10K · Half Marathon · Full Marathon",
-      "price": "Check site",
-      "status": "open",
-      "statusLabel": "Open Registration",
-      "url": "https://www.runguides.com/california/runs/half-marathon/all",
-      "checked": "2026-07-07"
-    },
-    {
-      "num": "10",
       "name": "Santa Barbara Half Marathon & 5K",
       "where": "Santa Barbara, CA · Nov 8, 2026",
-      "body": "Presented by HOKA. 13.1 along the coast plus a 5K and kids fun run. Sold out four weeks early in 2025. Expected to sell out earlier in 2026.",
+      "body": "Presented by HOKA. 13.1 along the waterfront plus a 5K and a kids fun run, finishing in the Funk Zone.",
       "dists": "5K · Half Marathon",
       "price": "Check site",
       "status": "open",
-      "statusLabel": "Open · Selling Fast",
+      "statusLabel": "Open Registration",
       "url": "https://santabarbarahalf.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-08-21"
+    },
+    {
+      "num": "10",
+      "name": "Monterey Bay Half Marathon",
+      "where": "Monterey, CA · Nov 8, 2026",
+      "body": "Sold out in eight days, and the Race Benefactor entries went in fifteen minutes. One of the most beautiful half courses in California. The official waitlist is the only way in now.",
+      "dists": "Half Marathon",
+      "price": "Waitlist only",
+      "status": "sold",
+      "statusLabel": "Sold Out · Waitlist Only",
+      "url": "https://www.montereybayhalfmarathon.org/",
+      "checked": "2026-08-21"
     },
     {
       "num": "11",
-      "name": "Monterey Bay Half Marathon",
-      "where": "Monterey, CA · Nov 8, 2026",
-      "body": "Sold out in eight days. One of the most beautiful half courses in California. Charity and Race Benefactor spots are the path in.",
-      "dists": "Half Marathon",
-      "price": "Charity: $350+",
-      "status": "sold",
-      "statusLabel": "General Sold Out · Charity Spots Open",
-      "url": "https://www.montereybayhalfmarathon.org/",
-      "checked": "2026-07-07"
-    },
-    {
-      "num": "12",
       "name": "Berkeley Half Marathon",
       "where": "Berkeley, CA · Nov 15, 2026",
       "body": "USATF certified East Bay course winding through Berkeley campus, downtown, and the marina. Mid-November race day with full fall conditions.",
@@ -145,7 +133,7 @@
       "checked": "2026-08-03"
     },
     {
-      "num": "13",
+      "num": "12",
       "name": "California International Marathon",
       "where": "Sacramento, CA · Dec 6, 2026",
       "body": "Net downhill, point-to-point, USATF and World Athletics certified. One of the fastest marathon courses in the US. All standard tiers sold out at record speed. Gold Entry Draw closed in May.",
@@ -157,7 +145,7 @@
       "checked": "2026-07-07"
     },
     {
-      "num": "14",
+      "num": "13",
       "name": "San Diego Holiday Half Marathon & 5K",
       "where": "San Diego, CA · Dec 19, 2026",
       "body": "13.1 with a 711-foot net elevation drop along a rolling downhill bike path. A fast December half and a way to end the year with a PR attempt.",
@@ -169,7 +157,7 @@
       "checked": "2026-07-07"
     },
     {
-      "num": "15",
+      "num": "14",
       "name": "Carlsbad Marathon, Half & 5K",
       "where": "Carlsbad, CA · Jan 17-18, 2027",
       "body": "Coastal SoCal race down Carlsbad Boulevard with Pacific views for most of the course. Registration open early for the lowest pricing of the year.",
@@ -181,7 +169,7 @@
       "checked": "2026-07-07"
     },
     {
-      "num": "16",
+      "num": "15",
       "name": "Surf City Marathon & Half",
       "where": "Huntington Beach, CA · Feb 2027",
       "body": "Pacific Coast Highway through Huntington Beach on Super Bowl Sunday. Coastal, fast, surfboard finisher medal. Annual; 2027 dates expected to be announced.",
@@ -193,7 +181,7 @@
       "checked": "2026-07-07"
     },
     {
-      "num": "17",
+      "num": "16",
       "name": "Los Angeles Marathon",
       "where": "Los Angeles, CA · March 2027",
       "body": "Stadium to the Sea, Dodger Stadium to Santa Monica. One of the most iconic point-to-point marathon courses in the country. Open entry, no qualifier.",
@@ -205,7 +193,7 @@
       "checked": "2026-07-07"
     },
     {
-      "num": "18",
+      "num": "17",
       "name": "Mountains 2 Beach Marathon & Half",
       "where": "Ojai to Ventura, CA · April 2027",
       "body": "Net downhill from Ojai to the Ventura coast. Known as one of the fastest BQ marathon courses in California. Annual; 2027 registration opens fall 2026.",
@@ -217,7 +205,7 @@
       "checked": "2026-07-07"
     },
     {
-      "num": "19",
+      "num": "18",
       "name": "Hoag OC Marathon Running Festival",
       "where": "Costa Mesa, CA · May 2027",
       "body": "Annual SoCal weekend with marathon, half, 5K, and combo challenges. Course finishes at OC Fair & Event Center. Open entry, multi-distance.",
@@ -229,7 +217,7 @@
       "checked": "2026-07-07"
     },
     {
-      "num": "20",
+      "num": "19",
       "name": "Rock 'n' Roll San Diego",
       "where": "San Diego, CA · May 2027",
       "body": "Balboa Park start, finish in Little Italy, live music every mile. Annual SoCal classic. 2027 registration opens late 2026.",
@@ -246,25 +234,25 @@
       "num": "01",
       "name": "Tunnel Light Marathon",
       "where": "North Bend, WA · Sep 13, 2026",
-      "body": "Net downhill point-to-point through the old Iron Horse rail tunnel and along the Snoqualmie Valley Trail. USATF certified. Cult favorite for PR attempts. Storm damage closed sections of the usual course, so 2026 runs an alternate permitted route. Registration closes September 6.",
+      "body": "Net downhill point-to-point through the old Iron Horse rail tunnel and along the Snoqualmie Valley Trail. Boston qualifier, and the alternate course is listed as USATF certified. Cult favorite for PR attempts. Storm damage closed sections of the usual course, so 2026 runs an alternate permitted route. Registration closes September 6.",
       "dists": "Half Marathon · Full Marathon",
-      "price": "Check site",
+      "price": "From $130.23",
       "status": "open",
       "statusLabel": "Open · Closes Sep 6",
       "url": "https://www.tunnelmarathon.com/",
-      "checked": "2026-08-03"
+      "checked": "2026-08-21"
     },
     {
       "num": "02",
       "name": "Life Time Chicago Half Marathon & 5K",
       "where": "Chicago, IL · Sep 27, 2026",
-      "body": "Big-city feel without the lottery. Welcoming crowds, energetic course support. USATF certified. Open registration, no qualifier.",
+      "body": "Big-city feel without the lottery. The half marathon sold out, so the ways in now are the waitlist or one of the charity partners. The 5K and kids run are still open.",
       "dists": "5K · Half Marathon",
       "price": "Check site",
-      "status": "open",
-      "statusLabel": "Open Registration",
-      "url": "https://www.chicagohalf.com/",
-      "checked": "2026-07-07"
+      "status": "limit",
+      "statusLabel": "5K Open · Half Sold Out",
+      "url": "https://www.chicagohalfmarathon.com/",
+      "checked": "2026-08-21"
     },
     {
       "num": "03",
@@ -276,7 +264,7 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://www.tcmevents.org/",
-      "checked": "2026-08-03"
+      "checked": "2026-08-21"
     },
     {
       "num": "04",
@@ -300,7 +288,7 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://steamtownmarathon.com/",
-      "checked": "2026-08-03"
+      "checked": "2026-08-21"
     },
     {
       "num": "06",

@@ -13,6 +13,8 @@
 // route under src/app. To add a new page: extend the `Dictionary` type with
 // that page's strings and fill both locales.
 
+import { CA_RACE_COUNT, US_RACE_COUNT, TOTAL_RACE_COUNT } from "@/lib/race-counts";
+
 export type Lang = "en" | "pt";
 
 export const LOCALE_HREF: Record<Lang, string> = {
@@ -550,7 +552,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
           href: "/culture/open-entry-races-2026",
           tag: "The Culture Archive",
           date: "June 2026",
-          title: "40 Open Entry Races in California and the US You Can Still Run in 2026",
+          title: `${TOTAL_RACE_COUNT} Open Entry Races in California and the US You Can Still Run in 2026`,
         },
         {
           href: "/dispatch/hyrox-fall-2026-schedule",
@@ -690,16 +692,16 @@ export const dictionaries: Record<Lang, Dictionary> = {
       featureImg: "/race-hero.jpg",
       featureTag: "Race Guide",
       featureDate: "June 2026",
-      featureTitle: "40 Open Entry Races in California and the US You Can Still Run in 2026",
+      featureTitle: `${TOTAL_RACE_COUNT} Open Entry Races in California and the US You Can Still Run in 2026`,
       featureDesc:
-        "No qualifier, no lottery. 20 California races, 20 across the US, all USATF certified, with dates, prices, and direct registration links.",
+        `No qualifier, no lottery. ${CA_RACE_COUNT} California races, ${US_RACE_COUNT} across the US, all USATF certified, with dates, prices, and direct registration links.`,
       readLabel: "Read the guide →",
     },
     downloadGate: {
       successTag: "You’re in",
       successTitleLines: ["Your", "Guide", "Is Ready"],
       successBody:
-        "40 open entry races. 20 in California, 20 across the US. All certified. From now through spring 2027.",
+        `${TOTAL_RACE_COUNT} open entry races. ${CA_RACE_COUNT} in California, ${US_RACE_COUNT} across the US. All certified. From now through spring 2027.`,
       nameLabel: "First Name",
       namePlaceholder: "Your name",
       emailLabel: "Email *",

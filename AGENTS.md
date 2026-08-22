@@ -39,29 +39,72 @@ robots, hreflang, or OG work. Follow this and nothing needs correcting later:
    full-width on mobile without capping its height. Run /responsive-check
    before pushing.
 7. **Race data** lives in `src/content/races-*.json` — the guide pages and the
-   gated PDFs render the same JSON. After editing it, run
+   gated PDFs render the same JSON, through the shared
+   `src/components/RaceRow.tsx`. After editing it, run
    `node scripts/generate-race-guide-pdf.js` and commit the PDFs too.
    Every race carries a `checked` field: the ISO date its registration status
-   was last confirmed against the official site. **Whenever you touch a race's
-   `status`/`statusLabel`, or confirm it is still correct, set `checked` to
-   today.** Never stamp a race you did not actually verify; the whole point is
-   that the date means something.
+   was last confirmed. **Whenever you touch a race's `status`/`statusLabel`,
+   or confirm it is still correct, set `checked` to today.** Never stamp a race
+   you did not actually verify; the whole point is that the date means
+   something. `status` is one of `open`, `limit`, `sold`, `past`.
 8. **Dates.** Any "City · Month D, YYYY" listing you add is watched by the
-   weekly content-freshness sweep (`scripts/content/check-stale-dates.mjs`);
-   run it locally before publishing a dated list. It checks two things: dates
-   already in the past, and races within 45 days whose `checked` stamp is more
-   than 30 days old. Test it against a future date with
+   content-freshness sweep (`scripts/content/check-stale-dates.mjs`); run it
+   locally before publishing a dated list. Test it against a future date with
    `FRESHNESS_TODAY=2026-09-20 node scripts/content/check-stale-dates.mjs`.
-   The sweep reports to a GitHub issue *and* a Notion board card, because an
-   issue on its own goes unread.
-9. **Never hand-write status prose that restates the race data.** The
-   "which races are still open" FAQ answer on
-   `/culture/open-entry-races-2026` is generated from the JSON
-   (`caStatusAnswer()`), and the "as of" month comes from the single
-   `VERIFIED` constant that the download gate also reads. A hand-written
-   version of that answer silently contradicted the race rows for weeks. If
-   you add similar summary copy, derive it the same way.
+   See "Race guide freshness" below for who runs it and what it is allowed to
+   change on its own.
+9. **Never hand-write anything that restates the race data.** Three pieces of
+   copy are generated and must stay generated: the "which races are still
+   open" FAQ answer (`caStatusAnswer()`), the "as of" date (`VERIFIED`, which
+   reads the OLDEST `checked` stamp so it cannot overclaim), and every race
+   count in the headline, deck, intro, section labels, download gate and the
+   homepage/author cards (`src/lib/race-counts.ts`). A hand-written status
+   answer contradicted the race rows for weeks. Hand-typed counts advertised 40
+   races while the page rendered 39. If you add similar summary copy, derive it
+   the same way.
 <!-- END:new-post-checklist -->
+
+<!-- BEGIN:race-guide-freshness -->
+# Race guide freshness
+
+The race guides are checked **every morning** by a scheduled agent
+(`~/.claude/scheduled-tasks/content-freshness-check/SKILL.md`, daily). It is
+built to finish the job without Thais: it verifies, edits, commits and pushes
+on its own. Read this before touching race data or the sweep, because the two
+of you share the same files.
+
+**What the agent changes unattended.** Retiring races whose date has passed
+(pure date arithmetic, no lookup needed), moving `status`/`statusLabel` between
+open / limit / sold, correcting a registration URL, a price, or body copy that
+states something now false, and stamping `checked`. It commits and pushes.
+
+**The two-source rule.** No status change lands on a single source. It needs
+the official race site *plus* one independent source, and it prefers the actual
+point of sale: a race homepage says "register now" for weeks after the
+checkout page has flipped a distance to Sold Out. If two sources disagree, or
+only one is reachable, the race keeps its current status, keeps its old
+`checked` stamp, and goes in the escalation email. Follow the same rule by hand.
+
+**What it escalates instead of deciding.** Contradicting sources, a dead or
+redirected official site with no confirmable replacement, a race that looks
+cancelled or moved, an entry that does not describe a real race, and adding or
+removing a race (guide size and which races belong are Thais's editorial call).
+It emails hello@suorsociety.com with the subject `Urgent update: race needs
+permission` and keeps working on everything else. An escalation is always a
+real decision, never a status it could have confirmed itself.
+
+**Why past races stay on the list.** A retired race keeps its row, struck
+through, with no register link (`.race-row--past`, and the same treatment in
+the PDF). Deleting it would make the guide look like the race moved; striking
+it says plainly that it was run. The register link goes because sending someone
+to a signup page for a race already run is the same broken promise as
+advertising a sold-out entry.
+
+**Backstop.** `.github/workflows/stale-dates.yml` runs the sweep read-only on a
+schedule and files a GitHub issue plus a Notion card. That exists to catch the
+agent having silently stopped, not to do the work. If the issue is open with
+findings the agent should already have fixed, the agent is the thing to debug.
+<!-- END:race-guide-freshness -->
 
 <!-- BEGIN:author-page-upkeep -->
 # Author page upkeep

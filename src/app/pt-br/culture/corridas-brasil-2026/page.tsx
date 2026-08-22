@@ -5,6 +5,7 @@ import { PostToc } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
 import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 import races from "@/content/races-br.json";
+import { RaceRow, type Race } from "@/components/RaceRow";
 
 // Regional pair of the US "Open Entry Races 2026" post, NOT a translation:
 // this page covers Brazilian races for the pt-BR audience. No hreflang between
@@ -26,20 +27,6 @@ const META = {
   image: "/sao-silvestre-hero.webp",
 };
 export const metadata = pageMeta(META);
-
-type Race = {
-  num: string;
-  name: string;
-  where: string;
-  body: string;
-  dists: string;
-  status: "open" | "limit" | "sold";
-  statusLabel: string;
-  url: string;
-  /** ISO date this race's registration status was last confirmed against the
-   *  official site. Read by scripts/content/check-stale-dates.mjs. */
-  checked?: string;
-};
 
 // Race data lives in src/content/races-br.json — the PDF generator
 // (scripts/generate-race-guide-pdf.js) renders the same file, so editing the
@@ -74,31 +61,6 @@ const FAQS = [
     a: "Em geral 3 a 4 meses antes da prova, por lote, com preço subindo até o dia. As grandes (São Silvestre, Maratona de SP, Maratona do Rio) esgotam, então o lote 1 é o melhor momento. Confirme sempre no site oficial.",
   },
 ];
-
-function RaceRow({ race }: { race: Race }) {
-  return (
-    <div className="race-row">
-      <span className="race-num">{race.num}</span>
-      <div className="race-info">
-        <div className="race-name">{race.name}</div>
-        <div className="race-where">{race.where}</div>
-        <p className="race-body">{race.body}</p>
-        <div className="race-dists">{race.dists}</div>
-        <div className={`race-status ${race.status}`}>{race.statusLabel}</div>
-      </div>
-      <div className="race-action">
-        <a
-          className="race-link"
-          href={race.url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Inscreva-se →
-        </a>
-      </div>
-    </div>
-  );
-}
 
 export default function CorridasBrasil2026() {
   return (
@@ -176,7 +138,7 @@ export default function CorridasBrasil2026() {
               <div className="article-section-sub">Âncoras anuais · As que você marca no calendário antes de qualquer coisa</div>
             </div>
             <div className="race-list">
-              {GRANDES.map((r) => <RaceRow key={r.num} race={r} />)}
+              {GRANDES.map((r) => <RaceRow key={r.num} race={r} registerLabel="Inscreva-se →" />)}
             </div>
           </div>
         </section>
@@ -189,7 +151,7 @@ export default function CorridasBrasil2026() {
               <div className="article-section-sub">Provas que valem a viagem · De norte a sul</div>
             </div>
             <div className="race-list">
-              {PELO_BRASIL.map((r) => <RaceRow key={r.num} race={r} />)}
+              {PELO_BRASIL.map((r) => <RaceRow key={r.num} race={r} registerLabel="Inscreva-se →" />)}
             </div>
           </div>
         </section>
@@ -202,7 +164,7 @@ export default function CorridasBrasil2026() {
               <div className="article-section-sub">Várias etapas, uma inscrição de cada vez</div>
             </div>
             <div className="race-list">
-              {CIRCUITOS.map((r) => <RaceRow key={r.num} race={r} />)}
+              {CIRCUITOS.map((r) => <RaceRow key={r.num} race={r} registerLabel="Inscreva-se →" />)}
             </div>
           </div>
         </section>
