@@ -289,12 +289,20 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardTitle: "The board",
       boardPosts: [
         {
+          href: "/culture/half-marathon-world-record",
+          img: "/race-hero.jpg",
+          eyebrow: "The Culture Archive",
+          title: "The Half Marathon World Record Is Now 56:51",
+          desc: "Kejelcha ran 56:51 in Buenos Aires, 29 seconds off the record and the first man under 57 minutes in a race that counts. The splits, the pace, and the asterisk on Kiplimo's 56:42.",
+          meta: "New · Records · August 2026 ↗",
+        },
+        {
           href: "/culture/run-and-lift-same-week",
           img: "/run-and-lift-hero.webp",
           eyebrow: "The Culture Archive",
           title: "Run and Lift in the Same Week",
           desc: "One hard session a day, 48 hours between your hardest run and heaviest leg day. The hybrid week that holds up around a job, plus the two-a-day trap that breaks people.",
-          meta: "New · Training · July 2026 ↗",
+          meta: "Training · July 2026 ↗",
         },
         {
           href: "/dispatch/ikea-marathon-croydon-2026",
@@ -525,6 +533,12 @@ export const dictionaries: Record<Lang, Dictionary> = {
       articlesLabel: "Articles by Thais",
       articles: [
         {
+          href: "/culture/half-marathon-world-record",
+          tag: "The Culture Archive",
+          date: "August 2026",
+          title: "Half Marathon World Record: Kejelcha Runs 56:51 in Buenos Aires",
+        },
+        {
           href: "/culture/run-and-lift-same-week",
           tag: "The Culture Archive",
           date: "July 2026",
@@ -731,12 +745,20 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardTitle: "O mural",
       boardPosts: [
         {
+          href: "/culture/half-marathon-world-record",
+          img: "/race-hero.jpg",
+          eyebrow: "The Culture · Arquivo",
+          title: "O recorde mundial da meia agora é 56:51",
+          desc: "Kejelcha correu 56:51 em Buenos Aires, 29 segundos a menos que o recorde e o primeiro homem abaixo de 57 minutos numa prova que conta. As parciais, o ritmo e o asterisco do 56:42 do Kiplimo.",
+          meta: "Novo · Recordes · Agosto 2026 ↗",
+        },
+        {
           href: "/culture/run-and-lift-same-week",
           img: "/run-and-lift-hero.webp",
           eyebrow: "The Culture · Arquivo",
           title: "Corrida e musculação na mesma semana",
           desc: "Um treino forte por dia, 48 horas entre a corrida mais puxada e o dia de perna mais pesado. A semana híbrida que se sustenta no meio de todo o resto, e a armadilha que quebra as pessoas.",
-          meta: "Novo · Treino · Julho 2026 ↗",
+          meta: "Treino · Julho 2026 ↗",
         },
         {
           href: "/dispatch/maratona-ikea-croydon-2026",
@@ -969,6 +991,12 @@ export const dictionaries: Record<Lang, Dictionary> = {
       ],
       articlesLabel: "Textos da Thais",
       articles: [
+        {
+          href: "/culture/half-marathon-world-record",
+          tag: "The Culture Archive",
+          date: "Agosto 2026",
+          title: "Recorde mundial da meia maratona: Kejelcha corre 56:51 em Buenos Aires",
+        },
         {
           href: "/culture/run-and-lift-same-week",
           tag: "The Culture Archive",
