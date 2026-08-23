@@ -10,7 +10,7 @@ const META = {
   title: "Half Marathon World Record: Kejelcha Runs 56:51 in Buenos Aires, Suor Society",
   description:
     "Yomif Kejelcha ran 56:51 at the Buenos Aires Half on August 23, 2026, taking 29 seconds off the record and becoming the first man under 57 minutes in a race that counts. The splits, the pace, and the asterisk on Kiplimo's 56:42.",
-  image: "/kejelcha-london-hero.jpg",
+  image: "/half-marathon-record-hero.jpg",
 };
 
 // Photo credit for the cover. The cover is a library shot from London, not
@@ -100,7 +100,7 @@ export default function HalfMarathonWorldRecord() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             style={{ objectPosition: "center 10%" }}
-            src="/kejelcha-london-hero.jpg"
+            src="/half-marathon-record-hero.jpg"
             alt="Yomif Kejelcha running down The Mall to the London Marathon finish, Buckingham Palace behind him"
           />
         </div>
