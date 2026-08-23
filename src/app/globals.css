@@ -879,6 +879,28 @@ a { color: inherit; text-decoration: none; }
   .article-cover { height: clamp(200px, 56vw, 300px); }
 }
 
+/* ── Cover caption + photo credit ──
+   Sits directly under .article-cover. Use it whenever the cover is a
+   library shot rather than the event the post is about, so the image
+   never implies it was taken at the race being written about. The
+   credit half is required for any photo we did not shoot ourselves. */
+.article-cover-caption {
+  max-width: 62ch;
+  margin: 10px auto 0;
+  padding: 0 var(--pad, 20px);
+  font-family: var(--font-inter), sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-3);
+}
+.article-cover-caption .credit {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 11px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 /* ── Article masthead (title sits above the cover, NYT / ESPN style) ── */
 .article-masthead {
   padding: 56px 0 28px;
@@ -1138,6 +1160,23 @@ a { color: inherit; text-decoration: none; }
 .race-status.open  { color: #2a7a3c; }
 .race-status.limit { color: #9a6200; }
 .race-status.sold  { color: #cc3333; }
+.race-status.past  { color: var(--ink-3); }
+
+/* A race whose date has passed. The daily freshness agent flips it to status
+   "past" on its own, so this state appears without anyone editing the page.
+   Struck name and date, dimmed row, no register button (the action cell is
+   rendered empty for past races in RaceRow.tsx). It stays on the list rather
+   than vanishing so the guide still reads as a full season, and so a reader
+   who half-remembers the race can see it was run rather than think it moved. */
+.race-row--past { opacity: .55; }
+.race-row--past .race-name,
+.race-row--past .race-where {
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+/* Keep the struck row legible against the paper background: dropping opacity
+   alone pushed the body copy under 4.5:1. */
+.race-row--past .race-body { color: var(--ink-2); }
 .race-action {
   display: flex;
   flex-direction: column;

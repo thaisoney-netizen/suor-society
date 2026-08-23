@@ -45,12 +45,18 @@ function escapeHtml(s) {
 function statusDot(status) {
   if (status === "open") return "#0A0A0A";
   if (status === "limit") return "#E8750A";
+  if (status === "past") return "#C8C8C8";
   return "#A8A8A8";
 }
 
+// Mirrors the web guide's treatment of a race whose date has passed: struck
+// name and date, no registration link. A downloaded PDF outlives the page it
+// came from, so a retired race that still shows a live-looking signup URL is
+// worse here than on the site.
 function raceRow(r) {
+  const isPast = r.status === "past";
   return `
-    <div class="race">
+    <div class="race${isPast ? " race--past" : ""}">
       <div class="race-num">${escapeHtml(r.num)}</div>
       <div class="race-body">
         <div class="race-name">${escapeHtml(r.name)}</div>
@@ -60,8 +66,9 @@ function raceRow(r) {
         <div class="race-status"><span class="dot" style="background:${statusDot(r.status)}"></span>${escapeHtml(r.statusLabel)}</div>
       </div>
       <div class="race-meta">
+        ${isPast ? "" : `
         ${r.price ? `<div class="race-price">${escapeHtml(r.price)}</div>` : ""}
-        <div class="race-link">${escapeHtml(r.url.replace(/^https?:\/\//, "").replace(/\/$/, ""))}</div>
+        <div class="race-link">${escapeHtml(r.url.replace(/^https?:\/\//, "").replace(/\/$/, ""))}</div>`}
       </div>
     </div>`;
 }
@@ -157,6 +164,9 @@ const STYLE = `
     page-break-inside: avoid;
   }
   .race:last-child { border-bottom: 1px solid var(--rule); }
+  /* Race already run: struck name and date, dimmed, no link (see raceRow). */
+  .race--past { opacity: 0.6; }
+  .race--past .race-name, .race--past .race-where { text-decoration: line-through; }
   .race-num { font-family: 'JetBrains Mono', monospace; font-size: 11pt; color: var(--accent); font-weight: 600; padding-top: 2pt; }
   .race-name { font-family: 'Bebas Neue', sans-serif; font-size: 18pt; line-height: 1.02; letter-spacing: 0.005em; }
   .race-where { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 10pt; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); margin-top: 3pt; }
@@ -228,7 +238,7 @@ function htmlEn() {
   <h2>The rules<br/>of this list</h2>
   <p>It's race season. If you've been waiting for the right moment to sign up for something, this is it. ${total} open entry road races: ${racesEn.ca.length} in California, ${racesEn.us.length} across the US. All USATF certified. All open to everyone, no matter how fast or slow you run.</p>
   <p>The rule for everything in this guide: <strong>no qualifying time, no lottery.</strong> You register, you train, you show up. Races run from now through spring 2027, so there's a window for whatever you're building toward.</p>
-  <p>Prices go up as race day gets closer. A handful of these are sold out of standard entries but still have charity or benefactor spots. We've flagged the status on every one. Click through and verify before you register. Race capacity and pricing move fast.</p>
+  <p>Prices go up as race day gets closer. A handful of these are sold out at standard entry, and the way in varies: some hold a waitlist, some run charity spots, some have neither. Each entry says which. Click through and verify before you register. Race capacity and pricing move fast.</p>
   <div class="rules">
     <div class="rule-item"><div class="rule-num">01</div><div class="rule-text"><strong>Open entry:</strong> no qualifying time required. Pay the fee and you're in.</div></div>
     <div class="rule-item"><div class="rule-num">02</div><div class="rule-text"><strong>USATF certified:</strong> course distance is officially measured. PRs count.</div></div>

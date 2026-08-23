@@ -13,6 +13,8 @@
 // route under src/app. To add a new page: extend the `Dictionary` type with
 // that page's strings and fill both locales.
 
+import { CA_RACE_COUNT, US_RACE_COUNT, TOTAL_RACE_COUNT } from "@/lib/race-counts";
+
 export type Lang = "en" | "pt";
 
 export const LOCALE_HREF: Record<Lang, string> = {
@@ -287,12 +289,20 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardTitle: "The board",
       boardPosts: [
         {
+          href: "/culture/half-marathon-world-record",
+          img: "/half-marathon-record-hero.jpg",
+          eyebrow: "The Culture Archive",
+          title: "The Half Marathon World Record Is Now 56:51",
+          desc: "Kejelcha ran 56:51 in Buenos Aires, 29 seconds off the record and the first man under 57 minutes in a race that counts. The splits, the pace, and the asterisk on Kiplimo's 56:42.",
+          meta: "New · Records · August 2026 ↗",
+        },
+        {
           href: "/culture/run-and-lift-same-week",
           img: "/run-and-lift-hero.webp",
           eyebrow: "The Culture Archive",
           title: "Run and Lift in the Same Week",
           desc: "One hard session a day, 48 hours between your hardest run and heaviest leg day. The hybrid week that holds up around a job, plus the two-a-day trap that breaks people.",
-          meta: "New · Training · July 2026 ↗",
+          meta: "Training · July 2026 ↗",
         },
         {
           href: "/dispatch/ikea-marathon-croydon-2026",
@@ -523,6 +533,12 @@ export const dictionaries: Record<Lang, Dictionary> = {
       articlesLabel: "Articles by Thais",
       articles: [
         {
+          href: "/culture/half-marathon-world-record",
+          tag: "The Culture Archive",
+          date: "August 2026",
+          title: "Half Marathon World Record: Kejelcha Runs 56:51 in Buenos Aires",
+        },
+        {
           href: "/culture/run-and-lift-same-week",
           tag: "The Culture Archive",
           date: "July 2026",
@@ -550,7 +566,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
           href: "/culture/open-entry-races-2026",
           tag: "The Culture Archive",
           date: "June 2026",
-          title: "40 Open Entry Races in California and the US You Can Still Run in 2026",
+          title: `${TOTAL_RACE_COUNT} Open Entry Races in California and the US You Can Still Run in 2026`,
         },
         {
           href: "/dispatch/hyrox-fall-2026-schedule",
@@ -690,16 +706,16 @@ export const dictionaries: Record<Lang, Dictionary> = {
       featureImg: "/race-hero.jpg",
       featureTag: "Race Guide",
       featureDate: "June 2026",
-      featureTitle: "40 Open Entry Races in California and the US You Can Still Run in 2026",
+      featureTitle: `${TOTAL_RACE_COUNT} Open Entry Races in California and the US You Can Still Run in 2026`,
       featureDesc:
-        "No qualifier, no lottery. 20 California races, 20 across the US, all USATF certified, with dates, prices, and direct registration links.",
+        `No qualifier, no lottery. ${CA_RACE_COUNT} California races, ${US_RACE_COUNT} across the US, all USATF certified, with dates, prices, and direct registration links.`,
       readLabel: "Read the guide →",
     },
     downloadGate: {
       successTag: "You’re in",
       successTitleLines: ["Your", "Guide", "Is Ready"],
       successBody:
-        "40 open entry races. 20 in California, 20 across the US. All certified. From now through spring 2027.",
+        `${TOTAL_RACE_COUNT} open entry races. ${CA_RACE_COUNT} in California, ${US_RACE_COUNT} across the US. All certified. From now through spring 2027.`,
       nameLabel: "First Name",
       namePlaceholder: "Your name",
       emailLabel: "Email *",
@@ -729,12 +745,20 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardTitle: "O mural",
       boardPosts: [
         {
+          href: "/culture/half-marathon-world-record",
+          img: "/half-marathon-record-hero.jpg",
+          eyebrow: "The Culture · Arquivo",
+          title: "O recorde mundial da meia agora é 56:51",
+          desc: "Kejelcha correu 56:51 em Buenos Aires, 29 segundos a menos que o recorde e o primeiro homem abaixo de 57 minutos numa prova que conta. As parciais, o ritmo e o asterisco do 56:42 do Kiplimo.",
+          meta: "Novo · Recordes · Agosto 2026 ↗",
+        },
+        {
           href: "/culture/run-and-lift-same-week",
           img: "/run-and-lift-hero.webp",
           eyebrow: "The Culture · Arquivo",
           title: "Corrida e musculação na mesma semana",
           desc: "Um treino forte por dia, 48 horas entre a corrida mais puxada e o dia de perna mais pesado. A semana híbrida que se sustenta no meio de todo o resto, e a armadilha que quebra as pessoas.",
-          meta: "Novo · Treino · Julho 2026 ↗",
+          meta: "Treino · Julho 2026 ↗",
         },
         {
           href: "/dispatch/maratona-ikea-croydon-2026",
@@ -967,6 +991,12 @@ export const dictionaries: Record<Lang, Dictionary> = {
       ],
       articlesLabel: "Textos da Thais",
       articles: [
+        {
+          href: "/culture/half-marathon-world-record",
+          tag: "The Culture Archive",
+          date: "Agosto 2026",
+          title: "Recorde mundial da meia maratona: Kejelcha corre 56:51 em Buenos Aires",
+        },
         {
           href: "/culture/run-and-lift-same-week",
           tag: "The Culture Archive",
