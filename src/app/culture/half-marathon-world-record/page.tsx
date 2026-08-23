@@ -48,7 +48,7 @@ const FAQS: { q: string; a: ReactNode; plain?: string }[] = [
   },
   {
     q: "What pace is a 56:51 half marathon?",
-    a: "About 2:42 per kilometre, or 4:20 per mile. Put it on a track and it is roughly 65 seconds per lap, held for about 53 laps in a row without a break.",
+    a: "About 2:42 per kilometer, or 4:20 per mile. Put it on a track and it is roughly 65 seconds per lap, held for about 53 laps in a row without a break.",
   },
   {
     q: "What is a good half marathon time for a regular runner?",
@@ -101,7 +101,7 @@ export default function HalfMarathonWorldRecord() {
             <section className="article-hero">
               <div className="page">
                 <p className="article-deck">
-                  Yomif Kejelcha went through 10km in 27:19, dropped the entire field at kilometre
+                  Yomif Kejelcha went through 10km in 27:19, dropped the entire field at kilometer
                   seven, and finished the Buenos Aires half in 56:51. That&rsquo;s 29 seconds off
                   Jacob Kiplimo&rsquo;s record and the first time a man has gone under 57 minutes in
                   a race that counts. The strange part: he got faster once he was alone.
@@ -135,7 +135,7 @@ export default function HalfMarathonWorldRecord() {
                 <h2>What happened in Buenos Aires</h2>
                 <p>
                   He didn&rsquo;t wait around. Through 5km in 13:34 with the lead group still
-                  attached, then at kilometre seven he went, with more than 14 kilometres left to
+                  attached, then at kilometer seven he went, with more than 14 kilometers left to
                   run. Nobody went with him.
                 </p>
                 <p>
@@ -145,7 +145,7 @@ export default function HalfMarathonWorldRecord() {
                   himself.
                 </p>
                 <p>
-                  Then he ran the last 11.1 kilometres in about 29:32, roughly 2:40 per kilometre.
+                  Then he ran the last 11.1 kilometers in about 29:32, roughly 2:40 per kilometer.
                   Faster than his first half. Alone, on empty road, with nobody to chase and nobody
                   chasing him. That&rsquo;s the bit that&rsquo;s hard to get your head around.
                 </p>
@@ -173,7 +173,7 @@ export default function HalfMarathonWorldRecord() {
                 <h2>What 56:51 actually means</h2>
                 <p>
                   Times at this level go a bit abstract, so here it is in units that mean something.
-                  56:51 for a half marathon is about 2:42 per kilometre, or 4:20 per mile, held for
+                  56:51 for a half marathon is about 2:42 per kilometer, or 4:20 per mile, held for
                   13.1 miles.
                 </p>
                 <p>
