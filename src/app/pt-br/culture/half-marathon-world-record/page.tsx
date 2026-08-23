@@ -10,7 +10,7 @@ const META = {
   title: "Recorde mundial da meia maratona: Kejelcha corre 56:51 em Buenos Aires, Suor Society",
   description:
     "Yomif Kejelcha correu 56:51 na meia de Buenos Aires em 23 de agosto de 2026, tirando 29 segundos do recorde e virando o primeiro homem abaixo de 57 minutos numa prova que conta. As parciais, o ritmo e o asterisco do 56:42 de Kiplimo.",
-  image: "/race-hero.jpg",
+  image: "/kejelcha-record-hero.jpg",
 };
 export const metadata = pageMeta({ ...META, paired: true });
 
@@ -85,11 +85,15 @@ export default function RecordeMundialMeiaMaratona() {
         </section>
 
         {/* ── COVER IMAGE ── */}
+        {/* Chegada: o rosto fica no alto e a fita embaixo, então o corte padrão
+            `center 30%` cortaria um dos dois. Desce um pouco o ponto focal pra
+            manter os dois na faixa. */}
         <div className="article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/race-hero.jpg"
-            alt="Largada lotada de uma meia maratona, milhares de corredores ocupando a rua atrás do pórtico"
+            style={{ objectPosition: "center 38%" }}
+            src="/kejelcha-record-hero.jpg"
+            alt="Yomif Kejelcha cortando a fita na chegada dos 21K de Buenos Aires, braços erguidos, público atrás das grades"
           />
         </div>
 
