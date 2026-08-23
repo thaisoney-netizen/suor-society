@@ -290,7 +290,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardPosts: [
         {
           href: "/culture/half-marathon-world-record",
-          img: "/kejelcha-record-hero.jpg",
+          img: "/kejelcha-london-hero.jpg",
           eyebrow: "The Culture Archive",
           title: "The Half Marathon World Record Is Now 56:51",
           desc: "Kejelcha ran 56:51 in Buenos Aires, 29 seconds off the record and the first man under 57 minutes in a race that counts. The splits, the pace, and the asterisk on Kiplimo's 56:42.",
@@ -746,7 +746,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardPosts: [
         {
           href: "/culture/half-marathon-world-record",
-          img: "/kejelcha-record-hero.jpg",
+          img: "/kejelcha-london-hero.jpg",
           eyebrow: "The Culture · Arquivo",
           title: "O recorde mundial da meia agora é 56:51",
           desc: "Kejelcha correu 56:51 em Buenos Aires, 29 segundos a menos que o recorde e o primeiro homem abaixo de 57 minutos numa prova que conta. As parciais, o ritmo e o asterisco do 56:42 do Kiplimo.",

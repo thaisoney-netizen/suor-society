@@ -10,8 +10,16 @@ const META = {
   title: "Half Marathon World Record: Kejelcha Runs 56:51 in Buenos Aires, Suor Society",
   description:
     "Yomif Kejelcha ran 56:51 at the Buenos Aires Half on August 23, 2026, taking 29 seconds off the record and becoming the first man under 57 minutes in a race that counts. The splits, the pace, and the asterisk on Kiplimo's 56:42.",
-  image: "/kejelcha-record-hero.jpg",
+  image: "/kejelcha-london-hero.jpg",
 };
+
+// Photo credit for the cover. The cover is a library shot from London, not
+// from the race this post covers, so the caption under it has to say so.
+// FILL THIS IN before merging: the file's own EXIF caption is agency house
+// style ("LONDON, ENGLAND - APRIL 26: Yomif Kejelcha of Team Ethiopia..."),
+// so it needs a real credit string and a license to match. Empty renders no
+// credit rather than a wrong one.
+const PHOTO_CREDIT = "";
 export const metadata = pageMeta({ ...META, paired: true });
 
 const TOC = [
@@ -85,17 +93,22 @@ export default function HalfMarathonWorldRecord() {
         </section>
 
         {/* ── COVER IMAGE ── */}
-        {/* Finish-line frame: the face sits high and the tape low, so the shared
-            `center 30%` crop would clip one or the other. Pull the focal point
-            down slightly to keep both in the band. */}
+        {/* Library shot from London in April, not from Buenos Aires. The
+            caption below says so on purpose: without it the cover reads as
+            him winning the race this post is about. */}
         <div className="article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            style={{ objectPosition: "center 38%" }}
-            src="/kejelcha-record-hero.jpg"
-            alt="Yomif Kejelcha hitting the tape at the 21K Buenos Aires finish line, arms up, crowd lining the barriers behind him"
+            style={{ objectPosition: "center 10%" }}
+            src="/kejelcha-london-hero.jpg"
+            alt="Yomif Kejelcha running down The Mall to the London Marathon finish, Buckingham Palace behind him"
           />
         </div>
+        <p className="article-cover-caption">
+          Kejelcha finishing second at the London Marathon in April, where his 1:59:41 was the
+          fastest marathon debut ever run.{" "}
+          {PHOTO_CREDIT && <span className="credit">Photo: {PHOTO_CREDIT}</span>}
+        </p>
 
         {/* ── BODY + STICKY RAIL ── */}
         <div className="post-shell">
@@ -129,6 +142,11 @@ export default function HalfMarathonWorldRecord() {
                   Kejelcha is 29, Ethiopian, and he&rsquo;d already held this record once. He set it
                   in Valencia in October 2024 at 57:30, lost it to Kiplimo this spring, and just
                   took it back by a margin that makes his own old mark look slow.
+                </p>
+                <p>
+                  He&rsquo;s also in the middle of an absurd year. Back in April he ran 1:59:41 on
+                  his marathon debut in London, second behind Sabastian Sawe and the quickest debut
+                  anyone has ever run. Four months later he owns the half marathon record too.
                 </p>
               </div>
             </section>

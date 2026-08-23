@@ -10,8 +10,16 @@ const META = {
   title: "Recorde mundial da meia maratona: Kejelcha corre 56:51 em Buenos Aires, Suor Society",
   description:
     "Yomif Kejelcha correu 56:51 na meia de Buenos Aires em 23 de agosto de 2026, tirando 29 segundos do recorde e virando o primeiro homem abaixo de 57 minutos numa prova que conta. As parciais, o ritmo e o asterisco do 56:42 de Kiplimo.",
-  image: "/kejelcha-record-hero.jpg",
+  image: "/kejelcha-london-hero.jpg",
 };
+
+// Crédito da foto de capa. A capa é uma imagem de arquivo de Londres, não da
+// prova que este post cobre, então a legenda abaixo precisa dizer isso.
+// PREENCHER antes de fazer merge: o EXIF do arquivo tem legenda em formato de
+// agência ("LONDON, ENGLAND - APRIL 26: Yomif Kejelcha of Team Ethiopia..."),
+// então precisa de crédito real e licença. Vazio não renderiza crédito nenhum,
+// em vez de renderizar um errado.
+const PHOTO_CREDIT = "";
 export const metadata = pageMeta({ ...META, paired: true });
 
 const TOC = [
@@ -85,17 +93,22 @@ export default function RecordeMundialMeiaMaratona() {
         </section>
 
         {/* ── COVER IMAGE ── */}
-        {/* Chegada: o rosto fica no alto e a fita embaixo, então o corte padrão
-            `center 30%` cortaria um dos dois. Desce um pouco o ponto focal pra
-            manter os dois na faixa. */}
+        {/* Imagem de arquivo de Londres, em abril, não de Buenos Aires. A
+            legenda abaixo diz isso de propósito: sem ela a capa dá a entender
+            que ele está vencendo a prova de que este post trata. */}
         <div className="article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            style={{ objectPosition: "center 38%" }}
-            src="/kejelcha-record-hero.jpg"
-            alt="Yomif Kejelcha cortando a fita na chegada dos 21K de Buenos Aires, braços erguidos, público atrás das grades"
+            style={{ objectPosition: "center 10%" }}
+            src="/kejelcha-london-hero.jpg"
+            alt="Yomif Kejelcha correndo pela The Mall rumo à chegada da Maratona de Londres, com o Palácio de Buckingham ao fundo"
           />
         </div>
+        <p className="article-cover-caption">
+          Kejelcha chegando em segundo na Maratona de Londres em abril, onde seus 1:59:41 foram a
+          estreia mais rápida já corrida na maratona.{" "}
+          {PHOTO_CREDIT && <span className="credit">Foto: {PHOTO_CREDIT}</span>}
+        </p>
 
         {/* ── BODY + STICKY RAIL ── */}
         <div className="post-shell">
@@ -129,6 +142,11 @@ export default function RecordeMundialMeiaMaratona() {
                   Kejelcha tem 29 anos, é etíope e já tinha sido dono desse recorde antes. Marcou
                   57:30 em Valência em outubro de 2024, perdeu pro Kiplimo neste ano e acabou de
                   tomar de volta por uma margem que faz a própria marca antiga dele parecer lenta.
+                </p>
+                <p>
+                  E ele está no meio de um ano absurdo. Em abril correu 1:59:41 na estreia dele na
+                  maratona, em Londres, em segundo atrás de Sabastian Sawe e na estreia mais rápida
+                  que alguém já fez. Quatro meses depois é dono do recorde da meia também.
                 </p>
               </div>
             </section>
