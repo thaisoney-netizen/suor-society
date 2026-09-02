@@ -82,12 +82,15 @@ a { color: inherit; text-decoration: none; }
 .wm {
   display: flex; align-items: center;
 }
+/* The wordmark SVG is cropped tight to the artwork (the PNG it replaced carried
+   ~63% empty padding), so these heights are the real cap height of SUOR, not a
+   padded box. Scale all three wordmark heights together if you change one. */
 .wm-lockup {
   display: block;
-  height: 52px;
+  height: 28px;
   width: auto;
 }
-@media (max-width: 720px) { .wm-lockup { height: 40px; } }
+@media (max-width: 720px) { .wm-lockup { height: 22px; } }
 
 /* Flip the black artwork to white on dark backgrounds (hero overlay, menu). */
 .wm-lockup--light { filter: brightness(0) invert(1); }
@@ -659,7 +662,7 @@ a { color: inherit; text-decoration: none; }
 }
 .foot-wm {
   display: block;
-  height: 36px;
+  height: 20px;
   width: auto;
   margin-bottom: 16px;
 }

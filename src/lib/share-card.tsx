@@ -15,9 +15,11 @@ const BONE = "#EDE8DC";
 const ACCENT = "#E8750A";
 
 export async function buildShareCard(tagline: string) {
-  // The main SUOR | SOCIETY wordmark, pre-inverted to white so it reads on the
+  // The main SUOR SOCIETY wordmark, pre-inverted to white so it reads on the
   // dark asphalt card (mirrors how the site nav flips the black artwork on dark
-  // backgrounds). process.cwd() is the Next.js project directory.
+  // backgrounds). process.cwd() is the Next.js project directory. Satori sizes
+  // the img from the width/height below rather than the file's own ratio, so
+  // those two numbers must stay on the artwork's 3.69:1 aspect or it distorts.
   const wordmark = await readFile(
     join(process.cwd(), "public/logos/wordmark-horizontal-light.png"),
     "base64"
@@ -38,10 +40,10 @@ export async function buildShareCard(tagline: string) {
           fontFamily: "sans-serif",
         }}
       >
-        {/* Top: SUOR | SOCIETY wordmark (the main logo) */}
+        {/* Top: SUOR SOCIETY wordmark (the main logo) */}
         <div style={{ display: "flex" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={wordmarkSrc} width={620} height={130} alt="Suor Society" />
+          <img src={wordmarkSrc} width={620} height={168} alt="Suor Society" />
         </div>
 
         {/* Middle: tagline */}

@@ -24,7 +24,7 @@ export default function SiteFooter({ lang = "en" }: { lang?: Lang }) {
       <div className="page">
         <div className="foot-grid">
           <div className="foot-brand">
-            <img src="/logos/wordmark-horizontal.png" alt="Suor Society" className="foot-wm" />
+            <img src="/logos/wordmark-horizontal.svg" alt="Suor Society" className="foot-wm" />
             <p className="foot-desc">
               {t.desc}
             </p>
