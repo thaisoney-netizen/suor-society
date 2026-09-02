@@ -32,7 +32,7 @@ const navLinksFor = (lang: Lang) => [
 // variant "light" is the static bar used on paper-background pages.
 // Single horizontal wordmark; on dark backgrounds (overlay hero, mobile menu)
 // the black artwork is flipped to white with a CSS filter.
-const WORDMARK = "/logos/wordmark-horizontal.png";
+const WORDMARK = "/logos/wordmark-horizontal.svg";
 
 export default function SiteNav({
   variant = "light",

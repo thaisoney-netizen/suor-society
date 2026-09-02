@@ -37,6 +37,14 @@ const FONT_FACES = [
   })
   .join("\n");
 
+// The wordmark is the same artwork the site nav renders, embedded as a data URI
+// so the PDF render needs no network access and can never drift from the site.
+const WORDMARK_SRC =
+  "data:image/svg+xml;base64," +
+  fs
+    .readFileSync(path.join(__dirname, "..", "public", "logos", "wordmark-horizontal.svg"))
+    .toString("base64");
+
 // ─── SHARED RENDERING ─────────────────────────────────────────────────────────
 function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -93,7 +101,6 @@ const STYLE = `
     --ink: #0A0A0A;
     --ink-soft: #1C1C1C;
     --muted: #707070;
-    --muted-2: #A8A8A8;
     --rule: rgba(10,10,10,0.12);
     --accent: #E8750A;
     --tint: #F4F2EE;
@@ -120,8 +127,7 @@ const STYLE = `
     padding: 0.2in 0;
   }
   .cover-top { display: flex; justify-content: space-between; align-items: center; }
-  .wm { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.04em; font-size: 14pt; }
-  .wm .pipe { display: inline-block; margin: 0 6px; color: var(--muted-2); }
+  .wm { display: block; height: 15pt; width: auto; }
   .cover-meta { font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; }
   .cover-mid { flex: 1; display: flex; flex-direction: column; justify-content: center; }
   .cover-eye { font-family: 'JetBrains Mono', monospace; font-size: 9pt; color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.4in; }
@@ -215,7 +221,7 @@ function htmlEn() {
 <!-- COVER -->
 <section class="cover">
   <div class="cover-top">
-    <div class="wm">SUOR<span class="pipe">|</span>SOCIETY</div>
+    <img class="wm" src="${WORDMARK_SRC}" alt="Suor Society">
     <div class="cover-meta">The Culture Archive · ${UPDATED_EN}</div>
   </div>
   <div class="cover-mid">
@@ -270,7 +276,7 @@ function htmlBr() {
 <!-- COVER -->
 <section class="cover">
   <div class="cover-top">
-    <div class="wm">SUOR<span class="pipe">|</span>SOCIETY</div>
+    <img class="wm" src="${WORDMARK_SRC}" alt="Suor Society">
     <div class="cover-meta">The Culture Archive · ${UPDATED_PT}</div>
   </div>
   <div class="cover-mid">
