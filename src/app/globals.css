@@ -741,37 +741,60 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.8;
 }
 
-/* Founder photo duo under the about hero */
+/* Photo band under the about hero — two frames, edge to edge. The frames
+   carry the band themselves (no letterbox gutter), so the only background
+   that shows is the 2px asphalt rule between them. */
 .about-pg-media {
   display: grid;
-  grid-template-columns: 1fr;
-  background: var(--line);
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 2px;
+  background: var(--asphalt);
   border-bottom: 1px solid var(--line);
 }
 .about-pg-shot {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 620px;
+  margin: 0;
   position: relative;
-  aspect-ratio: 4 / 5;
+  height: clamp(380px, 44vw, 620px);
   overflow: hidden;
   background: var(--asphalt);
 }
 .about-pg-shot img {
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: center 45%;
   display: block;
+  filter: grayscale(32%) contrast(1.07) brightness(.96);
 }
-/* MOBILE HEADER IMAGE SIZING — the shot is portrait, so cap its height on
-   phones instead of letting a 4/5 block eat the screen. Must stay after the
-   base rule so the aspect-ratio override wins. */
+/* Rio is a tall portrait, the crew shot has empty road at the bottom, so each
+   frame gets its own crop anchor. */
+.about-pg-shot:first-child img  { object-position: center 38%; }
+.about-pg-shot:nth-child(2) img { object-position: center 40%; }
+/* Wash under the caption so it reads on any frame. */
+.about-pg-shot::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 42%;
+  background: linear-gradient(to top, rgba(20,20,20,.66), rgba(20,20,20,0));
+  pointer-events: none;
+}
+.about-pg-cap {
+  position: absolute;
+  z-index: 1;
+  left: clamp(16px, 2.4vw, 30px);
+  bottom: clamp(14px, 2vw, 24px);
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 10px; letter-spacing: .26em; text-transform: uppercase;
+  color: var(--paper);
+}
+/* MOBILE HEADER IMAGE SIZING — the frames are portrait sources, so cap their
+   height on phones instead of letting two tall blocks eat the screen. Must
+   stay after the base rule so the height override wins. */
 @media (max-width: 860px) {
+  .about-pg-media { grid-template-columns: 1fr; }
   .about-pg-shot {
-    aspect-ratio: auto;
-    height: 60vw;
-    min-height: 220px;
-    max-height: 340px;
+    height: 58vw;
+    min-height: 210px;
+    max-height: 320px;
   }
 }
 
@@ -815,6 +838,202 @@ a { color: inherit; text-decoration: none; }
 }
 .about-pg-p:last-child { margin-bottom: 0; }
 .about-pg-p strong { color: var(--asphalt); font-weight: 600; }
+
+/* About hero — bigger than the shared hero type, and allowed to wrap so the
+   brand line lands as a stacked statement instead of one long nowrap row. */
+.about-hero {
+  padding: clamp(64px, 8vw, 112px) 0 clamp(48px, 5vw, 72px);
+}
+/* Headline on the left, deck and stamps sitting on its baseline at the right,
+   so the hero fills the frame instead of stranding a column of white. */
+.about-hero-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  gap: clamp(28px, 5vw, 80px);
+  align-items: end;
+}
+.about-hero .about-pg-headline {
+  white-space: normal;
+  font-size: clamp(40px, 6.4vw, 92px);
+  max-width: 11ch;
+}
+.about-hero .about-pg-deck {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
+  font-size: clamp(15px, 1.4vw, 19px);
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.6;
+  color: var(--ink-2);
+  max-width: 40ch;
+  margin-top: 0;
+}
+@media (max-width: 860px) {
+  .about-hero-row { grid-template-columns: 1fr; gap: 26px; }
+  .about-hero .about-pg-headline { max-width: none; }
+}
+
+/* Mono stamp row closing the about hero */
+.about-stamps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  list-style: none;
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.about-stamp {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.about-stamp:first-child { color: var(--accent); }
+
+/* About body — label rail beside a reading-width column. Scoped to
+   .about-pg-split so the author and 404 pages keep the plain column. */
+.about-pg-split {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 62ch);
+  justify-content: center;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+}
+.about-pg-split .about-pg-label { margin-bottom: 0; }
+.about-pg-split .about-pg-col {
+  padding: 0;
+  max-width: 64ch;
+}
+.about-pg-p--lead {
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.6;
+  color: var(--asphalt);
+}
+@media (max-width: 860px) {
+  .about-pg-split { grid-template-columns: 1fr; justify-content: start; gap: 0; }
+  .about-pg-split .about-pg-label { margin-bottom: 28px; }
+  .about-pg-split .about-pg-col { padding: 0 !important; border-bottom: none; }
+}
+
+/* What you'll find here — numbered index */
+.about-index {
+  padding: clamp(56px, 7vw, 88px) 0;
+  border-bottom: 1px solid var(--line);
+  background: var(--bone);
+}
+.about-index .about-pg-eye { margin-bottom: 8px; }
+.about-index-list {
+  list-style: none;
+  max-width: 1180px;
+  border-top: 1px solid var(--line-2);
+}
+.about-index-row {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 300px) minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0 clamp(16px, 3vw, 44px);
+  padding: clamp(20px, 2.4vw, 30px) 0;
+  border-bottom: 1px solid var(--line);
+}
+.about-index-num {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 10px; letter-spacing: .2em;
+  color: var(--accent);
+}
+.about-index-title {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: clamp(21px, 2.1vw, 28px);
+  line-height: 1;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--asphalt);
+}
+.about-index-desc {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  max-width: 48ch;
+}
+@media (max-width: 720px) {
+  .about-index-row {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 6px 12px;
+  }
+  .about-index-desc { grid-column: 2; }
+}
+
+/* Closing band — three ways into the rest of the site */
+.about-close {
+  padding: clamp(56px, 7vw, 88px) 0;
+  background: var(--asphalt);
+  color: var(--paper);
+}
+.about-close-eye {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 10px; letter-spacing: .26em; text-transform: uppercase;
+  color: rgba(255,255,255,.38);
+  margin-bottom: 24px;
+}
+.about-close-title {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: clamp(34px, 4.6vw, 60px);
+  line-height: .9;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--paper);
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+.about-close-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line-on-slate);
+  border: 1px solid var(--line-on-slate);
+}
+.about-close-card {
+  position: relative;
+  display: block;
+  background: var(--asphalt);
+  padding: clamp(24px, 3vw, 36px) clamp(20px, 2.6vw, 32px) clamp(52px, 5vw, 60px);
+  transition: background-color .16s ease-out;
+}
+.about-close-card:hover { background: var(--slate); }
+.about-close-num {
+  display: block;
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 10px; letter-spacing: .2em;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.about-close-card-title {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: clamp(24px, 2.4vw, 32px);
+  line-height: 1;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--paper);
+  margin-bottom: 12px;
+}
+.about-close-desc {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--bone-on-slate);
+  max-width: 34ch;
+}
+.about-close-arrow {
+  position: absolute;
+  left: clamp(20px, 2.6vw, 32px);
+  bottom: clamp(22px, 2.6vw, 28px);
+  font-size: 17px;
+  color: var(--accent);
+  transition: transform .16s ease-out;
+}
+.about-close-card:hover .about-close-arrow { transform: translateX(5px); }
+@media (max-width: 860px) {
+  .about-close-grid { grid-template-columns: 1fr; }
+}
 
 .about-pg-crew {
   padding: 72px 0;

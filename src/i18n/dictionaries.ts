@@ -167,9 +167,22 @@ type Dictionary = {
     metaDescription: string;
     eyebrow: string;
     headline: string;
-    mediaAlts: { race: string };
+    deck: string;
+    // Mono stamp row under the hero deck.
+    stamps: string[];
+    mediaAlts: { race: string; crew: string };
+    // Corner captions on the two-up photo band.
+    mediaCaps: { race: string; crew: string };
     col2Label: string;
     col2: string[];
+    // Numbered index of what the page covers.
+    indexEye: string;
+    index: { title: string; desc: string }[];
+    // Closing band: three ways into the rest of the site. The race guide is a
+    // regional page, so its href differs per locale (same as the nav).
+    closeEye: string;
+    closeTitle: string;
+    closeCards: { href: string; title: string; desc: string }[];
   };
   author: {
     metaTitle: string;
@@ -508,13 +521,62 @@ export const dictionaries: Record<Lang, Dictionary> = {
         "Built in San Diego by a marketer who runs and lifts. Hybrid running culture for people who don’t train for a living.",
       eyebrow: "Suor Society / The Culture",
       headline: "Suor is Portuguese for sweat",
+      deck: "For the runner who lifts, the lifter who runs, and everyone figuring it out",
+      stamps: ["San Diego", "Since 2026", "Run. Lift. Sweat."],
       mediaAlts: {
         race: "Thais racing on the road in Rio, Christ the Redeemer on the mountain behind her",
+        crew: "A pack of runners heading down a palm-lined San Diego street at first light",
+      },
+      mediaCaps: {
+        race: "Rio de Janeiro",
+        crew: "San Diego",
       },
       col2Label: "What this is",
       col2: [
         "Most hybrid content online is made by people whose whole life is training. Two-a-days, full sponsorships, 20-hour weeks. It’s inspiring. It’s also completely disconnected from anyone building this around an actual life, kids, a business, whatever the rest of your day looks like.",
         "Suor Society is a hybrid culture page for people who run and lift around everything else already going on. Shoe drops, athlete spotlights, race coverage. Plus the context that’s almost always missing: the 1:10 half marathon took eight years. Your run counts the whole time you’re chasing it.",
+      ],
+      indexEye: "What you’ll find here",
+      index: [
+        {
+          title: "Gear and shoe drops",
+          desc: "New releases, and which ones are worth the money",
+        },
+        {
+          title: "Race coverage",
+          desc: "Majors, local start lines, and the races still open",
+        },
+        {
+          title: "Athlete spotlights",
+          desc: "The elites, and the people training after work",
+        },
+        {
+          title: "The missing context",
+          desc: "How long the fast times actually took, and what they cost",
+        },
+        {
+          title: "San Diego scene",
+          desc: "Routes, crew runs, and where everyone gets coffee after",
+        },
+      ],
+      closeEye: "Where to start",
+      closeTitle: "Three ways in",
+      closeCards: [
+        {
+          href: "/culture/open-entry-races-2026",
+          title: "Race picks",
+          desc: "Open-entry races still on the calendar, no qualifier needed",
+        },
+        {
+          href: "/crew",
+          title: "Crew runs",
+          desc: "San Diego, weekend mornings, free and every pace",
+        },
+        {
+          href: "/dispatch",
+          title: "The Dispatch",
+          desc: "One email a week, races and gear, no noise",
+        },
       ],
     },
     author: {
@@ -967,13 +1029,63 @@ export const dictionaries: Record<Lang, Dictionary> = {
       // Brand line — stays in English on every locale, like the home hero
       // headline and tagline.
       headline: "Suor is Portuguese for sweat",
+      deck: "Para o corredor que levanta peso, para quem levanta peso e corre, e para todo mundo que ainda está descobrindo",
+      // "Run. Lift. Sweat." is the locked tagline and stays in English.
+      stamps: ["San Diego", "Desde 2026", "Run. Lift. Sweat."],
       mediaAlts: {
         race: "Thais correndo uma prova no Rio, com o Cristo Redentor no morro atrás dela",
+        crew: "Um pelotão de corredores descendo uma rua de San Diego cheia de palmeiras no começo da manhã",
+      },
+      mediaCaps: {
+        race: "Rio de Janeiro",
+        crew: "San Diego",
       },
       col2Label: "O que é isso aqui",
       col2: [
         "A maior parte do conteúdo híbrido na internet é feita por gente cuja vida inteira é treino. Dois treinos por dia, patrocínio cheio, 20 horas por semana. É inspirador. E também totalmente desconectado de quem constrói isso em cima de uma vida de verdade, filhos, um negócio, o que for que o resto do seu dia tiver.",
         "O Suor Society é uma página de cultura híbrida para quem corre e levanta peso no meio de tudo mais que já está rolando. Lançamentos de tênis, perfis de atletas, cobertura de provas. Mais o contexto que quase sempre falta: aquela meia maratona de 1h10 levou oito anos. A sua corrida vale o tempo inteiro em que você corre atrás dela.",
+      ],
+      indexEye: "O que tem aqui",
+      index: [
+        {
+          title: "Tênis e equipamentos",
+          desc: "O que está saindo, e o que vale o dinheiro",
+        },
+        {
+          title: "Cobertura de provas",
+          desc: "As grandes, as locais, e as que ainda estão abertas",
+        },
+        {
+          title: "Perfis de atletas",
+          desc: "Os profissionais, e quem treina depois do trabalho",
+        },
+        {
+          title: "O contexto que falta",
+          desc: "Quanto tempo os tempos rápidos levaram, e o que custaram",
+        },
+        {
+          title: "Cena de San Diego",
+          desc: "Rotas, treinos em grupo, e onde todo mundo toma café depois",
+        },
+      ],
+      closeEye: "Por onde começar",
+      closeTitle: "Três caminhos",
+      closeCards: [
+        {
+          href: "/culture/corridas-brasil-2026",
+          title: "Corridas",
+          desc: "Provas com inscrição aberta no Brasil, sem tempo mínimo",
+        },
+        {
+          href: "/crew",
+          title: "Treinos em grupo",
+          desc: "San Diego, manhãs de fim de semana, de graça e todos os ritmos",
+        },
+        {
+          href: "/dispatch",
+          title: "The Dispatch",
+          desc: "Um e-mail por semana, provas e equipamentos, sem enrolação",
+        },
       ],
     },
     author: {
