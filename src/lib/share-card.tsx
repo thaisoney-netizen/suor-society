@@ -19,7 +19,7 @@ export async function buildShareCard(tagline: string) {
   // dark asphalt card (mirrors how the site nav flips the black artwork on dark
   // backgrounds). process.cwd() is the Next.js project directory. Satori sizes
   // the img from the width/height below rather than the file's own ratio, so
-  // those two numbers must stay on the artwork's 3.69:1 aspect or it distorts.
+  // those two numbers must stay on the artwork's 4.16:1 aspect or it distorts.
   const wordmark = await readFile(
     join(process.cwd(), "public/logos/wordmark-horizontal-light.png"),
     "base64"
@@ -43,7 +43,7 @@ export async function buildShareCard(tagline: string) {
         {/* Top: SUOR SOCIETY wordmark (the main logo) */}
         <div style={{ display: "flex" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={wordmarkSrc} width={620} height={168} alt="Suor Society" />
+          <img src={wordmarkSrc} width={547} height={131} alt="Suor Society" />
         </div>
 
         {/* Middle: tagline */}
