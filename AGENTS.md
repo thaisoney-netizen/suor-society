@@ -123,6 +123,28 @@ The weekly content-freshness sweep also audits this, but keep it correct at
 publish time — don't rely on the sweep.
 <!-- END:author-page-upkeep -->
 
+<!-- BEGIN:photo-handling -->
+# Photos: never filter them
+
+Thais's photos ship as shot. No contrast or saturation changes, no colour
+grade or split-tone, no sharpening, no grain, no vignette. Cropping, resizing
+and re-encoding are fine. Anything that changes how the photograph looks is
+not.
+
+`scripts/grade_photos.py` did exactly what this rule forbids and has been
+deleted. Don't reintroduce it or anything like it.
+
+Three images it produced are still live on the crew page and still carry its
+grade: `crew-run.jpg`, `road-run.jpg` and `trail-run.jpg`. They need re-cutting
+from the untouched originals, which live on Thais's machine and not in this
+repo, so ask for them rather than trying to reverse the grade in software.
+
+If a photo is too small for the slot it has to fill, change the slot, not the
+photo. `.article-cover--portrait` in `globals.css` exists for that reason: a
+portrait shot gets a contained plate at its own ratio instead of being
+stretched or cropped into a full-bleed 16:9 window.
+<!-- END:photo-handling -->
+
 <!-- BEGIN:branch-hygiene -->
 # Branch hygiene
 
