@@ -92,26 +92,15 @@ export default function AdizeroDropsetProVsDropset4PtBr() {
         </section>
 
         {/* ── COVER IMAGE ── */}
-        <div className="article-cover article-cover--portrait">
+        <div className="article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/adizero-dropset-cover.webp"
-            width={580}
-            height={782}
-            alt="Close nos tênis adidas Dropset pretos e meias brancas de um atleta, mãos apoiadas no joelho tatuado, na plataforma de uma academia escura"
+            width={1920}
+            height={1080}
+            alt="O adidas Adizero Dropset Pro à esquerda e o Dropset 4 à direita, lado a lado sobre fundo preto"
           />
         </div>
-        <p className="article-cover-caption">
-          Foto de Gabriel Ribeiro (
-          <a href="https://www.instagram.com/rbvision7/" target="_blank" rel="noopener noreferrer">
-            @rbvision7
-          </a>
-          ). Atleta Caio Cabral (
-          <a href="https://www.instagram.com/caiocabral/" target="_blank" rel="noopener noreferrer">
-            @caiocabral
-          </a>
-          ).
-        </p>
 
         {/* ── BODY + STICKY RAIL ── */}
         <div className="post-shell">
