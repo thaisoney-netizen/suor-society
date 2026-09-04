@@ -131,8 +131,13 @@ grade or split-tone, no sharpening, no grain, no vignette. Cropping, resizing
 and re-encoding are fine. Anything that changes how the photograph looks is
 not.
 
-`scripts/grade_photos.py` predates this rule and does exactly what the rule
-forbids. Don't run it, and don't carry its approach into new work.
+`scripts/grade_photos.py` did exactly what this rule forbids and has been
+deleted. Don't reintroduce it or anything like it.
+
+Three images it produced are still live on the crew page and still carry its
+grade: `crew-run.jpg`, `road-run.jpg` and `trail-run.jpg`. They need re-cutting
+from the untouched originals, which live on Thais's machine and not in this
+repo, so ask for them rather than trying to reverse the grade in software.
 
 If a photo is too small for the slot it has to fill, change the slot, not the
 photo. `.article-cover--portrait` in `globals.css` exists for that reason: a
