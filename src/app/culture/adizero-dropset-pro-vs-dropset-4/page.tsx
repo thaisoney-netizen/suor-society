@@ -96,8 +96,8 @@ export default function AdizeroDropsetProVsDropset4() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/adizero-dropset-cover.webp"
-            width={1040}
-            height={1402}
+            width={580}
+            height={782}
             alt="Close on a lifter's black adidas Dropset trainers and white crew socks, hands braced on a tattooed knee, on the platform of a dark gym"
           />
         </div>
@@ -110,7 +110,7 @@ export default function AdizeroDropsetProVsDropset4() {
           <a href="https://www.instagram.com/caiocabral/" target="_blank" rel="noopener noreferrer">
             @caiocabral
           </a>
-          ). Used with permission.
+          ).
         </p>
 
         {/* ── BODY + STICKY RAIL ── */}

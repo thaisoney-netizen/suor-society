@@ -123,6 +123,23 @@ The weekly content-freshness sweep also audits this, but keep it correct at
 publish time — don't rely on the sweep.
 <!-- END:author-page-upkeep -->
 
+<!-- BEGIN:photo-handling -->
+# Photos: never filter them
+
+Thais's photos ship as shot. No contrast or saturation changes, no colour
+grade or split-tone, no sharpening, no grain, no vignette. Cropping, resizing
+and re-encoding are fine. Anything that changes how the photograph looks is
+not.
+
+`scripts/grade_photos.py` predates this rule and does exactly what the rule
+forbids. Don't run it, and don't carry its approach into new work.
+
+If a photo is too small for the slot it has to fill, change the slot, not the
+photo. `.article-cover--portrait` in `globals.css` exists for that reason: a
+portrait shot gets a contained plate at its own ratio instead of being
+stretched or cropped into a full-bleed 16:9 window.
+<!-- END:photo-handling -->
+
 <!-- BEGIN:branch-hygiene -->
 # Branch hygiene
 

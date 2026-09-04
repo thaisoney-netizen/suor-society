@@ -96,8 +96,8 @@ export default function AdizeroDropsetProVsDropset4PtBr() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/adizero-dropset-cover.webp"
-            width={1040}
-            height={1402}
+            width={580}
+            height={782}
             alt="Close nos tênis adidas Dropset pretos e meias brancas de um atleta, mãos apoiadas no joelho tatuado, na plataforma de uma academia escura"
           />
         </div>
@@ -110,7 +110,7 @@ export default function AdizeroDropsetProVsDropset4PtBr() {
           <a href="https://www.instagram.com/caiocabral/" target="_blank" rel="noopener noreferrer">
             @caiocabral
           </a>
-          ). Usada com autorização.
+          ).
         </p>
 
         {/* ── BODY + STICKY RAIL ── */}
