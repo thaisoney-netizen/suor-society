@@ -14,6 +14,20 @@ const META = {
 };
 export const metadata = pageMeta({ ...META, paired: true });
 
+// The pages the body links out to, in the order the claims appear: the launch,
+// the run testing, the head-to-head, the cut-in-half lab numbers, the 500 lb
+// lifting test, and adidas' own listings for the Elite and the Pro.
+const SOURCES = [
+  "https://www.adidas-group.com/en/magazine/careers/hybrid-hotel-launching-the-adizero-dropset-pro-on-the-global-stage",
+  "https://www.roadtrailrun.com/2026/07/adidas-adizero-dropset-pro-review.html",
+  "https://thatfitfriend.com/adidas-adizero-dropset-pro-review/",
+  "https://thatfitfriend.com/adidas-adizero-dropset-pro-vs-dropset-4/",
+  "https://runrepeat.com/adidas-dropset-4",
+  "https://thatfitfriend.com/adidas-dropset-4-review/",
+  "https://www.adidas.com/us/adizero-dropset-elite-training-sneaker/LA6218.html",
+  "https://www.adidas.com/us/adizero-dropset-pro-training-shoes/KH6710.html",
+];
+
 const TOC = [
   { id: "pro", label: "What the Dropset Pro is" },
   { id: "four", label: "What the Dropset 4 is" },
@@ -69,14 +83,27 @@ const FAQS: { q: string; a: ReactNode; plain?: string }[] = [
   },
   {
     q: "How much is the Adizero Dropset Pro?",
-    a: "$150 on adidas.com, in four colourways for men and three for women.",
+    plain: "$150 on adidas.com, in four colourways for men and three for women.",
+    a: (
+      <>
+        $150{" "}
+        <a
+          href="https://www.adidas.com/us/adizero-dropset-pro-training-shoes/KH6710.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          on adidas.com
+        </a>
+        , in four colourways for men and three for women.
+      </>
+    ),
   },
 ];
 
 export default function AdizeroDropsetProVsDropset4() {
   return (
     <>
-      <ArticleJsonLd {...META} datePublished="2026-09-04" />
+      <ArticleJsonLd {...META} datePublished="2026-09-04" citation={SOURCES} />
       <FaqJsonLd faqs={FAQS} />
       <SiteNav />
 
@@ -152,9 +179,16 @@ export default function AdizeroDropsetProVsDropset4() {
                   stack in the heel and 22mm up front.
                 </p>
                 <p>
-                  Adidas launched it on June 17, 2026 at the HYROX World Championships in Stockholm,
-                  which tells you everything about who they built it for. They put it on a race floor
-                  before it hit shelves.
+                  Adidas{" "}
+                  <a
+                    href="https://www.adidas-group.com/en/magazine/careers/hybrid-hotel-launching-the-adizero-dropset-pro-on-the-global-stage"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    launched it on June 17, 2026 at the HYROX World Championships
+                  </a>{" "}
+                  in Stockholm, which tells you everything about who they built it for. They put it
+                  on a race floor before it hit shelves.
                 </p>
                 <p>
                   The interesting part is the foam. It&rsquo;s Lightstrike Pro, the same stuff in
@@ -165,15 +199,37 @@ export default function AdizeroDropsetProVsDropset4() {
                 </p>
                 <p>
                   Where it&rsquo;s good: intervals, turf work, sled pushes, jump rope, anything where
-                  you&rsquo;re moving fast between things. Reviewers put the comfortable running
-                  ceiling around 5k, and about five miles continuous before it stops being fun. Past
-                  10k, wrong shoe.
+                  you&rsquo;re moving fast between things. Reviewers who{" "}
+                  <a
+                    href="https://www.roadtrailrun.com/2026/07/adidas-adizero-dropset-pro-review.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    ran it as an actual running shoe
+                  </a>{" "}
+                  found real run capability in it, and still put the comfortable ceiling{" "}
+                  <a
+                    href="https://thatfitfriend.com/adidas-adizero-dropset-pro-review/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    around 5k
+                  </a>
+                  , about five miles continuous before it stops being fun. Past 10k, wrong shoe.
                 </p>
                 <p>
-                  Where it stops: the barbell. Most testers found it caps out somewhere between 185
-                  and 225 pounds before the foam and the narrower base start feeling less planted
-                  under you. That&rsquo;s not a flaw, that&rsquo;s a design decision. You can&rsquo;t
-                  have marathon foam and a squat platform in the same shoe.
+                  Where it stops: the barbell. Testers who put both shoes{" "}
+                  <a
+                    href="https://thatfitfriend.com/adidas-adizero-dropset-pro-vs-dropset-4/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    head to head
+                  </a>{" "}
+                  found it caps out somewhere between 185 and 225 pounds before the foam and the
+                  narrower base start feeling less planted under you. That&rsquo;s not a flaw,
+                  that&rsquo;s a design decision. You can&rsquo;t have marathon foam and a squat
+                  platform in the same shoe.
                 </p>
               </div>
             </section>
@@ -187,15 +243,22 @@ export default function AdizeroDropsetProVsDropset4() {
                   running shoe.
                 </p>
                 <p>
-                  Full-length Repetitor foam, firm and dense and it stays that way. Lab measurements
-                  put it at 19.9mm heel and 14.6mm forefoot, so roughly 5 to 6mm of drop and a much
+                  Full-length Repetitor foam, firm and dense and it stays that way. A{" "}
+                  <a href="https://runrepeat.com/adidas-dropset-4" target="_blank" rel="noopener noreferrer">
+                    lab that cut the shoe in half
+                  </a>{" "}
+                  measured 19.9mm heel and 14.6mm forefoot, so roughly 5 to 6mm of drop and a much
                   lower ride than the Pro. It weighs 10.9 oz in a men&rsquo;s 10, heavy next to the
                   Pro, but the weight is doing a job.
                 </p>
                 <p>
-                  Flared heel, wide base, and a lifting threshold reviewers put around 500 pounds.
-                  Heavy squats, heavy pulls, no wobble. The 4 also got lighter and more nimble than
-                  the Dropsets before it, so it moves better in a circuit than the old ones did.
+                  Flared heel, wide base, and a lifting threshold set by reviewers who{" "}
+                  <a href="https://thatfitfriend.com/adidas-dropset-4-review/" target="_blank" rel="noopener noreferrer">
+                    deadlifted 500 pounds in them
+                  </a>{" "}
+                  without the shoe moving. Heavy squats, heavy pulls, no wobble. The 4 also got
+                  lighter and more nimble than the Dropsets before it, so it moves better in a
+                  circuit than the old ones did.
                 </p>
                 <p>
                   The catch is what it&rsquo;s always been. Too firm for real running. Fine for a
@@ -357,10 +420,18 @@ export default function AdizeroDropsetProVsDropset4() {
               <div className="page">
                 <h2>And the $275 one</h2>
                 <p>
-                  There&rsquo;s a third shoe in this conversation. The Adizero Dropset Elite landed
-                  first, March globally and May in the US, at $275. Carbon fibre infused Energy Rim,
-                  double layer Lightstrike Pro, 44mm heel and 32mm forefoot for a 12mm drop, 210
-                  grams. A fitness racing shoe for people actually racing hybrid at a high level.
+                  There&rsquo;s a third shoe in this conversation. The{" "}
+                  <a
+                    href="https://www.adidas.com/us/adizero-dropset-elite-training-sneaker/LA6218.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Adizero Dropset Elite
+                  </a>{" "}
+                  landed first, March globally and May in the US, at $275. Carbon fibre infused
+                  Energy Rim, double layer Lightstrike Pro, 44mm heel and 32mm forefoot for a 12mm
+                  drop, 210 grams. A fitness racing shoe for people actually racing hybrid at a high
+                  level.
                 </p>
                 <p>
                   The Elite is the halo. The Pro is that same idea at $150 for the rest of us, which
