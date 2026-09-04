@@ -92,11 +92,13 @@ export default function AdizeroDropsetProVsDropset4() {
         </section>
 
         {/* ── COVER IMAGE ── */}
-        <div className="article-cover">
+        <div className="article-cover article-cover--portrait">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/adizero-dropset-hero.jpg"
-            alt="A lifter in black adidas Dropset trainers and white crew socks braced over a barbell on a platform in a dark gym"
+            src="/adizero-dropset-cover.webp"
+            width={1040}
+            height={1402}
+            alt="Close on a lifter's black adidas Dropset trainers and white crew socks, hands braced on a tattooed knee, on the platform of a dark gym"
           />
         </div>
         <p className="article-cover-caption">

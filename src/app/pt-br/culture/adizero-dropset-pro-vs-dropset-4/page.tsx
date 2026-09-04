@@ -92,11 +92,13 @@ export default function AdizeroDropsetProVsDropset4PtBr() {
         </section>
 
         {/* ── COVER IMAGE ── */}
-        <div className="article-cover">
+        <div className="article-cover article-cover--portrait">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/adizero-dropset-hero.jpg"
-            alt="Atleta de tênis adidas Dropset preto e meia branca, apoiado sobre uma barra na plataforma de uma academia escura"
+            src="/adizero-dropset-cover.webp"
+            width={1040}
+            height={1402}
+            alt="Close nos tênis adidas Dropset pretos e meias brancas de um atleta, mãos apoiadas no joelho tatuado, na plataforma de uma academia escura"
           />
         </div>
         <p className="article-cover-caption">
