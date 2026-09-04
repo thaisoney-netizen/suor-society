@@ -87,7 +87,7 @@ export default function JuneShoeDrops() {
 
             <h2>The drops</h2>
             <p>
-              <strong>Saucony Endorphin Elite 3.</strong> The headline. 7.2 ounces, roughly 40mm of
+              <strong>Saucony Endorphin Elite 3.</strong>{" "}The headline. 7.2 ounces, roughly 40mm of
               Saucony&rsquo;s ultra-soft IncrediRUN foam, carbon plate, aggressive rocker. This line has been
               all over the place (version one was firm, version two was a marshmallow), and version three
               reportedly keeps the softness while adding stability under the heel. At $290 it&rsquo;s a race day
@@ -98,7 +98,7 @@ export default function JuneShoeDrops() {
               Less exciting, more useful.
             </p>
             <p>
-              <strong>Puma Deviate Pure Nitro.</strong> The interesting one. Out June 4 at $150: a tall
+              <strong>Puma Deviate Pure Nitro.</strong>{" "}The interesting one. Out June 4 at $150: a tall
               slab of Puma&rsquo;s evolved NITROFOAM with no plate inside, 7.8 ounces, aimed straight at the
               Adidas Evo SL and Asics Superblast 3. Most of a super trainer&rsquo;s bounce at an everyday
               trainer price. More on why that matters in a second.

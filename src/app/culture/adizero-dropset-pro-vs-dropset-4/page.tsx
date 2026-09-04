@@ -278,13 +278,13 @@ export default function AdizeroDropsetProVsDropset4() {
               <div className="page">
                 <h2>Which one should you buy</h2>
                 <p>
-                  <strong>Buy the Adizero Dropset Pro if</strong> most of your training week is
+                  <strong>Buy the Adizero Dropset Pro if</strong>{" "}most of your training week is
                   running, your strength work is dumbbells and moderate barbell, you&rsquo;re doing
                   HYROX or circuit work with real running between stations, or you want one shoe for
                   a run plus a gym session and you&rsquo;re not going near a heavy squat day.
                 </p>
                 <p>
-                  <strong>Buy the Dropset 4 if</strong> you&rsquo;re lifting over 225 regularly, your
+                  <strong>Buy the Dropset 4 if</strong>{" "}you&rsquo;re lifting over 225 regularly, your
                   runs inside a workout are 1k and down, you do CrossFit-style sessions with rope
                   climbs and odd objects, or you&rsquo;ve had a shoe roll under you on a heavy set
                   and hated it.

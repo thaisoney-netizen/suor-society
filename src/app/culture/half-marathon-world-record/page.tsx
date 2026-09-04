@@ -162,7 +162,7 @@ export default function HalfMarathonWorldRecord() {
                 </p>
                 <p>
                   His 10km split was 27:19. Worth noting that this was actually 19 seconds{" "}
-                  <em>slower</em> than Kiplimo&rsquo;s 10km split on the way to his 57:20 in Lisbon.
+                  <em>slower</em>{" "}than Kiplimo&rsquo;s 10km split on the way to his 57:20 in Lisbon.
                   So through a third of the race, Kejelcha was behind record pace and running by
                   himself.
                 </p>
@@ -284,7 +284,7 @@ export default function HalfMarathonWorldRecord() {
                 <p>
                   I ran my first half in May. Nowhere close to any of this, and I&rsquo;m not going
                   to dress the gap up as inspiring when it&rsquo;s just enormous. A 56:51 takes
-                  genetics, altitude, a decade of work and a life where training <em>is</em> the job.
+                  genetics, altitude, a decade of work and a life where training <em>is</em>{" "}the job.
                   That&rsquo;s worth admiring on its own terms without turning it into a measuring
                   stick for a Tuesday evening run squeezed in after work.
                 </p>
