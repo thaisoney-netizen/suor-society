@@ -28,20 +28,6 @@ export default function AboutView({ lang }: { lang: Lang }) {
           </div>
         </section>
 
-        {/* MEDIA — full-bleed two-up, Rio and San Diego */}
-        <div className="about-pg-media">
-          <figure className="about-pg-shot">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/founder-rio.webp" alt={t.mediaAlts.race} />
-            <figcaption className="about-pg-cap">{t.mediaCaps.race}</figcaption>
-          </figure>
-          <figure className="about-pg-shot">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/crew-run.jpg" alt={t.mediaAlts.crew} />
-            <figcaption className="about-pg-cap">{t.mediaCaps.crew}</figcaption>
-          </figure>
-        </div>
-
         {/* BODY — label rail beside a reading-width column */}
         <section className="about-pg-body">
           <div className="page about-pg-split">

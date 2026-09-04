@@ -170,9 +170,6 @@ type Dictionary = {
     deck: string;
     // Mono stamp row under the hero deck.
     stamps: string[];
-    mediaAlts: { race: string; crew: string };
-    // Corner captions on the two-up photo band.
-    mediaCaps: { race: string; crew: string };
     col2Label: string;
     col2: string[];
     // Numbered index of what the page covers.
@@ -523,14 +520,6 @@ export const dictionaries: Record<Lang, Dictionary> = {
       headline: "Suor is Portuguese for sweat",
       deck: "For the runner who lifts, the lifter who runs, and everyone figuring it out",
       stamps: ["San Diego", "Since 2026", "Run. Lift. Sweat."],
-      mediaAlts: {
-        race: "Thais racing on the road in Rio, Christ the Redeemer on the mountain behind her",
-        crew: "A pack of runners heading down a palm-lined San Diego street at first light",
-      },
-      mediaCaps: {
-        race: "Rio de Janeiro",
-        crew: "San Diego",
-      },
       col2Label: "What this is",
       col2: [
         "Most hybrid content online is made by people whose whole life is training. Two-a-days, full sponsorships, 20-hour weeks. It’s inspiring. It’s also completely disconnected from anyone building this around an actual life, kids, a business, whatever the rest of your day looks like.",
@@ -1032,14 +1021,6 @@ export const dictionaries: Record<Lang, Dictionary> = {
       deck: "Para o corredor que levanta peso, para quem levanta peso e corre, e para todo mundo que ainda está descobrindo",
       // "Run. Lift. Sweat." is the locked tagline and stays in English.
       stamps: ["San Diego", "Desde 2026", "Run. Lift. Sweat."],
-      mediaAlts: {
-        race: "Thais correndo uma prova no Rio, com o Cristo Redentor no morro atrás dela",
-        crew: "Um pelotão de corredores descendo uma rua de San Diego cheia de palmeiras no começo da manhã",
-      },
-      mediaCaps: {
-        race: "Rio de Janeiro",
-        crew: "San Diego",
-      },
       col2Label: "O que é isso aqui",
       col2: [
         "A maior parte do conteúdo híbrido na internet é feita por gente cuja vida inteira é treino. Dois treinos por dia, patrocínio cheio, 20 horas por semana. É inspirador. E também totalmente desconectado de quem constrói isso em cima de uma vida de verdade, filhos, um negócio, o que for que o resto do seu dia tiver.",

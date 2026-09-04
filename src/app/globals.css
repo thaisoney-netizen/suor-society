@@ -741,63 +741,6 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.8;
 }
 
-/* Photo band under the about hero — two frames, edge to edge. The frames
-   carry the band themselves (no letterbox gutter), so the only background
-   that shows is the 2px asphalt rule between them. */
-.about-pg-media {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 2px;
-  background: var(--asphalt);
-  border-bottom: 1px solid var(--line);
-}
-.about-pg-shot {
-  margin: 0;
-  position: relative;
-  height: clamp(380px, 44vw, 620px);
-  overflow: hidden;
-  background: var(--asphalt);
-}
-.about-pg-shot img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-  filter: grayscale(32%) contrast(1.07) brightness(.96);
-}
-/* Rio is a tall portrait, the crew shot has empty road at the bottom, so each
-   frame gets its own crop anchor. */
-.about-pg-shot:first-child img  { object-position: center 38%; }
-.about-pg-shot:nth-child(2) img { object-position: center 40%; }
-/* Wash under the caption so it reads on any frame. */
-.about-pg-shot::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 42%;
-  background: linear-gradient(to top, rgba(20,20,20,.66), rgba(20,20,20,0));
-  pointer-events: none;
-}
-.about-pg-cap {
-  position: absolute;
-  z-index: 1;
-  left: clamp(16px, 2.4vw, 30px);
-  bottom: clamp(14px, 2vw, 24px);
-  font-family: var(--font-jetbrains), monospace;
-  font-size: 10px; letter-spacing: .26em; text-transform: uppercase;
-  color: var(--paper);
-}
-/* MOBILE HEADER IMAGE SIZING — the frames are portrait sources, so cap their
-   height on phones instead of letting two tall blocks eat the screen. Must
-   stay after the base rule so the height override wins. */
-@media (max-width: 860px) {
-  .about-pg-media { grid-template-columns: 1fr; }
-  .about-pg-shot {
-    height: 58vw;
-    min-height: 210px;
-    max-height: 320px;
-  }
-}
-
 .about-pg-body {
   padding: 72px 0;
   border-bottom: 1px solid var(--line);
