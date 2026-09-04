@@ -289,12 +289,20 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardTitle: "The board",
       boardPosts: [
         {
+          href: "/culture/adizero-dropset-pro-vs-dropset-4",
+          img: "/adizero-dropset-hero.jpg",
+          eyebrow: "The Culture Archive",
+          title: "Adizero Dropset Pro vs Dropset 4",
+          desc: "Adidas put marathon foam in a gym shoe. The Pro carries 9mm more heel than the 4, which is the whole difference: one runs to 5k, the other squats to 500. Specs, sizing, and which one to buy.",
+          meta: "New · Gear · September 2026 ↗",
+        },
+        {
           href: "/culture/half-marathon-world-record",
           img: "/half-marathon-record-hero.jpg",
           eyebrow: "The Culture Archive",
           title: "The Half Marathon World Record Is Now 56:51",
           desc: "Kejelcha ran 56:51 in Buenos Aires, 29 seconds off the record and the first man under 57 minutes in a race that counts. The splits, the pace, and the asterisk on Kiplimo's 56:42.",
-          meta: "New · Records · August 2026 ↗",
+          meta: "Records · August 2026 ↗",
         },
         {
           href: "/culture/run-and-lift-same-week",
@@ -533,6 +541,12 @@ export const dictionaries: Record<Lang, Dictionary> = {
       articlesLabel: "Articles by Thais",
       articles: [
         {
+          href: "/culture/adizero-dropset-pro-vs-dropset-4",
+          tag: "The Culture Archive",
+          date: "September 2026",
+          title: "Adizero Dropset Pro vs Dropset 4: Which One Should You Buy",
+        },
+        {
           href: "/culture/half-marathon-world-record",
           tag: "The Culture Archive",
           date: "August 2026",
@@ -745,12 +759,20 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardTitle: "O mural",
       boardPosts: [
         {
+          href: "/culture/adizero-dropset-pro-vs-dropset-4",
+          img: "/adizero-dropset-hero.jpg",
+          eyebrow: "The Culture · Arquivo",
+          title: "Adizero Dropset Pro vs Dropset 4",
+          desc: "A adidas colocou espuma de maratona num tênis de academia. O Pro tem 9mm a mais de calcanhar que o 4, e essa é a diferença inteira: um corre 5k, o outro agacha 225kg. Ficha técnica, numeração e qual comprar.",
+          meta: "Novo · Equipamento · Setembro 2026 ↗",
+        },
+        {
           href: "/culture/half-marathon-world-record",
           img: "/half-marathon-record-hero.jpg",
           eyebrow: "The Culture · Arquivo",
           title: "O recorde mundial da meia agora é 56:51",
           desc: "Kejelcha correu 56:51 em Buenos Aires, 29 segundos a menos que o recorde e o primeiro homem abaixo de 57 minutos numa prova que conta. As parciais, o ritmo e o asterisco do 56:42 do Kiplimo.",
-          meta: "Novo · Recordes · Agosto 2026 ↗",
+          meta: "Recordes · Agosto 2026 ↗",
         },
         {
           href: "/culture/run-and-lift-same-week",
@@ -991,6 +1013,12 @@ export const dictionaries: Record<Lang, Dictionary> = {
       ],
       articlesLabel: "Textos da Thais",
       articles: [
+        {
+          href: "/culture/adizero-dropset-pro-vs-dropset-4",
+          tag: "The Culture Archive",
+          date: "Setembro 2026",
+          title: "Adizero Dropset Pro vs Dropset 4: qual dos dois comprar",
+        },
         {
           href: "/culture/half-marathon-world-record",
           tag: "The Culture Archive",
