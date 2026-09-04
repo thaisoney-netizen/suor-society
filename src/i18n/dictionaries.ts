@@ -243,6 +243,11 @@ type Dictionary = {
     deck2: string;
     sectionLabel: string;
     sectionSub: string;
+    // Headings for the second listing on /dispatch: every board post that is
+    // not in `posts` above, so the "see all posts" link off the home board
+    // lands somewhere that really does hold the rest.
+    archiveLabel: string;
+    archiveSub: string;
     posts: { href: string; img: string; tag: string; date: string; title: string; desc: string }[];
     readLabel: string;
     asideLabel: string;
@@ -714,6 +719,8 @@ export const dictionaries: Record<Lang, Dictionary> = {
       deck2: "The lift-and-run world, edited down.",
       sectionLabel: "Latest from the Dispatch",
       sectionSub: "Race news · HYROX · Gear",
+      archiveLabel: "The Culture Archive",
+      archiveSub: "Training · Gear · Races",
       posts: [
         {
           href: "/dispatch/ikea-marathon-croydon-2026",
@@ -1229,6 +1236,8 @@ export const dictionaries: Record<Lang, Dictionary> = {
       deck2: "O mundo de quem corre e levanta peso, resumido.",
       sectionLabel: "Últimas do Dispatch",
       sectionSub: "Notícias de provas · HYROX · Equipamentos",
+      archiveLabel: "The Culture · Arquivo",
+      archiveSub: "Treino · Equipamentos · Corridas",
       posts: [
         {
           href: "/dispatch/maratona-ikea-croydon-2026",

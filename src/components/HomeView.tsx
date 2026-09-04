@@ -7,6 +7,9 @@ import LanguageBanner from "@/components/LanguageBanner";
 import { dictionaries, localizeHref, type Lang } from "@/i18n/dictionaries";
 import { track } from "@/lib/analytics";
 
+// How many posts the home board shows before the "see all posts" cut.
+const BOARD_PREVIEW_COUNT = 6;
+
 // The home page, shared by the English route (/) and the Portuguese route
 // (/pt-br) so the layout never drifts between locales. All copy comes from the
 // dictionary; the brand headline is intentionally English on every locale.
@@ -57,7 +60,11 @@ export default function HomeView({ lang }: { lang: Lang }) {
     }
   }
 
-  const count = t.boardPosts.length;
+  // The board is a preview, not the archive: only the newest posts land here.
+  // Everything past the cut is reachable through the "see all posts" link
+  // under the grid, which goes to /dispatch (it lists every board post).
+  const boardPreview = t.boardPosts.slice(0, BOARD_PREVIEW_COUNT);
+  const count = boardPreview.length;
   const cols = count === 4 ? 2 : Math.min(count, 3);
   // Set columns via a CSS var so the mobile media query in globals.css can still
   // override it to a single column (an inline grid-template-columns would not).
@@ -106,7 +113,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
           </div>
 
           <div className="link-grid" style={gridStyle}>
-            {t.boardPosts.map((post, i) => (
+            {boardPreview.map((post, i) => (
               <a key={i} className="link-card" href={localizeHref(post.href, lang)}>
                 <div className="lc-head">
                   <span className="lc-eye">{post.eyebrow}</span>
