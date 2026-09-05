@@ -21,16 +21,21 @@
      something else: card blurbs, bios, captions, form helper lines.
      ⚑ --copy drives --measure. Change it, re-measure a paragraph in the
      browser, then update --measure here and POST_MEASURE in lib/photos.ts. */
-  --copy:    19px;
-  --copy-sm: 17px;
+  --copy:    20px;
+  --copy-sm: 18px;
 
   /* The reading measure: what a body paragraph occupies at --copy (62ch of
-     Inter at 19px, measured, not guessed). Every block of a post stops on
+     Inter at 20px, measured, not guessed). Every block of a post stops on
      this edge, photo included, so the page reads as one column. Blocks whose
-     own font-size differs (a 13px disclaimer, a 17px list) must use this
+     own font-size differs (a 14px disclaimer, a 18px list) must use this
      rather than their own 62ch, or they end short of everything else. */
-  --measure: 743px;
+  --measure: 782px;
+
+  /* The nav is sticky, so anything that scrolls under it — an in-page anchor,
+     a sticky rail — has to clear this. One number, not three. */
+  --nav-h: 72px;
 }
+@media (max-width: 720px) { :root { --nav-h: 60px; } }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html {
   scroll-behavior: smooth;
@@ -122,7 +127,7 @@ a { color: inherit; text-decoration: none; }
 .nav-link {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 600;
-  font-size: 13px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: 14px; letter-spacing: .22em; text-transform: uppercase;
   padding: 10px 0 8px;
   border-bottom: 2px solid transparent;
   transition: border-color .14s ease-out, opacity .14s ease-out;
@@ -155,24 +160,47 @@ a { color: inherit; text-decoration: none; }
   .nav-toggle { display: flex; }
 }
 
-/* overlay variant — sits on the home hero footage */
+/* overlay variant — sits on the home hero footage. Fixed, not absolute, so it
+   stays with you past the hero; it was already out of the flow, so nothing
+   below it moves. Once the footage is gone there is nothing dark left to read
+   white text against, so it takes the paper treatment at .is-stuck. */
 .nav--overlay {
-  position: absolute;
+  position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 10;
+  z-index: 100;
   color: #fff;
   background: linear-gradient(to bottom, rgba(20,20,20,.45), transparent);
+  transition: background .25s ease-out, color .25s ease-out, box-shadow .25s ease-out;
 }
 .nav--overlay .wm-society { color: rgba(255,255,255,.72); border-left: 1px solid rgba(255,255,255,.25); }
 .nav--overlay .nav-link   { color: #fff; }
 
-/* light variant — static bar on paper pages */
+.nav--overlay.is-stuck {
+  color: var(--asphalt);
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 1px 12px rgba(20,20,20,.07);
+}
+.nav--overlay.is-stuck .nav-link   { color: var(--asphalt); }
+.nav--overlay.is-stuck .wm-society { color: var(--ink-2); border-left: 1px solid var(--line-2); }
+/* the wordmark artwork is black; the overlay flips it white, so flip it back */
+.nav--overlay.is-stuck .wm-lockup--light { filter: none; }
+.nav--overlay.is-stuck .nav-toggle-bar { background: var(--asphalt); }
+
+/* light variant — the bar on paper pages. Sticky rather than relative: it
+   starts in the flow at the top of the page and stays on screen from the
+   first scroll, so the menu is reachable without going back up. */
 .nav--light {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 100;
   color: var(--asphalt);
   background: var(--paper);
   border-bottom: 1px solid var(--line);
 }
+/* Once it is holding its own against content passing underneath, it needs an
+   edge of its own; the hairline border alone reads as part of the page. */
+.nav--light.is-stuck { box-shadow: 0 1px 12px rgba(20,20,20,.07); }
 .nav--light .wm-society { color: var(--ink-2); border-left: 1px solid var(--line-2); }
 .nav--light .nav-link   { color: var(--asphalt); }
 
@@ -206,7 +234,7 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid rgba(255,255,255,.3);
   color: #fff;
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
   padding: 8px 14px;
   cursor: pointer;
   transition: border-color .12s ease-out, color .12s ease-out;
@@ -235,7 +263,7 @@ a { color: inherit; text-decoration: none; }
 .nav-menu-link:active { color: var(--accent); }
 .nav-menu-num {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .18em;
+  font-size: 13px; letter-spacing: .18em;
   color: var(--accent);
 }
 .nav-menu-foot {
@@ -246,7 +274,7 @@ a { color: inherit; text-decoration: none; }
 }
 .nav-menu-ig {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: 13px; letter-spacing: .22em; text-transform: uppercase;
   color: rgba(255,255,255,.6);
 }
 .nav-menu-ig:hover { color: #fff; }
@@ -314,7 +342,7 @@ a { color: inherit; text-decoration: none; }
 .hero-cta {
   align-self: flex-end;
   font-family: var(--font-bebas), sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: .14em;
   text-transform: uppercase;
   padding: 13px 30px;
@@ -381,7 +409,7 @@ a { color: inherit; text-decoration: none; }
 }
 .signup-eye {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .26em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 18px;
 }
@@ -396,7 +424,7 @@ a { color: inherit; text-decoration: none; }
 }
 .signup-note {
   font-family: var(--font-inter), sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   color: var(--ink-2);
   margin: 14px auto 0;
@@ -415,7 +443,7 @@ a { color: inherit; text-decoration: none; }
   border: 0;
   outline: none;
   font-family: var(--font-inter), sans-serif;
-  font-size: 17px;
+  font-size: 18px;
   color: var(--asphalt);
   padding: 16px 0;
   flex: 1;
@@ -428,7 +456,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--paper);
   border: 0;
   font-family: var(--font-bebas), sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: .14em;
   text-transform: uppercase;
   padding: 10px 24px;
@@ -438,10 +466,10 @@ a { color: inherit; text-decoration: none; }
 }
 .signup-btn:hover { background: #000; }
 .signup-btn:active { transform: translateY(1px); }
-.signup-error { color: #cc3333; font-size: 13px; margin-top: 12px; }
+.signup-error { color: #cc3333; font-size: 14px; margin-top: 12px; }
 .signup-success {
   font-family: var(--font-inter), sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--asphalt);
   margin-top: 14px;
 }
@@ -456,7 +484,7 @@ a { color: inherit; text-decoration: none; }
 }
 .about-eye {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .26em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 28px;
   text-align: center;
@@ -478,7 +506,7 @@ a { color: inherit; text-decoration: none; }
   border-top: 1px solid var(--line);
   display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink-3);
 }
 .about-foot b { color: var(--asphalt); font-weight: 600; }
@@ -503,7 +531,7 @@ a { color: inherit; text-decoration: none; }
 }
 .links-head .lh-num {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: 13px; letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink-3);
 }
 .links-head .lh-title {
@@ -514,7 +542,7 @@ a { color: inherit; text-decoration: none; }
 }
 .links-head .lh-meta {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink-3);
 }
 
@@ -595,12 +623,12 @@ a { color: inherit; text-decoration: none; }
 .lc-eye {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 700;
-  font-size: 11px; letter-spacing: .28em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .28em; text-transform: uppercase;
   color: var(--ink-3);
 }
 .lc-title {
   font-family: var(--font-bebas), sans-serif;
-  font-size: 33px;
+  font-size: 34px;
   letter-spacing: .03em;
   line-height: .95;
   text-transform: uppercase;
@@ -614,7 +642,7 @@ a { color: inherit; text-decoration: none; }
 }
 .lc-meta {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
   color: var(--ink-3);
   border-top: 1px solid var(--line);
   padding-top: 14px;
@@ -634,7 +662,7 @@ a { color: inherit; text-decoration: none; }
 }
 .board-more {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: 13px; letter-spacing: .22em; text-transform: uppercase;
   color: var(--asphalt);
   border: 1px solid var(--asphalt);
   padding: 13px 28px;
@@ -691,7 +719,7 @@ a { color: inherit; text-decoration: none; }
 }
 .foot-desc {
   font-family: var(--font-inter), sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.65;
   color: var(--ink-2);
 }
@@ -703,13 +731,13 @@ a { color: inherit; text-decoration: none; }
 .foot-col-title {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 700;
-  font-size: 12px; letter-spacing: .24em; text-transform: uppercase;
+  font-size: 13px; letter-spacing: .24em; text-transform: uppercase;
   color: var(--asphalt);
   margin-bottom: 6px;
 }
 .foot-link {
   font-family: var(--font-inter), sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   color: var(--ink-2);
   transition: color .12s ease-out;
 }
@@ -724,7 +752,7 @@ a { color: inherit; text-decoration: none; }
   padding-top: 20px;
   border-top: 1px solid var(--line);
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .2em; text-transform: uppercase;
   color: var(--ink-3);
 }
 
@@ -737,7 +765,7 @@ a { color: inherit; text-decoration: none; }
 }
 .about-pg-eye {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .26em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 32px;
 }
@@ -788,7 +816,7 @@ a { color: inherit; text-decoration: none; }
 }
 .about-pg-label {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .26em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 28px;
   padding-bottom: 16px;
@@ -850,7 +878,7 @@ a { color: inherit; text-decoration: none; }
 }
 .about-stamp {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink-3);
 }
 .about-stamp:first-child { color: var(--accent); }
@@ -901,7 +929,7 @@ a { color: inherit; text-decoration: none; }
 }
 .about-index-num {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .2em;
+  font-size: 12px; letter-spacing: .2em;
   color: var(--accent);
 }
 .about-index-title {
@@ -933,7 +961,7 @@ a { color: inherit; text-decoration: none; }
 }
 .about-close-eye {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .26em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 24px;
 }
@@ -963,7 +991,7 @@ a { color: inherit; text-decoration: none; }
 .about-close-num {
   display: block;
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .2em;
+  font-size: 12px; letter-spacing: .2em;
   color: var(--accent);
   margin-bottom: 20px;
 }
@@ -987,7 +1015,7 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   left: clamp(20px, 2.6vw, 32px);
   bottom: clamp(22px, 2.6vw, 28px);
-  font-size: 18px;
+  font-size: 19px;
   color: var(--accent);
   transition: transform .16s ease-out;
 }
@@ -1004,7 +1032,7 @@ a { color: inherit; text-decoration: none; }
 }
 .about-pg-crew-eye {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .26em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
   color: rgba(255,255,255,.38);
   margin-bottom: 28px;
 }
@@ -1028,7 +1056,7 @@ a { color: inherit; text-decoration: none; }
   padding: 14px 0;
   border-bottom: 1px solid rgba(255,255,255,.08);
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
 }
 .about-pg-crew-row span:first-child { color: rgba(255,255,255,.42); }
 .about-pg-crew-row span:last-child  { color: var(--paper); text-align: right; }
@@ -1066,7 +1094,7 @@ a { color: inherit; text-decoration: none; }
 }
 .article-cover-media {
   margin: 0;
-  max-width: var(--measure);
+  max-width: var(--post-col);
 }
 .article-cover-media img {
   display: block;
@@ -1103,7 +1131,7 @@ a { color: inherit; text-decoration: none; }
 }
 .article-cover-caption .credit {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: .04em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -1122,7 +1150,7 @@ a { color: inherit; text-decoration: none; }
   /* Headline, photo, deck and copy all stop on the same edge — that is what
      makes a post read as one column rather than a wide head over a narrow
      story. It costs a line of wrap on the longer titles. */
-  max-width: var(--measure);
+  max-width: var(--post-col);
 }
 
 /* ── Article hero (deck + meta, sits just under the cover image) ── */
@@ -1132,7 +1160,7 @@ a { color: inherit; text-decoration: none; }
 }
 .article-eye {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .26em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 24px;
 }
@@ -1158,7 +1186,7 @@ a { color: inherit; text-decoration: none; }
 }
 .article-meta {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink-3);
   display: flex; gap: 20px; flex-wrap: wrap;
 }
@@ -1242,7 +1270,7 @@ a { color: inherit; text-decoration: none; }
 .swap-row span:first-child { color: var(--ink-3); }
 .swap-head {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: .06em;
   text-transform: uppercase;
 }
@@ -1275,7 +1303,7 @@ a { color: inherit; text-decoration: none; }
   left: 0;
   top: 12px;
   font-family: var(--font-jetbrains), monospace;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: .06em;
   color: var(--ink-3);
 }
@@ -1288,7 +1316,7 @@ a { color: inherit; text-decoration: none; }
 .post-disclaimer {
   max-width: var(--measure);
   font-family: var(--font-inter), sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.6;
   color: var(--ink-3);
 }
@@ -1308,7 +1336,7 @@ a { color: inherit; text-decoration: none; }
 }
 .article-section-sub {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 28px;
   padding-bottom: 18px;
@@ -1328,14 +1356,14 @@ a { color: inherit; text-decoration: none; }
 .race-row:last-child { border-bottom: none; }
 .race-num {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .18em;
+  font-size: 12px; letter-spacing: .18em;
   color: var(--ink-3);
   padding-top: 4px;
 }
 .race-info { min-width: 0; }
 .race-name {
   font-family: var(--font-bebas), sans-serif;
-  font-size: 23px;
+  font-size: 24px;
   letter-spacing: .03em;
   text-transform: uppercase;
   line-height: 1;
@@ -1345,7 +1373,7 @@ a { color: inherit; text-decoration: none; }
 .race-where {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 600;
-  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: 13px; letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink-2);
   margin-bottom: 6px;
 }
@@ -1359,12 +1387,12 @@ a { color: inherit; text-decoration: none; }
 }
 .race-dists {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
   color: var(--ink-3);
 }
 .race-status {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
   color: var(--ink-3);
   margin-top: 4px;
 }
@@ -1397,13 +1425,13 @@ a { color: inherit; text-decoration: none; }
 }
 .race-price {
   font-family: var(--font-bebas), sans-serif;
-  font-size: 21px; letter-spacing: .03em;
+  font-size: 22px; letter-spacing: .03em;
   color: var(--asphalt);
   white-space: nowrap;
 }
 .race-link {
   font-family: var(--font-bebas), sans-serif;
-  font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+  font-size: 14px; letter-spacing: .14em; text-transform: uppercase;
   background: var(--asphalt);
   color: var(--paper);
   padding: 7px 16px;
@@ -1438,7 +1466,7 @@ a { color: inherit; text-decoration: none; }
 .faq-q {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 700;
-  font-size: 15px; letter-spacing: .12em; text-transform: uppercase;
+  font-size: 16px; letter-spacing: .12em; text-transform: uppercase;
   color: var(--asphalt);
   margin-bottom: 8px;
 }
@@ -1493,14 +1521,14 @@ a { color: inherit; text-decoration: none; }
 }
 .author-card-label {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .26em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 10px;
 }
 .author-card-name {
   display: inline-block;
   font-family: var(--font-bebas), sans-serif;
-  font-size: 27px;
+  font-size: 28px;
   letter-spacing: .03em;
   text-transform: uppercase;
   color: var(--asphalt);
@@ -1518,7 +1546,7 @@ a { color: inherit; text-decoration: none; }
 }
 .author-card-link {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: 13px; letter-spacing: .22em; text-transform: uppercase;
   color: var(--asphalt);
   border-bottom: 1px solid var(--asphalt);
   padding-bottom: 2px;
@@ -1596,7 +1624,7 @@ a { color: inherit; text-decoration: none; }
 }
 .gate-label {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .26em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 16px;
 }
@@ -1623,7 +1651,7 @@ a { color: inherit; text-decoration: none; }
 }
 .gate-what li {
   font-family: var(--font-inter), sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   color: var(--ink-2);
   padding: 10px 0;
   border-bottom: 1px solid var(--line);
@@ -1633,7 +1661,7 @@ a { color: inherit; text-decoration: none; }
 .gate-what li::before {
   content: "·";
   font-family: var(--font-jetbrains), monospace;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1;
   color: var(--ink-3);
   flex-shrink: 0;
@@ -1654,7 +1682,7 @@ a { color: inherit; text-decoration: none; }
 .gate-field-label {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 700;
-  font-size: 11px; letter-spacing: .28em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .28em; text-transform: uppercase;
   color: var(--ink-3);
   padding-top: 14px;
 }
@@ -1662,7 +1690,7 @@ a { color: inherit; text-decoration: none; }
   background: transparent;
   border: 0; outline: none;
   font-family: var(--font-inter), sans-serif;
-  font-size: 17px;
+  font-size: 18px;
   color: var(--asphalt);
   padding: 10px 0 16px;
   caret-color: var(--accent);
@@ -1673,7 +1701,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--paper);
   border: 0;
   font-family: var(--font-bebas), sans-serif;
-  font-size: 14px; letter-spacing: .14em; text-transform: uppercase;
+  font-size: 15px; letter-spacing: .14em; text-transform: uppercase;
   padding: 14px 24px;
   cursor: pointer;
   margin-top: 20px;
@@ -1686,13 +1714,13 @@ a { color: inherit; text-decoration: none; }
 .gate-btn:disabled { opacity: .4; cursor: not-allowed; }
 .gate-fine {
   font-family: var(--font-inter), sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--ink-3);
   margin-top: 12px;
 }
 .gate-error {
   font-family: var(--font-inter), sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   color: #cc3333;
   margin-top: 8px;
 }
@@ -1702,7 +1730,7 @@ a { color: inherit; text-decoration: none; }
 }
 .gate-success-tag {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .26em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 14px;
 }
@@ -1726,7 +1754,7 @@ a { color: inherit; text-decoration: none; }
   background: var(--asphalt);
   color: var(--paper);
   font-family: var(--font-bebas), sans-serif;
-  font-size: 14px; letter-spacing: .14em; text-transform: uppercase;
+  font-size: 15px; letter-spacing: .14em; text-transform: uppercase;
   padding: 14px 24px;
   transition: background .12s ease-out;
 }
@@ -1796,7 +1824,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   gap: 20px;
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink-3);
 }
 .archive-entry-meta span:first-child { color: var(--accent); }
@@ -1821,7 +1849,7 @@ a { color: inherit; text-decoration: none; }
   margin-top: auto;
   align-self: flex-start;
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: 13px; letter-spacing: .22em; text-transform: uppercase;
   color: var(--asphalt);
   border: 1px solid var(--asphalt);
   padding: 12px 26px;
@@ -1844,7 +1872,7 @@ a { color: inherit; text-decoration: none; }
   gap: 48px;
   align-items: start;
 }
-.dispatch-aside { position: sticky; top: 24px; }
+.dispatch-aside { position: sticky; top: calc(var(--nav-h) + 24px); }
 .dispatch-aside-card {
   border: 1px solid var(--line);
   background: var(--paper, #fff);
@@ -1885,10 +1913,20 @@ a { color: inherit; text-decoration: none; }
   /* shell = measure + 2*pad + rail + gap, so the main column resolves to
      exactly --measure. Widen this whenever --copy (and so --measure) grows,
      or the copy wraps short of the cover and they stop sharing a right edge. */
-  --post-shell: 1160px;
+  --post-shell: 1200px;
   --post-pad: 40px;
   --post-rail: 280px;
   --post-gap: 56px;
+
+  /* What a block sitting in the post's FULL-WIDTH wrapper (the masthead, the
+     cover) may occupy. Those wrappers span the shell, not the text column, so
+     --measure alone lets them run past the copy through the whole band where
+     the shell is narrower than measure + rail + gap. Declared here, not at
+     :root: a var() inside a custom property is substituted where it is
+     declared, and --post-rail does not exist up there. The percentage is not
+     substituted, so it still resolves against each element's own wrapper.
+     Blocks already inside the column keep plain --measure. */
+  --post-col: min(var(--measure), 100% - var(--post-rail) - var(--post-gap));
 }
 
 /* Narrow the masthead / hero / gate to match the two-column shell
@@ -1908,9 +1946,9 @@ a { color: inherit; text-decoration: none; }
 /* sections keep their .page wrapper but fill the column now */
 .post-main .page { max-width: none; padding: 0; }
 /* anchor offset so in-page jumps don't tuck against the top */
-.post-main [id] { scroll-margin-top: 28px; }
+.post-main [id] { scroll-margin-top: calc(var(--nav-h) + 28px); }
 
-.post-aside { position: sticky; top: 28px; }
+.post-aside { position: sticky; top: calc(var(--nav-h) + 28px); }
 
 /* stack on tablet / phone */
 @media (max-width: 980px) {
@@ -1926,7 +1964,7 @@ a { color: inherit; text-decoration: none; }
 .post-toc { border-top: 2px solid var(--asphalt); padding-top: 18px; }
 .post-toc-label {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .24em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .24em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 14px;
 }
@@ -1935,7 +1973,7 @@ a { color: inherit; text-decoration: none; }
   display: block;
   font-family: var(--font-barlow), sans-serif;
   font-weight: 600;
-  font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+  font-size: 14px; letter-spacing: .14em; text-transform: uppercase;
   color: var(--ink-2);
   padding: 9px 0 9px 14px;
   border-left: 2px solid var(--line-2);
@@ -2041,7 +2079,7 @@ a { color: inherit; text-decoration: none; }
 }
 .crew-photo span {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink-3);
 }
 .crew-photo img {
@@ -2139,7 +2177,7 @@ a { color: inherit; text-decoration: none; }
 }
 .nav-lang:hover { border-bottom-color: var(--accent); }
 .nav-lang-caret {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1;
   transform: translateY(-1px);
 }
@@ -2159,7 +2197,7 @@ a { color: inherit; text-decoration: none; }
   display: block;
   font-family: var(--font-barlow), sans-serif;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: .08em;
   color: rgba(255, 255, 255, .82);
   padding: 9px 12px;
@@ -2177,7 +2215,7 @@ a { color: inherit; text-decoration: none; }
 .nav-menu-lang {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, .6);
@@ -2223,13 +2261,13 @@ a { color: inherit; text-decoration: none; }
 .lang-suggest-text {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: .01em;
 }
 .lang-suggest-cta {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: .14em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -2244,7 +2282,7 @@ a { color: inherit; text-decoration: none; }
   background: none;
   border: none;
   color: rgba(255, 255, 255, .5);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1;
   cursor: pointer;
   padding: 4px;
@@ -2261,7 +2299,7 @@ a { color: inherit; text-decoration: none; }
    ============================================================ */
 .privacy-updated {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: .2em;
   text-transform: uppercase;
   color: var(--ink-3);
@@ -2288,7 +2326,7 @@ a { color: inherit; text-decoration: none; }
   text-align: left;
   font-family: var(--font-barlow), sans-serif;
   font-weight: 700;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--asphalt);
@@ -2305,7 +2343,7 @@ a { color: inherit; text-decoration: none; }
 .privacy-table tr:last-child td { border-bottom: none; }
 .privacy-table td code {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--asphalt);
   white-space: nowrap;
 }

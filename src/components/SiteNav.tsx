@@ -42,6 +42,7 @@ export default function SiteNav({
 }) {
   const [open, setOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const [stuck, setStuck] = useState(false);
   const langWrapRef = useRef<HTMLDivElement>(null);
   const lockupClass = variant === "overlay" ? "wm-lockup wm-lockup--light" : "wm-lockup";
 
@@ -78,8 +79,19 @@ export default function SiteNav({
     };
   }, [langOpen]);
 
+  // The bar is sticky in CSS; this only tells it when content has started
+  // passing underneath, so the overlay variant can drop its white-on-footage
+  // treatment and both variants can pick up an edge. Passive listener, and it
+  // only writes state when the answer actually changes.
+  useEffect(() => {
+    const onScroll = () => setStuck(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <nav className={`nav nav--${variant}`}>
+    <nav className={`nav nav--${variant}${stuck ? " is-stuck" : ""}`}>
       <div className="page nav-row">
         <a href={homeHref} className="wm" aria-label="Suor Society, home">
           <img src={WORDMARK} alt="Suor Society" className={lockupClass} />
