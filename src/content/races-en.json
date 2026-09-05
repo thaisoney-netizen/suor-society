@@ -306,11 +306,11 @@
       "num": "07",
       "name": "Rocket Mortgage Detroit Free Press",
       "where": "Detroit, MI · Oct 18, 2026",
-      "body": "The international races cross the Ambassador Bridge into Windsor and return through the tunnel. The marathon and both half marathons are sold out; the 5K and 1 Mile remain open through Oct 8 unless capacity is reached.",
+      "body": "The marathon and both half marathons are sold out. The 5K and 1 Mile remain open through Oct 8 unless capacity is reached.",
       "dists": "5K · International Half · 1 Mile",
       "price": "Check site",
       "status": "limit",
-      "statusLabel": "5K & 1 Mile Open · Marathon & Halves Sold Out",
+      "statusLabel": "5K & 1 Mile Open · Longer Races Sold Out",
       "url": "https://www.freepmarathon.com/",
       "checked": "2026-09-04"
     },
