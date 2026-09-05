@@ -114,7 +114,7 @@ export default function AdizeroDropsetProVsDropset4() {
           <div className="page">
             <div className="article-eye">The Culture Archive &nbsp;/&nbsp; September 2026</div>
             <h1 className="article-headline">
-              Adizero Dropset Pro vs Dropset 4 <span>which one should you buy</span>?
+              Adizero Dropset Pro vs Dropset 4: <span>which one should you buy</span>?
             </h1>
           </div>
         </section>
