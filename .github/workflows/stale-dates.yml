@@ -1,27 +1,22 @@
 name: Content Freshness
 
-# Weekly sweep over race guides and dispatch posts for two things: calendar
-# dates that have already passed, and upcoming races whose registration status
-# has not been re-verified lately (status drifts with no date changing).
-#
-# Reports to two places on purpose. The GitHub issue is the durable, deduped
-# record; the Notion card is the nudge that actually gets seen. A monthly
-# issue-only run went unread for two days in Aug 2026 while the race picks post
-# advertised three races that had already been run.
-#
-# Manual runs via the Actions tab.
+# Runs every morning. Completed races are safe to retire automatically because
+# that is date arithmetic over repository data. Registration-status changes are
+# never guessed: those remain reports for the two-source verification process.
 
 on:
   schedule:
-    # Mondays, 6:15 AM Pacific standard / 7:15 AM during DST → 14:15 UTC.
-    # Weekly rather than monthly: a race that runs on the 2nd used to sit
-    # wrong for four weeks.
-    - cron: '15 14 * * 1'
+    # 6:15 AM Pacific standard / 7:15 AM during DST -> 14:15 UTC.
+    - cron: '15 14 * * *'
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   issues: write
+
+concurrency:
+  group: content-freshness-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   check:
@@ -32,9 +27,32 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
-      # Dependency-free scripts: no npm install needed.
-      - name: Scan for stale dates and unverified races
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install PDF browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Retire completed races
+        run: node scripts/content/check-stale-dates.mjs --fix-past || true
+
+      # Always render from JSON. This also repairs a PDF missed by a prior run
+      # that committed data before its browser was available.
+      - name: Regenerate race-guide PDFs
+        run: node scripts/generate-race-guide-pdf.js
+
+      - name: Commit automatic retirements
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/content/races-en.json src/content/races-br.json \
+            public/2026-race-guide.pdf public/guia-corridas-brasil-2026.pdf
+          git diff --staged --quiet || git commit -m 'content: retire completed races [skip ci]'
+          git push
+
+      - name: Scan for findings requiring review
         id: scan
         run: |
           set +e
@@ -49,35 +67,24 @@ jobs:
           script: |
             const fs = require('fs');
             const report = fs.readFileSync('report.txt', 'utf8');
-            const title = 'Content freshness: review needed';
-            const body = `The weekly content freshness sweep found content to review.\n\n${report}\n\n_Auto-filed by .github/workflows/stale-dates.yml_`;
+            const title = 'Content freshness: source verification needed';
+            const body = `The daily sweep found content that cannot be changed without source verification.\n\n${report}\n\n_Auto-filed by .github/workflows/stale-dates.yml_`;
             const { data: issues } = await github.rest.issues.listForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              state: 'open',
-              labels: 'content-freshness',
+              owner: context.repo.owner, repo: context.repo.repo,
+              state: 'open', labels: 'content-freshness',
             });
             if (issues.length > 0) {
               await github.rest.issues.update({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: issues[0].number,
-                title,
-                body,
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: issues[0].number, title, body,
               });
             } else {
               await github.rest.issues.create({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                title,
-                body,
-                labels: ['content-freshness'],
+                owner: context.repo.owner, repo: context.repo.repo,
+                title, body, labels: ['content-freshness'],
               });
             }
 
-      # Runs after the issue so a Notion outage still leaves the durable record.
-      # Allowed to fail the job: a broken notification path should be loud,
-      # since a silent one is the problem this workflow exists to fix.
       - name: Post card to the Notion board
         if: steps.scan.outputs.findings == '1'
         env:
@@ -86,30 +93,23 @@ jobs:
           GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: node scripts/content/notify-board.mjs report.txt
 
-      # Sweep came back clean, so close any issue left open from a prior run.
       - name: Close resolved issue
         if: steps.scan.outputs.findings == '0'
         uses: actions/github-script@v7
         with:
           script: |
             const { data: issues } = await github.rest.issues.listForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              state: 'open',
-              labels: 'content-freshness',
+              owner: context.repo.owner, repo: context.repo.repo,
+              state: 'open', labels: 'content-freshness',
             });
             for (const issue of issues) {
               await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
+                owner: context.repo.owner, repo: context.repo.repo,
                 issue_number: issue.number,
                 body: 'Sweep is clean as of this run. Closing automatically.\n\n_.github/workflows/stale-dates.yml_',
               });
               await github.rest.issues.update({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: issue.number,
-                state: 'closed',
-                state_reason: 'completed',
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: issue.number, state: 'closed', state_reason: 'completed',
               });
             }

@@ -43,10 +43,10 @@
       "body": "Wine country roads, mostly flat, multi-distance weekend. The marathon, half and 10K have all sold out. The Saturday 5K is the only distance still open.",
       "dists": "5K · 10K · Half Marathon · Full Marathon",
       "price": "5K: $72.77",
-      "status": "limit",
-      "statusLabel": "5K Only · 10K, Half & Full Sold Out",
+      "status": "past",
+      "statusLabel": "Race is past",
       "url": "https://santarosamarathon.com/",
-      "checked": "2026-08-21"
+      "checked": "2026-09-05"
     },
     {
       "num": "05",
@@ -55,10 +55,10 @@
       "body": "Flat out-and-back loops on the Long Beach beach path, starting and finishing on Ocean Blvd. Three distances, USATF certified, and the 5K and 10K both come in under $60.",
       "dists": "5K · 10K · Half Marathon",
       "price": "From $52.93",
-      "status": "open",
-      "statusLabel": "Open Registration",
+      "status": "past",
+      "statusLabel": "Race is past",
       "url": "https://runsignup.com/Race/CA/LongBeach/CalifornianDreaminKKHalfMarathon",
-      "checked": "2026-08-21"
+      "checked": "2026-09-05"
     },
     {
       "num": "06",
