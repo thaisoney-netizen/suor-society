@@ -308,7 +308,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
           img: "/adizero-dropset-hero.jpg",
           eyebrow: "The Culture Archive",
           title: "Adizero Dropset Pro vs Dropset 4",
-          desc: "Adidas put marathon foam in a gym shoe. The Pro carries 9mm more heel than the 4, which is the whole difference: one runs to 5k, the other squats to 500. Specs, sizing, and which one to buy.",
+          desc: "Running intervals or lifting first? Compare the Pro and Dropset 4 with sourced specs, fit notes, and recommendations for the week you actually train.",
           meta: "New · Gear · September 2026 ↗",
         },
         {
@@ -600,7 +600,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
           href: "/culture/adizero-dropset-pro-vs-dropset-4",
           tag: "The Culture Archive",
           date: "September 2026",
-          title: "Adizero Dropset Pro vs Dropset 4: Which One Should You Buy?",
+          title: "Adidas Adizero Dropset Pro vs Dropset 4: Which Should You Buy?",
         },
         {
           href: "/culture/half-marathon-world-record",
@@ -821,7 +821,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
           img: "/adizero-dropset-hero.jpg",
           eyebrow: "The Culture · Arquivo",
           title: "Adizero Dropset Pro vs Dropset 4",
-          desc: "A adidas colocou espuma de maratona num tênis de academia. O Pro tem 9mm a mais de calcanhar que o 4, e essa é a diferença inteira: um corre 5k, o outro agacha 225kg. Ficha técnica, numeração e qual comprar.",
+          desc: "Intervalos de corrida ou musculação primeiro? Compare Pro e Dropset 4 com ficha técnica, fontes, ajuste e sugestões para a semana que você realmente treina.",
           meta: "Novo · Equipamento · Setembro 2026 ↗",
         },
         {
@@ -1117,7 +1117,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
           href: "/culture/adizero-dropset-pro-vs-dropset-4",
           tag: "The Culture Archive",
           date: "Setembro 2026",
-          title: "Adizero Dropset Pro vs Dropset 4: qual dos dois comprar?",
+          title: "Adidas Adizero Dropset Pro vs Dropset 4: qual comprar?",
         },
         {
           href: "/culture/half-marathon-world-record",

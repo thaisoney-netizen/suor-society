@@ -1,24 +1,20 @@
-import type { ReactNode } from "react";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import ArticleCover from "@/components/ArticleCover";
-import { PostToc } from "@/components/PostAside";
+import { PostToc, PostSubscribe } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
 import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
 const META = {
   path: "/pt-br/culture/adizero-dropset-pro-vs-dropset-4",
-  title: "Adizero Dropset Pro vs Dropset 4: qual comprar?, Suor Society",
+  title: "Adidas Adizero Dropset Pro vs Dropset 4: qual comprar? | Suor Society",
   description:
-    "O Adizero Dropset Pro é um tênis de corrida que aguenta a academia. O Dropset 4 é um tênis de academia que aguenta um pouco de corrida. Ficha técnica, altura do solado, limite de carga, numeração e qual deles entra no seu rodízio.",
+    "Compare Adidas Adizero Dropset Pro e Dropset 4 para HYROX, musculação, corrida e ajuste, com ficha técnica, fontes e orientação para escolher.",
   image: "/adizero-dropset-hero.jpg",
 };
 export const metadata = pageMeta({ ...META, paired: true });
 
-// As páginas para as quais o texto aponta, na ordem em que as afirmações
-// aparecem: o lançamento, os testes de corrida, o comparativo direto, as
-// medições de laboratório, o teste de 500 libras e as páginas da própria
-// adidas para o Elite e o Pro.
+// Keep the source links added in Claude's September 5 merge.
 const SOURCES = [
   "https://www.adidas-group.com/en/magazine/careers/hybrid-hotel-launching-the-adizero-dropset-pro-on-the-global-stage",
   "https://www.roadtrailrun.com/2026/07/adidas-adizero-dropset-pro-review.html",
@@ -28,203 +24,223 @@ const SOURCES = [
   "https://thatfitfriend.com/adidas-dropset-4-review/",
   "https://www.adidas.com/us/adizero-dropset-elite-training-sneaker/LA6218.html",
   "https://www.adidas.com/us/adizero-dropset-pro-training-shoes/KH6710.html",
+  "https://news.adidas.com/training/adidas-expands-hybrid-training-offer-with-the-adizero-dropset-pro--built-for-the-full-demands-of-the/s/c3ee111b-e9d9-4837-ae89-ce31484b6705",
+  "https://news.adidas.com/training/adidas-unveils-the-dropset-4--its-most-versatile-functional-training-shoe-to-date/s/304ea25d-4d2b-4232-80e1-c435361a6624",
+  "https://www.adidas.com/qa/en/adizero-dropset-pro-training-shoes/KK1551.html",
+  "https://www.adidas.com/qa/en/dropset-4-training-shoes/JR4661.html",
 ];
-
+const SOURCE_LABELS = [
+  "Adidas: lançamento em Estocolmo",
+  "Road Trail Run: teste de corrida",
+  "That Fit Friend: avaliação do Pro",
+  "That Fit Friend: comparativo",
+  "RunRepeat: laboratório do Dropset 4",
+  "That Fit Friend: avaliação do Dropset 4",
+  "Adidas EUA: Dropset Elite",
+  "Adidas EUA: Dropset Pro",
+  "Adidas: construção do Pro",
+  "Adidas: construção do Dropset 4",
+  "Adidas: ficha do Pro (Catar)",
+  "Adidas: ficha do Dropset 4 (Catar)",
+];
 const TOC = [
-  { id: "pro", label: "O que é o Dropset Pro" },
-  { id: "four", label: "O que é o Dropset 4" },
-  { id: "specs", label: "A ficha técnica" },
-  { id: "upgrade", label: "O Pro é uma evolução?" },
-  { id: "lifting", label: "O Pro serve pra musculação?" },
-  { id: "running", label: "Dá pra correr no 4?" },
-  { id: "buy", label: "Qual comprar" },
-  { id: "fit", label: "Numeração e caimento" },
-  { id: "hyrox", label: "O Pro no HYROX" },
-  { id: "elite", label: "E o de $275" },
-  { id: "faq", label: "Perguntas frequentes" },
+  {
+    id: "pro",
+    label: "O que é o Adizero Dropset Pro",
+  },
+  {
+    id: "four",
+    label: "O que é o Adidas Dropset 4",
+  },
+  {
+    id: "specs",
+    label: "Ficha técnica e fontes",
+  },
+  {
+    id: "upgrade",
+    label: "O Pro substitui o Dropset 4?",
+  },
+  {
+    id: "lifting",
+    label: "O Adizero Dropset Pro serve para musculação?",
+  },
+  {
+    id: "running",
+    label: "Dá para correr no Dropset 4? E até onde no Pro?",
+  },
+  {
+    id: "buy",
+    label: "Qual tênis combina com a sua semana?",
+  },
+  {
+    id: "fit",
+    label: "Numeração, pés largos e espaço no cabedal",
+  },
+  {
+    id: "hyrox",
+    label: "O Pro é uma boa opção para HYROX?",
+  },
+  {
+    id: "elite",
+    label: "O que muda no Dropset Elite",
+  },
+  {
+    id: "sources",
+    label: "Fontes",
+  },
 ];
-
 const SPECS = [
-  { label: "Preço", pro: "$150", four: "$145" },
-  { label: "Lançamento", pro: "Junho 2026", four: "2026" },
-  { label: "Peso", pro: "203g fem, 242g masc", four: "309g, masc 43" },
-  { label: "Drop", pro: "7mm", four: "Cerca de 5 a 6mm" },
-  { label: "Solado no calcanhar", pro: "29mm", four: "19,9mm" },
-  { label: "Solado no antepé", pro: "22mm", four: "14,6mm" },
-  { label: "Entressola", pro: "Lightstrike Pro, Energy Rods", four: "Repetitor" },
-  { label: "Sola", pro: "Lighttraxion, Continental", four: "Borracha" },
-  { label: "Teto na barra", pro: "85 a 100kg", four: "Cerca de 225kg" },
-  { label: "Teto na corrida", pro: "5k tranquilo, 8km no máximo", four: "1k dentro do treino" },
-  { label: "Feito pra", pro: "HYROX, circuito com corrida", four: "Barra pesada, CrossFit" },
+  {
+    label: "Preço de referência nos EUA",
+    pro: "US$150 · Adidas EUA",
+    four: "US$145 · avaliação publicada",
+  },
+  {
+    label: "Estreia",
+    pro: "17 de junho de 2026 · Adidas",
+    four: "8 de janeiro de 2026 · Adidas",
+  },
+  {
+    label: "Peso",
+    pro: "242 g / 8,54 oz · Adidas; tamanho de referência não informado",
+    four: "10,9 oz / cerca de 309 g · That Fit Friend, masculino US 10",
+  },
+  {
+    label: "Altura: calcanhar / antepé",
+    pro: "29 / 22 mm · Adidas",
+    four: "19,9 / 14,6 mm · laboratório RunRepeat",
+  },
+  {
+    label: "Drop",
+    pro: "7 mm · Adidas",
+    four: "6 mm · Adidas; 5,3 mm medidos pelo RunRepeat",
+  },
+  {
+    label: "Entressola",
+    pro: "Lightstrike Pro + Energyrods",
+    four: "Repetitor + Energyrods",
+  },
+  {
+    label: "Sola",
+    pro: "Lighttraxion + borracha Continental",
+    four: "Borracha Continental · Adidas",
+  },
 ];
-
-const FAQS: { q: string; a: ReactNode; plain?: string }[] = [
+const FAQS = [
   {
-    q: "O Adizero Dropset Pro serve pra musculação?",
-    a: "Até uns 100kg na barra. Acima disso a Lightstrike Pro afunda e a base mais estreita deixa de parecer uma plataforma. Ele é um tênis de corrida que tolera musculação, não o contrário.",
+    q: "O Pro é um Dropset 5?",
+    a: "Não. É um modelo híbrido separado, ao lado do Dropset 4. Escolha pelo treino, não pelo nome.",
   },
   {
-    q: "Dá pra correr com o adidas Dropset 4?",
-    a: "Até uns 1k dentro do treino. A entressola Repetitor é firme de propósito e tem pouco solado pra absorver impacto, então mais que isso você sente cada passada.",
+    q: "225 lb são um limite oficial para musculação?",
+    a: "Não. A carga citada no texto é uma observação de um avaliador, não uma classificação de carga da Adidas.",
   },
   {
-    q: "O Adizero Dropset Pro substitui o Dropset 4?",
-    a: "Não. Os dois são vendidos lado a lado quase pelo mesmo preço porque fazem trabalhos opostos. O Pro tem 9mm a mais de solado no calcanhar, o que ajuda na corrida e atrapalha na estabilidade com a barra.",
-  },
-  {
-    q: "O Adizero Dropset Pro veste no tamanho certo?",
-    a: "Sim, pra pé estreito ou médio. Pé largo deve subir meio número. O cabedal tem volume baixo, o que trava bem o pé mas briga com peito do pé alto.",
-  },
-  {
-    q: "O Adizero Dropset Pro serve pra CrossFit?",
-    a: "Nem tanto. A base estreita e a falta de proteção no meio do pé deixam ele fraco pra subida na corda e trabalho com objetos pesados. Dos dois, o Dropset 4 é o melhor tênis de CrossFit.",
-  },
-  {
-    q: "Qual a diferença entre o Adizero Dropset Pro e o Dropset Elite?",
-    a: "Preço e solado. O Elite custa $275, tem Energy Rim com fibra de carbono, camada dupla de Lightstrike Pro e 44mm no calcanhar com 32mm no antepé, drop de 12mm. O Pro custa $150, com 29mm no calcanhar e 22mm no antepé, drop de 7mm.",
-  },
-  {
-    q: "Quanto custa o Adizero Dropset Pro?",
-    plain: "$150 no site da adidas, em quatro cores masculinas e três femininas.",
-    a: (
-      <>
-        $150{" "}
-        <a
-          href="https://www.adidas.com/us/adizero-dropset-pro-training-shoes/KH6710.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          no site da adidas
-        </a>
-        , em quatro cores masculinas e três femininas.
-      </>
-    ),
+    q: "Quem tem pé largo deve sempre subir a numeração?",
+    a: "Não. Mais comprimento pode não resolver falta de largura ou espaço sobre o pé. Confira o ajuste e as condições de devolução da loja.",
   },
 ];
 
-export default function AdizeroDropsetProVsDropset4PtBr() {
+export default function AdizeroDropsetProVsDropset4() {
   return (
     <>
-      <ArticleJsonLd {...META} datePublished="2026-09-04" citation={SOURCES} />
+      <ArticleJsonLd
+        {...META}
+        datePublished="2026-09-04"
+        dateModified="2026-09-05"
+        citation={SOURCES}
+      />
       <FaqJsonLd faqs={FAQS} />
-      <SiteNav />
-
-      <main className="post">
-        {/* ── ARTICLE MASTHEAD (title above the cover) ── */}
+      <SiteNav lang="pt" />
+      <main className="post dropset-post">
         <section className="article-masthead">
           <div className="page">
-            <div className="article-eye">The Culture &middot; Arquivo &nbsp;/&nbsp; Setembro 2026</div>
+            <div className="article-eye">
+              The Culture · Arquivo / Equipamento
+            </div>
             <h1 className="article-headline">
-              Adizero Dropset Pro vs Dropset 4: <span>qual deles comprar</span>?
+              Adidas Adizero Dropset Pro vs Dropset 4: <span>qual comprar?</span>
             </h1>
+            <p className="article-deck">
+              Escolha o Adizero Dropset Pro para treinos que combinam intervalos
+              de corrida e exercícios funcionais. Prefira o Dropset 4 quando
+              musculação e estabilidade na academia vêm primeiro, com corridas
+              curtas no meio. O Pro é outro modelo híbrido, não o substituto do
+              4. Comece pelos treinos que você realmente faz.
+            </p>
+            <div className="article-meta">
+              <span>
+                Por <a href="/pt-br/author/thais-oney">Thais Oney</a>
+              </span>
+              <span>San Diego, CA</span>
+              <span>
+                Publicado em{" "}
+                <time dateTime="2026-09-04">4 de setembro de 2026</time>
+              </span>
+              <span>
+                Atualizado em{" "}
+                <time dateTime="2026-09-05">5 de setembro de 2026</time>
+              </span>
+            </div>
+            <nav className="dropset-jumps" aria-label="Ir para uma seção">
+              <a href="#specs">Ficha técnica</a>
+              <a href="#buy">Qual comprar</a>
+              <a href="#fit">Numeração</a>
+              <a href="#sources">Fontes</a>
+            </nav>
           </div>
         </section>
-
-        {/* ── COVER IMAGE ── */}
         <ArticleCover
           src="/adizero-dropset-cover.webp"
-          alt="O adidas Adizero Dropset Pro à esquerda e o Dropset 4 à direita, lado a lado sobre fundo preto"
+          alt="Adidas Adizero Dropset Pro à esquerda e Dropset 4 à direita, lado a lado em fundo preto"
         />
-
-        {/* ── BODY + STICKY RAIL ── */}
         <div className="post-shell">
           <div className="post-main">
-
-            {/* ── ARTICLE HERO (deck + meta) ── */}
-            <section className="article-hero">
+            <section className="article-body dropset-method">
               <div className="page">
-                <p className="article-deck">
-                  O Adizero Dropset Pro é um tênis de corrida que aguenta a academia. O Dropset 4 é
-                  um tênis de academia que aguenta um pouco de corrida. Compre o Pro, $150, se a
-                  maior parte da sua semana é corrida e a barra fica abaixo dos 100kg. Compre o 4,
-                  $145, se você levanta pesado e suas corridas dentro do treino são de 1k pra baixo.
-                </p>
-                <div className="article-meta">
-                  <span>Por <a href="/pt-br/author/thais-oney">Thais Oney</a></span>
-                  <span>San Diego, CA</span>
-                  <span>Setembro 2026</span>
-                </div>
-              </div>
-            </section>
-
-            {/* ── INTRO ── */}
-            <section className="article-body">
-              <div className="page">
+                <h2>Como este comparativo foi feito</h2>
                 <p>
-                  A adidas colocou espuma de prova num tênis de academia. O Pro não é um Dropset 5, e
-                  escolher pela data de lançamento em vez do trabalho que o tênis faz é como as
-                  pessoas acabam com o tênis errado no pé por um ano.
+                  Este comparativo reúne especificações da Adidas e testes
+                  independentes publicados. As observações de desempenho são dos
+                  avaliadores identificados; as sugestões por rotina são nossa
+                  interpretação dessa pesquisa. Este texto não é um teste
+                  próprio do Suor Society com os dois tênis.
                 </p>
               </div>
             </section>
-
-            {/* ── O PRO ── */}
             <section id="pro" className="article-body">
               <div className="page">
                 <h2>O que é o Adizero Dropset Pro</h2>
                 <p>
-                  Um tênis de treino híbrido construído em cima de espuma de maratona. $150, drop de
-                  7mm, 29mm de solado no calcanhar e 22mm na frente.
-                </p>
-                <p>
-                  A adidas{" "}
+                  A Adidas colocou espuma de competição num tênis de academia. O
+                  Pro combina Lightstrike Pro, Energyrods, Lighttraxion e
+                  borracha Continental. Foi pensado para treinos híbridos, sem
+                  ser automaticamente a escolha certa para todo dia de corrida.{" "}
                   <a
-                    href="https://www.adidas-group.com/en/magazine/careers/hybrid-hotel-launching-the-adizero-dropset-pro-on-the-global-stage"
+                    href={SOURCES[8]}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    lançou ele em 17 de junho de 2026, no Mundial de HYROX
-                  </a>{" "}
-                  em Estocolmo, o que já diz tudo sobre pra quem ele foi feito. Botaram o tênis na
-                  prova antes de botar na loja.
-                </p>
-                <p>
-                  A parte interessante é a espuma. É Lightstrike Pro, a mesma dos tênis de maratona
-                  da marca, com Energy Rods atravessando a entressola pra empurrar a transição da
-                  passada. Tecnologia de dia de prova aparecendo num tênis em que você vai fazer
-                  burpee. Borracha Continental embaixo, mesh no cabedal e uma palmilha de 2,6mm que é
-                  praticamente nada.
-                </p>
-                <p>
-                  Onde ele é bom: tiro, grama sintética, empurrar trenó, corda naval, qualquer coisa
-                  em que você corre rápido entre uma estação e outra. Quem{" "}
-                  <a
-                    href="https://www.roadtrailrun.com/2026/07/adidas-adizero-dropset-pro-review.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    testou ele como tênis de corrida de verdade
-                  </a>{" "}
-                  achou corrida real ali dentro, e mesmo assim colocou o teto confortável{" "}
-                  <a
-                    href="https://thatfitfriend.com/adidas-adizero-dropset-pro-review/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    em torno de 5k
+                    A Adidas explica a construção aqui
                   </a>
-                  , uns 8km contínuos antes de deixar de ser divertido. Acima de 10k, tênis errado.
+                  .
                 </p>
                 <p>
-                  Onde ele para: a barra. Quem colocou os dois{" "}
+                  O{" "}
                   <a
-                    href="https://thatfitfriend.com/adidas-adizero-dropset-pro-vs-dropset-4/"
+                    href={SOURCES[0]}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    lado a lado no teste
+                    lançamento em Estocolmo
                   </a>{" "}
-                  achou o limite entre 85 e 100kg antes da espuma e da base mais estreita deixarem de
-                  dar aquela sensação de chão firme. Isso não é defeito, é decisão de projeto. Não dá
-                  pra ter espuma de maratona e plataforma de agachamento no mesmo tênis.
+                  colocou o modelo na conversa sobre HYROX em junho de 2026.
+                  Isso mostra o público pretendido; não prova como ele vai ficar
+                  no seu pé. Os testes de corrida e musculação dizem mais do que
+                  o cenário do lançamento.
                 </p>
               </div>
             </section>
-
-
-            {/* ── FOTO ──
-                Fecha a seção do Pro, o trecho mais corrido de texto antes da
-                comparação com o Dropset 4 começar. */}
             <ArticleCover
               src="/adizero-dropset-pro-caio.webp"
               alt="Caio Cabral se posicionando embaixo da barra numa academia escura, usando o Adizero Dropset"
@@ -238,105 +254,185 @@ export default function AdizeroDropsetProVsDropset4PtBr() {
               }
             />
 
-            {/* ── O 4 ── */}
             <section id="four" className="article-body">
               <div className="page">
-                <h2>O que é o adidas Dropset 4</h2>
+                <h2>O que é o Adidas Dropset 4</h2>
                 <p>
-                  Um tênis feito primeiro pra levantar peso, $145, e ele nunca fingiu ser um tênis de
-                  corrida.
-                </p>
-                <p>
-                  Espuma Repetitor no comprimento todo, firme e densa, e continua assim. Um{" "}
-                  <a href="https://runrepeat.com/adidas-dropset-4" target="_blank" rel="noopener noreferrer">
-                    laboratório que cortou o tênis ao meio
+                  O Dropset 4 prioriza o treino funcional de força. A{" "}
+                  <a
+                    href={SOURCES[9]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Adidas lista espuma Repetitor e Energyrods
                   </a>{" "}
-                  mediu 19,9mm no calcanhar e 14,6mm no antepé, ou seja, uns 5 a 6mm de drop e uma
-                  pisada bem mais baixa que a do Pro. Pesa 309g num 43 masculino, pesado perto do
-                  Pro, mas esse peso está trabalhando.
+                  para combinar musculação, saltos e corridas curtas. Os dois
+                  modelos têm Energyrods: o nome da tecnologia, sozinho, não
+                  explica a diferença.
                 </p>
                 <p>
-                  Calcanhar alargado, base larga e um limite de carga definido por quem{" "}
-                  <a href="https://thatfitfriend.com/adidas-dropset-4-review/" target="_blank" rel="noopener noreferrer">
-                    puxou 225kg no terra com eles
+                  A proposta é uma plataforma voltada à academia. A{" "}
+                  <a
+                    href={SOURCES[5]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    avaliação do Dropset 4 por Jake Boly
                   </a>{" "}
-                  sem o tênis sair do lugar. Agachamento pesado, levantamento terra pesado, nenhum
-                  balanço. O 4 também ficou mais leve e mais ágil que os Dropsets anteriores, então
-                  se move melhor dentro de um circuito do que os antigos.
-                </p>
-                <p>
-                  O problema é o de sempre. Firme demais pra corrida de verdade. Serve pra um 400.
-                  Serve pra um 1k no meio do treino. Não serve pra sair numa terça e fazer 8km.
+                  inclui um levantamento terra de 500 lb, cerca de 227 kg. É a
+                  experiência de um avaliador, não uma carga certificada pela
+                  fabricante nem uma promessa de estabilidade para qualquer
+                  pessoa.
                 </p>
               </div>
             </section>
-
-            {/* ── FICHA ── */}
             <section id="specs" className="article-body">
               <div className="page">
-                <h2>A ficha técnica</h2>
-                <div className="swap-table">
-                  <div className="swap-row swap-head">
-                    <span>Adizero Dropset Pro</span>
-                    <span>Dropset 4</span>
-                  </div>
-                  {SPECS.map((s) => (
-                    <div className="swap-row" key={s.label}>
-                      <span><strong>{s.label}</strong> {s.pro}</span>
-                      <span><strong>{s.label}</strong> {s.four}</span>
-                    </div>
-                  ))}
+                <h2>Ficha técnica e fontes</h2>
+                <div
+                  className="dropset-table-wrap"
+                  role="region"
+                  aria-label="Ficha técnica"
+                  tabIndex={0}
+                >
+                  <table className="dropset-table">
+                    <caption>
+                      Referências publicadas: especificações e medições
+                      identificadas
+                    </caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">Item</th>
+                        <th scope="col">Adizero Dropset Pro</th>
+                        <th scope="col">Dropset 4</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {SPECS.map((s) => (
+                        <tr key={s.label}>
+                          <th scope="row">{s.label}</th>
+                          <td>{s.pro}</td>
+                          <td>{s.four}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
+                <p>
+                  Stack é a altura sob o pé; drop é a diferença de altura entre
+                  calcanhar e antepé. Os pesos e as alturas vêm de tamanhos ou
+                  métodos diferentes: são referências com fonte, não uma medição
+                  comparativa controlada. Os preços americanos não representam o
+                  varejo brasileiro.
+                </p>
+                <p>
+                  Fontes da tabela:{" "}
+                  <a
+                    href={SOURCES[7]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Adidas EUA: Dropset Pro
+                  </a>
+                  ,{" "}
+                  <a
+                    href={SOURCES[3]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    That Fit Friend: comparativo
+                  </a>
+                  ,{" "}
+                  <a
+                    href={SOURCES[10]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Adidas: ficha do Pro (Catar)
+                  </a>
+                  ,{" "}
+                  <a
+                    href={SOURCES[11]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Adidas: ficha do Dropset 4 (Catar)
+                  </a>
+                  ,{" "}
+                  <a
+                    href={SOURCES[4]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    RunRepeat: laboratório do Dropset 4
+                  </a>
+                  ,{" "}
+                  <a
+                    href={SOURCES[8]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Adidas: construção do Pro
+                  </a>
+                  ,{" "}
+                  <a
+                    href={SOURCES[9]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Adidas: construção do Dropset 4
+                  </a>
+                  .
+                </p>
               </div>
             </section>
-
-            {/* ── EVOLUÇÃO ── */}
             <section id="upgrade" className="article-body">
               <div className="page">
-                <h2>O Pro é uma evolução do Dropset 4?</h2>
+                <h2>O Pro substitui o Dropset 4?</h2>
                 <p>
-                  Não. O Pro não é o Dropset 5. É outro tênis usando o nome da família, e os dois
-                  estão na prateleira quase pelo mesmo preço de propósito.
+                  Não. Pense neles como respostas a treinos diferentes. A
+                  distinção útil é entre trabalho híbrido com foco na corrida e
+                  academia com foco na força. Um nome mais novo não faz do Pro a
+                  melhor compra para a sua rotina.
                 </p>
                 <p>
-                  A altura do solado conta a história mais rápido. O Pro fica nove milímetros mais
-                  alto no calcanhar que o 4. Mais espuma entre você e o chão é ótimo pra correr e
-                  ruim pra sentir estabilidade embaixo de uma barra pesada. A adidas não melhorou o
-                  Dropset. Ela construiu a outra metade dele.
-                </p>
-                <p>
-                  Ou seja, a pergunta nunca foi qual é melhor. É qual metade do híbrido a sua semana
-                  realmente é. Se você ainda está descobrindo isso, o texto sobre{" "}
-                  <a href="/pt-br/culture/run-and-lift-same-week">
-                    corrida e musculação na mesma semana
-                  </a>{" "}
-                  é o lugar pra começar.
+                  Também não escolha só pela altura do solado. Os números do Pro
+                  na tabela são da fabricante; os do Dropset 4 são medições de
+                  laboratório. Não vieram de um teste com o mesmo método.
+                  Subtraí-los não demonstra uma vantagem exata de desempenho.
                 </p>
               </div>
             </section>
-
-            {/* ── MUSCULAÇÃO ── */}
             <section id="lifting" className="article-body">
               <div className="page">
-                <h2>O Adizero Dropset Pro serve pra musculação?</h2>
-                <p>Pra carga moderada, serve. Pra carga pesada, não.</p>
+                <h2>O Adizero Dropset Pro serve para musculação?</h2>
                 <p>
-                  Halter leve a moderado e barra em série abaixo de 85 a 100kg funciona bem. Acima
-                  disso a Lightstrike Pro afunda e a base mais estreita deixa de parecer uma
-                  plataforma. Os testes também apontaram que a falta de proteção no meio do pé e a
-                  base estreita deixam ele fraco pra CrossFit mais bruto, então subida na corda e
-                  objeto pesado não são o habitat dele.
+                  Ele merece consideração num treino que alterna corrida e
+                  estações de força. Para sessões dedicadas à musculação pesada,
+                  nossa recomendação inicial é o Dropset 4.
                 </p>
                 <p>
-                  Se a sua parte de força é volume acessório entre corridas, o Pro dá conta. Se a
-                  força é o ponto do treino, não dá.
+                  No{" "}
+                  <a
+                    href={SOURCES[3]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    comparativo de Jake Boly
+                  </a>
+                  , a faixa de barra preferida para o Pro fica em torno de
+                  185–225 lb, cerca de 84–102 kg, antes de ele sentir menos
+                  firmeza. É uma observação pessoal, não um limite universal.
+                  Exercício, técnica, peso corporal e ajuste mudam a
+                  experiência.
+                </p>
+                <p>
+                  A pergunta mais útil é: a força é o objetivo principal da
+                  sessão ou uma parte do circuito? Um único número na barra não
+                  responde isso por você.
                 </p>
               </div>
             </section>
-
-            {/* ── FOTO ──
-                Fica logo depois da seção de musculação, que é sobre o que a
-                foto mostra, e quebra o trecho mais corrido de texto do post. */}
             <ArticleCover
               src="/adizero-dropset-caio.webp"
               alt="Caio Cabral agachado com um sandbag numa academia escura, usando o Adizero Dropset"
@@ -350,157 +446,229 @@ export default function AdizeroDropsetProVsDropset4PtBr() {
               }
             />
 
-            {/* ── CORRIDA ── */}
             <section id="running" className="article-body">
               <div className="page">
-                <h2>Dá pra correr com o adidas Dropset 4?</h2>
+                <h2>Dá para correr no Dropset 4? E até onde no Pro?</h2>
                 <p>
-                  Só distância curta. A entressola Repetitor é firme de propósito e tem pouquíssimo
-                  solado pra absorver impacto.
+                  O Dropset 4 foi pensado para acomodar corridas curtas dentro
+                  do treino de academia. A Adidas cita esforços de até 800 m no
+                  lançamento. É um exemplo de uso, não uma regra dizendo que o
+                  tênis deixa de funcionar no metro seguinte.
                 </p>
                 <p>
-                  Um 400 dentro do treino, tranquilo. Um 1k, tranquilo. Mais que isso e você sente
-                  cada passada, que é exatamente a troca que deixa ele bom embaixo da barra.
-                </p>
-              </div>
-            </section>
-
-            {/* ── QUAL COMPRAR ── */}
-            <section id="buy" className="article-body">
-              <div className="page">
-                <h2>Qual dos dois comprar?</h2>
-                <p>
-                  <strong>Compre o Adizero Dropset Pro se</strong> a maior parte da sua semana de
-                  treino é corrida, sua parte de força é halter e barra moderada, você faz HYROX ou
-                  circuito com corrida de verdade entre as estações, ou quer um tênis só pra uma
-                  corrida mais um treino de academia e não vai chegar perto de um dia de agachamento
-                  pesado.
-                </p>
-                <p>
-                  <strong>Compre o Dropset 4 se</strong> você levanta mais de 100kg com frequência,
-                  suas corridas dentro do treino são de 1k pra baixo, você faz treino estilo CrossFit
-                  com corda e objetos, ou já sentiu um tênis torcer embaixo de você numa série
-                  pesada e odiou.
-                </p>
-                <p>
-                  Sinceramente, se você treina cinco ou seis dias e separa entre dias de corrida de
-                  verdade e dias de força de verdade, dois tênis é a resposta certa e sempre foi. O
-                  sonho do tênis único que faz tudo continua sendo um meio-termo. Só que é um
-                  meio-termo bem melhor do que era dois anos atrás.
-                </p>
-              </div>
-            </section>
-
-            {/* ── NUMERAÇÃO ── */}
-            <section id="fit" className="article-body">
-              <div className="page">
-                <h2>Os dois vestem no tamanho certo?</h2>
-                <p>
-                  Os dois vestem no tamanho certo pra pé estreito e médio. Pé largo deve subir meio
-                  número em qualquer um dos dois.
-                </p>
-                <p>
-                  O Pro tem cabedal de volume baixo, o que trava o pé lindamente e vira problema se
-                  você tem peito do pé alto. Os testes também apontaram uma curvatura de ponta
-                  agressiva e o meio do pé estreito, então não é tênis pra continuar no pé no café
-                  depois do treino.
-                </p>
-                <p>
-                  A adidas estreitou bastante a biqueira do Dropset 4 em relação aos Dropsets
-                  anteriores. Ainda sobra espaço pros dedos abrirem num levantamento pesado, e a
-                  travada no calcanhar é boa de verdade, mas pé muito largo deve passar. Alguns
-                  compradores subiram meio número só pelo conforto na ponta.
-                </p>
-                <p>
-                  Nenhum dos dois é tênis pra pé largo. Se esse é o seu caso, essa comparação talvez
-                  não seja a sua comparação.
-                </p>
-              </div>
-            </section>
-
-            {/* ── HYROX ── */}
-            <section id="hyrox" className="article-body">
-              <div className="page">
-                <h2>O Adizero Dropset Pro é bom pra HYROX?</h2>
-                <p>
-                  É uma das opções mais fortes de 2026 pra HYROX, e a adidas fez ele exatamente pra
-                  isso.
-                </p>
-                <p>
-                  As garras de Continental no antepé agarram na grama sintética e no tapete de
-                  borracha no empurrão de trenó sem escorregar, e o calcanhar plano dá ancoragem na
-                  puxada de trenó e no wall ball. Você sai do tapete suado pro piso duro sem trocar
-                  de tênis. A Lightstrike Pro faz o melhor trabalho dela nas estações de corrida, que
-                  é onde a maior parte do tempo se ganha ou se perde.
-                </p>
-                <p>A troca é a troca. Dia de força pesada não é pra ele.</p>
-              </div>
-            </section>
-
-            {/* ── ELITE ── */}
-            <section id="elite" className="article-body">
-              <div className="page">
-                <h2>E o de $275</h2>
-                <p>
-                  Tem um terceiro tênis nessa conversa. O{" "}
+                  A{" "}
                   <a
-                    href="https://www.adidas.com/us/adizero-dropset-elite-training-sneaker/LA6218.html"
+                    href={SOURCES[2]}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Adizero Dropset Elite
+                    avaliação do Pro no That Fit Friend
                   </a>{" "}
-                  chegou antes, março no mundo e maio nos Estados Unidos, a $275. Energy Rim com
-                  fibra de carbono, camada dupla de Lightstrike Pro, 44mm no calcanhar e 32mm no
-                  antepé pra um drop de 12mm, 210 gramas. Um tênis de prova pra quem realmente
-                  compete híbrido em alto nível.
+                  traz a perspectiva de academia e corrida. Já{" "}
+                  <a
+                    href={SOURCES[1]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Sam Winebaum, do Road Trail Run
+                  </a>
+                  , avaliou o Pro especificamente como tênis de corrida:
+                  encontrou capacidade real para correr, com uma traseira
+                  bastante estabilizada. Esse teste não avaliou desempenho no
+                  HYROX.
                 </p>
                 <p>
-                  O Elite é a vitrine. O Pro é a mesma ideia por $150 pro resto de nós, o que faz
-                  dele o tênis mais interessante e o que a maioria das pessoas deveria estar olhando.
+                  Esses contextos diferentes explicam por que não estabelecemos
+                  um máximo fixo de 5 km ou oito quilômetros para o Pro. Para um
+                  dia separado de longão, compare com o tênis de corrida que já
+                  funciona para você. Comprar um híbrido não precisa significar
+                  aposentar esse par.
+                </p>
+              </div>
+            </section>
+            <section id="buy" className="article-body">
+              <div className="page">
+                <h2>Qual tênis combina com a sua semana?</h2>
+                <p>
+                  Estas sugestões são uma interpretação editorial das fontes,
+                  não resultados de um teste próprio. Olhe para uma semana
+                  normal da sua agenda, não para a semana que você espera
+                  conseguir treinar um dia.
+                </p>
+                <h3>Três sessões de força + finalizações curtas</h3>
+                <p>
+                  <strong>Comece pelo Dropset 4.</strong> A estabilidade na
+                  academia é a prioridade; correr ocupa uma parte pequena da
+                  sessão.
+                </p>
+                <h3>Dois treinos estilo HYROX com corridas e estações</h3>
+                <p>
+                  <strong>Considere o Pro.</strong> O treino alterna
+                  repetidamente corrida e exercícios funcionais.
+                </p>
+                <h3>Longões em dias separados + musculação pesada</h3>
+                <p>
+                  <strong>
+                    Mantenha um tênis de corrida e um de academia.
+                  </strong>{" "}
+                  Você escolhe para cada tarefa sem pedir que um único par cubra
+                  os dois extremos.
+                </p>
+                <h3>Aulas ocasionais e academia geral</h3>
+                <p>
+                  <strong>Avalie primeiro o tênis que já tem.</strong> Um par
+                  especializado deve resolver um problema concreto, não apenas
+                  acrescentar outro nome à mochila.
+                </p>
+                <p>
+                  Para organizar essa escolha, veja como{" "}
+                  <a href="/pt-br/culture/run-and-lift-same-week">
+                    correr e fazer musculação na mesma semana
+                  </a>
+                  .
+                </p>
+              </div>
+            </section>
+            <section id="fit" className="article-body">
+              <div className="page">
+                <h2>Numeração, pés largos e espaço no cabedal</h2>
+                <p>
+                  A{" "}
+                  <a
+                    href={SOURCES[7]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Adidas dos EUA recomenda o tamanho habitual para o Pro
+                  </a>
+                  . É um ponto de partida, não uma garantia. O Road Trail Run
+                  descreve um cabedal confortável, mas baixo sobre o pé; o That
+                  Fit Friend destaca um ajuste mais justo. Pés diferentes podem
+                  gerar relatos diferentes.
+                </p>
+                <p>
+                  O{" "}
+                  <a
+                    href={SOURCES[4]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    laboratório do RunRepeat
+                  </a>{" "}
+                  encontrou uma biqueira mais estreita no Dropset 4 do que no
+                  antecessor. Largura, comprimento e espaço sobre o pé são
+                  questões diferentes. Subir meio número aumenta o comprimento,
+                  mas pode não resolver pressão no mediopé ou no peito do pé.
+                </p>
+                <p>
+                  Experimente com a meia que usa para treinar. Observe espaço
+                  nos dedos, movimento do calcanhar e pressão sobre o pé em pé e
+                  em movimento. Confira as condições de devolução antes de usar
+                  na rua. Não converta a numeração americana de um avaliador
+                  para a brasileira sem consultar a tabela da marca.
+                </p>
+              </div>
+            </section>
+            <section id="hyrox" className="article-body">
+              <div className="page">
+                <h2>O Pro é uma boa opção para HYROX?</h2>
+                <p>
+                  O Pro merece entrar na lista porque sua proposta combina
+                  corrida e estações funcionais. Nossa preferência sobre o
+                  Dropset 4 nesse uso vem da finalidade do produto e do
+                  comparativo publicado, não de um teste que o coloque acima de
+                  todos os tênis de HYROX.
+                </p>
+                <p>
+                  Relatos de aderência precisam de contexto: superfície,
+                  desgaste e condições importam. Não prometeríamos que uma sola
+                  nunca vai escorregar. Antes de competir, use o tênis escolhido
+                  em sessões parecidas com os movimentos e transições esperados.
+                </p>
+              </div>
+            </section>
+            <section id="elite" className="article-body">
+              <div className="page">
+                <h2>O que muda no Dropset Elite</h2>
+                <p>
+                  O{" "}
+                  <a
+                    href={SOURCES[6]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Dropset Elite custa US$275
+                  </a>
+                  , contra{" "}
+                  <a
+                    href={SOURCES[7]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    US$150 do Pro
+                  </a>{" "}
+                  nas páginas americanas da Adidas consultadas em 5 de setembro
+                  de 2026. A marca posiciona o Elite para competição híbrida de
+                  elite e o Pro para um uso mais amplo entre treino e preparação
+                  para provas.
+                </p>
+                <p>
+                  Preço maior não é recomendação de compra. Se você está
+                  escolhendo seu primeiro tênis híbrido, resolva a necessidade
+                  do treino e o ajuste antes de pagar por um modelo mais
+                  especializado. Estoque, descontos e preços locais mudam; esses
+                  valores não são preços de varejo no Brasil.
                 </p>
               </div>
             </section>
 
-            {/* ── FAQ ── */}
             <section id="faq" className="faq-section">
               <div className="page">
-                <div className="faq-head">Perguntas frequentes</div>
-                {FAQS.map((f, i) => (
-                  <div key={i} className="faq-item">
-                    <div className="faq-q">{f.q}</div>
+                <h2 className="faq-head">Perguntas frequentes</h2>
+                {FAQS.map((f) => (
+                  <div key={f.q} className="faq-item">
+                    <h3 className="faq-q">{f.q}</h3>
                     <p className="faq-a">{f.a}</p>
                   </div>
                 ))}
               </div>
             </section>
-
-            {/* ── AUTHOR ── */}
-            <AuthorCard />
-
-            {/* ── DISCLAIMER ── */}
+            <section id="sources" className="article-body">
+              <div className="page">
+                <h2>Fontes e leitura adicional</h2>
+                <p>
+                  As páginas da Adidas documentam a proposta e as
+                  especificações; os avaliadores independentes relatam seus
+                  próprios testes. Os resultados não são intercambiáveis.
+                </p>
+                <ul className="dropset-sources">
+                  {SOURCES.map((href, i) => (
+                    <li key={href}>
+                      <a href={href} target="_blank" rel="noopener noreferrer">
+                        {SOURCE_LABELS[i]}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+            <AuthorCard lang="pt" />
             <section className="post-disclaimer-section">
               <div className="page">
                 <p className="post-disclaimer">
-                  As especificações vêm da adidas, de medições de laboratório publicadas e de testes
-                  independentes. Nenhum produto foi enviado como cortesia, nada aqui é publicidade
-                  paga e não há links de afiliado.
+                  Nenhum produto foi recebido de presente, este texto não é
+                  publicidade paga e não contém links de afiliados.
                 </p>
               </div>
             </section>
-
-          </div>{/* /.post-main */}
-
+            <PostSubscribe lang="pt" />
+          </div>
           <aside className="post-aside post-aside--toc">
-            {/* Long read: the rail carries the section links, not the
-                signup card. Short posts get the card instead. */}
-            <PostToc items={TOC} />
+            <PostToc items={TOC} title="Neste texto" />
           </aside>
-        </div>{/* /.post-shell */}
-
+        </div>
       </main>
-
-      <SiteFooter />
+      <SiteFooter lang="pt" />
     </>
   );
 }
