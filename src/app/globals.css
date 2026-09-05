@@ -1501,6 +1501,17 @@ a { color: inherit; text-decoration: none; }
    ============================================================ */
 
 /* Byline link in the article meta row */
+/* A thin rule between the byline, the dateline and the two dates, so the row
+   reads as separate facts rather than one run-on line. Hidden on a phone,
+   where the items wrap and a divider would start a line. */
+.article-meta > * + *::before {
+  content: "|";
+  margin-right: 20px;
+  color: var(--line-2);
+}
+@media (max-width: 720px) {
+  .article-meta > * + *::before { content: none; }
+}
 .article-meta a {
   color: var(--asphalt);
   border-bottom: 1px solid var(--line-2);

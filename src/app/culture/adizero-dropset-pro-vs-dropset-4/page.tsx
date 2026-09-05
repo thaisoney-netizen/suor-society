@@ -166,7 +166,6 @@ export default function AdizeroDropsetProVsDropset4() {
               intervals with functional exercises. Choose the Dropset 4 when
               lifting and gym stability come first, with short runs mixed in.
               The Pro is a separate hybrid model, not a replacement for the 4.
-              Start with the sessions you actually do.
             </p>
             <div className="article-meta">
               <span>

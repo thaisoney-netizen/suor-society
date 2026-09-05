@@ -166,7 +166,7 @@ export default function AdizeroDropsetProVsDropset4() {
               de corrida e exercícios funcionais. Prefira o Dropset 4 quando
               musculação e estabilidade na academia vêm primeiro, com corridas
               curtas no meio. O Pro é outro modelo híbrido, não o substituto do
-              4. Comece pelos treinos que você realmente faz.
+              4.
             </p>
             <div className="article-meta">
               <span>
