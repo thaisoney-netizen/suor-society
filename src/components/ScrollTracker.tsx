@@ -79,7 +79,7 @@ export default function ScrollTracker() {
           <span className="ss-lbl">{t.scrolledLabel}</span>
           <span
             className="ss-lbl"
-            style={{ color: "rgba(255,255,255,.22)", fontSize: 9, letterSpacing: ".12em" }}
+            style={{ color: "rgba(255,255,255,.22)", fontSize: 10, letterSpacing: ".12em" }}
           >
             Suor Society
           </span>

@@ -50,12 +50,12 @@ export const COVER_SIZES = "100vw";
 
 /**
  * The reading measure on a post: what a body paragraph actually occupies
- * (62ch of Inter at 17px, measured in the browser, not guessed). Cover photos
+ * (62ch of Inter at 19px, measured in the browser, not guessed). Cover photos
  * and captions run at exactly this width so the headline, the picture and the
  * copy all share one column and one left edge.
  * ⚑ keep in sync with --measure in globals.css.
  */
-export const POST_MEASURE = 665;
+export const POST_MEASURE = 743;
 
 /**
  * Tallest a portrait cover is ever drawn. A 3:4 frame at the full measure
