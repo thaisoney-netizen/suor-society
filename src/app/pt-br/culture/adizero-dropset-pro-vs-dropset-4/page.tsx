@@ -241,19 +241,6 @@ export default function AdizeroDropsetProVsDropset4() {
                 </p>
               </div>
             </section>
-            <ArticleCover
-              src="/adizero-dropset-pro-caio.webp"
-              alt="Caio Cabral se posicionando embaixo da barra numa academia escura, usando o Adizero Dropset"
-              priority={false}
-              inline
-              caption={
-                <>
-                  Caio Cabral entre séries, de Adizero Dropset.{" "}
-                  <span className="credit">Foto: Gabriel Ribeiro</span>
-                </>
-              }
-            />
-
             <section id="four" className="article-body">
               <div className="page">
                 <h2>O que é o Adidas Dropset 4</h2>
@@ -406,6 +393,20 @@ export default function AdizeroDropsetProVsDropset4() {
             <section id="lifting" className="article-body">
               <div className="page">
                 <h2>O Adizero Dropset Pro serve para musculação?</h2>
+
+                {/* ── FOTO ── Fica logo embaixo da pergunta que ela responde. */}
+                <ArticleCover
+                  src="/adizero-dropset-pro-caio.webp"
+                  alt="Caio Cabral se posicionando embaixo da barra numa academia escura, usando o Adizero Dropset"
+                  priority={false}
+                  inline
+                  caption={
+                    <>
+                      Caio Cabral entre séries, de Adizero Dropset.{" "}
+                      <span className="credit">Foto: Gabriel Ribeiro</span>
+                    </>
+                  }
+                />
                 <p>
                   Ele merece consideração num treino que alterna corrida e
                   estações de força. Para sessões dedicadas à musculação pesada,
@@ -433,19 +434,6 @@ export default function AdizeroDropsetProVsDropset4() {
                 </p>
               </div>
             </section>
-            <ArticleCover
-              src="/adizero-dropset-caio.webp"
-              alt="Caio Cabral agachado com um sandbag numa academia escura, usando o Adizero Dropset"
-              priority={false}
-              inline
-              caption={
-                <>
-                  Caio Cabral num agachamento com sandbag, de Adizero Dropset.{" "}
-                  <span className="credit">Foto: Gabriel Ribeiro</span>
-                </>
-              }
-            />
-
             <section id="running" className="article-body">
               <div className="page">
                 <h2>Dá para correr no Dropset 4? E até onde no Pro?</h2>

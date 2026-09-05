@@ -1126,8 +1126,10 @@ a { color: inherit; text-decoration: none; }
 .article-cover--inline {
   max-width: none;
   padding: 56px 0;
-  border-bottom: 1px solid var(--line);
 }
+/* A photo placed directly under a heading answers that heading, so it keeps the
+   heading's own spacing instead of the full between-sections beat. */
+.article-body h2 + .article-cover--inline { padding: 20px 0 8px; }
 /* --post-col subtracts the rail, which is right for a cover spanning the whole
    shell and wrong here: post-main has already had the rail taken off it. Stop
    on the reading measure instead, so the photo matches the copy around it. */
@@ -1147,11 +1149,9 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.55;
   color: var(--ink-3);
 }
+/* The credit finishes the caption's sentence, so it stays in the caption's own
+   type rather than switching fonts mid-line. */
 .article-cover-caption .credit {
-  font-family: var(--font-jetbrains), monospace;
-  font-size: 13px;
-  letter-spacing: .04em;
-  text-transform: uppercase;
   white-space: nowrap;
 }
 

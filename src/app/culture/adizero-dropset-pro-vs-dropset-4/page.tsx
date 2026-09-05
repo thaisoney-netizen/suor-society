@@ -238,19 +238,6 @@ export default function AdizeroDropsetProVsDropset4() {
                 </p>
               </div>
             </section>
-            <ArticleCover
-              src="/adizero-dropset-pro-caio.webp"
-              alt="Caio Cabral setting up under a barbell in a dark gym, wearing the Adizero Dropset"
-              priority={false}
-              inline
-              caption={
-                <>
-                  Caio Cabral between sets in the Adizero Dropset.{" "}
-                  <span className="credit">Photo: Gabriel Ribeiro</span>
-                </>
-              }
-            />
-
             <section id="four" className="article-body">
               <div className="page">
                 <h2>What the Adidas Dropset 4 is</h2>
@@ -404,6 +391,20 @@ export default function AdizeroDropsetProVsDropset4() {
             <section id="lifting" className="article-body">
               <div className="page">
                 <h2>Is the Adizero Dropset Pro good for lifting?</h2>
+
+                {/* ── PHOTO ── Sits directly under the question it answers. */}
+                <ArticleCover
+                  src="/adizero-dropset-pro-caio.webp"
+                  alt="Caio Cabral setting up under a barbell in a dark gym, wearing the Adizero Dropset"
+                  priority={false}
+                  inline
+                  caption={
+                    <>
+                      Caio Cabral between sets in the Adizero Dropset.{" "}
+                      <span className="credit">Photo: Gabriel Ribeiro</span>
+                    </>
+                  }
+                />
                 <p>
                   For a workout mixing runs with strength stations, it deserves
                   consideration. For dedicated heavy lifting, our starting
@@ -429,19 +430,6 @@ export default function AdizeroDropsetProVsDropset4() {
                 </p>
               </div>
             </section>
-            <ArticleCover
-              src="/adizero-dropset-caio.webp"
-              alt="Caio Cabral in a low squat under a sandbag in a dark gym, wearing the Adizero Dropset"
-              priority={false}
-              inline
-              caption={
-                <>
-                  Caio Cabral working through a sandbag squat in the Adizero Dropset.{" "}
-                  <span className="credit">Photo: Gabriel Ribeiro</span>
-                </>
-              }
-            />
-
             <section id="running" className="article-body">
               <div className="page">
                 <h2>Can you run in the Dropset 4—and how far in the Pro?</h2>
