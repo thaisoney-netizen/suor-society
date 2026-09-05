@@ -24,12 +24,8 @@ const FONT_FACES = [
   ["Bebas Neue", 400, "bebas-neue-400.woff2"],
   ["Barlow Condensed", 600, "barlow-condensed-600.woff2"],
   ["Barlow Condensed", 700, "barlow-condensed-700.woff2"],
-  ["Inter", 400, "inter-400.woff2"],
-  ["Inter", 500, "inter-500.woff2"],
-  ["Inter", 600, "inter-600.woff2"],
-  ["Inter", 700, "inter-700.woff2"],
-  ["JetBrains Mono", 400, "jetbrains-mono-400.woff2"],
-  ["JetBrains Mono", 600, "jetbrains-mono-600.woff2"],
+  ["Inter", "100 900", "inter-400.woff2"],
+  ["JetBrains Mono", "100 800", "jetbrains-mono-400.woff2"],
 ]
   .map(([family, weight, file]) => {
     const data = fs.readFileSync(path.join(__dirname, "..", "src", "app", "fonts", file)).toString("base64");
