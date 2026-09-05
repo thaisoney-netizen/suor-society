@@ -16,6 +16,21 @@ const META = {
 };
 export const metadata = pageMeta({ ...META, paired: true });
 
+// As páginas para as quais o texto aponta, na ordem em que as afirmações
+// aparecem: o lançamento, os testes de corrida, o comparativo direto, as
+// medições de laboratório, o teste de 500 libras e as páginas da própria
+// adidas para o Elite e o Pro.
+const SOURCES = [
+  "https://www.adidas-group.com/en/magazine/careers/hybrid-hotel-launching-the-adizero-dropset-pro-on-the-global-stage",
+  "https://www.roadtrailrun.com/2026/07/adidas-adizero-dropset-pro-review.html",
+  "https://thatfitfriend.com/adidas-adizero-dropset-pro-review/",
+  "https://thatfitfriend.com/adidas-adizero-dropset-pro-vs-dropset-4/",
+  "https://runrepeat.com/adidas-dropset-4",
+  "https://thatfitfriend.com/adidas-dropset-4-review/",
+  "https://www.adidas.com/us/adizero-dropset-elite-training-sneaker/LA6218.html",
+  "https://www.adidas.com/us/adizero-dropset-pro-training-shoes/KH6710.html",
+];
+
 const TOC = [
   { id: "pro", label: "O que é o Dropset Pro" },
   { id: "four", label: "O que é o Dropset 4" },
@@ -71,14 +86,27 @@ const FAQS: { q: string; a: ReactNode; plain?: string }[] = [
   },
   {
     q: "Quanto custa o Adizero Dropset Pro?",
-    a: "$150 no site da adidas, em quatro cores masculinas e três femininas.",
+    plain: "$150 no site da adidas, em quatro cores masculinas e três femininas.",
+    a: (
+      <>
+        $150{" "}
+        <a
+          href="https://www.adidas.com/us/adizero-dropset-pro-training-shoes/KH6710.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          no site da adidas
+        </a>
+        , em quatro cores masculinas e três femininas.
+      </>
+    ),
   },
 ];
 
 export default function AdizeroDropsetProVsDropset4PtBr() {
   return (
     <>
-      <ArticleJsonLd {...META} datePublished="2026-09-04" />
+      <ArticleJsonLd {...META} datePublished="2026-09-04" citation={SOURCES} />
       <FaqJsonLd faqs={FAQS} />
       <SiteNav />
 
@@ -142,9 +170,16 @@ export default function AdizeroDropsetProVsDropset4PtBr() {
                   7mm, 29mm de solado no calcanhar e 22mm na frente.
                 </p>
                 <p>
-                  A adidas lançou ele em 17 de junho de 2026, no Mundial de HYROX em Estocolmo, o que
-                  já diz tudo sobre pra quem ele foi feito. Botaram o tênis na prova antes de botar
-                  na loja.
+                  A adidas{" "}
+                  <a
+                    href="https://www.adidas-group.com/en/magazine/careers/hybrid-hotel-launching-the-adizero-dropset-pro-on-the-global-stage"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    lançou ele em 17 de junho de 2026, no Mundial de HYROX
+                  </a>{" "}
+                  em Estocolmo, o que já diz tudo sobre pra quem ele foi feito. Botaram o tênis na
+                  prova antes de botar na loja.
                 </p>
                 <p>
                   A parte interessante é a espuma. É Lightstrike Pro, a mesma dos tênis de maratona
@@ -155,15 +190,36 @@ export default function AdizeroDropsetProVsDropset4PtBr() {
                 </p>
                 <p>
                   Onde ele é bom: tiro, grama sintética, empurrar trenó, corda naval, qualquer coisa
-                  em que você corre rápido entre uma estação e outra. Os testes colocam o teto
-                  confortável de corrida em torno de 5k, e uns 8km contínuos antes de deixar de ser
-                  divertido. Acima de 10k, tênis errado.
+                  em que você corre rápido entre uma estação e outra. Quem{" "}
+                  <a
+                    href="https://www.roadtrailrun.com/2026/07/adidas-adizero-dropset-pro-review.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    testou ele como tênis de corrida de verdade
+                  </a>{" "}
+                  achou corrida real ali dentro, e mesmo assim colocou o teto confortável{" "}
+                  <a
+                    href="https://thatfitfriend.com/adidas-adizero-dropset-pro-review/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    em torno de 5k
+                  </a>
+                  , uns 8km contínuos antes de deixar de ser divertido. Acima de 10k, tênis errado.
                 </p>
                 <p>
-                  Onde ele para: a barra. A maioria dos testes achou o limite entre 85 e 100kg antes
-                  da espuma e da base mais estreita deixarem de dar aquela sensação de chão firme.
-                  Isso não é defeito, é decisão de projeto. Não dá pra ter espuma de maratona e
-                  plataforma de agachamento no mesmo tênis.
+                  Onde ele para: a barra. Quem colocou os dois{" "}
+                  <a
+                    href="https://thatfitfriend.com/adidas-adizero-dropset-pro-vs-dropset-4/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    lado a lado no teste
+                  </a>{" "}
+                  achou o limite entre 85 e 100kg antes da espuma e da base mais estreita deixarem de
+                  dar aquela sensação de chão firme. Isso não é defeito, é decisão de projeto. Não dá
+                  pra ter espuma de maratona e plataforma de agachamento no mesmo tênis.
                 </p>
               </div>
             </section>
@@ -177,16 +233,22 @@ export default function AdizeroDropsetProVsDropset4PtBr() {
                   corrida.
                 </p>
                 <p>
-                  Espuma Repetitor no comprimento todo, firme e densa, e continua assim. As medições
-                  de laboratório dão 19,9mm no calcanhar e 14,6mm no antepé, ou seja, uns 5 a 6mm de
-                  drop e uma pisada bem mais baixa que a do Pro. Pesa 309g num 43 masculino, pesado
-                  perto do Pro, mas esse peso está trabalhando.
+                  Espuma Repetitor no comprimento todo, firme e densa, e continua assim. Um{" "}
+                  <a href="https://runrepeat.com/adidas-dropset-4" target="_blank" rel="noopener noreferrer">
+                    laboratório que cortou o tênis ao meio
+                  </a>{" "}
+                  mediu 19,9mm no calcanhar e 14,6mm no antepé, ou seja, uns 5 a 6mm de drop e uma
+                  pisada bem mais baixa que a do Pro. Pesa 309g num 43 masculino, pesado perto do
+                  Pro, mas esse peso está trabalhando.
                 </p>
                 <p>
-                  Calcanhar alargado, base larga e um limite de carga que os testes colocam perto dos
-                  225kg. Agachamento pesado, levantamento terra pesado, nenhum balanço. O 4 também
-                  ficou mais leve e mais ágil que os Dropsets anteriores, então se move melhor dentro
-                  de um circuito do que os antigos.
+                  Calcanhar alargado, base larga e um limite de carga definido por quem{" "}
+                  <a href="https://thatfitfriend.com/adidas-dropset-4-review/" target="_blank" rel="noopener noreferrer">
+                    puxou 225kg no terra com eles
+                  </a>{" "}
+                  sem o tênis sair do lugar. Agachamento pesado, levantamento terra pesado, nenhum
+                  balanço. O 4 também ficou mais leve e mais ágil que os Dropsets anteriores, então
+                  se move melhor dentro de um circuito do que os antigos.
                 </p>
                 <p>
                   O problema é o de sempre. Firme demais pra corrida de verdade. Serve pra um 400.
@@ -350,10 +412,18 @@ export default function AdizeroDropsetProVsDropset4PtBr() {
               <div className="page">
                 <h2>E o de $275</h2>
                 <p>
-                  Tem um terceiro tênis nessa conversa. O Adizero Dropset Elite chegou antes, março
-                  no mundo e maio nos Estados Unidos, a $275. Energy Rim com fibra de carbono, camada
-                  dupla de Lightstrike Pro, 44mm no calcanhar e 32mm no antepé pra um drop de 12mm,
-                  210 gramas. Um tênis de prova pra quem realmente compete híbrido em alto nível.
+                  Tem um terceiro tênis nessa conversa. O{" "}
+                  <a
+                    href="https://www.adidas.com/us/adizero-dropset-elite-training-sneaker/LA6218.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Adizero Dropset Elite
+                  </a>{" "}
+                  chegou antes, março no mundo e maio nos Estados Unidos, a $275. Energy Rim com
+                  fibra de carbono, camada dupla de Lightstrike Pro, 44mm no calcanhar e 32mm no
+                  antepé pra um drop de 12mm, 210 gramas. Um tênis de prova pra quem realmente
+                  compete híbrido em alto nível.
                 </p>
                 <p>
                   O Elite é a vitrine. O Pro é a mesma ideia por $150 pro resto de nós, o que faz

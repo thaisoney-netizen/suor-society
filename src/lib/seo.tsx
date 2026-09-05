@@ -131,6 +131,7 @@ export function ArticleJsonLd({
   image,
   datePublished,
   dateModified,
+  citation,
 }: {
   path: string;
   title: string;
@@ -140,6 +141,12 @@ export function ArticleJsonLd({
   /** ISO date, e.g. "2026-07-06". */
   datePublished: string;
   dateModified?: string;
+  /**
+   * External sources the post's claims rest on, as absolute URLs. Answer
+   * engines read `citation` to see what a piece is sourced from, so pass the
+   * same pages the body already links out to rather than a wider reading list.
+   */
+  citation?: string[];
 }) {
   const lang = langOfPath(path);
   return (
@@ -157,6 +164,7 @@ export function ArticleJsonLd({
         mainEntityOfPage: `${SITE_URL}${path}`,
         author: personFor(lang),
         publisher: ORG,
+        ...(citation?.length && { citation }),
       }}
     />
   );
