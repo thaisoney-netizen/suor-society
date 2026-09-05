@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
-import LanguageBanner from "@/components/LanguageBanner";
 import { dictionaries, localizeHref, type Lang } from "@/i18n/dictionaries";
 import { track } from "@/lib/analytics";
 
@@ -178,9 +177,6 @@ export default function HomeView({ lang }: { lang: Lang }) {
 
       {/* FOOTER */}
       <SiteFooter lang={lang} />
-
-      {/* Suggest pt-BR to Portuguese-speaking visitors (English home only). */}
-      {lang === "en" && <LanguageBanner />}
     </>
   );
 }

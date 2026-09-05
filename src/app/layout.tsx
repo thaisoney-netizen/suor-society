@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, Barlow_Condensed, Inter, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import LanguageBanner from "@/components/LanguageBanner";
 import ScrollTracker from "@/components/ScrollTracker";
 import { SITE_URL } from "@/lib/seo";
 
@@ -84,6 +85,9 @@ export default function RootLayout({
       } as React.CSSProperties}
     >
       <body style={{ paddingBottom: "60px" }}>
+        {/* "Vindo do Brasil?" strip for pt-speaking visitors on English pages;
+            renders nothing on /pt-br routes or for other browser languages. */}
+        <LanguageBanner />
         {children}
         <ScrollTracker />
         {/*
