@@ -24,7 +24,6 @@ const RACE_PICKS_HREF: Record<Lang, string> = {
 const navLinksFor = (lang: Lang) => [
   { href: RACE_PICKS_HREF[lang], label: "Race Picks" },
   { href: "/about", label: "The Culture" },
-  { href: "/crew", label: "Crew" },
   { href: "/dispatch", label: "Dispatch" },
 ];
 

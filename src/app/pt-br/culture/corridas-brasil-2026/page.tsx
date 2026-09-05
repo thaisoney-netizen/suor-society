@@ -177,7 +177,7 @@ export default function CorridasBrasil2026() {
               Treinando pra uma prova híbrida também? O{" "}
               <a href="/pt-br/dispatch/hyrox-brasil-2026">HYROX no Brasil em 2026</a> tem data
               confirmada em São Paulo e a nossa leitura de como montar o bloco de treino. E quando
-              estiver por San Diego, a <a href="/pt-br/crew">crew</a> corre junto.
+              estiver por San Diego, a crew corre junto.
             </p>
             <p>
               Nos EUA? Veja as{" "}

@@ -11,7 +11,6 @@ const RACE_PICKS_HREF: Record<Lang, string> = {
 
 const footLinksFor = (lang: Lang) => [
   { href: RACE_PICKS_HREF[lang], label: "Race Picks" },
-  { href: "/crew", label: "Crew" },
   { href: "/dispatch", label: "Dispatch" },
   { href: "/about", label: "The Culture" },
 ];

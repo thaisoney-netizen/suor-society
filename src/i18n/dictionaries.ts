@@ -570,9 +570,9 @@ export const dictionaries: Record<Lang, Dictionary> = {
           desc: "Open-entry races still on the calendar, no qualifier needed",
         },
         {
-          href: "/crew",
-          title: "Crew runs",
-          desc: "San Diego, weekend mornings, free and every pace",
+          href: "/culture/join-a-run-club-not-a-runner",
+          title: "Find a run club",
+          desc: "How to pick one in San Diego, and what to expect your first time",
         },
         {
           href: "/dispatch",
@@ -1087,9 +1087,9 @@ export const dictionaries: Record<Lang, Dictionary> = {
           desc: "Provas com inscrição aberta no Brasil, sem tempo mínimo",
         },
         {
-          href: "/crew",
-          title: "Treinos em grupo",
-          desc: "San Diego, manhãs de fim de semana, de graça e todos os ritmos",
+          href: "/culture/join-a-run-club-not-a-runner",
+          title: "Achar um clube",
+          desc: "Como escolher um clube de corrida e o que esperar do primeiro treino",
         },
         {
           href: "/dispatch",
