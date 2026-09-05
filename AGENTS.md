@@ -28,9 +28,9 @@ robots, hreflang, or OG work. Follow this and nothing needs correcting later:
    "New/Novo" meta tag) and `author.articles` for each locale it belongs to.
 6. **Media.** Hero images go in `public/` as WebP ≤ 300 KB (use
    `cwebp -q 82 -resize 1600 0 in.jpg -o out.webp`). No PNG/JPEG over 500 KB.
-   Export covers at **1600px wide or more** — that is the bar for the
-   full-bleed treatment (`FULL_BLEED_MIN_WIDTH` in `src/lib/photos.ts`), and
-   anything under it drops to the contained plate instead.
+   Export covers at **1200px wide or more**: a cover is drawn at the reading
+   measure (588px, `POST_MEASURE` in `src/lib/photos.ts`), so 1200px covers a
+   retina screen exactly and anything above it is headroom, not waste.
 
    **After adding or replacing any photo, run
    `node scripts/generate-photo-manifest.mjs`** and commit
@@ -45,25 +45,33 @@ robots, hreflang, or OG work. Follow this and nothing needs correcting later:
    new constant if the slot is new. Raw `<img>` is fine only for the SVG/PNG
    wordmarks in `SiteNav`/`SiteFooter`.
 
-   For a post cover, render `<ArticleCover src alt toc? objectPosition? />`.
-   It picks the treatment from the file's own pixel count — full-bleed band,
-   portrait plate, or contained plate beside a block of section links — so a
-   photo is never drawn wider than it was shot. Don't hand-roll a cover: swap
-   in a bigger export later and the page upgrades itself. On a page that shows
-   the plate the header already lists the sections, so its sticky rail carries
-   `<PostSubscribe />` instead of `<PostToc />`; that swap is driven by
-   `fitsFullBleed(META.image)` and needs no editing when a photo changes.
+   For a post cover, render `<ArticleCover src alt caption? />`. There is one
+   treatment and no options to weigh: the photo runs at the reading measure,
+   on the same left edge as the headline and the copy, at its own ratio with
+   no crop. Landscapes fill the measure; portraits are capped by height
+   (`PORTRAIT_COVER_MAX_HEIGHT`) so a tall frame can't swallow a phone screen.
+   The measure caps itself against the page gutters, so the same rule holds
+   from desktop to phone with no extra breakpoint. Pass a `caption` rather
+   than writing a paragraph after the component: only inside the figure does
+   the caption line up with the photo it explains.
 
-   `.article-cover` is already height-capped on mobile (see the "MOBILE HEADER
-   IMAGE SIZING" comment in `globals.css`), so covers stay a short landscape
-   band on phones instead of a full-screen image. If you add any NEW full-bleed
-   header image with its own class, cap it there too: on
-   `max-width: 720–860px` set
-   `aspect-ratio: auto; height: 60vw; min-height: 220px; max-height: 340px;`
-   and place that override AFTER the element's base rule so the `aspect-ratio`
-   override wins. Never ship a portrait-ratio (4/5, 3/4) image that goes
-   full-width on mobile without capping its height. Run /responsive-check
-   before pushing.
+   The rail is now a plain editorial choice, not a consequence of the photo:
+   a post with a table of contents carries `<PostToc />`, a short post carries
+   `<PostSubscribe />`. Ask which at publish time.
+
+   The post shell's numbers live in one place, the `--post-*` variables on
+   `.post` in `globals.css` (shell width, gutter, rail, gap, measure). Size
+   anything that has to line up with the column off those instead of retyping
+   1100px or 588px, and keep `POST_MEASURE` in `src/lib/photos.ts` in sync
+   with `--post-measure`.
+
+   A cover needs no mobile height cap any more, because it is never wider than
+   the text column. If you add a NEW **full-bleed** header image with its own
+   class, cap it on `max-width: 720–860px` with
+   `aspect-ratio: auto; height: 60vw; min-height: 220px; max-height: 340px;`,
+   placed AFTER the element's base rule so the `aspect-ratio` override wins.
+   Never ship a portrait-ratio (4/5, 3/4) image that goes full-width on mobile
+   without capping its height. Run /responsive-check before pushing.
 7. **Race data** lives in `src/content/races-*.json` — the guide pages and the
    gated PDFs render the same JSON, through the shared
    `src/components/RaceRow.tsx`. After editing it, run
@@ -166,9 +174,9 @@ from the untouched originals, which live on Thais's machine and not in this
 repo, so ask for them rather than trying to reverse the grade in software.
 
 If a photo is too small for the slot it has to fill, change the slot, not the
-photo. `.article-cover--portrait` in `globals.css` exists for that reason: a
-portrait shot gets a contained plate at its own ratio instead of being
-stretched or cropped into a full-bleed 16:9 window.
+photo. `.article-cover-media.is-portrait` in `globals.css` exists for that
+reason: a portrait shot runs at its own ratio, capped by height, instead of
+being stretched or cropped into a 16:9 window.
 <!-- END:photo-handling -->
 
 <!-- BEGIN:branch-hygiene -->
