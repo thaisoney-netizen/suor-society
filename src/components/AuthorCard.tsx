@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { AUTHOR_PATH, dictionaries, localizeHref, type Lang } from "@/i18n/dictionaries";
+import { photo, AVATAR_SIZES } from "@/lib/photos";
 
 // Compact author box shown at the end of every post, linking to the bio page.
 export default function AuthorCard({ lang = "en" }: { lang?: Lang }) {
@@ -9,8 +11,7 @@ export default function AuthorCard({ lang = "en" }: { lang?: Lang }) {
       <div className="page">
         <div className="author-card">
           <a className="author-card-photo" href={href}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/thais-oney.jpg" alt={t.photoAlt} />
+            <Image {...photo("/thais-oney.jpg")} alt={t.photoAlt} sizes={AVATAR_SIZES} />
           </a>
           <div className="author-card-body">
             <div className="author-card-label">{t.cardLabel}</div>

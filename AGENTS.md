@@ -28,11 +28,37 @@ robots, hreflang, or OG work. Follow this and nothing needs correcting later:
    "New/Novo" meta tag) and `author.articles` for each locale it belongs to.
 6. **Media.** Hero images go in `public/` as WebP ≤ 300 KB (use
    `cwebp -q 82 -resize 1600 0 in.jpg -o out.webp`). No PNG/JPEG over 500 KB.
-   For the post cover, reuse the existing `.article-cover` block — it is
-   already height-capped on mobile (see the "MOBILE HEADER IMAGE SIZING"
-   comment in `globals.css`), so covers stay a short landscape band on phones
-   instead of a full-screen image. If you add any NEW full-bleed header image
-   with its own class, cap it there too: on `max-width: 720–860px` set
+   Export covers at **1600px wide or more** — that is the bar for the
+   full-bleed treatment (`FULL_BLEED_MIN_WIDTH` in `src/lib/photos.ts`), and
+   anything under it drops to the contained plate instead.
+
+   **After adding or replacing any photo, run
+   `node scripts/generate-photo-manifest.mjs`** and commit
+   `src/lib/photo-sizes.ts` with it. Every photo renders through `next/image`,
+   which needs the real pixel size to build a srcset and reserve its box;
+   `photo()` throws at build time if a file is missing from the manifest, so a
+   forgotten run fails the build rather than shipping a broken page.
+
+   Never write a raw `<img>` for a photograph. Use
+   `<Image {...photo(src)} alt=… sizes={…} />` with the slot constant from
+   `src/lib/photos.ts` (`CARD_SIZES`, `COVER_SIZES`, `HALF_SIZES`…), adding a
+   new constant if the slot is new. Raw `<img>` is fine only for the SVG/PNG
+   wordmarks in `SiteNav`/`SiteFooter`.
+
+   For a post cover, render `<ArticleCover src alt toc? objectPosition? />`.
+   It picks the treatment from the file's own pixel count — full-bleed band,
+   portrait plate, or contained plate beside a block of section links — so a
+   photo is never drawn wider than it was shot. Don't hand-roll a cover: swap
+   in a bigger export later and the page upgrades itself. On a page that shows
+   the plate the header already lists the sections, so its sticky rail carries
+   `<PostSubscribe />` instead of `<PostToc />`; that swap is driven by
+   `fitsFullBleed(META.image)` and needs no editing when a photo changes.
+
+   `.article-cover` is already height-capped on mobile (see the "MOBILE HEADER
+   IMAGE SIZING" comment in `globals.css`), so covers stay a short landscape
+   band on phones instead of a full-screen image. If you add any NEW full-bleed
+   header image with its own class, cap it there too: on
+   `max-width: 720–860px` set
    `aspect-ratio: auto; height: 60vw; min-height: 220px; max-height: 340px;`
    and place that override AFTER the element's base rule so the `aspect-ratio`
    override wins. Never ship a portrait-ratio (4/5, 3/4) image that goes

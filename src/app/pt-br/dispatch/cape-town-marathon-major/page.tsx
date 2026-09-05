@@ -1,5 +1,6 @@
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import ArticleCover from "@/components/ArticleCover";
 import { PostSubscribe } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
 import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
@@ -47,13 +48,10 @@ export default function CapeTownMajorPtBr() {
         </section>
 
         {/* ── COVER IMAGE ── */}
-        <div className="article-cover">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/cape-town-hero.jpg"
-            alt="Vista aérea da Cidade do Cabo com a Table Mountain e o estádio, casa da oitava Abbott World Marathon Major"
-          />
-        </div>
+        <ArticleCover
+          src="/cape-town-hero.jpg"
+          alt="Vista aérea da Cidade do Cabo com a Table Mountain e o estádio, casa da oitava Abbott World Marathon Major"
+        />
 
         {/* ── BODY + STICKY RAIL ── */}
         <div className="post-shell">

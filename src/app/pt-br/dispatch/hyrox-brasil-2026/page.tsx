@@ -1,5 +1,6 @@
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import ArticleCover from "@/components/ArticleCover";
 import { PostSubscribe } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
 import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
@@ -64,13 +65,10 @@ export default function HyroxBrasil2026() {
         </section>
 
         {/* ── COVER IMAGE ── */}
-        <div className="article-cover">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/hyrox-hero.jpg"
-            alt="Atleta levantando kettlebell acima da cabeça em treino no estilo HYROX"
-          />
-        </div>
+        <ArticleCover
+          src="/hyrox-hero.jpg"
+          alt="Atleta levantando kettlebell acima da cabeça em treino no estilo HYROX"
+        />
 
         {/* ── BODY + STICKY RAIL ── */}
         <div className="post-shell">

@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { photo, CARD_SIZES } from "@/lib/photos";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import LanguageBanner from "@/components/LanguageBanner";
@@ -120,8 +122,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
                   <h3 className="lc-title">{post.title}</h3>
                 </div>
                 <div className="lc-img">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={post.img} alt={post.title} />
+                  <Image {...photo(post.img)} alt={post.title} sizes={CARD_SIZES} />
                 </div>
                 <div className="lc-content">
                   <p className="lc-desc">{post.desc}</p>

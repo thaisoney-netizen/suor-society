@@ -1,7 +1,9 @@
 import type { ReactNode } from "react";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
-import { PostToc } from "@/components/PostAside";
+import ArticleCover from "@/components/ArticleCover";
+import { fitsFullBleed } from "@/lib/photos";
+import { PostToc, PostSubscribe } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
 import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
@@ -96,14 +98,12 @@ export default function HalfMarathonWorldRecord() {
         {/* Library shot from London in April, not from Buenos Aires. The
             caption below says so on purpose: without it the cover reads as
             him winning the race this post is about. */}
-        <div className="article-cover">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            style={{ objectPosition: "center 10%" }}
-            src="/half-marathon-record-hero.jpg"
-            alt="Yomif Kejelcha running down The Mall to the London Marathon finish, Buckingham Palace behind him"
-          />
-        </div>
+        <ArticleCover
+          src="/half-marathon-record-hero.jpg"
+          alt="Yomif Kejelcha running down The Mall to the London Marathon finish, Buckingham Palace behind him"
+          objectPosition="center 10%"
+          toc={TOC}
+        />
         <p className="article-cover-caption">
           Kejelcha finishing second at the London Marathon in April, where his 1:59:41 was the
           fastest marathon debut ever run.{" "}
@@ -321,7 +321,13 @@ export default function HalfMarathonWorldRecord() {
           </div>{/* /.post-main */}
 
           <aside className="post-aside post-aside--toc">
-            <PostToc items={TOC} />
+            {/* The plate cover already lists the sections, so a rail ToC would
+                repeat it. Full-bleed covers don't, and keep the ToC. */}
+            {fitsFullBleed(META.image) ? (
+              <PostToc items={TOC} />
+            ) : (
+              <PostSubscribe />
+            )}
           </aside>
         </div>{/* /.post-shell */}
 

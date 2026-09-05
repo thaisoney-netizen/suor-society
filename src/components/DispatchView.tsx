@@ -1,4 +1,6 @@
+import Image from "next/image";
 import SiteNav from "@/components/SiteNav";
+import { photo, CARD_SIZES } from "@/lib/photos";
 import SiteFooter from "@/components/SiteFooter";
 import DispatchForm from "@/components/DispatchForm";
 import { dictionaries, localizeHref, type Lang } from "@/i18n/dictionaries";
@@ -55,8 +57,7 @@ export default function DispatchView({ lang }: { lang: Lang }) {
                         <h2 className="archive-entry-title">{post.title}</h2>
                       </div>
                       <div className="archive-entry-img">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={post.img} alt={post.title} />
+                        <Image {...photo(post.img)} alt={post.title} sizes={CARD_SIZES} />
                       </div>
                       <div className="archive-entry-body">
                         <p className="archive-entry-desc">{post.desc}</p>
@@ -86,8 +87,7 @@ export default function DispatchView({ lang }: { lang: Lang }) {
                             <h2 className="archive-entry-title">{post.title}</h2>
                           </div>
                           <div className="archive-entry-img">
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src={post.img} alt={post.title} />
+                            <Image {...photo(post.img)} alt={post.title} sizes={CARD_SIZES} />
                           </div>
                           <div className="archive-entry-body">
                             <p className="archive-entry-desc">{post.desc}</p>

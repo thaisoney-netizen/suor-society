@@ -1,7 +1,9 @@
 import type { ReactNode } from "react";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
-import { PostToc } from "@/components/PostAside";
+import ArticleCover from "@/components/ArticleCover";
+import { fitsFullBleed } from "@/lib/photos";
+import { PostToc, PostSubscribe } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
 import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
@@ -85,14 +87,13 @@ export default function PorQueTodoMundoComecouACorrer() {
         {/* ── COVER IMAGE ── */}
         {/* Heads sit right at the top of this frame, so the shared `center 30%`
             crop cuts the rightmost runner's face. Anchor to the top instead. */}
-        <div className="article-cover">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            style={{ objectPosition: "center top" }}
-            src="/running-boom-hero.webp"
-            alt="Quatro corredores lado a lado numa cobertura acima da cidade num dia claro"
-          />
-        </div>
+        <ArticleCover
+          src="/running-boom-hero.webp"
+          alt="Quatro corredores lado a lado numa cobertura acima da cidade num dia claro"
+          objectPosition="center top"
+          toc={TOC}
+          tocTitle="Nesta matéria"
+        />
 
         {/* ── BODY + STICKY RAIL ── */}
         <div className="post-shell">
@@ -295,7 +296,13 @@ export default function PorQueTodoMundoComecouACorrer() {
           </div>{/* /.post-main */}
 
           <aside className="post-aside post-aside--toc">
-            <PostToc items={TOC} title="Nesta página" />
+            {/* The plate cover already lists the sections, so a rail ToC would
+                repeat it. Full-bleed covers don't, and keep the ToC. */}
+            {fitsFullBleed(META.image) ? (
+              <PostToc items={TOC} title="Nesta página" />
+            ) : (
+              <PostSubscribe lang="pt" />
+            )}
           </aside>
         </div>{/* /.post-shell */}
 

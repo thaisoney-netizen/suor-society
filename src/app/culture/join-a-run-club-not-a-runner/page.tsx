@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import ArticleCover from "@/components/ArticleCover";
 import { PostSubscribe } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
 import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
@@ -76,13 +77,10 @@ export default function JoinARunClub() {
         </section>
 
         {/* ── COVER IMAGE ── */}
-        <div className="article-cover">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/run-club-hero.jpg"
-            alt="Group of runners mid-stride on a sunny street, motion-blurred legs and running shoes at a group run"
-          />
-        </div>
+        <ArticleCover
+          src="/run-club-hero.jpg"
+          alt="Group of runners mid-stride on a sunny street, motion-blurred legs and running shoes at a group run"
+        />
 
         {/* ── BODY + STICKY RAIL ── */}
         <div className="post-shell">

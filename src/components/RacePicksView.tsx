@@ -1,4 +1,6 @@
+import Image from "next/image";
 import SiteNav from "@/components/SiteNav";
+import { photo, COVER_SIZES } from "@/lib/photos";
 import SiteFooter from "@/components/SiteFooter";
 import { dictionaries, localizeHref, type Lang } from "@/i18n/dictionaries";
 
@@ -28,8 +30,7 @@ export default function RacePicksView({ lang }: { lang: Lang }) {
           <div className="page">
             <a className="rp-feature" href={localizeHref(t.featureHref, lang)}>
               <div className="rp-feature-media">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={t.featureImg} alt={t.featureTitle} />
+                <Image {...photo(t.featureImg)} alt={t.featureTitle} sizes={COVER_SIZES} priority />
               </div>
               <div className="rp-feature-body">
                 <div className="archive-entry-meta">

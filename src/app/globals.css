@@ -1089,6 +1089,93 @@ a { color: inherit; text-decoration: none; }
   .article-cover--portrait img { max-height: 52vh; }
 }
 
+/* ── Contained cover plate ──  .article-plate
+   For a landscape cover whose file is too small to survive the full-bleed
+   band. A 954px photo drawn across a 1440px window is stretched half again
+   past its own resolution, and no amount of encoding hides that. So the slot
+   gives way instead of the photo: the shot runs at a size it can actually
+   fill, and the space it no longer needs carries the section links.
+   ArticleCover.tsx picks this on its own from the file's pixel count, and the
+   figure's inline max-width is the photo's own width, so the browser can never
+   draw it bigger than it was shot. */
+.article-plate {
+  padding: 0 0 4px;
+}
+.article-plate-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+/* No section links to show: the photo just centres at its own width. */
+.article-plate-grid.is-solo { grid-template-columns: 1fr; justify-items: center; }
+
+.article-plate-media {
+  margin: 0;
+  width: 100%;
+  background: var(--asphalt);
+  overflow: hidden;
+}
+.article-plate-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* the block — bone card, square, same label voice as the sticky rail */
+.article-plate-block {
+  background: var(--bone);
+  padding: 30px 28px;
+  border-top: 2px solid var(--asphalt);
+}
+.plate-block-label {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 10px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 18px;
+}
+.plate-block-list { list-style: none; margin: 0; padding: 0; }
+.plate-block-list li + li { border-top: 1px solid var(--line); }
+.plate-block-list a {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 12px;
+  align-items: baseline;
+  padding: 11px 0;
+  transition: color .14s ease-out;
+}
+.plate-block-list a:hover { color: var(--accent); }
+.plate-block-num {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 11px;
+  letter-spacing: .1em;
+  color: var(--ink-3);
+}
+.plate-block-text {
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  line-height: 1.35;
+}
+
+/* Phones: stack, photo first, and cap it to a short band like every other
+   header image on the site. ⚑ mobile header image sizing. */
+@media (max-width: 860px) {
+  .article-plate-grid { grid-template-columns: 1fr; gap: 20px; }
+  .article-plate-media { max-width: 100% !important; }
+  .article-plate-media img {
+    height: 56vw;
+    min-height: 200px;
+    max-height: 300px;
+    object-fit: cover;
+  }
+  .article-plate-block { padding: 24px 22px; }
+}
+
 /* ── Cover caption + photo credit ──
    Sits directly under .article-cover. Use it whenever the cover is a
    library shot rather than the event the post is about, so the image

@@ -1,7 +1,9 @@
 import type { ReactNode } from "react";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
-import { PostToc } from "@/components/PostAside";
+import ArticleCover from "@/components/ArticleCover";
+import { fitsFullBleed } from "@/lib/photos";
+import { PostToc, PostSubscribe } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
 import { pageMeta, ArticleJsonLd, FaqJsonLd, HowToJsonLd } from "@/lib/seo";
 
@@ -106,13 +108,12 @@ export default function CorridaEMusculacaoNaMesmaSemana() {
         </section>
 
         {/* ── COVER IMAGE ── */}
-        <div className="article-cover">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/run-and-lift-hero.webp"
-            alt="Um corredor ajoelhado na pista amarrando o tênis antes do treino"
-          />
-        </div>
+        <ArticleCover
+          src="/run-and-lift-hero.webp"
+          alt="Um corredor ajoelhado na pista amarrando o tênis antes do treino"
+          toc={TOC}
+          tocTitle="Nesta matéria"
+        />
 
         {/* ── BODY + STICKY RAIL ── */}
         <div className="post-shell">
@@ -316,7 +317,13 @@ export default function CorridaEMusculacaoNaMesmaSemana() {
           </div>{/* /.post-main */}
 
           <aside className="post-aside post-aside--toc">
-            <PostToc items={TOC} title="Nesta página" />
+            {/* The plate cover already lists the sections, so a rail ToC would
+                repeat it. Full-bleed covers don't, and keep the ToC. */}
+            {fitsFullBleed(META.image) ? (
+              <PostToc items={TOC} title="Nesta página" />
+            ) : (
+              <PostSubscribe lang="pt" />
+            )}
           </aside>
         </div>{/* /.post-shell */}
 

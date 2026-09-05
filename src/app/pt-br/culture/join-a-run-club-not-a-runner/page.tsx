@@ -1,5 +1,6 @@
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import ArticleCover from "@/components/ArticleCover";
 import { PostSubscribe } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
 import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
@@ -63,13 +64,10 @@ export default function EntrarNumClubeDeCorrida() {
         </section>
 
         {/* ── COVER IMAGE ── */}
-        <div className="article-cover">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/run-club-hero.jpg"
-            alt="Grupo de corredores em movimento numa rua ensolarada, pernas e tênis desfocados num treino em grupo"
-          />
-        </div>
+        <ArticleCover
+          src="/run-club-hero.jpg"
+          alt="Grupo de corredores em movimento numa rua ensolarada, pernas e tênis desfocados num treino em grupo"
+        />
 
         {/* ── BODY + STICKY RAIL ── */}
         <div className="post-shell">

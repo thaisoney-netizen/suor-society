@@ -1,4 +1,6 @@
+import Image from "next/image";
 import SiteNav from "@/components/SiteNav";
+import { photo, HALF_SIZES, SCENE_SIZES } from "@/lib/photos";
 import SiteFooter from "@/components/SiteFooter";
 import { dictionaries, type Lang } from "@/i18n/dictionaries";
 
@@ -79,7 +81,7 @@ export default function CrewView({ lang }: { lang: Lang }) {
             </div>
           </div>
           <div className="crew-split-media">
-            <img src="/crew-run.jpg" alt={t.splitImgAlt} />
+            <Image {...photo("/crew-run.jpg")} alt={t.splitImgAlt} sizes={HALF_SIZES} />
           </div>
         </section>
 
@@ -99,9 +101,9 @@ export default function CrewView({ lang }: { lang: Lang }) {
             <p className="about-pg-eye">{t.scenesEye}</p>
           </div>
           <div className="crew-scenes-grid">
-            <img src="/road-run.jpg" alt={t.scenesAlts.road} />
-            <img src="/trail-run.jpg" alt={t.scenesAlts.trail} />
-            <img src="/crew-suor.webp" alt={t.scenesAlts.crew} />
+            <Image {...photo("/road-run.jpg")} alt={t.scenesAlts.road} sizes={SCENE_SIZES} />
+            <Image {...photo("/trail-run.jpg")} alt={t.scenesAlts.trail} sizes={SCENE_SIZES} />
+            <Image {...photo("/crew-suor.webp")} alt={t.scenesAlts.crew} sizes={SCENE_SIZES} />
           </div>
         </section>
       </main>

@@ -1,7 +1,9 @@
 import type { ReactNode } from "react";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
-import { PostToc } from "@/components/PostAside";
+import ArticleCover from "@/components/ArticleCover";
+import { fitsFullBleed } from "@/lib/photos";
+import { PostToc, PostSubscribe } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
 import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
@@ -96,14 +98,13 @@ export default function RecordeMundialMeiaMaratona() {
         {/* Imagem de arquivo de Londres, em abril, não de Buenos Aires. A
             legenda abaixo diz isso de propósito: sem ela a capa dá a entender
             que ele está vencendo a prova de que este post trata. */}
-        <div className="article-cover">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            style={{ objectPosition: "center 10%" }}
-            src="/half-marathon-record-hero.jpg"
-            alt="Yomif Kejelcha correndo pela The Mall rumo à chegada da Maratona de Londres, com o Palácio de Buckingham ao fundo"
-          />
-        </div>
+        <ArticleCover
+          src="/half-marathon-record-hero.jpg"
+          alt="Yomif Kejelcha correndo pela The Mall rumo à chegada da Maratona de Londres, com o Palácio de Buckingham ao fundo"
+          objectPosition="center 10%"
+          toc={TOC}
+          tocTitle="Nesta matéria"
+        />
         <p className="article-cover-caption">
           Kejelcha chegando em segundo na Maratona de Londres em abril, onde seus 1:59:41 foram a
           estreia mais rápida já corrida na maratona.{" "}
@@ -324,7 +325,13 @@ export default function RecordeMundialMeiaMaratona() {
           </div>{/* /.post-main */}
 
           <aside className="post-aside post-aside--toc">
-            <PostToc items={TOC} title="Nesta página" />
+            {/* The plate cover already lists the sections, so a rail ToC would
+                repeat it. Full-bleed covers don't, and keep the ToC. */}
+            {fitsFullBleed(META.image) ? (
+              <PostToc items={TOC} title="Nesta página" />
+            ) : (
+              <PostSubscribe lang="pt" />
+            )}
           </aside>
         </div>{/* /.post-shell */}
 

@@ -1,6 +1,8 @@
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
-import { PostToc } from "@/components/PostAside";
+import ArticleCover from "@/components/ArticleCover";
+import { fitsFullBleed } from "@/lib/photos";
+import { PostToc, PostSubscribe } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
 import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
@@ -84,13 +86,11 @@ export default function IkeaMarathon() {
         </section>
 
         {/* ── COVER IMAGE ── */}
-        <div className="article-cover">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/ikea-marathon-hero.avif"
-            alt="Runners racing through the aisles of an IKEA store showroom"
-          />
-        </div>
+        <ArticleCover
+          src="/ikea-marathon-hero.avif"
+          alt="Runners racing through the aisles of an IKEA store showroom"
+          toc={TOC}
+        />
 
         {/* ── BODY + STICKY RAIL ── */}
         <div className="post-shell">
@@ -181,7 +181,13 @@ export default function IkeaMarathon() {
           </div>{/* /.post-main */}
 
           <aside className="post-aside post-aside--toc">
-            <PostToc items={TOC} />
+            {/* The plate cover already lists the sections, so a rail ToC would
+                repeat it. Full-bleed covers don't, and keep the ToC. */}
+            {fitsFullBleed(META.image) ? (
+              <PostToc items={TOC} />
+            ) : (
+              <PostSubscribe />
+            )}
           </aside>
         </div>{/* /.post-shell */}
 

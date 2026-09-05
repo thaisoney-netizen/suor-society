@@ -1,5 +1,6 @@
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import ArticleCover from "@/components/ArticleCover";
 import { PostSubscribe } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
 import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
@@ -47,13 +48,10 @@ export default function JuneShoeDropsPtBr() {
         </section>
 
         {/* ── COVER IMAGE ── */}
-        <div className="article-cover">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/june-shoe-drops-hero.webp"
-            alt="Lançamentos de tênis de corrida de junho de 2026, incluindo o Saucony Endorphin Elite 3"
-          />
-        </div>
+        <ArticleCover
+          src="/june-shoe-drops-hero.webp"
+          alt="Lançamentos de tênis de corrida de junho de 2026, incluindo o Saucony Endorphin Elite 3"
+        />
 
         {/* ── BODY + STICKY RAIL ── */}
         <div className="post-shell">
