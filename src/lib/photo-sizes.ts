@@ -5,8 +5,11 @@
 export type PhotoSize = { width: number; height: number };
 
 export const PHOTO_SIZES: Record<string, PhotoSize> = {
+  "/adizero-dropset-caio.webp": { width: 784, height: 1090 },
   "/adizero-dropset-cover.webp": { width: 1920, height: 1080 },
   "/adizero-dropset-hero.jpg": { width: 1280, height: 720 },
+  "/adizero-dropset-pro-caio.webp": { width: 1200, height: 1500 },
+  "/adizero-dropset.png": { width: 1080, height: 1350 },
   "/cape-town-hero.jpg": { width: 1672, height: 941 },
   "/crew-run.jpg": { width: 1350, height: 1800 },
   "/crew-suor.webp": { width: 1200, height: 1600 },

@@ -221,6 +221,23 @@ export default function AdizeroDropsetProVsDropset4() {
               </div>
             </section>
 
+
+            {/* ── PHOTO ──
+                Sits at the end of the Pro section, the longest unbroken run of
+                copy before the Dropset 4 comparison starts. */}
+            <ArticleCover
+              src="/adizero-dropset-pro-caio.webp"
+              alt="Caio Cabral setting up under a barbell in a dark gym, wearing the Adizero Dropset"
+              priority={false}
+              inline
+              caption={
+                <>
+                  Caio Cabral between sets in the Adizero Dropset.{" "}
+                  <span className="credit">Photo: Gabriel Ribeiro</span>
+                </>
+              }
+            />
+
             {/* ── THE 4 ── */}
             <section id="four" className="article-body">
               <div className="page">
@@ -316,6 +333,22 @@ export default function AdizeroDropsetProVsDropset4() {
                 </p>
               </div>
             </section>
+
+            {/* ── PHOTO ──
+                Lands on the lifting section it follows, and breaks up the
+                longest stretch of unbroken copy in the piece. */}
+            <ArticleCover
+              src="/adizero-dropset-caio.webp"
+              alt="Caio Cabral in a low squat under a sandbag in a dark gym, wearing the Adizero Dropset"
+              priority={false}
+              inline
+              caption={
+                <>
+                  Caio Cabral working through a sandbag squat in the Adizero Dropset.{" "}
+                  <span className="credit">Photo: Gabriel Ribeiro</span>
+                </>
+              }
+            />
 
             {/* ── RUNNING ── */}
             <section id="running" className="article-body">

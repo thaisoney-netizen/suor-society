@@ -221,6 +221,23 @@ export default function AdizeroDropsetProVsDropset4PtBr() {
               </div>
             </section>
 
+
+            {/* ── FOTO ──
+                Fecha a seção do Pro, o trecho mais corrido de texto antes da
+                comparação com o Dropset 4 começar. */}
+            <ArticleCover
+              src="/adizero-dropset-pro-caio.webp"
+              alt="Caio Cabral se posicionando embaixo da barra numa academia escura, usando o Adizero Dropset"
+              priority={false}
+              inline
+              caption={
+                <>
+                  Caio Cabral entre séries, de Adizero Dropset.{" "}
+                  <span className="credit">Foto: Gabriel Ribeiro</span>
+                </>
+              }
+            />
+
             {/* ── O 4 ── */}
             <section id="four" className="article-body">
               <div className="page">
@@ -316,6 +333,22 @@ export default function AdizeroDropsetProVsDropset4PtBr() {
                 </p>
               </div>
             </section>
+
+            {/* ── FOTO ──
+                Fica logo depois da seção de musculação, que é sobre o que a
+                foto mostra, e quebra o trecho mais corrido de texto do post. */}
+            <ArticleCover
+              src="/adizero-dropset-caio.webp"
+              alt="Caio Cabral agachado com um sandbag numa academia escura, usando o Adizero Dropset"
+              priority={false}
+              inline
+              caption={
+                <>
+                  Caio Cabral num agachamento com sandbag, de Adizero Dropset.{" "}
+                  <span className="credit">Foto: Gabriel Ribeiro</span>
+                </>
+              }
+            />
 
             {/* ── CORRIDA ── */}
             <section id="running" className="article-body">

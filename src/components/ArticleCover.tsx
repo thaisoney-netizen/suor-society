@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import Image from "next/image";
 import { photo, articleCoverSizes } from "@/lib/photos";
 
@@ -17,23 +17,45 @@ import { photo, articleCoverSizes } from "@/lib/photos";
  *
  * Captions belong to the figure, so pass one rather than adding a paragraph
  * after this component: only then does it line up with the photo it explains.
+ *
+ * Pass `inline` to use the same treatment for a photo further down the page,
+ * between two body sections, which is how a long read gets a second picture
+ * without inventing a second set of rules for it.
  */
 export default function ArticleCover({
   src,
   alt,
   caption,
+  priority = true,
+  inline = false,
 }: {
   src: string;
   alt: string;
   caption?: ReactNode;
+  /** Off for a photo below the fold: only the cover is worth preloading. */
+  priority?: boolean;
+  /**
+   * For a photo placed inside `.post-main` rather than above it. The post
+   * shell already carries the width and the gutter there, so repeating them
+   * would inset the picture past the left edge of the copy around it.
+   */
+  inline?: boolean;
 }) {
   const p = photo(src);
   const portrait = p.height > p.width;
 
   return (
-    <div className="article-cover">
-      <figure className={`article-cover-media${portrait ? " is-portrait" : ""}`}>
-        <Image {...p} alt={alt} sizes={articleCoverSizes(src)} priority />
+    <div className={`article-cover${inline ? " article-cover--inline" : ""}`}>
+      <figure
+        className={`article-cover-media${portrait ? " is-portrait" : ""}`}
+        /* The photo's own height, so a lazy portrait can be given a definite
+           box before its bytes arrive. Without one, `width: auto` on an
+           unloaded image measures 0, the figure never crosses the viewport,
+           and lazy loading therefore never fires: the picture stays blank
+           forever. Covers load eagerly and never hit it. */
+        style={portrait ? ({ "--nat-h": `${p.height}px` } as React.CSSProperties) : undefined}
+      >
+        <Image {...p} alt={alt} sizes={articleCoverSizes(src)} priority={priority} />
         {caption && <figcaption className="article-cover-caption">{caption}</figcaption>}
       </figure>
     </div>
