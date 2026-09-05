@@ -2,8 +2,7 @@ import type { ReactNode } from "react";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import ArticleCover from "@/components/ArticleCover";
-import { fitsFullBleed } from "@/lib/photos";
-import { PostToc, PostSubscribe } from "@/components/PostAside";
+import { PostToc } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
 import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
@@ -101,15 +100,14 @@ export default function RecordeMundialMeiaMaratona() {
         <ArticleCover
           src="/half-marathon-record-hero.jpg"
           alt="Yomif Kejelcha correndo pela The Mall rumo à chegada da Maratona de Londres, com o Palácio de Buckingham ao fundo"
-          objectPosition="center 10%"
-          toc={TOC}
-          tocTitle="Nesta matéria"
+          caption={
+            <>
+              Kejelcha chegando em segundo na Maratona de Londres em abril, onde seus 1:59:41 foram
+              a estreia mais rápida já corrida na maratona.{" "}
+              {PHOTO_CREDIT && <span className="credit">Foto: {PHOTO_CREDIT}</span>}
+            </>
+          }
         />
-        <p className="article-cover-caption">
-          Kejelcha chegando em segundo na Maratona de Londres em abril, onde seus 1:59:41 foram a
-          estreia mais rápida já corrida na maratona.{" "}
-          {PHOTO_CREDIT && <span className="credit">Foto: {PHOTO_CREDIT}</span>}
-        </p>
 
         {/* ── BODY + STICKY RAIL ── */}
         <div className="post-shell">
@@ -325,13 +323,9 @@ export default function RecordeMundialMeiaMaratona() {
           </div>{/* /.post-main */}
 
           <aside className="post-aside post-aside--toc">
-            {/* The plate cover already lists the sections, so a rail ToC would
-                repeat it. Full-bleed covers don't, and keep the ToC. */}
-            {fitsFullBleed(META.image) ? (
-              <PostToc items={TOC} title="Nesta página" />
-            ) : (
-              <PostSubscribe lang="pt" />
-            )}
+            {/* Long read: the rail carries the section links, not the
+                signup card. Short posts get the card instead. */}
+            <PostToc items={TOC} title="Nesta página" />
           </aside>
         </div>{/* /.post-shell */}
 

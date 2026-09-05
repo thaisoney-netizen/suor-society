@@ -48,8 +48,41 @@ export const CARD_SIZES = "(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 4
 /** Full-bleed covers and the race-picks feature: edge to edge, always. */
 export const COVER_SIZES = "100vw";
 
-/** Contained cover plate: full width on phones, capped by the plate on desktop. */
-export const PLATE_SIZES = "(max-width: 860px) 100vw, 760px";
+/**
+ * The reading measure on a post: what a body paragraph actually occupies
+ * (62ch of Inter at 15px, measured in the browser, not guessed). Cover photos
+ * and captions run at exactly this width so the headline, the picture and the
+ * copy all share one column and one left edge.
+ * ⚑ keep in sync with --post-measure in globals.css and the 62ch cap on
+ * .article-body p.
+ */
+export const POST_MEASURE = 588;
+
+/**
+ * Tallest a portrait cover is ever drawn. A 3:4 frame at the full measure
+ * would run past 780px and swallow the screen before a word is read, so the
+ * height is capped and the width follows the photo's own ratio.
+ * ⚑ keep in sync with .article-cover-media.is-portrait max-height.
+ */
+export const PORTRAIT_COVER_MAX_HEIGHT = 560;
+
+/**
+ * Honest srcset hint for a cover, given what the slot really measures: the
+ * page gutters on phones, the reading measure everywhere else, and never more
+ * than the photo's own pixels. A portrait is capped by height, so the width it
+ * lands at is smaller again, and saying so keeps the browser from fetching a
+ * file twice the size of the box it fills.
+ */
+export function articleCoverSizes(src: string): string {
+  const size = PHOTO_SIZES[src];
+  const portrait = size ? size.height > size.width : false;
+  const measure =
+    portrait && size
+      ? Math.round((PORTRAIT_COVER_MAX_HEIGHT * size.width) / size.height)
+      : POST_MEASURE;
+  const cap = Math.min(size?.width ?? measure, measure);
+  return `(max-width: 720px) calc(100vw - 44px), (max-width: 980px) calc(100vw - 80px), ${cap}px`;
+}
 
 /** Crew split panel and the about page shot: half the page on desktop. */
 export const HALF_SIZES = "(max-width: 860px) 100vw, 50vw";

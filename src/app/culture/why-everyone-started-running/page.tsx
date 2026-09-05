@@ -2,8 +2,7 @@ import type { ReactNode } from "react";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import ArticleCover from "@/components/ArticleCover";
-import { fitsFullBleed } from "@/lib/photos";
-import { PostToc, PostSubscribe } from "@/components/PostAside";
+import { PostToc } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
 import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
@@ -84,13 +83,9 @@ export default function WhyEveryoneStartedRunning() {
         </section>
 
         {/* ── COVER IMAGE ── */}
-        {/* Heads sit right at the top of this frame, so the shared `center 30%`
-            crop cuts the rightmost runner's face. Anchor to the top instead. */}
         <ArticleCover
           src="/running-boom-hero.webp"
           alt="Four runners moving together across a rooftop above the city on a clear day"
-          objectPosition="center top"
-          toc={TOC}
         />
 
         {/* ── BODY + STICKY RAIL ── */}
@@ -291,13 +286,9 @@ export default function WhyEveryoneStartedRunning() {
           </div>{/* /.post-main */}
 
           <aside className="post-aside post-aside--toc">
-            {/* The plate cover already lists the sections, so a rail ToC would
-                repeat it. Full-bleed covers don't, and keep the ToC. */}
-            {fitsFullBleed(META.image) ? (
-              <PostToc items={TOC} />
-            ) : (
-              <PostSubscribe />
-            )}
+            {/* Long read: the rail carries the section links, not the
+                signup card. Short posts get the card instead. */}
+            <PostToc items={TOC} />
           </aside>
         </div>{/* /.post-shell */}
 

@@ -1,100 +1,41 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
-import { photo, fitsFullBleed, COVER_SIZES, PLATE_SIZES } from "@/lib/photos";
-
-/** Widest the plate media column gets: the page less its padding, and less
- *  the block column when there is one. Used to size the srcset honestly. */
-const PLATE_MAX = 1520;
-const PLATE_MAX_WITH_BLOCK = 880;
-
-type TocItem = { id: string; label: string };
+import { photo, articleCoverSizes } from "@/lib/photos";
 
 /**
- * The cover photo at the top of a post, in whichever treatment the photo can
- * actually carry. The page does not choose — the file's own pixel count does:
+ * The cover photo at the top of a post, drawn at the same width as the copy
+ * below it. Headline, picture and body then share one column and one left
+ * edge, which is how a page reads as a piece of writing with a photo rather
+ * than a banner with text under it.
  *
- *   landscape, big enough  → full-bleed band, the house look
- *   portrait               → contained plate at its own ratio (never cropped
- *                            into a letterbox)
- *   landscape, too small   → contained plate beside a block of section links,
- *                            so the shot is never drawn wider than it exists
+ * The photo is never cropped and never stretched. A landscape fills the
+ * measure at its own ratio; a portrait is capped by height instead of width,
+ * so a tall frame can't swallow the screen before a word is read. Nothing
+ * here keys off the file's pixel count any more: the slot is narrower than
+ * every photo in the library, so none of them can be drawn past their own
+ * resolution.
  *
- * That last case is the one worth explaining. A full-bleed cover is as wide as
- * the window, so a 954px photo on a 1440px screen gets stretched half again
- * past its own resolution and reads as soft. Rather than sharpen the photo
- * (which we don't do to Thais's shots) or swap it out, the slot shrinks to fit
- * the photo and the freed space carries the section links.
- *
- * Replace a small photo with a bigger export later and the page upgrades
- * itself on the next build. Nothing here needs revisiting.
+ * Captions belong to the figure, so pass one rather than adding a paragraph
+ * after this component: only then does it line up with the photo it explains.
  */
 export default function ArticleCover({
   src,
   alt,
-  objectPosition,
-  toc,
-  tocTitle = "In this piece",
+  caption,
 }: {
   src: string;
   alt: string;
-  objectPosition?: string;
-  toc?: TocItem[];
-  tocTitle?: string;
+  caption?: ReactNode;
 }) {
   const p = photo(src);
   const portrait = p.height > p.width;
-  const style = objectPosition ? { objectPosition } : undefined;
-
-  if (!portrait && fitsFullBleed(src)) {
-    return (
-      <div className="article-cover">
-        <Image {...p} alt={alt} sizes={COVER_SIZES} style={style} priority />
-      </div>
-    );
-  }
-
-  if (portrait) {
-    return (
-      <div className="article-cover article-cover--portrait">
-        <Image {...p} alt={alt} sizes={PLATE_SIZES} priority />
-      </div>
-    );
-  }
-
-  const hasBlock = Boolean(toc?.length);
-  // Cap the srcset hint at whichever runs out first, the column or the photo,
-  // so the browser is never told to fetch more pixels than either can use.
-  const plateCap = Math.min(p.width, hasBlock ? PLATE_MAX_WITH_BLOCK : PLATE_MAX);
-  const plateSizes = `(max-width: 860px) 100vw, ${plateCap}px`;
 
   return (
-    <div className="article-plate">
-      <div className="page">
-        <div className={`article-plate-grid${hasBlock ? "" : " is-solo"}`}>
-          {/* max-width is the photo's own width: the hard stop that keeps the
-              browser from ever drawing it bigger than it was shot */}
-          <figure className="article-plate-media" style={{ maxWidth: p.width }}>
-            <Image {...p} alt={alt} sizes={plateSizes} style={style} priority />
-          </figure>
-
-          {hasBlock && (
-            <aside className="article-plate-block" aria-label={tocTitle}>
-              <div className="plate-block-label">{tocTitle}</div>
-              <ol className="plate-block-list">
-                {toc!.map((item, i) => (
-                  <li key={item.id}>
-                    <a href={`#${item.id}`}>
-                      <span className="plate-block-num">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <span className="plate-block-text">{item.label}</span>
-                    </a>
-                  </li>
-                ))}
-              </ol>
-            </aside>
-          )}
-        </div>
-      </div>
+    <div className="article-cover">
+      <figure className={`article-cover-media${portrait ? " is-portrait" : ""}`}>
+        <Image {...p} alt={alt} sizes={articleCoverSizes(src)} priority />
+        {caption && <figcaption className="article-cover-caption">{caption}</figcaption>}
+      </figure>
     </div>
   );
 }

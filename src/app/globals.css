@@ -1028,159 +1028,52 @@ a { color: inherit; text-decoration: none; }
    CULTURE ARCHIVE article layout
    ============================================================ */
 
-/* ── Article cover image ── */
+/* ── Article cover ──
+   The cover runs at the same width as the copy underneath it, on the same
+   left edge, so the headline, the picture and the body read as one column
+   instead of a banner with an article under it. No full-bleed band and no
+   crop: the photo is drawn at its own ratio inside the reading measure, which
+   is narrower than every file in the library, so nothing is ever stretched
+   past its own resolution. The wrapper repeats the post shell's geometry so
+   the figure starts exactly where a paragraph starts, and the measure caps
+   itself against the gutters on a phone with no extra rule. */
 .article-cover {
-  width: 100%;
-  height: clamp(280px, 44vw, 580px);
-  overflow: hidden;
-  position: relative;
+  max-width: var(--post-shell);
+  margin: 0 auto;
+  padding: 0 var(--post-pad);
 }
-.article-cover img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
+.article-cover-media {
+  margin: 0;
+  max-width: var(--post-measure);
+}
+.article-cover-media img {
   display: block;
-}
-
-/* ─────────────────────────────────────────────────────────────
-   MOBILE HEADER IMAGE SIZING  ⚑ shared rule — keep in sync
-   On phones/tablets every full-bleed header/cover image must stay
-   SHORT so it never eats the screen. Portrait crops (4/5, 3/4) go
-   very tall once they stack full-width, so we cap them to a
-   landscape-ish height while keeping the object-fit: cover crop.
-   Any new post/page that adds a full-width image header should
-   reuse .article-cover (covers) or .author-pg-photo pattern, OR
-   add its selector to these blocks. Target height: ~200–340px.
-   ───────────────────────────────────────────────────────────── */
-@media (max-width: 720px) {
-  .article-cover { height: clamp(200px, 56vw, 300px); }
-}
-
-/* ── Portrait covers ──  .article-cover--portrait
-   A portrait photo has nothing to give the full-bleed window above: cover
-   scales it to the full width, so the crop eats the top and bottom of the
-   frame and the subject loses its feet. This variant drops the fixed height
-   and runs the picture at its own ratio inside a centred column, so the whole
-   shot survives uncropped. It is a contained plate rather than a full-bleed
-   header, which is why it sits outside the mobile height rule above; the
-   max-height caps below do that job instead, so it still never eats the
-   screen. Use it on any cover photo that is taller than it is wide. */
-.article-cover--portrait {
+  width: 100%;
   height: auto;
-  overflow: visible;
-  padding: 0 20px;
 }
-.article-cover--portrait img {
+
+/* Portrait covers: a 3:4 frame at the full measure runs past 780px tall and
+   eats the screen, so height is the cap and the width follows the photo's own
+   ratio. The shot is never cropped into a letterbox, it just sits centred in
+   the column.
+   ⚑ keep in sync with PORTRAIT_COVER_MAX_HEIGHT in lib/photos.ts. */
+.article-cover-media.is-portrait img {
   width: auto;
-  height: auto;
   max-width: 100%;
   max-height: 560px;
-  margin: 0 auto;
-  object-fit: contain;
-  object-position: center;
+  margin-inline: auto;
 }
 @media (max-width: 720px) {
-  .article-cover--portrait { padding: 0 22px; }
-  .article-cover--portrait img { max-height: 52vh; }
-}
-
-/* ── Contained cover plate ──  .article-plate
-   For a landscape cover whose file is too small to survive the full-bleed
-   band. A 954px photo drawn across a 1440px window is stretched half again
-   past its own resolution, and no amount of encoding hides that. So the slot
-   gives way instead of the photo: the shot runs at a size it can actually
-   fill, and the space it no longer needs carries the section links.
-   ArticleCover.tsx picks this on its own from the file's pixel count, and the
-   figure's inline max-width is the photo's own width, so the browser can never
-   draw it bigger than it was shot. */
-.article-plate {
-  padding: 0 0 4px;
-}
-.article-plate-grid {
-  display: grid;
-  grid-template-columns: 1.45fr 1fr;
-  gap: 28px;
-  align-items: start;
-}
-/* No section links to show: the photo just centres at its own width. */
-.article-plate-grid.is-solo { grid-template-columns: 1fr; justify-items: center; }
-
-.article-plate-media {
-  margin: 0;
-  width: 100%;
-  background: var(--asphalt);
-  overflow: hidden;
-}
-.article-plate-media img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* the block — bone card, square, same label voice as the sticky rail */
-.article-plate-block {
-  background: var(--bone);
-  padding: 30px 28px;
-  border-top: 2px solid var(--asphalt);
-}
-.plate-block-label {
-  font-family: var(--font-jetbrains), monospace;
-  font-size: 10px;
-  letter-spacing: .24em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  margin-bottom: 18px;
-}
-.plate-block-list { list-style: none; margin: 0; padding: 0; }
-.plate-block-list li + li { border-top: 1px solid var(--line); }
-.plate-block-list a {
-  display: grid;
-  grid-template-columns: 30px 1fr;
-  gap: 12px;
-  align-items: baseline;
-  padding: 11px 0;
-  transition: color .14s ease-out;
-}
-.plate-block-list a:hover { color: var(--accent); }
-.plate-block-num {
-  font-family: var(--font-jetbrains), monospace;
-  font-size: 11px;
-  letter-spacing: .1em;
-  color: var(--ink-3);
-}
-.plate-block-text {
-  font-family: var(--font-barlow), sans-serif;
-  font-weight: 600;
-  font-size: 12.5px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  line-height: 1.35;
-}
-
-/* Phones: stack, photo first, and cap it to a short band like every other
-   header image on the site. ⚑ mobile header image sizing. */
-@media (max-width: 860px) {
-  .article-plate-grid { grid-template-columns: 1fr; gap: 20px; }
-  .article-plate-media { max-width: 100% !important; }
-  .article-plate-media img {
-    height: 56vw;
-    min-height: 200px;
-    max-height: 300px;
-    object-fit: cover;
-  }
-  .article-plate-block { padding: 24px 22px; }
+  .article-cover-media.is-portrait img { max-height: 62vh; }
 }
 
 /* ── Cover caption + photo credit ──
-   Sits directly under .article-cover. Use it whenever the cover is a
-   library shot rather than the event the post is about, so the image
-   never implies it was taken at the race being written about. The
-   credit half is required for any photo we did not shoot ourselves. */
+   Lives inside the figure, so it shares the photo's width and left edge. Use
+   it whenever the cover is a library shot rather than the event the post is
+   about, so the image never implies it was taken at the race being written
+   about. The credit half is required for any photo we did not shoot. */
 .article-cover-caption {
-  max-width: 62ch;
-  margin: 10px auto 0;
-  padding: 0 var(--pad, 20px);
+  margin-top: 10px;
   font-family: var(--font-inter), sans-serif;
   font-size: 13px;
   line-height: 1.55;
@@ -1953,17 +1846,34 @@ a { color: inherit; text-decoration: none; }
    POST LAYOUT — article column + sticky right rail
    (ToC on long reads, email subscribe on short ones)
    ============================================================ */
+/* One set of numbers for the whole post: the shell, its gutter, the rail, and
+   the reading measure. The cover, the caption, the masthead and the body all
+   size themselves off these, so the column can be widened or the rail dropped
+   in one place and nothing drifts out of line.
+   --post-measure is what a body paragraph actually occupies (62ch of Inter at
+   15px, measured in the browser). Photos match it rather than the column, so
+   the picture ends where the sentences end.
+   ⚑ keep in sync with POST_MEASURE in lib/photos.ts and the 62ch cap on
+   .article-body p. */
+.post {
+  --post-shell: 1100px;
+  --post-pad: 40px;
+  --post-rail: 280px;
+  --post-gap: 56px;
+  --post-measure: 588px;
+}
+
 /* Narrow the masthead / hero / gate to match the two-column shell
    so the title, body, and rail all share one left edge. */
-.post .page { max-width: 1100px; }
+.post .page { max-width: var(--post-shell); }
 
 .post-shell {
-  max-width: 1100px;
+  max-width: var(--post-shell);
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 var(--post-pad);
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 280px;
-  gap: 56px;
+  grid-template-columns: minmax(0, 1fr) var(--post-rail);
+  gap: var(--post-gap);
   align-items: start;
 }
 .post-main { min-width: 0; }
@@ -1976,13 +1886,13 @@ a { color: inherit; text-decoration: none; }
 
 /* stack on tablet / phone */
 @media (max-width: 980px) {
-  .post .page { max-width: 1600px; }
-  .post-shell { grid-template-columns: 1fr; gap: 0; max-width: 1600px; }
+  .post { --post-shell: 1600px; --post-rail: 0px; --post-gap: 0px; }
+  .post-shell { grid-template-columns: 1fr; gap: 0; }
   .post-aside { position: static; }
   .post-aside--toc { display: none; }   /* ToC is desktop-only; scroll covers mobile */
   .post-aside--sub { margin-top: 8px; padding-top: 40px; border-top: 1px solid var(--line); }
 }
-@media (max-width: 720px) { .post-shell { padding: 0 22px; } }
+@media (max-width: 720px) { .post { --post-pad: 22px; } }
 
 /* ── Sticky table of contents ── */
 .post-toc { border-top: 2px solid var(--asphalt); padding-top: 18px; }

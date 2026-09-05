@@ -1,9 +1,8 @@
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import ArticleCover from "@/components/ArticleCover";
-import { fitsFullBleed } from "@/lib/photos";
 import DownloadGate from "@/components/DownloadGate";
-import { PostToc, PostSubscribe } from "@/components/PostAside";
+import { PostToc } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
 import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 import races from "@/content/races-en.json";
@@ -186,7 +185,6 @@ export default function OpenEntryRaces2026() {
         <ArticleCover
           src="/race-hero.jpg"
           alt="Thousands of runners at the start line of the Rock 'n' Roll San Diego Marathon and Half Marathon"
-          toc={TOC}
         />
 
         {/* ── BODY + STICKY RAIL ── */}
@@ -295,13 +293,9 @@ export default function OpenEntryRaces2026() {
           </div>{/* /.post-main */}
 
           <aside className="post-aside post-aside--toc">
-            {/* The plate cover already lists the sections, so a rail ToC would
-                repeat it. Full-bleed covers don't, and keep the ToC. */}
-            {fitsFullBleed(META.image) ? (
-              <PostToc items={TOC} />
-            ) : (
-              <PostSubscribe />
-            )}
+            {/* Long read: the rail carries the section links, not the
+                signup card. Short posts get the card instead. */}
+            <PostToc items={TOC} />
           </aside>
         </div>{/* /.post-shell */}
 

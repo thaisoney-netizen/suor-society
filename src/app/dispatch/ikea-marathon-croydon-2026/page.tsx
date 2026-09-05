@@ -1,8 +1,7 @@
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import ArticleCover from "@/components/ArticleCover";
-import { fitsFullBleed } from "@/lib/photos";
-import { PostToc, PostSubscribe } from "@/components/PostAside";
+import { PostToc } from "@/components/PostAside";
 import AuthorCard from "@/components/AuthorCard";
 import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
@@ -89,7 +88,6 @@ export default function IkeaMarathon() {
         <ArticleCover
           src="/ikea-marathon-hero.avif"
           alt="Runners racing through the aisles of an IKEA store showroom"
-          toc={TOC}
         />
 
         {/* ── BODY + STICKY RAIL ── */}
@@ -181,13 +179,9 @@ export default function IkeaMarathon() {
           </div>{/* /.post-main */}
 
           <aside className="post-aside post-aside--toc">
-            {/* The plate cover already lists the sections, so a rail ToC would
-                repeat it. Full-bleed covers don't, and keep the ToC. */}
-            {fitsFullBleed(META.image) ? (
-              <PostToc items={TOC} />
-            ) : (
-              <PostSubscribe />
-            )}
+            {/* Long read: the rail carries the section links, not the
+                signup card. Short posts get the card instead. */}
+            <PostToc items={TOC} />
           </aside>
         </div>{/* /.post-shell */}
 
