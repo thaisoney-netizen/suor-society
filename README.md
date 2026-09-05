@@ -29,10 +29,10 @@ Adding a post? Follow the checklist in [AGENTS.md](AGENTS.md).
 ## Automations (GitHub Actions)
 
 - **Trend radar** (`trend-radar.yml`) — daily content-source digest by email.
-- **LinkedIn jobs** (`linkedin-jobs.yml`) — twice-daily job alert; state lives on
-  the `claude/linkedin-marketing-jobs-6tWHJ` branch (do not delete it).
-- **Stale dates** (`stale-dates.yml`) — monthly scan for race listings whose
-  dates have passed; files a `content-freshness` issue with the findings.
+- **Stale dates** (`stale-dates.yml`) — daily sweep that automatically retires
+  completed races, regenerates the guide PDFs, and commits the result. Status
+  changes that require web verification are reported in a `content-freshness`
+  issue and on the Notion board instead of being guessed.
 
 ## Environment variables
 

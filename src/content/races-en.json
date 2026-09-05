@@ -40,13 +40,13 @@
       "num": "04",
       "name": "Santa Rosa Marathon",
       "where": "Sonoma County, CA · Aug 22-23, 2026",
-      "body": "Wine country roads, mostly flat, multi-distance weekend. The marathon, half and 10K have all sold out. The Saturday 5K is the only distance still open.",
+      "body": "Wine country roads, mostly flat, multi-distance weekend. The 2026 marathon, half and 10K sold out, while the Saturday 5K was the final distance available.",
       "dists": "5K · 10K · Half Marathon · Full Marathon",
       "price": "5K: $72.77",
-      "status": "limit",
-      "statusLabel": "5K Only · 10K, Half & Full Sold Out",
+      "status": "past",
+      "statusLabel": "Race is past",
       "url": "https://santarosamarathon.com/",
-      "checked": "2026-08-21"
+      "checked": "2026-09-04"
     },
     {
       "num": "05",
@@ -55,10 +55,10 @@
       "body": "Flat out-and-back loops on the Long Beach beach path, starting and finishing on Ocean Blvd. Three distances, USATF certified, and the 5K and 10K both come in under $60.",
       "dists": "5K · 10K · Half Marathon",
       "price": "From $52.93",
-      "status": "open",
-      "statusLabel": "Open Registration",
+      "status": "past",
+      "statusLabel": "Race is past",
       "url": "https://runsignup.com/Race/CA/LongBeach/CalifornianDreaminKKHalfMarathon",
-      "checked": "2026-08-21"
+      "checked": "2026-09-05"
     },
     {
       "num": "06",
@@ -76,13 +76,13 @@
       "num": "07",
       "name": "2XU Long Beach Marathon",
       "where": "Long Beach, CA · Oct 10-11, 2026",
-      "body": "One of SoCal's most consistent fall race weekends. City streets and coastline. Half and full marathon are sold out — join the waitlist. October in Long Beach is as close to perfect race conditions as SoCal gets.",
+      "body": "One of SoCal's most consistent fall race weekends. City streets and coastline. Every 2026 distance is sold out — join the 2027 waitlist. October in Long Beach is as close to perfect race conditions as SoCal gets.",
       "dists": "5K · Half Marathon · Full Marathon",
-      "price": "From $139",
-      "status": "limit",
-      "statusLabel": "5K Open · Half & Full Sold Out",
+      "price": "Check site",
+      "status": "sold",
+      "statusLabel": "Sold Out · 2027 Waitlist Open",
       "url": "https://www.runlongbeach.com/",
-      "checked": "2026-07-19"
+      "checked": "2026-09-04"
     },
     {
       "num": "08",
@@ -276,7 +276,7 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://hartfordmarathon.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-09-04"
     },
     {
       "num": "05",
@@ -300,19 +300,19 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://www.thebaltimoremarathon.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-09-04"
     },
     {
       "num": "07",
       "name": "Rocket Mortgage Detroit Free Press",
       "where": "Detroit, MI · Oct 18, 2026",
-      "body": "International Half crosses the Ambassador Bridge into Windsor and back through the tunnel. Marathon and Motor City Half are sold out. International Half still open through Sep 8.",
+      "body": "The marathon and both half marathons are sold out. The 5K and 1 Mile remain open through Oct 8 unless capacity is reached.",
       "dists": "5K · International Half · 1 Mile",
       "price": "Check site",
       "status": "limit",
-      "statusLabel": "Intl Half Open · Marathon Sold Out",
+      "statusLabel": "5K & 1 Mile Open · Longer Races Sold Out",
       "url": "https://www.freepmarathon.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-09-04"
     },
     {
       "num": "08",

@@ -100,10 +100,12 @@ it says plainly that it was run. The register link goes because sending someone
 to a signup page for a race already run is the same broken promise as
 advertising a sold-out entry.
 
-**Backstop.** `.github/workflows/stale-dates.yml` runs the sweep read-only on a
-schedule and files a GitHub issue plus a Notion card. That exists to catch the
-agent having silently stopped, not to do the work. If the issue is open with
-findings the agent should already have fixed, the agent is the thing to debug.
+**Automated backstop.** `.github/workflows/stale-dates.yml` runs every morning.
+It runs `--fix-past`, regenerates both PDFs, and commits completed-race
+retirements without waiting for an agent. It then runs the read-only sweep and
+files or updates a GitHub issue plus a Notion card for findings that require
+source verification. Never make the workflow guess a registration status:
+open / limit / sold changes still follow the two-source rule above.
 <!-- END:race-guide-freshness -->
 
 <!-- BEGIN:author-page-upkeep -->
@@ -145,16 +147,6 @@ portrait shot gets a contained plate at its own ratio instead of being
 stretched or cropped into a full-bleed 16:9 window.
 <!-- END:photo-handling -->
 
-<!-- BEGIN:branch-hygiene -->
-# Branch hygiene
-
-The branch `claude/linkedin-marketing-jobs-6tWHJ` is LOAD-BEARING: the
-LinkedIn jobs workflow checks it out and commits state back to it on a
-schedule. Never delete it when pruning merged `claude/*` branches, and note
-that editing `scripts/jobs/search.mjs` on main does nothing — the live copy
-is on that branch.
-<!-- END:branch-hygiene -->
-
 <!-- BEGIN:suor-pm-protocol -->
 # Task board protocol
 
@@ -162,4 +154,3 @@ Suor Society work (site + content) is tracked on a kanban board. If you are runn
 
 If you cannot access that file (e.g. running in the cloud), skip board updates — a daily reconciler syncs the board from git history.
 <!-- END:suor-pm-protocol -->
-

@@ -1,31 +1,33 @@
 import type { Metadata, Viewport } from "next";
-import { Bebas_Neue, Barlow_Condensed, Inter, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script";
 import "./globals.css";
 import ScrollTracker from "@/components/ScrollTracker";
 import { SITE_URL } from "@/lib/seo";
 
-const bebasNeue = Bebas_Neue({
+const bebasNeue = localFont({
+  src: "./fonts/bebas-neue-400.woff2",
   weight: "400",
-  subsets: ["latin"],
   display: "swap",
 });
 
-const barlowCondensed = Barlow_Condensed({
-  weight: ["400", "600", "700"],
-  subsets: ["latin"],
+const barlowCondensed = localFont({
+  src: [
+    { path: "./fonts/barlow-condensed-600.woff2", weight: "600" },
+    { path: "./fonts/barlow-condensed-700.woff2", weight: "700" },
+  ],
   display: "swap",
 });
 
-const inter = Inter({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
+const inter = localFont({
+  src: "./fonts/inter-400.woff2",
+  weight: "100 900",
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  weight: ["400", "600"],
-  subsets: ["latin"],
+const jetbrainsMono = localFont({
+  src: "./fonts/jetbrains-mono-400.woff2",
+  weight: "100 800",
   display: "swap",
 });
 

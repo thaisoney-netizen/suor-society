@@ -21,8 +21,9 @@
 //   - The daily agent (~/.claude/scheduled-tasks/content-freshness-check) runs
 //     it with --fix-past --json, then re-verifies stale races against the web
 //     and writes the results back. It commits and pushes without asking.
-//   - .github/workflows/stale-dates.yml runs it read-only as a backstop and
-//     files a GitHub issue plus a Notion card if the agent has fallen behind.
+//   - .github/workflows/stale-dates.yml runs every morning with --fix-past,
+//     regenerates and commits the PDFs when it retires anything, then runs a
+//     read-only pass that reports source-verification work in GitHub + Notion.
 //
 // Dependency-free on purpose so the workflow needs no npm install.
 
