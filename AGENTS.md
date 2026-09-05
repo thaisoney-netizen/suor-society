@@ -59,11 +59,15 @@ robots, hreflang, or OG work. Follow this and nothing needs correcting later:
    a post with a table of contents carries `<PostToc />`, a short post carries
    `<PostSubscribe />`. Ask which at publish time.
 
-   The post shell's numbers live in one place, the `--post-*` variables on
-   `.post` in `globals.css` (shell width, gutter, rail, gap, measure). Size
-   anything that has to line up with the column off those instead of retyping
-   1100px or 588px, and keep `POST_MEASURE` in `src/lib/photos.ts` in sync
-   with `--post-measure`.
+   The numbers live in one place. `--measure` at `:root` in `globals.css` is
+   the reading measure every block of a post stops on, photo included, and
+   `--copy` / `--copy-sm` are the only two type sizes prose ever uses. The
+   `--post-*` variables on `.post` carry the shell width, gutter, rail and
+   gap. Size anything that has to line up off those instead of retyping a
+   number, cap a text block with `var(--measure)` rather than its own `62ch`
+   (a block at a different font-size resolves `ch` differently and stops
+   short of everything else), and keep `POST_MEASURE` in
+   `src/lib/photos.ts` in sync with `--measure`.
 
    A cover needs no mobile height cap any more, because it is never wider than
    the text column. If you add a NEW **full-bleed** header image with its own

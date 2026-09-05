@@ -13,6 +13,23 @@
   --bone-on-slate: rgba(255,255,255,.72);
   --line-on-slate: rgba(255,255,255,.18);
   --accent:  #E8750A;
+
+  /* Reading sizes. Every sentence on the site is one of these two, so text
+     can't end up at 15px on one page and 13.5px on the next.
+     --copy is prose you sit and read: article body, deck, list items, FAQ
+     answers, the about page. --copy-sm is supporting text that labels
+     something else: card blurbs, bios, captions, form helper lines.
+     ⚑ --copy drives --measure. Change it, re-measure a paragraph in the
+     browser, then update --measure here and POST_MEASURE in lib/photos.ts. */
+  --copy:    17px;
+  --copy-sm: 15px;
+
+  /* The reading measure: what a body paragraph occupies at --copy (62ch of
+     Inter at 17px, measured, not guessed). Every block of a post stops on
+     this edge, photo included, so the page reads as one column. Blocks whose
+     own font-size differs (a 12px disclaimer, a 16px list) must use this
+     rather than their own 62ch, or they end short of everything else. */
+  --measure: 665px;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html {
@@ -393,7 +410,7 @@ a { color: inherit; text-decoration: none; }
   border: 0;
   outline: none;
   font-family: var(--font-inter), sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--asphalt);
   padding: 16px 0;
   flex: 1;
@@ -585,7 +602,7 @@ a { color: inherit; text-decoration: none; }
 }
 .lc-desc {
   font-family: var(--font-inter), sans-serif;
-  font-size: 13px;
+  font-size: var(--copy-sm);
   line-height: 1.55;
   color: inherit;
   opacity: .72;
@@ -735,7 +752,7 @@ a { color: inherit; text-decoration: none; }
 .about-pg-deck {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 700;
-  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: var(--copy-sm); letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink-2);
   margin-top: 36px;
   line-height: 1.8;
@@ -774,7 +791,7 @@ a { color: inherit; text-decoration: none; }
 }
 .about-pg-p {
   font-family: var(--font-inter), sans-serif;
-  font-size: 15px;
+  font-size: var(--copy);
   line-height: 1.75;
   color: var(--ink-2);
   margin-bottom: 20px;
@@ -892,7 +909,7 @@ a { color: inherit; text-decoration: none; }
 }
 .about-index-desc {
   font-family: var(--font-inter), sans-serif;
-  font-size: 14px;
+  font-size: var(--copy-sm);
   line-height: 1.65;
   color: var(--ink-2);
   max-width: 48ch;
@@ -956,7 +973,7 @@ a { color: inherit; text-decoration: none; }
 }
 .about-close-desc {
   font-family: var(--font-inter), sans-serif;
-  font-size: 14px;
+  font-size: var(--copy-sm);
   line-height: 1.65;
   color: var(--ink-2);
   max-width: 34ch;
@@ -1012,7 +1029,7 @@ a { color: inherit; text-decoration: none; }
 .about-pg-crew-row span:last-child  { color: var(--paper); text-align: right; }
 .about-pg-crew-note {
   font-family: var(--font-inter), sans-serif;
-  font-size: 14px;
+  font-size: var(--copy-sm);
   line-height: 1.7;
   color: rgba(255,255,255,.62);
   margin-top: 32px;
@@ -1044,7 +1061,7 @@ a { color: inherit; text-decoration: none; }
 }
 .article-cover-media {
   margin: 0;
-  max-width: var(--post-measure);
+  max-width: var(--measure);
 }
 .article-cover-media img {
   display: block;
@@ -1075,7 +1092,7 @@ a { color: inherit; text-decoration: none; }
 .article-cover-caption {
   margin-top: 10px;
   font-family: var(--font-inter), sans-serif;
-  font-size: 13px;
+  font-size: var(--copy-sm);
   line-height: 1.55;
   color: var(--ink-3);
 }
@@ -1097,7 +1114,10 @@ a { color: inherit; text-decoration: none; }
 .article-masthead .article-eye { margin-bottom: 18px; }
 .article-masthead .article-headline {
   margin-bottom: 0;
-  max-width: 26ch;
+  /* Headline, photo, deck and copy all stop on the same edge — that is what
+     makes a post read as one column rather than a wide head over a narrow
+     story. It costs a line of wrap on the longer titles. */
+  max-width: var(--measure);
 }
 
 /* ── Article hero (deck + meta, sits just under the cover image) ── */
@@ -1125,10 +1145,10 @@ a { color: inherit; text-decoration: none; }
 .article-headline span { color: var(--asphalt); }
 .article-deck {
   font-family: var(--font-inter), sans-serif;
-  font-size: 15px;
+  font-size: var(--copy);
   line-height: 1.6;
   color: var(--ink-2);
-  max-width: 52ch;
+  max-width: var(--measure);
   margin-bottom: 24px;
 }
 .article-meta {
@@ -1145,10 +1165,10 @@ a { color: inherit; text-decoration: none; }
 }
 .article-body p {
   font-family: var(--font-inter), sans-serif;
-  font-size: 15px;
+  font-size: var(--copy);
   line-height: 1.7;
   color: var(--ink-2);
-  max-width: 62ch;
+  max-width: var(--measure);
   margin-bottom: 18px;
 }
 .article-body p strong {
@@ -1175,13 +1195,13 @@ a { color: inherit; text-decoration: none; }
 .article-body a:hover { text-decoration-thickness: 2px; }
 .article-body ul {
   list-style: none;
-  max-width: 62ch;
+  max-width: var(--measure);
   margin: 0 0 18px;
   padding: 0;
 }
 .article-body li {
   font-family: var(--font-inter), sans-serif;
-  font-size: 15px;
+  font-size: var(--copy);
   line-height: 1.7;
   color: var(--ink-2);
   padding: 10px 0 10px 18px;
@@ -1199,7 +1219,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ── Two-column swap table (think vs need) ── */
 .swap-table {
-  max-width: 62ch;
+  max-width: var(--measure);
   margin: 0 0 18px;
   border-top: 1px solid var(--line);
 }
@@ -1210,7 +1230,7 @@ a { color: inherit; text-decoration: none; }
   padding: 10px 0;
   border-bottom: 1px solid var(--line);
   font-family: var(--font-inter), sans-serif;
-  font-size: 15px;
+  font-size: var(--copy);
   line-height: 1.6;
   color: var(--ink-2);
 }
@@ -1228,7 +1248,7 @@ a { color: inherit; text-decoration: none; }
 .article-body ol.week-plan {
   list-style: none;
   counter-reset: week-day;
-  max-width: 62ch;
+  max-width: var(--measure);
   margin: 0 0 18px;
   padding: 0;
   border-top: 1px solid var(--line);
@@ -1236,7 +1256,7 @@ a { color: inherit; text-decoration: none; }
 .article-body ol.week-plan li {
   counter-increment: week-day;
   font-family: var(--font-inter), sans-serif;
-  font-size: 15px;
+  font-size: var(--copy);
   line-height: 1.7;
   color: var(--ink-2);
   padding: 12px 0 12px 42px;
@@ -1261,7 +1281,7 @@ a { color: inherit; text-decoration: none; }
   padding: 24px 0 8px;
 }
 .post-disclaimer {
-  max-width: 62ch;
+  max-width: var(--measure);
   font-family: var(--font-inter), sans-serif;
   font-size: 12px;
   line-height: 1.6;
@@ -1326,7 +1346,7 @@ a { color: inherit; text-decoration: none; }
 }
 .race-body {
   font-family: var(--font-inter), sans-serif;
-  font-size: 13px;
+  font-size: var(--copy-sm);
   line-height: 1.55;
   color: var(--ink-2);
   margin-bottom: 6px;
@@ -1419,10 +1439,10 @@ a { color: inherit; text-decoration: none; }
 }
 .faq-a {
   font-family: var(--font-inter), sans-serif;
-  font-size: 13.5px;
+  font-size: var(--copy);
   line-height: 1.65;
   color: var(--ink-2);
-  max-width: 62ch;
+  max-width: var(--measure);
 }
 
 /* ============================================================
@@ -1485,10 +1505,10 @@ a { color: inherit; text-decoration: none; }
 .author-card-name:hover { color: var(--accent); }
 .author-card-bio {
   font-family: var(--font-inter), sans-serif;
-  font-size: 14px;
+  font-size: var(--copy-sm);
   line-height: 1.65;
   color: var(--ink-2);
-  max-width: 62ch;
+  max-width: var(--measure);
   margin-bottom: 14px;
 }
 .author-card-link {
@@ -1512,6 +1532,10 @@ a { color: inherit; text-decoration: none; }
   gap: 64px;
   align-items: start;
 }
+/* The bio column is the rest of a 1600px page, so its lines ran past 100
+   characters. Cap it at the same measure the about page uses, so a paragraph
+   is the same shape wherever it appears. */
+.author-pg-bio .about-pg-p { max-width: 64ch; }
 @media (max-width: 860px) {
   .author-pg-grid { grid-template-columns: 1fr; gap: 40px; }
 }
@@ -1581,7 +1605,7 @@ a { color: inherit; text-decoration: none; }
 }
 .gate-desc {
   font-family: var(--font-inter), sans-serif;
-  font-size: 13.5px;
+  font-size: var(--copy-sm);
   line-height: 1.65;
   color: var(--ink-2);
   max-width: 48ch;
@@ -1633,7 +1657,7 @@ a { color: inherit; text-decoration: none; }
   background: transparent;
   border: 0; outline: none;
   font-family: var(--font-inter), sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   color: var(--asphalt);
   padding: 10px 0 16px;
   caret-color: var(--accent);
@@ -1687,7 +1711,7 @@ a { color: inherit; text-decoration: none; }
 }
 .gate-success-body {
   font-family: var(--font-inter), sans-serif;
-  font-size: 13.5px; line-height: 1.65;
+  font-size: var(--copy-sm); line-height: 1.65;
   color: var(--ink-2);
   margin-bottom: 24px;
   max-width: 44ch;
@@ -1783,7 +1807,7 @@ a { color: inherit; text-decoration: none; }
 }
 .archive-entry-desc {
   font-family: var(--font-inter), sans-serif;
-  font-size: 14px;
+  font-size: var(--copy-sm);
   line-height: 1.6;
   color: var(--ink-2);
   max-width: 44ch;
@@ -1822,7 +1846,7 @@ a { color: inherit; text-decoration: none; }
   padding: 30px 28px;
 }
 .dispatch-aside-card .gate-title { font-size: clamp(28px, 3vw, 40px); margin-bottom: 14px; }
-.dispatch-aside-card .gate-desc { font-size: 13px; max-width: none; margin-bottom: 22px; }
+.dispatch-aside-card .gate-desc { font-size: var(--copy-sm); max-width: none; margin-bottom: 22px; }
 .dispatch-aside-card .gate-form { max-width: none; }
 .dispatch-aside-card .gate-what { margin-top: 26px; margin-bottom: 0; max-width: none; }
 
@@ -1840,7 +1864,7 @@ a { color: inherit; text-decoration: none; }
   font-size: clamp(24px, 2.4vw, 34px);
   max-width: none;
 }
-.dispatch-grid .archive-entry-desc { font-size: 13.5px; max-width: none; }
+.dispatch-grid .archive-entry-desc { font-size: var(--copy-sm); max-width: none; }
 
 /* ============================================================
    POST LAYOUT — article column + sticky right rail
@@ -1850,17 +1874,13 @@ a { color: inherit; text-decoration: none; }
    the reading measure. The cover, the caption, the masthead and the body all
    size themselves off these, so the column can be widened or the rail dropped
    in one place and nothing drifts out of line.
-   --post-measure is what a body paragraph actually occupies (62ch of Inter at
-   15px, measured in the browser). Photos match it rather than the column, so
-   the picture ends where the sentences end.
-   ⚑ keep in sync with POST_MEASURE in lib/photos.ts and the 62ch cap on
-   .article-body p. */
+   The reading measure itself is --measure, defined at :root because /privacy
+   and the author card use the same article styles without a .post wrapper. */
 .post {
   --post-shell: 1100px;
   --post-pad: 40px;
   --post-rail: 280px;
   --post-gap: 56px;
-  --post-measure: 588px;
 }
 
 /* Narrow the masthead / hero / gate to match the two-column shell
@@ -1959,7 +1979,7 @@ a { color: inherit; text-decoration: none; }
 }
 .rp-feature-desc {
   font-family: var(--font-inter), sans-serif;
-  font-size: 14.5px;
+  font-size: var(--copy-sm);
   line-height: 1.6;
   color: var(--ink-2);
   max-width: 42ch;
@@ -2253,7 +2273,7 @@ a { color: inherit; text-decoration: none; }
   min-width: 520px;
   border-collapse: collapse;
   font-family: var(--font-inter), sans-serif;
-  font-size: 13px;
+  font-size: var(--copy-sm);
   line-height: 1.6;
 }
 .privacy-table th {
