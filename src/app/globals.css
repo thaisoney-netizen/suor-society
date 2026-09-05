@@ -862,7 +862,6 @@ a { color: inherit; text-decoration: none; }
 .about-index {
   padding: clamp(56px, 7vw, 88px) 0;
   border-bottom: 1px solid var(--line);
-  background: var(--bone);
 }
 .about-index .about-pg-eye { margin-bottom: 8px; }
 .about-index-list {
@@ -909,13 +908,11 @@ a { color: inherit; text-decoration: none; }
 /* Closing band — three ways into the rest of the site */
 .about-close {
   padding: clamp(56px, 7vw, 88px) 0;
-  background: var(--asphalt);
-  color: var(--paper);
 }
 .about-close-eye {
   font-family: var(--font-jetbrains), monospace;
   font-size: 10px; letter-spacing: .26em; text-transform: uppercase;
-  color: rgba(255,255,255,.38);
+  color: var(--ink-3);
   margin-bottom: 24px;
 }
 .about-close-title {
@@ -924,24 +921,23 @@ a { color: inherit; text-decoration: none; }
   line-height: .9;
   letter-spacing: .03em;
   text-transform: uppercase;
-  color: var(--paper);
+  color: var(--asphalt);
   margin-bottom: clamp(32px, 4vw, 48px);
 }
 .about-close-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--line-on-slate);
-  border: 1px solid var(--line-on-slate);
+  gap: clamp(12px, 1.6vw, 20px);
 }
 .about-close-card {
   position: relative;
   display: block;
-  background: var(--asphalt);
+  background: var(--paper);
+  border: 1px solid var(--asphalt);
   padding: clamp(24px, 3vw, 36px) clamp(20px, 2.6vw, 32px) clamp(52px, 5vw, 60px);
-  transition: background-color .16s ease-out;
+  transition: border-color .16s ease-out;
 }
-.about-close-card:hover { background: var(--slate); }
+.about-close-card:hover { border-color: var(--accent); }
 .about-close-num {
   display: block;
   font-family: var(--font-jetbrains), monospace;
@@ -955,14 +951,14 @@ a { color: inherit; text-decoration: none; }
   line-height: 1;
   letter-spacing: .03em;
   text-transform: uppercase;
-  color: var(--paper);
+  color: var(--asphalt);
   margin-bottom: 12px;
 }
 .about-close-desc {
   font-family: var(--font-inter), sans-serif;
   font-size: 14px;
   line-height: 1.65;
-  color: var(--bone-on-slate);
+  color: var(--ink-2);
   max-width: 34ch;
 }
 .about-close-arrow {
