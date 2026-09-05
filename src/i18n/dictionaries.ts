@@ -600,7 +600,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
           href: "/culture/adizero-dropset-pro-vs-dropset-4",
           tag: "The Culture Archive",
           date: "September 2026",
-          title: "Adizero Dropset Pro vs Dropset 4: Which One Should You Buy",
+          title: "Adizero Dropset Pro vs Dropset 4: Which One Should You Buy?",
         },
         {
           href: "/culture/half-marathon-world-record",
@@ -1117,7 +1117,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
           href: "/culture/adizero-dropset-pro-vs-dropset-4",
           tag: "The Culture Archive",
           date: "Setembro 2026",
-          title: "Adizero Dropset Pro vs Dropset 4: qual dos dois comprar",
+          title: "Adizero Dropset Pro vs Dropset 4: qual dos dois comprar?",
         },
         {
           href: "/culture/half-marathon-world-record",

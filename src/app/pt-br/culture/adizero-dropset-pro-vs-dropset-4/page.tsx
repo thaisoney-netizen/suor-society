@@ -8,7 +8,7 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
 const META = {
   path: "/pt-br/culture/adizero-dropset-pro-vs-dropset-4",
-  title: "Adizero Dropset Pro vs Dropset 4: qual comprar, Suor Society",
+  title: "Adizero Dropset Pro vs Dropset 4: qual comprar?, Suor Society",
   description:
     "O Adizero Dropset Pro é um tênis de corrida que aguenta a academia. O Dropset 4 é um tênis de academia que aguenta um pouco de corrida. Ficha técnica, altura do solado, limite de carga, numeração e qual deles entra no seu rodízio.",
   image: "/adizero-dropset-hero.jpg",
@@ -34,9 +34,9 @@ const TOC = [
   { id: "pro", label: "O que é o Dropset Pro" },
   { id: "four", label: "O que é o Dropset 4" },
   { id: "specs", label: "A ficha técnica" },
-  { id: "upgrade", label: "O Pro é uma evolução" },
-  { id: "lifting", label: "O Pro serve pra musculação" },
-  { id: "running", label: "Dá pra correr no 4" },
+  { id: "upgrade", label: "O Pro é uma evolução?" },
+  { id: "lifting", label: "O Pro serve pra musculação?" },
+  { id: "running", label: "Dá pra correr no 4?" },
   { id: "buy", label: "Qual comprar" },
   { id: "fit", label: "Numeração e caimento" },
   { id: "hyrox", label: "O Pro no HYROX" },
@@ -115,7 +115,7 @@ export default function AdizeroDropsetProVsDropset4PtBr() {
           <div className="page">
             <div className="article-eye">The Culture &middot; Arquivo &nbsp;/&nbsp; Setembro 2026</div>
             <h1 className="article-headline">
-              Adizero Dropset Pro vs Dropset 4 <span>qual deles comprar</span>
+              Adizero Dropset Pro vs Dropset 4 <span>qual deles comprar</span>?
             </h1>
           </div>
         </section>
@@ -276,7 +276,7 @@ export default function AdizeroDropsetProVsDropset4PtBr() {
             {/* ── EVOLUÇÃO ── */}
             <section id="upgrade" className="article-body">
               <div className="page">
-                <h2>O Pro é uma evolução do Dropset 4</h2>
+                <h2>O Pro é uma evolução do Dropset 4?</h2>
                 <p>
                   Não. O Pro não é o Dropset 5. É outro tênis usando o nome da família, e os dois
                   estão na prateleira quase pelo mesmo preço de propósito.
@@ -301,7 +301,7 @@ export default function AdizeroDropsetProVsDropset4PtBr() {
             {/* ── MUSCULAÇÃO ── */}
             <section id="lifting" className="article-body">
               <div className="page">
-                <h2>O Adizero Dropset Pro serve pra musculação</h2>
+                <h2>O Adizero Dropset Pro serve pra musculação?</h2>
                 <p>Pra carga moderada, serve. Pra carga pesada, não.</p>
                 <p>
                   Halter leve a moderado e barra em série abaixo de 85 a 100kg funciona bem. Acima
@@ -320,7 +320,7 @@ export default function AdizeroDropsetProVsDropset4PtBr() {
             {/* ── CORRIDA ── */}
             <section id="running" className="article-body">
               <div className="page">
-                <h2>Dá pra correr com o adidas Dropset 4</h2>
+                <h2>Dá pra correr com o adidas Dropset 4?</h2>
                 <p>
                   Só distância curta. A entressola Repetitor é firme de propósito e tem pouquíssimo
                   solado pra absorver impacto.
@@ -335,7 +335,7 @@ export default function AdizeroDropsetProVsDropset4PtBr() {
             {/* ── QUAL COMPRAR ── */}
             <section id="buy" className="article-body">
               <div className="page">
-                <h2>Qual dos dois comprar</h2>
+                <h2>Qual dos dois comprar?</h2>
                 <p>
                   <strong>Compre o Adizero Dropset Pro se</strong> a maior parte da sua semana de
                   treino é corrida, sua parte de força é halter e barra moderada, você faz HYROX ou
@@ -361,7 +361,7 @@ export default function AdizeroDropsetProVsDropset4PtBr() {
             {/* ── NUMERAÇÃO ── */}
             <section id="fit" className="article-body">
               <div className="page">
-                <h2>Os dois vestem no tamanho certo</h2>
+                <h2>Os dois vestem no tamanho certo?</h2>
                 <p>
                   Os dois vestem no tamanho certo pra pé estreito e médio. Pé largo deve subir meio
                   número em qualquer um dos dois.
@@ -388,7 +388,7 @@ export default function AdizeroDropsetProVsDropset4PtBr() {
             {/* ── HYROX ── */}
             <section id="hyrox" className="article-body">
               <div className="page">
-                <h2>O Adizero Dropset Pro é bom pra HYROX</h2>
+                <h2>O Adizero Dropset Pro é bom pra HYROX?</h2>
                 <p>
                   É uma das opções mais fortes de 2026 pra HYROX, e a adidas fez ele exatamente pra
                   isso.

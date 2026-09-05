@@ -8,7 +8,7 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
 const META = {
   path: "/culture/adizero-dropset-pro-vs-dropset-4",
-  title: "Adizero Dropset Pro vs Dropset 4: Which One Should You Buy, Suor Society",
+  title: "Adizero Dropset Pro vs Dropset 4: Which One Should You Buy?, Suor Society",
   description:
     "The Adizero Dropset Pro is a running shoe that handles the gym. The Dropset 4 is a gym shoe that handles a little running. Specs, stack heights, lifting limits, sizing, and which one belongs in your rotation.",
   image: "/adizero-dropset-hero.jpg",
@@ -33,9 +33,9 @@ const TOC = [
   { id: "pro", label: "What the Dropset Pro is" },
   { id: "four", label: "What the Dropset 4 is" },
   { id: "specs", label: "The spec sheet" },
-  { id: "upgrade", label: "Is the Pro an upgrade" },
-  { id: "lifting", label: "Is the Pro good for lifting" },
-  { id: "running", label: "Can you run in the 4" },
+  { id: "upgrade", label: "Is the Pro an upgrade?" },
+  { id: "lifting", label: "Is the Pro good for lifting?" },
+  { id: "running", label: "Can you run in the 4?" },
   { id: "buy", label: "Which one to buy" },
   { id: "fit", label: "Sizing and fit" },
   { id: "hyrox", label: "The Pro for HYROX" },
@@ -114,7 +114,7 @@ export default function AdizeroDropsetProVsDropset4() {
           <div className="page">
             <div className="article-eye">The Culture Archive &nbsp;/&nbsp; September 2026</div>
             <h1 className="article-headline">
-              Adizero Dropset Pro vs Dropset 4 <span>which one should you buy</span>
+              Adizero Dropset Pro vs Dropset 4 <span>which one should you buy</span>?
             </h1>
           </div>
         </section>
@@ -277,7 +277,7 @@ export default function AdizeroDropsetProVsDropset4() {
             {/* ── UPGRADE ── */}
             <section id="upgrade" className="article-body">
               <div className="page">
-                <h2>Is the Pro an upgrade over the Dropset 4</h2>
+                <h2>Is the Pro an upgrade over the Dropset 4?</h2>
                 <p>
                   No. The Pro is not the Dropset 5. It&rsquo;s a different shoe wearing the family
                   name, and both are on the shelf at basically the same price on purpose.
@@ -301,7 +301,7 @@ export default function AdizeroDropsetProVsDropset4() {
             {/* ── LIFTING ── */}
             <section id="lifting" className="article-body">
               <div className="page">
-                <h2>Is the Adizero Dropset Pro good for lifting</h2>
+                <h2>Is the Adizero Dropset Pro good for lifting?</h2>
                 <p>For moderate lifting, yes. For heavy lifting, no.</p>
                 <p>
                   Light to moderate dumbbell work and barbell cycling under 185 to 225 pounds is
@@ -320,7 +320,7 @@ export default function AdizeroDropsetProVsDropset4() {
             {/* ── RUNNING ── */}
             <section id="running" className="article-body">
               <div className="page">
-                <h2>Can you run in the adidas Dropset 4</h2>
+                <h2>Can you run in the adidas Dropset 4?</h2>
                 <p>
                   Short distances only. The Repetitor midsole is firm by design and there&rsquo;s
                   very little stack to absorb impact.
@@ -335,7 +335,7 @@ export default function AdizeroDropsetProVsDropset4() {
             {/* ── WHICH TO BUY ── */}
             <section id="buy" className="article-body">
               <div className="page">
-                <h2>Which one should you buy</h2>
+                <h2>Which one should you buy?</h2>
                 <p>
                   <strong>Buy the Adizero Dropset Pro if</strong> most of your training week is
                   running, your strength work is dumbbells and moderate barbell, you&rsquo;re doing
@@ -360,7 +360,7 @@ export default function AdizeroDropsetProVsDropset4() {
             {/* ── FIT ── */}
             <section id="fit" className="article-body">
               <div className="page">
-                <h2>Do they run true to size</h2>
+                <h2>Do they run true to size?</h2>
                 <p>
                   Both run true to size for narrow and medium feet. Wide feet should size up half in
                   either.
@@ -386,7 +386,7 @@ export default function AdizeroDropsetProVsDropset4() {
             {/* ── HYROX ── */}
             <section id="hyrox" className="article-body">
               <div className="page">
-                <h2>Is the Adizero Dropset Pro good for HYROX</h2>
+                <h2>Is the Adizero Dropset Pro good for HYROX?</h2>
                 <p>
                   It&rsquo;s one of the strongest HYROX picks of 2026, and adidas built it for
                   exactly that.
