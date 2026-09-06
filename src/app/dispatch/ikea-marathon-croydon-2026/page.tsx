@@ -10,7 +10,7 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 // (dictionaries.ts) maps the language switcher across.
 const META = {
   path: "/dispatch/ikea-marathon-croydon-2026",
-  title: "The IKEA Marathon Is Real, Suor Society",
+  title: "IKEA Marathon 2026: Croydon Date, Registration, Details",
   description:
     "The first official IKEA Marathon runs December 13, 2026 entirely inside IKEA Croydon in south London. 100 places, a 6pm start, a hard six-hour cutoff, and a self-assembly medal.",
   image: "/ikea-marathon-hero.avif",

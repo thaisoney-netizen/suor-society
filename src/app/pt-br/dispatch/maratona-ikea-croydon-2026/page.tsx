@@ -10,7 +10,7 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 // mapeia o seletor de idioma.
 const META = {
   path: "/pt-br/dispatch/maratona-ikea-croydon-2026",
-  title: "A Maratona da IKEA É Real, Suor Society",
+  title: "Maratona IKEA 2026: Data, Inscrição e Detalhes em Croydon",
   description:
     "A primeira Maratona IKEA oficial acontece em 13 de dezembro de 2026, inteiramente dentro da IKEA de Croydon, em Londres. São 100 vagas, largada às 18h, corte rígido de seis horas e uma medalha que você monta.",
   image: "/ikea-marathon-hero.avif",
