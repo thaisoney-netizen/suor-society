@@ -93,28 +93,28 @@ const TOC = [
 const SPECS = [
   {
     label: "US price reference",
-    pro: "US$150 · Adidas US",
-    four: "US$145 · published review",
+    pro: "US$150",
+    four: "US$145",
   },
   {
     label: "Release",
-    pro: "June 17, 2026 · Adidas",
-    four: "January 8, 2026 · Adidas",
+    pro: "June 17, 2026",
+    four: "January 8, 2026",
   },
   {
     label: "Weight",
-    pro: "242 g / 8.54 oz · Adidas listing; reference size not stated",
-    four: "10.9 oz / about 309 g · That Fit Friend, men’s US 10",
+    pro: "242 g / 8.54 oz; reference size not stated",
+    four: "10.9 oz / about 309 g, men’s US 10",
   },
   {
     label: "Heel / forefoot stack",
-    pro: "29 / 22 mm · Adidas",
-    four: "19.9 / 14.6 mm · RunRepeat lab",
+    pro: "29 / 22 mm",
+    four: "19.9 / 14.6 mm",
   },
   {
     label: "Heel-to-toe drop",
-    pro: "7 mm · Adidas",
-    four: "6 mm · Adidas; 5.3 mm measured by RunRepeat",
+    pro: "7 mm",
+    four: "6 mm; 5.3 mm measured",
   },
   {
     label: "Midsole",
@@ -124,7 +124,7 @@ const SPECS = [
   {
     label: "Outsole",
     pro: "Lighttraxion + Continental rubber",
-    four: "Continental rubber · Adidas",
+    four: "Continental rubber",
   },
 ];
 const FAQS = [

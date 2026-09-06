@@ -92,28 +92,28 @@ const TOC = [
 const SPECS = [
   {
     label: "Preço de referência nos EUA",
-    pro: "US$150 · Adidas EUA",
-    four: "US$145 · avaliação publicada",
+    pro: "US$150",
+    four: "US$145",
   },
   {
     label: "Estreia",
-    pro: "17 de junho de 2026 · Adidas",
-    four: "8 de janeiro de 2026 · Adidas",
+    pro: "17 de junho de 2026",
+    four: "8 de janeiro de 2026",
   },
   {
     label: "Peso",
-    pro: "242 g / 8,54 oz · Adidas; tamanho de referência não informado",
-    four: "10,9 oz / cerca de 309 g · That Fit Friend, masculino US 10",
+    pro: "242 g / 8,54 oz; tamanho de referência não informado",
+    four: "10,9 oz / cerca de 309 g, masculino US 10",
   },
   {
     label: "Altura: calcanhar / antepé",
-    pro: "29 / 22 mm · Adidas",
-    four: "19,9 / 14,6 mm · laboratório RunRepeat",
+    pro: "29 / 22 mm",
+    four: "19,9 / 14,6 mm",
   },
   {
     label: "Drop",
-    pro: "7 mm · Adidas",
-    four: "6 mm · Adidas; 5,3 mm medidos pelo RunRepeat",
+    pro: "7 mm",
+    four: "6 mm; 5,3 mm medidos",
   },
   {
     label: "Entressola",
@@ -123,7 +123,7 @@ const SPECS = [
   {
     label: "Sola",
     pro: "Lighttraxion + borracha Continental",
-    four: "Borracha Continental · Adidas",
+    four: "Borracha Continental",
   },
 ];
 const FAQS = [
