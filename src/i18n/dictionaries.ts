@@ -1,6 +1,6 @@
 // Central place for site copy in each language.
 //
-// Scope note: the brand headline ("For runners / for lifters / …") stays in
+// Scope note: the brand headline (the locked tagline "Run. Lift. Sweat.") stays in
 // English on every locale on purpose — it reads as the brand line, not as copy
 // to translate. Brand/section names (The Culture, The Dispatch, Race Picks,
 // Crew) also stay in English. The hero tagline IS translated per locale.

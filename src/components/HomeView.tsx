@@ -97,7 +97,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
                 and CTA are localized (the CTA points at each locale's own
                 regional race guide). */}
             <h1 className="hero-headline">
-              For runners<br />for lifters<br />for hybrids<br />for the sweat
+              Run.<br />Lift.<br />Sweat.
             </h1>
             <p className="hero-tag">
               {t.heroTag}
