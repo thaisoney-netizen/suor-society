@@ -161,6 +161,29 @@ The weekly content-freshness sweep also audits this, but keep it correct at
 publish time — don't rely on the sweep.
 <!-- END:author-page-upkeep -->
 
+<!-- BEGIN:copy-no-dashes -->
+# Copy: no dashes
+
+No em dashes and no en dashes in anything a reader sees. That covers headlines,
+decks, body copy, captions and photo credits, FAQ questions and answers, table
+of contents labels, metadata descriptions, and the `body` strings in
+`src/content/races-*.json`. Both locales.
+
+It includes number ranges: write "185 to 225 lb", not "185-225 lb" with an en
+dash. In pt-BR, "185 a 225".
+
+Rewrite as two sentences or use a comma, whichever reads closer to speech. The
+dash is the loudest AI tell in this site's writing and Thais reads it as
+machine-written on sight, so this is not a style preference to weigh against
+others.
+
+Code comments are exempt. Before shipping copy, grep for both characters:
+
+```
+grep -rn -e '—' -e '–' src/app src/components src/content src/i18n
+```
+<!-- END:copy-no-dashes -->
+
 <!-- BEGIN:photo-handling -->
 # Photos: never filter them
 

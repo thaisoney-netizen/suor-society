@@ -22,7 +22,7 @@ export default function NotFound() {
           <div className="page">
             <div className="about-pg-col">
               <p className="about-pg-p">
-                Wrong turn, no big deal — regroup at the start line. The page you&rsquo;re
+                Wrong turn, no big deal. Regroup at the start line. The page you&rsquo;re
                 after may have moved or never existed.
               </p>
               <p className="about-pg-p" lang="pt-BR">

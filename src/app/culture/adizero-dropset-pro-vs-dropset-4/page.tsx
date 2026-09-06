@@ -67,7 +67,7 @@ const TOC = [
   },
   {
     id: "running",
-    label: "Can you run in the Dropset 4—and how far in the Pro?",
+    label: "Can you run in the Dropset 4, and how far in the Pro?",
   },
   {
     id: "buy",
@@ -304,7 +304,7 @@ export default function AdizeroDropsetProVsDropset4() {
                   Stack is the thickness under the foot; drop is the difference
                   between heel and forefoot height. Weights and stack
                   measurements use different reference sizes or methods here, so
-                  these are sourced reference figures—not a controlled
+                  these are sourced reference figures, not a controlled
                   head-to-head measurement. US price references are not
                   Brazilian retail prices.
                 </p>
@@ -417,7 +417,7 @@ export default function AdizeroDropsetProVsDropset4() {
                   >
                     Jake Boly’s comparison
                   </a>{" "}
-                  puts his preferred Pro barbell range around 185–225 lb (84–102
+                  puts his preferred Pro barbell range around 185 to 225 lb (84 to 102
                   kg), before it feels less grounded. Treat that as his
                   observation, not a universal cutoff. Exercise, technique, body
                   weight and fit all affect the experience.
@@ -431,7 +431,7 @@ export default function AdizeroDropsetProVsDropset4() {
             </section>
             <section id="running" className="article-body">
               <div className="page">
-                <h2>Can you run in the Dropset 4—and how far in the Pro?</h2>
+                <h2>Can you run in the Dropset 4, and how far in the Pro?</h2>
                 <p>
                   The Dropset 4 is intended to accommodate short running efforts
                   within a gym session. Adidas describes efforts up to 800 m in

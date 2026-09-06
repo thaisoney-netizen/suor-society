@@ -88,7 +88,7 @@ export default function CapeTownMajorPtBr() {
 
             <h2>Como aconteceu</h2>
             <p>
-              A Cidade do Cabo passou na sua segunda avaliação na edição de 2026, em maio — é assim que
+              A Cidade do Cabo passou na sua segunda avaliação na edição de 2026, em maio, que é como
               funciona o processo de candidatura. Duas edições impecáveis cumprindo todos os critérios
               (percurso, expo, elite, operação, segurança) e você está dentro. Todo mundo que terminou a
               prova de 2026 ganhou uma estrela provisória, e essas estão sendo convertidas na de verdade.

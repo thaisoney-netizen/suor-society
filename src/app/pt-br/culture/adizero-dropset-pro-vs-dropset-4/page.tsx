@@ -422,7 +422,7 @@ export default function AdizeroDropsetProVsDropset4() {
                     comparativo de Jake Boly
                   </a>
                   , a faixa de barra preferida para o Pro fica em torno de
-                  185–225 lb, cerca de 84–102 kg, antes de ele sentir menos
+                  185 a 225 lb, cerca de 84 a 102 kg, antes de ele sentir menos
                   firmeza. É uma observação pessoal, não um limite universal.
                   Exercício, técnica, peso corporal e ajuste mudam a
                   experiência.
