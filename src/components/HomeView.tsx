@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import { photo, CARD_SIZES } from "@/lib/photos";
+import { useState } from "react";
+import { photo, CARD_SIZES, COVER_SIZES } from "@/lib/photos";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import LanguageBanner from "@/components/LanguageBanner";
@@ -19,30 +19,6 @@ export default function HomeView({ lang }: { lang: Lang }) {
   const t = dictionaries[lang].home;
   const [submitted, setSubmitted] = useState(false);
   const [signupError, setSignupError] = useState(false);
-  const heroVideoRef = useRef<HTMLVideoElement>(null);
-
-  // iOS blocks autoplay in Low Power Mode and leaves the poster frozen with a
-  // play button. Retry play() on mount and on any tap until playback starts.
-  useEffect(() => {
-    const video = heroVideoRef.current;
-    if (!video) return;
-    video.muted = true;
-    const tryPlay = () => {
-      video.play().catch(() => {});
-    };
-    const stopRetrying = () => {
-      window.removeEventListener("touchend", tryPlay);
-      window.removeEventListener("click", tryPlay);
-    };
-    video.addEventListener("playing", stopRetrying, { once: true });
-    window.addEventListener("touchend", tryPlay, { passive: true });
-    window.addEventListener("click", tryPlay);
-    tryPlay();
-    return () => {
-      stopRetrying();
-      video.removeEventListener("playing", stopRetrying);
-    };
-  }, []);
 
   async function handleSignup(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -80,15 +56,12 @@ export default function HomeView({ lang }: { lang: Lang }) {
       {/* HERO — full viewport, one message: headline + one CTA */}
       <header className="hero">
         <SiteNav variant="overlay" lang={lang} />
-        <video
-          ref={heroVideoRef}
-          className="hero-video"
-          src="/hero.mp4"
-          poster="/hero-poster.jpg"
-          autoPlay
-          muted
-          loop
-          playsInline
+        <Image
+          {...photo("/home-track-hero.webp")}
+          className="hero-image"
+          alt="Two athletes in starting positions on a running track."
+          sizes={COVER_SIZES}
+          preload
         />
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-text">
