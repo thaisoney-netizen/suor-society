@@ -65,12 +65,12 @@ export default function ScrollTracker() {
         #ss-tracker.ss-on { transform:none; }
         @media(max-width:720px){ #ss-tracker{padding:0 20px;height:54px;} }
         .ss-label-col { display:flex; flex-direction:column; gap:3px; }
-        .ss-lbl { font-family:var(--font-barlow,'Barlow Condensed',sans-serif); font-weight:600; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.45); }
+        .ss-lbl { font-family:var(--font-barlow,'Barlow Condensed',sans-serif); font-weight:600; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.45); }
         .ss-dist-wrap { display:flex; align-items:baseline; gap:8px; background:rgba(255,255,255,.06); border:1px solid rgba(232,100,42,.35); border-radius:6px; padding:8px 16px; }
-        .ss-num { font-family:var(--font-jetbrains,'JetBrains Mono',ui-monospace,monospace); font-size:22px; font-weight:600; letter-spacing:.04em; color:#fff; min-width:72px; text-align:right; transition:color .12s; }
+        .ss-num { font-family:var(--font-jetbrains,'JetBrains Mono',ui-monospace,monospace); font-size:24px; font-weight:600; letter-spacing:.04em; color:#fff; min-width:78px; text-align:right; transition:color .12s; }
         .ss-num.ss-flash { color:var(--sunrise); }
-        .ss-unit { font-family:var(--font-barlow,'Barlow Condensed',sans-serif); font-weight:700; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.45); }
-        .ss-toggle { font-family:var(--font-barlow,'Barlow Condensed',sans-serif); font-weight:600; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.35); background:none; border:1px solid rgba(255,255,255,.15); border-radius:4px; padding:4px 8px; cursor:pointer; margin-left:8px; transition:color .15s,border-color .15s; }
+        .ss-unit { font-family:var(--font-barlow,'Barlow Condensed',sans-serif); font-weight:700; font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.45); }
+        .ss-toggle { font-family:var(--font-barlow,'Barlow Condensed',sans-serif); font-weight:600; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.35); background:none; border:1px solid rgba(255,255,255,.15); border-radius:4px; padding:4px 8px; cursor:pointer; margin-left:8px; transition:color .15s,border-color .15s; }
         .ss-toggle:hover { color:var(--sunrise); border-color:var(--sunrise); }
       `}</style>
       <div id="ss-progress" style={{ width: `${progress}%` }} />
@@ -79,7 +79,7 @@ export default function ScrollTracker() {
           <span className="ss-lbl">{t.scrolledLabel}</span>
           <span
             className="ss-lbl"
-            style={{ color: "rgba(255,255,255,.22)", fontSize: 10, letterSpacing: ".12em" }}
+            style={{ color: "rgba(255,255,255,.22)", fontSize: 12, letterSpacing: ".12em" }}
           >
             Suor Society
           </span>

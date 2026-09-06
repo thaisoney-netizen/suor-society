@@ -24,6 +24,25 @@
   --copy:    20px;
   --copy-sm: 18px;
 
+  /* Label sizes. Everything that is not a sentence you sit and read is one of
+     these five: eyebrows, meta rows, nav, buttons, footer, fine print. They
+     exist for the same reason --copy does, so a byline isn't 12px on one page
+     and 13px on the next. The floor is 14px on purpose. Mainstream running and
+     editorial sites put nothing load-bearing under it, and 12px was what made
+     this site read small next to them even with the body copy at 20px.
+     --label    uppercase micro type: eyebrows, meta rows, stamps, table heads
+     --label-lg uppercase links and section labels carrying a bit more weight
+     --ui       things you click: nav links, buttons, toc entries, menu options
+     --ui-lg    UI that reads as a sentence: footer copy, notes, list items
+     --fine     small print: disclaimers, errors, captions, code
+     These are single values, not clamps. Mobile gets the same size as desktop
+     because a phone is where the old 12px hurt most. */
+  --label:    14px;
+  --label-lg: 15px;
+  --ui:       16px;
+  --ui-lg:    17px;
+  --fine:     15px;
+
   /* The reading measure: what a body paragraph occupies at --copy (62ch of
      Inter at 20px, measured, not guessed). Every block of a post stops on
      this edge, photo included, so the page reads as one column. Blocks whose
@@ -127,12 +146,23 @@ a { color: inherit; text-decoration: none; }
 .nav-link {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 600;
-  font-size: 14px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: var(--ui); letter-spacing: .22em; text-transform: uppercase;
   padding: 10px 0 8px;
   border-bottom: 2px solid transparent;
   transition: border-color .14s ease-out, opacity .14s ease-out;
 }
 .nav-link:hover { border-bottom-color: var(--accent); }
+
+/* The links are 16px now, which widens their track by ~50px. Between the
+   hamburger breakpoint and ~1150px that is enough to shove the wordmark off
+   centre (the grid's empty left track can't match the links track). Buy the
+   width back here rather than shrinking the type: pull the nav out to the page
+   edge and tighten the gap. SUOR stays centred down to ~995px, and below 900px
+   the hamburger has taken over anyway. */
+@media (min-width: 901px) and (max-width: 1150px) {
+  .nav-row   { padding: 0 40px; }
+  .nav-links { gap: 26px; }
+}
 
 /* hamburger — mobile only */
 .nav-toggle {
@@ -234,7 +264,7 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid rgba(255,255,255,.3);
   color: #fff;
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .22em; text-transform: uppercase;
   padding: 8px 14px;
   cursor: pointer;
   transition: border-color .12s ease-out, color .12s ease-out;
@@ -263,7 +293,7 @@ a { color: inherit; text-decoration: none; }
 .nav-menu-link:active { color: var(--accent); }
 .nav-menu-num {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 13px; letter-spacing: .18em;
+  font-size: var(--label-lg); letter-spacing: .18em;
   color: var(--accent);
 }
 .nav-menu-foot {
@@ -274,7 +304,7 @@ a { color: inherit; text-decoration: none; }
 }
 .nav-menu-ig {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 13px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: var(--label-lg); letter-spacing: .22em; text-transform: uppercase;
   color: rgba(255,255,255,.6);
 }
 .nav-menu-ig:hover { color: #fff; }
@@ -333,16 +363,21 @@ a { color: inherit; text-decoration: none; }
 .hero-tag {
   font-family: var(--font-inter), sans-serif;
   font-weight: 400;
-  font-size: clamp(12px, 3vw, 17px);
+  font-size: clamp(16px, 3vw, 19px);
   line-height: 1.5;
   color: rgba(255,255,255,.82);
   margin-top: 18px;
   white-space: nowrap;
 }
+/* Below ~900px the tagline is longer than the screen at a readable size, so it
+   wraps instead of shrinking. Two lines at 16px beat one line at 12px. */
+@media (max-width: 900px) {
+  .hero-tag { white-space: normal; max-width: 30ch; }
+}
 .hero-cta {
   align-self: flex-end;
   font-family: var(--font-bebas), sans-serif;
-  font-size: 16px;
+  font-size: var(--ui-lg);
   letter-spacing: .14em;
   text-transform: uppercase;
   padding: 13px 30px;
@@ -414,7 +449,7 @@ a { color: inherit; text-decoration: none; }
 }
 .signup-eye {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .26em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 18px;
 }
@@ -429,7 +464,7 @@ a { color: inherit; text-decoration: none; }
 }
 .signup-note {
   font-family: var(--font-inter), sans-serif;
-  font-size: 16px;
+  font-size: var(--ui-lg);
   line-height: 1.6;
   color: var(--ink-2);
   margin: 14px auto 0;
@@ -461,7 +496,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--paper);
   border: 0;
   font-family: var(--font-bebas), sans-serif;
-  font-size: 15px;
+  font-size: var(--ui);
   letter-spacing: .14em;
   text-transform: uppercase;
   padding: 10px 24px;
@@ -471,10 +506,10 @@ a { color: inherit; text-decoration: none; }
 }
 .signup-btn:hover { background: #000; }
 .signup-btn:active { transform: translateY(1px); }
-.signup-error { color: #cc3333; font-size: 14px; margin-top: 12px; }
+.signup-error { color: #cc3333; font-size: var(--fine); margin-top: 12px; }
 .signup-success {
   font-family: var(--font-inter), sans-serif;
-  font-size: 16px;
+  font-size: var(--ui-lg);
   color: var(--asphalt);
   margin-top: 14px;
 }
@@ -489,7 +524,7 @@ a { color: inherit; text-decoration: none; }
 }
 .about-eye {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .26em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 28px;
   text-align: center;
@@ -511,7 +546,7 @@ a { color: inherit; text-decoration: none; }
   border-top: 1px solid var(--line);
   display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink-3);
 }
 .about-foot b { color: var(--asphalt); font-weight: 600; }
@@ -536,7 +571,7 @@ a { color: inherit; text-decoration: none; }
 }
 .links-head .lh-num {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 13px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: var(--label-lg); letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink-3);
 }
 .links-head .lh-title {
@@ -547,7 +582,7 @@ a { color: inherit; text-decoration: none; }
 }
 .links-head .lh-meta {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink-3);
 }
 
@@ -628,7 +663,7 @@ a { color: inherit; text-decoration: none; }
 .lc-eye {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 700;
-  font-size: 12px; letter-spacing: .28em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .28em; text-transform: uppercase;
   color: var(--ink-3);
 }
 .lc-title {
@@ -647,7 +682,7 @@ a { color: inherit; text-decoration: none; }
 }
 .lc-meta {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .18em; text-transform: uppercase;
   color: var(--ink-3);
   border-top: 1px solid var(--line);
   padding-top: 14px;
@@ -667,7 +702,7 @@ a { color: inherit; text-decoration: none; }
 }
 .board-more {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 13px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: var(--label-lg); letter-spacing: .22em; text-transform: uppercase;
   color: var(--asphalt);
   border: 1px solid var(--asphalt);
   padding: 13px 28px;
@@ -713,6 +748,12 @@ a { color: inherit; text-decoration: none; }
   .foot-grid { grid-template-columns: 1fr 1fr; gap: 44px; }
   .foot-brand { grid-column: 1 / -1; }
 }
+/* At 17px "hello@suorsociety.com" is wider than half of a 320px screen, and it
+   has no space to break at, so two columns push the whole footer sideways.
+   Stack them instead of taking the type back down. */
+@media (max-width: 400px) {
+  .foot-grid { grid-template-columns: 1fr; gap: 32px; }
+}
 .foot-brand {
   max-width: 320px;
 }
@@ -724,7 +765,7 @@ a { color: inherit; text-decoration: none; }
 }
 .foot-desc {
   font-family: var(--font-inter), sans-serif;
-  font-size: 15px;
+  font-size: var(--ui-lg);
   line-height: 1.65;
   color: var(--ink-2);
 }
@@ -732,17 +773,19 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   flex-direction: column;
   gap: 10px;
+  min-width: 0;
 }
 .foot-col-title {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 700;
-  font-size: 13px; letter-spacing: .24em; text-transform: uppercase;
+  font-size: var(--label-lg); letter-spacing: .24em; text-transform: uppercase;
   color: var(--asphalt);
   margin-bottom: 6px;
 }
 .foot-link {
   font-family: var(--font-inter), sans-serif;
-  font-size: 15px;
+  font-size: var(--ui-lg);
+  overflow-wrap: anywhere;
   color: var(--ink-2);
   transition: color .12s ease-out;
 }
@@ -757,7 +800,7 @@ a { color: inherit; text-decoration: none; }
   padding-top: 20px;
   border-top: 1px solid var(--line);
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .2em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .2em; text-transform: uppercase;
   color: var(--ink-3);
 }
 
@@ -770,7 +813,7 @@ a { color: inherit; text-decoration: none; }
 }
 .about-pg-eye {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .26em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 32px;
 }
@@ -821,7 +864,7 @@ a { color: inherit; text-decoration: none; }
 }
 .about-pg-label {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .26em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 28px;
   padding-bottom: 16px;
@@ -883,7 +926,7 @@ a { color: inherit; text-decoration: none; }
 }
 .about-stamp {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink-3);
 }
 .about-stamp:first-child { color: var(--accent); }
@@ -934,7 +977,7 @@ a { color: inherit; text-decoration: none; }
 }
 .about-index-num {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .2em;
+  font-size: var(--label); letter-spacing: .2em;
   color: var(--accent);
 }
 .about-index-title {
@@ -966,7 +1009,7 @@ a { color: inherit; text-decoration: none; }
 }
 .about-close-eye {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .26em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 24px;
 }
@@ -996,7 +1039,7 @@ a { color: inherit; text-decoration: none; }
 .about-close-num {
   display: block;
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .2em;
+  font-size: var(--label); letter-spacing: .2em;
   color: var(--accent);
   margin-bottom: 20px;
 }
@@ -1037,7 +1080,7 @@ a { color: inherit; text-decoration: none; }
 }
 .about-pg-crew-eye {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .26em; text-transform: uppercase;
   color: rgba(255,255,255,.38);
   margin-bottom: 28px;
 }
@@ -1061,7 +1104,7 @@ a { color: inherit; text-decoration: none; }
   padding: 14px 0;
   border-bottom: 1px solid rgba(255,255,255,.08);
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .22em; text-transform: uppercase;
 }
 .about-pg-crew-row span:first-child { color: rgba(255,255,255,.42); }
 .about-pg-crew-row span:last-child  { color: var(--paper); text-align: right; }
@@ -1183,7 +1226,7 @@ a { color: inherit; text-decoration: none; }
 }
 .article-eye {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .26em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 24px;
 }
@@ -1209,7 +1252,7 @@ a { color: inherit; text-decoration: none; }
 }
 .article-meta {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink-3);
   display: flex; gap: 20px; flex-wrap: wrap;
 }
@@ -1293,7 +1336,7 @@ a { color: inherit; text-decoration: none; }
 .swap-row span:first-child { color: var(--ink-3); }
 .swap-head {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 14px;
+  font-size: var(--fine);
   letter-spacing: .06em;
   text-transform: uppercase;
 }
@@ -1326,7 +1369,7 @@ a { color: inherit; text-decoration: none; }
   left: 0;
   top: 12px;
   font-family: var(--font-jetbrains), monospace;
-  font-size: 14px;
+  font-size: var(--fine);
   letter-spacing: .06em;
   color: var(--ink-3);
 }
@@ -1339,7 +1382,7 @@ a { color: inherit; text-decoration: none; }
 .post-disclaimer {
   max-width: var(--measure);
   font-family: var(--font-inter), sans-serif;
-  font-size: 14px;
+  font-size: var(--fine);
   line-height: 1.6;
   color: var(--ink-3);
 }
@@ -1359,7 +1402,7 @@ a { color: inherit; text-decoration: none; }
 }
 .article-section-sub {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 28px;
   padding-bottom: 18px;
@@ -1379,7 +1422,7 @@ a { color: inherit; text-decoration: none; }
 .race-row:last-child { border-bottom: none; }
 .race-num {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .18em;
+  font-size: var(--label); letter-spacing: .18em;
   color: var(--ink-3);
   padding-top: 4px;
 }
@@ -1396,7 +1439,7 @@ a { color: inherit; text-decoration: none; }
 .race-where {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 600;
-  font-size: 13px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: var(--label-lg); letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink-2);
   margin-bottom: 6px;
 }
@@ -1410,12 +1453,12 @@ a { color: inherit; text-decoration: none; }
 }
 .race-dists {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .16em; text-transform: uppercase;
   color: var(--ink-3);
 }
 .race-status {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .16em; text-transform: uppercase;
   color: var(--ink-3);
   margin-top: 4px;
 }
@@ -1454,7 +1497,7 @@ a { color: inherit; text-decoration: none; }
 }
 .race-link {
   font-family: var(--font-bebas), sans-serif;
-  font-size: 14px; letter-spacing: .14em; text-transform: uppercase;
+  font-size: var(--ui); letter-spacing: .14em; text-transform: uppercase;
   background: var(--asphalt);
   color: var(--paper);
   padding: 7px 16px;
@@ -1489,7 +1532,7 @@ a { color: inherit; text-decoration: none; }
 .faq-q {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 700;
-  font-size: 16px; letter-spacing: .12em; text-transform: uppercase;
+  font-size: var(--ui-lg); letter-spacing: .12em; text-transform: uppercase;
   color: var(--asphalt);
   margin-bottom: 8px;
 }
@@ -1555,7 +1598,7 @@ a { color: inherit; text-decoration: none; }
 }
 .author-card-label {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .26em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 10px;
 }
@@ -1580,7 +1623,7 @@ a { color: inherit; text-decoration: none; }
 }
 .author-card-link {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 13px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: var(--label-lg); letter-spacing: .22em; text-transform: uppercase;
   color: var(--asphalt);
   border-bottom: 1px solid var(--asphalt);
   padding-bottom: 2px;
@@ -1658,7 +1701,7 @@ a { color: inherit; text-decoration: none; }
 }
 .gate-label {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .26em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 16px;
 }
@@ -1685,7 +1728,7 @@ a { color: inherit; text-decoration: none; }
 }
 .gate-what li {
   font-family: var(--font-inter), sans-serif;
-  font-size: 15px;
+  font-size: var(--ui-lg);
   color: var(--ink-2);
   padding: 10px 0;
   border-bottom: 1px solid var(--line);
@@ -1716,7 +1759,7 @@ a { color: inherit; text-decoration: none; }
 .gate-field-label {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 700;
-  font-size: 12px; letter-spacing: .28em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .28em; text-transform: uppercase;
   color: var(--ink-3);
   padding-top: 14px;
 }
@@ -1735,7 +1778,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--paper);
   border: 0;
   font-family: var(--font-bebas), sans-serif;
-  font-size: 15px; letter-spacing: .14em; text-transform: uppercase;
+  font-size: var(--ui); letter-spacing: .14em; text-transform: uppercase;
   padding: 14px 24px;
   cursor: pointer;
   margin-top: 20px;
@@ -1748,13 +1791,13 @@ a { color: inherit; text-decoration: none; }
 .gate-btn:disabled { opacity: .4; cursor: not-allowed; }
 .gate-fine {
   font-family: var(--font-inter), sans-serif;
-  font-size: 13px;
+  font-size: var(--fine);
   color: var(--ink-3);
   margin-top: 12px;
 }
 .gate-error {
   font-family: var(--font-inter), sans-serif;
-  font-size: 14px;
+  font-size: var(--fine);
   color: #cc3333;
   margin-top: 8px;
 }
@@ -1764,7 +1807,7 @@ a { color: inherit; text-decoration: none; }
 }
 .gate-success-tag {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .26em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .26em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 14px;
 }
@@ -1788,7 +1831,7 @@ a { color: inherit; text-decoration: none; }
   background: var(--asphalt);
   color: var(--paper);
   font-family: var(--font-bebas), sans-serif;
-  font-size: 15px; letter-spacing: .14em; text-transform: uppercase;
+  font-size: var(--ui); letter-spacing: .14em; text-transform: uppercase;
   padding: 14px 24px;
   transition: background .12s ease-out;
 }
@@ -1858,7 +1901,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   gap: 20px;
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink-3);
 }
 .archive-entry-meta span:first-child { color: var(--accent); }
@@ -1883,7 +1926,7 @@ a { color: inherit; text-decoration: none; }
   margin-top: auto;
   align-self: flex-start;
   font-family: var(--font-jetbrains), monospace;
-  font-size: 13px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: var(--label-lg); letter-spacing: .22em; text-transform: uppercase;
   color: var(--asphalt);
   border: 1px solid var(--asphalt);
   padding: 12px 26px;
@@ -1998,7 +2041,7 @@ a { color: inherit; text-decoration: none; }
 .post-toc { border-top: 2px solid var(--asphalt); padding-top: 18px; }
 .post-toc-label {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .24em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .24em; text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 14px;
 }
@@ -2007,7 +2050,7 @@ a { color: inherit; text-decoration: none; }
   display: block;
   font-family: var(--font-barlow), sans-serif;
   font-weight: 600;
-  font-size: 14px; letter-spacing: .14em; text-transform: uppercase;
+  font-size: var(--ui); letter-spacing: .14em; text-transform: uppercase;
   color: var(--ink-2);
   padding: 9px 0 9px 14px;
   border-left: 2px solid var(--line-2);
@@ -2113,7 +2156,7 @@ a { color: inherit; text-decoration: none; }
 }
 .crew-photo span {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: var(--label); letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink-3);
 }
 .crew-photo img {
@@ -2231,7 +2274,7 @@ a { color: inherit; text-decoration: none; }
   display: block;
   font-family: var(--font-barlow), sans-serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: var(--ui);
   letter-spacing: .08em;
   color: rgba(255, 255, 255, .82);
   padding: 9px 12px;
@@ -2249,7 +2292,7 @@ a { color: inherit; text-decoration: none; }
 .nav-menu-lang {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: var(--ui);
   letter-spacing: .14em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, .6);
@@ -2295,13 +2338,13 @@ a { color: inherit; text-decoration: none; }
 .lang-suggest-text {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: var(--ui-lg);
   letter-spacing: .01em;
 }
 .lang-suggest-cta {
   font-family: var(--font-barlow), sans-serif;
   font-weight: 700;
-  font-size: 13px;
+  font-size: var(--ui);
   letter-spacing: .14em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -2333,7 +2376,7 @@ a { color: inherit; text-decoration: none; }
    ============================================================ */
 .privacy-updated {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 12px;
+  font-size: var(--label);
   letter-spacing: .2em;
   text-transform: uppercase;
   color: var(--ink-3);
@@ -2360,7 +2403,7 @@ a { color: inherit; text-decoration: none; }
   text-align: left;
   font-family: var(--font-barlow), sans-serif;
   font-weight: 700;
-  font-size: 12px;
+  font-size: var(--label);
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--asphalt);
@@ -2377,7 +2420,7 @@ a { color: inherit; text-decoration: none; }
 .privacy-table tr:last-child td { border-bottom: none; }
 .privacy-table td code {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 14px;
+  font-size: var(--fine);
   color: var(--asphalt);
   white-space: nowrap;
 }
@@ -2392,7 +2435,7 @@ a { color: inherit; text-decoration: none; }
 /* Dropset comparison: readable references and usable jump links at every width. */
 .dropset-post .article-meta { letter-spacing: .1em; gap: 12px 20px; }
 .dropset-jumps { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 20px; }
-.dropset-jumps a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; text-decoration: underline; text-underline-offset: 4px; }
+.dropset-jumps a { display: inline-flex; align-items: center; min-height: 44px; font-size: var(--fine); text-decoration: underline; text-underline-offset: 4px; }
 .dropset-post .article-body { padding: 32px 0; }
 .dropset-post .article-body h2 { margin-top: 0; }
 .dropset-post .article-body h3 { font-family: var(--font-inter), sans-serif; font-size: var(--copy); line-height: 1.4; margin: 28px 0 10px; }
@@ -2409,5 +2452,5 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 600px) {
   .dropset-table th, .dropset-table td { padding: 12px 6px; }
   .dropset-table th:first-child { width: 24%; }
-  .dropset-post .article-meta { font-size: 10px; line-height: 1.7; }
+  .dropset-post .article-meta { line-height: 1.7; }
 }
