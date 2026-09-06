@@ -8,7 +8,7 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd, HowToJsonLd } from "@/lib/seo";
 
 const META = {
   path: "/culture/run-and-lift-same-week",
-  title: "How to Run and Lift in the Same Week Without Breaking Down, Suor Society",
+  title: "How to Run and Lift in the Same Week Without Breaking Down",
   description:
     "Run and lift in the same week by keeping one hard session a day and putting 48 hours between your hardest run and heaviest leg day. A hybrid week that holds up around a job.",
   image: "/run-and-lift-hero.webp",

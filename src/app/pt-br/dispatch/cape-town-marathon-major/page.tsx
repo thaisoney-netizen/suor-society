@@ -7,7 +7,7 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
 const META = {
   path: "/pt-br/dispatch/cape-town-marathon-major",
-  title: "Cidade do Cabo agora é uma Marathon Major, Suor Society",
+  title: "Cidade do Cabo é Marathon Major: data 2027 e o que muda",
   description:
     "A Cidade do Cabo foi confirmada como a oitava Abbott World Marathon Major em 10 de junho de 2026. A primeira Major da África entra para a série em 23 de maio de 2027. Veja o que muda.",
   image: "/cape-town-hero.jpg",

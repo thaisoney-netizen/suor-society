@@ -8,7 +8,7 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
 const META = {
   path: "/culture/join-a-run-club-not-a-runner",
-  title: "Can You Join a Run Club If You're Not Really a Runner?, Suor Society",
+  title: "Can You Join a Run Club If You're Not Really a Runner?",
   description:
     "Yes. Most run clubs are free, no-drop, and full of people who had the same worry. What all paces welcome actually means, what you need, and what's coming to San Diego.",
   image: "/run-club-hero.jpg",

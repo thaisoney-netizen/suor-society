@@ -62,7 +62,8 @@ function metaFor(route: string): { title: string; description: string } | null {
   const title = readKey(block, src, "title");
   const description = readKey(block, src, "description");
   if (!title || !description) return null;
-  // Meta titles carry the ", Suor Society" suffix; the map reads better without it.
+  // Legacy guard: titles no longer carry a ", Suor Society" tail, but strip one
+  // if an old page still has it so the map stays clean.
   return { title: title.replace(/,\s*Suor Society$/, ""), description };
 }
 

@@ -20,7 +20,7 @@ const TOC = [
 // is a regional Brazil guide, not a translation of this page.
 const META = {
   path: "/culture/open-entry-races-2026",
-  title: "Open Entry Races 2026, Suor Society",
+  title: "Open Entry Races 2026: Dates, Prices, Registration Links",
   description:
     "Open entry races worth signing up for. No qualifier, no lottery. Dates, prices, and direct registration links.",
   image: "/race-hero.jpg",

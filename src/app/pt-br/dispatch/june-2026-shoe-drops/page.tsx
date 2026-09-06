@@ -7,7 +7,7 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
 const META = {
   path: "/pt-br/dispatch/june-2026-shoe-drops",
-  title: "Lançamentos de tênis de junho de 2026, Suor Society",
+  title: "Tênis de corrida: lançamentos de junho de 2026",
   description:
     "Lançamentos de tênis de corrida em junho de 2026: Saucony Endorphin Elite 3 e Triumph 24, o Deviate Nitro sem placa da Puma, o Asics GT-1000 15 e por que os super trainers sem placa são a tendência do momento.",
   image: "/june-shoe-drops-hero.webp",

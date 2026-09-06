@@ -9,7 +9,7 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 // is a regional Brazil post, not a translation of this page.
 const META = {
   path: "/dispatch/hyrox-fall-2026-schedule",
-  title: "HYROX Fall 2026 US Schedule, Suor Society",
+  title: "HYROX Fall 2026 Schedule: All 10 US Race Dates",
   description:
     "HYROX's fall 2026 North America calendar lists 10 races from Labor Day through December, including Anaheim Dec 4 to 6 and first-time stops in Salt Lake City, Tampa, Denver, and Nashville.",
   image: "/hyrox-hero.jpg",

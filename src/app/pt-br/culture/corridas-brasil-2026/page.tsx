@@ -22,7 +22,7 @@ const TOC = [
 
 const META = {
   path: "/pt-br/culture/corridas-brasil-2026",
-  title: "Corridas Brasil 2026, Suor Society",
+  title: "Corridas Brasil 2026: datas, distâncias e inscrição",
   description:
     "As corridas de rua que valem a inscrição no Brasil em 2026. São Silvestre, maratonas de SP e Rio, HYROX e mais. Datas, distâncias e links diretos.",
   image: "/sao-silvestre-hero.webp",

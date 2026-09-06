@@ -7,7 +7,7 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
 const META = {
   path: "/pt-br/culture/join-a-run-club-not-a-runner",
-  title: "Dá pra entrar num clube de corrida sem se achar corredor?, Suor Society",
+  title: "Dá pra entrar num clube de corrida sem se achar corredor?",
   description:
     "Dá. A maioria dos clubes de corrida é de graça, ninguém fica pra trás, e tá cheio de gente que teve a mesma dúvida. O que todos os paces são bem-vindos significa na prática.",
   image: "/run-club-hero.jpg",

@@ -10,7 +10,7 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 // the two on purpose; they cross-link to each other instead.
 const META = {
   path: "/pt-br/dispatch/hyrox-brasil-2026",
-  title: "HYROX Brasil 2026, Suor Society",
+  title: "HYROX Brasil 2026: datas, cidades e inscrição",
   description:
     "HYROX no Brasil em 2026: São Paulo em 17 de outubro no Distrito Anhembi, mais Rio e Fortaleza. Datas, cidades e como treinar pra prova.",
   image: "/hyrox-hero.jpg",

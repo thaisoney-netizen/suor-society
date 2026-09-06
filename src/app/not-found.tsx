@@ -2,7 +2,7 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 
 export const metadata = {
-  title: "Page not found, Suor Society",
+  title: "Page not found",
 };
 
 // Catches every unmatched URL, English and pt-br alike, so the copy carries

@@ -8,7 +8,7 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
 const META = {
   path: "/culture/why-everyone-started-running",
-  title: "Why Did Everyone Start Running? The Running Boom, Explained, Suor Society",
+  title: "Why Did Everyone Start Running? The 2026 Running Boom",
   description:
     "It's not in your head. Race numbers passed pre-pandemic levels, run club participation jumped 59% in a year, and London took 1.1 million marathon applications. The stats behind the running boom and what changed after 2024.",
   image: "/running-boom-hero.webp",

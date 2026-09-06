@@ -8,7 +8,7 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd, HowToJsonLd } from "@/lib/seo";
 
 const META = {
   path: "/pt-br/culture/run-and-lift-same-week",
-  title: "Corrida e musculação na mesma semana sem se quebrar, Suor Society",
+  title: "Corrida e musculação na mesma semana sem se quebrar",
   description:
     "Dá pra correr e fazer musculação na mesma semana mantendo um treino forte por dia e 48 horas entre a corrida mais puxada e o dia de perna mais pesado. Uma semana híbrida que se sustenta.",
   image: "/run-and-lift-hero.webp",

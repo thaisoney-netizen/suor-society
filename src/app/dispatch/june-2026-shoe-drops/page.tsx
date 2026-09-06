@@ -7,7 +7,7 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
 const META = {
   path: "/dispatch/june-2026-shoe-drops",
-  title: "June 2026 Running Shoe Drops, Suor Society",
+  title: "New Running Shoes June 2026: Every Release and Date",
   description:
     "June 2026 running shoe releases: Saucony Endorphin Elite 3 and Triumph 24, Puma's plateless Deviate Nitro, Asics GT-1000 15, and why plateless super trainers are the trend of the summer.",
   image: "/june-shoe-drops-hero.webp",
