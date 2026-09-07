@@ -275,7 +275,11 @@ export default function RunAndLiftSameWeek() {
                 <p>
                   Building toward a start line? Our{" "}
                   <a href="/culture/open-entry-races-2026">2026 race guide</a> has open-entry races
-                  you can sign up for today. And if race week is the part that stresses you, the
+                  you can sign up for today, and if you want the easy runs to stop being solitary,{" "}
+                  <a href="/culture/join-a-run-club-not-a-runner">
+                    joining a run club when you don&rsquo;t call yourself a runner
+                  </a>{" "}
+                  covers what that actually looks like. And if race week is the part that stresses you, the
                   piece on lifting through race week without losing your legs publishes August 4.
                 </p>
               </div>

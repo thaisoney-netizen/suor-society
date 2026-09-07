@@ -1161,8 +1161,21 @@ a { color: inherit; text-decoration: none; }
   max-height: 560px;
   margin-inline: auto;
 }
+
+/* An unloaded image has no intrinsic size, so `width: auto` measures it at 0.
+   A cover gets away with that by loading eagerly, but an inline photo loads
+   lazily, and native lazy loading watches the image's own box: a 0x0 box never
+   intersects the viewport, the load never fires, and the picture stays blank
+   forever. Naming the height it lands on anyway gives the browser a real box
+   to watch, and `aspect-ratio: auto <w> / <h>` (which Next sets from the file's
+   own dimensions) resolves the width from it. Same number as the cap below, so
+   nothing moves when the bytes arrive.
+   ⚑ keep in sync with PORTRAIT_COVER_MAX_HEIGHT in lib/photos.ts. */
+.article-cover--inline .article-cover-media.is-portrait img { height: 560px; }
+
 @media (max-width: 720px) {
   .article-cover-media.is-portrait img { max-height: 62vh; }
+  .article-cover--inline .article-cover-media.is-portrait img { height: 62vh; }
 }
 
 /* ── Inline figure ──
@@ -2449,18 +2462,66 @@ a { color: inherit; text-decoration: none; }
 .dropset-post .article-body { padding: 32px 0; }
 .dropset-post .article-body h2 { margin-top: 0; }
 .dropset-post .article-body h3 { font-family: var(--font-inter), sans-serif; font-size: var(--copy); line-height: 1.4; margin: 28px 0 10px; }
-.dropset-table-wrap { max-width: 100%; overflow-x: auto; margin: 24px 0; }
-.dropset-table { width: 100%; border-collapse: collapse; table-layout: fixed; font-family: var(--font-inter), sans-serif; font-size: var(--copy-sm); line-height: 1.55; }
-.dropset-table caption { text-align: left; margin-bottom: 12px; font-size: var(--copy-sm); color: var(--ink-2); }
-.dropset-table th, .dropset-table td { padding: 14px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
-.dropset-table thead th { background: var(--asphalt); color: white; font-weight: 600; }
-.dropset-table th:first-child { width: 25%; }
-.dropset-table tbody th { font-weight: 600; }
+.post-table-wrap { max-width: 100%; overflow-x: auto; margin: 24px 0; }
+.post-table { width: 100%; border-collapse: collapse; table-layout: fixed; font-family: var(--font-inter), sans-serif; font-size: var(--copy-sm); line-height: 1.55; }
+.post-table caption { text-align: left; margin-bottom: 12px; font-size: var(--copy-sm); color: var(--ink-2); }
+.post-table th, .post-table td { padding: 14px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+.post-table thead th { background: var(--asphalt); color: white; font-weight: 600; }
+.post-table th:first-child { width: 25%; }
+.post-table tbody th { font-weight: 600; }
 .dropset-sources { padding-left: 20px; font-size: var(--copy-sm); line-height: 1.6; }
 .dropset-sources a { display: inline-block; padding: 10px 0; }
 .dropset-post :is(a, [tabindex]):focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 @media (max-width: 600px) {
-  .dropset-table th, .dropset-table td { padding: 12px 6px; }
-  .dropset-table th:first-child { width: 24%; }
+  .post-table th, .post-table td { padding: 12px 6px; }
+  .post-table th:first-child { width: 24%; }
   .dropset-post .article-meta { line-height: 1.7; }
+}
+
+/* ── Stacking table (.post-table--stack) ──
+   A four column table on a phone is four 80px columns of two-word lines: it
+   technically fits and is unreadable, and on a ten row list it ran 4,600px
+   tall. With this modifier each row becomes its own block below 640px and
+   every value carries its column name in front of it, from `data-label` on
+   the cell. The head row goes away because the labels replace it.
+   Opt in per table, so a wide spec table that would rather scroll can. */
+@media (max-width: 640px) {
+  .post-table--stack,
+  .post-table--stack tbody,
+  .post-table--stack tr,
+  .post-table--stack th,
+  .post-table--stack td {
+    display: block;
+    width: auto;
+  }
+  .post-table--stack thead { display: none; }
+  .post-table--stack tbody tr {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .post-table--stack tbody tr:last-child { border-bottom: none; }
+  .post-table--stack tbody th {
+    padding: 0 0 10px;
+    border: none;
+    background: none;
+    color: var(--asphalt);
+    font-size: var(--copy);
+    line-height: 1.3;
+  }
+  .post-table--stack td {
+    padding: 0 0 8px;
+    border: none;
+  }
+  .post-table--stack td:last-child { padding-bottom: 0; }
+  .post-table--stack td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 1px;
+    font-size: var(--label);
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  /* Nothing to scroll once the rows stack, so drop the focusable region. */
+  .post-table-wrap:has(.post-table--stack) { overflow-x: visible; }
 }

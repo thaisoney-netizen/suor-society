@@ -217,7 +217,12 @@ export default function OpenEntryRaces2026() {
             <p>
               The rule for everything on this list: no qualifying time, no lottery. You register,
               you train, you show up. Races run from now through spring 2027, so there&rsquo;s a
-              window for whatever you&rsquo;re building toward.
+              window for whatever you&rsquo;re building toward. If the training part is the bit you
+              don&rsquo;t want to do alone, most people start by{" "}
+              <a href="/culture/join-a-run-club-not-a-runner">
+                joining a run club without calling themselves a runner
+              </a>
+              .
             </p>
             <p>
               A few notes. Prices go up as race day gets closer. A handful of these are sold out

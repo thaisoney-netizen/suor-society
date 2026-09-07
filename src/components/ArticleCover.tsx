@@ -1,4 +1,4 @@
-import type { CSSProperties, ReactNode } from "react";
+import type { ReactNode } from "react";
 import Image from "next/image";
 import { photo, articleCoverSizes } from "@/lib/photos";
 
@@ -46,15 +46,12 @@ export default function ArticleCover({
 
   return (
     <div className={`article-cover${inline ? " article-cover--inline" : ""}`}>
-      <figure
-        className={`article-cover-media${portrait ? " is-portrait" : ""}`}
-        /* The photo's own height, so a lazy portrait can be given a definite
-           box before its bytes arrive. Without one, `width: auto` on an
-           unloaded image measures 0, the figure never crosses the viewport,
-           and lazy loading therefore never fires: the picture stays blank
-           forever. Covers load eagerly and never hit it. */
-        style={portrait ? ({ "--nat-h": `${p.height}px` } as React.CSSProperties) : undefined}
-      >
+      {/* A lazy portrait needs a definite box before its bytes arrive, or
+          `width: auto` on the unloaded image measures 0, the figure never
+          crosses the viewport, lazy loading never fires, and the picture stays
+          blank forever. That box is reserved in CSS, by the min-height on
+          `.article-cover-media.is-portrait`, so nothing is needed here. */}
+      <figure className={`article-cover-media${portrait ? " is-portrait" : ""}`}>
         <Image {...p} alt={alt} sizes={articleCoverSizes(src)} priority={priority} />
         {caption && <figcaption className="article-cover-caption">{caption}</figcaption>}
       </figure>

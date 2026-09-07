@@ -277,12 +277,12 @@ export default function AdizeroDropsetProVsDropset4() {
               <div className="page">
                 <h2>Ficha técnica e fontes</h2>
                 <div
-                  className="dropset-table-wrap"
+                  className="post-table-wrap"
                   role="region"
                   aria-label="Ficha técnica"
                   tabIndex={0}
                 >
-                  <table className="dropset-table">
+                  <table className="post-table">
                     <caption>
                       Referências publicadas: especificações e medições
                       identificadas

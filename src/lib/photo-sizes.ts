@@ -19,6 +19,7 @@ export const PHOTO_SIZES: Record<string, PhotoSize> = {
   "/hyrox-hero.jpg": { width: 1206, height: 1624 },
   "/ikea-marathon-hero.avif": { width: 1200, height: 797 },
   "/june-shoe-drops-hero.webp": { width: 1672, height: 941 },
+  "/oceanside-dj-run.webp": { width: 1080, height: 1350 },
   "/race-hero.jpg": { width: 1600, height: 900 },
   "/road-run.jpg": { width: 1146, height: 1800 },
   "/run-and-lift-hero.webp": { width: 1600, height: 900 },

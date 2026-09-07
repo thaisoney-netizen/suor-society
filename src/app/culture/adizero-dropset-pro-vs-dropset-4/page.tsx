@@ -272,12 +272,12 @@ export default function AdizeroDropsetProVsDropset4() {
               <div className="page">
                 <h2>Specifications and their sources</h2>
                 <div
-                  className="dropset-table-wrap"
+                  className="post-table-wrap"
                   role="region"
                   aria-label="Shoe specifications"
                   tabIndex={0}
                 >
-                  <table className="dropset-table">
+                  <table className="post-table">
                     <caption>
                       Published references: specifications and measurements
                       identified
