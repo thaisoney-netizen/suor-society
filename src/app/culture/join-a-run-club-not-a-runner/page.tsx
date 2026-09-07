@@ -55,69 +55,70 @@ const FIRST_CLUBS: { club: string; when: string; why: string }[] = [
   {
     club: "Front Runners and Walkers",
     when: "Tue and Thu 6:00pm, Sat 8:00am, Balboa Park",
-    why: "Walking is in the name, so there is no version of this where you are the one holding it up. 3 to 4 miles, or a 10K if you walk it",
+    why: "Walking is right there in the name, so you're never going to be the one holding it up. 3 to 4 miles, or a 10K if you walk it",
   },
   {
     club: "Pacific Beach Run Club",
     when: "Wed 6:00pm, Sat 8:30am, 1376 Felspar St",
-    why: "The one that publishes exactly how no-drop works: the leader holds about 9:00 per mile and stops four times for the back to catch up. Saturday 8:30 is the social 5K",
+    why: "They actually publish how the no-drop bit works, which is rare. The leader holds about 9:00 per mile and stops four times so the back can catch up, and Saturday 8:30 is the social 5K rather than the long one",
   },
   {
     club: "Milestone Running",
     when: "Mon 6:00pm in Pacific Beach, Wed 6:00pm in North Park",
-    why: "A run shop club, which means greeting a stranger who walks in alone is somebody's actual job. 3 to 5 miles and a raffle after",
+    why: "A run shop club, so there is always staff on the door who will actually clock that you are new. 3 to 5 miles and a raffle after",
   },
   {
     club: "Pacific Coast Run Club",
     when: "Wed 6:30pm, Sat 7:00am, Buccaneer Park",
-    why: "North County, 3 miles of flat coast, and their own words are all are welcome. The one in the photo above",
+    why: "Up in North County, 3 flat miles of coast, and their own words are all are welcome. It's the one in the photo",
   },
 ];
 
 const FAQS: { q: string; a: ReactNode; plain?: string }[] = [
   {
     q: "Do I need to be fast to join a run club?",
-    a: "No. Most clubs are no-drop, meaning the group regroups so nobody gets left behind. Paces at a typical club range from 7-minute miles to run-walk intervals, at the same event.",
+    a: "No. Most clubs run no-drop, which means the group regroups so nobody gets left behind, and at a typical one you will find 7 minute miles and run-walk intervals at the same event on the same night.",
   },
   {
     q: "What if I need walk breaks?",
-    a: "Walk breaks are standard at beginner-friendly clubs, and plenty of experienced runners use them on purpose. Run-walk is how a lot of people finish their first 5K, and even marathons.",
+    a: "Completely normal. Walk breaks are standard at beginner-friendly clubs and plenty of experienced runners take them on purpose. Run-walk is how a lot of people get through their first 5K, and a fair few marathons.",
   },
   {
     q: "Is it weird to show up to a run club alone?",
-    a: "It is the normal way to arrive. Most people at any given run came by themselves, and the clubs that have lasted are the ones that got good at spotting somebody standing on their own. Saying you are new when you get there does most of the work for you.",
+    a: "That is how most people arrive, honestly. Plenty of people at any given run came on their own, and the clubs that stick around are the ones that got good at spotting someone standing by themselves. Saying you are new when you get there does most of the work for you.",
   },
   {
     q: "Do I have to talk to people?",
-    a: "No. You can run the whole thing quiet, skip the bar afterwards, and leave from the finish. Nobody chases you down. Most people find the talking gets easier once you are moving and not making eye contact, which is half the reason group runs work at all.",
+    a: "No. You can run the whole thing quietly, skip the bar after, and head off from the finish without anyone chasing you down. Most people find talking gets easier once you are moving and not making eye contact anyway, which is probably half of why group runs work.",
   },
   {
     q: "How far do run clubs usually run?",
-    a: "A weekday social run is almost always 3 to 5 miles, which takes 30 to 50 minutes at most paces. Saturday long runs go further, usually 4 to 10 miles with shorter and longer options from the same start. Clubs post the distance before the run, so you can pick the week you show up.",
+    a: "A weekday social run is almost always 3 to 5 miles, so 30 to 50 minutes at most paces. Saturday long runs go further, usually 4 to 10 miles with a shorter option leaving from the same spot. Clubs post the distance beforehand, so you can pick which week you turn up.",
   },
   {
     q: "Do run clubs cost anything?",
-    a: "Most are free. Some charge for special events or sell a shirt eventually, but showing up on a regular week costs nothing.",
+    a: "Most are free. Some sell a shirt eventually or charge for a special event, but turning up on a normal week does not cost anything.",
   },
   {
     q: "What should I bring to a first group run?",
-    a: "Sneakers you can move in, water if it's warm, and your phone. Nobody is checking your gear.",
+    a: "Sneakers you can move in, water if it is warm, and your phone. Nobody is looking at your gear.",
   },
   {
     q: "How do I find a run club in San Diego?",
     plain:
-      "Four clubs that are easy to walk into alone are listed above with their days and start points, in Balboa Park, Pacific Beach, North Park and Oceanside. Instagram is where most SD clubs post week to week, search your neighborhood plus “run club.” The RRCA club directory lists registered clubs too. And SUOR SOCIETY is bringing crew runs to San Diego soon, The Dispatch gets it first.",
+      "Four clubs that are easy to walk into on your own are listed above with their days and start points, in Balboa Park, Pacific Beach, North Park and Oceanside. Instagram is where most SD clubs post week to week, so search your neighborhood plus “run club.” The RRCA club directory lists registered clubs too. SUOR SOCIETY crew runs are coming to San Diego and have not started yet, and The Dispatch hears first when they do.",
     a: (
       <>
-        Four clubs that are easy to walk into alone are listed{" "}
+        Four clubs that are easy to walk into on your own are listed{" "}
         <a href="#san-diego">above</a> with their days and start points, in Balboa Park,
-        Pacific Beach, North Park and Oceanside. Instagram is where most SD clubs post
-        week to week, search your neighborhood plus &ldquo;run club.&rdquo; The{" "}
+        Pacific Beach, North Park and Oceanside. Instagram is where most SD clubs post week
+        to week, so search your neighborhood plus &ldquo;run club.&rdquo; The{" "}
         <a href="https://www.rrca.org/clubs/" target="_blank" rel="noopener noreferrer">
           RRCA club directory
         </a>{" "}
-        lists registered clubs too. And SUOR SOCIETY is bringing crew runs to San Diego
-        soon, The Dispatch gets it first.
+        lists registered clubs too. SUOR SOCIETY crew runs are coming to San Diego and
+        haven&rsquo;t started yet, and <a href="/dispatch">The Dispatch</a> hears first when
+        they do.
       </>
     ),
   },
@@ -168,9 +169,10 @@ export default function JoinARunClub() {
         <section className="article-hero">
           <div className="page">
             <p className="article-deck">
-              Yes. Most run clubs are free, no-drop, and full of people who had this exact worry
-              before their first one. If you can cover 3 miles running, walking, or switching
-              between the two, you can show up. Nobody there is checking your pace.
+              Yes, and most of the people standing there had the same worry before their first
+              one. Nearly every club is free and no-drop, which just means the group waits for
+              you. If you can cover 3 miles running, walking, or a bit of both, that is the
+              entire entry requirement.
             </p>
             <div className="article-meta">
               <span>By <a href="/author/thais-oney">Thais Oney</a></span>
@@ -184,9 +186,10 @@ export default function JoinARunClub() {
         <section className="article-body">
           <div className="page">
             <p>
-              If you&rsquo;ve been wondering whether you&rsquo;re allowed at a run club without
-              calling yourself a runner, the short answer is yes, and you wouldn&rsquo;t even be
-              in the minority. Here&rsquo;s what the door actually looks like from the inside.
+              A lot of people seem to be waiting until they&rsquo;re fast enough to deserve a
+              spot, and that is genuinely not something anyone at these runs is thinking about.
+              So here&rsquo;s what actually happens at one, what the words on the flyer mean, and
+              where to go if you&rsquo;re in San Diego.
             </p>
 
             <h2 id="why-run-clubs">Why run clubs got so big (it&rsquo;s not about getting faster)</h2>
@@ -212,10 +215,10 @@ export default function JoinARunClub() {
               than people who run alone. Roughly a mile more, just from having company.
             </p>
             <p>
-              So the growth isn&rsquo;t about everyone suddenly getting serious about running.
-              It&rsquo;s about having a standing Saturday morning plan with people who actually
-              show up. If the thing holding you back is feeling like you&rsquo;re &ldquo;not
-              really a runner,&rdquo; that&rsquo;s the part nobody there cares about.
+              Which tracks. Most of this is really about having a standing Saturday morning
+              plan with people who show up, and that turns out to be a hard thing to find once
+              you&rsquo;re out of school. The &ldquo;not really a runner&rdquo; part that&rsquo;s
+              stopping you is not something anyone there is keeping track of.
             </p>
 
             <h2 id="all-paces">What &ldquo;all paces welcome&rdquo; actually means</h2>
@@ -238,60 +241,60 @@ export default function JoinARunClub() {
               </li>
             </ul>
             <p>
-              I ran my first half marathon in May and I still get nervous walking up to a group I
-              don&rsquo;t know. Being new feels a lot like not belonging. It isn&rsquo;t the same
-              thing.
+              I ran my first half marathon in May and I still get nervous walking up to a group
+              I don&rsquo;t know. Turns out that doesn&rsquo;t really go away, and it also
+              doesn&rsquo;t mean anything, it&rsquo;s just what being new feels like.
             </p>
 
             <h2 id="what-happens">What actually happens, start to finish</h2>
             <p>
-              Most of the nerves happen before anything starts, sitting in the car deciding
-              whether to get out. The run itself is pretty boring, in the good way. Here is the
-              shape of it, and it is close to identical everywhere:
+              Honestly the worst part is the ten minutes before, sitting in your car deciding
+              whether to get out of it. After that it&rsquo;s pretty boring, in a good way. It
+              goes more or less like this everywhere:
             </p>
             <ol>
               <li>
-                People turn up five or ten minutes early and stand around. Somebody will ask if
-                you&rsquo;re new. Say yes, because that is the sentence that gets somebody
-                assigned to run next to you
+                People turn up five or ten minutes early and stand around. Someone will ask if
+                you&rsquo;re new, and you should say yes, because that&rsquo;s the sentence that
+                gets somebody to run next to you
               </li>
               <li>
-                There&rsquo;s a circle. Announcements, the route, sometimes a photo. Two minutes
-                at most
+                There&rsquo;s a circle. Announcements, the route, sometimes a photo. Two minutes,
+                tops
               </li>
               <li>
-                Everyone goes at once and the pack spreads out inside the first half mile. You
-                end up next to whoever moves at your speed and nobody organized that
+                Everyone leaves at once and the pack spreads out inside the first half mile, and
+                you end up next to people moving at your speed without anyone arranging it
               </li>
               <li>
-                At lights and turnarounds the front stops and waits. That is the no-drop part
-                actually happening, and it is why the fast people are not a problem for you
+                At lights and turnarounds the front stops and waits, which is the no-drop thing
+                actually happening. It&rsquo;s also why whoever is up front doesn&rsquo;t really
+                affect your night
               </li>
               <li>
-                You finish where you started. Some people leave straight away, some go to
-                whatever bar or coffee place is next door. Both are normal and nobody is keeping
-                track of which one you did
+                You finish where you started. Some people leave right away, some go to whatever
+                bar or coffee place is next door, and nobody notices which one you did
               </li>
             </ol>
 
             <h2 id="too-slow">Am I too slow to join a run club?</h2>
             <p>
-              No, and it helps to see the actual range instead of guessing at it. Pacific Beach
-              Run Club puts it on{" "}
+              No, and it&rsquo;s easier to believe that with real numbers than to take my word
+              for it. Pacific Beach Run Club spells the whole thing out on{" "}
               <a href="https://www.pbrunclub.com/" target="_blank" rel="noopener noreferrer">
                 their own site
               </a>
-              : the front leader holds around 9:00 per mile, and the run is accordion style with
-              four stops where everyone pauses two or three minutes for the back to catch up. So
-              the fast end is a 9 minute mile and the slow end is however long you need for 3
-              miles, and both of those people are at the same run on the same night.
+              : the leader up front holds around 9:00 per mile, and the run is accordion style
+              with four stops where everyone pauses two or three minutes for the back to catch
+              up. So the quick end is a 9 minute mile, the other end is however long you need for
+              3 miles, and both of those people are at the same run on the same night.
             </p>
             <p>
-              What actually gets people dropped isn&rsquo;t pace, it&rsquo;s turning up to the
-              wrong kind of run. A track session with intervals will leave you behind, because
-              it is built to. A social 5K will not. Read the two words the club uses before you
-              go. &ldquo;Social run&rdquo; and &ldquo;3 miles&rdquo; mean what you&rsquo;d hope.
-              &ldquo;Tempo&rdquo; and &ldquo;track Tuesday&rdquo; mean bring a plan.
+              The thing that actually leaves people behind is turning up to the wrong kind of
+              run. A track session with intervals will drop you, because that is what it was
+              built to do. So just read the words the club uses. Anything advertised as tempo or
+              track Tuesday is a workout, and you want to know that before you show up rather
+              than a mile in.
             </p>
 
             <h2 id="what-you-need">What you think you need vs what you actually need</h2>
@@ -318,16 +321,16 @@ export default function JoinARunClub() {
               inline
               caption={
                 <>
-                  Pacific Coast Run Club in Oceanside (@pcrc.oside) and @ochorunclub ran
-                  together with @sd.k3vo DJing the whole thing off a tailgate.
+                  Pacific Coast Run Club up in Oceanside (@pcrc.oside) linked up with
+                  @ochorunclub, and @sd.k3vo DJed the whole run off the back of a truck.
                 </>
               }
             />
 
             <p>
-              San Diego has dozens of open clubs, which is not actually helpful when
-              you&rsquo;re nervous about the first one. So here are four that are unusually
-              easy to walk into on your own, and what makes each one that way.
+              San Diego has dozens of these, which isn&rsquo;t much help when you&rsquo;re
+              nervous about the first one. So here are four that are genuinely easy to walk into
+              by yourself, and why each one is like that.
             </p>
 
             <div
@@ -362,58 +365,58 @@ export default function JoinARunClub() {
             </div>
 
             <p>
-              Check the club&rsquo;s Instagram the night before anyway. Race weekends and
-              holidays move a run, and when that happens the flyer goes up on a story, not on a
-              website.
+              Check their Instagram the night before anyway. Race weekends and holidays move
+              these things around constantly, and when that happens the flyer goes up on a story
+              and nowhere else.
             </p>
 
             <h2 id="find-one">Finding one anywhere else</h2>
             <p>
-              Most people reading this aren&rsquo;t in San Diego, and the method is the same
-              everywhere:
+              Most of you reading this aren&rsquo;t in San Diego, and it works the same way
+              anywhere:
             </p>
             <ul>
               <li>
-                Instagram first. Search your neighborhood or city plus &ldquo;run club&rdquo;
-                and read the last three posts, which is where the day, time and meeting point
-                actually live
+                Instagram first. Search your neighborhood plus &ldquo;run club&rdquo; and then
+                read the last three posts rather than the bio, because that&rsquo;s where the
+                day and the meeting spot actually live
               </li>
               <li>
-                Then the running shop nearest you. Almost all of them host a weekly run, and it
-                is the gentlest first one because greeting strangers is literally somebody&rsquo;s
-                job there
+                Then whatever running shop is nearest you. Almost all of them host a weekly run,
+                and it&rsquo;s the easiest one to walk into cold, since talking to people who
+                wander in is somebody&rsquo;s actual job
               </li>
               <li>
-                Strava has a club search by city, and it shows you how far the group actually
-                went last week instead of what the bio claims
+                Strava&rsquo;s club search by city is useful mostly because you can see how far
+                the group really went last week instead of what they say they do
               </li>
               <li>
                 The{" "}
                 <a href="https://www.rrca.org/clubs/" target="_blank" rel="noopener noreferrer">
                   RRCA directory
                 </a>{" "}
-                lists registered clubs, which skews toward older and more organized groups with
-                real training programs
+                lists registered clubs, which skews older and more organized, usually with a real
+                training program attached
               </li>
               <li>
-                Or ask at a local 5K. Half the people at any small race are there with a club
-                and they will tell you about it at length
+                Or just ask at a local 5K. Half the people there came with a club and they will
+                tell you about it at length
               </li>
             </ul>
 
             <h2 id="whats-next">San Diego, this is where we&rsquo;re headed</h2>
             <p>
-              SUOR SOCIETY is coming to San Diego. Crew runs are on the way, free, every pace
-              including run-walk. When it&rsquo;s time, <a href="/dispatch">The Dispatch</a> gets
-              it first
+              We&rsquo;re building crew runs here. Free, every pace, run-walk absolutely counts.
+              They haven&rsquo;t started yet, and when they do,{" "}
+              <a href="/dispatch">The Dispatch</a> hears about it first
             </p>
             <p>
-              And when a few group runs turn into wanting a start line of your own, our{" "}
-              <a href="/culture/open-entry-races-2026">open entry race picks</a> list races you
-              can register for today, no qualifier, no lottery. If you already lift and
-              you&rsquo;re working out where the running fits, we broke down{" "}
-              <a href="/culture/run-and-lift-same-week">running and lifting in the same week</a>{" "}
-              too.
+              And if a few group runs turn into wanting a start line of your own, the{" "}
+              <a href="/culture/open-entry-races-2026">open entry race picks</a> are races you
+              can sign up for today, no qualifier and no lottery. If you already lift and
+              you&rsquo;re trying to work out where the running fits around it, there&rsquo;s a
+              whole thing on{" "}
+              <a href="/culture/run-and-lift-same-week">running and lifting in the same week</a>.
             </p>
           </div>
         </section>
