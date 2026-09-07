@@ -5,8 +5,8 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import type { Race } from "@/components/RaceRow";
 import {
-  indexAll, facets, applyFilters, hiddenByPrice, partitionByDate, applyLive, liveCount,
-  verifiedDate, stalenessDays, monthLabel,
+  indexAll, facets, applyFilters, hiddenByPrice, partitionByDate, applyLive,
+  monthLabel,
   DISTANCE_LABELS, EMPTY_FILTERS,
   type Filters, type DistanceKey, type IndexedRace, type LiveInfo,
 } from "@/lib/race-filters";
@@ -94,14 +94,10 @@ export default function ToolsView({
   // Everything below the date split is computed from the shared race JSON, so
   // the finder inherits whatever the daily freshness agent last wrote.
   const all = useMemo(() => applyLive(indexAll(ca, us), live), [ca, us, live]);
-  const { upcoming, alreadyRun } = useMemo(() => partitionByDate(all), [all]);
-  const liveRows = useMemo(() => liveCount(upcoming), [upcoming]);
+  const { upcoming } = useMemo(() => partitionByDate(all), [all]);
   const fx = useMemo(() => facets(upcoming), [upcoming]);
   const results = useMemo(() => applyFilters(upcoming, filters, fx.bands), [upcoming, filters, fx.bands]);
   const priceHidden = useMemo(() => hiddenByPrice(upcoming, filters, fx.bands), [upcoming, filters, fx.bands]);
-
-  const verified = useMemo(() => verifiedDate(upcoming), [upcoming]);
-  const staleDays = useMemo(() => stalenessDays(upcoming), [upcoming]);
 
   const week = useMemo(() => plan(planInput), [planInput]);
 
@@ -189,29 +185,6 @@ export default function ToolsView({
             hidden={tab !== "races"}
             className="tool-panel"
           >
-            <p className="tool-freshness">
-              {verified === null ? (
-                <>Some of these don't have a check date on them, so treat the whole list as unverified and open the race site before you pay for anything.</>
-              ) : staleDays !== null && staleDays > 45 ? (
-                <>
-                  <strong>Heads up, the oldest thing here was last checked {verified}, about {Math.round(staleDays / 7)} weeks ago.</strong>{" "}
-                  Registration moves faster than that, so take every status below as a starting
-                  point and check the race site before you pay.
-                </>
-              ) : (
-                <>
-                  <strong>Everything here was checked on or after {verified}.</strong>{" "}
-                  Entries still go fast though, so open the race site before you pay.
-                </>
-              )}
-              {liveRows > 0 && (
-                <> The {liveRows} marked <em className="tool-live-word">live</em> check their own date and registration status against the signup page every hour, so those are current whatever this date says. Prices stay hand checked, because the feed can't tell a public entry fee from a staff discount.</>
-              )}
-              {alreadyRun.length > 0 && (
-                <> {alreadyRun.length} {alreadyRun.length === 1 ? "race has" : "races have"} already been run, so {alreadyRun.length === 1 ? "it is" : "they are"} not showing.</>
-              )}
-            </p>
-
             <div className="tool-filters">
               <Select
                 label="State"
@@ -281,6 +254,12 @@ export default function ToolsView({
               <ol className="tool-races">
                 {results.map(r => <RaceCard key={`${r.group}-${r.num}-${r.name}`} race={r} />)}
               </ol>
+            )}
+
+            {results.length > 0 && (
+              <p className="tool-endnote">
+                Races sell out fast, so open the race site and confirm before you pay for anything.
+              </p>
             )}
           </section>
 

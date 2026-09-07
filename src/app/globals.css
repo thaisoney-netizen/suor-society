@@ -2697,17 +2697,14 @@ a { color: inherit; text-decoration: none; }
 
 /* The freshness line. It states a measured date, so it gets the weight of a
    fact rather than the grey of fine print. */
-.tool-freshness {
-  font-size: var(--ui-lg);
+.tool-endnote {
+  font-size: var(--fine);
   line-height: 1.5;
-  color: var(--ink-2);
-  background: var(--bone);
-  border-left: 3px solid var(--accent);
-  padding: 16px 20px;
-  margin: 0 0 28px;
+  color: var(--ink-3);
   max-width: var(--measure);
+  margin: 28px 0 0;
 }
-.tool-freshness strong { color: var(--asphalt); font-weight: 600; }
+
 
 .tool-filters {
   display: flex;
