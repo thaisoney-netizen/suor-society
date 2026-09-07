@@ -262,3 +262,91 @@ export function WebSiteJsonLd() {
     />
   );
 }
+
+// SportsEvent for race posts. A dated event needs more than Article schema:
+// `startDate` and `offers.availability` are the only machine-readable way to
+// say "this race is on December 13 and you can no longer enter it", which is
+// what both Google and the answer engines are asked for once a race fills.
+// Keep `availability` in step with the visible copy, the same way race rows
+// keep `status` in step with `checked`.
+export function EventJsonLd({
+  name,
+  description,
+  path,
+  image,
+  startDate,
+  endDate,
+  venue,
+  locality,
+  region,
+  country,
+  organizerName,
+  organizerUrl,
+  offer,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  /** Hero image path under /public. */
+  image: string;
+  /** ISO 8601 with offset, e.g. "2026-12-13T18:00:00+00:00". */
+  startDate: string;
+  endDate?: string;
+  venue: string;
+  locality: string;
+  region?: string;
+  /** ISO 3166 code, e.g. "GB". */
+  country: string;
+  organizerName: string;
+  organizerUrl: string;
+  offer?: {
+    price: string;
+    priceCurrency: string;
+    /** Bare schema.org token: "SoldOut", "InStock", "PreOrder". */
+    availability: "SoldOut" | "InStock" | "PreOrder";
+    url: string;
+    validFrom?: string;
+  };
+}) {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "SportsEvent",
+        name,
+        description,
+        url: `${SITE_URL}${path}`,
+        image: `${SITE_URL}${image}`,
+        startDate,
+        ...(endDate && { endDate }),
+        eventStatus: "https://schema.org/EventScheduled",
+        eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+        location: {
+          "@type": "Place",
+          name: venue,
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: locality,
+            ...(region && { addressRegion: region }),
+            addressCountry: country,
+          },
+        },
+        organizer: {
+          "@type": "Organization",
+          name: organizerName,
+          url: organizerUrl,
+        },
+        ...(offer && {
+          offers: {
+            "@type": "Offer",
+            price: offer.price,
+            priceCurrency: offer.priceCurrency,
+            availability: `https://schema.org/${offer.availability}`,
+            url: offer.url,
+            ...(offer.validFrom && { validFrom: offer.validFrom }),
+          },
+        }),
+      }}
+    />
+  );
+}

@@ -2525,3 +2525,14 @@ a { color: inherit; text-decoration: none; }
   /* Nothing to scroll once the rows stack, so drop the focusable region. */
   .post-table-wrap:has(.post-table--stack) { overflow-x: visible; }
 }
+
+/* ── Stacking table: let the label column actually go full width ──
+   `.post-table--stack th { width: auto }` above was losing to
+   `.post-table th:first-child { width: 24% }`, which is one pseudo-class more
+   specific. A stacked row therefore kept a pinned 83px label column on a
+   phone, and `overflow-wrap: anywhere` broke long labels mid-word
+   ("Finisher / s"). Restated here with matching specificity, later in the
+   file, so the stacked label spans the row the way the block above intends. */
+@media (max-width: 640px) {
+  .post-table--stack th:first-child { width: auto; }
+}
