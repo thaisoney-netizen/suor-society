@@ -131,7 +131,7 @@ export default function CapeTownMajorPtBr() {
             <div className="faq-head">Perguntas Frequentes</div>
             {FAQS.map((f, i) => (
               <div key={i} className="faq-item">
-                <div className="faq-q">{f.q}</div>
+                <h3 className="faq-q">{f.q}</h3>
                 <p className="faq-a">{f.a}</p>
               </div>
             ))}

@@ -135,7 +135,7 @@ export default function JuneShoeDrops() {
             <div className="faq-head">Frequently Asked</div>
             {FAQS.map((f, i) => (
               <div key={i} className="faq-item">
-                <div className="faq-q">{f.q}</div>
+                <h3 className="faq-q">{f.q}</h3>
                 <p className="faq-a">{f.a}</p>
               </div>
             ))}
