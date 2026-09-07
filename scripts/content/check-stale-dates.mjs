@@ -307,6 +307,6 @@ if (allLive.length > 0) {
 }
 
 console.log(
-  "Race data lives in src/content/races-*.json; re-run `node scripts/generate-race-guide-pdf.js` after editing it."
+  "Race data lives in src/content/races-*.json; the guide pages and /racepicks render it directly."
 );
 process.exit(1);

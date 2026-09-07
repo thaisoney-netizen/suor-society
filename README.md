@@ -20,7 +20,6 @@ npm run build   # production build (also validates sitemap/metadata)
 | Sitemap / robots | `src/app/sitemap.ts`, `src/app/robots.ts` | Generated from the filesystem — new pages are picked up automatically |
 | AI answer map | `src/app/llms.txt/route.ts` | `/llms.txt` for ChatGPT/Claude/Perplexity. Also filesystem-generated, titles read from each page's own metadata |
 | Race guide data | `src/content/races-*.json` | Single source for the guide pages **and** the gated PDFs |
-| PDF generator | `scripts/generate-race-guide-pdf.js` | `node scripts/generate-race-guide-pdf.js` regenerates both PDFs |
 | Signup APIs | `src/app/api/*`, `src/lib/subscribe.ts` | Notification email + optional beehiiv (set `BEEHIIV_API_KEY` + `BEEHIIV_PUBLICATION_ID`) |
 | Analytics | `src/lib/analytics.ts` | GA4 events: `sign_up`, `generate_lead`, `file_download` |
 

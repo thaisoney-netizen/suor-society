@@ -77,9 +77,22 @@ robots, hreflang, or OG work. Follow this and nothing needs correcting later:
    Never ship a portrait-ratio (4/5, 3/4) image that goes full-width on mobile
    without capping its height. Run /responsive-check before pushing.
 7. **Race data** lives in `src/content/races-*.json` — the guide pages and the
-   gated PDFs render the same JSON, through the shared
-   `src/components/RaceRow.tsx`. After editing it, run
-   `node scripts/generate-race-guide-pdf.js` and commit the PDFs too.
+   `/racepicks` race finder render the same JSON, through the shared
+   `src/components/RaceRow.tsx`. Race Picks IS the finder as of Sep 2026; it
+   used to be a listing with one feature card, and `/tools` redirects to it.
+   Every EN race carries a second link, `verifyUrl`, pointing at the page where
+   entry actually happens, on a different host from `url` wherever one exists,
+   so a status can be checked against two independent sources. `verifyReadable`
+   is false for the seven races whose entry page sits behind Cloudflare or a
+   Queue-it waiting room (Let's Do This, Active): those links are correct for a
+   person and unreadable to any scraper, so the weekly check escalates them
+   rather than guessing. **Never fill in a `verifyUrl` from a search result**;
+   read it off the race's own site and fetch it once to confirm it resolves to
+   the right race, the same rule that governs `runSignupId`. There are no PDFs any more: the downloadable
+   guide and `scripts/generate-race-guide-pdf.js` were deleted in Sep 2026
+   because a file on someone's laptop freezes the moment it lands and cannot
+   correct itself when a race sells out. The email gate on the guide pages now
+   promises a note when something changes rather than a download.
    Every race carries a `checked` field: the ISO date its registration status
    was last confirmed. **Whenever you touch a race's `status`/`statusLabel`,
    or confirm it is still correct, set `checked` to today.** Never stamp a race

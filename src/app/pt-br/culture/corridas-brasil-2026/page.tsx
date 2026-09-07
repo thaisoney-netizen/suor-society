@@ -30,7 +30,7 @@ const META = {
 export const metadata = pageMeta(META);
 
 // Race data lives in src/content/races-br.json — the PDF generator
-// (scripts/generate-race-guide-pdf.js) renders the same file, so editing the
+// The /racepicks race finder renders the same file, so editing the
 // JSON updates the page and the downloadable guide together.
 const GRANDES = races.grandes as Race[];
 const PELO_BRASIL = races.peloBrasil as Race[];
@@ -201,17 +201,18 @@ export default function CorridasBrasil2026() {
         {/* ── DOWNLOAD GATE ── */}
         <section id="download" className="download-gate">
           <div className="page">
-            <div className="gate-label">Download grátis</div>
-            <div className="gate-title">Baixe o<br />Guia Completo</div>
+            <div className="gate-label">Grátis</div>
+            <div className="gate-title">Saiba Quando<br />Uma Prova Lota</div>
             <p className="gate-desc">
-              Todas as corridas em um PDF formatado. Datas, distâncias e links de
-              inscrição, pronto pra salvar, imprimir ou compartilhar.
+              As corridas já estão todas nesta página e a lista fica sempre atualizada,
+              então não tem nada pra baixar. Deixa seu e-mail que eu aviso quando uma
+              prova esgotar, quando o preço subir ou quando abrir uma nova que vale.
             </p>
             <ul className="gate-what">
               <li>As grandes corridas do Brasil em 2026</li>
               <li>Maratonas, meias e provas de rua que valem a inscrição</li>
               <li>Todas as distâncias: 5K, 10K, 21K, 42K</li>
-              <li>Status e links diretos atualizados em agosto de 2026</li>
+              <li>Um aviso quando uma prova esgotar, em vez de um arquivo que nunca atualiza</li>
             </ul>
             <DownloadGate lang="pt" />
           </div>

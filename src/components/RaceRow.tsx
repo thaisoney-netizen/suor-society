@@ -19,9 +19,34 @@ export type Race = {
   status: RaceStatus;
   statusLabel: string;
   url: string;
+  /** The second link: the page where entry actually happens, deliberately on a
+   *  different host from `url` wherever one exists, so the weekly check reads
+   *  two independent sources rather than the same site twice. Every one was
+   *  read off the race's own site and fetched to confirm it resolves to the
+   *  right race. Written by scripts/content/verify-race-status.mjs. */
+  verifyUrl?: string;
+  /** Which platform `verifyUrl` points at: runsignup, raceroster, haku,
+   *  active, letsdothis, enmotive, ultrasignup, nycruns, runrocknroll, self. */
+  verifySource?: string;
+  /** False when the second source cannot be fetched by a script at all.
+   *  Let's Do This answers every request with a Cloudflare challenge and
+   *  Active bounces through a Queue-it waiting room; both are correct links
+   *  for a person and unreadable to any scraper, Firecrawl included. The
+   *  weekly check escalates these instead of pretending it read them. */
+  verifyReadable?: boolean;
+  /** False when `verifyUrl` is the same site as `url`, so it is not really a
+   *  second source. Cherry Blossom is the one race with no second host. */
+  verifyIndependent?: boolean;
   /** ISO date this race's registration status was last confirmed against the
    *  official site. Read by scripts/content/check-stale-dates.mjs. */
   checked?: string;
+  /** RunSignup's numeric race id, present only on races that genuinely sell
+   *  through RunSignup AND have been confirmed by hand to be the race itself.
+   *  The /racepicks finder refreshes date, price and status live from it. Never
+   *  fill this in from a name search: "Los Angeles Marathon" and "Marine Corps
+   *  Marathon" both return Semper Fi charity teams rather than the races.
+   *  Unused by the guide pages and the PDFs, which stay on the curated data. */
+  runSignupId?: number;
 };
 
 /** A race whose date has passed keeps its row so the guide still reads as a

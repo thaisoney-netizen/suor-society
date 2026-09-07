@@ -1534,6 +1534,117 @@ a { color: inherit; text-decoration: none; }
   .race-action { flex-direction: row; align-items: center; margin-top: 8px; grid-column: 2; }
 }
 
+/* ── Club run row ──
+   The San Diego run club calendar (/culture/san-diego-run-clubs). Same bones
+   as the race row, with the time promoted into the first column because the
+   page is sorted by day: you already know it is Tuesday, what you are scanning
+   for is 6am against 6pm.
+
+   The source colours reuse the race-status semantics on purpose. Green reads
+   "go", amber reads "check this first", and that meaning is already learned
+   from the race guide two pages over. */
+.club-list { margin-bottom: 0; }
+.club-row {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr) auto;
+  gap: 20px;
+  align-items: start;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+.club-row:last-child { border-bottom: none; }
+.club-time {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: var(--label); letter-spacing: .1em;
+  color: var(--asphalt);
+  padding-top: 5px;
+  white-space: nowrap;
+}
+.club-info { min-width: 0; }
+.club-name {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 24px;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--asphalt);
+  margin-bottom: 4px;
+}
+.club-where {
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: var(--label-lg); letter-spacing: .22em; text-transform: uppercase;
+  color: var(--ink-2);
+  margin-bottom: 6px;
+}
+/* The street address sits under the neighbourhood rather than beside it: at
+   the tracking above, two of these on one line stop being scannable. */
+.club-meet {
+  display: block;
+  letter-spacing: .12em;
+  text-transform: none;
+  font-weight: 500;
+  color: var(--ink-3);
+  margin-top: 3px;
+}
+.club-note {
+  font-family: var(--font-inter), sans-serif;
+  font-size: var(--copy-sm);
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin-bottom: 6px;
+  max-width: 56ch;
+}
+.club-dists {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: var(--label); letter-spacing: .16em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.club-tag {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 1px 7px;
+  border: 1px solid var(--line);
+  color: var(--ink-2);
+}
+.club-source {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: var(--label); letter-spacing: .16em; text-transform: uppercase;
+  margin-top: 5px;
+}
+.club-source.club { color: #2a7a3c; }
+.club-source.directory { color: #9a6200; }
+.club-action {
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.club-link {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: var(--ui); letter-spacing: .14em; text-transform: uppercase;
+  background: var(--asphalt);
+  color: var(--paper);
+  padding: 7px 16px;
+  white-space: nowrap;
+  transition: background .12s ease-out;
+  display: inline-block;
+}
+.club-link:hover { background: #000; }
+/* Run count beside a day heading. */
+.club-count {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: var(--label);
+  letter-spacing: .16em;
+  color: var(--ink-3);
+  vertical-align: middle;
+  margin-left: 8px;
+}
+@media (max-width: 600px) {
+  .club-row { grid-template-columns: 1fr; gap: 6px; }
+  .club-time { padding-top: 0; }
+  .club-action { margin-top: 10px; }
+}
+
 /* ── FAQ section ── */
 .faq-section {
   padding: 56px 0;
@@ -2524,6 +2635,466 @@ a { color: inherit; text-decoration: none; }
   }
   /* Nothing to scroll once the rows stack, so drop the focusable region. */
   .post-table-wrap:has(.post-table--stack) { overflow-x: visible; }
+}
+
+/* ── Tools: race finder and week planner ──
+   The /tools page. Two panels behind one tablist, sharing the filter bar
+   treatment so switching tools does not feel like switching sites.
+
+   Desktop-first with 900px and 720px breakpoints, matching the rest of this
+   file. The race card and the day row are both three-column grids that
+   collapse to a stack on a phone, which is the same shape .race-row already
+   uses two hundred lines up. */
+/* The hero. Its own headline and deck rather than the .about-pg-* pair: that
+   headline is nowrap on desktop and that deck is an uppercase stamp, and this
+   page needs a heading that wraps and a deck you can actually read. */
+.tool-headline {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: clamp(34px, 4.6vw, 60px);
+  line-height: .92;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--asphalt);
+  max-width: 16ch;
+}
+.tool-deck {
+  font-size: var(--copy);
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin-top: 28px;
+  max-width: var(--measure);
+}
+.tool-tabs {
+  display: flex;
+  gap: 28px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 32px;
+}
+.tool-tab {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0 0 14px;
+  margin-bottom: -1px;
+  cursor: pointer;
+  /* A thumb needs 44px. The underline still sits on the bottom border, the
+     target just starts higher up. */
+  min-height: 44px;
+  display: inline-flex;
+  align-items: flex-end;
+  color: var(--ink-3);
+  font-family: var(--font-jetbrains), monospace;
+  font-size: var(--label-lg);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+}
+.tool-tab:hover { color: var(--asphalt); }
+.tool-tab.is-on { color: var(--asphalt); border-bottom-color: var(--accent); }
+.tool-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.tool-panel { padding-bottom: 88px; }
+
+/* The freshness line. It states a measured date, so it gets the weight of a
+   fact rather than the grey of fine print. */
+.tool-freshness {
+  font-size: var(--ui-lg);
+  line-height: 1.5;
+  color: var(--ink-2);
+  background: var(--bone);
+  border-left: 3px solid var(--accent);
+  padding: 16px 20px;
+  margin: 0 0 28px;
+  max-width: var(--measure);
+}
+.tool-freshness strong { color: var(--asphalt); font-weight: 600; }
+
+.tool-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 18px 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 24px;
+}
+.tool-field { display: flex; flex-direction: column; gap: 6px; }
+.tool-field-label,
+.tool-days legend {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: var(--label);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.tool-field select,
+.tool-field input[type="number"] {
+  appearance: none;
+  background: var(--paper);
+  border: 1px solid var(--line-2);
+  border-radius: 0;
+  padding: 9px 12px;
+  font-family: inherit;
+  font-size: var(--ui);
+  color: var(--asphalt);
+  min-width: 168px;
+  /* 44px of touch target, which is what a thumb needs. */
+  min-height: 44px;
+}
+.tool-field input[type="number"] { min-width: 92px; }
+.tool-field select:focus-visible,
+.tool-field input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+.tool-days {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.tool-days legend { padding: 0; margin-bottom: 6px; }
+.tool-day {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--line-2);
+  cursor: pointer;
+  font-family: var(--font-jetbrains), monospace;
+  font-size: var(--label);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+/* The checkbox stays in the accessibility tree and keeps the label clickable,
+   it just stops being the thing you look at. */
+.tool-day input { position: absolute; opacity: 0; width: 0; height: 0; }
+.tool-day.is-on { background: var(--asphalt); border-color: var(--asphalt); color: var(--paper); }
+.tool-day:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.tool-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  font-size: var(--ui);
+  color: var(--asphalt);
+  cursor: pointer;
+}
+.tool-check input { width: 18px; height: 18px; accent-color: var(--accent); }
+
+.tool-reset {
+  appearance: none;
+  background: none;
+  border: 1px solid var(--line-2);
+  padding: 0 18px;
+  min-height: 44px;
+  cursor: pointer;
+  font-family: var(--font-jetbrains), monospace;
+  font-size: var(--label);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--asphalt);
+}
+.tool-reset:hover { background: var(--asphalt); color: var(--paper); border-color: var(--asphalt); }
+
+.tool-count {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
+  margin-bottom: 20px;
+  font-family: var(--font-jetbrains), monospace;
+  font-size: var(--label-lg);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--asphalt);
+}
+/* Not uppercase and not monospace: this is a sentence explaining a number, not
+   another number. */
+.tool-count-note {
+  font-family: inherit;
+  font-size: var(--fine);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-2);
+}
+
+.tool-empty {
+  border: 1px solid var(--line);
+  padding: 40px 28px;
+  max-width: var(--measure);
+}
+.tool-empty p { font-size: var(--copy-sm); color: var(--ink-2); margin: 0 0 18px; }
+.tool-empty-head {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 28px;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--asphalt) !important;
+}
+
+/* ── Race cards ── */
+.tool-races { list-style: none; margin: 0; padding: 0; }
+.tool-race {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) 190px;
+  gap: 24px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+}
+.tool-race:last-child { border-bottom: none; }
+.tool-race-when {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-jetbrains), monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.tool-race-date { font-size: var(--label-lg); color: var(--asphalt); }
+.tool-race-year { font-size: var(--label); color: var(--ink-3); }
+.tool-race-body { min-width: 0; }
+.tool-race-name {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 27px;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+  color: var(--asphalt);
+}
+.tool-race-where {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: var(--label);
+  letter-spacing: .08em;
+  color: var(--ink-3);
+  margin: 0 0 10px;
+}
+.tool-race-blurb {
+  font-size: var(--copy-sm);
+  line-height: 1.5;
+  color: var(--ink-2);
+  margin: 0 0 10px;
+  max-width: var(--measure);
+}
+.tool-race-dists {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: var(--label);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--asphalt);
+  margin: 0;
+}
+.tool-race-side { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.tool-race-price {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: var(--label);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--asphalt);
+}
+.tool-race-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid var(--asphalt);
+  font-family: var(--font-jetbrains), monospace;
+  font-size: var(--label);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--asphalt);
+}
+.tool-race-link:hover { background: var(--asphalt); color: var(--paper); }
+.tool-race-checked { font-size: var(--fine); color: var(--ink-3); }
+
+/* ── Week planner ── */
+.tool-h2 {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 40px;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  margin: 0 0 6px;
+  color: var(--asphalt);
+}
+.tool-h3 {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 24px;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+  color: var(--asphalt);
+}
+.tool-week-head { margin-bottom: 20px; }
+.tool-week-meta {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: var(--label);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0;
+}
+/* Green reads "this held", amber reads "look at this". Same semantics as
+   .race-status two hundred lines up, learned once. */
+.tool-ok { color: #2a7a3c; }
+.tool-warn { color: #9a6200; }
+
+.tool-week { list-style: none; margin: 0 0 32px; padding: 0; }
+.tool-dayrow {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+.tool-dayrow:last-child { border-bottom: none; }
+.tool-dayrow.is-rest { opacity: .55; }
+.tool-dayname {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: var(--label);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--asphalt);
+  padding-top: 3px;
+}
+.tool-daybody { min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+.tool-session { display: flex; flex-direction: column; gap: 3px; }
+.tool-session-name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 23px;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--asphalt);
+}
+.tool-key-flag {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 11px;
+  font-style: normal;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--accent);
+  padding: 3px 7px;
+}
+.tool-session-note { font-size: var(--copy-sm); line-height: 1.5; color: var(--ink-2); max-width: var(--measure); }
+.tool-session-rest {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: var(--label);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0;
+}
+
+/* The honest version. It exists to be read, so it is not styled as fine print. */
+.tool-honest {
+  border-left: 3px solid var(--line-2);
+  padding: 4px 0 4px 22px;
+  margin-bottom: 28px;
+  max-width: var(--measure);
+}
+.tool-honest ul { margin: 0; padding-left: 20px; }
+.tool-honest li { font-size: var(--copy-sm); line-height: 1.55; color: var(--ink-2); margin-bottom: 9px; }
+.tool-honest li:last-child { margin-bottom: 0; }
+
+.tool-disclaimer {
+  font-size: var(--fine);
+  line-height: 1.5;
+  color: var(--ink-3);
+  max-width: var(--measure);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .tool-race { grid-template-columns: 78px minmax(0, 1fr); }
+  /* The price and the link belong beside the race, not under the date. */
+  .tool-race-side {
+    grid-column: 2;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 720px) {
+  .tool-tabs { gap: 20px; }
+  .tool-panel { padding-bottom: 56px; }
+  /* One filter per row beats two half-width ones that each truncate. */
+  .tool-filters { gap: 14px 16px; }
+  .tool-field { width: 100%; }
+  .tool-field select { width: 100%; min-width: 0; }
+  /* Seven equal columns rather than flex-grow. Growing left Sunday alone on
+     the second row at 331px wide while the other six sat at 49px. */
+  .tool-days {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+  }
+  .tool-days legend { grid-column: 1 / -1; }
+  .tool-day { min-width: 0; padding: 0 2px; }
+  .tool-reset { width: 100%; justify-content: center; }
+
+  .tool-race { grid-template-columns: 64px minmax(0, 1fr); gap: 16px; }
+  .tool-race-name { font-size: 24px; }
+
+  .tool-dayrow { grid-template-columns: 1fr; gap: 8px; }
+  .tool-dayname { padding-top: 0; }
+  .tool-h2 { font-size: 32px; }
+}
+
+/* Live rows. A green dot rather than a loud badge: it marks the handful of
+   races that refresh themselves, without making the hand-checked ones look
+   broken by comparison. Those are still correct, just correct as of a date. */
+.tool-race-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-jetbrains), monospace;
+  font-size: var(--fine);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #2a7a3c;
+}
+.tool-race-live::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2a7a3c;
+}
+.tool-live-word { font-style: normal; color: #2a7a3c; font-weight: 600; }
+/* The secondary link. The checkout is the primary action when we have it, so
+   the official race site drops to a plain underline beside it. */
+.tool-race-alt {
+  font-size: var(--fine);
+  color: var(--ink-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.tool-race-alt:hover { color: var(--asphalt); }
+
+/* The secondary link used to appear on the 8 races with a live RunSignup URL
+   and now appears on every race, so on touch it is a real tap target rather
+   than a footnote. 23px of underlined text was too small to hit reliably.
+   Keyed to the pointer rather than a width: a tablet at 768px is as much a
+   thumb as a phone at 390px, and a mouse does not need the extra height. */
+@media (pointer: coarse) {
+  .tool-race-alt {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 2px;
+  }
 }
 
 /* ── Stacking table: let the label column actually go full width ──

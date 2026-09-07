@@ -1,11 +1,10 @@
 import { dictionaries, localizeHref, type Lang } from "@/i18n/dictionaries";
 
-// Race Picks links straight to the single guide while only one post exists
-// per locale. When a second pick ships, switch this back to "/racepicks".
-// The guide is a regional page (US races on /, Brazil races on /pt-br), not
-// a translation, so its path differs per locale.
+// EN Race Picks is the race finder. pt-BR still points at the Brazil guide
+// because the pt-BR build is paused and there is no finder there yet; a
+// half translated tool is worse than sending a reader to the guide.
 const RACE_PICKS_HREF: Record<Lang, string> = {
-  en: "/culture/open-entry-races-2026",
+  en: "/racepicks",
   pt: "/culture/corridas-brasil-2026",
 };
 

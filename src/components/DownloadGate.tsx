@@ -4,6 +4,14 @@ import { useState } from "react";
 import { dictionaries, type Lang } from "@/i18n/dictionaries";
 import { track } from "@/lib/analytics";
 
+// Email capture on the race guides. It used to gate a PDF; the PDF was deleted
+// in Sep 2026 because a downloaded copy freezes the moment it lands on someone's
+// laptop and cannot correct itself when a race sells out. The list on the page
+// is the live artifact now, so this asks for the email and promises the thing a
+// PDF could never do: a note when something actually changes.
+//
+// The name is kept for now so the /api/race-guide route, the `generate_lead`
+// source tag and the historical GA4 funnel stay comparable.
 export default function DownloadGate({ lang = "en" }: { lang?: Lang }) {
   const t = dictionaries[lang].downloadGate;
   const [submitted, setSubmitted] = useState(false);
@@ -48,14 +56,6 @@ export default function DownloadGate({ lang = "en" }: { lang?: Lang }) {
           ))}
         </div>
         <p className="gate-success-body">{t.successBody}</p>
-        <a
-          className="gate-download-btn"
-          href={t.pdfHref}
-          download={t.pdfName}
-          onClick={() => track("file_download", { file: t.pdfName, lang })}
-        >
-          {t.downloadBtn}
-        </a>
       </div>
     );
   }

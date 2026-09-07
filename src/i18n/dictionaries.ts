@@ -282,10 +282,6 @@ type Dictionary = {
     submit: string;
     error: string;
     fine: string;
-    downloadBtn: string;
-    // Each locale gates its own regional guide PDF.
-    pdfHref: string;
-    pdfName: string;
   };
 };
 
@@ -785,21 +781,18 @@ export const dictionaries: Record<Lang, Dictionary> = {
     },
     downloadGate: {
       successTag: "You’re in",
-      successTitleLines: ["Your", "Guide", "Is Ready"],
+      successTitleLines: ["You’re", "On the", "List"],
       successBody:
-        `${TOTAL_RACE_COUNT} open entry races. ${CA_RACE_COUNT} in California, ${US_RACE_COUNT} across the US. All certified. From now through spring 2027.`,
+        `All ${TOTAL_RACE_COUNT} races are right here on this page and they stay current, so there is nothing to download. I will email you when one sells out or a new one worth doing opens up.`,
       nameLabel: "First Name",
       namePlaceholder: "Your name",
       emailLabel: "Email *",
       emailPlaceholder: "you@somewhere.com",
       sending: "Sending…",
-      submit: "Get the Guide →",
+      submit: "Keep me posted →",
       error:
         "Something went wrong. Email us at hello@suorsociety.com and we’ll send it directly.",
-      fine: "No spam. Just the guide. Unsubscribe any time.",
-      downloadBtn: "Download the PDF →",
-      pdfHref: "/2026-race-guide.pdf",
-      pdfName: "2026_Race_Guide_SuorSociety.pdf",
+      fine: "No spam. Just the updates. Unsubscribe any time.",
     },
   },
 
@@ -1302,21 +1295,18 @@ export const dictionaries: Record<Lang, Dictionary> = {
     },
     downloadGate: {
       successTag: "Você tá dentro",
-      successTitleLines: ["Seu", "Guia", "Está Pronto"],
+      successTitleLines: ["Você Está", "Na", "Lista"],
       successBody:
-        "As grandes corridas do Brasil em 2026 num PDF formatado. Maratonas, meias e provas de rua, com datas, distâncias e links diretos de inscrição.",
+        "A lista completa está aqui nesta página e fica sempre atualizada, então não tem nada pra baixar. Eu te aviso por e-mail quando uma prova esgotar ou quando abrir uma nova que vale a inscrição.",
       nameLabel: "Nome",
       namePlaceholder: "Seu nome",
       emailLabel: "E-mail *",
       emailPlaceholder: "seu@email.com",
       sending: "Enviando…",
-      submit: "Quero o guia →",
+      submit: "Quero os avisos →",
       error:
         "Algo deu errado. Escreve pra gente em hello@suorsociety.com que a gente envia direto.",
-      fine: "Sem spam. Só o guia. Cancele quando quiser.",
-      downloadBtn: "Baixar o PDF →",
-      pdfHref: "/guia-corridas-brasil-2026.pdf",
-      pdfName: "Guia_Corridas_Brasil_2026_SuorSociety.pdf",
+      fine: "Sem spam. Só os avisos. Cancele quando quiser.",
     },
   },
 };

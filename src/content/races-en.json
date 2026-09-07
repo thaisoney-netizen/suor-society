@@ -10,7 +10,12 @@
       "status": "limit",
       "statusLabel": "2027 Registration Opens Dec 1",
       "url": "https://www.alamedapint.com/",
-      "checked": "2026-08-03"
+      "checked": "2026-08-03",
+      "runSignupId": 128628,
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=128628",
+      "verifySource": "runsignup",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "02",
@@ -22,7 +27,11 @@
       "status": "open",
       "statusLabel": "2027 Registration Open",
       "url": "https://www.thesfmarathon.com/",
-      "checked": "2026-08-03"
+      "checked": "2026-08-03",
+      "verifyUrl": "https://register.thesfmarathon.com/",
+      "verifySource": "raceroster",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "03",
@@ -34,7 +43,11 @@
       "status": "limit",
       "statusLabel": "2027 Waitlist Open",
       "url": "https://www.runnapatosonoma.com/",
-      "checked": "2026-08-03"
+      "checked": "2026-08-03",
+      "verifyUrl": "https://www.letsdothis.com/us/checkout/ticket?eventId=268524",
+      "verifySource": "letsdothis",
+      "verifyReadable": false,
+      "verifyIndependent": true
     },
     {
       "num": "04",
@@ -43,10 +56,14 @@
       "body": "Wine country roads, mostly flat, multi-distance weekend. The marathon, half and 10K have all sold out. The Saturday 5K is the only distance still open.",
       "dists": "5K · 10K · Half Marathon · Full Marathon",
       "price": "5K: $72.77",
-      "status": "limit",
-      "statusLabel": "5K Only · 10K, Half & Full Sold Out",
+      "status": "past",
+      "statusLabel": "Race is past",
       "url": "https://santarosamarathon.com/",
-      "checked": "2026-08-21"
+      "checked": "2026-09-07",
+      "verifyUrl": "https://www.letsdothis.com/us/o/180413/checkout/ticket?preferred=true",
+      "verifySource": "letsdothis",
+      "verifyReadable": false,
+      "verifyIndependent": true
     },
     {
       "num": "05",
@@ -55,10 +72,15 @@
       "body": "Flat out-and-back loops on the Long Beach beach path, starting and finishing on Ocean Blvd. Three distances, USATF certified, and the 5K and 10K both come in under $60.",
       "dists": "5K · 10K · Half Marathon",
       "price": "From $52.93",
-      "status": "open",
-      "statusLabel": "Open Registration",
+      "status": "past",
+      "statusLabel": "Race is past",
       "url": "https://runsignup.com/Race/CA/LongBeach/CalifornianDreaminKKHalfMarathon",
-      "checked": "2026-08-21"
+      "checked": "2026-09-07",
+      "runSignupId": 176750,
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=176750",
+      "verifySource": "runsignup",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "06",
@@ -70,19 +92,28 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://runsignup.com/Race/CA/SanRamon/BeerCityBishopRanch",
-      "checked": "2026-08-21"
+      "checked": "2026-08-21",
+      "runSignupId": 183998,
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=183998",
+      "verifySource": "runsignup",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "07",
       "name": "2XU Long Beach Marathon",
       "where": "Long Beach, CA · Oct 10-11, 2026",
-      "body": "One of SoCal's most consistent fall race weekends. City streets and coastline. Half and full marathon are sold out, so join the waitlist. October in Long Beach is as close to perfect race conditions as SoCal gets.",
+      "body": "One of SoCal's most consistent fall race weekends, city streets and coastline, and October in Long Beach is about as good as race conditions get here. The 2026 race is sold out at every distance now, including the 5K, so the only way in is the 2027 waitlist.",
       "dists": "5K · Half Marathon · Full Marathon",
-      "price": "From $139",
-      "status": "limit",
-      "statusLabel": "5K Open · Half & Full Sold Out",
+      "price": "Check site",
+      "status": "sold",
+      "statusLabel": "Sold out, 2027 waitlist open",
       "url": "https://www.runlongbeach.com/",
-      "checked": "2026-07-19"
+      "checked": "2026-09-07",
+      "verifyUrl": "https://endurancecui.active.com/event-reg/select-race?e=95605317",
+      "verifySource": "active",
+      "verifyReadable": false,
+      "verifyIndependent": true
     },
     {
       "num": "08",
@@ -94,7 +125,12 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://www.run2cm.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "runSignupId": 27723,
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=27723",
+      "verifySource": "runsignup",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "09",
@@ -106,7 +142,11 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://santabarbarahalf.com/",
-      "checked": "2026-08-21"
+      "checked": "2026-08-21",
+      "verifyUrl": "https://raceroster.com/events/2026/112916/santa-barbara-half-marathon-and-5k",
+      "verifySource": "raceroster",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "10",
@@ -118,7 +158,11 @@
       "status": "sold",
       "statusLabel": "Sold Out · Waitlist Only",
       "url": "https://www.montereybayhalfmarathon.org/",
-      "checked": "2026-08-21"
+      "checked": "2026-08-21",
+      "verifyUrl": "https://events.hakuapp.com/events/7f9beb6512e7014d5cd7/registration_options",
+      "verifySource": "haku",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "11",
@@ -130,7 +174,11 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://berkeleyhalfmarathon.com/",
-      "checked": "2026-08-03"
+      "checked": "2026-08-03",
+      "verifyUrl": "https://raceroster.com/events/2026/113465/berkeley-half-marathon-2026",
+      "verifySource": "raceroster",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "12",
@@ -142,7 +190,11 @@
       "status": "sold",
       "statusLabel": "Sold Out · Check Charity Options",
       "url": "https://runsra.org/california-international-marathon/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "verifyUrl": "https://raceroster.com/events/2026/112918/2026-california-international-marathon",
+      "verifySource": "raceroster",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "13",
@@ -154,7 +206,12 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://www.sandiegoholidayhalf.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "runSignupId": 84976,
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=84976",
+      "verifySource": "runsignup",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "14",
@@ -166,7 +223,11 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://inmotionevents.com/event/carlsbad-marathon/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "verifyUrl": "https://raceroster.com/events/2027/114126/2027-carlsbad-marathon-half-marathon-and-5k",
+      "verifySource": "raceroster",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "15",
@@ -178,7 +239,11 @@
       "status": "open",
       "statusLabel": "2027 Registration",
       "url": "https://www.runsurfcity.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "verifyUrl": "https://endurancecui.active.com/event-reg/select-race?e=93918614",
+      "verifySource": "active",
+      "verifyReadable": false,
+      "verifyIndependent": true
     },
     {
       "num": "16",
@@ -190,7 +255,11 @@
       "status": "open",
       "statusLabel": "2027 Registration",
       "url": "https://www.lamarathon.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "verifyUrl": "https://events.hakuapp.com/events/c2b58e81f40eb6b89afd/registration_options",
+      "verifySource": "haku",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "17",
@@ -202,7 +271,12 @@
       "status": "open",
       "statusLabel": "2027 Registration",
       "url": "https://www.mountains2beachmarathon.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "runSignupId": 4487,
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=4487",
+      "verifySource": "runsignup",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "18",
@@ -214,7 +288,12 @@
       "status": "open",
       "statusLabel": "2027 Registration",
       "url": "https://ocmarathon.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "runSignupId": 133058,
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=133058",
+      "verifySource": "runsignup",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "19",
@@ -226,7 +305,11 @@
       "status": "open",
       "statusLabel": "2027 Registration",
       "url": "https://www.runrocknroll.com/events/san-diego",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "verifyUrl": "https://in.us.runrocknroll.com/2027-rock-n-roll-running-series-san-diego",
+      "verifySource": "runrocknroll",
+      "verifyReadable": true,
+      "verifyIndependent": true
     }
   ],
   "us": [
@@ -240,7 +323,11 @@
       "status": "open",
       "statusLabel": "Open · Closes Sep 6",
       "url": "https://www.tunnelmarathon.com/",
-      "checked": "2026-08-21"
+      "checked": "2026-08-21",
+      "verifyUrl": "https://ultrasignup.com/register.aspx?did=132702",
+      "verifySource": "ultrasignup",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "02",
@@ -252,7 +339,11 @@
       "status": "limit",
       "statusLabel": "5K Open · Half Sold Out",
       "url": "https://www.chicagohalfmarathon.com/",
-      "checked": "2026-08-21"
+      "checked": "2026-08-21",
+      "verifyUrl": "https://www.letsdothis.com/us/o/179281/checkout/ticket?preferred=true",
+      "verifySource": "letsdothis",
+      "verifyReadable": false,
+      "verifyIndependent": true
     },
     {
       "num": "03",
@@ -264,7 +355,11 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://www.tcmevents.org/",
-      "checked": "2026-08-21"
+      "checked": "2026-08-21",
+      "verifyUrl": "https://raceroster.com/events/2026/108147/2026-medtronic-twin-cities-marathon-weekend",
+      "verifySource": "raceroster",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "04",
@@ -276,7 +371,12 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://hartfordmarathon.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "runSignupId": 151105,
+      "verifyUrl": "https://events.hakuapp.com/events/7866d5480efbe85229e9/registration_options",
+      "verifySource": "haku",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "05",
@@ -288,7 +388,12 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://steamtownmarathon.com/",
-      "checked": "2026-08-21"
+      "checked": "2026-08-21",
+      "runSignupId": 127745,
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=127745",
+      "verifySource": "runsignup",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "06",
@@ -300,7 +405,12 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://www.thebaltimoremarathon.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "runSignupId": 55489,
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=55489",
+      "verifySource": "runsignup",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "07",
@@ -312,7 +422,11 @@
       "status": "limit",
       "statusLabel": "Intl Half Open · Marathon Sold Out",
       "url": "https://www.freepmarathon.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "verifyUrl": "https://detroitmarathon.enmotive.com/events/register/2026-detroit-free-press-marathon",
+      "verifySource": "enmotive",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "08",
@@ -324,7 +438,11 @@
       "status": "limit",
       "statusLabel": "Charity Spots Open",
       "url": "https://www.marinemarathon.com/event/marine-corps-marathon/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "verifyUrl": "https://events.hakuapp.com/events/4aa49b89288a6107e296/registration_options",
+      "verifySource": "haku",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "09",
@@ -336,7 +454,11 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://monumentalmarathon.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "verifyUrl": "https://events.hakuapp.com/events/202a379403ba7f27cb23/registration_options",
+      "verifySource": "haku",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "10",
@@ -348,7 +470,11 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://www.southernhalf.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "verifyUrl": "https://www.letsdothis.com/us/e/2026-savannah-southern-half-259847",
+      "verifySource": "letsdothis",
+      "verifyReadable": false,
+      "verifyIndependent": true
     },
     {
       "num": "11",
@@ -360,7 +486,12 @@
       "status": "limit",
       "statusLabel": "Half & 8K Open · Full Sold Out",
       "url": "https://www.richmondmarathon.org/",
-      "checked": "2026-07-19"
+      "checked": "2026-07-19",
+      "runSignupId": 53399,
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=53399",
+      "verifySource": "runsignup",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "12",
@@ -372,7 +503,11 @@
       "status": "limit",
       "statusLabel": "Half & 8K Open · Full Sold Out",
       "url": "https://www.philadelphiamarathon.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "verifyUrl": "https://raceroster.com/events/2026/111834/2026-philadelphia-marathon-weekend",
+      "verifySource": "raceroster",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "13",
@@ -384,7 +519,11 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://www.route66marathon.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "verifyUrl": "https://events.hakuapp.com/events/bae9edcdb2382c537f0f/registration_options",
+      "verifySource": "haku",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "14",
@@ -396,7 +535,12 @@
       "status": "limit",
       "statusLabel": "Half Open · Full Sold Out",
       "url": "https://www.spacecoastmarathon.com/",
-      "checked": "2026-07-19"
+      "checked": "2026-07-19",
+      "runSignupId": 6449,
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=6449",
+      "verifySource": "runsignup",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "15",
@@ -408,7 +552,11 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://dallasmarathon.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "verifyUrl": "https://raceroster.com/events/2026/115310/2026-bmw-dallas-marathon",
+      "verifySource": "raceroster",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "16",
@@ -420,7 +568,11 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://www.honolulumarathon.org/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "verifyUrl": "https://www.letsdothis.com/us/checkout/ticket?eventId=236758",
+      "verifySource": "letsdothis",
+      "verifyReadable": false,
+      "verifyIndependent": true
     },
     {
       "num": "17",
@@ -432,7 +584,11 @@
       "status": "open",
       "statusLabel": "2027 Registration",
       "url": "https://www.chevronhoustonmarathon.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "verifyUrl": "https://events.hakuapp.com/events/cd380df4bf4a0ee67276/registration_options",
+      "verifySource": "haku",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "18",
@@ -444,19 +600,28 @@
       "status": "limit",
       "statusLabel": "Lottery + Charity Entries",
       "url": "https://www.cherryblossom.org/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "verifyUrl": "https://cherryblossom.org/pre-race/entry-info/lottery-entry/",
+      "verifySource": "self",
+      "verifyReadable": true,
+      "verifyIndependent": false
     },
     {
       "num": "19",
       "name": "Crescent City Classic 10K",
-      "where": "New Orleans, LA · April 2027",
-      "body": "One of the oldest 10Ks in the country. Course goes through downtown New Orleans, the French Quarter, and Esplanade Ave. USATF certified. 2027 registration open.",
+      "where": "New Orleans, LA · March 27, 2027",
+      "body": "One of the oldest 10Ks in the country and it runs Easter weekend, through downtown New Orleans, the French Quarter and Esplanade Ave. USATF certified. 2027 registration is open, and the entry price steps up in tiers as the date gets closer.",
       "dists": "10K",
-      "price": "$55 to $80",
+      "price": "From $60",
       "status": "open",
       "statusLabel": "2027 Registration Open",
       "url": "https://ccc10k.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-09-06",
+      "runSignupId": 65952,
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=65952",
+      "verifySource": "runsignup",
+      "verifyReadable": true,
+      "verifyIndependent": true
     },
     {
       "num": "20",
@@ -468,7 +633,11 @@
       "status": "open",
       "statusLabel": "2027 Registration",
       "url": "https://brooklynexperience.com/",
-      "checked": "2026-07-07"
+      "checked": "2026-07-07",
+      "verifyUrl": "https://nycruns.com/race/nycruns-brooklyn-experience-half-marathon",
+      "verifySource": "nycruns",
+      "verifyReadable": true,
+      "verifyIndependent": true
     }
   ]
 }

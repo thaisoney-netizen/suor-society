@@ -16,6 +16,13 @@ const nextConfig: NextConfig = {
         destination: "/pt-br",
         permanent: false,
       },
+      // The finder was built at /tools before it replaced the Race Picks
+      // page. It was never linked, but a shared link should still land.
+      {
+        source: "/tools",
+        destination: "/racepicks",
+        permanent: true,
+      },
       // The race guide article used to render at /race-picks.
       {
         source: "/race-picks",

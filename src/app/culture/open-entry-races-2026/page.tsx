@@ -28,7 +28,7 @@ const META = {
 export const metadata = pageMeta(META);
 
 // Race data lives in src/content/races-en.json — the PDF generator
-// (scripts/generate-race-guide-pdf.js) renders the same file, so editing the
+// The /racepicks race finder renders the same file, so editing the
 // JSON updates the page and the downloadable guide together.
 const CA_RACES = races.ca as Race[];
 const US_RACES = races.us as Race[];
@@ -275,18 +275,19 @@ export default function OpenEntryRaces2026() {
         {/* ── DOWNLOAD GATE ── */}
         <section id="download" className="download-gate">
           <div className="page">
-            <div className="gate-label">Free Download</div>
-            <div className="gate-title">Get the<br />Full Guide</div>
+            <div className="gate-label">Free</div>
+            <div className="gate-title">Know When<br />A Race Fills</div>
             <p className="gate-desc">
-              All {TOTAL_RACE_COUNT} races in one formatted PDF. Dates, prices, distances, and
-              direct registration links, ready to save, print, or share.
+              All {TOTAL_RACE_COUNT} races are on this page already and the list stays current,
+              so there is nothing to download. Leave your email and I will tell you when one
+              sells out, when prices jump, or when a new one worth doing opens up.
             </p>
             <ul className="gate-what">
               <li>{CA_RACE_COUNT} California open entry races, summer 2026 to spring 2027</li>
               <li>{US_RACE_COUNT} top US USATF-certified races, no qualifier needed</li>
               <li>Every distance: 5K, 10K, Half Marathon, Full Marathon</li>
               <li>Current prices and direct registration links</li>
-              <li>Availability and status updated {VERIFIED}</li>
+              <li>A note when a race sells out, instead of a file that never updates</li>
             </ul>
             <DownloadGate />
           </div>
