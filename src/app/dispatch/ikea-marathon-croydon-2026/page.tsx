@@ -205,11 +205,14 @@ export default function IkeaMarathon() {
 
                 <h2 id="entry">Can you still enter the IKEA Marathon?</h2>
                 <p>
-                  No. The{" "}
+                  No. Checked again on{" "}
+                  <time dateTime="2026-09-06">September 6, 2026</time>, the{" "}
                   <a href={SOURCES[0]} rel="nofollow noopener" target="_blank">
                     official SIEntries listing
                   </a>{" "}
-                  now shows the race as full, with no new entries possible. Registration opened
+                  still carries the line &ldquo;This event is now full so no new entries can be
+                  made,&rdquo; three months before entries were even due to close on December 6.
+                  Registration opened
                   at 6pm on Friday, June 26, 2026 and the 80 general places went in minutes.
                   The remaining 20 of the 100-place field were never on general sale. Entry was
                   £80 for affiliated runners and £82 for unaffiliated, and because the race
