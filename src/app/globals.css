@@ -401,18 +401,88 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
 }
 @media (max-width: 480px) {
-  /* Keep the headline, tag, and CTA above the fold even when mobile
-     browser chrome (Safari bottom bar, in-app browsers) overlaps the
-     bottom of the reported viewport. */
-  .hero-text { padding-bottom: calc(88px + env(safe-area-inset-bottom)); }
   .hero-headline { font-size: clamp(28px, 8.6vw, 40px); }
   .hero-tag { margin-top: 12px; }
   .hero-cta { margin-top: 20px; }
+  /* The Portuguese label is wider than the page at this size, and the hero
+     clips whatever runs past it, so the button was losing its right edge.
+     Tighter side padding holds it on one line down to 375px, and below that
+     it wraps rather than getting cut. Scoped to the hero: the 404 page
+     borrows .hero-cta for two short links that already fit. */
+  .hero-text .hero-cta {
+    padding-left: 18px;
+    padding-right: 18px;
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
 }
-/* The athletes sit near opposite edges of this landscape frame. On tall
-   screens, show the complete photograph instead of cropping both people out. */
-@media (max-aspect-ratio: 4 / 3) {
-  .hero-image { object-fit: contain; }
+/* Portrait screens. The athletes sit near opposite edges of this landscape
+   frame, so a crop tall enough to fill a phone screen cuts one of them out of
+   the picture. The photograph has to stay roughly landscape, which means it
+   cannot also be as tall as the viewport, so it stops being a backdrop here:
+   it runs full width at the top of the hero and the type sits under it on
+   asphalt, and the hero takes its height from those two blocks.
+
+   Sizing the hero to the viewport anyway is what broke this. `contain` fitted
+   the 16:9 frame inside a 100svh box, which left around 600px of empty black
+   between the nav and the photograph on a phone. Height comes from the content
+   here, never from the viewport.
+
+   Strictly narrower than 4:3, not `max-aspect-ratio`, which matches the ratio
+   itself: 1024x768 is exactly 4:3, and an iPad in landscape stacking a 683px
+   photo on top of the type would push the CTA off a 768px screen. At the
+   boundary the crop still clears both athletes, so it keeps the full frame. */
+@media (aspect-ratio < 4 / 3) {
+  .hero {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  /* 3:2 is as tall as the crop goes with both athletes still whole. It takes
+     sky off the left edge and grass off the right and stops before their
+     hands.
+
+     The height cap is what keeps the stack honest on a short, wide screen. At
+     1020x768 a 3:2 photo is 680px tall, and with the type under it the CTA
+     lands below the fold. Capped, the frame goes wider than 16:9 instead, so
+     `cover` trims the sky and the foreground and still holds both athletes at
+     full width. On a phone 3:2 is far shorter than the cap and nothing here
+     applies. */
+  .hero-image {
+    position: relative;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    max-height: 48svh;
+  }
+  /* The gradient is here to hold the white wordmark against a bright sky, so
+     it covers the photograph and stops where the photograph does. Carried on
+     over the asphalt below it would band the flat colour. */
+  .hero-overlay {
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    max-height: 48svh;
+  }
+  .hero-text {
+    position: relative;
+    inset: auto;
+    padding-top: 30px;
+    padding-bottom: calc(54px + env(safe-area-inset-bottom));
+  }
+}
+/* A phone held sideways. The hero still fills the frame here, but the viewport
+   is shorter than the type block wants to be, so the headline climbed past the
+   top of the photo and sat under the nav: at 740x360 the first line started
+   59px above the bar, with the menu button printed across "RUN.". The block
+   shrinks until it clears. Tablets in landscape are taller than this and keep
+   the full-size type. */
+@media (min-aspect-ratio: 4 / 3) and (max-height: 520px) {
+  .hero-headline { font-size: clamp(26px, 4.6vw, 44px); }
+  .hero-tag { margin-top: 10px; font-size: 15px; }
+  .hero-cta { margin-top: 16px; padding: 10px 24px; }
+  .hero-text { padding-bottom: calc(28px + env(safe-area-inset-bottom)); }
 }
 
 /* ============================================================
