@@ -143,6 +143,28 @@ export default function SiteNav({
         </button>
       </div>
 
+      {/* The three main pages, sitting under the wordmark instead of hiding
+          behind the hamburger. Only rendered below 900px, where .nav-links is
+          display:none and the burger takes over; above that the same links are
+          already inline in the row above. */}
+      <div className="nav-sections">
+        <div className="page nav-sections-row">
+          {navLinks.map((link) => {
+            const href = localizeHref(link.href, lang);
+            return (
+              <a
+                key={link.label}
+                href={href}
+                className="nav-section"
+                aria-current={pathname === href ? "page" : undefined}
+              >
+                {link.label}
+              </a>
+            );
+          })}
+        </div>
+      </div>
+
       <div id="nav-menu" className={`nav-menu ${open ? "is-open" : ""}`}>
         <div className="page nav-row nav-menu-head">
           <a href={homeHref} className="wm" aria-label="Suor Society, home">

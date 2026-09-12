@@ -54,7 +54,11 @@
      a sticky rail — has to clear this. One number, not three. */
   --nav-h: 72px;
 }
-@media (max-width: 720px) { :root { --nav-h: 60px; } }
+/* The bar carries a second row of section links below 900px, so the height
+   the rest of the site offsets against (sticky rails, anchor scroll margins)
+   has to account for both rows, not just the wordmark row. */
+@media (max-width: 900px) { :root { --nav-h: 112px; } }
+@media (max-width: 720px) { :root { --nav-h: 100px; } }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html {
   scroll-behavior: smooth;
@@ -3173,4 +3177,265 @@ a { color: inherit; text-decoration: none; }
    file, so the stacked label spans the row the way the block above intends. */
 @media (max-width: 640px) {
   .post-table--stack th:first-child { width: auto; }
+}
+
+/* ============================================================
+   MOBILE SECTION ROW, PORTRAIT HERO, NEWSLETTER POPUP
+   ============================================================ */
+
+/* Below 900px .nav-links is display:none and everything lives behind the
+   hamburger, which means the three main pages cost a tap to even see. This row
+   puts them under the wordmark instead. Above 900px the same links are already
+   inline in the row above, so this stays hidden and nothing is duplicated. */
+.nav-sections { display: none; }
+
+@media (max-width: 900px) {
+  .nav-sections { display: block; }
+  .nav-sections-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    height: 40px;
+    /* Three short labels fit from 320px up, but a longer label or a large
+       accessibility text size would otherwise push the last one off the edge,
+       so let the row scroll rather than clip or wrap. */
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .nav-sections-row::-webkit-scrollbar { display: none; }
+}
+
+.nav-section {
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 600;
+  font-size: var(--label);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: border-color .14s ease-out, color .14s ease-out;
+}
+.nav-section[aria-current="page"] { border-bottom-color: var(--accent); }
+
+/* Over the hero photograph the row reads white, and it takes the same paper
+   treatment as the rest of the bar once footage stops passing underneath. */
+.nav--overlay .nav-section { color: rgba(255,255,255,.92); }
+.nav--overlay .nav-sections { border-top: 1px solid rgba(255,255,255,.16); }
+.nav--overlay.is-stuck .nav-section { color: var(--asphalt); }
+.nav--overlay.is-stuck .nav-sections { border-top: 1px solid var(--line); }
+.nav--light .nav-section { color: var(--asphalt); }
+.nav--light .nav-sections { border-top: 1px solid var(--line); }
+
+/* ---- Portrait hero -------------------------------------------------------
+   The 3:2 photo with a type block under it left a flat black panel filling the
+   bottom half of a phone screen. The type moves onto the photograph instead,
+   into the empty lane between the two athletes, which is the one part of this
+   frame with nothing in it. A square crop is what opens that lane up: at 3:2
+   the runners sit close enough to the centre that stacked type lands on them.
+
+   The trade the square makes is their outer arms, which go off frame. Both
+   faces and bodies stay whole, so it reads as a deliberate tight crop rather
+   than a mistake, and nothing below the photograph is left to strand.
+
+   Portrait only. A phone held sideways still gets the full bleed hero with the
+   tagline and the button, same as desktop. */
+@media (aspect-ratio < 4 / 3) {
+  .hero-image,
+  .hero-overlay {
+    aspect-ratio: 1 / 1;
+    /* Held short enough that the board underneath still shows above the fold
+       on a small phone. Past the cap `cover` trims the frame wider than square
+       and both athletes stay in it. */
+    max-height: 58svh;
+    object-position: 50% 42%;
+  }
+  .hero-text {
+    position: absolute;
+    inset: 0;
+    justify-content: center;
+    /* Centre the type in the space the bar leaves, not in the photograph, so
+       the headline never creeps up under the two nav rows. */
+    padding-top: var(--nav-h);
+    padding-bottom: 0;
+  }
+  .hero-text .page {
+    align-items: center;
+    text-align: center;
+  }
+  .hero-headline {
+    font-size: clamp(40px, 13vw, 58px);
+    max-width: none;
+  }
+  /* The tagline and the button are what the black panel existed to hold. The
+     popup carries the signup now, and the section row above carries the
+     navigation, so neither has a job left here. */
+  .hero-tag,
+  .hero-cta { display: none; }
+}
+
+/* ---- Newsletter popup ----------------------------------------------------
+   Sits above the scroll tracker rather than over it, so the two fixed bars
+   stack instead of collide. Deliberately a bar and not a full screen modal:
+   it is dismissable, it covers a strip rather than the article, and it fires
+   on engagement, which is what keeps it clear of Google's intrusive
+   interstitial rules on mobile. */
+.np {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 60px;
+  z-index: 150;
+  background: var(--asphalt);
+  color: var(--paper);
+  border-top: 1px solid rgba(255,255,255,.14);
+  padding: 20px 22px calc(20px + env(safe-area-inset-bottom));
+  animation: np-in .26s ease-out both;
+}
+.np:focus { outline: none; }
+.np.is-closing { animation: np-out .22s ease-in both; }
+
+@keyframes np-in  { from { transform: translateY(100%); } to { transform: none; } }
+@keyframes np-out { from { transform: none; } to { transform: translateY(100%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .np, .np.is-closing { animation: none; }
+}
+
+@media (max-width: 720px) { .np { bottom: 54px; } }
+
+/* On a wide screen a full width bar for one field is a lot of furniture, so it
+   becomes a card in the corner instead. */
+@media (min-width: 721px) {
+  .np {
+    left: auto;
+    right: 24px;
+    width: 380px;
+    border: 1px solid rgba(255,255,255,.14);
+  }
+}
+
+.np-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 1;
+  color: rgba(255,255,255,.6);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  transition: color .14s ease-out;
+}
+.np-close:hover { color: var(--paper); }
+
+.np-copy { padding-right: 40px; }
+
+.np-title {
+  font-family: var(--font-bebas), Impact, sans-serif;
+  font-size: 26px;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.np-body {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
+  color: rgba(255,255,255,.76);
+  margin-top: 8px;
+  max-width: 46ch;
+}
+
+.np-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+.np-sr {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+.np-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 16px; /* under 16px iOS zooms the page on focus */
+  padding: 12px 14px;
+  color: var(--paper);
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.22);
+}
+.np-input::placeholder { color: rgba(255,255,255,.4); }
+.np-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.np-btn {
+  flex: 0 0 auto;
+  font-family: var(--font-bebas), sans-serif;
+  font-size: var(--ui);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  color: var(--asphalt);
+  background: var(--paper);
+  border: 1px solid var(--paper);
+  cursor: pointer;
+  transition: background .14s ease-out, border-color .14s ease-out, color .14s ease-out;
+}
+.np-btn:hover:not(:disabled) {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--paper);
+}
+.np-btn:disabled { opacity: .6; cursor: default; }
+
+.np-fine,
+.np-error {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 13px;
+  margin-top: 10px;
+}
+.np-fine  { color: rgba(255,255,255,.45); }
+.np-error { color: #FFB27A; }
+
+.np-done { padding-right: 40px; }
+.np-done-tag {
+  font-family: var(--font-bebas), Impact, sans-serif;
+  font-size: 26px;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--accent);
+}
+.np-done-body {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
+  color: rgba(255,255,255,.76);
+  margin-top: 8px;
+}
+
+/* A phone held sideways has around 360px of height to spend in total, and the
+   second nav row spends 40 of it. Measured at 740x360 the headline cleared the
+   bar by 6px, which is the same collision PR #56 fixed, reintroduced from the
+   other side. Both rows tighten on short screens and the headline gets its
+   margin back: 6px becomes roughly 39px. */
+@media (max-height: 520px) and (max-width: 900px) {
+  :root { --nav-h: 82px; }
+  .nav-row { height: 48px; }
+  .nav-sections-row { height: 32px; }
 }
