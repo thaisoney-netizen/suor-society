@@ -427,8 +427,13 @@ a { color: inherit; text-decoration: none; }
    Sizing the hero to the viewport anyway is what broke this. `contain` fitted
    the 16:9 frame inside a 100svh box, which left around 600px of empty black
    between the nav and the photograph on a phone. Height comes from the content
-   here, never from the viewport. */
-@media (max-aspect-ratio: 4 / 3) {
+   here, never from the viewport.
+
+   Strictly narrower than 4:3, not `max-aspect-ratio`, which matches the ratio
+   itself: 1024x768 is exactly 4:3, and an iPad in landscape stacking a 683px
+   photo on top of the type would push the CTA off a 768px screen. At the
+   boundary the crop still clears both athletes, so it keeps the full frame. */
+@media (aspect-ratio < 4 / 3) {
   .hero {
     height: auto;
     display: flex;
@@ -436,11 +441,19 @@ a { color: inherit; text-decoration: none; }
   }
   /* 3:2 is as tall as the crop goes with both athletes still whole. It takes
      sky off the left edge and grass off the right and stops before their
-     hands. */
+     hands.
+
+     The height cap is what keeps the stack honest on a short, wide screen. At
+     1020x768 a 3:2 photo is 680px tall, and with the type under it the CTA
+     lands below the fold. Capped, the frame goes wider than 16:9 instead, so
+     `cover` trims the sky and the foreground and still holds both athletes at
+     full width. On a phone 3:2 is far shorter than the cap and nothing here
+     applies. */
   .hero-image {
     position: relative;
     height: auto;
     aspect-ratio: 3 / 2;
+    max-height: 48svh;
   }
   /* The gradient is here to hold the white wordmark against a bright sky, so
      it covers the photograph and stops where the photograph does. Carried on
@@ -450,6 +463,7 @@ a { color: inherit; text-decoration: none; }
     width: 100%;
     height: auto;
     aspect-ratio: 3 / 2;
+    max-height: 48svh;
   }
   .hero-text {
     position: relative;
