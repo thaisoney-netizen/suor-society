@@ -3,6 +3,7 @@ import { Bebas_Neue, Barlow_Condensed, Inter, JetBrains_Mono } from "next/font/g
 import Script from "next/script";
 import "./globals.css";
 import ScrollTracker from "@/components/ScrollTracker";
+import NewsletterPopup from "@/components/NewsletterPopup";
 import { SITE_URL } from "@/lib/seo";
 
 const bebasNeue = Bebas_Neue({
@@ -86,6 +87,7 @@ export default function RootLayout({
       <body style={{ paddingBottom: "60px" }}>
         {children}
         <ScrollTracker />
+        <NewsletterPopup />
         {/*
           GA4 runs in its default state: analytics cookies are set on arrival,
           with no consent gate in front of it. The Consent Mode v2 defaults and

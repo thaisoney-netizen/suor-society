@@ -223,6 +223,19 @@ type Dictionary = {
     scenesEye: string;
     scenesAlts: { road: string; trail: string; crew: string };
   };
+  newsletterPopup: {
+    title: string;
+    body: string;
+    emailLabel: string;
+    placeholder: string;
+    sending: string;
+    subscribe: string;
+    error: string;
+    fine: string;
+    successTitle: string;
+    successBody: string;
+    close: string;
+  };
   dispatchForm: {
     successTag: string;
     successTitleLines: string[];
@@ -692,6 +705,20 @@ export const dictionaries: Record<Lang, Dictionary> = {
         trail: "Trail running in the San Diego hills",
         crew: "Suor Society runners mid-stride",
       },
+    },
+    newsletterPopup: {
+      title: "Get the Dispatch",
+      body: "Once a week we send the races worth signing up for and the gear actually worth knowing about.",
+      emailLabel: "Email",
+      placeholder: "you@somewhere.com",
+      sending: "Sending…",
+      subscribe: "Subscribe →",
+      error:
+        "Something went wrong. Email hello@suorsociety.com and we’ll add you directly.",
+      fine: "No spam, unsubscribe any time",
+      successTitle: "You’re in",
+      successBody: "The next one lands in your inbox this week.",
+      close: "Close",
     },
     dispatchForm: {
       successTag: "You’re in",
@@ -1206,6 +1233,20 @@ export const dictionaries: Record<Lang, Dictionary> = {
         trail: "Trail nos morros de San Diego",
         crew: "Corredores do Suor Society em movimento",
       },
+    },
+    newsletterPopup: {
+      title: "Assine o Dispatch",
+      body: "Uma vez por semana a gente manda as corridas que valem a inscrição e os equipamentos que valem a pena.",
+      emailLabel: "E-mail",
+      placeholder: "seu@email.com",
+      sending: "Enviando…",
+      subscribe: "Assinar →",
+      error:
+        "Algo deu errado. Escreve pra gente em hello@suorsociety.com que a gente te adiciona na mão.",
+      fine: "Sem spam, cancele quando quiser",
+      successTitle: "Você tá dentro",
+      successBody: "O próximo chega na sua caixa de entrada essa semana.",
+      close: "Fechar",
     },
     dispatchForm: {
       successTag: "Você tá dentro",
