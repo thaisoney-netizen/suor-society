@@ -401,7 +401,7 @@ export default function WhichRaceToSignUpFor() {
                   alt="Two women laughing while sitting on a loaded push sled on a turf lane in a gym with red and black walls"
                   priority={false}
                   inline
-                  caption="The sled push is the second of the eight HYROX stations."
+                  caption="The sled push is the second of the eight HYROX stations"
                 />
                 <p>
                   Not in SoCal.{" "}
@@ -428,7 +428,7 @@ export default function WhichRaceToSignUpFor() {
                 <p>
                   If you lift more than you run, HYROX plays to what you already
                   have, and the running comes in 1 km pieces. If what you want
-                  is the distance itself, the half is the honest test. And if
+                  is the distance itself, go with the half. And if
                   you&rsquo;re curious but nervous, Doubles has you run every
                   kilometer together with a partner and split the stations
                   however you like.

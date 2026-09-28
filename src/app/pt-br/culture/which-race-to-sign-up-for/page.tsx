@@ -388,7 +388,7 @@ export default function QualProvaFazer() {
                   alt="Duas mulheres rindo, sentadas num sled carregado com anilhas sobre a pista de grama sintética de uma academia de paredes vermelhas e pretas"
                   priority={false}
                   inline
-                  caption="O sled push é a segunda das oito estações do HYROX."
+                  caption="O sled push é a segunda das oito estações do HYROX"
                 />
                 <p>
                   Não no sul da Califórnia. O{" "}
@@ -416,7 +416,7 @@ export default function QualProvaFazer() {
                 <p>
                   Se você levanta mais peso do que corre, o HYROX joga a seu
                   favor, e a corrida vem em pedaços de 1 km. Se o que você quer
-                  é a distância em si, a meia é o teste honesto. E se bate a
+                  é a distância em si, vá de meia. E se bate a
                   curiosidade junto com o nervoso, no Doubles você corre todos
                   os quilômetros junto com uma dupla e divide as estações como
                   quiser.
