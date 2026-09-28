@@ -43,8 +43,8 @@ const FAQS = [
     a: "No. Open, Doubles, and Relay divisions are open entry. Qualifying only matters for Elite racing and the World Championships.",
   },
   {
-    q: "When do HYROX Anaheim tickets go on sale?",
-    a: "No on-sale date has been announced yet. HYROX tickets typically drop three to five months before race day, which puts Anaheim somewhere around mid to late summer. Registration happens through the official event page on hyrox.com, and races sell out fast once they open.",
+    q: "Can you still get HYROX Anaheim tickets?",
+    a: "Not athlete tickets. As of September 28, 2026, every Open singles and Doubles ticket in the HYROX ticket shop was marked unavailable, on every day. The official event page on hyrox.com has a notification list in case more are released. The next one nearby is HYROX San Diego, May 13 to 16, 2027.",
   },
 ];
 
