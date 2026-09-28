@@ -1,0 +1,179 @@
+name: Race Freshness (daily, free)
+
+# Retires races whose date has passed, every morning, in the cloud.
+#
+# Why this exists. The daily verification agent
+# (~/.claude/scheduled-tasks/content-freshness-check) does the full job, but it
+# runs on Thais's laptop, so it only fires when the machine is awake and idle at
+# 8:37am. It had not landed a commit on the race data since Aug 21 2026, and on
+# Sep 7 the guide still listed three races that had already been run, one of
+# them as "Open Registration". Three separate scheduled tasks also shared an
+# identical lastRunAt down to the second, which is a batched catch-up after
+# wake rather than three clean daily fires.
+#
+# The half of that job which needs no judgement is pure date arithmetic: a race
+# whose date has passed is past, full stop, no sources to weigh. That half is
+# moved here, where it runs whether or not the laptop is open.
+#
+# Written Sep 7 2026 but left uncommitted until Sep 28, so in between nothing
+# retired past races at all: four were still listed as open that morning.
+#
+# It also runs the free half of the status check. Every read here is a plain
+# fetch or the free RunSignup API, so this job costs nothing and needs no key.
+# Measured Sep 7 2026: 17 of 37 upcoming races settle for free, and it caught
+# Indianapolis Monumental still listed "Open Registration" when the race had
+# sold out of everything but charity entries.
+#
+# The paid remainder, the pages a plain fetch cannot render, is weekly and
+# capped: see race-weekly.yml. Nothing here writes a status unless two
+# independent sources agree, and disagreements go to the weekly digest issue
+# rather than being resolved by guessing.
+
+on:
+  schedule:
+    # 13:40 UTC = 6:40am Pacific in summer, 5:40am in winter. Ahead of the
+    # laptop agent's 8:37 local, so the tail is already tidy when it runs.
+    - cron: '40 13 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  # Shared with race-weekly.yml: never let two jobs commit race data at once.
+  group: race-data
+  cancel-in-progress: false
+
+jobs:
+  retire-past:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Retire races whose date has passed
+        id: retire
+        run: |
+          # The sweep exits 1 whenever it has ANY findings, including the stale
+          # dates and due-for-recheck lists this job does not act on. That is
+          # not a failure here, so the exit code is captured rather than
+          # inherited. Without this the step dies on a healthy run.
+          set +e
+          node scripts/content/check-stale-dates.mjs --fix-past --json > result.json
+          code=$?
+          set -e
+          if [ ! -s result.json ]; then
+            echo "sweep produced no output (exit $code)" >&2
+            exit 1
+          fi
+          node -e "
+            const fs = require('fs');
+            const r = JSON.parse(fs.readFileSync('result.json', 'utf8'));
+            const retired = r.retired || [];
+            fs.appendFileSync(process.env.GITHUB_OUTPUT,
+              'count=' + retired.length + '\n');
+            // Names go to a file, not an output, so quotes and commas in a race
+            // name cannot break the commit command downstream.
+            fs.writeFileSync('retired-names.txt',
+              retired.map(x => x.name).join(', '));
+            console.log('retired ' + retired.length + ': ' + retired.map(x => x.name).join(', '));
+          "
+
+      - name: Verify statuses, free sources only
+        id: verify
+        run: |
+          set +e
+          node scripts/content/verify-race-status.mjs --free --json > verified.json
+          set -e
+          node -e "
+            const fs=require('fs');
+            let v={changed:[],escalate:[],freeReads:0};
+            try{v=JSON.parse(fs.readFileSync('verified.json','utf8'));}catch{}
+            fs.appendFileSync(process.env.GITHUB_OUTPUT,'changed='+(v.changed||[]).length+'\n');
+            // Names go to a file, not an output: a comma or quote in a race
+            // name would otherwise break the commit command downstream.
+            fs.writeFileSync('status-changes.txt',(v.changed||[]).map(c=>c.name+' '+c.from+'->'+c.to).join(', '));
+            console.log('free reads '+(v.freeReads||0)+', changed '+(v.changed||[]).length+', escalations '+(v.escalate||[]).length);
+          "
+
+      # ── California catalog ──────────────────────────────────────────────
+      # Rebuilds src/content/catalog-ca.json from RunSignup and UltraSignup.
+      #
+      # This is the half of the finder nobody can keep current by hand. On
+      # 2026-09-07 a single `modified_since` call returned 944 races changed
+      # nationally in one day, and 39 hand checked rows were never going to
+      # keep pace with that.
+      #
+      # Both reads are free and keyless, so this costs nothing and needs no
+      # secret, same as the steps above.
+      #
+      # It never touches races-en.json. The guide is Thais's editorial list and
+      # AGENTS.md rule 7 keeps adding and removing rows her call. A failure here
+      # leaves yesterday's catalog in place, which is the right fallback: a day
+      # old list of real races beats an empty one.
+      - name: Rebuild the California catalog
+        id: catalog
+        continue-on-error: true
+        run: |
+          # Shipped Sep 28 2026 before the catalog work was committed. Until
+          # sync-ca-catalog.mjs is on main this step is a no-op, and it switches
+          # itself on the first morning after that script lands.
+          if [ ! -f scripts/content/sync-ca-catalog.mjs ]; then
+            echo "catalog script not on main yet, skipping"
+            exit 0
+          fi
+          set +e
+          node scripts/content/sync-ca-catalog.mjs --months 12 --json > catalog.json
+          CODE=$?
+          set -e
+          # Exit 1 means a month hit RunSignup's 1000 result cap, so the file is
+          # written but truncated. Worth a warning, not worth failing the run.
+          if [ "$CODE" != "0" ]; then
+            echo "::warning::sync-ca-catalog exited $CODE, a month may have hit the 1000 result cap"
+          fi
+          node -e "
+            const c = require('./catalog.json');
+            console.log('catalog ' + (c.total || 0) + ' races ' + JSON.stringify(c.bySource || {}));
+            if ((c.cappedMonths || []).length) {
+              console.log('::warning::capped months: ' + c.cappedMonths.join(', '));
+            }
+          "
+
+      - name: Commit and push
+        if: always()
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          # Stage only what this job is allowed to touch. Never `git add -A`:
+          # the repo carries Thais's untracked brand assets.
+          git add src/content/races-en.json src/content/races-br.json
+          # The catalog only exists once the catalog step has shipped.
+          if [ -f src/content/catalog-ca.json ]; then
+            git add src/content/catalog-ca.json
+          fi
+          if git diff --staged --quiet; then
+            echo "nothing staged, skipping"
+            exit 0
+          fi
+          RET="$(cat retired-names.txt 2>/dev/null || true)"
+          CHG="$(cat status-changes.txt 2>/dev/null || true)"
+          # The catalog re-syncs every day and the guide often does not change
+          # at all, so "nothing retired and nothing restatused" is now a normal
+          # run rather than an impossible one. Without this branch those days
+          # committed as "daily status check ()" with an empty list.
+          if [ -n "$RET" ] && [ -n "$CHG" ]; then
+            MSG="Race guide: retire $RET; status $CHG"
+          elif [ -n "$RET" ]; then
+            MSG="Race guide: retire races already run ($RET)"
+          elif [ -n "$CHG" ]; then
+            MSG="Race guide: daily status check ($CHG)"
+          else
+            MSG="Race catalog: daily California re-sync"
+          fi
+          git commit -m "$MSG"
+          # Another workflow may have pushed while this ran.
+          git pull --rebase --autostash origin main
+          git push

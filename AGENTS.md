@@ -124,6 +124,21 @@ built to finish the job without Thais: it verifies, edits, commits and pushes
 on its own. Read this before touching race data or the sweep, because the two
 of you share the same files.
 
+**It runs in the cloud too, and that is the part to rely on.** The laptop agent
+only fires when her Mac is open, which is not every day. Two GitHub Actions
+workflows cover the job without it:
+
+- `.github/workflows/race-freshness.yml`, daily at 13:40 UTC: retires races
+  whose date has passed, runs the free two-source status check
+  (`verify-race-status.mjs --free`), and commits `races-*.json`, which redeploys
+  the site. Costs nothing, needs no key.
+- `.github/workflows/race-weekly.yml`, Mondays at 14:10 UTC: the Firecrawl check
+  for pages a plain fetch cannot read (`FIRECRAWL_API_KEY` secret, capped at 30
+  credits), race discovery into `race-candidates.json`, and a digest on the open
+  issue labeled `race-weekly` listing what changed and what needs a human.
+
+Both share the `race-data` concurrency group so they never commit at once.
+
 **What the agent changes unattended.** Retiring races whose date has passed
 (pure date arithmetic, no lookup needed), moving `status`/`statusLabel` between
 open / limit / sold, correcting a registration URL, a price, or body copy that

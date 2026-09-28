@@ -1,0 +1,141 @@
+name: Race Weekly (verify + discover)
+
+# The weekly half of race freshness, in the cloud so it does not need the
+# laptop awake. race-freshness.yml already retires past races daily; this adds
+# the two jobs that need a second source or a search.
+#
+# Credit budget. Firecrawl's free tier is 1,000 credits a month with no
+# rollover, so almost everything here is deliberately free.
+#
+# Discovery costs nothing: RunSignup's search is a free endpoint. Verification
+# tries a plain fetch on every page first and only pays Firecrawl for the ones
+# it cannot render, which as of Sep 7 2026 is roughly a dozen pages a week
+# against a 30 credit ceiling, well under 100 a month. The daily job
+# (race-freshness.yml) already settled everything readable for free before this
+# runs, so what reaches Firecrawl here is only the genuinely hard remainder.
+#
+# What it will not do: publish a discovered race. Every row on the guide has
+# hand written copy, and a race auto-filled from a platform blurb would read as
+# exactly what it is. Candidates go to an issue for a person to promote.
+
+on:
+  schedule:
+    # Mondays 14:10 UTC = 7:10am Pacific in summer, 6:10am in winter. Half an
+    # hour after the daily retire job so the two never contend for the branch.
+    - cron: '10 14 * * 1'
+  workflow_dispatch:
+    inputs:
+      budget:
+        description: 'Max Firecrawl credits to spend'
+        required: false
+        default: '30'
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: race-data
+  cancel-in-progress: false
+
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    # Job level so the `if` gate on the verify step can actually see it. A
+    # step's own `env:` block is not in scope when its `if` is evaluated.
+    env:
+      FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Free. No API key involved, so this runs even before a Firecrawl key
+      # exists and keeps working if the key is ever removed.
+      - name: Discover races not on the list
+        id: discover
+        run: |
+          set +e
+          node scripts/content/discover-races.mjs --json > discovered.json
+          set -e
+          node -e "
+            const fs=require('fs');
+            let d={total:0,brandNew:0,candidates:[]};
+            try{d=JSON.parse(fs.readFileSync('discovered.json','utf8'));}catch{}
+            fs.appendFileSync(process.env.GITHUB_OUTPUT,'new='+(d.brandNew||0)+'\n');
+            const lines=(d.candidates||[]).slice(0,20)
+              .map(c=>'- **'+c.name+'**, '+c.where+' ('+c.distanceMiles+' mi) <'+c.url+'>');
+            fs.writeFileSync('discovered.md', lines.join('\n') || '_none_');
+            console.log('new candidates: '+(d.brandNew||0)+' of '+(d.total||0)+' total');
+          "
+
+      # Gated on the secret so the job stays useful without a key rather than
+      # failing. Without it, discovery still runs and only verification skips.
+      # The daily job has already done every free read. What is left is the
+      # pages a plain fetch cannot render, which is the only thing worth paying
+      # for. Spend is usually well under the ceiling.
+      - name: Verify the pages a free fetch cannot read
+        id: verify
+        if: ${{ env.FIRECRAWL_API_KEY != '' }}
+        run: |
+          set +e
+          node scripts/content/verify-race-status.mjs \
+            --budget "${{ github.event.inputs.budget || '30' }}" --json > verified.json
+          set -e
+          node -e "
+            const fs=require('fs');
+            let v={checked:0,changed:[],escalate:[],creditsSpent:0};
+            try{v=JSON.parse(fs.readFileSync('verified.json','utf8'));}catch{}
+            fs.appendFileSync(process.env.GITHUB_OUTPUT,'changed='+(v.changed||[]).length+'\n');
+            fs.appendFileSync(process.env.GITHUB_OUTPUT,'credits='+(v.creditsSpent||0)+'\n');
+            // Names go to a file, never a step output: a comma or a quote in a
+            // race name would otherwise break the commit command downstream.
+            fs.writeFileSync('changed.txt',(v.changed||[]).map(c=>c.name+' '+c.from+'->'+c.to).join(', '));
+            fs.writeFileSync('escalate.md',(v.escalate||[]).map(e=>'- **'+e.name+'**: '+e.why).join('\n')||'_none_');
+            console.log('changed '+(v.changed||[]).length+', escalations '+(v.escalate||[]).length+', credits '+(v.creditsSpent||0));
+          "
+
+      - name: Commit data changes
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          # Never `git add -A`: the repo carries untracked brand assets.
+          git add src/content/races-en.json src/content/race-candidates.json
+          if git diff --staged --quiet; then
+            echo "no data changes"
+            exit 0
+          fi
+          CH="$(cat changed.txt 2>/dev/null || true)"
+          if [ -n "$CH" ]; then MSG="Race data: weekly verify ($CH)"; else MSG="Race data: weekly candidate refresh"; fi
+          git commit -m "$MSG"
+          git pull --rebase --autostash origin main
+          git push
+
+      # One rolling issue rather than a new one each week, so the thread stays
+      # readable and nothing needs closing by hand.
+      - name: Report candidates and escalations
+        if: ${{ steps.discover.outputs.new != '0' || steps.verify.outputs.changed != '0' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          {
+            echo "### Week of $(date -u +%Y-%m-%d)"
+            echo
+            echo "**Races not on the list** (${{ steps.discover.outputs.new || 0 }} new, proposals only, nothing published):"
+            cat discovered.md
+            echo
+            echo "**Status changes written** (${{ steps.verify.outputs.changed || 0 }}): $(cat changed.txt 2>/dev/null || echo none)"
+            echo
+            echo "**Needed a human** (two sources did not agree, so nothing was changed):"
+            cat escalate.md 2>/dev/null || echo "_none_"
+            echo
+            echo "_Firecrawl credits spent: ${{ steps.verify.outputs.credits || 0 }} of ${{ github.event.inputs.budget || '30' }}._"
+          } > body.md
+          NUM=$(gh issue list --state open --label race-weekly --limit 1 --json number --jq '.[0].number // empty')
+          if [ -n "$NUM" ]; then
+            gh issue comment "$NUM" --body-file body.md
+          else
+            gh label create race-weekly --description "Weekly race data digest" --color 0E8A16 2>/dev/null || true
+            gh issue create --title "Race data: weekly digest" --label race-weekly --body-file body.md
+          fi
