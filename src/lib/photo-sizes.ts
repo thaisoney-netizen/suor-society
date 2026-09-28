@@ -17,6 +17,7 @@ export const PHOTO_SIZES: Record<string, PhotoSize> = {
   "/hero-poster.jpg": { width: 1080, height: 1920 },
   "/home-track-hero.webp": { width: 1600, height: 900 },
   "/hyrox-hero.jpg": { width: 1206, height: 1624 },
+  "/hyrox-sled-push.webp": { width: 1200, height: 2132 },
   "/ikea-marathon-hero.avif": { width: 1200, height: 797 },
   "/june-shoe-drops-hero.webp": { width: 1672, height: 941 },
   "/oceanside-dj-run.webp": { width: 1080, height: 1350 },
@@ -27,5 +28,6 @@ export const PHOTO_SIZES: Record<string, PhotoSize> = {
   "/running-boom-hero.webp": { width: 1366, height: 768 },
   "/sao-silvestre-hero.webp": { width: 950, height: 593 },
   "/thais-oney.jpg": { width: 1135, height: 1101 },
+  "/track-run-two.webp": { width: 1200, height: 1861 },
   "/trail-run.jpg": { width: 1030, height: 1800 },
 };

@@ -322,6 +322,14 @@ export default function WhichRaceToSignUpFor() {
                   is the one a lot of people start with, and it asks for exactly
                   that: 3 miles, three or four times a week, before week one.
                 </p>
+
+                {/* ── PHOTO ── Thais's own track shot, in the running section. */}
+                <ArticleCover
+                  src="/track-run-two.webp"
+                  alt="Two women running side by side on a red track next to a football field under an overcast sky"
+                  priority={false}
+                  inline
+                />
                 <p>
                   So if you&rsquo;re starting from a couple of easy runs a week,
                   December is your half. If you&rsquo;ve kept running since a
@@ -382,6 +390,16 @@ export default function WhichRaceToSignUpFor() {
                   the same eight in the same order, which is what makes it a
                   race and not just a hard workout.
                 </p>
+
+                {/* ── PHOTO ── Thais's own shot, right after the paragraph that
+                    names the sled push. Portrait, so ArticleCover caps it by height. */}
+                <ArticleCover
+                  src="/hyrox-sled-push.webp"
+                  alt="Two women laughing while sitting on a loaded push sled on a turf lane in a gym with red and black walls"
+                  priority={false}
+                  inline
+                  caption="The sled push is the second of the eight HYROX stations."
+                />
                 <p>
                   Not in SoCal.{" "}
                   <a href={HYROX_URL} target="_blank" rel="noopener noreferrer">

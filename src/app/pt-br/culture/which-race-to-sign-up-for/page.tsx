@@ -317,6 +317,13 @@ export default function QualProvaFazer() {
                   , um dos mais usados, pede exatamente isso antes da primeira
                   semana: 3 milhas, uns 5 km, três ou quatro vezes por semana.
                 </p>
+
+                <ArticleCover
+                  src="/track-run-two.webp"
+                  alt="Duas mulheres correndo lado a lado numa pista de atletismo vermelha ao lado de um campo de futebol americano, com céu nublado"
+                  priority={false}
+                  inline
+                />
                 <p>
                   Então, se você está começando com duas corridas leves por
                   semana, a sua meia é a de dezembro. Se você continuou correndo
@@ -376,6 +383,14 @@ export default function QualProvaFazer() {
                   faz as mesmas oito estações na mesma ordem, e é isso que
                   transforma o treino em prova.
                 </p>
+
+                <ArticleCover
+                  src="/hyrox-sled-push.webp"
+                  alt="Duas mulheres rindo, sentadas num sled carregado com anilhas sobre a pista de grama sintética de uma academia de paredes vermelhas e pretas"
+                  priority={false}
+                  inline
+                  caption="O sled push é a segunda das oito estações do HYROX."
+                />
                 <p>
                   Não no sul da Califórnia. O{" "}
                   <a href={HYROX_URL} target="_blank" rel="noopener noreferrer">
