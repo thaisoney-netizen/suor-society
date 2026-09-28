@@ -117,6 +117,23 @@
     },
     {
       "num": "08",
+      "name": "RunThrough Long Beach Half, 10K & 5K",
+      "where": "Long Beach, CA · Oct 24, 2026",
+      "body": "Small, chip-timed Saturday race from Shoreline Aquatic Park, flat out and back along the LA River bike path. Free race photos and its own medal. The Long Beach Marathon two weeks earlier is sold out, and this one still has room.",
+      "dists": "5K · 10K · Half Marathon",
+      "price": "From $47",
+      "status": "open",
+      "statusLabel": "Open Registration",
+      "url": "https://www.runthroughusa.com/event/runthrough-usa-long-beach-5k10k-half-marathon-race-weekend-october-2026",
+      "checked": "2026-09-28",
+      "runSignupId": 188227,
+      "verifyUrl": "https://www.letsdothis.com/us/e/248554",
+      "verifySource": "letsdothis",
+      "verifyReadable": false,
+      "verifyIndependent": true
+    },
+    {
+      "num": "09",
       "name": "Two Cities Marathon",
       "where": "Fresno/Clovis, CA · Nov 1, 2026",
       "body": "Central Valley fall classic. Multi-distance, USATF certified, point-to-point. Smaller field, less hype, faster moves through registration.",
@@ -133,7 +150,24 @@
       "verifyIndependent": true
     },
     {
-      "num": "09",
+      "num": "10",
+      "name": "Silver Strand Half Marathon, 10 Miler, 12K & 5K",
+      "where": "Coronado, CA · Nov 8, 2026",
+      "body": "Veterans Day weekend race down the Silver Strand from Coronado to Silver Strand State Beach. Flat and fast next to the water the whole way, with a beach party at the finish. Four distances, so it works whether you have a 5K in you or a full 13.1.",
+      "dists": "5K · 12K · 10 Mile · Half Marathon",
+      "price": "From $63.46",
+      "status": "open",
+      "statusLabel": "Open Registration",
+      "url": "https://www.silverstrandhalf.com/",
+      "checked": "2026-09-28",
+      "runSignupId": 194221,
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=194221",
+      "verifySource": "runsignup",
+      "verifyReadable": true,
+      "verifyIndependent": true
+    },
+    {
+      "num": "11",
       "name": "Santa Barbara Half Marathon & 5K",
       "where": "Santa Barbara, CA · Nov 8, 2026",
       "body": "Presented by HOKA. 13.1 along the waterfront plus a 5K and a kids fun run, finishing in the Funk Zone.",
@@ -142,14 +176,14 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://santabarbarahalf.com/",
-      "checked": "2026-09-07",
+      "checked": "2026-09-28",
       "verifyUrl": "https://raceroster.com/events/2026/112916/santa-barbara-half-marathon-and-5k",
       "verifySource": "raceroster",
       "verifyReadable": true,
       "verifyIndependent": true
     },
     {
-      "num": "10",
+      "num": "12",
       "name": "Monterey Bay Half Marathon",
       "where": "Monterey, CA · Nov 8, 2026",
       "body": "Sold out in eight days, and the Race Benefactor entries went in fifteen minutes. One of the most beautiful half courses in California. The official waitlist is the only way in now.",
@@ -165,7 +199,24 @@
       "verifyIndependent": true
     },
     {
-      "num": "11",
+      "num": "13",
+      "name": "Kaiser Permanente Thrive San Diego Half Marathon & 5K",
+      "where": "San Diego, CA · Nov 14, 2026",
+      "body": "Saturday morning half on a flat, looping course along the bay, starting and finishing on Vacation Isle. There's a two person half marathon relay too, if you'd rather split the 13.1 with a friend.",
+      "dists": "5K · Half Marathon · Half Marathon Relay",
+      "price": "From $68.84",
+      "status": "open",
+      "statusLabel": "Open Registration",
+      "url": "https://thrivehalfmarathon.com/",
+      "checked": "2026-09-28",
+      "runSignupId": 138666,
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=138666",
+      "verifySource": "runsignup",
+      "verifyReadable": true,
+      "verifyIndependent": true
+    },
+    {
+      "num": "14",
       "name": "Berkeley Half Marathon",
       "where": "Berkeley, CA · Nov 15, 2026",
       "body": "USATF certified East Bay course winding through Berkeley campus, downtown, and the marina. Mid-November race day with full fall conditions.",
@@ -181,7 +232,23 @@
       "verifyIndependent": true
     },
     {
-      "num": "12",
+      "num": "15",
+      "name": "O'side Turkey Trot",
+      "where": "Oceanside, CA · Nov 26, 2026",
+      "body": "Thanksgiving morning 5K on the Oceanside coast, put on by San Diego Running Co. The Double Dip runs both 5K waves back to back for a bonus medal.",
+      "dists": "5K · Double Dip 5K",
+      "price": "From $55.99",
+      "status": "open",
+      "statusLabel": "Open Registration",
+      "url": "https://www.sandiegorunningco.com/sdrc_events/oside-turkey-trot/",
+      "checked": "2026-09-28",
+      "verifyUrl": "https://raceroster.com/events/2026/127035/oside-turkey-trot",
+      "verifySource": "raceroster",
+      "verifyReadable": true,
+      "verifyIndependent": true
+    },
+    {
+      "num": "16",
       "name": "California International Marathon",
       "where": "Sacramento, CA · Dec 6, 2026",
       "body": "Net downhill, point-to-point, USATF and World Athletics certified. One of the fastest marathon courses in the US. All standard tiers sold out at record speed. Gold Entry Draw closed in May.",
@@ -197,7 +264,7 @@
       "verifyIndependent": true
     },
     {
-      "num": "13",
+      "num": "17",
       "name": "San Diego Holiday Half Marathon & 5K",
       "where": "San Diego, CA · Dec 19, 2026",
       "body": "13.1 with a 711-foot net elevation drop along a rolling downhill bike path. A fast December half and a way to end the year with a PR attempt.",
@@ -206,7 +273,7 @@
       "status": "open",
       "statusLabel": "Open Registration",
       "url": "https://www.sandiegoholidayhalf.com/",
-      "checked": "2026-09-07",
+      "checked": "2026-09-28",
       "runSignupId": 84976,
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=84976",
       "verifySource": "runsignup",
@@ -214,7 +281,7 @@
       "verifyIndependent": true
     },
     {
-      "num": "14",
+      "num": "18",
       "name": "Carlsbad Marathon, Half & 5K",
       "where": "Carlsbad, CA · Jan 17-18, 2027",
       "body": "Coastal SoCal race down Carlsbad Boulevard with Pacific views for most of the course. Registration open early for the lowest pricing of the year.",
@@ -230,7 +297,7 @@
       "verifyIndependent": true
     },
     {
-      "num": "15",
+      "num": "19",
       "name": "Surf City Marathon & Half",
       "where": "Huntington Beach, CA · Feb 7, 2027",
       "body": "Pacific Coast Highway through Huntington Beach on Super Bowl Sunday. Coastal, fast, surfboard finisher medal. Annual; 2027 dates expected to be announced.",
@@ -246,7 +313,7 @@
       "verifyIndependent": true
     },
     {
-      "num": "16",
+      "num": "20",
       "name": "Los Angeles Marathon",
       "where": "Los Angeles, CA · March 2027",
       "body": "Stadium to the Sea, Dodger Stadium to Santa Monica. One of the most iconic point-to-point marathon courses in the country. Open entry, no qualifier.",
@@ -262,7 +329,7 @@
       "verifyIndependent": true
     },
     {
-      "num": "17",
+      "num": "21",
       "name": "Mountains 2 Beach Marathon & Half",
       "where": "Ojai to Ventura, CA · April 2027",
       "body": "Net downhill from Ojai to the Ventura coast. Known as one of the fastest BQ marathon courses in California. Annual; 2027 registration opens fall 2026.",
@@ -279,7 +346,7 @@
       "verifyIndependent": true
     },
     {
-      "num": "18",
+      "num": "22",
       "name": "Hoag OC Marathon Running Festival",
       "where": "Costa Mesa, CA · May 2027",
       "body": "Annual SoCal weekend with marathon, half, 5K, and combo challenges. Course finishes at OC Fair & Event Center. Open entry, multi-distance.",
@@ -296,7 +363,7 @@
       "verifyIndependent": true
     },
     {
-      "num": "19",
+      "num": "23",
       "name": "Rock 'n' Roll San Diego",
       "where": "San Diego, CA · June 5-6, 2027",
       "body": "Balboa Park start, finish in Little Italy, live music every mile. Annual SoCal classic. 2027 registration opens late 2026.",

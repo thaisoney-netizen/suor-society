@@ -313,12 +313,20 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardTitle: "The board",
       boardPosts: [
         {
+          href: "/culture/which-race-to-sign-up-for",
+          img: "/home-track-hero.webp",
+          eyebrow: "The Culture Archive",
+          title: "Which SoCal Race Before 2026 Ends?",
+          desc: "A half in December, something shorter in November, or HYROX Anaheim. The SoCal races still open this year, with the weeks you have left and how I'm choosing mine",
+          meta: "New · Races · September 2026 ↗",
+        },
+        {
           href: "/culture/adizero-dropset-pro-vs-dropset-4",
           img: "/adizero-dropset-hero.jpg",
           eyebrow: "The Culture Archive",
           title: "Adizero Dropset Pro vs Dropset 4",
           desc: "Running intervals or lifting first? Compare the Pro and Dropset 4 with sourced specs, fit notes, and recommendations for the week you actually train.",
-          meta: "New · Gear · September 2026 ↗",
+          meta: "Gear · September 2026 ↗",
         },
         {
           href: "/culture/half-marathon-world-record",
@@ -606,6 +614,12 @@ export const dictionaries: Record<Lang, Dictionary> = {
       articlesLabel: "Articles by Thais",
       articles: [
         {
+          href: "/culture/which-race-to-sign-up-for",
+          tag: "The Culture Archive",
+          date: "September 2026",
+          title: "Which SoCal Race Should You Sign Up For Before 2026 Ends?",
+        },
+        {
           href: "/culture/adizero-dropset-pro-vs-dropset-4",
           tag: "The Culture Archive",
           date: "September 2026",
@@ -837,12 +851,20 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardTitle: "O mural",
       boardPosts: [
         {
+          href: "/culture/which-race-to-sign-up-for",
+          img: "/home-track-hero.webp",
+          eyebrow: "The Culture · Arquivo",
+          title: "Qual prova fazer antes de 2026 acabar?",
+          desc: "Uma meia em dezembro, algo mais curto em novembro ou o HYROX Anaheim. As provas do sul da Califórnia ainda abertas este ano, com as semanas que sobraram e como estou escolhendo a minha",
+          meta: "Novo · Provas · Setembro 2026 ↗",
+        },
+        {
           href: "/culture/adizero-dropset-pro-vs-dropset-4",
           img: "/adizero-dropset-hero.jpg",
           eyebrow: "The Culture · Arquivo",
           title: "Adizero Dropset Pro vs Dropset 4",
           desc: "Intervalos de corrida ou musculação primeiro? Compare Pro e Dropset 4 com ficha técnica, fontes, ajuste e sugestões para a semana que você realmente treina.",
-          meta: "Novo · Equipamento · Setembro 2026 ↗",
+          meta: "Equipamento · Setembro 2026 ↗",
         },
         {
           href: "/culture/half-marathon-world-record",
@@ -1133,6 +1155,12 @@ export const dictionaries: Record<Lang, Dictionary> = {
       ],
       articlesLabel: "Textos da Thais",
       articles: [
+        {
+          href: "/culture/which-race-to-sign-up-for",
+          tag: "The Culture Archive",
+          date: "Setembro 2026",
+          title: "Qual prova do sul da Califórnia fazer antes de 2026 acabar?",
+        },
         {
           href: "/culture/adizero-dropset-pro-vs-dropset-4",
           tag: "The Culture Archive",
