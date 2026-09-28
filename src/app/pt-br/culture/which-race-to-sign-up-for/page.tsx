@@ -220,10 +220,11 @@ export default function QualProvaFazer() {
                 <p>
                   Quero mais uma prova no calendário antes do ano acabar, e
                   ainda não escolhi qual. Corri minha primeira meia maratona em
-                  maio, treino seis dias por semana entre corrida e musculação,
-                  e uma parte de mim quer que essa seja meu primeiro HYROX em
-                  vez de mais uma meia. Então estou fazendo a pesquisa em voz
-                  alta, e você pode usar também.
+                  maio e treino seis dias por semana entre corrida e musculação,
+                  então o plano era que essa fosse meu primeiro HYROX. Anaheim
+                  esgotou rápido. Vou tentar uma vaga no HYROX San Diego em maio
+                  de 2027, e a prova que fecha este ano vai ser de corrida. Estou
+                  fazendo a pesquisa em voz alta, e você pode usar também.
                 </p>
                 <p>
                   Todas as provas aqui são no sul da Califórnia, com link pro
@@ -361,7 +362,7 @@ export default function QualProvaFazer() {
               <div className="page">
                 <h2>Ainda dá pra fazer um HYROX este ano?</h2>
                 <p>
-                  Essa é a dúvida que mais me pega.{" "}
+                  Essa era a minha primeira opção.{" "}
                   <a href={HYROX_FORMAT_URL} target="_blank" rel="noopener noreferrer">
                     Uma prova de HYROX
                   </a>{" "}
@@ -390,8 +391,9 @@ export default function QualProvaFazer() {
                   acontece de 13 a 16 de maio de 2027 no San Diego Convention
                   Center, o primeiro HYROX da cidade. Em 28 de setembro de 2026
                   os ingressos ainda não estavam à venda, e a página do evento
-                  diz que as vendas começam em breve. Se o plano era Anaheim,
-                  coloque um lembrete pra esse.
+                  diz que as vendas começam em breve. É nesse que eu vou tentar
+                  fazer o meu primeiro, então se Anaheim era o seu plano também,
+                  coloque um lembrete.
                 </p>
                 <p>
                   Se você levanta mais peso do que corre, o HYROX joga a seu

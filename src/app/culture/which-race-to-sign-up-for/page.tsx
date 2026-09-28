@@ -224,9 +224,11 @@ export default function WhichRaceToSignUpFor() {
                 <p>
                   I want one more race on my calendar before the year is over,
                   and I haven&rsquo;t picked it yet. I ran my first half
-                  marathon in May, I train six days a week between running and
-                  lifting, and part of me wants this one to be my first HYROX
-                  instead of another 13.1. So this is me doing the homework out
+                  marathon in May and I train six days a week between running
+                  and lifting, so the plan was to make this one my first HYROX.
+                  Anaheim sold out fast. I&rsquo;m going to try for a spot at
+                  HYROX San Diego in May 2027 instead, which leaves a running
+                  race to close out this year. This is me doing the homework out
                   loud, and you&rsquo;re welcome to use it.
                 </p>
                 <p>
@@ -364,7 +366,7 @@ export default function WhichRaceToSignUpFor() {
               <div className="page">
                 <h2>Can you still race HYROX this year?</h2>
                 <p>
-                  This is the one I keep going back and forth on.{" "}
+                  This was my first choice.{" "}
                   <a href={HYROX_FORMAT_URL} target="_blank" rel="noopener noreferrer">
                     A HYROX race
                   </a>{" "}
@@ -393,8 +395,8 @@ export default function WhichRaceToSignUpFor() {
                   is May 13 to 16, 2027 at the San Diego Convention Center, the
                   first HYROX the city has hosted. Tickets weren&rsquo;t on sale
                   yet as of September 28, 2026, and the event page says sales
-                  start soon. If Anaheim was the plan, set a reminder for this
-                  one instead.
+                  start soon. That&rsquo;s where I&rsquo;m aiming my first one, so
+                  if Anaheim was your plan too, set a reminder.
                 </p>
                 <p>
                   If you lift more than you run, HYROX plays to what you already
