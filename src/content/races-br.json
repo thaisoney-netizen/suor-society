@@ -118,10 +118,10 @@
       "where": "São Paulo, SP · 7 de setembro de 2026",
       "body": "Clássico de feriado em São Paulo, o Troféu Independência do Brasil, nas imediações do Parque da Independência, no Ipiranga. Data fixa, 7 de setembro, prova de rua para abrir o segundo semestre. Boa pra quebrar a rotina de treino com um número no peito.",
       "dists": "3K · 5K · 10K",
-      "status": "open",
-      "statusLabel": "Inscrições abertas",
+      "status": "past",
+      "statusLabel": "Prova já aconteceu",
       "url": "https://www.trofeuindependenciabrasil.com.br/",
-      "checked": "2026-08-21"
+      "checked": "2026-09-28"
     },
     {
       "num": "12",

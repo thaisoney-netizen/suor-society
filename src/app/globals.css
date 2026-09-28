@@ -2680,6 +2680,9 @@ a { color: inherit; text-decoration: none; }
     width: auto;
   }
   .post-table--stack thead { display: none; }
+  /* A table-caption inside a block table shrinks to its longest word
+     (about 100px on a phone), so give it the full width back. */
+  .post-table--stack caption { display: block; }
   .post-table--stack tbody tr {
     padding: 20px 0;
     border-bottom: 1px solid var(--line);

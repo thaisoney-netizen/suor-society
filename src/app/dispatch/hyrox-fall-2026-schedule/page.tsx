@@ -11,7 +11,7 @@ const META = {
   path: "/dispatch/hyrox-fall-2026-schedule",
   title: "HYROX Fall 2026 Schedule: All 10 US Race Dates",
   description:
-    "HYROX's fall 2026 North America calendar lists 10 races from Labor Day through December, including Anaheim Dec 4 to 6 and first-time stops in Salt Lake City, Tampa, Denver, and Nashville.",
+    "HYROX's fall 2026 North America calendar lists 10 races from Labor Day through December, including Anaheim Dec 3 to 6 and first-time stops in Salt Lake City, Tampa, Denver, and Nashville.",
   image: "/hyrox-hero.jpg",
 };
 export const metadata = pageMeta(META);
@@ -24,7 +24,7 @@ const SCHEDULE = [
   { city: "Tampa, FL", date: "Oct 23 to 25", venue: "Tampa Convention Center (new)" },
   { city: "Denver, CO", date: "Nov 12 to 15", venue: "Colorado Convention Center (new)" },
   { city: "Dallas, TX", date: "Nov 18 to 22", venue: "Kay Bailey Hutchison Convention Center" },
-  { city: "Anaheim, CA", date: "Dec 4 to 6", venue: "Anaheim Convention Center" },
+  { city: "Anaheim, CA", date: "Dec 3 to 6", venue: "Anaheim Convention Center" },
   { city: "Nashville, TN", date: "Dec 10 to 13", venue: "Music City Center (new)" },
   { city: "Vancouver, BC", date: "Dec 18 to 20", venue: "Vancouver Convention Centre" },
 ];
@@ -32,7 +32,7 @@ const SCHEDULE = [
 const FAQS = [
   {
     q: "When is HYROX Anaheim 2026?",
-    a: "December 4 to 6, 2026 at the Anaheim Convention Center. It's the closest HYROX to San Diego.",
+    a: "December 3 to 6, 2026 at the Anaheim Convention Center. It's the closest HYROX to San Diego.",
   },
   {
     q: "Which HYROX cities are new for fall 2026?",
@@ -51,7 +51,7 @@ const FAQS = [
 export default function HyroxFall2026() {
   return (
     <>
-      <ArticleJsonLd {...META} datePublished="2026-06-14" />
+      <ArticleJsonLd {...META} datePublished="2026-06-14" dateModified="2026-09-28" />
       <FaqJsonLd faqs={FAQS} />
       <SiteNav />
 
@@ -98,7 +98,7 @@ export default function HyroxFall2026() {
               HYROX&rsquo;s fall 2026 North America schedule lists 10 races running from Labor Day weekend
               through December. Four cities are getting their first race ever: Salt Lake City, Tampa,
               Denver, and Nashville. And for everyone reading this from San Diego, the one to circle is
-              Anaheim, December 4 to 6 at the Anaheim Convention Center. Ninety minutes up the 5.
+              Anaheim, December 3 to 6 at the Anaheim Convention Center. Ninety minutes up the 5.
             </p>
             <p>
               For comparison, fall 2025 had seven races total. This year it&rsquo;s 10 confirmed, with Atlanta
@@ -121,7 +121,7 @@ export default function HyroxFall2026() {
 
             <h2>If you lift too</h2>
             <p>
-              This is the part where the calendar gets fun. Counting back from Anaheim on December 4, a
+              This is the part where the calendar gets fun. Counting back from Anaheim on December 3, a
               solid 10 to 12 week HYROX block starts mid-September. That gives you the whole summer to build
               your running base and keep lifting heavy, then shift into race-specific work (sleds, wall
               balls, compromised running) after Labor Day. The timeline is almost suspiciously perfect.
