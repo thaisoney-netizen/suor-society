@@ -89,6 +89,7 @@ jobs:
             try{v=JSON.parse(fs.readFileSync('verified.json','utf8'));}catch{}
             fs.appendFileSync(process.env.GITHUB_OUTPUT,'changed='+(v.changed||[]).length+'\n');
             fs.appendFileSync(process.env.GITHUB_OUTPUT,'credits='+(v.creditsSpent||0)+'\n');
+            fs.appendFileSync(process.env.GITHUB_OUTPUT,'escalations='+(v.escalate||[]).length+'\n');
             // Names go to a file, never a step output: a comma or a quote in a
             // race name would otherwise break the commit command downstream.
             fs.writeFileSync('changed.txt',(v.changed||[]).map(c=>c.name+' '+c.from+'->'+c.to).join(', '));
@@ -115,7 +116,10 @@ jobs:
       # One rolling issue rather than a new one each week, so the thread stays
       # readable and nothing needs closing by hand.
       - name: Report candidates and escalations
-        if: ${{ steps.discover.outputs.new != '0' || steps.verify.outputs.changed != '0' }}
+        # Escalations count too: "needs a human" is the one thing this digest
+        # exists to surface, and the laptop agent's email only goes out when
+        # the Mac is open.
+        if: ${{ steps.discover.outputs.new != '0' || steps.verify.outputs.changed != '0' || steps.verify.outputs.escalations != '0' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

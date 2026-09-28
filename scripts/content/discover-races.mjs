@@ -22,7 +22,10 @@ import path from 'node:path';
 
 const args = process.argv.slice(2);
 const JSON_OUT = args.includes('--json');
-const MONTHS = Number(args[args.indexOf('--months') + 1] || 12);
+// indexOf returns -1 when --months is absent, and args[0] is then "--json",
+// which made MONTHS NaN and crashed every weekly run on an Invalid Date.
+const monthsAt = args.indexOf('--months');
+const MONTHS = (monthsAt >= 0 && Number(args[monthsAt + 1])) || 12;
 const OUT = path.join('src', 'content', 'race-candidates.json');
 const log = (...a) => { if (!JSON_OUT) console.log(...a); };
 
