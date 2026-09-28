@@ -314,7 +314,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardPosts: [
         {
           href: "/culture/which-race-to-sign-up-for",
-          img: "/home-track-hero.webp",
+          img: "/race-choice-card.webp",
           eyebrow: "The Culture Archive",
           title: "Which SoCal Race Before 2026 Ends?",
           desc: "A half in December, something shorter in November, or HYROX San Diego in May. The SoCal races still open this year, with the weeks you have left and how I'm choosing mine",
@@ -852,7 +852,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       boardPosts: [
         {
           href: "/culture/which-race-to-sign-up-for",
-          img: "/home-track-hero.webp",
+          img: "/race-choice-card.webp",
           eyebrow: "The Culture · Arquivo",
           title: "Qual prova fazer antes de 2026 acabar?",
           desc: "Uma meia em dezembro, algo mais curto em novembro ou o HYROX San Diego em maio. As provas do sul da Califórnia ainda abertas este ano, com as semanas que sobraram e como estou escolhendo a minha",

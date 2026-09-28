@@ -32,7 +32,8 @@ const META = {
   title: "San Diego Half Marathons 2026: November and December Races",
   description:
     "Half marathons and shorter races in San Diego and SoCal still open for November and December 2026, with prices, weeks to race day, and where HYROX fits in.",
-  image: "/home-track-hero.webp",
+  // Wide crop of the cover for link previews and the board card.
+  image: "/race-choice-card.webp",
 };
 export const metadata = pageMeta({ ...META, paired: true });
 
@@ -210,10 +211,11 @@ export default function WhichRaceToSignUpFor() {
           </div>
         </section>
 
-        {/* ── COVER ── Stand-in until Thais sends her own photo for this post. */}
+        {/* ── COVER ── Thais's own shot. Portrait, so ArticleCover caps it by
+            height; the board card and link previews use race-choice-card.webp. */}
         <ArticleCover
-          src="/home-track-hero.webp"
-          alt="Two runners crouched at the start line of a red running track, one wearing a San Diego cap"
+          src="/race-choice-hero.webp"
+          alt="Two women running away from the camera down a red track, with a palm tree and green hillside ahead under a gray sky"
         />
 
         <div className="post-shell">

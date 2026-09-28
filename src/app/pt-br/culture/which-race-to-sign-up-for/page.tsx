@@ -30,7 +30,7 @@ const META = {
   title: "Meias maratonas em San Diego 2026: novembro e dezembro",
   description:
     "Meias maratonas e provas mais curtas em San Diego e no sul da Califórnia ainda abertas para novembro e dezembro de 2026, com preços, semanas até a largada e onde o HYROX entra.",
-  image: "/home-track-hero.webp",
+  image: "/race-choice-card.webp",
 };
 export const metadata = pageMeta({ ...META, paired: true });
 
@@ -206,10 +206,9 @@ export default function QualProvaFazer() {
           </div>
         </section>
 
-        {/* ── COVER ── Stand-in until Thais sends her own photo for this post. */}
         <ArticleCover
-          src="/home-track-hero.webp"
-          alt="Duas pessoas agachadas na linha de largada de uma pista de atletismo vermelha, uma delas com boné de San Diego"
+          src="/race-choice-hero.webp"
+          alt="Duas mulheres correndo de costas numa pista de atletismo vermelha, com uma palmeira e um morro verde à frente, sob céu nublado"
         />
 
         <div className="post-shell">
