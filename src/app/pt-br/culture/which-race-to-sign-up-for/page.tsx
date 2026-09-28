@@ -249,9 +249,8 @@ export default function QualProvaFazer() {
                 >
                   <table className="post-table post-table--stack">
                     <caption>
-                      Provas no sul da Califórnia até o fim de 2026.
-                      {asOf && <> Status de inscrição conferido em {readableDate(asOf)}.</>}{" "}
-                      Preços em dólar, com taxas quando a prova informa.
+                      Provas no sul da Califórnia até o fim de 2026. Preços em
+                      dólar, com taxas quando a prova informa.
                     </caption>
                     <thead>
                       <tr>
@@ -285,6 +284,11 @@ export default function QualProvaFazer() {
                     </tbody>
                   </table>
                 </div>
+                {asOf && (
+                  <p className="race-pick-verified">
+                    Última verificação: <time dateTime={asOf}>{readableDate(asOf)}</time>
+                  </p>
+                )}
                 <p>
                   A maioria dessas provas sobe o preço em etapas conforme a data
                   chega, então a mesma inscrição custa mais em novembro do que

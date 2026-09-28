@@ -254,9 +254,8 @@ export default function WhichRaceToSignUpFor() {
                 >
                   <table className="post-table post-table--stack">
                     <caption>
-                      Southern California races before the end of 2026.
-                      {asOf && <> Registration status checked {readableDate(asOf)}.</>}{" "}
-                      Prices include fees where the race lists them.
+                      Southern California races before the end of 2026. Prices
+                      include fees where the race lists them.
                     </caption>
                     <thead>
                       <tr>
@@ -290,6 +289,13 @@ export default function WhichRaceToSignUpFor() {
                     </tbody>
                   </table>
                 </div>
+                {/* Generated from the oldest `checked` stamp among the rows, so
+                    it moves on its own whenever the races are re-verified. */}
+                {asOf && (
+                  <p className="race-pick-verified">
+                    Last verified: <time dateTime={asOf}>{readableDate(asOf)}</time>
+                  </p>
+                )}
                 <p>
                   Most of these raise the price in steps as race day gets
                   closer, so the same bib costs more in November than it does

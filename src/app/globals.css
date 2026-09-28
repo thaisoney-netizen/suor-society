@@ -2659,6 +2659,8 @@ a { color: inherit; text-decoration: none; }
 .dropset-post :is(a, [tabindex]):focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 /* Race-choice post: the muted second line in its table (city under the race, weeks under the date). */
 .race-pick-city { font-weight: 400; font-size: var(--fine); color: var(--ink-3); }
+/* Its "last verified" footnote, tucked up under the table. */
+.article-body p.race-pick-verified { margin: -12px 0 24px; font-size: var(--fine); color: var(--ink-3); }
 @media (max-width: 600px) {
   .post-table th, .post-table td { padding: 12px 6px; }
   .post-table th:first-child { width: 24%; }
