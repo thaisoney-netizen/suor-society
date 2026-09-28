@@ -27,7 +27,7 @@ const META = {
   path: "/pt-br/culture/which-race-to-sign-up-for",
   // Title tag carries the searched words; the H1 keeps the question. See the
   // EN page for why.
-  title: "Meias maratonas em San Diego 2026: novembro e dezembro",
+  title: "Meias maratonas em San Diego e no sul da Califórnia em 2026",
   description:
     "Meias maratonas e provas mais curtas em San Diego e no sul da Califórnia ainda abertas para novembro e dezembro de 2026, com preços, semanas até a largada e onde o HYROX entra.",
   image: "/race-choice-card.webp",

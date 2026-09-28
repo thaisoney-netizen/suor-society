@@ -26,10 +26,11 @@ import {
 // should I sign up for" (autocomplete returns video games); they search
 // "san diego half marathon 2026", "half marathon san diego november" and
 // "races in san diego november 2026". The title tag carries those words,
-// the H1 keeps Thais's question.
+// the H1 keeps Thais's question. "SoCal" stays in both because two of the
+// six races (Long Beach, Santa Barbara) are outside San Diego County.
 const META = {
   path: "/culture/which-race-to-sign-up-for",
-  title: "San Diego Half Marathons 2026: November and December Races",
+  title: "San Diego & SoCal Half Marathons: November and December 2026",
   description:
     "Half marathons and shorter races in San Diego and SoCal still open for November and December 2026, with prices, weeks to race day, and where HYROX fits in.",
   // Wide crop of the cover for link previews and the board card.
