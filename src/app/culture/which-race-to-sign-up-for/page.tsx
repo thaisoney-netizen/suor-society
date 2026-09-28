@@ -21,11 +21,17 @@ import {
 //
 // The slug carries no year on purpose. Next fall the title and the races
 // change and the URL keeps whatever ranking it has earned.
+//
+// The title tag and the H1 differ on purpose. Nobody searches "which race
+// should I sign up for" (autocomplete returns video games); they search
+// "san diego half marathon 2026", "half marathon san diego november" and
+// "races in san diego november 2026". The title tag carries those words,
+// the H1 keeps Thais's question.
 const META = {
   path: "/culture/which-race-to-sign-up-for",
-  title: "Which SoCal Race Should You Sign Up For Before 2026 Ends?",
+  title: "San Diego Half Marathons 2026: November and December Races",
   description:
-    "The Southern California races still open from October to December 2026, with dates, prices, weeks to race day, and how to choose between a half and HYROX Anaheim.",
+    "Half marathons and shorter races in San Diego and SoCal still open for November and December 2026, with prices, weeks to race day, and where HYROX fits in.",
   image: "/home-track-hero.webp",
 };
 export const metadata = pageMeta({ ...META, paired: true });
@@ -38,9 +44,13 @@ const PUBLISHED_LABEL = "September 28, 2026";
 
 // HYROX is not in races-en.json (it is not a running race), so its facts are
 // dated in the sentence itself, the same way the IKEA post dates "sold out".
+// Anaheim athlete tickets: every Open singles and Doubles ticket unavailable
+// on every day in the vivenu shop, checked Sep 28 2026.
 const HYROX_URL = "https://hyrox.com/event/hyrox-anaheim-26-27/";
+const HYROX_SD_URL = "https://hyrox.com/event/hyrox-san-diego-26-27/";
 const HYROX_FORMAT_URL = "https://hyrox.com/the-fitness-race/";
 const HYROX_LAST_DAY = new Date(2026, 11, 6);
+const HYROX_SD_LAST_DAY = new Date(2027, 4, 16);
 const HIGDON_URL =
   "https://www.halhigdon.com/training-programs/half-marathon-training/novice-1-half-marathon/";
 const IG_URL = "https://www.instagram.com/suorsociety/";
@@ -59,7 +69,7 @@ const TOC = [
   { id: "compare", label: "How many weeks until race day?" },
   { id: "distance", label: "What distance fits the time you have left?" },
   { id: "drive", label: "Is it worth driving for a race?" },
-  { id: "hyrox", label: "Should your year-end race be HYROX instead?" },
+  { id: "hyrox", label: "Can you still race HYROX this year?" },
   { id: "choose", label: "Which race fits the weeks you actually have?" },
   { id: "faq", label: "Frequently asked questions" },
   { id: "sources", label: "Sources" },
@@ -85,6 +95,7 @@ export default function WhichRaceToSignUpFor() {
   const has = (k: PickKey) => rows.some(r => r.key === k && r.status !== "sold");
   const when = (k: PickKey) => formatDate(pick(k).start, "en");
   const hyroxAhead = new Date() <= HYROX_LAST_DAY;
+  const sdHyroxAhead = new Date() <= HYROX_SD_LAST_DAY;
 
   const saturdays = rows
     .filter(r => r.start.getDay() === 6 && r.status !== "sold")
@@ -111,14 +122,19 @@ export default function WhichRaceToSignUpFor() {
       a: "They're hard in different ways. HYROX is 8 km of running in 1 km pieces with a workout station after each one, so you keep running on legs that just pushed a sled or did lunges. A half is 21.1 km of steady running. Which one feels harder usually depends on whether your gap is strength or distance.",
     },
     {
-      q: "What's the closest HYROX to San Diego in 2026?",
-      a: "HYROX Anaheim, December 3 to 6, 2026 at the Anaheim Convention Center. It's about 90 minutes up the 5 from San Diego without traffic.",
+      q: "Is HYROX Anaheim 2026 sold out?",
+      a: "Yes, for athletes. As of September 28, 2026, every Open singles and Doubles ticket in the HYROX ticket shop was marked unavailable, on every day. The event page on hyrox.com has a notification list in case more are released.",
+    },
+    {
+      q: "Is there a HYROX in San Diego?",
+      a: "Yes. HYROX San Diego is May 13 to 16, 2027 at the San Diego Convention Center, the first one the city has hosted. Tickets weren't on sale yet as of September 28, 2026, and the official event page says sales start soon.",
     },
   ];
 
   const SOURCES = [
     ...rows.map(r => ({ href: r.url, label: `${r.name}: official site` })),
-    { href: HYROX_URL, label: "HYROX Anaheim: event page and tickets" },
+    { href: HYROX_URL, label: "HYROX Anaheim: event page (sold out)" },
+    { href: HYROX_SD_URL, label: "HYROX San Diego: event page" },
     { href: HYROX_FORMAT_URL, label: "HYROX: race format, stations, Doubles and Relay" },
     { href: HIGDON_URL, label: "Hal Higdon: Novice 1 half marathon plan" },
   ];
@@ -162,16 +178,17 @@ export default function WhichRaceToSignUpFor() {
                   and a half.{" "}
                 </>
               ) : null}
-              {hyroxAhead && (
-                <>
-                  If you&rsquo;d rather race HYROX, Anaheim runs December 3 to
-                  6, about 90 minutes up the 5.
-                </>
-              )}
-              {!has("holidayHalf") && !hyroxAhead && (
+              {!has("holidayHalf") && (
                 <>
                   Most of this year&rsquo;s SoCal races have been run. Carlsbad
-                  in January is the next one on the same coast.
+                  in January is the next one on the same coast.{" "}
+                </>
+              )}
+              {sdHyroxAhead && (
+                <>
+                  If you were hoping for HYROX,{" "}
+                  {hyroxAhead && "Anaheim (December 3 to 6) is sold out, but "}
+                  San Diego gets its first one May 13 to 16, 2027.
                 </>
               )}
             </p>
@@ -328,8 +345,8 @@ export default function WhichRaceToSignUpFor() {
                   local.
                 </p>
                 <p>
-                  Long Beach and Anaheim are about 90 minutes to two hours up
-                  the 5, which is fine for a weekend morning. Santa Barbara is
+                  Long Beach is about two hours up the 5, which is fine for a
+                  Saturday morning. Santa Barbara is
                   the only real trip here, closer to four hours, and worth it if
                   you wanted a weekend away anyway.
                 </p>
@@ -345,7 +362,7 @@ export default function WhichRaceToSignUpFor() {
 
             <section id="hyrox" className="article-body">
               <div className="page">
-                <h2>Should your year-end race be HYROX instead?</h2>
+                <h2>Can you still race HYROX this year?</h2>
                 <p>
                   This is the one I keep going back and forth on.{" "}
                   <a href={HYROX_FORMAT_URL} target="_blank" rel="noopener noreferrer">
@@ -358,15 +375,26 @@ export default function WhichRaceToSignUpFor() {
                   race and not just a hard workout.
                 </p>
                 <p>
+                  Not in SoCal.{" "}
                   <a href={HYROX_URL} target="_blank" rel="noopener noreferrer">
                     HYROX Anaheim
                   </a>{" "}
-                  runs December 3 to 6 at the Anaheim Convention Center, the
-                  closest one to San Diego this year. When I checked the
-                  official page on September 28, 2026, tickets were on sale for
-                  Open, Pro, Doubles and Relay across the four days. Each day
-                  sells its own divisions, so check the exact day you want
-                  before you plan around it.
+                  runs December 3 to 6 at the Anaheim Convention Center, and
+                  it&rsquo;s sold out. As of September 28, 2026, every Open
+                  singles and Doubles ticket in the HYROX ticket shop was marked
+                  unavailable, on every day. The event page has a notification
+                  list if you want to hear about any tickets that come back.
+                </p>
+                <p>
+                  The better news is closer to home.{" "}
+                  <a href={HYROX_SD_URL} target="_blank" rel="noopener noreferrer">
+                    HYROX San Diego
+                  </a>{" "}
+                  is May 13 to 16, 2027 at the San Diego Convention Center, the
+                  first HYROX the city has hosted. Tickets weren&rsquo;t on sale
+                  yet as of September 28, 2026, and the event page says sales
+                  start soon. If Anaheim was the plan, set a reminder for this
+                  one instead.
                 </p>
                 <p>
                   If you lift more than you run, HYROX plays to what you already
@@ -445,13 +473,15 @@ export default function WhichRaceToSignUpFor() {
                   </>
                 )}
 
-                {hyroxAhead && (
+                {sdHyroxAhead && (
                   <>
                     <h3>You lift more than you run</h3>
                     <p>
-                      <strong>HYROX Anaheim, December 3 to 6.</strong>{" "}Look at
-                      Doubles if it&rsquo;s your first one, so you learn the
-                      stations with someone next to you.
+                      <strong>HYROX San Diego, May 13 to 16, 2027.</strong>{" "}
+                      It&rsquo;s not this year, but it&rsquo;s in town and you
+                      get months to get ready. Look at Doubles if it&rsquo;s
+                      your first one, so you learn the stations with someone
+                      next to you.
                     </p>
                   </>
                 )}
@@ -509,7 +539,7 @@ export default function WhichRaceToSignUpFor() {
                 <p>
                   Race dates, distances and prices come from each race&rsquo;s
                   own site or its registration page. The HYROX details come from
-                  hyrox.com.
+                  hyrox.com and its ticket shop.
                 </p>
                 <ul className="dropset-sources">
                   {SOURCES.map(s => (

@@ -25,9 +25,11 @@ import {
 // Brazilian race calendar is its own regional page, /pt-br/culture/corridas-brasil-2026.
 const META = {
   path: "/pt-br/culture/which-race-to-sign-up-for",
-  title: "Qual prova do sul da Califórnia fazer antes de 2026 acabar?",
+  // Title tag carries the searched words; the H1 keeps the question. See the
+  // EN page for why.
+  title: "Meias maratonas em San Diego 2026: novembro e dezembro",
   description:
-    "As provas do sul da Califórnia com inscrição aberta de outubro a dezembro de 2026: datas, preços, semanas até a largada e como escolher entre uma meia e o HYROX Anaheim.",
+    "Meias maratonas e provas mais curtas em San Diego e no sul da Califórnia ainda abertas para novembro e dezembro de 2026, com preços, semanas até a largada e onde o HYROX entra.",
   image: "/home-track-hero.webp",
 };
 export const metadata = pageMeta({ ...META, paired: true });
@@ -38,8 +40,10 @@ const PUBLISHED = "2026-09-28";
 const PUBLISHED_LABEL = "28 de setembro de 2026";
 
 const HYROX_URL = "https://hyrox.com/event/hyrox-anaheim-26-27/";
+const HYROX_SD_URL = "https://hyrox.com/event/hyrox-san-diego-26-27/";
 const HYROX_FORMAT_URL = "https://hyrox.com/the-fitness-race/";
 const HYROX_LAST_DAY = new Date(2026, 11, 6);
+const HYROX_SD_LAST_DAY = new Date(2027, 4, 16);
 const HIGDON_URL =
   "https://www.halhigdon.com/training-programs/half-marathon-training/novice-1-half-marathon/";
 const IG_URL = "https://www.instagram.com/suorsociety/";
@@ -58,7 +62,7 @@ const TOC = [
   { id: "compare", label: "Quantas semanas faltam pra largada?" },
   { id: "distance", label: "Qual distância cabe no tempo que sobrou?" },
   { id: "drive", label: "Vale a pena dirigir pra correr uma prova?" },
-  { id: "hyrox", label: "E se a prova do fim do ano for um HYROX?" },
+  { id: "hyrox", label: "Ainda dá pra fazer um HYROX este ano?" },
   { id: "choose", label: "Qual prova cabe nas semanas que você tem?" },
   { id: "faq", label: "Perguntas frequentes" },
   { id: "sources", label: "Fontes" },
@@ -88,6 +92,7 @@ export default function QualProvaFazer() {
   const has = (k: PickKey) => rows.some(r => r.key === k && r.status !== "sold");
   const when = (k: PickKey) => formatDate(pick(k).start, "pt");
   const hyroxAhead = new Date() <= HYROX_LAST_DAY;
+  const sdHyroxAhead = new Date() <= HYROX_SD_LAST_DAY;
 
   const saturdays = rows
     .filter(r => r.start.getDay() === 6 && r.status !== "sold")
@@ -114,14 +119,19 @@ export default function QualProvaFazer() {
       a: "São difíceis de jeitos diferentes. O HYROX tem 8 km de corrida em pedaços de 1 km, com uma estação de exercício depois de cada um, então você volta a correr com a perna cansada de sled e afundo. A meia são 21,1 km de corrida contínua. Qual parece mais difícil costuma depender de onde está a sua lacuna: força ou distância.",
     },
     {
-      q: "Qual é o HYROX mais perto de San Diego em 2026?",
-      a: "O HYROX Anaheim, de 3 a 6 de dezembro de 2026, no Anaheim Convention Center. Fica a uns 90 minutos de San Diego pela I-5, sem trânsito.",
+      q: "O HYROX Anaheim 2026 está esgotado?",
+      a: "Sim, para atletas. Em 28 de setembro de 2026, todos os ingressos Open individuais e de Doubles na loja oficial do HYROX apareciam como indisponíveis, em todos os dias. A página do evento no hyrox.com tem uma lista de aviso caso liberem mais ingressos.",
+    },
+    {
+      q: "Tem HYROX em San Diego?",
+      a: "Tem. O HYROX San Diego acontece de 13 a 16 de maio de 2027 no San Diego Convention Center, o primeiro da cidade. Em 28 de setembro de 2026 os ingressos ainda não estavam à venda, e a página oficial diz que as vendas começam em breve.",
     },
   ];
 
   const SOURCES = [
     ...rows.map(r => ({ href: r.url, label: `${r.name}: site oficial` })),
-    { href: HYROX_URL, label: "HYROX Anaheim: página do evento e ingressos" },
+    { href: HYROX_URL, label: "HYROX Anaheim: página do evento (esgotado)" },
+    { href: HYROX_SD_URL, label: "HYROX San Diego: página do evento" },
     { href: HYROX_FORMAT_URL, label: "HYROX: formato, estações, Doubles e Relay" },
     { href: HIGDON_URL, label: "Hal Higdon: plano Novice 1 de meia maratona" },
   ];
@@ -163,16 +173,18 @@ export default function QualProvaFazer() {
                   e meia maratona.{" "}
                 </>
               ) : null}
-              {hyroxAhead && (
-                <>
-                  Se a ideia é fazer HYROX, Anaheim acontece de 3 a 6 de
-                  dezembro, a uns 90 minutos de San Diego pela I-5.
-                </>
-              )}
-              {!has("holidayHalf") && !hyroxAhead && (
+              {!has("holidayHalf") && (
                 <>
                   A maioria das provas do sul da Califórnia deste ano já
-                  aconteceu. Carlsbad, em janeiro, é a próxima no mesmo litoral.
+                  aconteceu. Carlsbad, em janeiro, é a próxima no mesmo litoral.{" "}
+                </>
+              )}
+              {sdHyroxAhead && (
+                <>
+                  Se você estava de olho no HYROX,{" "}
+                  {hyroxAhead && "Anaheim (3 a 6 de dezembro) está esgotado, mas "}
+                  San Diego recebe o primeiro HYROX da cidade de 13 a 16 de maio
+                  de 2027.
                 </>
               )}
             </p>
@@ -330,9 +342,8 @@ export default function QualProvaFazer() {
                   Holiday Half e a Turkey Trot em Oceanside são todas por aqui.
                 </p>
                 <p>
-                  Long Beach e Anaheim ficam entre 90 minutos e duas horas
-                  subindo a I-5, o que funciona bem pra uma manhã de fim de
-                  semana. Santa Barbara é a única viagem de verdade da lista,
+                  Long Beach fica a umas duas horas subindo a I-5, o que
+                  funciona bem pra uma manhã de sábado. Santa Barbara é a única viagem de verdade da lista,
                   perto de quatro horas, e vale se você já queria um fim de
                   semana fora.
                 </p>
@@ -348,7 +359,7 @@ export default function QualProvaFazer() {
 
             <section id="hyrox" className="article-body">
               <div className="page">
-                <h2>E se a prova do fim do ano for um HYROX?</h2>
+                <h2>Ainda dá pra fazer um HYROX este ano?</h2>
                 <p>
                   Essa é a dúvida que mais me pega.{" "}
                   <a href={HYROX_FORMAT_URL} target="_blank" rel="noopener noreferrer">
@@ -361,16 +372,26 @@ export default function QualProvaFazer() {
                   transforma o treino em prova.
                 </p>
                 <p>
-                  O{" "}
+                  Não no sul da Califórnia. O{" "}
                   <a href={HYROX_URL} target="_blank" rel="noopener noreferrer">
                     HYROX Anaheim
                   </a>{" "}
-                  acontece de 3 a 6 de dezembro no Anaheim Convention Center, o
-                  mais perto de San Diego este ano. Quando conferi o site
-                  oficial em 28 de setembro de 2026, as inscrições estavam
-                  abertas pra Open, Pro, Doubles e Relay, espalhadas pelos
-                  quatro dias. Cada dia tem as suas categorias, então confira o
-                  dia exato que você quer antes de planejar em cima dele.
+                  acontece de 3 a 6 de dezembro no Anaheim Convention Center, e
+                  está esgotado. Em 28 de setembro de 2026, todos os ingressos
+                  Open individuais e de Doubles na loja oficial do HYROX
+                  apareciam como indisponíveis, em todos os dias. A página do
+                  evento tem uma lista de aviso caso liberem mais ingressos.
+                </p>
+                <p>
+                  A notícia boa está mais perto de casa. O{" "}
+                  <a href={HYROX_SD_URL} target="_blank" rel="noopener noreferrer">
+                    HYROX San Diego
+                  </a>{" "}
+                  acontece de 13 a 16 de maio de 2027 no San Diego Convention
+                  Center, o primeiro HYROX da cidade. Em 28 de setembro de 2026
+                  os ingressos ainda não estavam à venda, e a página do evento
+                  diz que as vendas começam em breve. Se o plano era Anaheim,
+                  coloque um lembrete pra esse.
                 </p>
                 <p>
                   Se você levanta mais peso do que corre, o HYROX joga a seu
@@ -448,13 +469,14 @@ export default function QualProvaFazer() {
                   </>
                 )}
 
-                {hyroxAhead && (
+                {sdHyroxAhead && (
                   <>
                     <h3>Você levanta mais peso do que corre</h3>
                     <p>
-                      <strong>HYROX Anaheim, de 3 a 6 de dezembro.</strong>{" "}Se
-                      for o seu primeiro, olhe o Doubles, pra aprender as
-                      estações com alguém do lado.
+                      <strong>HYROX San Diego, de 13 a 16 de maio de 2027.</strong>{" "}
+                      Não é este ano, mas é aqui na cidade e você ganha vários
+                      meses pra se preparar. Se for o seu primeiro, olhe o
+                      Doubles, pra aprender as estações com alguém do lado.
                     </p>
                   </>
                 )}
@@ -511,7 +533,7 @@ export default function QualProvaFazer() {
                 <h2>Fontes</h2>
                 <p>
                   Datas, distâncias e preços vêm do site de cada prova ou da
-                  página de inscrição. Os detalhes do HYROX vêm do hyrox.com.
+                  página de inscrição. Os detalhes do HYROX vêm do hyrox.com e da loja oficial de ingressos.
                 </p>
                 <ul className="dropset-sources">
                   {SOURCES.map(s => (
