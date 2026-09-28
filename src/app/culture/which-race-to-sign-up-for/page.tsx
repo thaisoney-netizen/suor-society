@@ -7,12 +7,14 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 import {
   pick,
   tableRows,
+  laterRows,
   checkedAsOf,
   openHalves,
   formatDate,
   weeksAway,
   city,
   type PickKey,
+  type PickRow,
 } from "@/lib/socal-race-picks";
 
 // Built on the Dropset comparison's layout (question headline, answer deck,
@@ -71,11 +73,14 @@ const SHORT: Record<PickKey, string> = {
   turkeyTrot: "the O'side Turkey Trot",
   holidayHalf: "the Holiday Half",
   carlsbad: "Carlsbad",
+  roseBowl: "the Rose Bowl Half",
+  surfCity: "Surf City",
 };
 
 const TOC = [
   { id: "compare", label: "How many weeks until race day?" },
   { id: "distance", label: "What distance fits the time you have left?" },
+  { id: "later", label: "Need a few more weeks to train?" },
   { id: "drive", label: "Is it worth driving for a race?" },
   { id: "hyrox", label: "Can you still race HYROX this year?" },
   { id: "choose", label: "Which race fits the weeks you actually have?" },
@@ -97,8 +102,70 @@ function readableDate(iso: string): string {
   });
 }
 
+
+/** One comparison table and its "Last verified" footnote. The footnote reads
+ *  the oldest `checked` stamp among these rows only, so each table can only
+ *  ever understate how fresh it is. */
+function RaceTable({ rows, label }: { rows: PickRow[]; label: string }) {
+  const asOf = checkedAsOf(rows);
+  return (
+    <>
+      <div
+        className="post-table-wrap"
+        role="region"
+        aria-label={label}
+        tabIndex={0}
+      >
+        <table className="post-table post-table--stack">
+          <caption>
+            {label}. Prices include fees where the race lists them.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Race</th>
+              <th scope="col">Race day</th>
+              <th scope="col">Distances</th>
+              <th scope="col">Price</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(r => (
+              <tr key={r.name}>
+                <th scope="row">
+                  <a href={r.url} target="_blank" rel="noopener noreferrer">
+                    {r.name}
+                  </a>
+                  <br />
+                  <span className="race-pick-city">{city(r)}</span>
+                </th>
+                <td data-label="Race day">
+                  {formatDate(r.start, "en")}
+                  <br />
+                  <span className="race-pick-city">{weeksAway(r.weeks, "en")}</span>
+                </td>
+                <td data-label="Distances">{r.dists}</td>
+                <td data-label="Price">{r.price}</td>
+                <td data-label="Status">{r.statusLabel}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {asOf && (
+        <p className="race-pick-verified">
+          Last verified: <time dateTime={asOf}>{readableDate(asOf)}</time>
+        </p>
+      )}
+    </>
+  );
+}
+
 export default function WhichRaceToSignUpFor() {
   const rows = tableRows();
+  const later = laterRows();
+  const hasLater = (k: PickKey) => later.some(r => r.key === k && r.status !== "sold");
+  const weeksToJanuary = hasLater("roseBowl") ? pick("roseBowl").weeks : null;
   const asOf = checkedAsOf(rows);
   const has = (k: PickKey) => rows.some(r => r.key === k && r.status !== "sold");
   const when = (k: PickKey) => formatDate(pick(k).start, "en");
@@ -126,6 +193,26 @@ export default function WhichRaceToSignUpFor() {
       q: "How many weeks do you need to train for a half marathon?",
       a: "Most beginner plans take about 12 weeks and assume you can already run about 3 miles, three or four times a week. If you've kept running since a spring race, 5 or 6 weeks can be enough to get comfortable with the distance again. I'm not a coach, so treat that as a starting point and not a rule.",
     },
+    ...(later.length
+      ? [
+          {
+            q: "Which Southern California half marathons are in January 2027?",
+            a: [
+              hasLater("carlsbad") && hasLater("roseBowl")
+                ? `Carlsbad and the Rose Bowl Half in Pasadena, both on ${when("roseBowl")}, 2027.`
+                : hasLater("carlsbad")
+                  ? `Carlsbad, on ${when("carlsbad")}, 2027.`
+                  : hasLater("roseBowl")
+                    ? `The Rose Bowl Half in Pasadena, on ${when("roseBowl")}, 2027.`
+                    : "",
+              hasLater("surfCity") ? `Surf City in Huntington Beach follows on ${when("surfCity")}.` : "",
+              "Any of them gives you more weeks to train than a race left in 2026.",
+            ]
+              .filter(Boolean)
+              .join(" "),
+          },
+        ]
+      : []),
     {
       q: "Is HYROX harder than a half marathon?",
       a: "They're hard in different ways. HYROX is 8 km of running in 1 km pieces with a workout station after each one, so you keep running on legs that just pushed a sled or did lunges. A half is 21.1 km of steady running. Which one feels harder usually depends on whether your gap is strength or distance.",
@@ -141,7 +228,7 @@ export default function WhichRaceToSignUpFor() {
   ];
 
   const SOURCES = [
-    ...rows.map(r => ({ href: r.url, label: `${r.name}: official site` })),
+    ...[...rows, ...later].map(r => ({ href: r.url, label: `${r.name}: official site` })),
     { href: HYROX_URL, label: "HYROX Anaheim: event page (sold out)" },
     { href: HYROX_SD_URL, label: "HYROX San Diego: event page" },
     { href: HYROX_FORMAT_URL, label: "HYROX: race format, stations, Doubles and Relay" },
@@ -258,56 +345,7 @@ export default function WhichRaceToSignUpFor() {
                   ones worth the drive in Orange County, LA, Riverside and up
                   the coast.
                 </p>
-                <div
-                  className="post-table-wrap"
-                  role="region"
-                  aria-label="Southern California races before the end of 2026"
-                  tabIndex={0}
-                >
-                  <table className="post-table post-table--stack">
-                    <caption>
-                      Southern California races before the end of 2026. Prices
-                      include fees where the race lists them.
-                    </caption>
-                    <thead>
-                      <tr>
-                        <th scope="col">Race</th>
-                        <th scope="col">Race day</th>
-                        <th scope="col">Distances</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {rows.map(r => (
-                        <tr key={r.name}>
-                          <th scope="row">
-                            <a href={r.url} target="_blank" rel="noopener noreferrer">
-                              {r.name}
-                            </a>
-                            <br />
-                            <span className="race-pick-city">{city(r)}</span>
-                          </th>
-                          <td data-label="Race day">
-                            {formatDate(r.start, "en")}
-                            <br />
-                            <span className="race-pick-city">{weeksAway(r.weeks, "en")}</span>
-                          </td>
-                          <td data-label="Distances">{r.dists}</td>
-                          <td data-label="Price">{r.price}</td>
-                          <td data-label="Status">{r.statusLabel}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-                {/* Generated from the oldest `checked` stamp among the rows, so
-                    it moves on its own whenever the races are re-verified. */}
-                {asOf && (
-                  <p className="race-pick-verified">
-                    Last verified: <time dateTime={asOf}>{readableDate(asOf)}</time>
-                  </p>
-                )}
+                <RaceTable rows={rows} label="Southern California races before the end of 2026" />
                 <p>
                   Most of these raise the price in steps as race day gets
                   closer, so the same bib costs more in November than it does
@@ -362,6 +400,41 @@ export default function WhichRaceToSignUpFor() {
                 </p>
               </div>
             </section>
+
+            {later.length > 0 && (
+              <section id="later" className="article-body">
+                <div className="page">
+                  <h2>Need a few more weeks to train?</h2>
+                  <p>
+                    Then look at January.
+                    {weeksToJanuary !== null && (
+                      <>
+                        {" "}Mid January is about {weeksToJanuary} weeks away
+                        {weeksToJanuary >= 12
+                          ? ", which fits a full 12 week beginner half marathon plan."
+                          : "."}
+                      </>
+                    )}
+                    {hasLater("carlsbad") && hasLater("roseBowl") && (
+                      <>
+                        {" "}Two of SoCal&rsquo;s big halves land on the same
+                        Sunday, {when("roseBowl")}
+                        {hasLater("surfCity") ? `, and Surf City follows on ${when("surfCity")}.` : "."}
+                      </>
+                    )}
+                  </p>
+                  <RaceTable rows={later} label="SoCal half marathons in early 2027" />
+                  <p>
+                    {hasLater("carlsbad") &&
+                      "Carlsbad is the coastal one, out and back on the old Highway 101. "}
+                    {hasLater("roseBowl") &&
+                      "The Rose Bowl finishes on the field inside the stadium, and it\u2019s billed as a sellout race, so don\u2019t leave it late. "}
+                    {hasLater("surfCity") &&
+                      "Surf City is flat and runs past the Huntington Beach pier."}
+                  </p>
+                </div>
+              </section>
+            )}
 
             <section id="drive" className="article-body">
               <div className="page">
@@ -579,18 +652,6 @@ export default function WhichRaceToSignUpFor() {
                       someone in the group wants the extra medal.
                       {has("danaPoint") &&
                         " In Orange County, Dana Point\u2019s has a 10K too, and a combo entry if you want both."}
-                    </p>
-                  </>
-                )}
-
-                {pick("carlsbad").status === "open" && (
-                  <>
-                    <h3>Nothing before December works for you</h3>
-                    <p>
-                      <strong>Carlsbad on {when("carlsbad")}.</strong>{" "}
-                      It&rsquo;s not this year, but it&rsquo;s the same coast a
-                      few weeks after New Year&rsquo;s, and registration is
-                      already open.
                     </p>
                   </>
                 )}

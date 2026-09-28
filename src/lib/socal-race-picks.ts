@@ -30,11 +30,13 @@ export const PICKS = {
   santaToSea: "Santa to the Sea Half Marathon",
   holidayHalf: "San Diego Holiday Half Marathon & 5K",
   carlsbad: "Carlsbad Marathon, Half & 5K",
+  roseBowl: "Rose Bowl Half Marathon & 5K",
+  surfCity: "Surf City Marathon & Half",
 } as const;
 export type PickKey = keyof typeof PICKS;
 
-/** The table stops at the end of the year: Carlsbad is the January fallback
- *  in the copy, not a row. */
+/** The main table stops at the end of the year. January (and Surf City in
+ *  early February) gets its own table, for readers who need more weeks. */
 const TABLE_KEYS: PickKey[] = [
   "missionInn",
   "runThrough",
@@ -67,14 +69,26 @@ export function pick(key: PickKey): PickRow {
   return find(key);
 }
 
+const LATER_KEYS: PickKey[] = ["carlsbad", "roseBowl", "surfCity"];
+
 /** Rows still ahead of us, soonest first. A race that has been run (by date or
  *  by the agent's `past` status) leaves the table rather than sitting in it
  *  struck through: this post is about what you can still sign up for. */
-export function tableRows(today = new Date()): PickRow[] {
+function upcoming(keys: PickKey[], today: Date): PickRow[] {
   const midnight = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-  return TABLE_KEYS.map(find)
+  return keys
+    .map(find)
     .filter(r => r.status !== "past" && r.start >= midnight)
     .sort((a, b) => a.start.getTime() - b.start.getTime());
+}
+
+export function tableRows(today = new Date()): PickRow[] {
+  return upcoming(TABLE_KEYS, today);
+}
+
+/** The "need more weeks" table: the first big SoCal halves of the new year. */
+export function laterRows(today = new Date()): PickRow[] {
+  return upcoming(LATER_KEYS, today);
 }
 
 /** Oldest `checked` stamp among the rows shown, so the "as of" line can only

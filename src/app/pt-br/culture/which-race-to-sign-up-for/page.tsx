@@ -7,6 +7,7 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 import {
   pick,
   tableRows,
+  laterRows,
   checkedAsOf,
   openHalves,
   formatDate,
@@ -16,6 +17,7 @@ import {
   distsText,
   priceText,
   type PickKey,
+  type PickRow,
 } from "@/lib/socal-race-picks";
 
 // pt-BR twin of /culture/which-race-to-sign-up-for. Same races, same data,
@@ -62,11 +64,14 @@ const SHORT: Record<PickKey, string> = {
   turkeyTrot: "a O'side Turkey Trot",
   holidayHalf: "a Holiday Half",
   carlsbad: "Carlsbad",
+  roseBowl: "a Rose Bowl Half",
+  surfCity: "a Surf City",
 };
 
 const TOC = [
   { id: "compare", label: "Quantas semanas faltam pra largada?" },
   { id: "distance", label: "Qual distância cabe no tempo que sobrou?" },
+  { id: "later", label: "Precisa de mais algumas semanas pra treinar?" },
   { id: "drive", label: "Vale a pena dirigir pra correr uma prova?" },
   { id: "hyrox", label: "Ainda dá pra fazer um HYROX este ano?" },
   { id: "choose", label: "Qual prova cabe nas semanas que você tem?" },
@@ -92,8 +97,70 @@ function readableDate(iso: string): string {
   });
 }
 
+
+/** One comparison table and its "Last verified" footnote. The footnote reads
+ *  the oldest `checked` stamp among these rows only, so each table can only
+ *  ever understate how fresh it is. */
+function RaceTable({ rows, label }: { rows: PickRow[]; label: string }) {
+  const asOf = checkedAsOf(rows);
+  return (
+    <>
+      <div
+        className="post-table-wrap"
+        role="region"
+        aria-label={label}
+        tabIndex={0}
+      >
+        <table className="post-table post-table--stack">
+          <caption>
+            {label}. Preços em dólar, com taxas quando a prova informa.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Prova</th>
+              <th scope="col">Largada</th>
+              <th scope="col">Distâncias</th>
+              <th scope="col">Preço</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(r => (
+              <tr key={r.name}>
+                <th scope="row">
+                  <a href={r.url} target="_blank" rel="noopener noreferrer">
+                    {r.name}
+                  </a>
+                  <br />
+                  <span className="race-pick-city">{city(r)}</span>
+                </th>
+                <td data-label="Largada">
+                  {formatDate(r.start, "pt")}
+                  <br />
+                  <span className="race-pick-city">{weeksAway(r.weeks, "pt")}</span>
+                </td>
+                <td data-label="Distâncias">{distsText(r, "pt")}</td>
+                <td data-label="Preço">{priceText(r, "pt")}</td>
+                <td data-label="Status">{statusText(r, "pt")}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {asOf && (
+        <p className="race-pick-verified">
+          Última verificação: <time dateTime={asOf}>{readableDate(asOf)}</time>
+        </p>
+      )}
+    </>
+  );
+}
+
 export default function QualProvaFazer() {
   const rows = tableRows();
+  const later = laterRows();
+  const hasLater = (k: PickKey) => later.some(r => r.key === k && r.status !== "sold");
+  const weeksToJanuary = hasLater("roseBowl") ? pick("roseBowl").weeks : null;
   const asOf = checkedAsOf(rows);
   const has = (k: PickKey) => rows.some(r => r.key === k && r.status !== "sold");
   const when = (k: PickKey) => formatDate(pick(k).start, "pt");
@@ -120,6 +187,26 @@ export default function QualProvaFazer() {
       q: "Quantas semanas de treino você precisa pra uma meia maratona?",
       a: "A maioria dos planos pra iniciantes leva umas 12 semanas e parte do princípio de que você já corre uns 5 km, três ou quatro vezes por semana. Se você continuou correndo desde uma prova no primeiro semestre, 5 ou 6 semanas podem bastar pra se acostumar de novo com a distância. Não sou treinadora, então use isso como ponto de partida, não como regra.",
     },
+    ...(later.length
+      ? [
+          {
+            q: "Quais meias maratonas no sul da Califórnia acontecem em janeiro de 2027?",
+            a: [
+              hasLater("carlsbad") && hasLater("roseBowl")
+                ? `A de Carlsbad e a Rose Bowl Half, em Pasadena, as duas em ${when("roseBowl")} de 2027.`
+                : hasLater("carlsbad")
+                  ? `A de Carlsbad, em ${when("carlsbad")} de 2027.`
+                  : hasLater("roseBowl")
+                    ? `A Rose Bowl Half, em Pasadena, em ${when("roseBowl")} de 2027.`
+                    : "",
+              hasLater("surfCity") ? `A Surf City, em Huntington Beach, vem em ${when("surfCity")}.` : "",
+              "Todas dão mais semanas de treino do que qualquer prova que sobrou em 2026.",
+            ]
+              .filter(Boolean)
+              .join(" "),
+          },
+        ]
+      : []),
     {
       q: "HYROX é mais difícil que meia maratona?",
       a: "São difíceis de jeitos diferentes. O HYROX tem 8 km de corrida em pedaços de 1 km, com uma estação de exercício depois de cada um, então você volta a correr com a perna cansada de sled e afundo. A meia são 21,1 km de corrida contínua. Qual parece mais difícil costuma depender de onde está a sua lacuna: força ou distância.",
@@ -135,7 +222,7 @@ export default function QualProvaFazer() {
   ];
 
   const SOURCES = [
-    ...rows.map(r => ({ href: r.url, label: `${r.name}: site oficial` })),
+    ...[...rows, ...later].map(r => ({ href: r.url, label: `${r.name}: site oficial` })),
     { href: HYROX_URL, label: "HYROX Anaheim: página do evento (esgotado)" },
     { href: HYROX_SD_URL, label: "HYROX San Diego: página do evento" },
     { href: HYROX_FORMAT_URL, label: "HYROX: formato, estações, Doubles e Relay" },
@@ -248,54 +335,7 @@ export default function QualProvaFazer() {
                   condado de San Diego e as que valem a viagem em Orange County,
                   LA, Riverside e subindo o litoral.
                 </p>
-                <div
-                  className="post-table-wrap"
-                  role="region"
-                  aria-label="Provas no sul da Califórnia até o fim de 2026"
-                  tabIndex={0}
-                >
-                  <table className="post-table post-table--stack">
-                    <caption>
-                      Provas no sul da Califórnia até o fim de 2026. Preços em
-                      dólar, com taxas quando a prova informa.
-                    </caption>
-                    <thead>
-                      <tr>
-                        <th scope="col">Prova</th>
-                        <th scope="col">Largada</th>
-                        <th scope="col">Distâncias</th>
-                        <th scope="col">Preço</th>
-                        <th scope="col">Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {rows.map(r => (
-                        <tr key={r.name}>
-                          <th scope="row">
-                            <a href={r.url} target="_blank" rel="noopener noreferrer">
-                              {r.name}
-                            </a>
-                            <br />
-                            <span className="race-pick-city">{city(r)}</span>
-                          </th>
-                          <td data-label="Largada">
-                            {formatDate(r.start, "pt")}
-                            <br />
-                            <span className="race-pick-city">{weeksAway(r.weeks, "pt")}</span>
-                          </td>
-                          <td data-label="Distâncias">{distsText(r, "pt")}</td>
-                          <td data-label="Preço">{priceText(r, "pt")}</td>
-                          <td data-label="Status">{statusText(r, "pt")}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-                {asOf && (
-                  <p className="race-pick-verified">
-                    Última verificação: <time dateTime={asOf}>{readableDate(asOf)}</time>
-                  </p>
-                )}
+                <RaceTable rows={rows} label="Provas no sul da Califórnia até o fim de 2026" />
                 <p>
                   A maioria dessas provas sobe o preço em etapas conforme a data
                   chega, então a mesma inscrição custa mais em novembro do que
@@ -351,6 +391,41 @@ export default function QualProvaFazer() {
                 </p>
               </div>
             </section>
+
+            {later.length > 0 && (
+              <section id="later" className="article-body">
+                <div className="page">
+                  <h2>Precisa de mais algumas semanas pra treinar?</h2>
+                  <p>
+                    Então olhe pra janeiro.
+                    {weeksToJanuary !== null && (
+                      <>
+                        {" "}Meados de janeiro está a umas {weeksToJanuary} semanas
+                        {weeksToJanuary >= 12
+                          ? ", o que cabe num plano completo de 12 semanas pra iniciantes."
+                          : "."}
+                      </>
+                    )}
+                    {hasLater("carlsbad") && hasLater("roseBowl") && (
+                      <>
+                        {" "}Duas das grandes meias do sul da Califórnia caem no
+                        mesmo domingo, {when("roseBowl")}
+                        {hasLater("surfCity") ? `, e a Surf City vem em ${when("surfCity")}.` : "."}
+                      </>
+                    )}
+                  </p>
+                  <RaceTable rows={later} label="Meias maratonas no sul da Califórnia no começo de 2027" />
+                  <p>
+                    {hasLater("carlsbad") &&
+                      "A de Carlsbad é a do litoral, ida e volta pela antiga Highway 101. "}
+                    {hasLater("roseBowl") &&
+                      "A do Rose Bowl termina no gramado dentro do estádio e é vendida como prova que esgota, então não deixe pra última hora. "}
+                    {hasLater("surfCity") &&
+                      "A Surf City é plana e passa pelo píer de Huntington Beach."}
+                  </p>
+                </div>
+              </section>
+            )}
 
             <section id="drive" className="article-body">
               <div className="page">
@@ -565,17 +640,6 @@ export default function QualProvaFazer() {
                       se alguém do grupo quiser a medalha extra.
                       {has("danaPoint") &&
                         " Em Orange County, a de Dana Point tem 10K também, e um combo pra correr as duas."}
-                    </p>
-                  </>
-                )}
-
-                {pick("carlsbad").status === "open" && (
-                  <>
-                    <h3>Nada antes de dezembro funciona pra você</h3>
-                    <p>
-                      <strong>Carlsbad em {when("carlsbad")}.</strong>{" "}Não é
-                      este ano, mas é o mesmo litoral poucas semanas depois do
-                      Ano Novo, e as inscrições já estão abertas.
                     </p>
                   </>
                 )}
