@@ -52,7 +52,7 @@ export default function ArticleCover({
           blank forever. That box is reserved in CSS, by the min-height on
           `.article-cover-media.is-portrait`, so nothing is needed here. */}
       <figure className={`article-cover-media${portrait ? " is-portrait" : ""}`}>
-        <Image {...p} alt={alt} sizes={articleCoverSizes(src)} priority={priority} />
+        <Image {...p} alt={alt} sizes={articleCoverSizes(src)} priority={priority} quality={90} />
         {caption && <figcaption className="article-cover-caption">{caption}</figcaption>}
       </figure>
     </div>

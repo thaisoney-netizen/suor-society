@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Next 16 only serves qualities on this list. 75 is the default for cards
+  // and everything else; 90 is for article photos (ArticleCover), where a
+  // second lossy pass at 75 on top of the WebP export visibly softened them.
+  images: {
+    qualities: [75, 90],
+  },
   async redirects() {
     return [
       // The Crew page is parked until crew runs actually have a date; the

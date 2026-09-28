@@ -21,8 +21,8 @@ export const PHOTO_SIZES: Record<string, PhotoSize> = {
   "/ikea-marathon-hero.avif": { width: 1200, height: 797 },
   "/june-shoe-drops-hero.webp": { width: 1672, height: 941 },
   "/oceanside-dj-run.webp": { width: 1080, height: 1350 },
-  "/race-choice-card.webp": { width: 1200, height: 675 },
-  "/race-choice-hero.webp": { width: 1200, height: 1878 },
+  "/race-choice-card.webp": { width: 1206, height: 678 },
+  "/race-choice-hero.webp": { width: 1206, height: 1887 },
   "/race-hero.jpg": { width: 1600, height: 900 },
   "/road-run.jpg": { width: 1146, height: 1800 },
   "/run-and-lift-hero.webp": { width: 1600, height: 900 },
@@ -30,6 +30,6 @@ export const PHOTO_SIZES: Record<string, PhotoSize> = {
   "/running-boom-hero.webp": { width: 1366, height: 768 },
   "/sao-silvestre-hero.webp": { width: 950, height: 593 },
   "/thais-oney.jpg": { width: 1135, height: 1101 },
-  "/track-run-two.webp": { width: 1200, height: 1861 },
+  "/track-run-two.webp": { width: 1206, height: 1870 },
   "/trail-run.jpg": { width: 1030, height: 1800 },
 };
