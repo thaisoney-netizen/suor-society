@@ -58,6 +58,12 @@ const HIGDON_URL =
 const IG_URL = "https://www.instagram.com/suorsociety/";
 
 const SHORT: Record<PickKey, string> = {
+  missionInn: "the Mission Inn Run",
+  malibu: "Malibu Moves",
+  beerCityOC: "Beer City OC",
+  danaPoint: "the Dana Point Turkey Trot",
+  goleta: "Goleta",
+  santaToSea: "Santa to the Sea",
   runThrough: "RunThrough Long Beach",
   silverStrand: "Silver Strand",
   santaBarbara: "Santa Barbara",
@@ -100,7 +106,8 @@ export default function WhichRaceToSignUpFor() {
   const sdHyroxAhead = new Date() <= HYROX_SD_LAST_DAY;
 
   const saturdays = rows
-    .filter(r => r.start.getDay() === 6 && r.status !== "sold")
+    // Malibu runs both days, so it is not a "Saturday race".
+    .filter(r => r.start.getDay() === 6 && r.status !== "sold" && r.key !== "malibu")
     .map(r => SHORT[r.key]);
 
   const halves = openHalves(rows);
@@ -247,7 +254,9 @@ export default function WhichRaceToSignUpFor() {
                 <h2>How many weeks until race day?</h2>
                 <p>
                   That number decides most of this. Here&rsquo;s every race
-                  I&rsquo;m weighing, soonest first.
+                  I&rsquo;m weighing, soonest first: San Diego County, plus the
+                  ones worth the drive in Orange County, LA, Riverside and up
+                  the coast.
                 </p>
                 <div
                   className="post-table-wrap"
@@ -364,10 +373,14 @@ export default function WhichRaceToSignUpFor() {
                   local.
                 </p>
                 <p>
-                  Long Beach is about two hours up the 5, which is fine for a
-                  Saturday morning. Santa Barbara is
-                  the only real trip here, closer to four hours, and worth it if
-                  you wanted a weekend away anyway.
+                  Orange County is the easy drive: Dana Point is about an hour
+                  up the 5 and Santa Ana about an hour and a half. Long Beach and
+                  Riverside are closer to two hours, and Malibu is more like two
+                  and a half. Oxnard, Goleta and Santa Barbara are three to four
+                  hours away, which makes them a weekend
+                  {has("goleta") && has("santaToSea")
+                    ? ", and Goleta and Santa to the Sea fall on the same one."
+                    : "."}
                 </p>
                 {saturdays.length > 0 && (
                   <p>
@@ -502,6 +515,46 @@ export default function WhichRaceToSignUpFor() {
                   </>
                 )}
 
+                {(has("malibu") || has("beerCityOC")) && (
+                  <>
+                    <h3>You live in LA or Orange County</h3>
+                    <p>
+                      <strong>
+                        {[
+                          has("malibu") && `Malibu Moves the weekend of ${when("malibu")}`,
+                          has("beerCityOC") && `Beer City OC on ${when("beerCityOC")}`,
+                        ]
+                          .filter(Boolean)
+                          .join(" or ")}
+                        .
+                      </strong>{" "}
+                      {has("malibu") &&
+                        "Malibu is the scenic one, the whole course on the Pacific Coast Highway. "}
+                      {has("beerCityOC") &&
+                        "Beer City is the fun one, with a beer festival after the finish."}
+                    </p>
+                  </>
+                )}
+
+                {(has("goleta") || has("santaToSea")) && (
+                  <>
+                    <h3>You&rsquo;d rather make a weekend of it</h3>
+                    <p>
+                      <strong>
+                        {[
+                          has("goleta") && `Goleta on ${when("goleta")}`,
+                          has("santaToSea") && `Santa to the Sea in Oxnard on ${when("santaToSea")}`,
+                        ]
+                          .filter(Boolean)
+                          .join(" or ")}
+                        .
+                      </strong>{" "}
+                      Both are flat, and Santa Barbara is right there for the
+                      rest of the weekend.
+                    </p>
+                  </>
+                )}
+
                 {sdHyroxAhead && (
                   <>
                     <h3>You lift more than you run</h3>
@@ -515,7 +568,7 @@ export default function WhichRaceToSignUpFor() {
                   </>
                 )}
 
-                {has("turkeyTrot") && (
+                {(has("turkeyTrot") || has("danaPoint")) && (
                   <>
                     <h3>You just want a race with your friends</h3>
                     <p>
@@ -524,6 +577,8 @@ export default function WhichRaceToSignUpFor() {
                       </strong>{" "}
                       A 5K before dinner, no build needed, and the Double Dip if
                       someone in the group wants the extra medal.
+                      {has("danaPoint") &&
+                        " In Orange County, Dana Point\u2019s has a 10K too, and a combo entry if you want both."}
                     </p>
                   </>
                 )}

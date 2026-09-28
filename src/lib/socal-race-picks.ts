@@ -17,11 +17,17 @@ import { indexRace } from "@/lib/race-filters";
 /** Which rows the post compares, by exact `name` in races-en.json. Ordered
  *  nearest first only for readability; the table sorts by date anyway. */
 export const PICKS = {
+  missionInn: "Mission Inn Foundation Run",
   runThrough: "RunThrough Long Beach Half, 10K & 5K",
+  malibu: "Malibu Moves Half Marathon, 10K & 5K",
+  beerCityOC: "Beer City Half, Orange County",
   silverStrand: "Silver Strand Half Marathon, 10 Miler, 12K & 5K",
   santaBarbara: "Santa Barbara Half Marathon & 5K",
   thrive: "Kaiser Permanente Thrive San Diego Half Marathon & 5K",
+  danaPoint: "Dana Point Turkey Trot",
   turkeyTrot: "O'side Turkey Trot",
+  goleta: "Goleta Beach Holiday Half Marathon, 10K & 5K",
+  santaToSea: "Santa to the Sea Half Marathon",
   holidayHalf: "San Diego Holiday Half Marathon & 5K",
   carlsbad: "Carlsbad Marathon, Half & 5K",
 } as const;
@@ -30,11 +36,17 @@ export type PickKey = keyof typeof PICKS;
 /** The table stops at the end of the year: Carlsbad is the January fallback
  *  in the copy, not a row. */
 const TABLE_KEYS: PickKey[] = [
+  "missionInn",
   "runThrough",
+  "malibu",
+  "beerCityOC",
   "silverStrand",
   "santaBarbara",
   "thrive",
+  "danaPoint",
   "turkeyTrot",
+  "goleta",
+  "santaToSea",
   "holidayHalf",
 ];
 
@@ -118,6 +130,7 @@ const PT_DISTS: [RegExp, string][] = [
   [/Half Marathon/g, "Meia maratona"],
   [/Full Marathon/g, "Maratona"],
   [/10 Mile/g, "10 milhas"],
+  [/Quarter Marathon/g, "Quarto de maratona"],
 ];
 
 export function distsText(race: Race, lang: "en" | "pt"): string {

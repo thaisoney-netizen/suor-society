@@ -49,6 +49,12 @@ const HIGDON_URL =
 const IG_URL = "https://www.instagram.com/suorsociety/";
 
 const SHORT: Record<PickKey, string> = {
+  missionInn: "a Mission Inn Run",
+  malibu: "a Malibu Moves",
+  beerCityOC: "a Beer City OC",
+  danaPoint: "a Dana Point Turkey Trot",
+  goleta: "a meia de Goleta",
+  santaToSea: "a Santa to the Sea",
   runThrough: "a RunThrough Long Beach",
   silverStrand: "a Silver Strand",
   santaBarbara: "a Santa Barbara Half",
@@ -95,7 +101,7 @@ export default function QualProvaFazer() {
   const sdHyroxAhead = new Date() <= HYROX_SD_LAST_DAY;
 
   const saturdays = rows
-    .filter(r => r.start.getDay() === 6 && r.status !== "sold")
+    .filter(r => r.start.getDay() === 6 && r.status !== "sold" && r.key !== "malibu")
     .map(r => SHORT[r.key]);
 
   const halves = openHalves(rows);
@@ -238,7 +244,9 @@ export default function QualProvaFazer() {
                 <h2>Quantas semanas faltam pra largada?</h2>
                 <p>
                   Esse número decide quase tudo. Aqui estão todas as provas que
-                  estou considerando, da mais próxima pra mais distante.
+                  estou considerando, da mais próxima pra mais distante: o
+                  condado de San Diego e as que valem a viagem em Orange County,
+                  LA, Riverside e subindo o litoral.
                 </p>
                 <div
                   className="post-table-wrap"
@@ -353,10 +361,14 @@ export default function QualProvaFazer() {
                   Holiday Half e a Turkey Trot em Oceanside são todas por aqui.
                 </p>
                 <p>
-                  Long Beach fica a umas duas horas subindo a I-5, o que
-                  funciona bem pra uma manhã de sábado. Santa Barbara é a única viagem de verdade da lista,
-                  perto de quatro horas, e vale se você já queria um fim de
-                  semana fora.
+                  Orange County é a viagem mais fácil: Dana Point fica a uma
+                  hora pela I-5 e Santa Ana a uma hora e meia. Long Beach e
+                  Riverside ficam perto de duas horas, e Malibu mais pra duas e
+                  meia. Oxnard, Goleta e Santa Barbara ficam a três ou quatro
+                  horas, o que já vira um fim de semana
+                  {has("goleta") && has("santaToSea")
+                    ? ", e Goleta e Santa to the Sea caem no mesmo."
+                    : "."}
                 </p>
                 {saturdays.length > 0 && (
                   <p>
@@ -489,6 +501,46 @@ export default function QualProvaFazer() {
                   </>
                 )}
 
+                {(has("malibu") || has("beerCityOC")) && (
+                  <>
+                    <h3>Você mora em LA ou em Orange County</h3>
+                    <p>
+                      <strong>
+                        {[
+                          has("malibu") && `Malibu Moves no fim de semana de ${when("malibu")}`,
+                          has("beerCityOC") && `Beer City OC em ${when("beerCityOC")}`,
+                        ]
+                          .filter(Boolean)
+                          .join(" ou ")}
+                        .
+                      </strong>{" "}
+                      {has("malibu") &&
+                        "A de Malibu é a bonita, com o percurso inteiro na Pacific Coast Highway. "}
+                      {has("beerCityOC") &&
+                        "A Beer City é a divertida, com festival de cerveja depois da chegada."}
+                    </p>
+                  </>
+                )}
+
+                {(has("goleta") || has("santaToSea")) && (
+                  <>
+                    <h3>Você prefere transformar em fim de semana</h3>
+                    <p>
+                      <strong>
+                        {[
+                          has("goleta") && `Goleta em ${when("goleta")}`,
+                          has("santaToSea") && `Santa to the Sea, em Oxnard, em ${when("santaToSea")}`,
+                        ]
+                          .filter(Boolean)
+                          .join(" ou ")}
+                        .
+                      </strong>{" "}
+                      As duas são planas, e Santa Barbara fica ali do lado pro
+                      resto do fim de semana.
+                    </p>
+                  </>
+                )}
+
                 {sdHyroxAhead && (
                   <>
                     <h3>Você levanta mais peso do que corre</h3>
@@ -501,7 +553,7 @@ export default function QualProvaFazer() {
                   </>
                 )}
 
-                {has("turkeyTrot") && (
+                {(has("turkeyTrot") || has("danaPoint")) && (
                   <>
                     <h3>Você só quer uma prova pra fazer com os amigos</h3>
                     <p>
@@ -511,6 +563,8 @@ export default function QualProvaFazer() {
                       </strong>{" "}
                       Um 5K antes do jantar, sem ciclo de treino, e o Double Dip
                       se alguém do grupo quiser a medalha extra.
+                      {has("danaPoint") &&
+                        " Em Orange County, a de Dana Point tem 10K também, e um combo pra correr as duas."}
                     </p>
                   </>
                 )}
