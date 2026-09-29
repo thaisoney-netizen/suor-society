@@ -7,10 +7,13 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
 const META = {
   path: "/culture/adizero-dropset-pro-vs-dropset-4",
-  title:
-    "Adidas Adizero Dropset Pro vs Dropset 4: Which Should You Buy? | Suor Society",
+  // Title tag, not the H1. Sep 29 2026: the old one ran 78 characters with a
+  // brand tail, so Google cut it. Dropset 4 goes first because the two
+  // most-clicked queries in Search Console lead with it; "Adizero" stays
+  // because "adizero dropset vs dropset 4" converts at 20%.
+  title: "Adidas Dropset 4 vs Adizero Dropset Pro: Which to Buy?",
   description:
-    "Compare Adidas Adizero Dropset Pro vs Dropset 4 for HYROX, lifting, running and fit, with sourced specs and advice for choosing your next trainer.",
+    "Dropset 4 if lifting comes first, Dropset Pro if your workouts mix running with stations. Sourced specs, sizing, HYROX fit and which one suits your week.",
   image: "/adizero-dropset-hero.jpg",
 };
 export const metadata = pageMeta({ ...META, paired: true });

@@ -7,9 +7,9 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
 const META = {
   path: "/pt-br/culture/adizero-dropset-pro-vs-dropset-4",
-  title: "Adidas Adizero Dropset Pro vs Dropset 4: qual comprar? | Suor Society",
+  title: "Adidas Dropset 4 vs Adizero Dropset Pro: qual comprar?",
   description:
-    "Compare Adidas Adizero Dropset Pro e Dropset 4 para HYROX, musculação, corrida e ajuste, com ficha técnica, fontes e orientação para escolher.",
+    "Dropset 4 se a musculação vem primeiro, Dropset Pro se o treino mistura corrida e estações. Ficha técnica, tamanho, HYROX e qual combina com a sua semana.",
   image: "/adizero-dropset-hero.jpg",
 };
 export const metadata = pageMeta({ ...META, paired: true });
