@@ -129,7 +129,11 @@ export default function HyroxFall2026() {
             <p>
               First HYROX? The Open division is exactly what it sounds like. No qualifying, any fitness
               level, and Doubles lets you split the work with a partner. It&rsquo;s the most beginner-friendly
-              way into hybrid racing that exists right now.
+              way into hybrid racing that exists right now. For shoes, here&rsquo;s{" "}
+              <a href="/culture/adizero-dropset-pro-vs-dropset-4">
+                how the Adizero Dropset Pro and Dropset 4 compare
+              </a>
+              .
             </p>
             <p>
               Building toward race day and want somewhere to test the engine before then? Our{" "}

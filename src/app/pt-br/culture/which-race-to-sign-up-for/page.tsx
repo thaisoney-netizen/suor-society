@@ -498,7 +498,11 @@ export default function QualProvaFazer() {
                   os ingressos ainda não estavam à venda, e a página do evento
                   diz que as vendas começam em breve. É nesse que eu vou tentar
                   fazer o meu primeiro, então se Anaheim era o seu plano também,
-                  coloque um lembrete.
+                  coloque um lembrete. Se já está pensando no tênis, veja{" "}
+                  <a href="/pt-br/culture/adizero-dropset-pro-vs-dropset-4">
+                    como o Adizero Dropset Pro e o Dropset 4 se comparam
+                  </a>
+                  .
                 </p>
                 <p>
                   Se você levanta mais peso do que corre, o HYROX joga a seu

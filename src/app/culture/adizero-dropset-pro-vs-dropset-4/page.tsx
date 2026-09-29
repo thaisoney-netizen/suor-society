@@ -151,7 +151,7 @@ export default function AdizeroDropsetProVsDropset4() {
       <ArticleJsonLd
         {...META}
         datePublished="2026-09-04"
-        dateModified="2026-09-05"
+        dateModified="2026-09-29"
         citation={SOURCES}
       />
       <FaqJsonLd faqs={FAQS} />
@@ -179,7 +179,7 @@ export default function AdizeroDropsetProVsDropset4() {
                 Published <time dateTime="2026-09-04">September 4, 2026</time>
               </span>
               <span>
-                Updated <time dateTime="2026-09-05">September 5, 2026</time>
+                Updated <time dateTime="2026-09-29">September 29, 2026</time>
               </span>
             </div>
             <nav className="dropset-jumps" aria-label="Jump to a section">
@@ -476,6 +476,16 @@ export default function AdizeroDropsetProVsDropset4() {
                   These are editorial recommendations based on the sources
                   above, not results from our own wear test. Look at an ordinary
                   week in your calendar, not the week you hope to train someday.
+                </p>
+                {/* Thais's own, confirmed in chat Sep 29 2026: she bought the
+                    Adizero Dropset Pro and returned it. She did NOT buy the
+                    Dropset 4, so nothing here may imply she owns one. */}
+                <p>
+                  I bought the Adizero Dropset Pro and sent it back. It felt
+                  good, but I&rsquo;m not racing HYROX for a while and my gym
+                  leans more toward lifting, so it wasn&rsquo;t the shoe for my
+                  week. That&rsquo;s the whole idea here: buy for the training
+                  you actually do.
                 </p>
                 <h3>Three lifting sessions + short finishers</h3>
                 <p>

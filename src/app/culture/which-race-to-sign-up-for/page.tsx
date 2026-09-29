@@ -509,7 +509,12 @@ export default function WhichRaceToSignUpFor() {
                   first HYROX the city has hosted. Tickets weren&rsquo;t on sale
                   yet as of September 28, 2026, and the event page says sales
                   start soon. That&rsquo;s where I&rsquo;m aiming my first one, so
-                  if Anaheim was your plan too, set a reminder.
+                  if Anaheim was your plan too, set a reminder. If you&rsquo;re
+                  already thinking about shoes for it, here&rsquo;s{" "}
+                  <a href="/culture/adizero-dropset-pro-vs-dropset-4">
+                    how the Adizero Dropset Pro and Dropset 4 compare
+                  </a>
+                  .
                 </p>
                 <p>
                   If you lift more than you run, HYROX plays to what you already

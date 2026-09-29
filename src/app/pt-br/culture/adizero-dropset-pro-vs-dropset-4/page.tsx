@@ -147,7 +147,7 @@ export default function AdizeroDropsetProVsDropset4() {
       <ArticleJsonLd
         {...META}
         datePublished="2026-09-04"
-        dateModified="2026-09-05"
+        dateModified="2026-09-29"
         citation={SOURCES}
       />
       <FaqJsonLd faqs={FAQS} />
@@ -179,7 +179,7 @@ export default function AdizeroDropsetProVsDropset4() {
               </span>
               <span>
                 Atualizado em{" "}
-                <time dateTime="2026-09-05">5 de setembro de 2026</time>
+                <time dateTime="2026-09-29">29 de setembro de 2026</time>
               </span>
             </div>
             <nav className="dropset-jumps" aria-label="Ir para uma seção">
@@ -482,6 +482,13 @@ export default function AdizeroDropsetProVsDropset4() {
                   não resultados de um teste próprio. Olhe para uma semana
                   normal da sua agenda, não para a semana que você espera
                   conseguir treinar um dia.
+                </p>
+                <p>
+                  Eu comprei o Adizero Dropset Pro e devolvi. Gostei de como ele
+                  ficou no pé, mas não vou fazer HYROX tão cedo e a minha
+                  academia é mais de musculação, então não era o tênis da minha
+                  semana. É essa a ideia aqui: compre pelo treino que você
+                  realmente faz.
                 </p>
                 <h3>Três sessões de força + finalizações curtas</h3>
                 <p>
