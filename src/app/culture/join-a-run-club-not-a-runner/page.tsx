@@ -115,7 +115,7 @@ const FAQS: { q: string; a: ReactNode; plain?: string }[] = [
   {
     q: "How do I find a run club in San Diego?",
     plain:
-      "Four clubs that are easy to walk into on your own are listed above with their days and start points, in Balboa Park, Pacific Beach, North Park and Oceanside. Instagram is where most SD clubs post week to week, so search your neighborhood plus “run club.” The RRCA club directory lists registered clubs too. SUOR SOCIETY crew runs are coming to San Diego and have not started yet, and The Dispatch hears first when they do.",
+      "Four clubs that are easy to walk into on your own are listed above with their days and start points, in Balboa Park, Pacific Beach, North Park and Oceanside. Instagram is where most SD clubs post week to week, so search your neighborhood plus “run club.” The RRCA club directory lists registered clubs too.",
     a: (
       <>
         Four clubs that are easy to walk into on your own are listed{" "}
@@ -125,9 +125,7 @@ const FAQS: { q: string; a: ReactNode; plain?: string }[] = [
         <a href="https://www.rrca.org/clubs/" target="_blank" rel="noopener noreferrer">
           RRCA club directory
         </a>{" "}
-        lists registered clubs too. SUOR SOCIETY crew runs are coming to San Diego and
-        haven&rsquo;t started yet, and <a href="/dispatch">The Dispatch</a> hears first when
-        they do.
+        lists registered clubs too.
       </>
     ),
   },
@@ -413,16 +411,17 @@ export default function JoinARunClub() {
               </li>
             </ul>
 
-            <h2 id="whats-next">San Diego, this is where we&rsquo;re headed</h2>
+            {/* Sep 30 2026: the crew-run promise that used to open this section
+                is gone at Thais's call. Crew runs have not started and events
+                are on hold; don't reintroduce a "coming soon" here. */}
+            <h2 id="whats-next">After your first few group runs</h2>
             <p>
-              We&rsquo;re building crew runs here. Free, every pace, run-walk absolutely counts.
-              They haven&rsquo;t started yet, and when they do,{" "}
-              <a href="/dispatch">The Dispatch</a> hears about it first
-            </p>
-            <p>
-              And if a few group runs turn into wanting a start line of your own, the{" "}
-              <a href="/culture/open-entry-races-2026">open entry race picks</a> are races you
-              can sign up for today, no qualifier and no lottery. If you already lift and
+              If a few group runs turn into wanting a start line of your own, here&rsquo;s{" "}
+              <a href="/culture/which-race-to-sign-up-for">
+                how to pick a SoCal race before the year ends
+              </a>
+              , and the <a href="/culture/open-entry-races-2026">open entry race picks</a> cover
+              the rest of the country, no qualifier and no lottery. If you already lift and
               you&rsquo;re trying to work out where the running fits around it, there&rsquo;s a
               whole thing on{" "}
               <a href="/culture/run-and-lift-same-week">running and lifting in the same week</a>.
