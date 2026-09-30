@@ -8,9 +8,14 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
 const META = {
   path: "/culture/join-a-run-club-not-a-runner",
-  title: "Can You Join a Run Club If You're Not Really a Runner?",
+  // Title tag, not the H1 (the H1 keeps "not really a runner"). Sep 30 2026:
+  // position ~6 on 144 impressions but 1 click. Nobody searches "not really a
+  // runner"; autocomplete shows "run club for beginners", "run club for slow
+  // runners", "can you join a run club as a beginner". San Diego stays out of
+  // the title so it does not compete with the San Diego run clubs page.
+  title: "Run Clubs for Beginners and Slow Runners: Can You Join?",
   description:
-    "Yes. Most run clubs are free and no-drop. What all paces welcome really means, what happens at your first one, and which San Diego clubs are easiest to walk into alone.",
+    "Yes. Most run clubs are free and no-drop, so the group waits for you. What your first one is like, going alone, walk breaks, and San Diego clubs to try.",
   image: "/run-club-hero.jpg",
 };
 export const metadata = pageMeta({ ...META, paired: true });
@@ -80,6 +85,10 @@ const FAQS: { q: string; a: ReactNode; plain?: string }[] = [
     a: "No. Most clubs run no-drop, which means the group regroups so nobody gets left behind, and at a typical one you will find 7 minute miles and run-walk intervals at the same event on the same night.",
   },
   {
+    q: "What is a no-drop run club?",
+    a: "One where nobody gets left behind. The front of the group stops at lights and turnarounds and waits for the back, so the slowest runner finishes with everyone else. Most social run clubs work this way.",
+  },
+  {
     q: "What if I need walk breaks?",
     a: "Completely normal. Walk breaks are standard at beginner-friendly clubs and plenty of experienced runners take them on purpose. Run-walk is how a lot of people get through their first 5K, and a fair few marathons.",
   },
@@ -96,7 +105,7 @@ const FAQS: { q: string; a: ReactNode; plain?: string }[] = [
     a: "A weekday social run is almost always 3 to 5 miles, so 30 to 50 minutes at most paces. Saturday long runs go further, usually 4 to 10 miles with a shorter option leaving from the same spot. Clubs post the distance beforehand, so you can pick which week you turn up.",
   },
   {
-    q: "Do run clubs cost anything?",
+    q: "Do you have to pay to join a run club?",
     a: "Most are free. Some sell a shirt eventually or charge for a special event, but turning up on a normal week does not cost anything.",
   },
   {

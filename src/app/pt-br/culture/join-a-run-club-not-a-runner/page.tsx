@@ -7,9 +7,9 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
 const META = {
   path: "/pt-br/culture/join-a-run-club-not-a-runner",
-  title: "Dá pra entrar num clube de corrida sem se achar corredor?",
+  title: "Clube de corrida para iniciantes: posso entrar sendo lento?",
   description:
-    "Dá. A maioria dos clubes de corrida é de graça, ninguém fica pra trás, e tá cheio de gente que teve a mesma dúvida. O que todos os paces são bem-vindos significa na prática.",
+    "Pode. A maioria dos clubes de corrida é de graça e ninguém fica pra trás. Como é o primeiro treino pra iniciantes, pausas pra caminhar e o que levar.",
   image: "/run-club-hero.jpg",
 };
 export const metadata = pageMeta({ ...META, paired: true });
@@ -20,11 +20,15 @@ const FAQS = [
     a: "Não. Na maioria dos clubes ninguém fica pra trás: o grupo reagrupa pra ninguém se perder. Num clube típico tem de tudo no mesmo treino, de pace de 4 min/km a intervalos de corrida e caminhada.",
   },
   {
+    q: "O que é um clube de corrida no-drop?",
+    a: "É um grupo em que ninguém fica pra trás. A frente para nos semáforos e nos retornos e espera quem vem atrás, então quem corre mais devagar termina junto com todo mundo. A maioria dos clubes sociais funciona assim.",
+  },
+  {
     q: "E se eu precisar caminhar no meio?",
     a: "Pausas pra caminhar são padrão em clubes pra iniciantes, e muito corredor experiente usa de propósito. Alternar corrida e caminhada é como muita gente termina os primeiros 5 km, e até maratonas.",
   },
   {
-    q: "Clube de corrida custa alguma coisa?",
+    q: "Precisa pagar pra entrar num clube de corrida?",
     a: "A maioria é de graça. Alguns cobram por eventos especiais ou vendem uma camiseta de vez em quando, mas aparecer numa semana normal não custa nada.",
   },
   {
