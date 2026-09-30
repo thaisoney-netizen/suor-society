@@ -20,9 +20,12 @@ const TOC = [
 // is a regional Brazil guide, not a translation of this page.
 const META = {
   path: "/culture/open-entry-races-2026",
-  title: "Open Entry Races 2026: Dates, Prices, Registration Links",
+  // Title tag, not the H1. Sep 30 2026: 197 impressions at position ~9 with
+  // zero clicks. Nobody searches "open entry races" (no autocomplete at all);
+  // they search "california half marathons 2026" and "can you still sign up".
+  title: "California Half Marathons 2026 You Can Still Sign Up For",
   description:
-    "Open entry races worth signing up for. No qualifier, no lottery. Dates, prices, and direct registration links.",
+    "California and US races with open registration, from 5Ks to marathons. No qualifier, no lottery, with dates, prices and direct sign-up links.",
   image: "/race-hero.jpg",
 };
 export const metadata = pageMeta(META);

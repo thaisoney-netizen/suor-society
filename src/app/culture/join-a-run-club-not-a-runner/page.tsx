@@ -101,7 +101,7 @@ const FAQS: { q: string; a: ReactNode; plain?: string }[] = [
     a: "No. You can run the whole thing quietly, skip the bar after, and head off from the finish without anyone chasing you down. Most people find talking gets easier once you are moving and not making eye contact anyway, which is probably half of why group runs work.",
   },
   {
-    q: "How far do run clubs usually run?",
+    q: "How far do run clubs run?",
     a: "A weekday social run is almost always 3 to 5 miles, so 30 to 50 minutes at most paces. Saturday long runs go further, usually 4 to 10 miles with a shorter option leaving from the same spot. Clubs post the distance beforehand, so you can pick which week you turn up.",
   },
   {

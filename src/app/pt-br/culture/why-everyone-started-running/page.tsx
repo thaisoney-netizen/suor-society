@@ -8,9 +8,9 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
 const META = {
   path: "/pt-br/culture/why-everyone-started-running",
-  title: "Por que todo mundo começou a correr? O boom da corrida",
+  title: "Por que todo mundo está correndo? O boom da corrida em 2026",
   description:
-    "Não é impressão sua. As provas passaram os níveis pré-pandemia, a participação em clubes de corrida saltou 59% em um ano e Londres recebeu 1,1 milhão de inscrições no sorteio. Os números por trás do boom da corrida e o que mudou depois de 2024.",
+    "Por que a corrida ficou tão popular: provas acima dos níveis pré-pandemia, clubes de corrida 59% maiores em um ano e 1,1 milhão de inscrições em Londres.",
   image: "/running-boom-hero.webp",
 };
 export const metadata = pageMeta({ ...META, paired: true });

@@ -8,9 +8,12 @@ import { pageMeta, ArticleJsonLd, FaqJsonLd } from "@/lib/seo";
 
 const META = {
   path: "/culture/why-everyone-started-running",
-  title: "Why Did Everyone Start Running? The 2026 Running Boom",
+  // Title tag, not the H1. Sep 30 2026: people search "why is everyone
+  // running now/today" and "why is running so popular now" (autocomplete and
+  // this page's own Search Console queries), not "did everyone start".
+  title: "Why Is Everyone Running Now? Inside the 2026 Running Boom",
   description:
-    "It's not in your head. Race numbers passed pre-pandemic levels, run club participation jumped 59% in a year, and London took 1.1 million marathon applications. The stats behind the running boom and what changed after 2024.",
+    "Why running got so popular: race numbers passed pre-pandemic levels, run club participation jumped 59% in a year, and London drew 1.1 million applications.",
   image: "/running-boom-hero.webp",
 };
 export const metadata = pageMeta({ ...META, paired: true });
