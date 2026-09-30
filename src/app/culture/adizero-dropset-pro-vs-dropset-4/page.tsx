@@ -32,6 +32,7 @@ const SOURCES = [
   "https://news.adidas.com/training/adidas-unveils-the-dropset-4--its-most-versatile-functional-training-shoe-to-date/s/304ea25d-4d2b-4232-80e1-c435361a6624",
   "https://www.adidas.com/qa/en/adizero-dropset-pro-training-shoes/KK1551.html",
   "https://www.adidas.com/qa/en/dropset-4-training-shoes/JR4661.html",
+  "https://www.doctorsofrunning.com/adidas-dropset-pro-review/",
 ];
 const SOURCE_LABELS = [
   "Adidas: Stockholm launch",
@@ -46,6 +47,7 @@ const SOURCE_LABELS = [
   "Adidas: Dropset 4 construction",
   "Adidas: Pro specifications (Qatar)",
   "Adidas: Dropset 4 specifications (Qatar)",
+  "Doctors of Running: Pro review",
 ];
 const TOC = [
   {
@@ -71,6 +73,10 @@ const TOC = [
   {
     id: "running",
     label: "Can you run in the Dropset 4, and how far in the Pro?",
+  },
+  {
+    id: "worth",
+    label: "Is the Adizero Dropset Pro worth it?",
   },
   {
     id: "buy",
@@ -143,6 +149,14 @@ const FAQS = [
     q: "Should wide feet automatically size up?",
     a: "No. Added length may not solve width or upper-volume pressure. Check fit and the retailer’s return conditions.",
   },
+  {
+    q: "How much does the Adizero Dropset Pro weigh?",
+    a: "Adidas lists 242 g (8.54 oz) for the Adizero Dropset Pro, without saying which size. The Dropset 4 comes in around 309 g (10.9 oz) in a men’s US 10, per That Fit Friend.",
+  },
+  {
+    q: "Has RunRepeat tested the Adizero Dropset Pro?",
+    a: "Not yet. As of September 30, 2026, RunRepeat has a lab review of the Dropset 4 but none of the Dropset Pro. The Pro figures in the table here come from Adidas, and the Dropset 4 measurements come from RunRepeat’s lab.",
+  },
 ];
 
 export default function AdizeroDropsetProVsDropset4() {
@@ -151,7 +165,7 @@ export default function AdizeroDropsetProVsDropset4() {
       <ArticleJsonLd
         {...META}
         datePublished="2026-09-04"
-        dateModified="2026-09-29"
+        dateModified="2026-09-30"
         citation={SOURCES}
       />
       <FaqJsonLd faqs={FAQS} />
@@ -179,7 +193,7 @@ export default function AdizeroDropsetProVsDropset4() {
                 Published <time dateTime="2026-09-04">September 4, 2026</time>
               </span>
               <span>
-                Updated <time dateTime="2026-09-29">September 29, 2026</time>
+                Updated <time dateTime="2026-09-30">September 30, 2026</time>
               </span>
             </div>
             <nav className="dropset-jumps" aria-label="Jump to a section">
@@ -466,6 +480,47 @@ export default function AdizeroDropsetProVsDropset4() {
                   Pro a fixed 5 km or five-mile maximum. For a separate long-run
                   day, compare it with the running shoe that already works for
                   you. A hybrid purchase does not have to replace that shoe.
+                </p>
+              </div>
+            </section>
+            {/* Review roundup, added Sep 30 2026 for the "dropset pro review"
+                searches (Search Console, positions 19 to 30). Every judgement
+                is attributed to a named reviewer; the last line is Thais's own
+                and points to her story in #buy. */}
+            <section id="worth" className="article-body">
+              <div className="page">
+                <h2>Is the Adizero Dropset Pro worth it?</h2>
+                <p>
+                  The reviews mostly agree on the gym side and split on the
+                  running. David Salas at{" "}
+                  <a href={SOURCES[12]} target="_blank" rel="noopener noreferrer">
+                    Doctors of Running
+                  </a>{" "}
+                  gave it a B+ overall and called it a great lifting and training
+                  shoe, with a wide, stable platform. He found it too stiff
+                  through the forefoot for easy runs, though it loosened up for
+                  him at faster paces.{" "}
+                  <a href={SOURCES[1]} target="_blank" rel="noopener noreferrer">
+                    Sam Winebaum at Road Trail Run
+                  </a>{" "}
+                  came away more positive on the running, with a very stable
+                  heel.
+                </p>
+                <p>
+                  On fit, Doctors of Running found the forefoot tapers quickly,
+                  and{" "}
+                  <a href={SOURCES[2]} target="_blank" rel="noopener noreferrer">
+                    That Fit Friend
+                  </a>{" "}
+                  also calls it snug, so try it on with the socks you train in.
+                </p>
+                <p>
+                  So it&rsquo;s worth it if your sessions mix running with
+                  stations, especially with HYROX on the calendar. If you mostly
+                  lift, or you want one shoe for easy miles too, US$150 is a
+                  harder sell. I bought one and sent it back, and the next
+                  section explains why that had more to do with my week than
+                  with the shoe.
                 </p>
               </div>
             </section>

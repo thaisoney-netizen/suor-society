@@ -28,6 +28,7 @@ const SOURCES = [
   "https://news.adidas.com/training/adidas-unveils-the-dropset-4--its-most-versatile-functional-training-shoe-to-date/s/304ea25d-4d2b-4232-80e1-c435361a6624",
   "https://www.adidas.com/qa/en/adizero-dropset-pro-training-shoes/KK1551.html",
   "https://www.adidas.com/qa/en/dropset-4-training-shoes/JR4661.html",
+  "https://www.doctorsofrunning.com/adidas-dropset-pro-review/",
 ];
 const SOURCE_LABELS = [
   "Adidas: lançamento em Estocolmo",
@@ -42,6 +43,7 @@ const SOURCE_LABELS = [
   "Adidas: construção do Dropset 4",
   "Adidas: ficha do Pro (Catar)",
   "Adidas: ficha do Dropset 4 (Catar)",
+  "Doctors of Running: avaliação do Pro",
 ];
 const TOC = [
   {
@@ -67,6 +69,10 @@ const TOC = [
   {
     id: "running",
     label: "Dá para correr no Dropset 4? E até onde no Pro?",
+  },
+  {
+    id: "worth",
+    label: "O Adizero Dropset Pro vale a pena?",
   },
   {
     id: "buy",
@@ -139,6 +145,14 @@ const FAQS = [
     q: "Quem tem pé largo deve sempre subir a numeração?",
     a: "Não. Mais comprimento pode não resolver falta de largura ou espaço sobre o pé. Confira o ajuste e as condições de devolução da loja.",
   },
+  {
+    q: "Quanto pesa o Adizero Dropset Pro?",
+    a: "A Adidas informa 242 g (8,54 oz) para o Adizero Dropset Pro, sem dizer de qual tamanho. O Dropset 4 pesa cerca de 309 g (10,9 oz) num masculino US 10, segundo o That Fit Friend.",
+  },
+  {
+    q: "O RunRepeat já testou o Adizero Dropset Pro?",
+    a: "Ainda não. Em 30 de setembro de 2026, o RunRepeat tinha uma avaliação de laboratório do Dropset 4, mas nenhuma do Dropset Pro. Os números do Pro na tabela vêm da Adidas, e as medições do Dropset 4 vêm do laboratório do RunRepeat.",
+  },
 ];
 
 export default function AdizeroDropsetProVsDropset4() {
@@ -147,7 +161,7 @@ export default function AdizeroDropsetProVsDropset4() {
       <ArticleJsonLd
         {...META}
         datePublished="2026-09-04"
-        dateModified="2026-09-29"
+        dateModified="2026-09-30"
         citation={SOURCES}
       />
       <FaqJsonLd faqs={FAQS} />
@@ -179,7 +193,7 @@ export default function AdizeroDropsetProVsDropset4() {
               </span>
               <span>
                 Atualizado em{" "}
-                <time dateTime="2026-09-29">29 de setembro de 2026</time>
+                <time dateTime="2026-09-30">30 de setembro de 2026</time>
               </span>
             </div>
             <nav className="dropset-jumps" aria-label="Ir para uma seção">
@@ -471,6 +485,44 @@ export default function AdizeroDropsetProVsDropset4() {
                   dia separado de longão, compare com o tênis de corrida que já
                   funciona para você. Comprar um híbrido não precisa significar
                   aposentar esse par.
+                </p>
+              </div>
+            </section>
+            <section id="worth" className="article-body">
+              <div className="page">
+                <h2>O Adizero Dropset Pro vale a pena?</h2>
+                <p>
+                  As avaliações quase todas concordam na parte da academia e se
+                  dividem na corrida. David Salas, do{" "}
+                  <a href={SOURCES[12]} target="_blank" rel="noopener noreferrer">
+                    Doctors of Running
+                  </a>
+                  , deu nota B+ no geral e chamou de ótimo tênis de musculação e
+                  treino, com uma base larga e estável. Ele achou rígido demais
+                  no antepé pra corrida leve, mas melhorou em ritmos mais
+                  rápidos.{" "}
+                  <a href={SOURCES[1]} target="_blank" rel="noopener noreferrer">
+                    Sam Winebaum, do Road Trail Run
+                  </a>
+                  , saiu mais positivo sobre a corrida, com um calcanhar bem
+                  estável.
+                </p>
+                <p>
+                  No ajuste, o Doctors of Running achou que o antepé afina
+                  rápido, e o{" "}
+                  <a href={SOURCES[2]} target="_blank" rel="noopener noreferrer">
+                    That Fit Friend
+                  </a>{" "}
+                  também descreve como justo, então experimente com a meia que
+                  você usa pra treinar.
+                </p>
+                <p>
+                  Vale a pena se o seu treino mistura corrida e estações,
+                  principalmente com HYROX no calendário. Se você mais levanta
+                  peso, ou quer um tênis que sirva pra rodagem leve também, fica
+                  mais difícil justificar os US$150. Eu comprei um e devolvi, e
+                  a próxima seção explica por que isso teve mais a ver com a
+                  minha semana do que com o tênis.
                 </p>
               </div>
             </section>
