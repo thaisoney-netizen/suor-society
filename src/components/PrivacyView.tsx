@@ -26,7 +26,7 @@ export default function PrivacyView({ lang }: { lang: Lang }) {
 
         <section className="article-body">
           <div className="page">
-            <p className="privacy-updated">{t.updated}</p>
+            <div className="privacy-updated">{t.updated}</div>
 
             {t.sections.map((section) => (
               <div key={section.title} id={section.id}>
