@@ -3,7 +3,6 @@ import { Bebas_Neue, Barlow_Condensed, Inter, JetBrains_Mono } from "next/font/g
 import Script from "next/script";
 import "./globals.css";
 import ScrollTracker from "@/components/ScrollTracker";
-import NewsletterPopup from "@/components/NewsletterPopup";
 import { SITE_URL } from "@/lib/seo";
 
 const bebasNeue = Bebas_Neue({
@@ -87,7 +86,6 @@ export default function RootLayout({
       <body style={{ paddingBottom: "60px" }}>
         {children}
         <ScrollTracker />
-        <NewsletterPopup />
         {/*
           GA4 runs in its default state: analytics cookies are set on arrival,
           with no consent gate in front of it. The Consent Mode v2 defaults and
@@ -116,7 +114,9 @@ export default function RootLayout({
         </Script>
         {/*
           Klaviyo onsite tracking (account UZ7Lhx). Loads the signup forms built
-          in Klaviyo and records page views for known profiles. The init
+          in Klaviyo, including the site's popup (the custom NewsletterPopup
+          was retired 2026-10-04 in its favor), and records page views for
+          known profiles. The init
           snippet queues any window.klaviyo calls made before klaviyo.js
           arrives, and skips itself if the library loaded first. Klaviyo sets
           the __kla_id cookie on arrival, which /privacy has to list.
