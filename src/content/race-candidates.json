@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-28",
-  "count": 89,
+  "generated": "2026-10-05",
+  "count": 96,
   "candidates": [
     {
       "runSignupId": 95592,
@@ -12,31 +12,19 @@
       "url": "http://www.thecoloradospringsmarathon.com",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=95592",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
-      "runSignupId": 199895,
-      "name": "The Bay Ridge Half Marathon!",
-      "where": "Brooklyn, NY · 10/3/2026",
-      "date": "10/3/2026",
-      "longest": "The Bay Ridge Half Marathon",
-      "distanceMiles": 13.1,
-      "url": "https://trimarasports.com/bay-ridge-half-marathon/",
-      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=199895",
+      "runSignupId": 154720,
+      "name": "Ruth Anderson Memorial Endurance Run",
+      "where": "San Francisco, CA · 10/10/2026",
+      "date": "10/10/2026",
+      "longest": "Marathon",
+      "distanceMiles": 26.6,
+      "url": "https://ultrasignup.com/register.aspx?did=140172",
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=154720",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
-    },
-    {
-      "runSignupId": 166280,
-      "name": "Rock Reno Half Marathon, Relay & 5K",
-      "where": "Reno, NV · 10/4/2026",
-      "date": "10/4/2026",
-      "longest": "Half Marathon",
-      "distanceMiles": 13.1,
-      "url": "https://renorunningcompany.com/races/rock-reno/",
-      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=166280",
-      "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 61913,
@@ -48,7 +36,7 @@
       "url": "http://calicoracing.com/events/twilight-redrock/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=61913",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 164428,
@@ -60,7 +48,7 @@
       "url": "https://shipleydonut5k.com",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=164428",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 17356,
@@ -72,7 +60,7 @@
       "url": "https://allcommunityevents.com/chicagofallclassic",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=17356",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 132285,
@@ -84,7 +72,7 @@
       "url": "https://www.womensrunningfestival.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=132285",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 135953,
@@ -96,7 +84,7 @@
       "url": "http://www.kcmarathon.org",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=135953",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 73394,
@@ -108,7 +96,7 @@
       "url": "http://mnruns.com/rochesterhotciderhustle",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=73394",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 152685,
@@ -120,7 +108,7 @@
       "url": "https://www.fleetfeet.com/s/rochester/training/fleet-feet-fall-training-2026",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=152685",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 134428,
@@ -132,7 +120,7 @@
       "url": "https://www.olddominionracing.com/laufvergnugen",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=134428",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 199272,
@@ -144,7 +132,7 @@
       "url": "https://houstonhalf.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=199272",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 96966,
@@ -156,7 +144,7 @@
       "url": "http://gostlouis.org/halloween",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=96966",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 189711,
@@ -168,7 +156,7 @@
       "url": "http://www.fivestarntp.com",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=189711",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 201020,
@@ -180,7 +168,7 @@
       "url": "https://hauntedhalfie.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=201020",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 168128,
@@ -192,7 +180,7 @@
       "url": "https://bostonga.com/mini-marathon/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=168128",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 48836,
@@ -204,7 +192,7 @@
       "url": "https://HarvestMarathonRelay.com",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=48836",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 209258,
@@ -216,7 +204,7 @@
       "url": "https://runthroughusa.com/San-Francisco-at-Crissy-Field",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=209258",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 170549,
@@ -228,7 +216,7 @@
       "url": "http://www.fivestarntp.com",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=170549",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 181536,
@@ -240,7 +228,7 @@
       "url": "http://www.garmin.com/marathon/tucson",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=181536",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 183862,
@@ -252,7 +240,7 @@
       "url": "https://www.citytrirace.com/race/Brooklyn_Fall",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=183862",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 93658,
@@ -264,7 +252,7 @@
       "url": "https://www.stlouistrackclub.com/half-marathon-and-5k",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=93658",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 194454,
@@ -276,7 +264,19 @@
       "url": "http://califlowruns.com",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=194454",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
+    },
+    {
+      "runSignupId": 169309,
+      "name": "Huffin for the Stuffin- Turkey Trot  5K, 10K, & Half Marathon",
+      "where": "Long Beach, CA · 11/14/2026",
+      "date": "11/14/2026",
+      "longest": "Half Marathon",
+      "distanceMiles": 13.1,
+      "url": "http://califlowruns.com",
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=169309",
+      "verifySource": "runsignup",
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 170552,
@@ -288,7 +288,7 @@
       "url": "http://www.fivestarntp.com",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=170552",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 206053,
@@ -300,7 +300,7 @@
       "url": "http://www.mambatrailrunners.com",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=206053",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 17795,
@@ -312,7 +312,7 @@
       "url": "https://thecharlottemarathon.com",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=17795",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 212577,
@@ -324,7 +324,7 @@
       "url": "http://www.fivestarntp.com",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=212577",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 106242,
@@ -336,7 +336,7 @@
       "url": "https://www.stlouistrackclub.com/marathon-relay",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=106242",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 38812,
@@ -348,7 +348,7 @@
       "url": "https://runsignup.com/Race/NY/Queens/nycTurkeyTrot",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=38812",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 56698,
@@ -360,7 +360,7 @@
       "url": "https://runwilmington.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=56698",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 80843,
@@ -372,7 +372,7 @@
       "url": "https://www.fivestarntp.com/races/White-Elephant-5K",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=80843",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 49555,
@@ -384,7 +384,7 @@
       "url": "http://calicoracing.com/events/out-with-the-old/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=49555",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 165032,
@@ -396,7 +396,7 @@
       "url": "https://www.run4theranch.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=165032",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 189586,
@@ -408,7 +408,7 @@
       "url": "https://trimarasports.com/holiday-half-marathon/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=189586",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 103888,
@@ -420,7 +420,7 @@
       "url": "https://us.srichinmoyraces.org/newyear-half",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=103888",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 156000,
@@ -432,7 +432,19 @@
       "url": "https://www.fivestarntp.com/ograces/chilly-willy-5k%2F10k%2Fhalf-marathon---las-vegas",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=156000",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
+    },
+    {
+      "runSignupId": 12706,
+      "name": "Winter Warrior Half Marathon, Quarter Marathon & Half Marathon Relay",
+      "where": "Rochester, NY · 1/9/2027",
+      "date": "1/9/2027",
+      "longest": "Half Marathon (In Person)",
+      "distanceMiles": 13.1,
+      "url": "https://yellowjacketracing.com/races/winter-warrior-half-quarter-relay-marathon-2027",
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=12706",
+      "verifySource": "runsignup",
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 185278,
@@ -444,7 +456,7 @@
       "url": "http://www.hrcevents/rfymem",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=185278",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 188236,
@@ -456,7 +468,7 @@
       "url": "https://bodiesracecompany.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=188236",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 172942,
@@ -468,7 +480,7 @@
       "url": "https://www.fivestarntp.com/ograces/chilly-willy-5k%2F10k%2Fhalf-marathon---albuquerque",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=172942",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 50158,
@@ -480,7 +492,7 @@
       "url": "http://calicoracing.com/events/red-rock-canyon/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=50158",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 174496,
@@ -492,7 +504,7 @@
       "url": "https://www.fivestarntp.com/ograces/chilly-willy-5k%2F10k%2Fhalf-marathon---albuquerque",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=174496",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 185276,
@@ -504,7 +516,7 @@
       "url": "https://www.runningfromyeti.com/tulsa-ok.html",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=185276",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 102668,
@@ -516,7 +528,7 @@
       "url": "https://www.stlouistrackclub.com/frostbite-series",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=102668",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 209515,
@@ -528,7 +540,7 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=209515",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 209498,
@@ -540,7 +552,7 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=209498",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 209509,
@@ -552,19 +564,7 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=209509",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
-    },
-    {
-      "runSignupId": 142776,
-      "name": "Time Travel Half-Marathon/5K/10K - Denver",
-      "where": "Denver, CO · 1/30/2027",
-      "date": "1/30/2027",
-      "longest": "Half Marathon",
-      "distanceMiles": 13.1,
-      "url": "https://bodiesracecompany.com/",
-      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=142776",
-      "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 126250,
@@ -576,7 +576,7 @@
       "url": "http://www.f3running.com",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=126250",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 209487,
@@ -588,7 +588,19 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=209487",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
+    },
+    {
+      "runSignupId": 209485,
+      "name": "Coffee Lover Run ATLANTA",
+      "where": "Atlanta, GA · 1/30/2027",
+      "date": "1/30/2027",
+      "longest": "13.1 Half-Marathon Registration",
+      "distanceMiles": 13.1,
+      "url": "https://www.thebestraces.com/",
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=209485",
+      "verifySource": "runsignup",
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 209497,
@@ -600,7 +612,7 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=209497",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 141266,
@@ -612,7 +624,7 @@
       "url": "https://bodiesracecompany.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=141266",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 65812,
@@ -624,7 +636,7 @@
       "url": "http://icemanseries.com",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=65812",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 195136,
@@ -636,7 +648,7 @@
       "url": "https://trimarasports.com/the-go-hard-or-go-home-13-1/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=195136",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 145172,
@@ -648,7 +660,19 @@
       "url": "http://www.runningfromyeti.com/st-louis-mo.html",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=145172",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
+    },
+    {
+      "runSignupId": 37523,
+      "name": "My Better Half Marathon",
+      "where": "Seattle, WA · 2/14/2027",
+      "date": "2/14/2027",
+      "longest": "My Better Half Marathon",
+      "distanceMiles": 13.1,
+      "url": "https://www.orcarunning.com/race/my-better-half-marathon/",
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=37523",
+      "verifySource": "runsignup",
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 37447,
@@ -660,7 +684,7 @@
       "url": "https://pprrun.org/races/super-half",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=37447",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 123016,
@@ -672,7 +696,7 @@
       "url": "https://www.runningfromyeti.com/springfield-mo.html",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=123016",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 212684,
@@ -684,7 +708,7 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=212684",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 212664,
@@ -696,7 +720,19 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=212664",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
+    },
+    {
+      "runSignupId": 194328,
+      "name": "WICKED FAST MARATHON & HALF MARATHON TUCSON, ARIZONA",
+      "where": "Tucson, AZ · 2/27/2027",
+      "date": "2/27/2027",
+      "longest": "Wicked Fast Marathon Tucson",
+      "distanceMiles": 26.2,
+      "url": "http://www.wickedfastaz.com",
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=194328",
+      "verifySource": "runsignup",
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 212675,
@@ -708,7 +744,7 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=212675",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 212654,
@@ -720,7 +756,7 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=212654",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 212663,
@@ -732,19 +768,7 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=212663",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
-    },
-    {
-      "runSignupId": 142205,
-      "name": "Virginia Credit Union River City Half & River City 5k",
-      "where": "Richmond, VA · 3/6/2027",
-      "date": "3/6/2027",
-      "longest": "2027 Virginia Credit Union River City Half",
-      "distanceMiles": 13.1,
-      "url": "https://www.sportsbackers.org/event/rivercityhalf/",
-      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=142205",
-      "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 215418,
@@ -756,7 +780,19 @@
       "url": "https://www.olddominionracing.com/greatfallshalf",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=215418",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
+    },
+    {
+      "runSignupId": 116986,
+      "name": "I Just Want to Be A Unicorn Half Marathon and 5k",
+      "where": "Knoxville, TN · 3/6/2027",
+      "date": "3/6/2027",
+      "longest": "Half Marathon",
+      "distanceMiles": 13.1,
+      "url": "http://www.personalbestracing.com",
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=116986",
+      "verifySource": "runsignup",
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 55331,
@@ -768,7 +804,7 @@
       "url": "http://tennesseeruns.com/nashvillestpaddysrun",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=55331",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 145177,
@@ -780,7 +816,19 @@
       "url": "https://www.runningfromyeti.com/kansas-city-mo.html",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=145177",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
+    },
+    {
+      "runSignupId": 142205,
+      "name": "Virginia Credit Union River City Half & River City 5k",
+      "where": "Richmond, VA · 3/7/2027",
+      "date": "3/7/2027",
+      "longest": "2027 Virginia Credit Union River City Half",
+      "distanceMiles": 13.1,
+      "url": "https://www.sportsbackers.org/event/rivercityhalf/",
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=142205",
+      "verifySource": "runsignup",
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 155858,
@@ -792,7 +840,7 @@
       "url": "http://www.shamrockinrun.com",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=155858",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 157337,
@@ -804,7 +852,7 @@
       "url": "https://fivestarntp.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=157337",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 194831,
@@ -816,7 +864,7 @@
       "url": "https://www.citytrirace.com/race/Brooklyn_Spring_Half_10k_5k",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=194831",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 212968,
@@ -828,7 +876,7 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=212968",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 212785,
@@ -840,7 +888,7 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=212785",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 212964,
@@ -852,7 +900,7 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=212964",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 212780,
@@ -864,7 +912,7 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=212780",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 212787,
@@ -876,7 +924,7 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=212787",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 212784,
@@ -888,7 +936,7 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=212784",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 6194,
@@ -900,7 +948,7 @@
       "url": "http://allcommunityevents.com/chitownhalfmarathon10k",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=6194",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 81794,
@@ -912,7 +960,7 @@
       "url": "https://www.gostlouis.org/stlmarathon",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=81794",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 14547,
@@ -924,7 +972,7 @@
       "url": "http://www.knoxvillemarathon.com",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=14547",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 130921,
@@ -936,7 +984,7 @@
       "url": "https://www.carmelmarathon.com",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=130921",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 211466,
@@ -948,7 +996,19 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=211466",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
+    },
+    {
+      "runSignupId": 173631,
+      "name": "Biggest Little Half Marathon, 10K & 5K",
+      "where": "Reno, NV · 4/24/2027",
+      "date": "4/24/2027",
+      "longest": "Half Marathon",
+      "distanceMiles": 13.1,
+      "url": "https://renorunningcompany.com/races/biggest-little-half-marathon/",
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=173631",
+      "verifySource": "runsignup",
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 211454,
@@ -960,7 +1020,7 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=211454",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 211461,
@@ -972,7 +1032,7 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=211461",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 211443,
@@ -984,7 +1044,7 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=211443",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 197218,
@@ -996,7 +1056,7 @@
       "url": "https://trimarasports.com/the-less-popular-half-marathon/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=197218",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 211451,
@@ -1008,7 +1068,7 @@
       "url": "https://www.thebestraces.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=211451",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 80288,
@@ -1020,7 +1080,7 @@
       "url": "https://www.alexandriahalf.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=80288",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 154257,
@@ -1032,7 +1092,7 @@
       "url": "http://wwbbc.org",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=154257",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 144597,
@@ -1044,7 +1104,31 @@
       "url": "https://tcmaevents.com/tacoma-city-marathon/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=144597",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
+    },
+    {
+      "runSignupId": 169959,
+      "name": "Med City Marathon, presented by ActivePT",
+      "where": "Rochester, MN · 5/16/2027",
+      "date": "5/16/2027",
+      "longest": "FULL MARATHON, presented by ActivePT",
+      "distanceMiles": 26.2,
+      "url": "https://www.medcitymarathonmn.com/",
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=169959",
+      "verifySource": "runsignup",
+      "foundOn": "2026-10-05"
+    },
+    {
+      "runSignupId": 85066,
+      "name": "Hospital Hill Run",
+      "where": "Kansas City, MO · 5/22/2027",
+      "date": "5/22/2027",
+      "longest": "Half Marathon",
+      "distanceMiles": 13.1,
+      "url": "https://www.hospitalhillrun.org",
+      "verifyUrl": "https://runsignup.com/Race/Register/?raceId=85066",
+      "verifySource": "runsignup",
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 37602,
@@ -1056,7 +1140,7 @@
       "url": "https://www.thebuffalomarathon.com/",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=37602",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     },
     {
       "runSignupId": 84732,
@@ -1068,7 +1152,7 @@
       "url": "http://www.dchalfmarathon.com",
       "verifyUrl": "https://runsignup.com/Race/Register/?raceId=84732",
       "verifySource": "runsignup",
-      "foundOn": "2026-09-28"
+      "foundOn": "2026-10-05"
     }
   ]
 }
