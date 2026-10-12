@@ -130,6 +130,14 @@ export default function RootLayout({
             !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();
           `}
         </Script>
+        {/*
+          klaviyo.js also draws Klaviyo's Customer Hub chat launcher (the
+          "Open chat" button, bottom right). The AI agent behind it is not set
+          up yet, so the launcher is hidden here (2026-10-11). Delete this
+          style tag once the Customer Agent is configured in Klaviyo, or turn
+          the Hub off in Klaviyo and drop this anyway.
+        */}
+        <style>{`.kl-hub-launcher-container{display:none!important}`}</style>
       </body>
     </html>
   );
