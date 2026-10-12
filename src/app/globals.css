@@ -3272,9 +3272,17 @@ a { color: inherit; text-decoration: none; }
     align-items: center;
     text-align: center;
   }
+  /* Thais's call, Oct 2026: on a phone the photograph is the hero, with no
+     type over it. The headline stays in the page as the H1 for search and
+     screen readers, it just doesn't print. */
   .hero-headline {
-    font-size: clamp(40px, 13vw, 58px);
-    max-width: none;
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
   }
   /* The tagline and the button are what the black panel existed to hold. The
      popup carries the signup now, and the section row above carries the
