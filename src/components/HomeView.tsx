@@ -66,15 +66,12 @@ export default function HomeView({ lang }: { lang: Lang }) {
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-text">
           <div className="page">
-            {/* Brand headline stays in English on every locale; the tagline
-                and CTA are localized (the CTA points at each locale's own
-                regional race guide). */}
-            <h1 className="hero-headline">
-              Run.<br />Lift.<br />Sweat.
-            </h1>
-            <p className="hero-tag">
-              {t.heroTag}
-            </p>
+            {/* One centered sentence with the button right under it. The brand
+                tagline rides above as an eyebrow and stays in English on every
+                locale; the headline and CTA are localized (the CTA points at
+                each locale's own regional race guide). */}
+            <p className="hero-eyebrow">Run. Lift. Sweat.</p>
+            <h1 className="hero-headline">{t.heroHeadline}</h1>
             <a href={localizeHref(t.heroCtaHref, lang)} className="hero-cta">{t.heroCta}</a>
           </div>
         </div>

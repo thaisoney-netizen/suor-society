@@ -101,7 +101,9 @@ type Dictionary = {
     scrolledLabel: string;
   };
   home: {
-    heroTag: string;
+    // The hero's one sentence: what the page is and who it's for. Localized,
+    // unlike the "Run. Lift. Sweat." eyebrow above it, which stays English.
+    heroHeadline: string;
     heroCta: string;
     // Locale-specific target for the hero CTA (the race guide is a regional
     // page, not a translation, so the path differs per locale).
@@ -307,7 +309,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       scrolledLabel: "You have scrolled",
     },
     home: {
-      heroTag: "Races, gear, and hybrid training for people who run and lift",
+      heroHeadline: "Hybrid training culture for people who don’t train for a living",
       heroCta: "See Races Left in 2026",
       heroCtaHref: "/culture/open-entry-races-2026",
       boardTitle: "The board",
@@ -845,7 +847,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       scrolledLabel: "Você já percorreu",
     },
     home: {
-      heroTag: "Corridas, equipamentos e treino híbrido para quem corre e levanta peso",
+      heroHeadline: "Cultura de corrida híbrida pra quem não vive de treinar",
       heroCta: "Veja as corridas que faltam em 2026",
       heroCtaHref: "/culture/corridas-brasil-2026",
       boardTitle: "O mural",

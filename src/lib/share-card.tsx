@@ -4,8 +4,9 @@ import { join } from "node:path";
 
 // Branded social share card used for Open Graph and Twitter previews.
 // The tagline is the only localized piece; each locale's opengraph-image
-// route passes its own copy (kept in sync with the home hero tagline in
-// src/i18n/dictionaries.ts).
+// route passes its own copy. It used to mirror a tagline under the home hero;
+// the hero carries a single headline now (home.heroHeadline in
+// src/i18n/dictionaries.ts), so this line stands on its own.
 export const shareCardSize = { width: 1200, height: 630 };
 
 // Brand palette (mirrors globals.css)

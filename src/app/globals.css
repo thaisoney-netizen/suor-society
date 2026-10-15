@@ -342,54 +342,61 @@ a { color: inherit; text-decoration: none; }
      up the room instead. */
   object-position: 50% 30%;
 }
-/* One soft gradient — just enough to hold the type on a bright frame. */
+/* Two soft layers, just enough to hold the type on a bright frame. The type
+   sits in the middle now, so the darkest part is a wide oval behind it; the
+   linear wash keeps the white wordmark readable against the sky up top. */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(20,20,20,.66) 0%,
-    rgba(20,20,20,.2) 52%,
-    rgba(20,20,20,.28) 100%
-  );
+  background:
+    radial-gradient(
+      ellipse 62% 58% at 50% 56%,
+      rgba(20,20,20,.5) 0%,
+      rgba(20,20,20,0) 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(20,20,20,.4) 0%,
+      rgba(20,20,20,.16) 52%,
+      rgba(20,20,20,.28) 100%
+    );
   pointer-events: none;
 }
+/* One sentence centred in the frame with the button right under it. Centred
+   in the space the bar leaves, not in the photograph, so the type never
+   creeps up under the nav. The lane between the two athletes is the open part
+   of this frame, which is why the column stays narrow. */
 .hero-text {
   position: absolute;
   inset: 0;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: calc(64px + env(safe-area-inset-bottom));
+  justify-content: center;
+  padding-top: var(--nav-h);
+  padding-bottom: calc(16px + env(safe-area-inset-bottom));
+}
+.hero-eyebrow {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: var(--label-lg);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.82);
+  margin-bottom: 18px;
 }
 .hero-headline {
   font-family: var(--font-bebas), Impact, sans-serif;
   font-weight: 400;
-  font-size: clamp(35px, 6vw, 90px);
-  line-height: .92;
+  font-size: clamp(35px, 5.4vw, 84px);
+  line-height: .94;
   letter-spacing: .02em;
   text-transform: uppercase;
   color: var(--paper);
   text-wrap: balance;
-  max-width: 15ch;
-}
-.hero-tag {
-  font-family: var(--font-inter), sans-serif;
-  font-weight: 400;
-  font-size: clamp(16px, 3vw, 19px);
-  line-height: 1.5;
-  color: rgba(255,255,255,.82);
-  margin-top: 18px;
-  white-space: nowrap;
-}
-/* Below ~900px the tagline is longer than the screen at a readable size, so it
-   wraps instead of shrinking. Two lines at 16px beat one line at 12px. */
-@media (max-width: 900px) {
-  .hero-tag { white-space: normal; max-width: 30ch; }
+  max-width: 22ch;
 }
 .hero-cta {
-  align-self: flex-end;
+  align-self: center;
   font-family: var(--font-bebas), sans-serif;
   font-size: var(--ui-lg);
   letter-spacing: .14em;
@@ -410,13 +417,13 @@ a { color: inherit; text-decoration: none; }
 .hero-text .page {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
+  align-items: center;
+  text-align: center;
   width: 100%;
 }
 @media (max-width: 480px) {
   .hero-headline { font-size: clamp(28px, 8.6vw, 40px); }
-  .hero-tag { margin-top: 12px; }
+  .hero-eyebrow { margin-bottom: 12px; }
   .hero-cta { margin-top: 20px; }
   /* The Portuguese label is wider than the page at this size, and the hero
      clips whatever runs past it, so the button was losing its right edge.
@@ -494,9 +501,9 @@ a { color: inherit; text-decoration: none; }
    the full-size type. */
 @media (min-aspect-ratio: 4 / 3) and (max-height: 520px) {
   .hero-headline { font-size: clamp(26px, 4.6vw, 44px); }
-  .hero-tag { margin-top: 10px; font-size: 15px; }
+  .hero-eyebrow { margin-bottom: 10px; }
   .hero-cta { margin-top: 16px; padding: 10px 24px; }
-  .hero-text { padding-bottom: calc(28px + env(safe-area-inset-bottom)); }
+  .hero-text { padding-bottom: calc(12px + env(safe-area-inset-bottom)); }
 }
 
 /* ============================================================
@@ -3297,7 +3304,7 @@ a { color: inherit; text-decoration: none; }
   /* The tagline and the button are what the black panel existed to hold. The
      popup carries the signup now, and the section row above carries the
      navigation, so neither has a job left here. */
-  .hero-tag,
+  .hero-eyebrow,
   .hero-cta { display: none; }
 }
 
