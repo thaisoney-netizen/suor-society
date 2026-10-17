@@ -1,27 +1,22 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { dictionaries } from "@/i18n/dictionaries";
+import { dictionaries, LOCALE_HREF } from "@/i18n/dictionaries";
 
-// Shown on the English home to visitors whose browser prefers Portuguese:
-// a small dismissible toast offering the pt-BR version. Dismissal is remembered
-// so it does not nag on return visits.
-//
-// Positioning is scroll-aware: the hero's headline/tagline/CTA are pinned to the
-// bottom of the first screen, so at the top of the page the toast sits LOW (below
-// the bottom CTA). Once scrolling starts the fixed scroll tracker (60px) rises
-// from the bottom, so the toast lifts above it. The two states never overlap
-// their neighbours because the tracker only appears after the same scroll
-// threshold that lifts the toast.
+// "Vindo do Brasil?" strip shown at the very top of English pages to visitors
+// whose browser prefers Portuguese, offering the pt-BR version — same pattern
+// as the HYROX Brazil site. Mounted once in the root layout; hides itself on
+// /pt-br pages. The CTA deep-links to the pt-BR twin of the current page
+// (the pt-br route tree mirrors the English one). Dismissal is remembered so
+// it does not nag on return visits.
 const DISMISS_KEY = "ss-lang-suggest-dismissed";
-// Matches the scroll tracker's own visibility threshold in ScrollTracker.tsx.
-const LIFT_AT = 24;
 
 export default function LanguageBanner() {
-  const [show, setShow] = useState(false);
-  const [lifted, setLifted] = useState(false);
+  const [target, setTarget] = useState<string | null>(null);
 
   useEffect(() => {
+    const path = window.location.pathname;
+    if (path === LOCALE_HREF.pt || path.startsWith(`${LOCALE_HREF.pt}/`)) return;
     try {
       if (localStorage.getItem(DISMISS_KEY)) return;
     } catch {
@@ -31,28 +26,11 @@ export default function LanguageBanner() {
       ? navigator.languages
       : [navigator.language];
     const prefersPt = langs.some((l) => l?.toLowerCase().startsWith("pt"));
-    if (prefersPt) setShow(true);
+    if (prefersPt) setTarget(path === "/" ? LOCALE_HREF.pt : `${LOCALE_HREF.pt}${path}`);
   }, []);
 
-  // Lift above the scroll tracker once the page is scrolled, so the toast clears
-  // the bottom-anchored hero CTA at the top of the page and the tracker below it.
-  useEffect(() => {
-    if (!show) return;
-    const onScroll = () => {
-      const y =
-        window.scrollY ??
-        window.pageYOffset ??
-        document.documentElement.scrollTop ??
-        0;
-      setLifted(y > LIFT_AT);
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [show]);
-
   function dismiss() {
-    setShow(false);
+    setTarget(null);
     try {
       localStorage.setItem(DISMISS_KEY, "1");
     } catch {
@@ -60,23 +38,19 @@ export default function LanguageBanner() {
     }
   }
 
-  if (!show) return null;
+  if (!target) return null;
 
   const t = dictionaries.pt.suggest;
 
   return (
-    <div
-      className={`lang-suggest${lifted ? " lang-suggest--lifted" : ""}`}
-      role="dialog"
-      aria-label={t.text}
-    >
-      <span className="lang-suggest-text">{t.text}</span>
-      <a className="lang-suggest-cta" href="/pt-br">
+    <div className="lang-strip" role="region" aria-label={t.text}>
+      <span className="lang-strip-text">{t.text}</span>
+      <a className="lang-strip-cta" href={target}>
         {t.cta} →
       </a>
       <button
         type="button"
-        className="lang-suggest-x"
+        className="lang-strip-x"
         aria-label={t.dismiss}
         onClick={dismiss}
       >
