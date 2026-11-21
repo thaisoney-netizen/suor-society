@@ -1,9 +1,9 @@
 // Central place for site copy in each language.
 //
-// Scope note: the brand headline (the locked tagline "Run. Lift. Sweat.") stays in
-// English on every locale on purpose — it reads as the brand line, not as copy
-// to translate. Brand/section names (The Culture, The Dispatch, Race Picks,
-// Crew) also stay in English. The hero tagline IS translated per locale.
+// Scope note: the locked tagline "Run. Lift. Sweat." stays in English on every
+// locale on purpose — it reads as the brand line, not as copy to translate.
+// Brand/section names (The Culture, The Dispatch, Race Picks, Crew) also stay
+// in English. The hero headline IS translated per locale.
 //
 // Regional pages: the race guide and the HYROX post are not translations —
 // each locale has its own regional version with its own races (US on /,
@@ -101,8 +101,8 @@ type Dictionary = {
     scrolledLabel: string;
   };
   home: {
-    // The hero's one sentence: what the page is and who it's for. Localized,
-    // unlike the "Run. Lift. Sweat." eyebrow above it, which stays English.
+    // The hero's one sentence: what the page is and who it's for. Localized.
+    // Keep it to two lines at desktop size; a third line makes the hero busy.
     heroHeadline: string;
     heroCta: string;
     // Locale-specific target for the hero CTA (the race guide is a regional
@@ -309,7 +309,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       scrolledLabel: "You have scrolled",
     },
     home: {
-      heroHeadline: "Hybrid training culture for people who don’t train for a living",
+      heroHeadline: "Hybrid training culture for everyday athletes",
       heroCta: "See Races Left in 2026",
       heroCtaHref: "/culture/open-entry-races-2026",
       boardTitle: "The board",
@@ -847,7 +847,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       scrolledLabel: "Você já percorreu",
     },
     home: {
-      heroHeadline: "Cultura de corrida híbrida pra quem não vive de treinar",
+      heroHeadline: "Corrida híbrida pra atletas do dia a dia",
       heroCta: "Veja as corridas que faltam em 2026",
       heroCtaHref: "/culture/corridas-brasil-2026",
       boardTitle: "O mural",
